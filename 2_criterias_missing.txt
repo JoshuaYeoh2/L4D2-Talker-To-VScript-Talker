@@ -1,0 +1,32 @@
+// terror_player_addon.txt ===================================================================================================================
+criterion "ConceptPlayer.TakeVomitJarC1a" "Concept" "Player.TakeVomitJarC1a" required
+criterion "ConceptPlayer.CoverMeC1R" "Concept" "Player.CoverMeC1R" required
+criterion "ConceptPlayer.CoverMeC1RCoach1" "Concept" "Player.CoverMeC1RCoach1" required
+criterion "ConceptPlayer.CoverMeC1RCoach2" "Concept" "Player.CoverMeC1RCoach2" required
+criterion "ConceptPlayer.GooedBySpitterC1R" "Concept" "Player.GooedBySpitterC1R" required
+criterion "ConceptWhitaker.Nags" "Concept" "Whitaker.Nags" required
+criterion "ConceptPlayer.SeeMudmen2a" "Concept" "Player.SeeMudmen2a" required
+criterion "ConceptPlayer.TakeBatR2" "Concept" "Player.TakeBatR2" required
+criterion "ConceptPlayer.TakeBatR" "Concept" "Player.TakeBatR" required
+criterion "ConceptPlayer.NickGunOwnership" "Concept" "Player.NickGunOwnership" required
+criterion "ConceptPlayer.KnowBoomer" "Concept" "Player.KnowBoomer" required
+criterion "ConceptPlayer.KnowSpitter" "Concept" "Player.KnowSpitter" required
+criterion "ConceptPlayer.KnowJockey" "Concept" "Player.KnowJockey" required
+criterion "ConceptPlayer.KnowCharger" "Concept" "Player.KnowCharger" required
+criterion "ConceptPlayer.KnowHunter" "Concept" "Player.KnowHunter" required
+criterion "ConceptPlayer.KnowHunter2" "Concept" "Player.KnowHunter2" required
+criterion "ConceptPlayer.KnowSmoker" "Concept" "Player.KnowSmoker" required
+criterion "ConceptPlayer.C1WorseThanZombies" "Concept" "Player.C1WorseThanZombies" required
+criterion "ConceptPlayer.NotPackingHeat" "Concept" "Player.NotPackingHeat" required
+criterion "ConceptPlayer.NotPackingHeat2" "Concept" "Player.NotPackingHeat2" required
+criterion "ConceptPlayer.WhinyNick" "Concept" "Player.WhinyNick" required
+criterion "ConceptPlayer.WarnMegaMobc7m201" "Concept" "Player.WarnMegaMobc7m201" required
+// terror_player_addon_dlc1.txt ===================================================================================================================
+criterion "ConceptWorldC6M2_Tattoo01a>" "Concept" "WorldC6M2_Tattoo01a>" required
+criterion "ConceptWorldC6M2_Tattoo01b>" "Concept" "WorldC6M2_Tattoo01b>" required
+criterion "ConceptWorldC6M2_Tattoo02a>" "Concept" "WorldC6M2_Tattoo02a>" required
+criterion "ConceptWorldC6M2_Tattoo02b>" "Concept" "WorldC6M2_Tattoo02b>" required
+criterion "ConceptWorldC6M2_Tattoo02c>" "Concept" "WorldC6M2_Tattoo02c>" required
+criterion "ConceptWorldC6M2_Tattoo02d>" "Concept" "WorldC6M2_Tattoo02d>" required
+criterion "ConceptWorldC6M2_Tattoo03a>" "Concept" "WorldC6M2_Tattoo03a>" required
+criterion "ConceptWorldC6M2_Tattoo03b>" "Concept" "WorldC6M2_Tattoo03b>" required

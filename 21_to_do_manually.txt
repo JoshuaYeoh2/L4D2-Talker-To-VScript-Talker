@@ -1,0 +1,40 @@
+// ====================================================================================================
+
+comment out forceweights in the rules
+//forceweight 30
+
+// ====================================================================================================
+
+fix criteria function warnings in the rules:
+
+criteria = 
+[
+	...
+	[WitchaggroDecrease],
+],
+applycontext =
+{
+	//WARNING: WitchAggro:--1:None:None requires criteria function!
+},
+
+// ====================================================================================================
+
+temp disable auto player lostcall and bot attention in the responses:
+
+Custom_Talker_Blake.AutoPlayerLostCallBlake <- function(speaker, query) {
+    // Custom_Talker_Blake.Say(speaker, "AutoPlayerLostCallBlake"); };
+    return; };
+
+Custom_Talker_Blake.BotAttentionBattleBlake <- function(speaker, query) {
+    // Custom_Talker_Blake.Say(speaker, "BotAttentionBattleBlake"); };
+    return; };
+
+Custom_Talker_Blake.BotNoteHumanAttentionBlake <- function(speaker, query) {
+    // Custom_Talker_Blake.Say(speaker, "BotNoteHumanAttentionBlake"); };
+    return; };
+
+// ====================================================================================================
+
+binary search the rules if minorhurt wont play
+
+// ====================================================================================================
