@@ -43,5 +43,11 @@ function IsSaidReplicaWitchAttacking(query) { return query.saidwitchattacking ==
 function ReplicaNotPickedUpItem(query) { return query.pickedupitem != 1; }
 function isReplica(query) { return query.who == "Replica"; }
 
+// csgo sas============================================================================================================================
+
+function Csgo_sasNotPickedUpItem(query) { return query.pickedupitem != 1; }
+function IsNotSaidCsgo_sasWitchChasing(query) { return query.saidwitchchasing != 1; }
+function IsSaidCsgo_sasWitchAttacking(query) { return query.saidwitchattacking == 1; }
+function isCsgo_sas(query) { return query.who == "CSGO_SAS"; }
 
 // ============================================================================================================================

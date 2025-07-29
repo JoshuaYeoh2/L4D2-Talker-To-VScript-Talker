@@ -45,6 +45,8 @@ function ConceptC1M2Gunshopkill(query) { return query.concept == "c1m2gunshopkil
 function Concept_C3M2UnderwaterShack(query) { return query.concept == "_c3m2underwatershack"; }
 function IsMechanicNear800Weight0(query) { return query.disttomechanic < 800; }
 function IsCoachNear800Weight0(query) { return query.disttocoach < 800; }
+function IsGamblerNear800Weight0(query) { return query.disttogambler < 800; }
+function IsProducerNear800Weight0(query) { return query.disttoproducer < 800; }
 function NoKNowSmoker(query) { return query.worldknowsmoker != 1; }
 function ConceptFarm05_Path09C(query) { return query.concept == "Farm05_path09C"; }
 function ConceptIntroSmalltown3(query) { return query.concept == "IntroSmallTown3"; }

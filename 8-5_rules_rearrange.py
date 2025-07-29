@@ -19,53 +19,72 @@ def parse_blocks(text):
     return blocks
 
 def extract_first_then(content):
-    # Extract only the first `then` line (and its comment)
-    match = re.search(r'\bthen\s+([^\n]*?)(\s*//.*)?$', content, re.IGNORECASE | re.MULTILINE)
-    if match:
-        return f'then {match.group(1).strip()}{match.group(2) or ""}'
+    # Match `then` followed by something, but not if it's in a comment
+    for line in content.splitlines():
+        stripped = line.strip()
+
+        # Skip full-line comments
+        if stripped.startswith('//'):
+            continue
+
+        # Remove inline comments
+        code_only = stripped.split('//', 1)[0].strip()
+
+        # Look for 'then' in actual code
+        match = re.search(r'\bthen\s+(.+)', code_only, re.IGNORECASE)
+        if match:
+            return f'then {match.group(1).strip()}'
+
     return None
+
 
 def transform(text):
     blocks = parse_blocks(text)
     response_map = {}
 
-    # Collect first `then` from each Response block
+    # Map response names -> their first then line
     for b in blocks:
         if b['type'] == 'response':
             then_line = extract_first_then(b['content'])
             response_map[b['name'].lower()] = then_line
 
     output = []
+
     for b in blocks:
         if b['type'] == 'rule':
             lines = []
             lines.append(f'Rule {b["name"]}')
             lines.append('{')
+
             rule_lines = b['content'].strip().splitlines()
             applycontext_lines = []
-            response_seen = False
-
-            then_to_insert = response_map.get(b['name'].lower())
 
             for line in rule_lines:
                 stripped = line.strip()
 
                 if stripped.lower().startswith('response '):
-                    response_seen = True
                     lines.append(f'    {stripped}')
-                    if then_to_insert:
-                        lines.append(f'    {then_to_insert}')
+
+                    # Get the response name from the line
+                    parts = stripped.split()
+                    if len(parts) > 1:
+                        response_name = parts[1].strip().lower()
+                        then_line = response_map.get(response_name)
+                        if then_line:
+                            lines.append(f'    {then_line}')
+
                 elif stripped.lower().startswith('applycontext'):
                     applycontext_lines.append(f'    {stripped}')
                 else:
                     lines.append(f'    {stripped}')
 
-            # Insert applycontext lines last
             lines.extend(applycontext_lines)
             lines.append('}')
             output.append('\n'.join(lines))
 
     return '\n\n'.join(output)
+
+
 
 # Example usage
 with open("8_rules_name_replace.txt", "r", encoding="utf-8") as f:

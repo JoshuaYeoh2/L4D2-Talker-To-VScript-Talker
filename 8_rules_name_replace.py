@@ -47,15 +47,15 @@ if __name__ == "__main__":
             # "namvet": "mike",
             # "bill": "mike",
 
-            "gambler": "cliffe",
-            "nick": "cliffe",
+            # "gambler": "cliffe",
+            # "nick": "cliffe",
 
             # "producer": "sara",
             # "rochelle": "sara",
 
             # "coach": "replica",
 
-            # "mechanic": "blake",
-            # "ellis": "blake"
+            "mechanic": "csgo_sas",
+            "ellis": "csgo_sas"
         },
     )

@@ -104,9 +104,9 @@ if __name__ == "__main__":
             # "producer": "sara",
             # "rochelle": "sara",
 
-            "coach": "replica",
+            # "coach": "replica",
 
-            # "mechanic": "blake",
-            # "ellis": "blake",
+            "mechanic": "csgo_sas",
+            "ellis": "csgo_sas",
         }
     )

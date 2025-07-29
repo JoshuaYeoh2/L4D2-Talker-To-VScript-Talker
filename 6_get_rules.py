@@ -121,14 +121,12 @@ if __name__ == "__main__":
         output_path="6_rules.txt",
         suffix_find_replace={
             
+            # "Gambler": "Cliffe",
             # "Coach": "Replica",
+            "Mechanic": "_CSGO_SAS",
             
-            "Gambler": "Cliffe",
-
             # "Namvet": "Mike",
             # "NamVet": "Mike",
-
-            # "another": "example"
         },
         # just_one_file="gambler.txt"
     )

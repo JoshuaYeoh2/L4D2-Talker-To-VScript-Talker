@@ -457,6 +457,82 @@ function IsNotDonorReplica(query) { return query.itemdonor != "Replica"; }
 function IsReplicaAVampire(query) { return query.worldc6m1_replicaisavampire == 1; }
 // function PanicEventDS(query) { return DirectorScript.PanicEventReplica(query) || DirectorScript.PanicEventGambler(query) || DirectorScript.PanicEventMechanic(query) || DirectorScript.PanicEventProducer(query) || DirectorScript.PanicEventBiker(query) || DirectorScript.PanicEventNamVet(query) || DirectorScript.PanicEventManager(query) || DirectorScript.PanicEventTeenGirl(query); }
 
+// csgo sas============================================================================================================================
+
+function IsShotMannCsgo_sas(query) { return query.worldshotmanncsgo_sas > 3; }
+function IsNotSaidShotMannequinCsgo_sas2(query) { return query.worldsaidshotmannequincsgo_sas2 != 1; }
+function Conceptc1m4escapeCsgo_sasCheck(query) { return query.concept == "c1m4escapeCsgo_sasCheck"; }
+function Conceptc1m4escapeCsgo_sasCheckFail(query) { return query.concept == "c1m4escapeCsgo_sasCheckFail"; }
+function Conceptc1m4escapeCsgo_sasCheckSuccess(query) { return query.concept == "c1m4escapeCsgo_sasCheckSuccess"; }
+function IsCsgo_sasActor(query) { return query.csgo_sasactor == 1; }
+function IsNotCsgo_sasIntroduced(query) { return query.worldcsgo_sasintroduced != 1; }
+function _auto_NotC4Csgo_sasInCover(query) { return query.world_auto_c4csgo_sasincover < 1; }
+function _auto_NotCaneExitedCsgo_sas(query) { return query.world_auto_caneexitedcsgo_sas < 1; }
+function _auto_NotLastSurvivorTalkedCsgo_sas(query) { return query.world_auto_lastsurvivortalkedcsgo_sas < 1; }
+function _auto_IsCsgo_sasInCane(query) { return query.world_auto_csgo_sasincane == 1; }
+function _auto_NotCsgo_sasInCane(query) { return query.world_auto_csgo_sasincane < 1; }
+function _auto_IsCsgo_sasWavWindow(query) { return query.world_auto_csgo_saswavwindow == 1; }
+function _auto_IsCsgo_sasInWitchville(query) { return query.world_auto_csgo_sasinwitchville == 1; }
+function _auto_NotCsgo_sasInWitchville(query) { return query.world_auto_csgo_sasinwitchville < 1; }
+function _auto_Csgo_sasIsPressing(query) { return query.world_auto_csgo_saspressing == 1; }
+function _auto_C5M3Csgo_sasReacted(query) { return query.world_auto_c5m3csgo_sasreacted == 1; }
+function _auto_IsTalkingCsgo_sas(query) { return query.world_auto_talkingcsgo_sas == 1; }
+function _auto_NotTimerLockCsgo_sas(query) { return query.world_auto_timerlockcsgo_sas < 1; }
+function _auto_Csgo_sasSawC6M3Bill(query) { return query.world_auto_csgo_sasc6m3bill == 1; }
+function IsNotTalkCsgo_sas(query) { return query.talkcsgo_sas == 1; }
+function IsTalkCsgo_sas(query) { return query.talkcsgo_sas != 1; }
+function IsWorldTalkCsgo_sas(query) { return query.worldtalkcsgo_sas != 1; }
+function IsCsgo_sasNotAlive(query) { return query.iscsgo_sasalive != 1; }
+function IsCsgo_sasAlive(query) { return query.iscsgo_sasalive == 1; }
+function IsSmallTownBarricadeCsgo_sas(query) { return query.worldsmalltownbarricadecsgo_sas != 1; }
+function IsCsgo_sasNear200(query) { return query.disttocsgo_sas < 200; }
+function IsCsgo_sasNear300(query) { return query.disttocsgo_sas < 300; }
+function IsCsgo_sasNear400(query) { return query.disttocsgo_sas < 400; }
+function IsCsgo_sasNear400Weight0(query) { return query.disttocsgo_sas < 400; }
+function IsCsgo_sasNear800(query) { return query.disttocsgo_sas < 800; }
+function IsCsgo_sasFar400(query) { return query.disttocsgo_sas >= 400; }
+function IsCsgo_sasFar1000(query) { return query.disttocsgo_sas > 600; }
+function IsNotSaidFaultFriendlyFireCsgo_sas(query) { return query.worldsaidfaultfriendlyfirecsgo_sas != 1; }
+function IsSaidFaultFriendlyFireCsgo_sas(query) { return query.worldsaidfaultfriendlyfirecsgo_sas == 1; }
+function IsShotTeammateCsgo_sas(query) { return query.worldshotteammatecsgo_sas == 1; }
+function IsNotShotTeammateCsgo_sas(query) { return query.worldshotteammatecsgo_sas != 1; }
+function IsCsgo_sasCrybaby(query) { return query.worldcsgo_sascrying == 1; }
+function WhoPutColaCsgo_sas(query) { return query.worldwhoputcola == "CSGO_SAS"; }
+function PanicEventCsgo_sas(query) { return query.whodidit == "CSGO_SAS"; }
+function IsCsgo_sas(query) { return query.who == "CSGO_SAS"; }
+function IsTriggeredByCsgo_sas(query) { return query.triggeredby == "CSGO_SAS"; }
+function IsDeadCsgo_sas(query) { return query.deadcharacter == "CSGO_SAS"; }
+function IsNotDeadCsgo_sas(query) { return query.deadcharacter != "CSGO_SAS"; }
+function SubjectIsCsgo_sas(query) { return query.subject == "CSGO_SAS"; }
+function SubjectIsNotCsgo_sas(query) { return query.subject != "CSGO_SAS"; }
+function FromIsCsgo_sas(query) { return query.from == "CSGO_SAS"; }
+function FromIsNotCsgo_sas(query) { return query.from != "CSGO_SAS"; }
+function Iswitch_aggro_onCsgo_sas(query) { return query.witch_aggro_on == "CSGO_SAS"; }
+function IsNotSaidBeenJockeyedCsgo_sas(query) { return query.worldsaidbeenjockeyedcsgo_sas != 1; }
+function IsSaidBeenJockeyedCsgo_sas(query) { return query.worldsaidbeenjockeyedcsgo_sas == 1; }
+function IsNotSaidCsgo_sasPounced(query) { return query.worldsaidcsgo_saspounced != 1; }
+function IsCsgo_sasAlsoWarn(query) { return query.worldcsgo_sasalsowarn == 1; }
+function ConceptCsgo_sasInterrupt(query) { return query.concept == "Csgo_sasInterrupt"; }
+function Csgo_sasNotTall(query) { return query.worldcsgo_sastalljoke == 1; }
+function ConceptC13M1Intro2Csgo_sas(query) { return query.concept == "C13M1Intro2Csgo_sas"; }
+function C13M1Csgo_sasNotPanicking(query) { return query.worldc13m1csgo_saspanicking < 1; }
+function IsNotSrcGrp_CSGO_SASSTORYINIT(query) { return query.worldsrcgrp_csgo_sasstoryinit < 1; }
+function IsNotSrcGrp_CSGO_SASSTORY(query) { return query.worldsrcgrp_csgo_sasstory < 1; }
+function ConceptC3M4ButtonAnswerCsgo_sas(query) { return query.concept == "C3M4ButtonAnswerCsgo_sas"; }
+function ConceptCsgo_sasStoryReac01(query) { return query.concept == "Csgo_sasStoryReac01"; }
+function ConceptC3M4Button104Csgo_sas(query) { return query.concept == "C3M4Button104Csgo_sas"; }
+function ConceptC6M2Csgo_sasStoryStart1(query) { return query.concept == "C6M2Csgo_sasStoryStart1"; }
+function ConceptC6M3Csgo_sasBridgeStory1(query) { return query.concept == "C6M3Csgo_sasBridgeStory1"; }
+function ConceptC6M3Csgo_sasBridgeStory1a(query) { return query.concept == "C6M3Csgo_sasBridgeStory1a"; }
+function ConceptWorldC6M3_ByBridge01Csgo_sas(query) { return query.concept == "WorldC6M3_ByBridge01Csgo_sas"; }
+function IsCsgo_sasInLoveC6M1(query) { return query.worldcsgo_sasinlovec6m1 == 1; }
+function IsDonorCsgo_sas(query) { return query.itemdonor == "CSGO_SAS"; }
+function IsNotDonorCsgo_sas(query) { return query.itemdonor != "CSGO_SAS"; }
+// function HasDonor(query) { return DirectorScript.IsDonorBiker(query) || DirectorScript.IsDonorTeenGirl(query) || DirectorScript.IsDonorNamVet(query) || DirectorScript.IsDonorManager(query) || DirectorScript.IsDonorCoach(query) || DirectorScript.IsDonorGambler(query) || DirectorScript.IsDonorCsgo_sas(query) || DirectorScript.IsDonorProducer(query) || DirectorScript.IsDonorUnknown(query); }
+function IsSaidOpenedGate1BlameCsgo_sas(query) { return query.worldsaidopenedgate1blamecsgo_sas == 1; }
+function IsNotSaidCsgo_sasBridgeStoryStart(query) { return query.worldsaidcsgo_sasbridgestorystart != 1; }
+function IsEndCsgo_sasBridgeStoryStart(query) { return query.worldendcsgo_sasbridgestorystart == 1; }
+// function PanicEventDS(query) { return DirectorScript.PanicEventCoach(query) || DirectorScript.PanicEventGambler(query) || DirectorScript.PanicEventCsgo_sas(query) || DirectorScript.PanicEventProducer(query) || DirectorScript.PanicEventBiker(query) || DirectorScript.PanicEventNamVet(query) || DirectorScript.PanicEventManager(query) || DirectorScript.PanicEventTeenGirl(query); }
 
 
 // ============================================================================================================================

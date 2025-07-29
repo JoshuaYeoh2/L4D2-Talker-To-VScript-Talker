@@ -106,7 +106,7 @@ if __name__ == "__main__":
 
             # "coach": "haruka",
 
-            # "mechanic": "blake",
-            # "ellis": "blake",
+            "mechanic": "csgo_sas",
+            "ellis": "csgo_sas",
         }
     )

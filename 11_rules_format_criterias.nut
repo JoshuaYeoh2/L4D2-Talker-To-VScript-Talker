@@ -1,81 +1,86 @@
-local jess_cliffe_rules = 
+local csgo_sas_rules = 
 [
 	{
-		name = "C3M1CallFerryCliffe",
+		name = "C3M1CallFerry_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC3M1CallFerry],
-			[PanicEventCliffe],
+			[PanicEventCsgo_sas],
 			[IsNotSaidC3M1CallFerry2],
 		],
-		Response C3M1CallFerryGambler
+		Response C3M1CallFerryMechanic
+		then any C3M1CallFerry2 Csgo_sasActor:1 0
 		ApplyContext "SaidC3M1CallFerry2:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "C3M2OpenDoorCliffe",
+		name = "C3M2OpenDoor_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC3M2OpenDoor],
-			[PanicEventCliffe],
+			[PanicEventCsgo_sas],
 		],
-		Response C3M2OpenDoorGambler
-		ApplyContext "SaidC3M2OpenDoor:1:0,Talk:1:1.492,WarnMegaMob:1:300,SaidSpecialWarn:1:30"
+		Response C3M2OpenDoorMechanic
+		then Csgo_sas C3M2OpenDoor2 Csgo_sasActor:1 0
+		ApplyContext "SaidC3M2OpenDoor:1:0,Talk:1:2.157,WarnMegaMob:1:300,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "c5m4floatstartCliffe",
+		name = "c5m4floatstart_CSGO_SAS",
 		criteria = 
 		[
 			[Conceptc5m4floatstart],
-			[PanicEventCliffe],
+			[PanicEventCsgo_sas],
 		],
-		Response c5m4floatstartGambler
+		Response c5m4floatstartMechanic
+		then csgo_sas c5m4floatstart2 foo:0 0
 		ApplyContext "Saidc5m4floatstart:1:0,_auto_TractorStarted:1:0,_auto_InMiniFinale:1:0,WarnMegaMob:1:300,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "C1M1InSmokeCliffe",
+		name = "C1M1InSmoke_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptTalkIdle],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsSaidC1M1InSmoke],
 			[ismap_c1m1_hotel],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response C1M1InSmokeGambler
+		Response C1M1InSmokeMechanic
+		then any C1M1Cough foo:0 -1.399
 	},
 	{
-		name = "C1M3AlarmOffCliffe",
+		name = "C1M3AlarmOff_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC1M3AlarmOff2],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C1M3AlarmOffGambler
+		Response C1M3AlarmOffMechanic
+		then any C1M3AlarmOffa foo:0 .5
 	},
 	{
-		name = "C1M3AlarmActiveCliffe",
+		name = "C1M3AlarmActive_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC1M3AlarmActive],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C1M3AlarmActiveGambler
+		Response C1M3AlarmActiveMechanic
 	},
 	{
-		name = "C4M3SaferoomCliffe",
+		name = "C4M3Saferoom_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptTalkIdle],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[NotInCombat],
 			[IsInStartArea],
 			[IsNotAlone],
@@ -87,668 +92,773 @@ local jess_cliffe_rules =
 			[_auto_IsSafeRoomStart],
 			[IsNotSpeakingWeight0],
 		],
-		Response C4M3SaferoomGambler
+		Response C4M3SaferoomMechanic
+		then any _c4m3_startsafe02 foo:0 0.01
 		ApplyContext "_auto_SafeRoomStart:2:0"
 		applycontexttoworld
 	},
 	{
-		name = "L4D1PlayerNiceShotFrancisC6M3Cliffe",
+		name = "L4D1PlayerNiceShotFrancisC6M3_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerNiceShot],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IssuerNotSoClose],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
 			[IsC6M3_Port],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[SubjectIsBiker],
 			[ChanceToFire70Percent],
 			[IsNotSpeaking],
 		],
-		Response L4D1PlayerNiceShotFrancisC6M3Gambler
+		Response L4D1PlayerNiceShotFrancisC6M3Mechanic
 	},
 	{
-		name = "PlayerNiceShotFrancisCliffe",
+		name = "PlayerNiceShotFrancis_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerNiceShot],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IssuerClose],
 			[IsTalk],
-			[IsTalkCliffe],
-			[ChanceToFire10Percent],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[SubjectIsBiker],
-		],
-		Response PlayerNiceShotFrancisGambler
-	},
-	{
-		name = "L4D1PlayerNiceShotLouisC6M3Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerNiceShot],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IssuerNotSoClose],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsC6M3_Port],
-			[SubjectIsManager],
-			[ChanceToFire70Percent],
-			[IsNotSpeaking],
-		],
-		Response L4D1PlayerNiceShotLouisC6M3Gambler
-	},
-	{
-		name = "PlayerNiceShotLouisCliffe",
-		criteria = 
-		[
-			[ConceptPlayerNiceShot],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IssuerClose],
-			[IsTalk],
-			[IsTalkCliffe],
-			[ChanceToFire10Percent],
-			[IsWorldTalkCliffe],
-			[SubjectIsManager],
-		],
-		Response PlayerNiceShotLouisGambler
-	},
-	{
-		name = "L4D1PlayerNiceShotLouisEllisC6M3Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerNiceShot],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IssuerNotSoClose],
-			[IsMechanicAlive],
-			[IsMechanicNear800],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsC6M3_Port],
-			[SubjectIsManager],
-			[ChanceToFire20Percent],
-			[IsNotSpeaking],
-		],
-		Response L4D1PlayerNiceShotLouisEllisC6M3Gambler
-	},
-	{
-		name = "L4D1PlayerNiceShotZoeyC6M3Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerNiceShot],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IssuerNotSoClose],
-			[IsC6M3_Port],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[SubjectIsTeenGirl],
-			[ChanceToFire70Percent],
-			[IsNotSpeaking],
-		],
-		Response L4D1PlayerNiceShotZoeyC6M3Gambler
-	},
-	{
-		name = "PlayerNiceShotZoeyCliffe",
-		criteria = 
-		[
-			[ConceptPlayerNiceShot],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IssuerClose],
-			[IsTalk],
-			[IsTalkCliffe],
-			[ChanceToFire10Percent],
-			[IsWorldTalkCliffe],
-			[SubjectIsTeenGirl],
-		],
-		Response PlayerNiceShotZoeyGambler
-	},
-	{
-		name = "PlayerNiceShotCliffe",
-		criteria = 
-		[
-			[ConceptPlayerNiceShot],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IssuerClose],
-			[IsTalk],
-			[IsTalkCliffe],
 			[ChanceToFire30Percent],
-			[IsWorldTalkCliffe],
+			[IsNotSpeaking],
 		],
-		Response PlayerNiceShotGambler
+		Response PlayerNiceShotFrancisMechanic
 	},
 	{
-		name = "L4D1PlayerNiceShotCliffe",
+		name = "L4D1PlayerNiceShotLouisC6M3_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerNiceShot],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IssuerNotSoClose],
 			[IsC6M3_Port],
 			[IsTalk],
-			[IsTalkCliffe],
-			[SubjectIsNotMechanic],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[SubjectIsManager],
+			[ChanceToFire70Percent],
+			[IsNotSpeaking],
+		],
+		Response L4D1PlayerNiceShotLouisC6M3Mechanic
+	},
+	{
+		name = "PlayerNiceShotLouis_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerNiceShot],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IssuerClose],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[SubjectIsManager],
+			[ChanceToFire10Percent],
+			[IsNotSpeaking],
+		],
+		Response PlayerNiceShotLouisMechanic
+	},
+	{
+		name = "L4D1PlayerNiceShotZoeyC6M3_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerNiceShot],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IssuerNotSoClose],
+			[IsC6M3_Port],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[SubjectIsTeenGirl],
+			[ChanceToFire70Percent],
+			[IsFrancisIntroActor],
+			[IsNotSpeaking],
+		],
+		Response L4D1PlayerNiceShotZoeyC6M3Mechanic
+	},
+	{
+		name = "L4D1PlayerNiceShotZoeyC6M3Intro_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerNiceShot],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IssuerNotSoClose],
+			[IsC6M3_Port],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[SubjectIsTeenGirl],
+			[ChanceToFire70Percent],
+			[IsZoeyIntroActor],
+			[IsNotSpeaking],
+		],
+		Response L4D1PlayerNiceShotZoeyC6M3IntroMechanic
+	},
+	{
+		name = "PlayerNiceShotZoey_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerNiceShot],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IssuerClose],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[SubjectIsTeenGirl],
+			[ChanceToFire10Percent],
+			[IsNotSpeaking],
+		],
+		Response L4D1PlayerNiceShotZoeyC6M3Mechanic
+	},
+	{
+		name = "PlayerNiceShot_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerNiceShot],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IssuerClose],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[ChanceToFire30Percent],
+			[IsWorldTalkCsgo_sas],
+		],
+		Response PlayerNiceShotMechanic
+	},
+	{
+		name = "L4D1PlayerNiceShot_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerNiceShot],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IssuerNotSoClose],
+			[IsC6M3_Port],
 			[SubjectIsNotProducer],
+			[SubjectIsNotGambler],
 			[SubjectIsNotCoach],
+			[IsTalk],
+			[IsTalkCsgo_sas],
 			[ChanceToFire30Percent],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerNiceShotGambler
+		Response PlayerNiceShotMechanic
 	},
 	{
-		name = "PlayerNiceShotCoachCliffe",
+		name = "PlayerNiceShotCoach_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerNiceShot],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IssuerClose],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[ChanceToFire10Percent],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[SubjectIsCoach],
 		],
-		Response PlayerNiceShotCoachGambler
+		Response PlayerNiceShotCoachMechanic
 	},
 	{
-		name = "PlayerNiceShotMechanicCliffe",
+		name = "PlayerNiceShotGambler_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerNiceShot],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IssuerClose],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[ChanceToFire10Percent],
-			[IsWorldTalkCliffe],
-			[SubjectIsMechanic],
+			[IsWorldTalkCsgo_sas],
+			[SubjectIsGambler],
 		],
-		Response PlayerNiceShotMechanicGambler
+		Response PlayerNiceShotGamblerMechanic
 	},
 	{
-		name = "PlayerNiceShotProducerCliffe",
+		name = "PlayerNiceShotProducer_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerNiceShot],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IssuerClose],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[ChanceToFire10Percent],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[SubjectIsProducer],
 		],
-		Response PlayerNiceShotProducerGambler
+		Response PlayerNiceShotProducerMechanic
 	},
 	{
-		name = "SurvivorMournCoachCliffe",
+		name = "SurvivorMournCoach_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSeeDeadPlayer],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsDeadCoach],
 			[IsNotSaidSomeoneDied],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[HasNotDefibrillator],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response SurvivorMournCoachGambler
+		Response SurvivorMournCoachMechanic
 	},
 	{
-		name = "SurvivorMournCoachC1Cliffe",
+		name = "SurvivorMournCoachC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSeeDeadPlayer],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsDeadCoach],
 			[IsNotSaidSomeoneDied],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[HasNotDefibrillator],
-			[IsWorldTalkCliffe],
-			[C1M1orC1M2],
-			[IsNotSurvival],
+			[IsWorldTalkCsgo_sas],
+			[NoKnowNames],
+			[ismap_c1m1_hotel],
 		],
-		Response SurvivorMournCoachC1Gambler
+		Response SurvivorMournCoachC1Mechanic
 	},
 	{
-		name = "SurvivorMournMechanicCliffe",
+		name = "SurvivorMournGambler_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSeeDeadPlayer],
 			[IsNotCoughing],
-			[IsCliffe],
-			[IsDeadMechanic],
+			[IsCsgo_sas],
+			[IsDeadGambler],
 			[IsNotSaidSomeoneDied],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[HasNotDefibrillator],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response SurvivorMournMechanicGambler
+		Response SurvivorMournGamblerMechanic
 	},
 	{
-		name = "SurvivorMournMechanicC1Cliffe",
+		name = "SurvivorMournGamblerC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSeeDeadPlayer],
 			[IsNotCoughing],
-			[IsCliffe],
-			[IsDeadMechanic],
+			[IsCsgo_sas],
+			[IsDeadGambler],
 			[IsNotSaidSomeoneDied],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[HasNotDefibrillator],
-			[IsWorldTalkCliffe],
-			[C1M1orC1M2],
-			[IsNotSurvival],
+			[IsWorldTalkCsgo_sas],
+			[NoKnowNames],
+			[ismap_c1m1_hotel],
 		],
-		Response SurvivorMournMechanicC1Gambler
+		Response SurvivorMournGamblerC1Mechanic
 	},
 	{
-		name = "SurvivorMournProducerCliffe",
+		name = "SurvivorMournProducer_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSeeDeadPlayer],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsDeadProducer],
 			[IsNotSaidSomeoneDied],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[HasNotDefibrillator],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response SurvivorMournProducerGambler
+		Response SurvivorMournProducerMechanic
 	},
 	{
-		name = "SurvivorMournProducerC1Cliffe",
+		name = "SurvivorMournProducerC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSeeDeadPlayer],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsDeadProducer],
 			[IsNotSaidSomeoneDied],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[HasNotDefibrillator],
-			[IsWorldTalkCliffe],
-			[C1M1orC1M2],
-			[IsNotSurvival],
+			[IsWorldTalkCsgo_sas],
+			[NoKnowNames],
+			[ismap_c1m1_hotel],
 		],
-		Response SurvivorMournProducerC1Gambler
+		Response SurvivorMournProducerC1Mechanic
 	},
 	{
-		name = "_C1M1_ElevatorHelloStartAllAliveCliffe",
+		name = "_C1M1_ElevatorHelloStartAllAlive_CSGO_SAS",
 		criteria = 
 		[
 			[Concept_C1M1_ElevatorHelloStart],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsEveryoneAlive],
 		],
-		Response _C1M1_ElevatorHelloStartAllAliveGambler
+		Response _C1M1_ElevatorHelloStartAllAliveMechanic
+		then any _C1M1_ElevatorHello01c foo:0 -8.677
 	},
 	{
-		name = "C1M1_ElevatorHelloStart2AliveCliffe",
+		name = "_C1M1_ElevatorHelloStart3Alive_CSGO_SAS",
 		criteria = 
 		[
 			[Concept_C1M1_ElevatorHelloStart],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsWithTwo],
-		],
-		Response C1M1_ElevatorHelloStart2AliveGambler
-	},
-	{
-		name = "C1M1_ElevatorHelloStart3AliveCliffe",
-		criteria = 
-		[
-			[Concept_C1M1_ElevatorHelloStart],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsWithOnlyThree],
 		],
-		Response C1M1_ElevatorHelloStart3AliveGambler
+		Response _C1M1_ElevatorHelloStart3AliveMechanic
+		then any _C1M1_ElevatorHello3AliveExtra1 foo:0 -3.112
 	},
 	{
-		name = "Playerc1m1_enter_elevatorCliffe",
+		name = "_C1M1_ElevatorHelloStart2Alive_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_C1M1_ElevatorHelloStart],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsWithTwo],
+		],
+		Response _C1M1_ElevatorHelloStart2AliveMechanic
+		then any _C1M1_ElevatorHello2AliveName2 foo:0 -2.926
+	},
+	{
+		name = "C3M1FerryInTransit_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC3M1FerryInTransit],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidC3M1FerryInTransit],
+			[IsWorldTalkCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C3M1FerryInTransitMechanic
+		ApplyContext "SaidC3M1FerryInTransit:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "Playerc1m1_enter_elevator_CSGO_SAS",
 		criteria = 
 		[
 			[Conceptc1m1_enter_elevator],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidc1m1_enter_elevator],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response Playerc1m1_enter_elevatorGambler
+		Response Playerc1m1_enter_elevatorMechanic
 		ApplyContext "Saidc1m1_enter_elevator:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "Playerc1m1_elevator_pushbuttonCliffe",
+		name = "Playerc1m1_elevator_pushbutton_CSGO_SAS",
 		criteria = 
 		[
 			[Conceptc1m1_elevator_pushbutton],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidc1m1_elevator_pushbutton],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response Playerc1m1_elevator_pushbuttonGambler
+		Response Playerc1m1_elevator_pushbuttonMechanic
 		ApplyContext "Saidc1m1_elevator_pushbutton:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkC1M2PreAlarmDoorCliffe",
+		name = "PlayerRemarkC1M2PreAlarmDoor_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC1M2PreStoreAlarm],
 			[IsNotSaidWorldC1M2PreStoreAlarm],
 			[IsNotSaidC1M2AlarmSetoff],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear500],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkC1M2PreAlarmDoorGambler
+		Response PlayerRemarkC1M2PreAlarmDoorMechanic
 		ApplyContext "SaidWorldC1M2PreStoreAlarm:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "C1M2AlarmDoor2Cliffe",
+		name = "C1M2AlarmDoor2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC1M2AlarmDoor2],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotAlone],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C1M2AlarmDoor2Gambler
+		Response C1M2AlarmDoor2Mechanic
+		then orator C1M2StoreAlarm foo:0 0.3
 	},
 	{
-		name = "PlayerRemarkC1M2PostAlarmDoorCliffe",
+		name = "PlayerRemarkC1M2PostAlarmDoor_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC1M2StoreAlarm],
 			[IsSaidC1M2AlarmSetoff],
 			[IsSubjectNear300],
-			[HasWhitakerCola],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[_auto_SaidC1M2GrabbedCola],
 		],
-		Response PlayerRemarkC1M2PostAlarmDoorGambler
+		Response PlayerRemarkC1M2PostAlarmDoorMechanic
+		then orator C1M2WhitakerErrandInProgress foo:0 1
 		ApplyContext "C1M2AlarmSetOff:2:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerC1M2GrabbingColaCliffe",
+		name = "PlayerC1M2GrabbingCola_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidC1M2GrabbingCola2],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsPickedUpColaBottles],
 			[ismap_c1m2_streets],
 			[_auto_NotSaidC1M2GrabbedCola],
 		],
-		Response PlayerC1M2GrabbingColaGambler
-		ApplyContext "SaidC1M2GrabbingCola2:1:5,_auto_SaidC1M2GrabbedCola:1:0,Talk:1:1.699"
+		Response PlayerC1M2GrabbingColaMechanic
+		ApplyContext "SaidC1M2GrabbingCola2:1:5,_auto_SaidC1M2GrabbedCola:1:0,Talk:1:3.092"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerC1M2GrabbingCola2Cliffe",
+		name = "PlayerC1M2GrabbingCola2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidC1M2GrabbingCola2],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsPickedUpColaBottles],
 			[ismap_c1m2_streets],
 			[_auto_SaidC1M2GrabbedCola],
 		],
-		Response PlayerC1M2GrabbingCola2Gambler
-		ApplyContext "SaidC1M2GrabbingCola2:1:5,Talk:1:1.699"
+		Response PlayerC1M2GrabbingCola2Mechanic
+		ApplyContext "SaidC1M2GrabbingCola2:1:5,Talk:1:3.092"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerC1M2FirstOutsideResponseCliffe",
+		name = "PlayerC1M2FirstOutsideResponse_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC1M2FirstOutsideResponse],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[FromIsAnOrator],
 			[IsNotSaidC1M2AlarmSetoff],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response PlayerC1M2FirstOutsideResponseGambler
+		Response PlayerC1M2FirstOutsideResponseMechanic
+		then orator Whitaker.Nags foo:0 10
 	},
 	{
-		name = "PlayerC1M2FirstOutsideResponse3aCliffe",
+		name = "C1M2GunRoomDoorResponseGratitude_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC1M2FirstOutsideResponse3a],
-			[IsCliffe],
-			[FromIsAnOrator],
-			[IsNotSaidC1M2AlarmSetoff],
+			[ConceptC1M2GunRoomDoorResponseGratitude],
+			[IsCsgo_sas],
+			[ChanceToFire50Percent],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response PlayerC1M2FirstOutsideResponse3aGambler
+		Response C1M2GunRoomDoorResponseGratitudeMechanic
 	},
 	{
-		name = "PlayerC1M2FirstOutsideResponse8aCliffe",
-		criteria = 
-		[
-			[ConceptC1M2FirstOutsideResponse8a],
-			[IsCliffe],
-			[FromSet1],
-			[IsNotSaidC1M2AlarmSetoff],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response PlayerC1M2FirstOutsideResponse8aGambler
-	},
-	{
-		name = "PlayerC1M2InsideGunShop2Cliffe",
+		name = "PlayerC1M2InsideGunShop2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC1M2InsideGunShop2],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidC1M2InsideGunShop],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response PlayerC1M2InsideGunShop2Gambler
+		Response PlayerC1M2InsideGunShop2Mechanic
 		ApplyContext "Talk:1:2,SaidC1M2InsideGunShop:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerC3M1CallFerry2Cliffe",
+		name = "PlayerC1M2InsideGunShop3_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC1M2InsideGunShop3],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response PlayerC1M2InsideGunShop3Mechanic
+		ApplyContext "Talk:1:3"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerC1M2InsideGunShopPickupResponse_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC1M2InsideGunShopPickupResponse],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response PlayerC1M2InsideGunShopPickupResponseMechanic
+	},
+	{
+		name = "PlayerC1M2InsideGunShopPickupResponse2_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC1M2InsideGunShopPickupResponse2],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[ChanceToFire30Percent],
+		],
+		Response PlayerC1M2InsideGunShopPickupResponse2Mechanic
+	},
+	{
+		name = "PlayerC1M2GunShopKill_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC1M2Gunshopkill],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IssuerClose],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response PlayerC1M2GunShopKillMechanic
+		ApplyContext "Talk:1:7"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerC3M1CallFerry2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC3M1CallFerry2],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsCliffeActor],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsCsgo_sasActor],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response PlayerC3M1CallFerry2Gambler
+		Response PlayerC3M1CallFerry2Mechanic
+		then any C3M1FerryInTransit foo:0 25
 	},
 	{
-		name = "PlayerC3M1FerryLandedIdleCliffe",
+		name = "PlayerC3M1FerryLandedIdle_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptTalkIdle],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[C3M1Ferry],
 			[IsNotIncapacitated],
-			[IsNotAlone],
 			[NotInCombat],
-			[IsWorldTalkCliffe],
+			[IsNotAlone],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response PlayerC3M1FerryLandedIdleGambler
+		Response PlayerC3M1FerryLandedIdleMechanic
 		ApplyContext "Talk:1:4"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerC3M1FerryLaunched2aCliffe",
+		name = "PlayerC3M1FerryLaunched2a_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC3M1FerryLaunched2],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response PlayerC3M1FerryLaunched2aGambler
+		Response PlayerC3M1FerryLaunched2aMechanic
 	},
 	{
-		name = "PlayerC3M2ComingHomeCliffe",
+		name = "PlayerC3M2ComingHome_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptTalkIdle],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidSafeSpotAhead],
 			[IsSaidC3M2Village1],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response PlayerC3M2ComingHomeGambler
+		Response PlayerC3M2ComingHomeMechanic
 		ApplyContext "Talk:1:1"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerC3M2OpenDoor2Cliffe",
+		name = "_C3M2BloodFarmers_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_C3M2BloodFarmers],
+			[IsCsgo_sas],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _C3M2BloodFarmersMechanic
+	},
+	{
+		name = "PlayerC3M2OpenDoor2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC3M2OpenDoor2],
-			[IsCliffe],
-			[IsTalkCliffe],
-			[IsCliffeActor],
-			[IsWorldTalkCliffe],
+			[IsCsgo_sas],
+			[IsTalkCsgo_sas],
+			[IsCsgo_sasActor],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response PlayerC3M2OpenDoor2Gambler
+		Response PlayerC3M2OpenDoor2Mechanic
 	},
 	{
-		name = "Playerc5m4floatendCliffe",
+		name = "Playerc5m4floatend_CSGO_SAS",
 		criteria = 
 		[
 			[Conceptc5m4floatend2],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response Playerc5m4floatendGambler
+		Response Playerc5m4floatendMechanic
 	},
 	{
-		name = "Playerc5m4floatstart2Cliffe",
+		name = "Playerc5m4floatstart2_CSGO_SAS",
 		criteria = 
 		[
 			[Conceptc5m4floatstart2],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response Playerc5m4floatstart2Gambler
+		Response Playerc5m4floatstart2Mechanic
 	},
 	{
-		name = "PlayerintroC1M1Cliffe",
+		name = "PlayerintroC1M1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptintroC1M1],
-			[IsCliffe],
+			[IsCsgo_sas],
+			[IsNotAlone],
 			[IsNotSaidCXM1Intro],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response PlayerintroC1M1Gambler
+		Response PlayerintroC1M1Mechanic
+		then any _introc1m1 foo:0 4
 		ApplyContext "CXM1Intro:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "WhitakerC1M2DeliverColaCliffe",
+		name = "PlayerintroC1M1Alone_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptintroC1M1],
+			[IsCsgo_sas],
+			[IsAlone],
+			[IsNotSaidCXM1Intro],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response PlayerintroC1M1AloneMechanic
+		then self _introc1m1 foo:0 4
+		ApplyContext "CXM1Intro:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "WhitakerC1M2DeliverCola_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC1M2DeliverCola],
 			[IsC1M2WhitakerErrand],
 			[IsSubjectNear300],
@@ -757,684 +867,694 @@ local jess_cliffe_rules =
 			[AutoIsNotSurvival],
 			[_auto_SaidC1M2GrabbedCola],
 		],
-		Response WhitakerC1M2DeliverColaGambler
+		Response WhitakerC1M2DeliverColaMechanic
+		then orator whitakerputcola foo:0 0
 		ApplyContext "C1M2AlarmSetOff:3:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerPlayerUsingColaBottlesCliffe",
+		name = "PlayerPlayerUsingColaBottles_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerUsingColaBottles],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidPlayerUsingColaBottles],
 		],
 		Response NoResponse
-		ApplyContext "SaidPlayerUsingColaBottles:1:20,WhoPutCola:Cliffe:35"
+		ApplyContext "SaidPlayerUsingColaBottles:1:20,WhoPutCola:Csgo_sas:35"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRelaxedSighCliffe",
+		name = "PlayerRelaxedSigh_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRelaxedSigh],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerRelaxedSighGambler
+		Response PlayerRelaxedSighMechanic
 	},
 	{
-		name = "PlayerStayTogetherInsideReponseCliffe",
+		name = "PlayerStayTogetherInsideReponse_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptStayTogetherInsideReponse],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidStayTogetherInsideReponse],
 			[IsNotHealthySlow],
 			[IsNotInSafeSpot],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerStayTogetherInsideReponseGambler
+		Response PlayerStayTogetherInsideReponseMechanic
 		ApplyContext "SaidStayTogetherInsideReponse:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerUseAdrenalineCliffe",
+		name = "PlayerUseAdrenaline_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptUseAdrenaline],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerUseAdrenalineGambler
+		Response PlayerUseAdrenalineMechanic
 	},
 	{
-		name = "PlayerWorldC3M1FerryCrossingC01Cliffe",
+		name = "PlayerWorldC3M1FeedGator2_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptWorldC3M1FerryCrossingC01],
-			[IsCliffe],
+			[ConceptWorldC3M1FeedGator2],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IssuerClose],
+			[ChanceToFire30Percent],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response PlayerWorldC3M1FerryCrossingC01Gambler
+		Response PlayerWorldC3M1FeedGator2Mechanic
 	},
 	{
-		name = "PlayerWorldC3M1FerryCrossingC03Cliffe",
+		name = "PlayerWorldC3M1FerryCrossingA01_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptWorldC3M1FerryCrossingC03],
-			[IsCliffe],
+			[ConceptWorldC3M1FerryCrossingA01],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response PlayerWorldC3M1FerryCrossingC03Gambler
+		Response PlayerWorldC3M1FerryCrossingA01Mechanic
 	},
 	{
-		name = "PlayerWorldC3M1FerryCrossingD03Cliffe",
+		name = "PlayerWorldC3M1FerryCrossingB01_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptWorldC3M1FerryCrossingB01],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response PlayerWorldC3M1FerryCrossingB01Mechanic
+		then producer WorldC3M1FerryCrossingB02 foo:0 -3.058
+	},
+	{
+		name = "PlayerWorldC3M1FerryCrossingD03_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptWorldC3M1FerryCrossingD03],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response PlayerWorldC3M1FerryCrossingD03Gambler
+		Response PlayerWorldC3M1FerryCrossingD03Mechanic
+		then producer WorldC3M1FerryCrossingD04 foo:0 -1.705
 	},
 	{
-		name = "PlayerWorldC3M1FerryCrossingE03Cliffe",
+		name = "PlayerWorldC3M1FerryCrossingE02_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptWorldC3M1FerryCrossingE03],
-			[IsCliffe],
+			[ConceptWorldC3M1FerryCrossingE02],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response PlayerWorldC3M1FerryCrossingE03Gambler
+		Response PlayerWorldC3M1FerryCrossingE02Mechanic
+		then any WorldC3M1FerryCrossingE03 foo:0 -5.643
 	},
 	{
-		name = "PlayerWorldC3M1FerryCrossingG02Cliffe",
+		name = "PlayerWorldC3M1FerryCrossingE04_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptWorldC3M1FerryCrossingE04],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response PlayerWorldC3M1FerryCrossingE04Mechanic
+	},
+	{
+		name = "PlayerWorldC3M1FerryCrossingG02_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptWorldC3M1FerryCrossingG02],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response PlayerWorldC3M1FerryCrossingG02Gambler
+		Response PlayerWorldC3M1FerryCrossingG02Mechanic
 	},
 	{
-		name = "PlayerWorldC3M1FerryCrossingG04Cliffe",
+		name = "PlayerWorldC3M1FerryCrossingI02_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptWorldC3M1FerryCrossingG04],
-			[IsCliffe],
+			[ConceptWorldC3M1FerryCrossingI02],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response PlayerWorldC3M1FerryCrossingG04Gambler
+		Response PlayerWorldC3M1FerryCrossingI02Mechanic
+		then coach WorldC3M1FerryCrossingI03 foo:0 -3.258
 	},
 	{
-		name = "PlayerWorldC3M1FerryCrossingI01Cliffe",
+		name = "WorldC3M1FerryCrossingM2_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptWorldC3M1FerryCrossingI01],
-			[IsCliffe],
+			[ConceptWorldC3M1FerryCrossingM2],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response PlayerWorldC3M1FerryCrossingI01Gambler
+		Response WorldC3M1FerryCrossingM2Mechanic
+		then gambler WorldC3M1FerryCrossingM3 foo:0 0.1
 	},
 	{
-		name = "ThanksGotItemCliffe",
+		name = "WorldC3M1FerryCrossingM4_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptWorldC3M1FerryCrossingM4],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response WorldC3M1FerryCrossingM4Mechanic
+		then coach WorldC3M1FerryCrossingM5 foo:0 0.1
+	},
+	{
+		name = "PlayerWorldIntroC31_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptWorldIntroC31],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response PlayerWorldIntroC31Mechanic
+		then gambler WorldIntroC31a1 foo:0 -1.960
+	},
+	{
+		name = "ThanksGotItem_CSGO_SAS",
 		criteria = 
 		[
 			[IsAwardConcept],
 			[IsSharingSubject],
 			[IsNotCoughing],
-			[IsCliffe],
-			[SubjectIsCliffe],
+			[SubjectIsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
 		Response NoResponse
 	},
 	{
-		name = "RescuedSurvivorCliffe",
+		name = "RescuedSurvivor_CSGO_SAS",
 		criteria = 
 		[
 			[IsAwardConcept],
 			[IsRescuer],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response RescuedSurvivorGambler
+		Response RescuedSurvivorMechanic
 	},
 	{
-		name = "PlayerGivenItemCliffe",
+		name = "PlayerGivenItem_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerGivenItem],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerGivenItemGambler
+		Response PlayerGivenItemMechanic
 	},
 	{
-		name = "ItemDonorCoachCliffe",
+		name = "ItemDonorProducer_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
-			[IsCliffe],
-			[IsDonorCoach],
-			[ChanceToFire30Percent],
-			[isNotmap_c1m1_hotel],
-			[IsPickedUpValidHealingItem],
-		],
-		Response ItemDonorCoachGambler
-		ApplyContext "TalkCliffe:1:3"
-		applycontexttoworld
-	},
-	{
-		name = "ItemDonorMechanicCliffe",
-		criteria = 
-		[
-			[ConceptPlayerPickup],
-			[IsCliffe],
-			[IsDonorMechanic],
-			[ChanceToFire30Percent],
-			[isNotmap_c1m1_hotel],
-			[IsPickedUpValidHealingItem],
-		],
-		Response ItemDonorMechanicGambler
-		ApplyContext "TalkCliffe:1:3"
-		applycontexttoworld
-	},
-	{
-		name = "ItemDonorProducerCliffe",
-		criteria = 
-		[
-			[ConceptPlayerPickup],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsDonorProducer],
 			[ChanceToFire30Percent],
 			[isNotmap_c1m1_hotel],
 			[IsPickedUpValidHealingItem],
 		],
-		Response ItemDonorProducerGambler
-		ApplyContext "TalkCliffe:1:3"
+		Response ItemDonorProducerMechanic
+		then producer YouAreWelcome foo:0 0
+		ApplyContext "TalkCsgo_sas:1:3"
 		applycontexttoworld
 	},
 	{
-		name = "ItemDonorBikerCliffe",
+		name = "ItemDonorCoach_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
-			[IsCliffe],
+			[IsCsgo_sas],
+			[IsDonorCoach],
+			[ChanceToFire30Percent],
+			[isNotmap_c1m1_hotel],
+			[IsPickedUpValidHealingItem],
+		],
+		Response ItemDonorCoachMechanic
+		then Coach YouAreWelcome foo:0 0
+		ApplyContext "TalkCsgo_sas:1:3"
+		applycontexttoworld
+	},
+	{
+		name = "ItemDonorGambler_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerPickup],
+			[IsCsgo_sas],
+			[IsDonorGambler],
+			[ChanceToFire30Percent],
+			[isNotmap_c1m1_hotel],
+			[IsPickedUpValidHealingItem],
+		],
+		Response ItemDonorGamblerMechanic
+		then gambler YouAreWelcome foo:0 0
+		ApplyContext "TalkCsgo_sas:1:3"
+		applycontexttoworld
+	},
+	{
+		name = "ItemDonorBiker_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerPickup],
+			[IsCsgo_sas],
 			[IsDonorBiker],
 			[ChanceToFire30Percent],
 			[IsPickedUpValidHealingItem],
 		],
-		Response ItemDonorBikerGambler
-		ApplyContext "TalkCliffe:1:3"
+		Response ItemDonorBikerMechanic
+		then gambler YouAreWelcome foo:0 0
+		ApplyContext "TalkCsgo_sas:1:3"
 		applycontexttoworld
 	},
 	{
-		name = "ItemDonorTeenGirlCliffe",
+		name = "ItemDonorTeenGirl_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsDonorTeenGirl],
 			[ChanceToFire30Percent],
 			[IsPickedUpValidHealingItem],
 		],
-		Response ItemDonorTeenGirlGambler
-		ApplyContext "TalkCliffe:1:3"
+		Response ItemDonorTeenGirlMechanic
+		then teengirl YouAreWelcome foo:0 0
+		ApplyContext "TalkCsgo_sas:1:3"
 		applycontexttoworld
 	},
 	{
-		name = "ItemDonorManagerCliffe",
+		name = "ItemDonorManager_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsDonorManager],
 			[ChanceToFire30Percent],
 			[IsPickedUpValidHealingItem],
 		],
-		Response ItemDonorManagerGambler
-		ApplyContext "TalkCliffe:1:3"
+		Response ItemDonorManagerMechanic
+		then manager YouAreWelcome foo:0 0
+		ApplyContext "TalkCsgo_sas:1:3"
 		applycontexttoworld
 	},
 	{
-		name = "ItemDonorNamVetCliffe",
+		name = "ItemDonorNamVet_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsDonorNamVet],
 			[ChanceToFire30Percent],
 			[IsPickedUpValidHealingItem],
 		],
-		Response ItemDonorNamVetGambler
-		ApplyContext "TalkCliffe:1:3"
+		Response ItemDonorNamVetMechanic
+		then namvet YouAreWelcome foo:0 0
+		ApplyContext "TalkCsgo_sas:1:3"
 		applycontexttoworld
 	},
 	{
-		name = "ReviveMeInterruptedMinorCliffe",
+		name = "ReviveMeInterruptedMinor_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptReviveMeInterrupted],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsIncappedStarted],
 			[IsIncappedStarted2],
 		],
-		Response ReviveMeInterruptedMinorGambler
+		Response ReviveMeInterruptedMinorMechanic
 		ApplyContext "ReviveInterrupt:1:2"
 		applycontexttoworld
 	},
 	{
-		name = "ReviveMeInterruptedMajorCliffe",
+		name = "ReviveMeInterruptedMajor_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptReviveMeInterrupted],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsIncappedBleeding1],
 			[IsIncappedBleeding2],
 		],
-		Response ReviveMeInterruptedMajorGambler
+		Response ReviveMeInterruptedMajorMechanic
 		ApplyContext "ReviveInterrupt:1:2"
 		applycontexttoworld
 	},
 	{
-		name = "ReviveMeInterruptedCriticalCliffe",
+		name = "ReviveMeInterruptedCritical_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptReviveMeInterrupted],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsIncappedLethargic],
 		],
-		Response ReviveMeInterruptedCriticalGambler
+		Response ReviveMeInterruptedCriticalMechanic
 		ApplyContext "ReviveInterrupt:1:2"
 		applycontexttoworld
 	},
 	{
-		name = "ReviveThanksCliffe",
+		name = "ReviveThanks_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRevivedByFriend],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 		],
-		Response ReviveThanksGambler
-		ApplyContext "TalkCliffe:1:2"
+		Response ReviveThanksMechanic
+		then subject YouAreWelcome foo:0 0
+		ApplyContext "TalkCsgo_sas:1:2"
 	},
 	{
-		name = "ReviveThanksCoachCliffe",
+		name = "ReviveThanksCoach_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRevivedByFriend],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[SubjectIsCoach],
 			[ChanceToFire30Percent],
-			[isNotmap_c1m1_hotel],
 		],
-		Response ReviveThanksCoachGambler
-		ApplyContext "TalkCliffe:1:2"
+		Response ReviveThanksCoachMechanic
+		then Subject YouAreWelcome foo:0 0
+		ApplyContext "TalkCsgo_sas:1:2"
 	},
 	{
-		name = "ReviveThanksMechanicCliffe",
+		name = "ReviveThanksCoachC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRevivedByFriend],
 			[IsNotCoughing],
-			[IsCliffe],
-			[SubjectIsMechanic],
-			[ChanceToFire30Percent],
-			[isNotmap_c1m1_hotel],
-		],
-		Response ReviveThanksMechanicGambler
-		ApplyContext "TalkCliffe:1:2"
-	},
-	{
-		name = "ReviveThanksProducerCliffe",
-		criteria = 
-		[
-			[ConceptRevivedByFriend],
-			[IsNotCoughing],
-			[IsCliffe],
-			[SubjectIsProducer],
-			[ChanceToFire30Percent],
-			[isNotmap_c1m1_hotel],
-		],
-		Response ReviveThanksProducerGambler
-		ApplyContext "TalkCliffe:1:2"
-	},
-	{
-		name = "ReviveThanksProducerC1KnownCliffe",
-		criteria = 
-		[
-			[ConceptRevivedByFriend],
-			[IsNotCoughing],
-			[IsCliffe],
-			[SubjectIsProducer],
+			[IsCsgo_sas],
+			[SubjectIsCoach],
 			[ChanceToFire30Percent],
 			[ismap_c1m1_hotel],
-			[YesKnowNames],
+			[NoKnowNames],
 		],
-		Response ReviveThanksProducerGambler
-		ApplyContext "TalkCliffe:1:2"
+		Response ReviveThanksCoachC1Mechanic
+		then subject YouAreWelcome foo:0 0
+		ApplyContext "TalkCsgo_sas:1:2"
 	},
 	{
-		name = "ReviveThanksBikerCliffe",
+		name = "ReviveThanksGambler_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRevivedByFriend],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
+			[SubjectIsGambler],
+			[ChanceToFire30Percent],
+		],
+		Response ReviveThanksGamblerMechanic
+		then Subject YouAreWelcome foo:0 0
+		ApplyContext "TalkCsgo_sas:1:2"
+	},
+	{
+		name = "ReviveThanksGamblerC1_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRevivedByFriend],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[SubjectIsGambler],
+			[ChanceToFire30Percent],
+			[ismap_c1m1_hotel],
+			[NoKnowNames],
+		],
+		Response ReviveThanksMechanic
+		then subject YouAreWelcome foo:0 0
+		ApplyContext "TalkCsgo_sas:1:2"
+	},
+	{
+		name = "ReviveThanksProducer_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRevivedByFriend],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[SubjectIsProducer],
+			[ChanceToFire30Percent],
+		],
+		Response ReviveThanksProducerMechanic
+		then subject YouAreWelcome foo:0 0
+		ApplyContext "TalkCsgo_sas:1:2"
+	},
+	{
+		name = "ReviveThanksBiker_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRevivedByFriend],
+			[IsNotCoughing],
+			[IsCsgo_sas],
 			[SubjectIsBiker],
 			[ChanceToFire30Percent],
 		],
-		Response ReviveThanksBikerGambler
-		ApplyContext "TalkCliffe:1:2"
+		Response ReviveThanksBikerMechanic
+		then subject YouAreWelcome foo:0 0
+		ApplyContext "TalkCsgo_sas:1:2"
 	},
 	{
-		name = "ReviveThanksTeenGirlCliffe",
+		name = "ReviveThanksManager_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRevivedByFriend],
 			[IsNotCoughing],
-			[IsCliffe],
-			[SubjectIsTeenGirl],
-			[ChanceToFire30Percent],
-		],
-		Response ReviveThanksTeenGirlGambler
-		ApplyContext "TalkCliffe:1:2"
-	},
-	{
-		name = "ReviveThanksManagerCliffe",
-		criteria = 
-		[
-			[ConceptRevivedByFriend],
-			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[SubjectIsManager],
 			[ChanceToFire30Percent],
 		],
-		Response ReviveThanksManagerGambler
-		ApplyContext "TalkCliffe:1:2"
+		Response ReviveThanksManagerMechanic
+		then subject YouAreWelcome foo:0 0
+		ApplyContext "TalkCsgo_sas:1:2"
 	},
 	{
-		name = "AutoYouAreWelcomeCliffe",
+		name = "ReviveThanksNamVet_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptYouWelcome],
+			[ConceptRevivedByFriend],
 			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[TimeSinceGroupInCombat05],
-			[IsNotSpeaking],
-			[IsWorldTalkCliffe],
+			[IsCsgo_sas],
+			[SubjectIsNamVet],
+			[ChanceToFire30Percent],
 		],
-		Response AutoYouAreWelcomeGambler
+		Response ReviveThanksManagerMechanic
+		then subject YouAreWelcome foo:0 0
+		ApplyContext "TalkCsgo_sas:1:2"
 	},
 	{
-		name = "AutoYouAreWelcomeC1Cliffe",
+		name = "ReviveThanksTeenGirl_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptYouWelcome],
+			[ConceptRevivedByFriend],
 			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[TimeSinceGroupInCombat05],
-			[IsNotSpeaking],
-			[IsWorldTalkCliffe],
-			[NoKnowNames],
-			[ismap_c1m1_hotel],
+			[IsCsgo_sas],
+			[SubjectIsTeenGirl],
+			[ChanceToFire30Percent],
 		],
-		Response AutoYouAreWelcomeC1Gambler
+		Response ReviveThanksTeenGirlMechanic
+		then subject YouAreWelcome foo:0 0
+		ApplyContext "TalkCsgo_sas:1:2"
 	},
 	{
-		name = "BotPlayer_YourWelcomeCliffe",
+		name = "BotPlayer_YourWelcome_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptSurvivorBotYouAreWelcome],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response BotPlayer_YourWelcomeGambler
+		Response BotPlayer_YourWelcomeMechanic
 	},
 	{
-		name = "BotPlayer_YourWelcomeC1Cliffe",
-		criteria = 
-		[
-			[ConceptSurvivorBotYouAreWelcome],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[ismap_c1m1_hotel],
-		],
-		Response BotPlayer_YourWelcomeC1Gambler
-	},
-	{
-		name = "BotReassureComingCliffe",
+		name = "BotReassureComing_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptSurvivorBotReassureComing],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotSpeaking],
 		],
-		Response BotReassureComingGambler
+		Response BotReassureComingMechanic
 	},
 	{
-		name = "BotReassureNearbyCliffe",
-		criteria = 
-		[
-			[ConceptSurvivorBotReassureNearby],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsNotSpeaking],
-		],
-		Response BotReassureNearbyGambler
-	},
-	{
-		name = "BotYesReadyCliffe",
+		name = "BotYesReady_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptSurvivorBotYesReady],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotSpeaking],
 		],
-		Response BotYesReadyGambler
+		Response BotReassureComingMechanic
 	},
 	{
-		name = "C1M2LeavingSafeRoomCliffe",
+		name = "BotReassureNearby_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptSurvivorBotReassureNearby],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsNotSpeaking],
+		],
+		Response BotReassureNearbyMechanic
+	},
+	{
+		name = "C1M2LeavingSafeRoom_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptSurvivorLeavingInitialCheckpoint],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidLeavingSafeArea],
 			[ismap_c1m2_streets],
 			[_auto_NotTellingStory],
 		],
-		Response C1M2LeavingSafeRoomGambler
-		ApplyContext "SaidLeavingSafeArea:1:0,Talk:1:2.989"
+		Response C1M2LeavingSafeRoomMechanic
+		ApplyContext "SaidLeavingSafeArea:1:0,Talk:1:1.547"
 		applycontexttoworld
 	},
 	{
-		name = "C1M2SafeRoomb1Cliffe",
+		name = "C1M2SafeRooma2_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC1M2SafeRoomb1],
-			[IsCliffe],
+			[ConceptC1M2SafeRooma2],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C1M2SafeRoomb1Gambler
+		Response C1M2SafeRooma2Mechanic
+		then self IntroEnd foo:0 0.1
 	},
 	{
-		name = "C1M2SafeRoomb2Cliffe",
+		name = "C1M2SafeRoomc1_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC1M2SafeRoomb2],
-			[IsCliffe],
+			[ConceptC1M2SafeRoomc1],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C1M2SafeRoomb2Gambler
+		Response C1M2SafeRoomc1Mechanic
+		then gambler C1M2SafeRoomc2 foo:0 -3.765
 	},
 	{
-		name = "C1M2SafeRoomb3Cliffe",
-		criteria = 
-		[
-			[ConceptC1M2SafeRoomb3],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response C1M2SafeRoomb3Gambler
-	},
-	{
-		name = "C1M2SafeRoomc2Cliffe",
-		criteria = 
-		[
-			[ConceptC1M2SafeRoomc2],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response C1M2SafeRoomc2Gambler
-	},
-	{
-		name = "C1M2SafeRoomd1Cliffe",
-		criteria = 
-		[
-			[ConceptC1M2SafeRoomd1],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response C1M2SafeRoomd1Gambler
-	},
-	{
-		name = "C1M2TankerAttackCliffe",
+		name = "C1M2TankerAttack_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC1M2TankerAttack2],
-			[IsCliffe],
-			[WhoPutColaCliffe],
+			[IsCsgo_sas],
+			[WhoPutColaCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C1M2TankerAttackGambler
+		Response C1M2TankerAttackMechanic
+		then orator C1M2GoodLuckGettingToTheMall foo:0 3
 	},
 	{
-		name = "c1m4escapeCliffe",
+		name = "c1m4escape_CSGO_SAS",
 		criteria = 
 		[
 			[Conceptc1m4escape],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[NotSaidOutro],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response c1m4escapeGambler
+		Response c1m4escapeMechanic
 		ApplyContext "Talk:1:0,SaidOutro:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "c1m4escapeEllisCliffe",
+		name = "c1m4escapeCheckSuccess_CSGO_SAS",
 		criteria = 
 		[
-			[Conceptc1m4escape],
-			[IsCliffe],
-			[IsMechanicAlive],
-			[ChanceToFire50Percent],
-			[NotSaidOutro],
+			[Conceptc1m4escapeCsgo_sasCheck],
+			[IsCsgo_sas],
+			[IsNotIncapacitated],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response c1m4escapeEllisGambler
-		ApplyContext "Talk:1:0,SaidOutro:1:0"
-		applycontexttoworld
+		Response c1m4escapeCheckSuccessMechanic
+		then from c1m4escapeCsgo_sasCheckSuccess foo:0 0
 	},
 	{
-		name = "c1m4escapeEllisSuccessCliffe",
+		name = "c1m4escapeCheckFail_CSGO_SAS",
 		criteria = 
 		[
-			[Conceptc1m4escapeEllisCheckSuccess],
-			[IsCliffe],
+			[Conceptc1m4escapeCsgo_sasCheck],
+			[IsCsgo_sas],
+			[IsIncapacitated],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response c1m4escapeEllisSuccessGambler
+		Response c1m4escapeCheckFailMechanic
+		then from c1m4escapeCsgo_sasCheckFail foo:0 0
 	},
 	{
-		name = "c1m4escapeEllisFailCliffe",
-		criteria = 
-		[
-			[Conceptc1m4escapeEllisCheckFail],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response c1m4escapeGambler
-	},
-	{
-		name = "C1M4GasPourCliffe",
+		name = "C1M4GasPour_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPourStarted],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotScavenge],
 			[ismap_c1m4_atrium],
 			[_auto_NotNoGasPourLine],
 		],
-		Response C1M4GasPourGambler
-		ApplyContext "TalkCliffe:1:2"
+		Response C1M4GasPourMechanic
+		ApplyContext "TalkCsgo_sas:1:2"
 	},
 	{
-		name = "C1M4PlayerGetToRescueVehicleCliffe",
+		name = "C1M4PlayerGetToRescueVehicle_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptGetToVehicle],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[ismap_c1m4_atrium],
 			[IsNotCoughing],
 			[IsNotIncapacitated],
@@ -1445,114 +1565,104 @@ local jess_cliffe_rules =
 			[IsInRescueVehicle],
 			[_auto_IsEscapeReady],
 			[_auto_NotTimerLockA],
-			[_auto_NotTimerLockCliffe],
+			[_auto_NotTimerLockCsgo_sas],
 			[IsNotSpeakingWeight0],
 		],
-		Response C1M4PlayerGetToRescueVehicleGambler
-		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockCliffe:1:30"
+		Response C1M4PlayerGetToRescueVehicleMechanic
+		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockCsgo_sas:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "c1m4startelevatorCliffe",
+		name = "c1m4startelevator_CSGO_SAS",
 		criteria = 
 		[
 			[Conceptc1m4startelevator],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response c1m4startelevatorGambler
+		Response c1m4startelevatorMechanic
+		then csgo_sas _c1m4startelevator2 foo:0 -4.816
 		ApplyContext "Talk:1:0,ElevatorTimer:1:25"
 		applycontexttoworld
 	},
 	{
-		name = "C6M3GasPourCliffe",
+		name = "C6M3GasPour_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPourStarted],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotScavenge],
 			[isC6M3_Port],
 			[ChanceToFire70Percent],
 		],
-		Response C6M3GasPourGambler
-		ApplyContext "TalkCliffe:1:2"
+		Response C6M3GasPourMechanic
+		ApplyContext "TalkCsgo_sas:1:2"
 	},
 	{
-		name = "FinaleStartC1M4Cliffe",
+		name = "FinaleStartC1M4_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptFinaleTriggered],
-			[IsCliffe],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsCsgo_sas],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[ismap_c1m4_atrium],
 			[IsNotScavenge],
 			[_auto_NotFinaleStarted],
 		],
-		Response FinaleStartC1M4Gambler
+		Response FinaleStartC1M4Mechanic
 		ApplyContext "Talk:1:3,_auto_Finale:1:0,_auto_NoLostCall:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "GasPourDoneC1M4Cliffe",
+		name = "GasPourDoneC1M4_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPourFinished],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotScavenge],
 			[ismap_c1m4_atrium],
 			[ScoreDoneSC],
 		],
-		Response GasPourDoneC1M4Gambler
+		Response GasPourDoneC1M4Mechanic
 		ApplyContext "_auto_TimerLockA:1:5"
 		applycontexttoworld
 	},
 	{
-		name = "_C2M2_Riders01Cliffe",
-		criteria = 
-		[
-			[Concept_C2M2_Riders01],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _C2M2_Riders01Gambler
-	},
-	{
-		name = "C2M2CarouselIdleCliffe",
+		name = "C2M2CarouselIdle_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptTalkIdle],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[ChanceToFire30Percent],
 			[IsNotIncapacitated],
 			[ismap_c2m2],
-			[IsNotSaidSafeSpotAhead],
 			[IsNotInSafeSpot],
+			[IsNotSaidSafeSpotAhead],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[_auto_IsAlarm],
 			[_auto_NotTimerLockA],
-			[_auto_NotTimerLockCliffe],
+			[_auto_NotTimerLockCsgo_sas],
 			[IsNotSpeakingWeight0],
 		],
-		Response C2M2CarouselIdleGambler
-		ApplyContext "_auto_TimerLockA:1:13,_auto_TimerLockCliffe:1:30"
+		Response C2M2CarouselIdleMechanic
+		ApplyContext "_auto_TimerLockA:1:13,_auto_TimerLockCsgo_sas:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "C2M3RubbleNagIdleCliffe",
+		name = "C2M3RubbleNagIdle_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptTalkIdle],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[ChanceToFire50Percent],
 			[IsNotIncapacitated],
 			[ismap_c2m3],
@@ -1561,112 +1671,402 @@ local jess_cliffe_rules =
 			[_auto_IsTeamNearCoaster],
 			[_auto_NotAlarm],
 			[_auto_NotTimerLockA],
-			[_auto_NotTimerLockCliffe],
+			[_auto_NotTimerLockCsgo_sas],
 			[_auto_IsCoasterExpo],
 			[IsNotSpeakingWeight0],
 		],
-		Response C2M3RubbleNagIdleGambler
-		ApplyContext "Talk:1:1.026,_auto_TimerLockA:1:10,_auto_TimerLockCliffe:1:13"
+		Response C2M3RubbleNagIdleMechanic
+		ApplyContext "Talk:1:0.903,_auto_TimerLockA:1:10,_auto_TimerLockCsgo_sas:1:13"
 		applycontexttoworld
 	},
 	{
-		name = "c2m3_DownHoleCliffe",
+		name = "C2M2Saferoom_CSGO_SAS",
 		criteria = 
 		[
-			[Conceptc2m3downhole],
-			[IsCliffe],
+			[ConceptTalkIdle],
+			[IsCsgo_sas],
+			[NotInCombat],
+			[IsInStartArea],
+			[IsNotAlone],
+			[IsNotSaidLeavingSafeArea],
+			[Ismap_c2m2],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[_auto_NotSafeRoomQuiet],
+			[_auto_IsSafeRoomStart],
+			[IsNotSpeakingWeight0],
+		],
+		Response C2M2SaferoomMechanic
+		then any _C2M2_Riders01 foo:0 0.1
+		ApplyContext "_auto_SafeRoomStart:2:0"
+		applycontexttoworld
+	},
+	{
+		name = "_C2M2_Riders02_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_C2M2_Riders02],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response c2m3_DownHoleGambler
+		Response _C2M2_Riders02Mechanic
+		then self IntroEnd foo:0 0.1
+	},
+	{
+		name = "_C2M2_Riders03_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_C2M2_Riders03],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _C2M2_Riders03Mechanic
+		then self IntroEnd foo:0 0.1
+	},
+	{
+		name = "_C2M2_Riders04_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_C2M2_Riders04],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _C2M2_Riders04Mechanic
+		then coach _C2M2_Riders04 foo:0 0.1
+	},
+	{
+		name = "_C2M2_Riders06_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_C2M2_Riders06],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _C2M2_Riders06Mechanic
+		then self IntroEnd foo:0 0.1
+	},
+	{
+		name = "_C2M2_Riders07_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_C2M2_Riders07],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _C2M2_Riders07Mechanic
+		then self IntroEnd foo:0 0.1
+	},
+	{
+		name = "C2M1Intro_400_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC2M1Intro_400],
+			[IsCsgo_sas],
+			[IsSaidLeavingSafeArea],
+			[IsInStartArea],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C2M1Intro_400Mechanic
+		then csgo_sas C2M1Intro_405 foo:0 0.1
+		ApplyContext "Talk:1:5.363"
+		applycontexttoworld
+	},
+	{
+		name = "C2M1Intro_401_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC2M1Intro_401],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsInStartArea],
+		],
+		Response C2M1Intro_401Mechanic
+		then csgo_sas C2M1Intro_402 foo:0 0.3
+		ApplyContext "Talk:1:3.772"
+		applycontexttoworld
+	},
+	{
+		name = "C2M1Intro_402_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC2M1Intro_402],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsInStartArea],
+		],
+		Response C2M1Intro_402Mechanic
+		ApplyContext "Talk:1:0.790"
+		applycontexttoworld
+	},
+	{
+		name = "C2M1Intro_403_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC2M1Intro_403],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsInStartArea],
+		],
+		Response C2M1Intro_403Mechanic
+		then csgo_sas C2M1Intro_404 foo:0 0.1
+		ApplyContext "Talk:1:1.198"
+		applycontexttoworld
+	},
+	{
+		name = "C2M1Intro_404_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC2M1Intro_404],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsInStartArea],
+		],
+		Response C2M1Intro_404Mechanic
+		ApplyContext "Talk:1:1.506"
+		applycontexttoworld
+	},
+	{
+		name = "C2M1Intro_405_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC2M1Intro_405],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsInStartArea],
+		],
+		Response C2M1Intro_405Mechanic
+		then csgo_sas C2M1Intro_406 foo:0 0.1
+		ApplyContext "Talk:1:1.411"
+		applycontexttoworld
+	},
+	{
+		name = "C2M1Intro_406_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC2M1Intro_406],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsInStartArea],
+		],
+		Response C2M1Intro_406Mechanic
+		ApplyContext "Talk:1:1.506"
+		applycontexttoworld
+	},
+	{
+		name = "C2M1Intro_407_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC2M1Intro_407],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsInStartArea],
+		],
+		Response C2M1Intro_407Mechanic
+		then csgo_sas C2M1Intro_408 foo:0 0.1
+		ApplyContext "Talk:1:2.846"
+		applycontexttoworld
+	},
+	{
+		name = "C2M1Intro_408_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC2M1Intro_408],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsInStartArea],
+		],
+		Response C2M1Intro_408Mechanic
+		ApplyContext "Talk:1:1.098"
+		applycontexttoworld
+	},
+	{
+		name = "c2m3_DownHole_CSGO_SAS",
+		criteria = 
+		[
+			[Conceptc2m3downhole],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response c2m3_DownHoleMechanic
 		ApplyContext "_auto_DownHole:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "c2m3CoasterEndCliffe",
+		name = "c2m3CoasterEnd_CSGO_SAS",
 		criteria = 
 		[
 			[Conceptc2m3CoasterEnd],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response c2m3CoasterEndGambler
+		Response c2m3CoasterEndMechanic
 		ApplyContext "_auto_Alarm:2:0"
 		applycontexttoworld
 	},
 	{
-		name = "C2M3CoasterRunGoCliffe",
+		name = "C2M3CoasterRunGo_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC2M3CoasterRunGo],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C2M3CoasterRunGoGambler
+		Response C2M3CoasterRunGoMechanic
 	},
 	{
-		name = "C2M3CoasterStartCliffe",
+		name = "C2M3CoasterStart_CSGO_SAS",
 		criteria = 
 		[
 			[Conceptc2m3CoasterStart],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C2M3CoasterStartGambler
+		Response C2M3CoasterStartMechanic
+		then csgo_sas _c2m3_howcool foo:0 1.0
 		ApplyContext "WarnMegaMob:1:30,_auto_Alarm:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "c2m3SpotIncendiaryCliffe",
+		name = "C2M3Saferoom_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptPlayerSpotWeapon],
-			[IsIncendiary],
-			[IsCliffe],
-			[IsTalk],
+			[ConceptTalkIdle],
+			[IsCsgo_sas],
 			[NotInCombat],
+			[IsInStartArea],
+			[IsNotAlone],
+			[IsNotSaidLeavingSafeArea],
 			[Ismap_c2m3],
-			[_auto_NotOutOfTunnel],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[_auto_NotSafeRoomQuiet],
+			[_auto_IsSafeRoomStart],
+			[IsNotSpeakingWeight0],
 		],
-		Response c2m3SpotIncendiaryGambler
+		Response C2M3SaferoomMechanic
+		then producer C2M3SafeIntro009 foo:0 0.2
+		ApplyContext "_auto_SafeRoomStart:2:0"
+		applycontexttoworld
 	},
 	{
-		name = "c2m3SeeChopperCliffe",
+		name = "C2M3SafeIntro006_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC2M3SafeIntro006],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C2M3SafeIntro006Mechanic
+		then self IntroEnd foo:0 0.1
+	},
+	{
+		name = "C2M3SafeIntro010_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC2M3SafeIntro010],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C2M3SafeIntro010Mechanic
+		then self IntroEnd foo:0 0.1
+	},
+	{
+		name = "c2m3SeeChopper_CSGO_SAS",
 		criteria = 
 		[
 			[Conceptc2m3SeeChopper],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
 			[IsNotVersus],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response c2m3SeeChopperGambler
+		Response c2m3SeeChopperMechanic
 		ApplyContext "_auto_OutOfTunnel:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "C2M4ButtonPressedCliffe",
+		name = "c2m3SpotIncendiary_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsIncendiary],
+			[IsCsgo_sas],
+			[IsTalk],
+			[NotInCombat],
+			[Ismap_c2m3],
+			[_auto_NotOutOfTunnel],
+		],
+		Response c2m3SpotIncendiaryMechanic
+	},
+	{
+		name = "c2m3SpotKatana_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsKatana],
+			[IsCsgo_sas],
+			[IsTalk],
+			[NotInCombat],
+			[Ismap_c2m3],
+			[_auto_NotOutOfTunnel],
+		],
+		Response c2m3SpotKatanaMechanic
+	},
+	{
+		name = "C2M4ButtonPressed_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC2M4ButtonPressed],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C2M4ButtonPressedGambler
+		Response C2M4ButtonPressedMechanic
 		ApplyContext "_auto_ButtonPressed:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "C2M4Gate000Cliffe",
+		name = "C2M4Gate004_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC2M4Gate004],
+			[IsCsgo_sas],
+			[IsTalk],
+			[NotInCombat],
+			[IsNotCoughing],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C2M4Gate004Mechanic
+		then coach C2M4Gate005 foo:0 0.01
+	},
+	{
+		name = "C2M4Gate000_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC2M4Gate000],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotIncapacitated],
 			[ismap_c2m4],
 			[NotInCombat],
@@ -1676,20 +2076,20 @@ local jess_cliffe_rules =
 			[_auto_IsNearGate],
 			[_auto_NotNearGateNag],
 			[_auto_NotTimerLockA],
-			[_auto_NotTimerLockCliffe],
+			[_auto_NotTimerLockCsgo_sas],
 			[_auto_NotButtonPressed],
 			[IsNotSpeakingWeight0],
 		],
-		Response C2M4Gate000Gambler
-		ApplyContext "Talk:1:1.707,_auto_TimerLockA:1:20,_auto_TimerLockCliffe:1:23,_auto_NearGateNag:1:0"
+		Response C2M4Gate000Mechanic
+		ApplyContext "Talk:1:1.116,_auto_TimerLockA:1:20,_auto_TimerLockCsgo_sas:1:23,_auto_NearGateNag:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "C2M4GateIdleCliffe",
+		name = "C2M4GateIdle_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptTalkIdle],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotIncapacitated],
 			[ismap_c2m4],
 			[NotInCombat],
@@ -1699,320 +2099,275 @@ local jess_cliffe_rules =
 			[_auto_IsNearGateNag],
 			[_auto_IsNearGate],
 			[_auto_NotTimerLockA],
-			[_auto_NotTimerLockCliffe],
+			[_auto_NotTimerLockCsgo_sas],
 			[_auto_NotButtonPressed],
 			[IsNotSpeakingWeight0],
 		],
-		Response C2M4GateIdleGambler
-		ApplyContext "Talk:1:0.886,_auto_TimerLockA:1:20,_auto_TimerLockCliffe:1:23"
+		Response C2M4GateIdleMechanic
+		ApplyContext "Talk:1:1.645,_auto_TimerLockA:1:20,_auto_TimerLockCsgo_sas:1:23"
 		applycontexttoworld
 	},
 	{
-		name = "C2M4GateOpenCalloutCliffe",
+		name = "C2M4GateOpenCallout_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC2M4GateOpenCallout],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotIncapacitated],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response C2M4GateOpenCalloutGambler
-		ApplyContext "Talk:1:0.887"
+		Response C2M4GateOpenCalloutMechanic
+		then any _C2M4_GateOpen001 foo:0 0.1
+		ApplyContext "Talk:1:0.878"
 		applycontexttoworld
 	},
 	{
-		name = "c2m4SeeChopperCliffe",
+		name = "c2m4SeeChopper_CSGO_SAS",
 		criteria = 
 		[
 			[Conceptc2m4SeeChopper],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
 			[NotInCombat],
 			[IsNotCoughing],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response c2m4SeeChopperGambler
+		Response c2m4SeeChopperMechanic
 	},
 	{
-		name = "c2m5_intro003Cliffe",
+		name = "C2M5_Button2Yell_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC2M5_Button2Yell],
+			[IsCsgo_sas],
+			[NotCoachMadAtRiders],
+			[IsNotSpeaking],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C2M5_Button2YellMechanic
+	},
+	{
+		name = "C2M5_Button2YellCoachMad_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC2M5_Button2Yell],
+			[IsCsgo_sas],
+			[CoachMadAtRiders],
+			[IsNotSpeaking],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C2M5_Button2YellMechanic
+	},
+	{
+		name = "C2M5_Choppercoming_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC2M5_Choppercoming],
+			[IsCsgo_sas],
+			[IsNotIncapacitated],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C2M5_ChoppercomingMechanic
+		then any C2M5_PlanWorked foo:0 0.01
+	},
+	{
+		name = "c2m5_intro003_CSGO_SAS",
 		criteria = 
 		[
 			[Conceptc2m5_intro003],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response c2m5_intro003Gambler
+		Response c2m5_intro003Mechanic
+		then self c2m5_intro009 foo:0 0.4
 	},
 	{
-		name = "c2m5_intro004Cliffe",
+		name = "c2m5_intro005_CSGO_SAS",
 		criteria = 
 		[
-			[Conceptc2m5_intro004],
-			[IsCliffe],
+			[Conceptc2m5_intro005],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response c2m5_intro003Gambler
+		Response c2m5_intro005Mechanic
+		then any c2m5_intro006 foo:0 0.1
 	},
 	{
-		name = "c2m5_intro008Cliffe",
+		name = "c2m5_intro008_CSGO_SAS",
 		criteria = 
 		[
 			[Conceptc2m5_intro008],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response c2m5_intro003Gambler
+		Response c2m5_intro008Mechanic
+		then self IntroEnd foo:0 0.1
 	},
 	{
-		name = "c2m5_intro011Cliffe",
+		name = "c2m5_intro009_CSGO_SAS",
+		criteria = 
+		[
+			[Conceptc2m5_intro009],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response c2m5_intro009Mechanic
+		then self IntroEnd foo:0 0.1
+	},
+	{
+		name = "c2m5_intro011_CSGO_SAS",
 		criteria = 
 		[
 			[Conceptc2m5_intro011],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response c2m5_intro011Gambler
+		Response c2m5_intro011Mechanic
+		then any c2m5_intro012 foo:0 0.1
 	},
 	{
-		name = "c2m5_intro015Cliffe",
+		name = "c2m5_intro012_CSGO_SAS",
+		criteria = 
+		[
+			[Conceptc2m5_intro012],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response c2m5_intro012Mechanic
+		then self IntroEnd foo:0 0.1
+	},
+	{
+		name = "c2m5_intro015_CSGO_SAS",
 		criteria = 
 		[
 			[Conceptc2m5_intro015],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response c2m5_intro011Gambler
+		Response c2m5_intro012Mechanic
+		then self IntroEnd foo:0 0.1
 	},
 	{
-		name = "c2m5_intro020Cliffe",
+		name = "c2m5_intro016_CSGO_SAS",
+		criteria = 
+		[
+			[Conceptc2m5_intro016],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response c2m5_intro012Mechanic
+		then self IntroEnd foo:0 0.1
+	},
+	{
+		name = "c2m5_intro020_CSGO_SAS",
 		criteria = 
 		[
 			[Conceptc2m5_intro020],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response c2m5_intro020Gambler
+		Response c2m5_intro012Mechanic
+		then self IntroEnd foo:0 0.1
 	},
 	{
-		name = "C2M5Button1Cliffe",
+		name = "c2m5_intro025_CSGO_SAS",
+		criteria = 
+		[
+			[Conceptc2m5_intro025],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response c2m5_intro012Mechanic
+		then self IntroEnd foo:0 0.1
+	},
+	{
+		name = "c2m5_intro019_CSGO_SAS",
+		criteria = 
+		[
+			[Conceptc2m5_intro019],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response c2m5_intro019Mechanic
+		then any c2m5_intro020 foo:0 0.1
+	},
+	{
+		name = "c2m5_intro024_CSGO_SAS",
+		criteria = 
+		[
+			[Conceptc2m5_intro024],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response c2m5_intro024Mechanic
+		then any c2m5_intro025 foo:0 0.01
+	},
+	{
+		name = "C2M5_PlanWorked_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC2M5_PlanWorked],
+			[IsCsgo_sas],
+			[NotCoachMadAtRiders],
+			[IsNotIncapacitated],
+			[NotInCombat],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C2M5_PlanWorkedMechanic
+	},
+	{
+		name = "C2M5_PlanWorkedCoachMad_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC2M5_PlanWorked],
+			[IsCsgo_sas],
+			[CoachMadAtRiders],
+			[IsNotIncapacitated],
+			[NotInCombat],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C2M5_PlanWorkedMechanic
+	},
+	{
+		name = "C2M5Button1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC2M5Button1],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[_auto_NotButton1],
 		],
-		Response C2M5Button1Gambler
+		Response C2M5Button1Mechanic
 		ApplyContext "_auto_Button1:1:0,_auto_NoLostCall:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorReloadingC2M5Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerReloading],
-			[IsSurvivor],
-			[IsNotZombiePresentTank],
-			[IsNotSpeaking],
-			[IsRocking],
-			[Ismap_c2m5],
-			[IsCliffe],
-			[IsNotIncapacitated],
-			[IsTalk],
-			[IsTalkCliffe],
-			[RecentGroupInCombat10],
-			[HasNotgrenadelauncher],
-			[IsWorldTalkCliffe],
-			[_auto_ConcertIsLive],
-			[_auto_NotRockingOut],
-		],
-		Response SurvivorReloadingC2M5Gambler
-		ApplyContext "_auto_RockingOut:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorReloadingC2M5RockedOutCliffe",
-		criteria = 
-		[
-			[ConceptPlayerReloading],
-			[IsSurvivor],
-			[IsNotZombiePresentTank],
-			[IsNotSpeaking],
-			[IsRocking],
-			[Ismap_c2m5],
-			[IsCliffe],
-			[IsNotIncapacitated],
-			[IsTalk],
-			[IsTalkCliffe],
-			[RecentGroupInCombat10],
-			[HasNotgrenadelauncher],
-			[IsWorldTalkCliffe],
-			[_auto_ConcertIsLive],
-			[_auto_IsRockingOut],
-		],
-		Response NoResponse
-	},
-	{
-		name = "SurvivorVocalizeLookOutC2M5Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerLookOut],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsRocking],
-			[IsWorldTalkCliffe],
-			[ismap_c2m5],
-			[_auto_ConcertIsLive],
-			[_auto_NotRockingOut],
-		],
-		Response SurvivorVocalizeLookOutC2M5Gambler
-		ApplyContext "_auto_RockingOut:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorVocalizeLookOutC2M5RockedOutCliffe",
-		criteria = 
-		[
-			[ConceptPlayerLookOut],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsRocking],
-			[IsWorldTalkCliffe],
-			[ismap_c2m5],
-			[_auto_ConcertIsLive],
-			[_auto_IsRockingOut],
-		],
-		Response NoResponse
-	},
-	{
-		name = "C2M5ReloadingTankCliffe",
-		criteria = 
-		[
-			[ConceptPlayerReloading],
-			[IsSurvivor],
-			[IsNotSpeaking],
-			[IsCliffe],
-			[IsNotIncapacitated],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidReloadingTank],
-			[IsZombiePresentTank],
-			[IsSaidTankWarn2],
-			[IsWorldTalkCliffe],
-			[Ismap_c2m5],
-			[_auto_ConcertIsLive],
-		],
-		Response C2M5ReloadingTankGambler
-		ApplyContext "SaidReloadingTank:1:10,SaidTankWarn2:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerKillTankConfirmationC2M5Cliffe",
-		criteria = 
-		[
-			[ConceptKilledZombie],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[SubjectIsTank],
-			[IsNotSaidTankDead],
-			[IsNotAlone],
-			[IsNotIncapacitated],
-			[IsWorldTalkCliffe],
-			[Ismap_c2m5],
-			[_auto_ConcertIsLive],
-		],
-		Response PlayerKillTankConfirmationC2M5Gambler
-		ApplyContext "SaidTankDead:1:60,TalkCliffe:1:5"
-		applycontexttoworld
-	},
-	{
-		name = "C2M5_Button2YellCliffe",
-		criteria = 
-		[
-			[ConceptC2M5_Button2Yell],
-			[IsCliffe],
-			[NotCoachMadAtRiders],
-			[IsNotSpeaking],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response C2M5_Button2YellGambler
-	},
-	{
-		name = "C2M5_Button2YellCoachMadCliffe",
-		criteria = 
-		[
-			[ConceptC2M5_Button2Yell],
-			[IsCliffe],
-			[CoachMadAtRiders],
-			[IsNotSpeaking],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response C2M5_Button2YellGambler
-	},
-	{
-		name = "C2M5_ChoppercomingCliffe",
-		criteria = 
-		[
-			[ConceptC2M5_Choppercoming],
-			[IsCliffe],
-			[IsNotIncapacitated],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response C2M5_ChoppercomingGambler
-	},
-	{
-		name = "C2M5_PlanWorkedCliffe",
-		criteria = 
-		[
-			[ConceptC2M5_PlanWorked],
-			[IsCliffe],
-			[NotCoachMadAtRiders],
-			[IsNotIncapacitated],
-			[NotInCombat],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response C2M5_PlanWorkedGambler
-	},
-	{
-		name = "C2M5_PlanWorkedCoachMadCliffe",
-		criteria = 
-		[
-			[ConceptC2M5_PlanWorked],
-			[IsCliffe],
-			[CoachMadAtRiders],
-			[IsNotIncapacitated],
-			[NotInCombat],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response C2M5_PlanWorkedGambler
-	},
-	{
-		name = "C2M5ChopperNagCliffe",
+		name = "C2M5ChopperNag_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptGetToVehicle],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Ismap_c2m5],
 			[IsNotCoughing],
 			[IsNotIncapacitated],
@@ -2023,19 +2378,19 @@ local jess_cliffe_rules =
 			[IsNotInRescueVehicle],
 			[_auto_IsEscapeReady],
 			[_auto_NotTimerLockA],
-			[_auto_NotTimerLockCliffe],
+			[_auto_NotTimerLockCsgo_sas],
 			[IsNotSpeakingWeight0],
 		],
-		Response C2M5ChopperNagGambler
-		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockCliffe:1:30"
+		Response C2M5ChopperNagMechanic
+		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockCsgo_sas:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "C2M5InChopperNagCliffe",
+		name = "C2M5InChopperNag_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptGetToVehicle],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Ismap_c2m5],
 			[IsNotCoughing],
 			[IsNotIncapacitated],
@@ -2046,196 +2401,406 @@ local jess_cliffe_rules =
 			[IsInRescueVehicle],
 			[_auto_IsEscapeReady],
 			[_auto_NotTimerLockA],
-			[_auto_NotTimerLockCliffe],
+			[_auto_NotTimerLockCsgo_sas],
 			[IsNotSpeakingWeight0],
 		],
-		Response C2M5InChopperNagGambler
-		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockCliffe:1:30"
+		Response C2M5InChopperNagMechanic
+		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockCsgo_sas:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "C2M5InArenaNagCliffe",
+		name = "C2M5InArenaNag_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptTalkIdle],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[NotInCombat],
 			[Ismap_c2m5],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[_auto_NotButton1],
 			[_auto_NotTimerLockA],
-			[_auto_NotTimerLockCliffe],
+			[_auto_NotTimerLockCsgo_sas],
 			[_auto_IsC2M5InArena],
 			[IsNotSpeakingWeight0],
 		],
-		Response C2M5InArenaNagGambler
-		ApplyContext "_auto_TimerLockA:1:30,_auto_TimerLockCliffe:1:34"
+		Response C2M5InArenaNagMechanic
+		ApplyContext "_auto_TimerLockA:1:30,_auto_TimerLockCsgo_sas:1:34"
 		applycontexttoworld
 	},
 	{
-		name = "C2M5ChopperOCDCliffe",
+		name = "C2M5Singing_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC2M5ChopperOCD],
-			[IsCliffe],
-			[IsNotIncapacitated],
-			[IsNotInRescueVehicle],
-			[CliffeOCD],
+			[ConceptC2M5Microphone],
+			[IsCsgo_sas],
+			[NotInCombat],
+			[Ismap_c2m5],
+			[TimeSinceGroupInCombat02],
+			[IsNotSpeaking],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
+			[_auto_NotButton2],
+			[_auto_IsButton1],
 		],
-		Response C2M5ChopperOCDGambler
+		Response C2M5SingingMechanic
 	},
 	{
-		name = "C2M3SaferoomCliffe",
+		name = "SurvivorReloadingC2M5_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptTalkIdle],
-			[IsCliffe],
-			[NotInCombat],
-			[IsInStartArea],
-			[IsNotAlone],
+			[ConceptPlayerReloading],
+			[IsSurvivor],
+			[IsNotZombiePresentTank],
+			[IsNotSpeaking],
+			[Ismap_c2m5],
+			[IsRocking],
+			[IsCsgo_sas],
+			[IsNotIncapacitated],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[RecentGroupInCombat10],
+			[HasNotgrenadelauncher],
+			[IsWorldTalkCsgo_sas],
+			[_auto_ConcertIsLive],
+			[_auto_NotRockingOut],
+		],
+		Response SurvivorReloadingC2M5Mechanic
+		ApplyContext "_auto_RockingOut:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorReloadingC2M5RockedOut_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerReloading],
+			[IsSurvivor],
+			[IsNotZombiePresentTank],
+			[IsNotSpeaking],
+			[IsRocking],
+			[Ismap_c2m5],
+			[IsCsgo_sas],
+			[IsNotIncapacitated],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[RecentGroupInCombat10],
+			[HasNotgrenadelauncher],
+			[IsWorldTalkCsgo_sas],
+			[_auto_ConcertIsLive],
+			[_auto_IsRockingOut],
+		],
+		Response NoResponse
+	},
+	{
+		name = "SurvivorVocalizeLookOutC2M5_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerLookOut],
+			[IsNotCoughing],
+			[Ismap_c2m5],
+			[IsRocking],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[_auto_ConcertIsLive],
+			[_auto_NotRockingOut],
+		],
+		Response SurvivorVocalizeLookOutC2M5Mechanic
+		ApplyContext "_auto_RockingOut:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorVocalizeLookOutC2M5RockedOut_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerLookOut],
+			[IsNotCoughing],
+			[Ismap_c2m5],
+			[IsRocking],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[_auto_ConcertIsLive],
+			[_auto_IsRockingOut],
+		],
+		Response NoResponse
+	},
+	{
+		name = "C2M5LeaveSafe_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptSurvivorLeavingInitialCheckpoint],
+			[IsCsgo_sas],
+			[ismap_c2m5],
 			[IsNotSaidLeavingSafeArea],
-			[Ismap_c2m3],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[_auto_IsSafeRoomStart],
-			[_auto_NotSafeRoomQuiet],
+		],
+		Response C2M5LeaveSafeMechanic
+		ApplyContext "Talk:0:0,SaidLeavingSafeArea:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "C2M5ReloadingTank_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerReloading],
+			[IsSurvivor],
+			[IsNotSpeaking],
+			[IsCsgo_sas],
+			[IsNotIncapacitated],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidReloadingTank],
+			[IsZombiePresentTank],
+			[IsSaidTankWarn2],
+			[IsWorldTalkCsgo_sas],
+			[Ismap_c2m5],
+			[_auto_ConcertIsLive],
+		],
+		Response C2M5ReloadingTankMechanic
+		ApplyContext "SaidReloadingTank:1:10,SaidTankWarn2:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerKillTankConfirmationC2M5_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptKilledZombie],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[SubjectIsTank],
+			[IsNotSaidTankDead],
+			[IsNotAlone],
+			[IsNotIncapacitated],
+			[IsWorldTalkCsgo_sas],
+			[Ismap_c2m5],
+			[_auto_ConcertIsLive],
 			[IsNotSpeakingWeight0],
 		],
-		Response C2M3SaferoomGambler
-		ApplyContext "_auto_SafeRoomStart:2:0"
+		Response PlayerKillTankConfirmationC2M5Mechanic
+		ApplyContext "SaidTankDead:1:60,TalkCsgo_sas:1:5"
 		applycontexttoworld
 	},
 	{
-		name = "C2M3SafeIntro007Cliffe",
+		name = "C2M5ThankYou_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC2M3SafeIntro007],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response C2M3SafeIntro007Gambler
-	},
-	{
-		name = "C2M3SafeIntro009Cliffe",
-		criteria = 
-		[
-			[ConceptC2M3SafeIntro009],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response C2M3SafeIntro009Gambler
-	},
-	{
-		name = "C2M3SafeIntro010Cliffe",
-		criteria = 
-		[
-			[ConceptC2M3SafeIntro010],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response C2M3SafeIntro010Gambler
-	},
-	{
-		name = "C2M3SafeIntro012Cliffe",
-		criteria = 
-		[
-			[ConceptC2M3SafeIntro012],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response C2M3SafeIntro012Gambler
-	},
-	{
-		name = "C2M3SafeIntro013Cliffe",
-		criteria = 
-		[
-			[ConceptC2M3SafeIntro013],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response C2M3SafeIntro013Gambler
-	},
-	{
-		name = "C3GoingToDieCliffe",
-		criteria = 
-		[
-			[ConceptPlayerGoingToDie],
+			[ConceptC2M5Microphone],
+			[IsCsgo_sas],
+			[NotInCombat],
+			[Ismap_c2m5],
 			[IsNotSpeaking],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotComplainBlock],
-			[ChanceToFire30Percent],
-			[IsWorldTalkCliffe],
-			[IsNotInStartArea],
-			[IsNotInCheckpoint],
-			[IsInSwamp],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[_auto_IsEscapeReady],
 		],
-		Response C3GoingToDieGambler
-		ApplyContext "IsComplain:1:25"
+		Response C2M5ThankYouMechanic
+		ApplyContext "Talk:1:5.287"
+		applycontexttoworld
 	},
 	{
-		name = "C3M1FerryEnd2Cliffe",
+		name = "C3M1FerryEnd2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC3M1FerryEnd2],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidC3M1FerryEnd],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C3M1FerryEnd2Gambler
+		Response C3M1FerryEnd2Mechanic
 		ApplyContext "SaidC3M1FerryEnd:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "WorldC3M1FerryCrossingM3Cliffe",
+		name = "WorldC3M1FerryCrossingRochelle_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptWorldC3M1FerryCrossingM3],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response WorldC3M1FerryCrossingM3Gambler
-	},
-	{
-		name = "C3M2DisgustCliffe",
-		criteria = 
-		[
-			[Conceptc3m2disgust],
-			[IsCliffe],
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[IsWorldC3M1FerryCrossing],
+			[IsNotSaidWorldC3M1FerryCrossing],
+			[IsNotCoughing],
 			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsSubjectNear200],
+			[IsProducerAlive],
+			[ChanceToFire25Percent],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
 		],
-		Response C3M2DisgustGambler
-		ApplyContext "Talk:1:2.028"
+		// 	forceweight 4
+		Response WorldC3M1FerryCrossingRochelleMechanic
+		then producer WorldC3M1FerryCrossingJ2 foo:0 -2.908
+		ApplyContext "SaidWorldC3M1FerryCrossing:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "C3M2SafeRoomCliffe",
+		name = "WorldC3M1FerryCrossingJ3_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptWorldC3M1FerryCrossingJ3],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response WorldC3M1FerryCrossingJ3Mechanic
+	},
+	{
+		name = "WorldC3M1FerryCrossingk3_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptWorldC3M1FerryCrossingk3],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response WorldC3M1FerryCrossingk3Mechanic
+	},
+	{
+		name = "WorldC3M1FerryCrossingL3_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptWorldC3M1FerryCrossingL3],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response WorldC3M1FerryCrossingL3Mechanic
+		then coach WorldC3M1FerryCrossingD01 foo:0 0.1
+	},
+	{
+		name = "C3M2Disgust_CSGO_SAS",
+		criteria = 
+		[
+			[Conceptc3m2disgust],
+			[IsCsgo_sas],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C3M2DisgustMechanic
+		ApplyContext "Talk:1:1.803"
+		applycontexttoworld
+	},
+	{
+		name = "C3M2SafeRooma2_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC3M2SafeRooma2],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C3M2SafeRooma2Mechanic
+		then self IntroEnd foo:0 0.1
+	},
+	{
+		name = "C3M2SafeRoomb3_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC3M2SafeRoomb3],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C3M2SafeRoomb3Mechanic
+		then self IntroEnd foo:0 0.1
+	},
+	{
+		name = "InfoRemc3m2_parachutist1_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[Isc3m2_parachutist],
+			[IsNotSaidc3m2_parachutist],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear400],
+			[ChanceToFire50Percent],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		// 	forceweight 10
+		Response InfoRemc3m2_parachutist1Mechanic
+		then coach InfoRemc3m2_parachutist2 foo:0 -1.466
+		ApplyContext "Saidc3m2_parachutist:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "AUTOBLANK_InfoRemc3m2_parachutist1_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[Isc3m2_parachutist],
+			[IsNotSaidc3m2_parachutist],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear400],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response _PlayerInfoRemarkableBlankMechanic
+		ApplyContext "Saidc3m2_parachutist:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "InfoRemC3M2Bathtub2_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptInfoRemC3M2Bathtub2],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response InfoRemC3M2Bathtub2Mechanic
+		then producer InfoRemC3M2Bathtub3 foo:0 -1.559
+		ApplyContext "Talk:1:1.659"
+		applycontexttoworld
+	},
+	{
+		name = "_C3M2Pirogue2_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_C3M2Pirogue2],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _C3M2Pirogue2Mechanic
+		then any _C3M2Pirogue2 foo:0 0.1
+		ApplyContext "Talk:1:1.750"
+		applycontexttoworld
+	},
+	{
+		name = "C3M3SafeRoom_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptTalkIdle],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[NotInCombat],
-			[ismapc3m2_swamp],
+			[Ismapc3m3_shantytown],
 			[IsInStartArea],
 			[IsNotAlone],
 			[IsNotSaidLeavingSafeArea],
@@ -2245,84 +2810,95 @@ local jess_cliffe_rules =
 			[_auto_NotSafeRoomQuiet],
 			[IsNotSpeakingWeight0],
 		],
-		Response C3M2SafeRoomGambler
+		Response C3M3SafeRoomMechanic
+		then coach C3M3SafeRoom2b2 foo:0 .05
 		ApplyContext "_auto_SafeRoomStart:2:0"
 		applycontexttoworld
 	},
 	{
-		name = "C3M2SafeRoom3dCliffe",
+		name = "C3M3SafeRoom2a2_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC3M2SafeRoom3d],
-			[IsCliffe],
+			[ConceptC3M3SafeRoom2a2],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C3M2SafeRoom3dGambler
+		Response C3M3SafeRoom2a2Mechanic
+		then producer C3M3SafeRoom2a3 foo:0 .05
 	},
 	{
-		name = "C3M2SafeRoomb2Cliffe",
+		name = "C3M3SafeRoom2c3_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC3M2SafeRoomb2],
-			[IsCliffe],
+			[ConceptC3M3SafeRoom2c3],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C3M2SafeRoomb2Gambler
+		Response C3M3SafeRoom2c3Mechanic
+		then self IntroEnd foo:0 0.1
 	},
 	{
-		name = "C3M3SafeRoomCliffe",
+		name = "C3M3SafeRoom2d2_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptTalkIdle],
-			[IsCliffe],
-			[NotInCombat],
-			[Ismapc3m3_shantytown],
-			[IsInStartArea],
-			[IsNotAlone],
+			[ConceptC3M3SafeRoom2d2],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
-			[_auto_IsSafeRoomStart],
-			[_auto_NotSafeRoomQuiet],
-			[IsNotSpeakingWeight0],
 		],
-		Response C3M3SafeRoomGambler
-		ApplyContext "_auto_SafeRoomStart:2:0"
-		applycontexttoworld
+		Response C3M3SafeRoom2d2Mechanic
+		then self IntroEnd foo:0 0.1
 	},
 	{
-		name = "InfoRemC3M3LowerGateaCliffe",
+		name = "InfoRemC3M3Bodies2_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptInfoRemC3M3Bodies2],
+			[IsCsgo_sas],
+			[IssuerClose],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response InfoRemC3M3Bodies2Mechanic
+		then producer InfoRemC3M3Bodies3 foo:0 -1.429
+	},
+	{
+		name = "InfoRemC3M3LowerGatea_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptInfoRemC3M3LowerGatea],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidC3M3BridgeButton],
 			[IntensityUnder25],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response InfoRemC3M3LowerGateaGambler
+		Response InfoRemC3M3LowerGateaMechanic
 	},
 	{
-		name = "InfoRemC3M3Unsanitarya2Cliffe",
+		name = "InfoRemC3M3Unsanitarya1_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptInfoRemC3M3Unsanitarya2],
-			[IsCliffe],
+			[ConceptInfoRemC3M3Unsanitarya1],
+			[IsCsgo_sas],
+			[IssuerClose],
+			[ChanceToFire30Percent],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response InfoRemC3M3Unsanitarya2Gambler
+		Response InfoRemC3M3Unsanitarya1Mechanic
+		then gambler InfoRemC3M3Unsanitarya2 foo:0 -3.766
 	},
 	{
-		name = "C3M4BoatNagsCliffe",
+		name = "C3M4BoatNags_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptGetToVehicle],
-			[IsCliffe],
-			[ismapc3m4_plantation],
+			[IsCsgo_sas],
 			[IsNotCoughing],
+			[ismapc3m4_plantation],
 			[IsNotIncapacitated],
 			[IsRunning],
 			[IsNotAlone],
@@ -2332,21 +2908,21 @@ local jess_cliffe_rules =
 			[IsNotInRescueVehicle],
 			[_auto_IsEscapeReady],
 			[_auto_NotTimerLockA],
-			[_auto_NotTimerLockCliffe],
+			[_auto_NotTimerLockCsgo_sas],
 			[IsNotSpeakingWeight0],
 		],
-		Response C3M4BoatNagsGambler
-		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockCliffe:1:30"
+		Response C3M4BoatNagsMechanic
+		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockCsgo_sas:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "C3M4InBoatNagsCliffe",
+		name = "C3M4InBoatNags_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptGetToVehicle],
-			[IsCliffe],
-			[ismapc3m4_plantation],
+			[IsCsgo_sas],
 			[IsNotCoughing],
+			[ismapc3m4_plantation],
 			[IsNotIncapacitated],
 			[IsNotAlone],
 			[IsTalk],
@@ -2355,247 +2931,281 @@ local jess_cliffe_rules =
 			[IsInRescueVehicle],
 			[_auto_IsEscapeReady],
 			[_auto_NotTimerLockA],
-			[_auto_NotTimerLockCliffe],
+			[_auto_NotTimerLockCsgo_sas],
 			[IsNotSpeakingWeight0],
 		],
-		Response C3M4InBoatNagsGambler
-		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockCliffe:1:30"
+		Response C3M4InBoatNagsMechanic
+		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockCsgo_sas:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "C3M4Button1ACliffe",
+		name = "C3M4Button1A_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC3M4Button1A],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[FromIsAnOrator],
-			[_auto_IsTalkingCliffe],
+			[_auto_IsTalkingCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C3M4Button1AGambler
+		Response C3M4Button1AMechanic
+		then orator C3M4Button101 foo:0 0.3
 	},
 	{
-		name = "C3M4ButtonHowManyAnswer4Cliffe",
+		name = "C3M4ButtonPickUsUp_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC3M4ButtonPickUsUp],
+			[IsCsgo_sas],
+			[FromIsAnOrator],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[_auto_NotFinaleStarted],
+		],
+		Response C3M4ButtonPickUsUpMechanic
+		then orator C3M4ButtonHowMany foo:0 0.3
+	},
+	{
+		name = "C3M4ButtonName_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC3M4ButtonName],
+			[IsCsgo_sas],
+			[FromIsAnOrator],
+			[_auto_IsTalkingCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[_auto_NotFinaleStarted],
+		],
+		Response C3M4ButtonNameMechanic
+		then orator C3M4ButtonHowMany foo:0 0.1
+	},
+	{
+		name = "C3M4HowManyAnswer_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC3M4ButtonHowManyAnswer],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[FromIsAnOrator],
 			[IsEveryoneAlive],
-			[_auto_IsTalkingCliffe],
+			[_auto_IsTalkingCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[_auto_NotFinaleStarted],
 		],
-		Response C3M4ButtonHowManyAnswer4Gambler
+		Response C3M4HowManyAnswerMechanic
+		then orator C3M4Button102 foo:0 0.1
 	},
 	{
-		name = "C3M4ButtonHowManyAnswer3Cliffe",
+		name = "C3M4HowManyAnswerNot4_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC3M4ButtonHowManyAnswer],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[FromIsAnOrator],
-			[IsWithOnlyThree],
-			[_auto_IsTalkingCliffe],
+			[IsEveryoneNotAlive],
+			[_auto_IsTalkingCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[_auto_NotFinaleStarted],
 		],
-		Response C3M4ButtonHowManyAnswer3Gambler
+		Response C3M4HowManyAnswerNot4Mechanic
+		then orator C3M4Button102 foo:0 0.1
 	},
 	{
-		name = "C3M4ButtonHowManyAnswer2Cliffe",
-		criteria = 
-		[
-			[ConceptC3M4ButtonHowManyAnswer],
-			[IsCliffe],
-			[FromIsAnOrator],
-			[IsWithTwo],
-			[_auto_IsTalkingCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[_auto_NotFinaleStarted],
-		],
-		Response C3M4ButtonHowManyAnswer2Gambler
-	},
-	{
-		name = "C3M4ButtonHowManyAnswer1Cliffe",
-		criteria = 
-		[
-			[ConceptC3M4ButtonHowManyAnswer],
-			[IsCliffe],
-			[FromIsAnOrator],
-			[IsAlone],
-			[_auto_IsTalkingCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[_auto_NotFinaleStarted],
-		],
-		Response C3M4ButtonHowManyAnswer1Gambler
-	},
-	{
-		name = "C3M4Button201Cliffe",
+		name = "C3M4Button201_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC3M4Button201],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[FromIsAnOrator],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
-			[_auto_IsTalkingCliffe],
+			[_auto_IsTalkingCsgo_sas],
 		],
-		Response C3M4Button201Gambler
-		ApplyContext "Talk:1:3.424"
+		Response C3M4Button201Mechanic
+		then orator C3M4Button202 foo:0 0.01
+		ApplyContext "Talk:1:2.509"
 		applycontexttoworld
 	},
 	{
-		name = "C3M4Button203Cliffe",
-		criteria = 
-		[
-			[ConceptC3M4Button203],
-			[IsCliffe],
-			[_auto_IsTalkingCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response C3M4Button203Gambler
-	},
-	{
-		name = "C3M4Button202Cliffe",
+		name = "C3M4Button202_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC3M4Button202],
-			[IsCliffe],
 			[FromIsAnOrator],
-			[_auto_IsTalkingCliffe],
+			[_auto_IsTalkingCsgo_sas],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C3M4Button202Gambler
+		Response C3M4Button202Mechanic
+		then orator C3M4Button201 foo:0 0.01
 		ApplyContext "Talk:1:3.424"
 		applycontexttoworld
 	},
 	{
-		name = "C3M4GateBlow01Cliffe",
+		name = "C3M4Button203_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC3M4Button203],
+			[IsCsgo_sas],
+			[FromIsAnOrator],
+			[_auto_IsTalkingCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C3M4Button203Mechanic
+	},
+	{
+		name = "C3M4ReloadingTank_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerReloading],
+			[IsSurvivor],
+			[IsNotSpeaking],
+			[IsCsgo_sas],
+			[IsNotIncapacitated],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidReloadingTank],
+			[IsZombiePresentTank],
+			[IsSaidTankWarn2],
+			[IsWorldTalkCsgo_sas],
+			[ismapc3m4_plantation],
+			[_auto_IsFinaleStarted],
+		],
+		Response C3M4ReloadingTankMechanic
+		ApplyContext "SaidReloadingTank:1:10,SaidTankWarn2:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerKillTankConfirmationC3M4_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptKilledZombie],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[SubjectIsTank],
+			[IsNotSaidTankDead],
+			[IsNotAlone],
+			[IsNotIncapacitated],
+			[IsWorldTalkCsgo_sas],
+			[ismapc3m4_plantation],
+			[IsNotSpeakingWeight0],
+			[_auto_IsFinaleStarted],
+		],
+		Response PlayerKillTankConfirmationC3M4Mechanic
+		ApplyContext "SaidTankDead:1:60,TalkCsgo_sas:1:5"
+		applycontexttoworld
+	},
+	{
+		name = "C3M4GateBlow01_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC3M4GateBlow01],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[FromIsAnOrator],
 			[IsTalk],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C3M4GateBlow01Gambler
-		ApplyContext "_auto_TimerLockA:1:3"
+		Response C3M4GateBlow01Mechanic
+		then orator C3M4GateBlow02 foo:0 0.01
+		ApplyContext "_auto_TimerLockA:1:2"
 		applycontexttoworld
 	},
 	{
-		name = "C4GoingToDieCliffe",
-		criteria = 
-		[
-			[ConceptPlayerGoingToDie],
-			[IsNotSpeaking],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotComplainBlock],
-			[ChanceToFire30Percent],
-			[IsWorldTalkCliffe],
-			[IsNotInStartArea],
-			[IsNotInCheckpoint],
-			[IsCampaign4],
-			[_auto_NotSpottedVehicle],
-		],
-		Response C4GoingToDieGambler
-		ApplyContext "IsComplain:1:25"
-	},
-	{
-		name = "C4StormBlindIdleCliffe",
+		name = "C4StormBlindIdle_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptTalkIdle],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[ChanceToFire30Percent],
 			[IsNotIncapacitated],
 			[_auto_NotTimerLockA],
 			[_auto_IsTimerA],
-			[_auto_NotC4CliffeInCover],
+			[_auto_NotC4Csgo_sasInCover],
 			[IsNotSpeakingWeight0],
 		],
-		Response C4StormBlindIdleGambler
+		Response C4StormBlindIdleMechanic
 		ApplyContext "_auto_TimerA:0:0"
 		applycontexttoworld
 	},
 	{
-		name = "_c4m1Intro20Cliffe",
-		criteria = 
-		[
-			[Concept_c4m1Intro20],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _c4m1Intro20Gambler
-	},
-	{
-		name = "_c4m1Intro23Cliffe",
-		criteria = 
-		[
-			[Concept_c4m1Intro23],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _c4m1Intro23Gambler
-	},
-	{
-		name = "C4M2IdleWitchville03Cliffe",
+		name = "C4M2IdleWitchville01_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnHearZombie],
 			[IsWitchClass],
 			[IsSurvivor],
 			[ismap_c4m2_sugarmill_a],
+			[IsNotSpeaking],
 			[IsNotAlone],
 			[IsClosestSurvivorNear1200],
-			[IsNotSpeaking],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotIncapacitated],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[NotInCombat],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[NotSaidLotsOfWitches],
 			[IsNotSaidSafeSpotAhead],
-			[_auto_IsCliffeInWitchville],
+			[_auto_IsCsgo_sasInWitchville],
 		],
-		Response C4M2IdleWitchville03Gambler
+		Response C4M2IdleWitchville01Mechanic
+		then any _c4m2_Witchville05 foo:0 0.01
 		ApplyContext "SaidWitchWarn:1:20,WarnHeardWitch:1:300,SaidLotsOfWitches:1:90"
 		applycontexttoworld
 	},
 	{
-		name = "C4M2PushedButtonCliffe",
+		name = "C4M2IdleWitchville02_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerWarnHearZombie],
+			[IsWitchClass],
+			[IsSurvivor],
+			[ismap_c4m2_sugarmill_a],
+			[IsNotSpeaking],
+			[IsGamblerAlive],
+			[IsCsgo_sas],
+			[IsNotIncapacitated],
+			[IsTalkCsgo_sas],
+			[NotInCombat],
+			[IsWorldTalkCsgo_sas],
+			[IsGamblerNear400],
+			[ChanceToFire10Percent],
+			[NotSaidLotsOfWitches],
+			[IsNotSaidSafeSpotAhead],
+			[_auto_IsCsgo_sasInWitchville],
+		],
+		Response C4M2IdleWitchville02Mechanic
+		then gambler _c4m2_Witchville01 foo:0 0.01
+		ApplyContext "SaidWitchWarn:1:20,WarnHeardWitch:1:300,SaidLotsOfWitches:1:90"
+		applycontexttoworld
+	},
+	{
+		name = "C4M2PushedButton_CSGO_SAS",
 		criteria = 
 		[
 			[Conceptc4m2_elevator_top_button],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C4M2PushedButtonGambler
+		Response C4M2PushedButtonMechanic
 		ApplyContext "SaidActivatedC4M2Elevator:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "C4M5BoatNagsCliffe",
+		name = "C4M5BoatNags_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptGetToVehicle],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc4m5],
 			[IsNotCoughing],
 			[IsNotIncapacitated],
@@ -2606,19 +3216,19 @@ local jess_cliffe_rules =
 			[IsNotInRescueVehicle],
 			[_auto_IsEscapeReady],
 			[_auto_NotTimerLockA],
-			[_auto_NotTimerLockCliffe],
+			[_auto_NotTimerLockCsgo_sas],
 			[IsNotSpeakingWeight0],
 		],
-		Response C4M5BoatNagsGambler
-		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockCliffe:1:30"
+		Response C4M5BoatNagsMechanic
+		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockCsgo_sas:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "C4M5InBoatNagsCliffe",
+		name = "C4M5InBoatNags_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptGetToVehicle],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc4m5],
 			[IsNotCoughing],
 			[IsNotIncapacitated],
@@ -2629,270 +3239,192 @@ local jess_cliffe_rules =
 			[IsInRescueVehicle],
 			[_auto_IsEscapeReady],
 			[_auto_NotTimerLockA],
-			[_auto_NotTimerLockCliffe],
+			[_auto_NotTimerLockCsgo_sas],
 			[IsNotSpeakingWeight0],
 		],
-		Response C4M5InBoatNagsGambler
-		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockCliffe:1:30"
+		Response C4M5InBoatNagsMechanic
+		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockCsgo_sas:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "C5GoingToDieCliffe",
-		criteria = 
-		[
-			[ConceptPlayerGoingToDie],
-			[IsNotSpeaking],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotComplainBlock],
-			[ChanceToFire30Percent],
-			[IsWorldTalkCliffe],
-			[IsNotInStartArea],
-			[IsNotInCheckpoint],
-			[IsCampaign5],
-		],
-		// 	forceweight 200
-		Response C5GoingToDieGambler
-		ApplyContext "IsComplain:1:25"
-	},
-	{
-		name = "C5M5GoingToDieCliffe",
-		criteria = 
-		[
-			[ConceptPlayerGoingToDie],
-			[IsNotSpeaking],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsOnThirdStrike],
-			[IsNotSaidGoingToDieC5M5],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotComplainBlock],
-			[ChanceToFire30Percent],
-			[IsWorldTalkCliffe],
-			[IsNotInStartArea],
-			[IsNotInCheckpoint],
-			[IsMapc5m5_bridge],
-			[_auto_NotSpottedVehicle],
-		],
-		// 	forceweight 200
-		Response C5M5GoingToDieGambler
-		ApplyContext "IsComplain:1:25,TalkCliffe:1:8,SaidGoingToDieC5M5:1:0"
-	},
-	{
-		name = "C5M1_intro002Cliffe",
+		name = "C5M1_intro002_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC5M1_intro002],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C5M1_intro002Gambler
+		Response C5M1_intro002Mechanic
+		then orator C5M1_intro003 foo:0 0.01
 	},
 	{
-		name = "C5M1_intro004Cliffe",
+		name = "C5M1_intro004_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC5M1_intro004],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsEveryoneAlive],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C5M1_intro004Gambler
+		Response C5M1_intro004Mechanic
+		then coach C5M1_intro008 foo:0 0.01
 	},
 	{
-		name = "C5M1_intro006Cliffe",
+		name = "C5M1_intro005_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC5M1_intro006],
-			[IsCliffe],
+			[ConceptC5M1_intro005],
+			[IsCsgo_sas],
+			[IsEveryoneAlive],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C5M1_intro006Gambler
+		Response C5M1_intro005Mechanic
+		then coach C5M1_intro008 foo:0 0.01
 	},
 	{
-		name = "C5M1_intro007Cliffe",
+		name = "C5M1_intro007_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC5M1_intro007],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C5M1_intro007Gambler
+		Response C5M1_intro007Mechanic
+		then self IntroEnd foo:0 0.1
 	},
 	{
-		name = "C5M1Flyby01Cliffe",
+		name = "C5M1_intro008_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC5M1_intro008],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C5M1_intro008Mechanic
+		then self IntroEnd foo:0 0.1
+	},
+	{
+		name = "C5M1_intro009_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC5M1_intro009],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C5M1_intro009Mechanic
+		then self IntroEnd foo:0 0.1
+	},
+	{
+		name = "C5M1Flyby01_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC5M1Flyby01],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotCoughing],
 			[NotInCombat],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[ChanceToFire80Percent],
 		],
-		Response C5M1Flyby01Gambler
+		Response C5M1Flyby01Mechanic
+		then any C5M1Flyby02 foo:0 0.1
 	},
 	{
-		name = "C5M1Flyby02Cliffe",
-		criteria = 
-		[
-			[ConceptC5M1Flyby02],
-			[IsCliffe],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IssuerClose],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response C5M1Flyby02Gambler
-	},
-	{
-		name = "C5M2AlarmNagCliffe",
+		name = "C5M2AlarmNag_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptTalkIdle],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsMapc5m2_park],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[ChanceToFire80Percent],
 			[_auto_IsAlarm],
 			[_auto_NotTimerLockA],
-			[_auto_NotTimerLockCliffe],
+			[_auto_NotTimerLockCsgo_sas],
 			[IsNotSpeakingWeight0],
 		],
-		Response C5M2AlarmNagGambler
-		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockCliffe:1:13"
+		Response C5M2AlarmNagMechanic
+		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockCsgo_sas:1:13"
 		applycontexttoworld
 	},
 	{
-		name = "C5M2Freeway01Cliffe",
-		criteria = 
-		[
-			[ConceptC5M2Freeway01],
-			[IsCliffe],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsSubjectDistNear400],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response C5M2Freeway01Gambler
-	},
-	{
-		name = "C5M2Horse001Cliffe",
-		criteria = 
-		[
-			[ConceptC5M2Horse001],
-			[IsCliffe],
-			[IsSubjectNear300],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsNotScavenge],
-			[TimeSinceGroupInCombat02],
-			[AutoIsNotSurvival],
-		],
-		Response C5M2Horse001Gambler
-	},
-	{
-		name = "PlayerRemarkc5m2busstationCliffe",
+		name = "PlayerRemarkWorldC502Horse_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[Isc5m2busstation],
-			[IsNotSaidc5m2busstation],
+			[IsCsgo_sas],
+			[IsWorldC502Horse],
+			[IsNotSaidWorldC502Horse],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear500],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[_auto_IsDoorOpen],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkc5m2busstationGambler
-		ApplyContext "Saidc5m2busstation:1:0,Talk:1:1.250"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkc5m2freewayCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
-			[Isc5m2freeway],
-			[IsNotSaidc5m2freeway],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSubjectNear600],
-			[AutoIsNotScavenge],
+			[ChanceToFire50Percent],
+			[IsWorldTalkCsgo_sas],
+			[IsNotScavenge],
 			[AutoIsNotSurvival],
+			[TimeSinceGroupInCombat02],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc5m2freewayGambler
-		ApplyContext "Saidc5m2freeway:1:0,Talk:1:2.216"
+		Response PlayerRemarkWorldC502HorseMechanic
+		then Gambler WorldC502Horse2 foo:0 -2.947
+		ApplyContext "SaidWorldC502Horse:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc5m2parkCliffe",
+		name = "AUTOBLANK_PlayerRemarkWorldC502Horse_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[Isc5m2park],
-			[IsNotSaidc5m2park],
+			[IsCsgo_sas],
+			[IsWorldC502Horse],
+			[IsNotSaidWorldC502Horse],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear400],
-			[AutoIsNotScavenge],
+			[IsTalkCsgo_sas],
+			[IsSubjectNear600],
+			[IsWorldTalkCsgo_sas],
+			[IsNotScavenge],
 			[AutoIsNotSurvival],
+			[TimeSinceGroupInCombat02],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc5m2parkGambler
-		ApplyContext "Saidc5m2park:1:0,Talk:1:1.354"
+		Response _PlayerInfoRemarkableBlankMechanic
+		ApplyContext "SaidWorldC502Horse:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC502Horse2Cliffe",
+		name = "PlayerRemarkWorldC502Horse3_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptWorldC502Horse2],
-			[IsCliffe],
+			[ConceptWorldC502Horse3],
+			[IsCsgo_sas],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSubjectNear300],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[IsNotScavenge],
 			[TimeSinceGroupInCombat02],
 		],
-		Response PlayerRemarkWorldC502Horse2Gambler
+		Response PlayerRemarkWorldC502Horse3Mechanic
 	},
 	{
-		name = "C5M3AlarmFieldNagsCliffe",
+		name = "C5M3AlarmFieldNags_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptTalkIdle],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsMapc5m3_cemetery],
@@ -2905,91 +3437,103 @@ local jess_cliffe_rules =
 			[IsNotSpeakingWeight0],
 		],
 		// 	forceweight 200
-		Response C5M3AlarmFieldNagsGambler
-		ApplyContext "Talk:1:2.073,_auto_TimerLockA:1:12"
+		Response C5M3AlarmFieldNagsMechanic
+		then self C5M3AlarmFieldNags01 foo:0 0.2
+		ApplyContext "Talk:1:3.125,_auto_TimerLockA:1:12"
 		applycontexttoworld
 	},
 	{
-		name = "C5M3AlarmFieldNags01Cliffe",
+		name = "C5M3AlarmFieldNags01_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC5M3AlarmFieldNags01],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[NotInCombat],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[_auto_IsInAlarmField],
 			[_auto_NotAlarmFieldOn],
 		],
-		Response C5M3AlarmFieldNags01Gambler
+		Response C5M3AlarmFieldNags01Mechanic
 	},
 	{
-		name = "C5M3AlarmFieldNags02Cliffe",
+		name = "C5M3AlarmFieldNags03_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC5M3AlarmFieldNags02],
-			[IsCliffe],
+			[ConceptC5M3AlarmFieldNags03],
+			[IsCsgo_sas],
 			[NotInCombat],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C5M3AlarmFieldNags02Gambler
+		Response C5M3AlarmFieldNags03Mechanic
 	},
 	{
-		name = "C5M3Bodies02Cliffe",
-		criteria = 
-		[
-			[ConceptC5M3Bodies02],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response C5M3Bodies02Gambler
-	},
-	{
-		name = "C5M3Bodies04Cliffe",
-		criteria = 
-		[
-			[ConceptC5M3Bodies04],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response C5M3Bodies04Gambler
-	},
-	{
-		name = "C5M3FirstInAlarmCliffe",
-		criteria = 
-		[
-			[ConceptC5M3FirstInAlarmField],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response C5M3FirstInAlarmGambler
-		ApplyContext "Saidremark_caralarm:1:0,Talk:1:3.440"
-		applycontexttoworld
-	},
-	{
-		name = "C5M3Freeway01Cliffe",
-		criteria = 
-		[
-			[ConceptC5M3Freeway01],
-			[IsCliffe],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response C5M3Freeway01Gambler
-	},
-	{
-		name = "C5M3GraveNagsCliffe",
+		name = "C5M3AlarmFieldNags2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptTalkIdle],
-			[IsCliffe],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsMapc5m3_cemetery],
+			[NotInCombat],
+			[IsNotCoughing],
+			[IsTalk],
+			[ChanceToFire10Percent],
+			[IsGamblerAlive],
+			[_auto_IsInAlarmField],
+			[_auto_NotTimerLockA],
+			[_auto_NotAlarmFieldOn],
+			[IsNotSpeakingWeight0],
+		],
+		// 	forceweight 300
+		Response C5M3AlarmFieldNags2Mechanic
+		then gambler C5M3AlarmFieldNags02 foo:0 0.2
+		ApplyContext "Talk:1:2.583,_auto_TimerLockA:1:15"
+		applycontexttoworld
+	},
+	{
+		name = "C5M3Bodies01_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC5M3Bodies01],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C5M3Bodies01Mechanic
+	},
+	{
+		name = "C5M3Bodies02_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC5M3Bodies02],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C5M3Bodies01Mechanic
+	},
+	{
+		name = "C5M3FirstInAlarm_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC5M3FirstInAlarmField],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C5M3FirstInAlarmMechanic
+		ApplyContext "Saidremark_caralarm:1:0,Talk:1:2.675"
+		applycontexttoworld
+	},
+	{
+		name = "C5M3GraveNags_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptTalkIdle],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsMapc5m3_cemetery],
@@ -3000,169 +3544,253 @@ local jess_cliffe_rules =
 			[IsNotAlone],
 			[TimeSinceGroupInCombat02],
 			[IsNotSaidSafeSpotAhead],
+			[IsGamblerAlive],
 			[_auto_IsOffHighway],
 			[IsNotSpeakingWeight0],
 		],
-		Response C5M3GraveNagsGambler
-		ApplyContext "Talk:1:1.278"
-		applycontexttoworld
-	},
-	{
-		name = "C5M3GraveNags01Cliffe",
-		criteria = 
-		[
-			[ConceptC5M3GraveNags01],
-			[IsCliffe],
-			[NotInCombat],
-			[IsNotCoughing],
-			[IsNotAlone],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response C5M3GraveNags01Gambler
-		ApplyContext "Talk:1:3.510"
-		applycontexttoworld
-	},
-	{
-		name = "C5M3GraveNags02Cliffe",
-		criteria = 
-		[
-			[ConceptC5M3GraveNags02],
-			[IsCliffe],
-			[NotInCombat],
-			[IsNotCoughing],
-			[IsNotAlone],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response C5M3GraveNags02Gambler
+		Response C5M3GraveNagsMechanic
+		then self _C5M3GraveSmells foo:0 0.1
 		ApplyContext "Talk:1:2.810"
 		applycontexttoworld
 	},
 	{
-		name = "C5M3Jets2Cliffe",
+		name = "C5M3GraveNagsNOFact_CSGO_SAS",
 		criteria = 
 		[
-			[Conceptc5m3Jets2],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response C5M3Jets2Gambler
-		ApplyContext "Talk:1:1.369"
-		applycontexttoworld
-	},
-	{
-		name = "C5M3StopZombiesCliffe",
-		criteria = 
-		[
-			[ConceptC5M3StopZombies],
-			[IsCliffe],
-			[IssuerClose],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response C5M3StopZombiesGambler
-	},
-	{
-		name = "C5M3manhole01Cliffe",
-		criteria = 
-		[
-			[ConceptC5M3manhole01],
-			[IsCliffe],
-			[IsNotCoughing],
-			[NotInCombat],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response C5M3manhole01Gambler
-	},
-	{
-		name = "C5M3OnBridgeCliffe",
-		criteria = 
-		[
-			[Conceptc5m3OnBridge],
-			[IsCliffe],
-			[IsNotCoughing],
-			[NotInCombat],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response C5M3OnBridgeGambler
-		ApplyContext "Talk:1:4.077,_auto_AlarmFieldOn:2:0"
-		applycontexttoworld
-	},
-	{
-		name = "C5M3SeeGraveyard01Cliffe",
-		criteria = 
-		[
-			[ConceptC5M3SeeGraveyard01],
-			[IsCliffe],
-			[IssuerClose],
-			[NotInCombat],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response C5M3SeeGraveyard01Gambler
-		ApplyContext "Talk:1:4.608"
-		applycontexttoworld
-	},
-	{
-		name = "C5M3SeeGraveyard05Cliffe",
-		criteria = 
-		[
-			[ConceptC5M3SeeGraveyard05],
-			[IsCliffe],
-			[IssuerClose],
-			[NotInCombat],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response C5M3SeeGraveyard05Gambler
-		ApplyContext "Talk:1:2.141"
-		applycontexttoworld
-	},
-	{
-		name = "C5M3SewerIn01Cliffe",
-		criteria = 
-		[
-			[ConceptC5M3SewerIn01],
-			[IsCliffe],
-			[NotInCombat],
-			[IsSubjectDistNear400],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response C5M3SewerIn01Gambler
-	},
-	{
-		name = "C5M3ShootCarCliffe",
-		criteria = 
-		[
-			[ConceptPanicEvent],
-			[IsCliffe],
+			[ConceptTalkIdle],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsMapc5m3_cemetery],
-			[SubjectIsCliffe],
+			[NotInCombat],
+			[IsNotCoughing],
+			[IsTalk],
+			[ChanceToFire10Percent],
+			[IsNotAlone],
+			[TimeSinceGroupInCombat02],
+			[IsNotSaidSafeSpotAhead],
+			[IsGamblerAlive],
+			[IsGamblerNear400],
+			[_auto_IsOffHighway],
+			[_auto_NotSaidC5M3NewOrleansFact],
+			[IsNotSpeakingWeight0],
+		],
+		Response C5M3GraveNagsNOFactMechanic
+		then self C5M3GraveNags01 foo:0 0.4
+		ApplyContext "Talk:1:2.810,_auto_C5M3NewOrleansFact:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "C5M3GraveNags01_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC5M3GraveNags01],
+			[IsCsgo_sas],
+			[NotInCombat],
+			[IsNotCoughing],
+			[IsNotAlone],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C5M3GraveNags01Mechanic
+		then any C5M3GraveNags02 foo:0 0.01
+		ApplyContext "Talk:1:2.810"
+		applycontexttoworld
+	},
+	{
+		name = "_C5M3GraveSmells_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_C5M3GraveSmells],
+			[IsCsgo_sas],
+			[NotInCombat],
+			[IsNotCoughing],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _C5M3GraveSmellsMechanic
+		ApplyContext "Talk:1:0.950"
+		applycontexttoworld
+	},
+	{
+		name = "_C5M3SmallFavors_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_C5M3SmallFavors],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[NotInCombat],
+			[IssuerClose],
+			[IsNotCoughing],
+			[IsTalk],
+			[IsNotSpeakingWeight0],
+		],
+		Response _C5M3SmallFavorsMechanic
+		ApplyContext "Talk:1:1.850"
+		applycontexttoworld
+	},
+	{
+		name = "C5M3Jets2_CSGO_SAS",
+		criteria = 
+		[
+			[Conceptc5m3Jets2],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C5M3Jets2Mechanic
+		then self C5M3Jets3 foo:0 1
+		ApplyContext "Talk:1:3.709"
+		applycontexttoworld
+	},
+	{
+		name = "C5M3Jets3_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC5M3Jets3],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C5M3Jets3Mechanic
+		then gambler C5M3StopZombies foo:0 0.1
+		ApplyContext "Talk:1:3.709"
+		applycontexttoworld
+	},
+	{
+		name = "C5M3StopZombies_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC5M3StopZombies],
+			[IsCsgo_sas],
+			[IssuerClose],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C5M3StopZombiesMechanic
+	},
+	{
+		name = "C5M3OnBridge_CSGO_SAS",
+		criteria = 
+		[
+			[Conceptc5m3OnBridge],
+			[IsCsgo_sas],
+			[IsNotCoughing],
+			[NotInCombat],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response NoResponse
+		ApplyContext "Talk:1:1.267,_auto_AlarmFieldOn:2:0"
+		applycontexttoworld
+	},
+	{
+		name = "C5M3SeeGraveyard01_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC5M3SeeGraveyard01],
+			[IsCsgo_sas],
+			[NotInCombat],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C5M3SeeGraveyard01Mechanic
+		then self C5M3SeeGraveyard03 foo:0 1.0
+		ApplyContext "Talk:1:2.855"
+		applycontexttoworld
+	},
+	{
+		name = "C5M3SeeGraveyard04_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC5M3SeeGraveyard04],
+			[IsCsgo_sas],
+			[NotInCombat],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C5M3SeeGraveyard04Mechanic
+		ApplyContext "Talk:1:3.887"
+		applycontexttoworld
+	},
+	{
+		name = "C5M3SeeGraveyard03_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC5M3SeeGraveyard03],
+			[IsCsgo_sas],
+			[NotInCombat],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C5M3SeeGraveyard03Mechanic
+		then gambler C5M3SeeGraveyard05 foo:0 0.01
+		ApplyContext "Talk:1:3.887"
+		applycontexttoworld
+	},
+	{
+		name = "C5M3SeeGraveyard06_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC5M3SeeGraveyard06],
+			[IsCsgo_sas],
+			[NotInCombat],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C5M3SeeGraveyard06Mechanic
+		ApplyContext "Talk:1:4.504"
+		applycontexttoworld
+	},
+	{
+		name = "C5M3ShootCar_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPanicEvent],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsMapc5m3_cemetery],
+			[SubjectIsCsgo_sas],
 			[IsCarAlarm],
 			[_auto_IsInAlarmField],
 			[_auto_NotAlarmFieldOn],
 		],
-		Response C5M3ShootCarGambler
-		ApplyContext "_auto_AlarmFieldOn:1:0,_auto_TimerLockA:1:2,WarnMegaMob:1:300"
+		Response C5M3ShootCarMechanic
+		ApplyContext "_auto_AlarmFieldOn:1:0,_auto_TimerLockA:1:1.5,WarnMegaMob:1:300"
 		applycontexttoworld
 	},
 	{
-		name = "C5M3ShootCar2Cliffe",
+		name = "C5M3ShootCarNot_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPanicEvent],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsMapc5m3_cemetery],
-			[SubjectIsNotCliffe],
+			[SubjectIsNotCsgo_sas],
+			[IsCarAlarm],
+			[ChanceToFire25Percent],
+			[_auto_IsInAlarmField],
+			[_auto_NotAlarmFieldOn],
+		],
+		// 	forceweight 500
+		Response C5M3ShootCarNotMechanic
+		ApplyContext "_auto_AlarmFieldOn:1:0,_auto_TimerLockA:1:3,WarnMegaMob:1:300"
+		applycontexttoworld
+	},
+	{
+		name = "C5M3ShootCar2_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPanicEvent],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsMapc5m3_cemetery],
+			[SubjectIsNotCsgo_sas],
 			[IsCarAlarm],
 			[ChanceToFire25Percent],
 			[_auto_ShotSecondCar],
@@ -3170,20 +3798,20 @@ local jess_cliffe_rules =
 			[_auto_IsAlarmFieldOn],
 			[_auto_NotTimerLockA],
 		],
-		Response C5M3ShootCar2Gambler
+		Response C5M3ShootCar2Mechanic
 		ApplyContext "_auto_ShotCar:++1,_auto_TimerLockA:1:3"
 		applycontexttoworld
 	},
 	{
-		name = "C5M3ShootCar3Cliffe",
+		name = "C5M3ShootCar3_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPanicEvent],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsMapc5m3_cemetery],
-			[SubjectIsNotCliffe],
+			[SubjectIsNotCsgo_sas],
 			[IsCarAlarm],
 			[ChanceToFire25Percent],
 			[IsNotSpeaking],
@@ -3192,32 +3820,54 @@ local jess_cliffe_rules =
 			[_auto_ShotThirdCar],
 			[_auto_NotTimerLockA],
 		],
-		Response C5M3ShootCar3Gambler
-		ApplyContext "Talk:1:2.879,_auto_ShotCar:++1"
+		Response C5M3ShootCar3Mechanic
+		ApplyContext "Talk:1:1.931,_auto_ShotCar:++1"
 		applycontexttoworld
 	},
 	{
-		name = "C5M3Sniper01Cliffe",
+		name = "C5M3ShootCar3Self_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPanicEvent],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsMapc5m3_cemetery],
+			[SubjectIsCsgo_sas],
+			[IsCarAlarm],
+			[ChanceToFire25Percent],
+			[IsNotSpeaking],
+			[_auto_IsInAlarmField],
+			[_auto_IsAlarmFieldOn],
+			[_auto_ShotThirdCar],
+			[_auto_NotTimerLockA],
+		],
+		Response C5M3ShootCar3SelfMechanic
+		ApplyContext "Talk:1:1.931,_auto_ShotCar:++1"
+		applycontexttoworld
+	},
+	{
+		name = "C5M3Sniper01_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC5M3Sniper01],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotCoughing],
 			[NotInCombat],
-			[IsSubjectDistNear200],
+			[IssuerClose],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C5M3Sniper01Gambler
-		ApplyContext "Talk:1:2.733"
+		Response C5M3Sniper01Mechanic
+		ApplyContext "Talk:1:3"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc5m3bodiesCliffe",
+		name = "PlayerRemarkc5m3bodies_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc5m3bodies],
 			[NotInCombat],
 			[IsSubjectNear100],
@@ -3227,193 +3877,120 @@ local jess_cliffe_rules =
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[_auto_IsSafeRoomStart],
+			[_auto_NotSafeRoomQuiet],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc5m3bodiesGambler
+		Response PlayerRemarkc5m3bodiesMechanic
+		then any WorldC502NotZombies2 foo:0 0.1
 		ApplyContext "_auto_SafeRoomStart:2:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc5m2peopleCliffe",
+		name = "PlayerRemarkc5m2people_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc5m2people],
 			[IsNotSaidc5m2people],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[ChanceToFire50Percent],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc5m2peopleGambler
-		ApplyContext "Saidc5m2people:1:0,Talk:1:5.916"
+		Response PlayerRemarkc5m2peopleMechanic
+		ApplyContext "Saidc5m2people:1:0,Talk:1:1.850"
 		applycontexttoworld
 	},
 	{
-		name = "AUTOBLANK_PlayerRemarkc5m2peopleCliffe",
+		name = "AUTOBLANK_PlayerRemarkc5m2people_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc5m2people],
 			[IsNotSaidc5m2people],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response _PlayerInfoRemarkableBlankGambler
+		Response _PlayerInfoRemarkableBlankMechanic
 		ApplyContext "Saidc5m2people:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc5m3busCliffe",
+		name = "C5M3BeenShot_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptRemark],
-			[IsCliffe],
-			[Isc5m3bus],
-			[IsNotSaidc5m3bus],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear100],
+			[ConceptC5M3BeenShot],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc5m3busGambler
-		ApplyContext "Saidc5m3bus:1:0,Talk:1:1.881"
-		applycontexttoworld
+		Response C5M3BeenShotMechanic
 	},
 	{
-		name = "PlayerRemarkc5m3crashedheliCliffe",
+		name = "PlayerRemarkc5m3crashedheli_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc5m3crashedheli],
 			[IsNotSaidc5m3crashedheli],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear400],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc5m3crashedheliGambler
+		Response PlayerRemarkc5m3crashedheliMechanic
 		ApplyContext "Saidc5m3crashedheli:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc5m3freewayCliffe",
+		name = "PlayerRemarkc5m3insewer_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[Isc5m3freeway],
-			[IsNotSaidc5m3freeway],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear500],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotInStartArea],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkc5m3freewayGambler
-		ApplyContext "Saidc5m3freeway:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkc5m3insewerCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc5m3insewer],
 			[IsNotSaidc5m3insewer],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear250],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc5m3insewerGambler
+		Response PlayerRemarkc5m3insewerMechanic
 		ApplyContext "Saidc5m3insewer:1:0,_auto_InSewer:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc5m3manholeCliffe",
+		name = "PlayerRemarkc5m3safezone_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[Isc5m3manhole],
-			[IsNotSaidc5m3manhole],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear300],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[_auto_NotInSewer],
-			[IsNotSpeakingWeight0],
-		],
-		// 	forceweight 100
-		Response PlayerRemarkc5m3manholeGambler
-		ApplyContext "Saidc5m3manhole:1:0,Talk:1:1.881"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkc5m3offhighwayCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
-			[Isc5m3offhighway],
-			[IsNotSaidc5m3offhighway],
-			[IsSubjectNear500],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkc5m3offhighwayGambler
-		ApplyContext "Saidc5m3offhighway:1:0,_auto_OffHighway:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkc5m3safezoneCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc5m3safezone],
 			[NotInCombat],
 			[IsSubjectNear150],
@@ -3426,23 +4003,65 @@ local jess_cliffe_rules =
 			[_auto_NotSafeRoomQuiet],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc5m3safezoneGambler
+		Response PlayerRemarkc5m3safezoneMechanic
 		ApplyContext "_auto_SafeRoomStart:2:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc5m3seegraveyardCliffe",
+		name = "PlayerRemarkc5m3manhole_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
+			[Isc5m3manhole],
+			[IsNotSaidc5m3manhole],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear300],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[_auto_NotInSewer],
+			[IsNotSpeakingWeight0],
+		],
+		// 	forceweight 100
+		Response PlayerRemarkc5m3manholeMechanic
+		then any Csgo_sasInterrupt foo:0 -11.59
+		ApplyContext "Saidc5m3manhole:1:0,Talk:1:12,_auto_TellingStory:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkc5m3offhighway_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[Isc5m3offhighway],
+			[IsNotSaidc5m3offhighway],
+			[IsSubjectNear500],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkc5m3offhighwayMechanic
+		ApplyContext "Saidc5m3offhighway:1:0,_auto_OffHighway:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkc5m3seegraveyard_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
 			[Isc5m3seegraveyard],
 			[IsNotSaidc5m3seegraveyard],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear500],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
@@ -3452,270 +4071,128 @@ local jess_cliffe_rules =
 			[_auto_NotOffHighway],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc5m3seegraveyardGambler
-		ApplyContext "Saidc5m3seegraveyard:1:0,Talk:1:4.342"
+		Response PlayerRemarkc5m3seegraveyardMechanic
+		then self C5M3SeeGraveyard04 foo:0 0.1
+		ApplyContext "Saidc5m3seegraveyard:1:0,Talk:1:2.855"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc5m3sewercommentCliffe",
+		name = "PlayerRemarkc5m3seegraveyardEllis_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[Isc5m3sewercomment],
-			[IsNotSaidc5m3sewercomment],
+			[IsCsgo_sas],
+			[Isc5m3seegraveyard],
+			[IsNotSaidc5m3seegraveyard],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear150],
-			[IsCliffeAlive],
-			[ChanceToFire50Percent],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear500],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
+			[IsNotAlone],
+			[_auto_IsBridgeBomb],
+			[_auto_NotTimerLockA],
+			[_auto_NotOffHighway],
 			[IsNotSpeakingWeight0],
+			[_auto_C5M3Csgo_sasReacted],
 		],
-		Response PlayerRemarkc5m3sewercommentGambler
-		ApplyContext "Saidc5m3sewercomment:1:0,Talk:1:2.353"
+		Response PlayerRemarkc5m3seegraveyardEllisMechanic
+		ApplyContext "Saidc5m3seegraveyard:1:0,Talk:1:2.855"
 		applycontexttoworld
 	},
 	{
-		name = "AUTOBLANK_PlayerRemarkc5m3sewercommentCliffe",
+		name = "PlayerRemarkc5m3upladder_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[Isc5m3sewercomment],
-			[IsNotSaidc5m3sewercomment],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear150],
-			[IsCliffeAlive],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response _PlayerInfoRemarkableBlankGambler
-		ApplyContext "Saidc5m3sewercomment:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkc5m3sniperCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
-			[Isc5m3sniper],
-			[IsNotSaidc5m3sniper],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear150],
-			[ChanceToFire100Percent],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		// 	forceweight 1
-		Response PlayerRemarkc5m3sniperGambler
-		ApplyContext "Saidc5m3sniper:1:0,Talk:1:2.833"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkc5m3sniperCoachCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
-			[Isc5m3sniper],
-			[IsNotSaidc5m3sniper],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear150],
-			[IsCoachAlive],
-			[IsCoachNear400],
-			[ChanceToFire50Percent],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		// 	forceweight 2
-		Response PlayerRemarkc5m3sniperCoachGambler
-		ApplyContext "Saidc5m3sniper:1:0,Talk:1:2.833"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkc5m3sniperRochelleCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
-			[Isc5m3sniper],
-			[IsNotSaidc5m3sniper],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear150],
-			[IsProducerAlive],
-			[IsProducerNear400],
-			[ChanceToFire25Percent],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		// 	forceweight 3
-		Response PlayerRemarkc5m3sniperRochelleGambler
-		ApplyContext "Saidc5m3sniper:1:0,Talk:1:2.833"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkc5m3sniperEllisCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
-			[Isc5m3sniper],
-			[IsNotSaidc5m3sniper],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear150],
-			[IsMechanicAlive],
-			[IsMechanicNear400],
-			[ChanceToFire10Percent],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		// 	forceweight 4
-		Response PlayerRemarkc5m3sniperEllisGambler
-		ApplyContext "Saidc5m3sniper:1:0,Talk:1:2.833"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkc5m3upladderCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc5m3upladder],
 			[IsNotSaidc5m3upladder],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc5m3upladderGambler
+		Response PlayerRemarkc5m3upladderMechanic
 		ApplyContext "Saidc5m3upladder:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc5m3upstepsCliffe",
+		name = "PlayerRemarkc5m3upsteps_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc5m3upsteps],
 			[IsNotSaidc5m3upsteps],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc5m3upstepsGambler
+		Response PlayerRemarkc5m3upstepsMechanic
 		ApplyContext "Saidc5m3upsteps:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc5m3warzoneCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
-			[Isc5m3warzone],
-			[IsNotSaidc5m3warzone],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear300],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkc5m3warzoneGambler
-		ApplyContext "Saidc5m3warzone:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "C5M4BombExtCliffe",
+		name = "C5M4BombExt_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC5M4BombExt],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[NotInCombat],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C5M4BombExtGambler
-		ApplyContext "Talk:1:0.920"
+		Response C5M4BombExtMechanic
+		ApplyContext "Talk:1:3.411"
 		applycontexttoworld
 	},
 	{
-		name = "C5M4BombInt01Cliffe",
+		name = "C5M4BombInt01_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC5M4BombInt],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[_auto_NoAirstrikes],
 		],
-		Response C5M4BombInt01Gambler
+		Response C5M4BombInt01Mechanic
+		then any C5M4BombIntA foo:0 0.01
 		ApplyContext "_auto_Airstrike:++1"
 		applycontexttoworld
 	},
 	{
-		name = "C5M4BombInt01ACliffe",
+		name = "C5M4BombIntA_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC5M4BombIntA],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C5M4BombInt01AGambler
+		Response C5M4BombIntAMechanic
 	},
 	{
-		name = "C5M4BombInt02Cliffe",
+		name = "C5M4BombInt02_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC5M4BombInt],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[NotInCombat],
 			[IsTalk],
 			[AutoIsNotScavenge],
@@ -3723,16 +4200,16 @@ local jess_cliffe_rules =
 			[IsNotInStartArea],
 			[_auto_FirstAirstrike],
 		],
-		Response C5M4BombInt02Gambler
-		ApplyContext "Talk:1:2.002,_auto_Airstrike:++1"
+		Response C5M4BombInt02Mechanic
+		ApplyContext "Talk:1:1.534,_auto_Airstrike:++1"
 		applycontexttoworld
 	},
 	{
-		name = "C5M4BombInt03Cliffe",
+		name = "C5M4BombInt03_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC5M4BombInt],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[NotInCombat],
 			[IsTalk],
 			[AutoIsNotScavenge],
@@ -3740,16 +4217,16 @@ local jess_cliffe_rules =
 			[IsNotInStartArea],
 			[_auto_SecondAirstrike],
 		],
-		Response C5M4BombInt03Gambler
-		ApplyContext "Talk:1:1.654,_auto_Airstrike:++1"
+		Response C5M4BombInt03Mechanic
+		ApplyContext "Talk:1:1.990,_auto_Airstrike:++1"
 		applycontexttoworld
 	},
 	{
-		name = "C5M4BombIntManyCliffe",
+		name = "C5M4BombIntMany_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC5M4BombInt],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[NotInCombat],
 			[IsTalk],
 			[AutoIsNotScavenge],
@@ -3757,523 +4234,438 @@ local jess_cliffe_rules =
 			[IsNotInStartArea],
 			[_auto_ManyAirstrikes],
 		],
-		Response C5M4BombInt03Gambler
-		ApplyContext "Talk:1:1.654,_auto_Airstrike:++1"
+		Response C5M4BombInt03Mechanic
+		ApplyContext "Talk:1:1.990,_auto_Airstrike:++1"
 		applycontexttoworld
 	},
 	{
-		name = "C5M4JetPlanesCliffe",
+		name = "C5M4JetPlanes_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC5M4JetPlanes],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotInStartArea],
 		],
-		Response C5M4JetPlanesGambler
+		Response C5M4JetPlanesMechanic
+		then Gambler C5M4JetPlanes foo:0 0.01
 	},
 	{
-		name = "PlayerRemarkc5m4alleyCliffe",
+		name = "PlayerRemarkc5m4alley_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc5m4alley],
 			[IsNotSaidc5m4alley],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc5m4alleyGambler
+		Response PlayerRemarkc5m4alleyMechanic
 		ApplyContext "Saidc5m4alley:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc5m4inminifinaleCliffe",
+		name = "C5M4PoolTable_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC5M4PoolTable],
+			[IsCsgo_sas],
+			[IsNotCoughing],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response C5M4PoolTableMechanic
+		ApplyContext "Talk:1:3"
+		applycontexttoworld
+	},
+	{
+		name = "C5M4PoolTableRo_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC5M4PoolTable],
+			[IsCsgo_sas],
+			[IsNotCoughing],
+			[IssuerClose],
+			[IsProducerAlive],
+			[IsProducerNear400],
+			[ChanceToFire40Percent],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response C5M4PoolTableRoMechanic
+		ApplyContext "Talk:1:3"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkc5m4inminifinale_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc5m4inminifinale],
 			[IsNotSaidc5m4inminifinale],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc5m4inminifinaleGambler
+		Response PlayerRemarkc5m4inminifinaleMechanic
 		ApplyContext "Saidc5m4inminifinale:1:0,_auto_InMiniFinale:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc5m4pooltableCliffe",
+		name = "PlayerRemarkc5m4seebridge_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[Isc5m4pooltable],
-			[IsNotSaidc5m4pooltable],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear200],
-			[ChanceToFire50Percent],
-			[TimeSinceGroupInCombat02],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkc5m4pooltableGambler
-		ApplyContext "Saidc5m4pooltable:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "AUTOBLANK_PlayerRemarkc5m4pooltableCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
-			[Isc5m4pooltable],
-			[IsNotSaidc5m4pooltable],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear200],
-			[TimeSinceGroupInCombat02],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response _PlayerInfoRemarkableBlankGambler
-		ApplyContext "Saidc5m4pooltable:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkc5m4seebridgeCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc5m4seebridge],
 			[IsNotSaidc5m4seebridge],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear1000],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc5m4seebridgeGambler
+		Response PlayerRemarkc5m4seebridgeMechanic
 		ApplyContext "Saidc5m4seebridge:1:0,_auto_SawBridge:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc5m4tractornagCliffe",
+		name = "PlayerRemarkc5m4tractornag_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc5m4tractornag],
 			[IsNotSaidc5m4tractornag],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear500],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[_auto_NotTractorStarted],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc5m4tractornagGambler
+		Response PlayerRemarkc5m4tractornagMechanic
 		ApplyContext "Saidc5m4tractornag:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc5m4tractornagEllisCliffe",
+		name = "C5M4Tractor_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptRemark],
-			[IsCliffe],
-			[Isc5m4tractornag],
-			[IsNotSaidc5m4tractornag],
+			[ConceptC5M4Tractor],
+			[IsCsgo_sas],
 			[IsNotCoughing],
-			[NotInCombat],
-			[IsMechanicAlive],
-			[IsMechanicNear400],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear500],
-			[ChanceToFire50Percent],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
-			[_auto_NotTractorStarted],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc5m4tractornagEllisGambler
-		ApplyContext "Saidc5m4tractornag:1:0"
+		Response C5M4TractorMechanic
+		ApplyContext "Talk:1:3"
 		applycontexttoworld
 	},
 	{
-		name = "EllisStoryInterruptCliffe",
-		criteria = 
-		[
-			[ConceptSurvivorLeavingInitialCheckpoint],
-			[IsCliffe],
-			[IsNotSaidLeavingSafeArea],
-			[_auto_IsTellingStory],
-			[_auto_NotDidInterrupt],
-		],
-		Response EllisStoryInterruptGambler
-		ApplyContext "Talk:1:2.434,SaidLeavingSafeArea:1:0,_auto_DidInterrupt:1:0,_auto_TellingStory:0:0"
-		applycontexttoworld
-	},
-	{
-		name = "EllisStoryInterruptGenericCliffe",
-		criteria = 
-		[
-			[ConceptEllisInterrupt],
-			[IsCliffe],
-			[_auto_IsTellingStory],
-			[_auto_NotDidInterrupt],
-		],
-		Response EllisStoryInterruptGenericGambler
-		ApplyContext "_auto_DidInterrupt:1:0,_auto_TellingStory:0:0"
-		applycontexttoworld
-	},
-	{
-		name = "EllisStoryInterruptC1M2Cliffe",
-		criteria = 
-		[
-			[ConceptEllisInterrupt],
-			[IsCliffe],
-			[ismap_c1m2_streets],
-			[_auto_IsTellingStory],
-			[_auto_NotDidInterrupt],
-		],
-		Response EllisStoryInterruptC1M2Gambler
-		ApplyContext "_auto_DidInterrupt:1:0,_auto_TellingStory:0:0"
-		applycontexttoworld
-	},
-	{
-		name = "EllisStoryInterruptC1M3Cliffe",
-		criteria = 
-		[
-			[ConceptEllisInterrupt],
-			[IsCliffe],
-			[ismap_c1m3_mall],
-			[_auto_IsTellingStory],
-			[_auto_NotDidInterrupt],
-		],
-		Response EllisStoryInterruptC1M3Gambler
-		ApplyContext "_auto_DidInterrupt:1:0,_auto_TellingStory:0:0"
-		applycontexttoworld
-	},
-	{
-		name = "EllisStoryInterruptC2M5Cliffe",
-		criteria = 
-		[
-			[ConceptEllisInterrupt],
-			[IsCliffe],
-			[ismap_c2m5],
-			[_auto_IsTellingStory],
-			[_auto_NotDidInterrupt],
-		],
-		Response EllisStoryInterruptC2M5Gambler
-		ApplyContext "_auto_DidInterrupt:1:0,_auto_TellingStory:0:0"
-		applycontexttoworld
-	},
-	{
-		name = "EllisStoryInterruptC3M2Cliffe",
-		criteria = 
-		[
-			[ConceptEllisInterrupt],
-			[IsCliffe],
-			[ismapc3m2_swamp],
-			[_auto_IsTellingStory],
-			[_auto_NotDidInterrupt],
-		],
-		Response EllisStoryInterruptGenericGambler
-		ApplyContext "_auto_DidInterrupt:1:0,_auto_TellingStory:0:0"
-		applycontexttoworld
-	},
-	{
-		name = "EllisStoryInterruptC4M3Cliffe",
-		criteria = 
-		[
-			[ConceptEllisInterrupt],
-			[IsCliffe],
-			[isc4m3],
-			[_auto_IsTellingStory],
-			[_auto_NotDidInterrupt],
-		],
-		Response EllisStoryInterruptC4M3Gambler
-		ApplyContext "_auto_DidInterrupt:1:0,_auto_TellingStory:0:0"
-		applycontexttoworld
-	},
-	{
-		name = "EllisStoryInterruptC4M4Cliffe",
-		criteria = 
-		[
-			[ConceptEllisInterrupt],
-			[IsCliffe],
-			[isc4m4],
-			[_auto_IsTellingStory],
-			[_auto_NotDidInterrupt],
-		],
-		Response EllisStoryInterruptC4M4Gambler
-		ApplyContext "_auto_DidInterrupt:1:0,_auto_TellingStory:0:0"
-		applycontexttoworld
-	},
-	{
-		name = "EllisStoryInterruptC5M2Cliffe",
-		criteria = 
-		[
-			[ConceptEllisInterrupt],
-			[IsCliffe],
-			[IsMapc5m2_park],
-			[_auto_IsTellingStory],
-			[_auto_NotDidInterrupt],
-		],
-		Response EllisStoryInterruptC5M2Gambler
-		ApplyContext "_auto_DidInterrupt:1:0,_auto_TellingStory:0:0"
-		applycontexttoworld
-	},
-	{
-		name = "EllisStoryInterruptC5M5Cliffe",
-		criteria = 
-		[
-			[ConceptEllisInterrupt],
-			[IsCliffe],
-			[IsMapc5m5_bridge],
-			[_auto_IsTellingStory],
-			[_auto_NotDidInterrupt],
-		],
-		Response EllisStoryInterruptC5M5Gambler
-		ApplyContext "_auto_DidInterrupt:1:0,_auto_TellingStory:0:0"
-		applycontexttoworld
-	},
-	{
-		name = "C5M5_Button2Cliffe",
+		name = "C5M5_Button2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC5M5_Button2],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C5M5_Button2Gambler
+		Response C5M5_Button2Mechanic
+		then csgo_sas C5M5_Button2200 foo:0 0.01
 		ApplyContext "_auto_BridgeNag:0:0"
 		applycontexttoworld
 	},
 	{
-		name = "C5M5_GateDownCliffe",
+		name = "C5M5_GateDown_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC5M5_GateDown],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C5M5_GateDownGambler
+		Response C5M5_GateDownMechanic
 	},
 	{
-		name = "C5M5_saferoom001Cliffe",
+		name = "C5M5_Button2100_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC5M5_saferoom001],
-			[IsCliffe],
+			[ConceptC5M5_Button2100],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C5M5_saferoom001Gambler
+		Response C5M5_Button2100Mechanic
 	},
 	{
-		name = "C5M5_saferoom003Cliffe",
+		name = "C5M5_Button2200_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC5M5_saferoom003],
-			[IsCliffe],
+			[ConceptC5M5_Button2200],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C5M5_saferoom003Gambler
+		Response C5M5_Button2200Mechanic
+		then csgo_sas C5M5_Button2201 foo:0 0.01
 	},
 	{
-		name = "C5M5_saferoom004Cliffe",
+		name = "C5M5_Button2201_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC5M5_saferoom004],
-			[IsCliffe],
+			[ConceptC5M5_Button2201],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C5M5_saferoom003Gambler
+		Response C5M5_Button2201Mechanic
+		then csgo_sas C5M5_Button2202 foo:0 0.3
 	},
 	{
-		name = "C5M5_SurvivorConv01Cliffe",
+		name = "C5M5_Button2202_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC5M5_Button2202],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C5M5_Button2202Mechanic
+		then csgo_sas C5M5_Button2203 foo:0 0.3
+	},
+	{
+		name = "C5M5_Button2203_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC5M5_Button2203],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C5M5_Button2203Mechanic
+		then csgo_sas C5M5_Button2204 foo:0 0.3
+	},
+	{
+		name = "C5M5_Button2204_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC5M5_Button2204],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C5M5_Button2204Mechanic
+		then csgo_sas C5M5_Button2205 foo:0 0.2
+	},
+	{
+		name = "C5M5_Button2205_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC5M5_Button2205],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C5M5_Button2205Mechanic
+		then self C5M5_Button2206 foo:0 0.2
+	},
+	{
+		name = "C5M5_Button2206_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC5M5_Button2206],
+			[IsCsgo_sas],
+			[IsProducerAlive],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C5M5_Button2206Mechanic
+		then producer C5M5_Button2207 foo:0 0.2
+	},
+	{
+		name = "C5M5_SurvivorConv01_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC5M5_SurvivorConv01],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[FromIsAnOrator],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
-			[_auto_IsTalkingCliffe],
+			[_auto_IsTalkingCsgo_sas],
 			[_auto_NotButton2],
 		],
-		Response C5M5_SurvivorConv01Gambler
+		Response C5M5_SurvivorConv01Mechanic
+		then orator C5M5_Soldier1Conv03 foo:0 0.01
 	},
 	{
-		name = "C5M5_SurvivorConv02Cliffe",
+		name = "C5M5_SurvivorConv01Bomb_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC5M5_SurvivorConv01],
+			[IsCsgo_sas],
+			[FromIsAnOrator],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[_auto_IsBuzzardRunMentioned],
+			[_auto_IsTalkingCsgo_sas],
+			[_auto_NotButton2],
+		],
+		Response C5M5_SurvivorConv01BombMechanic
+		then orator C5M5_Soldier1Conv03 foo:0 0.01
+	},
+	{
+		name = "C5M5_SurvivorConv02_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC5M5_SurvivorConv02],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[FromIsAnOrator],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
-			[_auto_IsTalkingCliffe],
+			[_auto_IsTalkingCsgo_sas],
 			[_auto_NotButton2],
 		],
-		Response C5M5_SurvivorConv02Gambler
+		Response C5M5_SurvivorConv02Mechanic
+		then orator C5M5_Soldier1Conv04 foo:0 0.01
 	},
 	{
-		name = "C5M5_SurvivorConv03Cliffe",
+		name = "C5M5_SurvivorConv03_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC5M5_SurvivorConv03],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[FromIsAnOrator],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
-			[_auto_IsTalkingCliffe],
+			[_auto_IsTalkingCsgo_sas],
 			[_auto_NotButton2],
 		],
-		Response C5M5_SurvivorConv03Gambler
+		Response C5M5_SurvivorConv03Mechanic
+		then orator C5M5_Soldier1Conv05 foo:0 0.01
 	},
 	{
-		name = "C5M5_SurvivorConv04Cliffe",
+		name = "C5M5_SurvivorConv04_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC5M5_SurvivorConv04],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[FromIsAnOrator],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
-			[_auto_IsTalkingCliffe],
+			[_auto_IsTalkingCsgo_sas],
 			[_auto_NotButton2],
 		],
-		Response C5M5_SurvivorConv04Gambler
+		Response C5M5_SurvivorConv04Mechanic
+		then orator C5M5_Soldier1Conv08 foo:0 0.01
 	},
 	{
-		name = "C5M5_SurvivorConv05Cliffe",
+		name = "C5M5_SurvivorConv05_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC5M5_SurvivorConv05],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[FromIsAnOrator],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
-			[_auto_IsTalkingCliffe],
+			[_auto_IsTalkingCsgo_sas],
 			[_auto_NotButton2],
 		],
-		Response C5M5_SurvivorConv05Gambler
+		Response C5M5_SurvivorConv05Mechanic
+		then orator C5M5_Soldier1Conv08 foo:0 0.01
 	},
 	{
-		name = "C5M5_LowerTheBridgeCliffe",
+		name = "C5M5_LowerTheBridge_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptTalkIdle],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsMapc5m5_bridge],
 			[ChanceToFire90Percent],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[_auto_NotTimerLockA],
-			[_auto_NotTimerLockCliffe],
+			[_auto_NotTimerLockCsgo_sas],
 			[_auto_IsBridgeNag],
 			[IsNotSpeakingWeight0],
 		],
-		Response C5M5_LowerTheBridgeGambler
-		ApplyContext "_auto_TimerLockA:1:30,_auto_TimerLockCliffe:1:15"
+		Response C5M5_LowerTheBridgeMechanic
+		ApplyContext "_auto_TimerLockA:1:30,_auto_TimerLockCsgo_sas:1:15"
 		applycontexttoworld
 	},
 	{
-		name = "C5M5Button1BuzzardRunCliffe",
+		name = "C5M5Button1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC5M5Button1],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[FromIsAnOrator],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
-			[_auto_IsTalkingCliffe],
+			[_auto_IsTalkingCsgo_sas],
 			[_auto_NotButton2],
+		],
+		Response C5M5Button1Mechanic
+		then Orator C5M5_Soldier1Conv01 foo:0 0.01
+	},
+	{
+		name = "C5M5Button1BuzzardRun_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC5M5Button1],
+			[IsCsgo_sas],
+			[FromIsAnOrator],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[_auto_IsTalkingCsgo_sas],
 			[_auto_IsBuzzardRunMentioned],
-		],
-		Response C5M5Button1BuzzardRunGambler
-	},
-	{
-		name = "C5M5Button1Cliffe",
-		criteria = 
-		[
-			[ConceptC5M5Button1],
-			[IsCliffe],
-			[FromIsAnOrator],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[_auto_IsTalkingCliffe],
 			[_auto_NotButton2],
 		],
-		Response C5M5Button1Gambler
+		Response C5M5Button1BuzzardRunMechanic
+		then Orator C5M5_Soldier1Conv01 foo:0 0.01
 	},
 	{
-		name = "C5M5HearSoldiersCliffe",
+		name = "C5M5HearSoldiersNag_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptTalkIdle],
-			[IsCliffe],
-			[IsMapc5m5_bridge],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsTalk],
-			[_auto_IsSoldierChatter],
-			[_auto_NotRadioNag],
-			[_auto_NotButton1],
-			[IsNotSpeakingWeight0],
-		],
-		Response C5M5HearSoldiersGambler
-		ApplyContext "_auto_RadioNag:1:0,_auto_TimerLockA:1:10,_auto_TimerLockCliffe:1:15"
-		applycontexttoworld
-	},
-	{
-		name = "C5M5HearSoldiersNagCliffe",
-		criteria = 
-		[
-			[ConceptTalkIdle],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsMapc5m5_bridge],
 			[ChanceToFire90Percent],
 			[AutoIsNotScavenge],
@@ -4282,45 +4674,143 @@ local jess_cliffe_rules =
 			[_auto_NotButton1],
 			[_auto_IsRadioNag],
 			[_auto_NotTimerLockA],
-			[_auto_NotTimerLockCliffe],
+			[_auto_NotTimerLockCsgo_sas],
 			[IsNotSpeakingWeight0],
 		],
-		Response C5M5HearSoldiersNagGambler
-		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockCliffe:1:15"
+		Response C5M5HearSoldiersNagMechanic
+		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockCsgo_sas:1:15"
 		applycontexttoworld
 	},
 	{
-		name = "C5M5LeaveSafeCliffe",
+		name = "C5M5HearSoldiersNagBuzzard_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptTalkIdle],
+			[IsCsgo_sas],
+			[IsMapc5m5_bridge],
+			[ChanceToFire90Percent],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[_auto_IsBuzzardRunMentioned],
+			[_auto_IsSoldierChatter],
+			[_auto_NotButton1],
+			[_auto_IsRadioNag],
+			[_auto_NotTimerLockA],
+			[_auto_NotTimerLockCsgo_sas],
+			[IsNotSpeakingWeight0],
+		],
+		Response C5M5HearSoldiersNagBuzzardMechanic
+		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockCsgo_sas:1:15"
+		applycontexttoworld
+	},
+	{
+		name = "C5M5LeaveSafe_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptSurvivorLeavingInitialCheckpoint],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsMapc5m5_bridge],
 			[IsNotSaidLeavingSafeArea],
 		],
-		Response C5M5LeaveSafeGambler
+		Response C5M5LeaveSafeMechanic
+		then orator C5M5_Soldier1 foo:0 0.01
 		ApplyContext "Talk:0:0,SaidLeavingSafeArea:1:0,_auto_TimerLockA:1:5,_auto_SoldierChatter:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "C5M5RescueStartCliffe",
+		name = "C5M5RescueStart_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptFinalVehicleSpotted],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsMapc5m5_bridge],
 			[_auto_IsFinaleStarted],
 		],
-		Response C5M5RescueStartGambler
+		Response C5M5RescueStartMechanic
+		then orator_chopper C5M5SoldierHeliNag foo:0 0.01
 		ApplyContext "_auto_Finale:2:0,_auto_TimerLockA:1:5"
 		applycontexttoworld
 	},
 	{
-		name = "C5M5RunToHeliCliffe",
+		name = "C5M5SurvivorVocalizeLookOut_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerLookOut],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsMapc5m5_bridge],
+			[_auto_IsFinaleStarted],
+		],
+		Response C5M5SurvivorVocalizeLookOutMechanic
+	},
+	{
+		name = "C5M5SpottedTank_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerWarnSpecial],
+			[IsSpecialTypeTank],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsMapc5m5_bridge],
+			[_auto_IsFinaleStarted],
+		],
+		Response C5M5SpottedTankMechanic
+		ApplyContext "SaidTankWarn:1:20,SaidTankWarn2:1:60"
+		applycontexttoworld
+	},
+	{
+		name = "C5M5ReloadingTank_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerReloading],
+			[IsSurvivor],
+			[IsNotSpeaking],
+			[IsCsgo_sas],
+			[IsNotIncapacitated],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidReloadingTank],
+			[IsZombiePresentTank],
+			[IsSaidTankWarn2],
+			[IsWorldTalkCsgo_sas],
+			[IsMapc5m5_bridge],
+			[_auto_IsFinaleStarted],
+		],
+		Response C5M5ReloadingTankMechanic
+		ApplyContext "SaidReloadingTank:1:10,SaidTankWarn2:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerKillTankConfirmationC5M5_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptKilledZombie],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[SubjectIsTank],
+			[IsNotAlone],
+			[IsNotIncapacitated],
+			[IsWorldTalkCsgo_sas],
+			[IsMapc5m5_bridge],
+			[IsNotSurvival],
+		],
+		Response PlayerKillTankConfirmationC5M5Mechanic
+		ApplyContext "TalkCsgo_sas:1:5"
+	},
+	{
+		name = "C5M5RunToHeli_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptGetToVehicle],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsMapc5m5_bridge],
 			[IsNotCoughing],
 			[IsNotIncapacitated],
@@ -4331,19 +4821,19 @@ local jess_cliffe_rules =
 			[IsNotInRescueVehicle],
 			[_auto_IsEscapeReady],
 			[_auto_NotTimerLockA],
-			[_auto_NotTimerLockCliffe],
+			[_auto_NotTimerLockCsgo_sas],
 			[IsNotSpeakingWeight0],
 		],
-		Response C5M5RunToHeliGambler
-		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockCliffe:1:30"
+		Response C5M5RunToHeliMechanic
+		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockCsgo_sas:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "C5M5InsideHeliCliffe",
+		name = "C5M5InsideHeli_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptGetToVehicle],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsMapc5m5_bridge],
 			[IsNotCoughing],
 			[IsNotIncapacitated],
@@ -4354,125 +4844,31 @@ local jess_cliffe_rules =
 			[IsInRescueVehicle],
 			[_auto_IsEscapeReady],
 			[_auto_NotTimerLockA],
-			[_auto_NotTimerLockCliffe],
+			[_auto_NotTimerLockCsgo_sas],
 			[IsNotSpeakingWeight0],
 		],
-		Response C5M5InsideHeliGambler
-		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockCliffe:1:30"
+		Response C5M5InsideHeliMechanic
+		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockCsgo_sas:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "C5M5BridgeDestroyed2Cliffe",
+		name = "C5M5BridgeDestroyed2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC5M5BridgeDestroyed2],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotIncapacitated],
 			[IsEveryoneAlive],
 			[CanSpeakC5M5SurvivorOutro],
 		],
-		Response C5M5BridgeDestroyed2Gambler
+		Response C5M5BridgeDestroyed2Mechanic
 	},
 	{
-		name = "C5M5SurvivorVocalizeLookOutCliffe",
-		criteria = 
-		[
-			[ConceptPlayerLookOut],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsMapc5m5_bridge],
-			[_auto_IsFinaleStarted],
-		],
-		Response C5M5SurvivorVocalizeLookOutGambler
-	},
-	{
-		name = "C5M5SpottedTankCliffe",
-		criteria = 
-		[
-			[ConceptPlayerWarnSpecial],
-			[IsSpecialTypeTank],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsMapc5m5_bridge],
-			[_auto_IsFinaleStarted],
-		],
-		Response C5M5SpottedTankGambler
-		ApplyContext "SaidTankWarn:1:20,SaidTankWarn2:1:60"
-		applycontexttoworld
-	},
-	{
-		name = "C5M5ReloadingTankCliffe",
-		criteria = 
-		[
-			[ConceptPlayerReloading],
-			[IsSurvivor],
-			[IsNotSpeaking],
-			[IsCliffe],
-			[IsNotIncapacitated],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidReloadingTank],
-			[IsZombiePresentTank],
-			[IsSaidTankWarn2],
-			[_auto_IsFinaleStarted],
-			[IsWorldTalkCliffe],
-			[IsMapc5m5_bridge],
-		],
-		Response C5M5ReloadingTankGambler
-		ApplyContext "SaidReloadingTank:1:10,SaidTankWarn2:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerC5M5TruckCliffe",
-		criteria = 
-		[
-			[ConceptC5M5Truck],
-			[IsCliffe],
-			[IsNotSaidC5M5Truck],
-			[IsNotCoughing],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsNotZombiePresentTank],
-			[_auto_IsFinaleStarted],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response PlayerC5M5TruckGambler
-		ApplyContext "SaidC5M5Truck:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerKillTankConfirmationC5M5Cliffe",
-		criteria = 
-		[
-			[ConceptKilledZombie],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[SubjectIsTank],
-			[IsNotAlone],
-			[IsNotIncapacitated],
-			[IsWorldTalkCliffe],
-			[IsMapc5m5_bridge],
-			[IsNotSurvival],
-		],
-		Response PlayerKillTankConfirmationC5M5Gambler
-		ApplyContext "TalkCliffe:1:5"
-	},
-	{
-		name = "C5M5SafeRoomCliffe",
+		name = "C5M5SafeRoom_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptTalkIdle],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[NotInCombat],
 			[IsMapc5m5_bridge],
 			[IsInStartArea],
@@ -4484,331 +4880,511 @@ local jess_cliffe_rules =
 			[_auto_NotSafeRoomQuiet],
 			[IsNotSpeakingWeight0],
 		],
-		Response C5M5SafeRoomGambler
+		Response C5M5SafeRoomMechanic
+		then gambler C5M5_saferoom001 foo:0 0.1
 		ApplyContext "_auto_SafeRoomStart:2:0"
 		applycontexttoworld
 	},
 	{
-		name = "C6M1_IntotheparkNoHealthCliffe",
+		name = "C5M5_saferoom002_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC6M1_IntotheparkNoHealth],
-			[IsCliffe],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[ConceptC5M5_saferoom002],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C6M1_IntotheparkNoHealthGambler
+		Response C5M5_saferoom002Mechanic
+		then gambler C5M5_saferoom004 foo:0 0.01
 	},
 	{
-		name = "C6M1Intro_01Biker05Cliffe",
+		name = "C5M5_saferoom004_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC5M5_saferoom004],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C5M5_saferoom004Mechanic
+	},
+	{
+		name = "C6M1_IntotheparkNoHealth_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC6M1_IntotheparkNoHealth],
+			[IsCsgo_sas],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C6M1_IntotheparkNoHealthMechanic
+	},
+	{
+		name = "C6M1Intro_01a_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC6M1Intro_01a],
+			[IsCsgo_sas],
+			[IsNotVersus],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C6M1Intro_01aMechanic
+		then Biker C6M1Intro_01b foo:0 -6.365
+	},
+	{
+		name = "C6M1Intro_01Biker02_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptintroC6M1],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsFrancisIntroActor],
 			[IsNotSaidCXM1Intro],
-			[IsProducerAlive],
 			[IsNotVersus],
 			[ChanceToFire100Percent],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
 		// 	forceweight 1
-		Response C6M1Intro_01Biker05Gambler
+		Response C6M1Intro_01Biker02Mechanic
+		then Biker C6M1Intro_24b foo:0 -12.798
 		ApplyContext "CXM1Intro:1:0,Talk:1:0,RemarkWorldC6M1_HistoricTour:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "C6M1Intro_07bCliffe",
+		name = "C6M1Intro_01c_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC6M1Intro_07b],
-			[IsCliffe],
+			[ConceptC6M1Intro_01c],
+			[IsCsgo_sas],
 			[IsNotVersus],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C6M1Intro_07bGambler
+		Response C6M1Intro_01cMechanic
+		then Biker C6M1Intro_01d foo:0 -0.982
 	},
 	{
-		name = "C6M1Intro_09aCliffe",
+		name = "C6M1Intro_01TeenGirl04_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC6M1Intro_09a],
-			[IsCliffe],
+			[ConceptintroC6M1],
+			[IsCsgo_sas],
+			[IsZoeyIntroActor],
+			[IsNotSaidCXM1Intro],
+			[IsNotVersus],
+			[ChanceToFire100Percent],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		// 	forceweight 1
+		Response C6M1Intro_01TeenGirl04Mechanic
+		then TeenGirl C6M1Intro_23a foo:0 -2.512
+		ApplyContext "CXM1Intro:1:0,Talk:1:0,Csgo_sasInLoveC6M1:1:0,RemarkWorldC6M1_HistoricTour:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "C6M1Intro_02a_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC6M1Intro_02a],
+			[IsCsgo_sas],
 			[IsNotVersus],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C6M1Intro_09aGambler
+		Response C6M1Intro_02aMechanic
+		then Biker C6M1Intro_02b foo:0 -4.221
 	},
 	{
-		name = "C6M1Intro_09bCliffe",
+		name = "C6M1Intro_11a_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC6M1Intro_09b],
-			[IsCliffe],
+			[ConceptC6M1Intro_11a],
+			[IsCsgo_sas],
 			[IsNotVersus],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C6M1Intro_09bGambler
+		Response C6M1Intro_11aMechanic
+		then TeenGirl C6M1Intro_11b foo:0 -5.419
 	},
 	{
-		name = "C6M1Intro_09dCliffe",
+		name = "C6M1Intro_11c_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC6M1Intro_09d],
-			[IsCliffe],
+			[ConceptC6M1Intro_11c],
+			[IsCsgo_sas],
 			[IsNotVersus],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C6M1Intro_09dGambler
+		Response C6M1Intro_11cMechanic
+		then Any WorldC6M1_HistoricTour foo:0 1
 	},
 	{
-		name = "C6M1Intro_10eCliffe",
+		name = "C6M1Intro_11cGambler_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC6M1Intro_10e],
-			[IsCliffe],
+			[ConceptC6M1Intro_11c],
+			[IsCsgo_sas],
+			[IsGamblerAlive],
+			[ChanceToFire10Percent],
 			[IsNotVersus],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C6M1Intro_10eGambler
+		Response C6M1Intro_11cGamblerMechanic
+		then Gambler C6M1Intro_11d foo:0 -13.161
 	},
 	{
-		name = "C6M1Intro_11dCliffe",
+		name = "C6M1Intro_12b_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC6M1Intro_11d],
-			[IsCliffe],
+			[ConceptC6M1Intro_12b],
+			[IsCsgo_sas],
 			[IsNotVersus],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C6M1Intro_11dGambler
+		Response C6M1Intro_12bMechanic
+		then Producer C6M1Intro_12c foo:0 -4.691
 	},
 	{
-		name = "C6M1Intro_14aCliffe",
+		name = "C6M1Intro_13a_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC6M1Intro_14a],
-			[IsCliffe],
+			[ConceptC6M1Intro_13a],
+			[IsCsgo_sas],
 			[IsNotVersus],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C6M1Intro_14aGambler
+		Response C6M1Intro_13aMechanic
+		then Coach C6M1Intro_13b foo:0 -14.217
 	},
 	{
-		name = "C6M1Intro_14cCliffe",
+		name = "C6M1Intro_13c_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC6M1Intro_14c],
-			[IsCliffe],
+			[ConceptC6M1Intro_13c],
+			[IsCsgo_sas],
 			[IsNotVersus],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C6M1Intro_14cGambler
+		Response C6M1Intro_13cMechanic
+		then TeenGirl C6M1Intro_13d foo:0 -3.537
 	},
 	{
-		name = "C6M1Intro_15aCliffe",
+		name = "C6M1Intro_13f_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC6M1Intro_15a],
-			[IsCliffe],
+			[ConceptC6M1Intro_13f],
+			[IsCsgo_sas],
 			[IsNotVersus],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C6M1Intro_15aGambler
+		Response C6M1Intro_13fMechanic
 	},
 	{
-		name = "C6M1Intro_15eCliffe",
+		name = "C6M1Intro_23b_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC6M1Intro_15e],
-			[IsCliffe],
+			[ConceptC6M1Intro_23b],
+			[IsCsgo_sas],
 			[IsNotVersus],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C6M1Intro_15eGambler
+		Response C6M1Intro_23bMechanic
+		then TeenGirl C6M1Intro_23c foo:0 -7.488
 	},
 	{
-		name = "C6M1Intro_16aCliffe",
+		name = "C6M1Intro_23d_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC6M1Intro_16a],
-			[IsCliffe],
+			[ConceptC6M1Intro_23d],
+			[IsCsgo_sas],
 			[IsNotVersus],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C6M1Intro_16aGambler
+		Response C6M1Intro_23dMechanic
+		then Any WorldC6M1_HistoricTour foo:0 -4.369
 	},
 	{
-		name = "C6M1Intro_ConfirmObjectiveCliffe",
+		name = "C6M1Intro_24c_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC6M1Intro_24c],
+			[IsCsgo_sas],
+			[IsNotVersus],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C6M1Intro_24cMechanic
+		then Biker C6M1Intro_24d foo:0 -2.841
+	},
+	{
+		name = "C6M1Intro_24e_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC6M1Intro_24e],
+			[IsCsgo_sas],
+			[IsNotVersus],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C6M1Intro_24eMechanic
+	},
+	{
+		name = "C6M1Intro_ConfirmObjective_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC6M1Intro_ConfirmObjective],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotVersus],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C6M1Intro_ConfirmObjectiveGambler
+		Response C6M1Intro_ConfirmObjectiveMechanic
+		then self IntroEnd foo:0 0.1
 	},
 	{
-		name = "LeavingC6M1StartCliffe",
+		name = "LeavingC6M1Start_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptSurvivorLeavingCheckpoint],
 			[IsNotSaidLeavingSafeArea],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotAlone],
 			[YesHasFirstAidKit],
-			[Isc6m1_riverbank],
+			[isc6m1_riverbank],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeaking],
 		],
-		Response LeavingC6M1StartGambler
+		Response LeavingC6M1StartMechanic
 		ApplyContext "SaidLeavingSafeArea:1:0,Talk:0:0"
 		applycontexttoworld
 	},
 	{
-		name = "LeavingC6M1StartNoFirstAidCliffe",
+		name = "LeavingC6M1StartnoHealth_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptSurvivorLeavingCheckpoint],
 			[IsNotSaidLeavingSafeArea],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotAlone],
 			[NoHasFirstAidKit],
-			[Isc6m1_riverbank],
+			[isc6m1_riverbank],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response LeavingC6M1StartNoFirstAidGambler
+		Response LeavingC6M1StartnoHealthMechanic
+		then any C6M1_IntotheparkNoHealth foo:0 0.1
 		ApplyContext "SaidLeavingSafeArea:1:0,Talk:0:0"
 		applycontexttoworld
 	},
 	{
-		name = "RemWorldC6M1_WeddingWarn02Cliffe",
+		name = "C6M1Start2_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC6M1Start2],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C6M1Start2Mechanic
+		then self C6M1Start3 foo:0 1
+	},
+	{
+		name = "C6M1Start3_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC6M1Start3],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C6M1Start3Mechanic
+		ApplyContext "Talk:1:4"
+		applycontexttoworld
+	},
+	{
+		name = "RemWorldC6M1_WeddingWarn02_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemWorldC6M1_WeddingWarn02],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IssuerClose],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response RemWorldC6M1_WeddingWarn02Gambler
+		Response RemWorldC6M1_WeddingWarn02Mechanic
 		ApplyContext "CoachCake:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "WorldC6M1_HistoricTourCliffe",
+		name = "WorldC6M1_WeddingWarn03a_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptRemark],
-			[IsCliffe],
-			[IsWorldC6M1_HistoricTour],
-			[IsNotSaidWorldC6M1_HistoricTour],
-			[CanRemarkWorldC6M1_HistoricTour],
-			[IsSubjectNear800],
-			[IsTalk],
-			[IsNotSaidLeavingSafeArea],
-		],
-		Response WorldC6M1_HistoricTourGambler
-		ApplyContext "SaidWorldC6M1_HistoricTour:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "WorldC6M1_PostWedding02aCliffe",
-		criteria = 
-		[
-			[ConceptWorldC6M1_PostWedding02a],
-			[IsCliffe],
-			[IsSubjectDistNear800],
+			[ConceptWorldC6M1_WeddingWarn03a],
+			[IsCsgo_sas],
+			[IssuerClose],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response WorldC6M1_PostWedding02aGambler
+		Response WorldC6M1_WeddingWarn03aMechanic
+		then Producer WorldC6M1_WeddingWarn03b foo:0 -0.799
 	},
 	{
-		name = "WorldC6M1_WeddingWarn05aCliffe",
+		name = "WorldC6M1_WeddingWarn03b_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptWorldC6M1_WeddingWarn05a],
-			[IsCliffe],
-			[IsSubjectDistNear800],
+			[ConceptWorldC6M1_WeddingWarn03b],
+			[IsCsgo_sas],
+			[IssuerClose],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response WorldC6M1_WeddingWarn05aGambler
+		Response WorldC6M1_WeddingWarn03aMechanic
+		then Producer WorldC6M1_WeddingWarn03b foo:0 -0.799
 	},
 	{
-		name = "C6M2_OpenGate1Cliffe",
+		name = "WorldC6M1_WeddingWarn03c_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptWorldC6M1_WeddingWarn03c],
+			[IsCsgo_sas],
+			[IssuerClose],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response WorldC6M1_WeddingWarn03cMechanic
+	},
+	{
+		name = "WorldC6M1_WeddingWarn03d_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptWorldC6M1_WeddingWarn03d],
+			[IsCsgo_sas],
+			[IssuerClose],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response WorldC6M1_WeddingWarn03dMechanic
+	},
+	{
+		name = "C6M2_OpenGate1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC6M2_OpenGate1],
-			[IsCliffe],
+			[IsCsgo_sas],
 		],
-		Response C6M2_OpenGate1Gambler
+		Response C6M2_OpenGate1Mechanic
 		ApplyContext "SaidOpenedGate1:1:0,WarnMegaMob:1:300,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "C6M2_OpenGate1aCliffe",
+		name = "C6M2_OpenGate1b_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC6M2_OpenGate1a],
-			[IsCliffe],
+			[ConceptC6M2_OpenGate1b],
+			[IsCsgo_sas],
 		],
-		Response C6M2_OpenGate1aGambler
+		Response C6M2_OpenGate1bMechanic
 	},
 	{
-		name = "C6M2_OpenGate2Cliffe",
+		name = "C6M2_OpenGate1Blame_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC6M2_OpenGate1],
+			[IsCsgo_sas],
+			[IsGamblerNear400],
+			[ChanceToFire30Percent],
+		],
+		Response C6M2_OpenGate1BlameMechanic
+		then Gambler C6M2_OpenGate1a foo:0 0.01
+		ApplyContext "SaidOpenedGate1:1:0,WarnMegaMob:1:300,SaidSpecialWarn:1:30,SaidOpenedGate1BlameCsgo_sas:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "C6M2_OpenGate2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC6M2_OpenGate2],
-			[IsCliffe],
+			[IsCsgo_sas],
 		],
-		Response C6M2_OpenGate2Gambler
+		Response C6M2_OpenGate2Mechanic
 		ApplyContext "SaidOpenedGate2:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "DLC1_C6M2_SafeRoomConvoFrancisStartCliffe",
+		name = "C6M2LeavingSafeRoom_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptSurvivorLeavingInitialCheckpoint],
+			[IsCsgo_sas],
+			[IsNotSaidLeavingSafeArea],
+			[isc6m2_bedlam],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C6M2LeavingSafeRoomMechanic
+		ApplyContext "SaidLeavingSafeArea:1:0,Talk:1:3"
+		applycontexttoworld
+	},
+	{
+		name = "DLC1_C6M2_SafeRoomConvo02a_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptDLC1_C6M2_SafeRoomConvo02a],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response DLC1_C6M2_SafeRoomConvo02aMechanic
+		then Gambler DLC1_C6M2_SafeRoomConvo02b foo:0 -3.509
+	},
+	{
+		name = "DLC1_C6M2_SafeRoomConvoProducerStart_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptTalkIdle],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[NotInCombat],
 			[Isc6m2_bedlam],
 			[IsInStartArea],
@@ -4816,131 +5392,35 @@ local jess_cliffe_rules =
 			[IsNotSaidLeavingSafeArea],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
-			[IsFrancisIntroActor],
+			[IsProducerAlive],
 			[ChanceToFire50Percent],
 			[_auto_IsSafeRoomStart],
 			[_auto_NotSafeRoomQuiet],
 			[IsNotSpeakingWeight0],
 		],
-		Response DLC1_C6M2_SafeRoomConvoFrancisStartGambler
+		Response DLC1_C6M2_SafeRoomConvoProducerStartMechanic
+		then Producer DLC1_C6M2_SafeRoomConvo03a foo:0 -3.330
 		ApplyContext "_auto_SafeRoomStart:2:0"
 		applycontexttoworld
 	},
 	{
-		name = "DLC1_C6M2_SafeRoomConvo01bCliffe",
+		name = "DLC1_C6M2_SafeRoomConvo03b_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptDLC1_C6M2_SafeRoomConvo01b],
-			[IsCliffe],
+			[ConceptDLC1_C6M2_SafeRoomConvo03b],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response DLC1_C6M2_SafeRoomConvo01bGambler
+		Response DLC1_C6M2_SafeRoomConvo03bMechanic
+		then Producer DLC1_C6M2_SafeRoomConvo03c foo:0 -16.180
 	},
 	{
-		name = "DLC1_C6M2_SafeRoomConvo02bCliffe",
-		criteria = 
-		[
-			[ConceptDLC1_C6M2_SafeRoomConvo02b],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response DLC1_C6M2_SafeRoomConvo02bGambler
-	},
-	{
-		name = "DLC1_C6M2_SafeRoomConvo06aCliffe",
-		criteria = 
-		[
-			[ConceptDLC1_C6M2_SafeRoomConvo06a],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response DLC1_C6M2_SafeRoomConvo06aGambler
-	},
-	{
-		name = "DLC1_C6M2_SafeRoomConvo07aCliffe",
-		criteria = 
-		[
-			[ConceptDLC1_C6M2_SafeRoomConvo07a],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response DLC1_C6M2_SafeRoomConvo07aGambler
-	},
-	{
-		name = "DLC1_C6M2_SafeRoomConvoStartCliffe",
+		name = "DLC1_C6M2_SafeRoomConvoZoeyStart_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptTalkIdle],
-			[IsCliffe],
-			[NotInCombat],
-			[Isc6m2_bedlam],
-			[IsInStartArea],
-			[IsNotAlone],
-			[IsNotSaidLeavingSafeArea],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[_auto_IsSafeRoomStart],
-			[_auto_NotSafeRoomQuiet],
-			[IsNotSpeakingWeight0],
-		],
-		Response DLC1_C6M2_SafeRoomConvoStartGambler
-		ApplyContext "_auto_SafeRoomStart:2:0"
-		applycontexttoworld
-	},
-	{
-		name = "DLC1_C6M2_SafeRoomConvo08aCliffe",
-		criteria = 
-		[
-			[ConceptDLC1_C6M2_SafeRoomConvo08a],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response DLC1_C6M2_SafeRoomConvo08aGambler
-	},
-	{
-		name = "DLC1_C6M2_SafeRoomConvo08cCliffe",
-		criteria = 
-		[
-			[ConceptDLC1_C6M2_SafeRoomConvo08c],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response DLC1_C6M2_SafeRoomConvo08cGambler
-	},
-	{
-		name = "DLC1_C6M2_SafeRoomConvo08eCliffe",
-		criteria = 
-		[
-			[ConceptDLC1_C6M2_SafeRoomConvo08e],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response DLC1_C6M2_SafeRoomConvo08eGambler
-	},
-	{
-		name = "DLC1_C6M2_SafeRoomConvo09bCliffe",
-		criteria = 
-		[
-			[ConceptDLC1_C6M2_SafeRoomConvo09b],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response DLC1_C6M2_SafeRoomConvo09bGambler
-	},
-	{
-		name = "DLC1_C6M2_SafeRoomConvoZoeyStartCliffe",
-		criteria = 
-		[
-			[ConceptTalkIdle],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[NotInCombat],
 			[Isc6m2_bedlam],
 			[IsInStartArea],
@@ -4949,324 +5429,264 @@ local jess_cliffe_rules =
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsZoeyIntroActor],
-			[IsMechanicAlive],
+			[IsProducerAlive],
 			[ChanceToFire50Percent],
 			[_auto_IsSafeRoomStart],
 			[_auto_NotSafeRoomQuiet],
 			[IsNotSpeakingWeight0],
 		],
-		Response DLC1_C6M2_SafeRoomConvoZoeyStartGambler
+		Response DLC1_C6M2_SafeRoomConvoZoeyStartMechanic
+		then Any DLC1_C6M2_SafeRoomConvo07a foo:0 -6.763
 		ApplyContext "_auto_SafeRoomStart:2:0,MentionedZoeyC6M2:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "DLC1_C6M2_SafeRoomConvo10bCliffe",
+		name = "DLC1_C6M2_SafeRoomConvo08_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptDLC1_C6M2_SafeRoomConvo10b],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response DLC1_C6M2_SafeRoomConvo10bGambler
-	},
-	{
-		name = "DLC1_C6M2_SafeRoomConvo10dCliffe",
-		criteria = 
-		[
-			[ConceptDLC1_C6M2_SafeRoomConvo10d],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response DLC1_C6M2_SafeRoomConvo10dGambler
-	},
-	{
-		name = "DLC1_C6M2_SafeRoomConvo11bCliffe",
-		criteria = 
-		[
-			[ConceptDLC1_C6M2_SafeRoomConvo11b],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response DLC1_C6M2_SafeRoomConvo11bGambler
-	},
-	{
-		name = "DLC1_C6M2_SafeRoomConvo12aCliffe",
-		criteria = 
-		[
-			[ConceptDLC1_C6M2_SafeRoomConvo12a],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response DLC1_C6M2_SafeRoomConvo12aGambler
-	},
-	{
-		name = "DLC1_C6M2_SafeRoomConvo12cCliffe",
-		criteria = 
-		[
-			[ConceptDLC1_C6M2_SafeRoomConvo12c],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response DLC1_C6M2_SafeRoomConvo12cGambler
-	},
-	{
-		name = "DLC1_C6M2_SafeRoomConvo13aCliffe",
-		criteria = 
-		[
-			[ConceptDLC1_C6M2_SafeRoomConvo13a],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response DLC1_C6M2_SafeRoomConvo13aGambler
-	},
-	{
-		name = "DLC1_C6M2_SafeRoomConvo13cCliffe",
-		criteria = 
-		[
-			[ConceptDLC1_C6M2_SafeRoomConvo13c],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response DLC1_C6M2_SafeRoomConvo13cGambler
-	},
-	{
-		name = "DLC1_C6M2_SafeRoomConvo13cFrancisIntroCliffe",
-		criteria = 
-		[
-			[ConceptDLC1_C6M2_SafeRoomConvo13c],
-			[IsCliffe],
-			[IsFrancisIntroActor],
-			[ChanceToFire50Percent],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response DLC1_C6M2_SafeRoomConvo13cFrancisIntroGambler
-	},
-	{
-		name = "DLC1_C6M2_SafeRoomConvo14fCliffe",
-		criteria = 
-		[
-			[ConceptDLC1_C6M2_SafeRoomConvo14f],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response DLC1_C6M2_SafeRoomConvo14fGambler
-	},
-	{
-		name = "DLC1_C6M2_SafeRoomConvo15cCliffe",
-		criteria = 
-		[
-			[ConceptDLC1_C6M2_SafeRoomConvo15c],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response DLC1_C6M2_SafeRoomConvo15cGambler
-	},
-	{
-		name = "WorldC6M2_AfterGate201aCliffe",
-		criteria = 
-		[
-			[ConceptWorldC6M2_AfterGate201a],
-			[IsCliffe],
-			[IsNotCoughing],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response WorldC6M2_AfterGate201aGambler
-	},
-	{
-		name = "WorldC6M2_FinalWater01aCliffe",
-		criteria = 
-		[
-			[ConceptWorldC6M2_FinalWater01a],
-			[IsCliffe],
-			[IsNotCoughing],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response WorldC6M2_FinalWater01aGambler
-	},
-	{
-		name = "WorldC6M2_InSewer101cCliffe",
-		criteria = 
-		[
-			[ConceptWorldC6M2_InSewer101c],
-			[IsCliffe],
-			[IsNotCoughing],
+			[ConceptTalkIdle],
+			[IsCsgo_sas],
 			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[Isc6m2_bedlam],
+			[IsInStartArea],
+			[IsNotAlone],
+			[IsNotSaidLeavingSafeArea],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[_auto_IsSafeRoomStart],
+			[_auto_NotSafeRoomQuiet],
+			[IsNotSpeakingWeight0],
+		],
+		Response DLC1_C6M2_SafeRoomConvo08Mechanic
+		then Producer DLC1_C6M2_SafeRoomConvo15a foo:0 -4.114
+		ApplyContext "_auto_SafeRoomStart:2:0"
+		applycontexttoworld
+	},
+	{
+		name = "DLC1_C6M2_SafeRoomConvo11a_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptDLC1_C6M2_SafeRoomConvo11a],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response WorldC6M2_InSewer101cGambler
+		Response DLC1_C6M2_SafeRoomConvo11aMechanic
+		then Gambler DLC1_C6M2_SafeRoomConvo11b foo:0 -4.069
 	},
 	{
-		name = "WorldC6M2_InSewer102bCliffe",
+		name = "DLC1_C6M2_SafeRoomConvo14b_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptWorldC6M2_InSewer102b],
-			[IsCliffe],
+			[ConceptDLC1_C6M2_SafeRoomConvo14b],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response DLC1_C6M2_SafeRoomConvo14bMechanic
+		then Producer DLC1_C6M2_SafeRoomConvo14c foo:0 -2.922
+	},
+	{
+		name = "DLC1_C6M2_SafeRoomConvo16b_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptDLC1_C6M2_SafeRoomConvo16b],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response DLC1_C6M2_SafeRoomConvo16bMechanic
+		then Producer DLC1_C6M2_SafeRoomConvo16c foo:0 -1.763
+	},
+	{
+		name = "DLC1_C6M2_SafeRoomConvo16dRochelle_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptDLC1_C6M2_SafeRoomConvo16d],
+			[IsCsgo_sas],
+			[FromIsProducer],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response DLC1_C6M2_SafeRoomConvo16dRochelleMechanic
+		then self IntroEnd foo:0 0.1
+	},
+	{
+		name = "DLC1_C6M2_SafeRoomConvo16dCoach_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptDLC1_C6M2_SafeRoomConvo16d],
+			[IsCsgo_sas],
+			[FromIsCoach],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response DLC1_C6M2_SafeRoomConvo16dCoachMechanic
+		then self IntroEnd foo:0 0.1
+	},
+	{
+		name = "DLC1_C6M2_SafeRoomConvo17a_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptDLC1_C6M2_SafeRoomConvo17a],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response DLC1_C6M2_SafeRoomConvo17aMechanic
+		then Producer DLC1_C6M2_SafeRoomConvo17b foo:0 -7.751
+	},
+	{
+		name = "DLC1_C6M2_SafeRoomConvo18b_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptDLC1_C6M2_SafeRoomConvo18b],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response DLC1_C6M2_SafeRoomConvo18bMechanic
+		then Coach DLC1_C6M2_SafeRoomConvo18c foo:0 -2.705
+	},
+	{
+		name = "DLC1_C6M2_SafeRoomConvo19a_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptDLC1_C6M2_SafeRoomConvo19a],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response DLC1_C6M2_SafeRoomConvo19aMechanic
+		then Coach DLC1_C6M2_SafeRoomConvo19b foo:0 -2.249
+	},
+	{
+		name = "DLC1_C6M2_SafeRoomConvo19c_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptDLC1_C6M2_SafeRoomConvo19c],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response DLC1_C6M2_SafeRoomConvo19cMechanic
+		then Coach DLC1_C6M2_SafeRoomConvo19d foo:0 -6.193
+	},
+	{
+		name = "DLC1_C6M2_SafeRoomConvo19e_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptDLC1_C6M2_SafeRoomConvo19e],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response DLC1_C6M2_SafeRoomConvo19eMechanic
+	},
+	{
+		name = "DLC1_C6M2_SafeRoomConvo19g_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptDLC1_C6M2_SafeRoomConvo19g],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response DLC1_C6M2_SafeRoomConvo19gMechanic
+		then self IntroEnd foo:0 0.1
+	},
+	{
+		name = "DLC1_C6M2_SafeRoomConvo21b_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptDLC1_C6M2_SafeRoomConvo21b],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response DLC1_C6M2_SafeRoomConvo21bMechanic
+	},
+	{
+		name = "WorldC6M2_FinalWater01b_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptWorldC6M2_FinalWater01b],
+			[IsCsgo_sas],
 			[IsNotCoughing],
-			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response WorldC6M2_InSewer102bGambler
+		Response WorldC6M2_FinalWater01bMechanic
 	},
 	{
-		name = "WorldC6M2_InSewer201aCliffe",
+		name = "WorldC6M2_InSewer101a_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptWorldC6M2_InSewer201a],
-			[IsCliffe],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response WorldC6M2_InSewer201aGambler
-	},
-	{
-		name = "WorldC6M2_InSewer202aCliffe",
-		criteria = 
-		[
-			[ConceptWorldC6M2_InSewer202a],
-			[IsCliffe],
+			[ConceptWorldC6M2_InSewer101a],
+			[IsCsgo_sas],
 			[IssuerClose],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response WorldC6M2_InSewer202aGambler
+		Response WorldC6M2_InSewer101aMechanic
+		then Gambler WorldC6M2_InSewer101c foo:0 -0.999
 	},
 	{
-		name = "WorldC6M2_InSewerLadder101aCliffe",
+		name = "WorldC6M2_OnTourWalk102b_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptWorldC6M2_InSewerLadder101a],
-			[IssuerClose],
-			[IsCliffe],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response WorldC6M2_InSewerLadder101aGambler
-	},
-	{
-		name = "WorldC6M2_OnTourWalk101aCliffe",
-		criteria = 
-		[
-			[ConceptWorldC6M2_OnTourWalk101a],
-			[IsCliffe],
+			[ConceptWorldC6M2_OnTourWalk102b],
+			[IsCsgo_sas],
 			[IssuerClose],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response WorldC6M2_OnTourWalk101aGambler
+		Response WorldC6M2_OnTourWalk102bMechanic
 	},
 	{
-		name = "WorldC6M2_OnTourWalk102aCliffe",
+		name = "WorldC6M2_Tattoo03b_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptWorldC6M2_OnTourWalk102a],
-			[IsCliffe],
-			[IssuerClose],
+			[ConceptWorldC6M2_Tattoo03b],
+			[IsCsgo_sas],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response WorldC6M2_OnTourWalk102aGambler
+		Response WorldC6M2_Tattoo03bMechanic
 	},
 	{
-		name = "WorldC6M2_Tattoo01bCliffe",
-		criteria = 
-		[
-			[ConceptWorldC6M2_Tattoo01b],
-			[IsCliffe],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response WorldC6M2_Tattoo01bGambler
-	},
-	{
-		name = "WorldC6M2_Tattoo03aCliffe",
-		criteria = 
-		[
-			[ConceptWorldC6M2_Tattoo03a],
-			[IsCliffe],
-			[IssuerClose],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response WorldC6M2_Tattoo03aGambler
-	},
-	{
-		name = "C6M3_BridgeDownCliffe",
+		name = "C6M3_BridgeDown_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC6M3_BridgeDown],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
+			[IsCsgo_sas],
 		],
-		Response C6M3_BridgeDownGambler
+		Response C6M3_BridgeDownMechanic
 	},
 	{
-		name = "C6M3_BridgeGettoCarCliffe",
+		name = "C6M3_BridgeGettoCar_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptGetToVehicle],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc6m3_port],
 			[IsNotCoughing],
 			[IsNotIncapacitated],
@@ -5277,86 +5697,191 @@ local jess_cliffe_rules =
 			[IsNotInRescueVehicle],
 			[_auto_IsEscapeReady],
 			[_auto_NotTimerLockA],
-			[_auto_NotTimerLockCliffe],
+			[_auto_NotTimerLockCsgo_sas],
 			[IsNotSpeakingWeight0],
 		],
-		Response C6M3_BridgeGettoCarGambler
-		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockCliffe:1:30"
+		Response C6M3_BridgeGettoCarMechanic
+		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockCsgo_sas:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "C6M3_elevatorCancelCliffe",
+		name = "C6M3_elevatorCancel_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC6M3_ElevatorCancel],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC6M3_port],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
 		// 	forceweight 1
-		Response _PlayerInfoRemarkableBlankGambler
+		Response _PlayerInfoRemarkableBlankMechanic
 	},
 	{
-		name = "C6M3_elevatorCliffe",
+		name = "C6M3_elevator_CSGO_SAS",
 		criteria = 
 		[
 			[Conceptc6m3_elevator],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC6M3_port],
 			[IsNotSaidC6M3Elevator],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C6M3_elevatorGambler
+		Response C6M3_elevatorMechanic
 		ApplyContext "SaidC6M3Elevator:1:0,Talk:1:10"
 		applycontexttoworld
 	},
 	{
-		name = "C6M3_elevatorFrancisCliffe",
+		name = "C6M3_elevatorZoey_CSGO_SAS",
 		criteria = 
 		[
 			[Conceptc6m3_elevator],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC6M3_port],
-			[IsFrancisIntroActor],
+			[IsNotSaidC6M3Elevator],
+			[IsZoeyIntroActor],
 			[IsNotVersus],
-			[IsNotSaidC6M3Elevator],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C6M3_elevatorFrancisGambler
+		Response C6M3_elevatorZoeyMechanic
 		ApplyContext "SaidC6M3Elevator:1:0,Talk:1:10"
 		applycontexttoworld
 	},
 	{
-		name = "C6M3_GivenItemBikerCliffe",
+		name = "C6M3_GivenItemBiker_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsDonorBiker],
 			[Isc6m3_port],
 		],
-		Response C6M3_GivenItemBikerGambler
+		Response C6M3_GivenItemBikerMechanic
 	},
 	{
-		name = "C6M3_GivenItemTeenGirlCliffe",
+		name = "C6M3_GivenItemTeenGirl_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsDonorTeenGirl],
 			[Isc6m3_port],
 		],
-		Response C6M3_GivenItemTeenGirlGambler
+		Response C6M3_GivenItemTeenGirlMechanic
 	},
 	{
-		name = "DLC1_C6M3_SafeRoomConvoFrancisStartCliffe",
+		name = "C6M3_GivenItemTeenGirlIntro_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerPickup],
+			[IsCsgo_sas],
+			[IsDonorTeenGirl],
+			[Isc6m3_port],
+			[IsZoeyIntroActor],
+		],
+		Response C6M3_GivenItemTeenGirlIntroMechanic
+	},
+	{
+		name = "DLC1_C6M3_SafeRoomConvo01a_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptDLC1_C6M3_SafeRoomConvo01a],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response DLC1_C6M3_SafeRoomConvo01aMechanic
+		then Producer DLC1_C6M3_SafeRoomConvo01b foo:0 -7.373
+	},
+	{
+		name = "DLC1_C6M3_SafeRoomConvo01c_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptDLC1_C6M3_SafeRoomConvo01c],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response DLC1_C6M3_SafeRoomConvo01cMechanic
+	},
+	{
+		name = "DLC1_C6M3_SafeRoomConvo02e_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptDLC1_C6M3_SafeRoomConvo02e],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response DLC1_C6M3_SafeRoomConvo02eMechanic
+	},
+	{
+		name = "DLC1_C6M3_SafeRoomConvo03a_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptDLC1_C6M3_SafeRoomConvo03a],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response DLC1_C6M3_SafeRoomConvo03aMechanic
+		then Gambler DLC1_C6M3_SafeRoomConvo03b foo:0 -1.144
+	},
+	{
+		name = "DLC1_C6M3_SafeRoomConvo03c_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptDLC1_C6M3_SafeRoomConvo03c],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response DLC1_C6M3_SafeRoomConvo03cMechanic
+		then Gambler DLC1_C6M3_SafeRoomConvo03d foo:0 -1.799
+	},
+	{
+		name = "DLC1_C6M3_SafeRoomConvo04a_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptDLC1_C6M3_SafeRoomConvo04a],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response DLC1_C6M3_SafeRoomConvo04aMechanic
+		then Producer DLC1_C6M3_SafeRoomConvo04b foo:0 -3.659
+	},
+	{
+		name = "DLC1_C6M3_SafeRoomConvo04d_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptDLC1_C6M3_SafeRoomConvo04d],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response DLC1_C6M3_SafeRoomConvo04dMechanic
+	},
+	{
+		name = "DLC1_C6M3_SafeRoomConvo05a_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptDLC1_C6M3_SafeRoomConvo05a],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response DLC1_C6M3_SafeRoomConvo05aMechanic
+		then Gambler DLC1_C6M3_SafeRoomConvo05b foo:0 -2.546
+	},
+	{
+		name = "DLC1_C6M3_SafeRoomConvoFrancisStart_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptTalkIdle],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[NotInCombat],
 			[isC6m3_port],
 			[IsInStartArea],
@@ -5370,146 +5895,624 @@ local jess_cliffe_rules =
 			[_auto_NotSafeRoomQuiet],
 			[IsNotSpeakingWeight0],
 		],
-		Response DLC1_C6M3_SafeRoomConvoFrancisStartGambler
+		Response DLC1_C6M3_SafeRoomConvoFrancisStartMechanic
+		then Producer DLC1_C6M3_SafeRoomConvo06a foo:0 -5.805
 		ApplyContext "_auto_SafeRoomStart:2:0"
 		applycontexttoworld
 	},
 	{
-		name = "DLC1_C6M3_SafeRoomConvo02bCliffe",
+		name = "DLC1_C6M3_SafeRoomConvo06b_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptDLC1_C6M3_SafeRoomConvo02b],
-			[IsCliffe],
+			[ConceptDLC1_C6M3_SafeRoomConvo06b],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response DLC1_C6M3_SafeRoomConvo02bGambler
+		Response DLC1_C6M3_SafeRoomConvo06bMechanic
 	},
 	{
-		name = "DLC1_C6M3_SafeRoomConvo02dCliffe",
+		name = "DLC1_C6M3_SafeRoomConvo07a_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptDLC1_C6M3_SafeRoomConvo02d],
-			[IsCliffe],
+			[ConceptDLC1_C6M3_SafeRoomConvo07a],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response DLC1_C6M3_SafeRoomConvo02dGambler
+		Response DLC1_C6M3_SafeRoomConvo07aMechanic
+		then Producer DLC1_C6M3_SafeRoomConvo07b foo:0 -2.804
 	},
 	{
-		name = "DLC1_C6M3_SafeRoomConvo03bCliffe",
+		name = "DLC1_C6M3_SafeRoomConvo07c_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptDLC1_C6M3_SafeRoomConvo03b],
-			[IsCliffe],
+			[ConceptDLC1_C6M3_SafeRoomConvo07c],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response DLC1_C6M3_SafeRoomConvo03bGambler
+		Response DLC1_C6M3_SafeRoomConvo07cMechanic
 	},
 	{
-		name = "DLC1_C6M3_SafeRoomConvo03dCliffe",
+		name = "DLC1_C6M3_SafeRoomConvo08a_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptDLC1_C6M3_SafeRoomConvo03d],
-			[IsCliffe],
+			[ConceptDLC1_C6M3_SafeRoomConvo08a],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response DLC1_C6M3_SafeRoomConvo03dGambler
+		Response DLC1_C6M3_SafeRoomConvo08aMechanic
+		then Coach DLC1_C6M3_SafeRoomConvo08b foo:0 -1.669
 	},
 	{
-		name = "DLC1_C6M3_SafeRoomConvo04cCliffe",
+		name = "DLC1_C6M3_SafeRoomConvo08c_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptDLC1_C6M3_SafeRoomConvo04c],
-			[IsCliffe],
+			[ConceptDLC1_C6M3_SafeRoomConvo08c],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response DLC1_C6M3_SafeRoomConvo04cGambler
+		Response DLC1_C6M3_SafeRoomConvo08cMechanic
+		then Csgo_sas DLC1_C6M3_SafeRoomConvo08d foo:0 -0.936
 	},
 	{
-		name = "DLC1_C6M3_SafeRoomConvoZoeyStartCliffe",
+		name = "DLC1_C6M3_SafeRoomConvo08d_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptTalkIdle],
-			[IsCliffe],
-			[NotInCombat],
-			[isC6m3_port],
-			[IsInStartArea],
-			[IsNotAlone],
-			[IsNotSaidLeavingSafeArea],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsZoeyIntroActor],
-			[IsEveryoneAlive],
-			[_auto_IsSafeRoomStart],
-			[_auto_NotSafeRoomQuiet],
-			[IsNotSpeakingWeight0],
-		],
-		Response DLC1_C6M3_SafeRoomConvoZoeyStartGambler
-		ApplyContext "_auto_SafeRoomStart:2:0"
-		applycontexttoworld
-	},
-	{
-		name = "DLC1_C6M3_SafeRoomConvo05bCliffe",
-		criteria = 
-		[
-			[ConceptDLC1_C6M3_SafeRoomConvo05b],
-			[IsCliffe],
+			[ConceptDLC1_C6M3_SafeRoomConvo08d],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response DLC1_C6M3_SafeRoomConvo05bGambler
+		Response DLC1_C6M3_SafeRoomConvo08dMechanic
+		then Csgo_sas DLC1_C6M3_SafeRoomConvo08f foo:0 -1.479
 	},
 	{
-		name = "DLC1_C6M3_SafeRoomConvo05dCliffe",
+		name = "DLC1_C6M3_SafeRoomConvo08e_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptDLC1_C6M3_SafeRoomConvo05d],
-			[IsCliffe],
+			[ConceptDLC1_C6M3_SafeRoomConvo08e],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response DLC1_C6M3_SafeRoomConvo05dGambler
+		Response DLC1_C6M3_SafeRoomConvo08eMechanic
+		then Csgo_sas DLC1_C6M3_SafeRoomConvo08f foo:0 -2.608
 	},
 	{
-		name = "IncapBounceCliffe",
+		name = "DLC1_C6M3_SafeRoomConvo08f_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptDLC1_C6M3_SafeRoomConvo08f],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response DLC1_C6M3_SafeRoomConvo08fMechanic
+		then Producer DLC1_C6M3_SafeRoomConvo08g foo:0 -5.514
+	},
+	{
+		name = "DLC1_C6M3_SafeRoomConvo09a_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptDLC1_C6M3_SafeRoomConvo09a],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response DLC1_C6M3_SafeRoomConvo09aMechanic
+		then Producer DLC1_C6M3_SafeRoomConvo09b foo:0 -13.536
+	},
+	{
+		name = "IncapBounce_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptSurvivorIncapacitated],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidInCapBounce],
 			[isC6m3_port],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
 		],
-		Response IncapBounceGambler
+		Response IncapBounceMechanic
+		then Biker InCapBounce2 foo:0 0
 		ApplyContext "SaidInCapBounce:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerCallForRescueCliffe",
+		name = "PlayerCallForRescue_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptCallForRescue],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[HasNotCalledForRescue],
 		],
-		Response PlayerCallForRescueGambler
+		Response PlayerCallForRescueMechanic
 		ApplyContext "CalledForRescue:1:5"
 		applycontexttoworld
 	},
 	{
-		name = "c6m3_outroCliffe",
+		name = "C1M2EllisStory_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptTalkIdle],
+			[IsCsgo_sas],
+			[IsInStartArea],
+			[IsNotSaidLeavingSafeArea],
+			[IsNotSpeaking],
+			[ismap_c1m2_streets],
+			[IsACoopMode],
+			[ChanceToFire10Percent],
+			[IsNotSrcGrp_CSGO_SASSTORY],
+			[_auto_IsStoryWait],
+			[_auto_NotStoryGate],
+		],
+		// 	forceweight 1
+		Response C1M2EllisStoryMechanic
+		then any Csgo_sasInterrupt foo:0 -19.75
+		ApplyContext "_auto_TellingStory:1:0,SrcGrp_CSGO_SASSTORY:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "C1M3EllisStory_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptTalkIdle],
+			[IsCsgo_sas],
+			[IsInStartArea],
+			[IsNotSaidLeavingSafeArea],
+			[IsNotSpeaking],
+			[ismap_c1m3_mall],
+			[IsACoopMode],
+			[ChanceToFire10Percent],
+			[IsNotSrcGrp_CSGO_SASSTORY],
+			[_auto_IsStoryWait],
+			[_auto_NotStoryGate],
+		],
+		// 	forceweight 1
+		Response C1M3EllisStoryMechanic
+		then any Csgo_sasInterrupt foo:0 -7.93
+		ApplyContext "_auto_TellingStory:1:0,SrcGrp_CSGO_SASSTORY:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "C1M4EllisStory_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptTalkIdle],
+			[IsCsgo_sas],
+			[IsInStartArea],
+			[IsNotSaidLeavingSafeArea],
+			[IsNotSpeaking],
+			[ismap_c1m4_atrium],
+			[IsACoopMode],
+			[ChanceToFire10Percent],
+			[IsNotSrcGrp_CSGO_SASSTORY],
+			[_auto_IsStoryWait],
+			[_auto_NotStoryGate],
+		],
+		// 	forceweight 1
+		Response C1M4EllisStoryMechanic
+		then any Csgo_sasInterrupt foo:0 -12.29
+		ApplyContext "_auto_TellingStory:1:0,SrcGrp_CSGO_SASSTORY:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "C2M2EllisStory_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptTalkIdle],
+			[IsCsgo_sas],
+			[IsInStartArea],
+			[IsNotSaidLeavingSafeArea],
+			[IsNotSpeaking],
+			[ismap_c2m2],
+			[IsACoopMode],
+			[ChanceToFire10Percent],
+			[IsNotSrcGrp_CSGO_SASSTORY],
+			[_auto_IsStoryWait],
+			[_auto_NotStoryGate],
+		],
+		// 	forceweight 1
+		Response C2M2EllisStoryMechanic
+		then any Csgo_sasInterrupt foo:0 -13.43
+		ApplyContext "_auto_TellingStory:1:0,SrcGrp_CSGO_SASSTORY:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "C2M3EllisStory_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptTalkIdle],
+			[IsCsgo_sas],
+			[IsInStartArea],
+			[IsNotSaidLeavingSafeArea],
+			[IsNotSpeaking],
+			[ismap_c2m3],
+			[IsACoopMode],
+			[ChanceToFire10Percent],
+			[IsNotSrcGrp_CSGO_SASSTORY],
+			[_auto_IsStoryWait],
+			[_auto_NotStoryGate],
+		],
+		// 	forceweight 1
+		Response C2M3EllisStoryMechanic
+		then any Csgo_sasInterrupt foo:0 -15.02
+		ApplyContext "_auto_TellingStory:1:0,SrcGrp_CSGO_SASSTORY:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "C2M4EllisStory_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptTalkIdle],
+			[IsCsgo_sas],
+			[IsInStartArea],
+			[IsNotSaidLeavingSafeArea],
+			[IsNotSpeaking],
+			[ismap_c2m4],
+			[IsACoopMode],
+			[ChanceToFire10Percent],
+			[IsNotSrcGrp_CSGO_SASSTORY],
+			[_auto_IsStoryWait],
+			[_auto_NotStoryGate],
+		],
+		// 	forceweight 1
+		Response C2M4EllisStoryMechanic
+		then any Csgo_sasInterrupt foo:0 -10.17
+		ApplyContext "_auto_TellingStory:1:0,SrcGrp_CSGO_SASSTORY:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "C2M5EllisStory_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptTalkIdle],
+			[IsCsgo_sas],
+			[IsInStartArea],
+			[IsNotSaidLeavingSafeArea],
+			[IsNotSpeaking],
+			[ismap_c2m5],
+			[IsACoopMode],
+			[ChanceToFire10Percent],
+			[IsNotSrcGrp_CSGO_SASSTORY],
+			[_auto_IsStoryWait],
+			[_auto_NotStoryGate],
+		],
+		// 	forceweight 1
+		Response C2M5EllisStoryMechanic
+		then any Csgo_sasInterrupt foo:0 -14.33
+		ApplyContext "_auto_TellingStory:1:0,SrcGrp_CSGO_SASSTORY:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "C3M2EllisStory_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptTalkIdle],
+			[IsCsgo_sas],
+			[IsInStartArea],
+			[IsNotSaidLeavingSafeArea],
+			[IsNotSpeaking],
+			[ismapc3m2_swamp],
+			[IsACoopMode],
+			[ChanceToFire10Percent],
+			[IsNotSrcGrp_CSGO_SASSTORY],
+			[_auto_IsStoryWait],
+			[_auto_NotStoryGate],
+		],
+		// 	forceweight 1
+		Response C3M2EllisStoryMechanic
+		then any Csgo_sasInterrupt foo:0 -13.34
+		ApplyContext "_auto_TellingStory:1:0,SrcGrp_CSGO_SASSTORY:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "C3M3EllisStory_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptTalkIdle],
+			[IsCsgo_sas],
+			[IsInStartArea],
+			[IsNotSaidLeavingSafeArea],
+			[IsNotSpeaking],
+			[ismapc3m3_shantytown],
+			[IsACoopMode],
+			[ChanceToFire10Percent],
+			[IsNotSrcGrp_CSGO_SASSTORY],
+			[_auto_IsStoryWait],
+			[_auto_NotStoryGate],
+		],
+		// 	forceweight 1
+		Response C3M3EllisStoryMechanic
+		then any Csgo_sasInterrupt foo:0 -23.98
+		ApplyContext "_auto_TellingStory:1:0,SrcGrp_CSGO_SASSTORY:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "C3M4EllisStory_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptTalkIdle],
+			[IsCsgo_sas],
+			[IsInStartArea],
+			[IsNotSaidLeavingSafeArea],
+			[IsNotSpeaking],
+			[ismapc3m4_plantation],
+			[IsACoopMode],
+			[ChanceToFire10Percent],
+			[IsNotSrcGrp_CSGO_SASSTORY],
+			[_auto_IsStoryWait],
+			[_auto_NotStoryGate],
+		],
+		// 	forceweight 1
+		Response C3M4EllisStoryMechanic
+		then any Csgo_sasInterrupt foo:0 -15.53
+		ApplyContext "_auto_TellingStory:1:0,SrcGrp_CSGO_SASSTORY:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "C4M2EllisStory_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptTalkIdle],
+			[IsCsgo_sas],
+			[IsInStartArea],
+			[IsNotSaidLeavingSafeArea],
+			[IsNotSpeaking],
+			[ismap_c4m2_sugarmill_a],
+			[IsACoopMode],
+			[ChanceToFire10Percent],
+			[IsNotSrcGrp_CSGO_SASSTORY],
+			[_auto_IsStoryWait],
+			[_auto_NotStoryGate],
+		],
+		// 	forceweight 1
+		Response C4M2EllisStoryMechanic
+		then any Csgo_sasInterrupt foo:0 -16.69
+		ApplyContext "_auto_TellingStory:1:0,SrcGrp_CSGO_SASSTORY:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "C4M3EllisStory_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptTalkIdle],
+			[IsCsgo_sas],
+			[IsInStartArea],
+			[IsNotSaidLeavingSafeArea],
+			[IsNotSpeaking],
+			[isc4m3],
+			[IsACoopMode],
+			[ChanceToFire10Percent],
+			[IsNotSrcGrp_CSGO_SASSTORY],
+			[_auto_IsStoryWait],
+			[_auto_NotStoryGate],
+		],
+		// 	forceweight 1
+		Response C4M3EllisStoryMechanic
+		then any Csgo_sasInterrupt foo:0 -9.99
+		ApplyContext "_auto_TellingStory:1:0,SrcGrp_CSGO_SASSTORY:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "C4M4EllisStory_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptTalkIdle],
+			[IsCsgo_sas],
+			[IsInStartArea],
+			[IsNotSaidLeavingSafeArea],
+			[IsNotSpeaking],
+			[isc4m4],
+			[IsACoopMode],
+			[ChanceToFire10Percent],
+			[IsNotSrcGrp_CSGO_SASSTORY],
+			[_auto_IsStoryWait],
+			[_auto_NotStoryGate],
+		],
+		// 	forceweight 1
+		Response C4M4EllisStoryMechanic
+		then any Csgo_sasInterrupt foo:0 -15.21
+		ApplyContext "_auto_TellingStory:1:0,SrcGrp_CSGO_SASSTORY:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "C5M2EllisStory_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptTalkIdle],
+			[IsCsgo_sas],
+			[IsInStartArea],
+			[IsNotSaidLeavingSafeArea],
+			[IsNotSpeaking],
+			[IsMapc5m2_park],
+			[IsACoopMode],
+			[ChanceToFire10Percent],
+			[IsNotSrcGrp_CSGO_SASSTORY],
+			[_auto_IsStoryWait],
+			[_auto_NotStoryGate],
+		],
+		// 	forceweight 1
+		Response C5M2EllisStoryMechanic
+		then any Csgo_sasInterrupt foo:0 -8.54
+		ApplyContext "_auto_TellingStory:1:0,SrcGrp_CSGO_SASSTORY:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "C5M3EllisStory_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptTalkIdle],
+			[IsCsgo_sas],
+			[IsInStartArea],
+			[IsNotSaidLeavingSafeArea],
+			[IsNotSpeaking],
+			[IsMapc5m3_cemetery],
+			[IsACoopMode],
+			[ChanceToFire10Percent],
+			[IsNotSrcGrp_CSGO_SASSTORY],
+			[_auto_IsStoryWait],
+			[_auto_NotStoryGate],
+		],
+		// 	forceweight 1
+		Response C5M3EllisStoryMechanic
+		then any Csgo_sasInterrupt foo:0 -3.46
+		ApplyContext "_auto_TellingStory:1:0,SrcGrp_CSGO_SASSTORY:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "C5M4EllisStory_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptTalkIdle],
+			[IsCsgo_sas],
+			[IsInStartArea],
+			[IsNotSaidLeavingSafeArea],
+			[IsNotSpeaking],
+			[IsMapc5m4_quarter],
+			[IsACoopMode],
+			[ChanceToFire10Percent],
+			[IsNotSrcGrp_CSGO_SASSTORY],
+			[_auto_IsStoryWait],
+			[_auto_NotStoryGate],
+		],
+		// 	forceweight 1
+		Response C5M4EllisStoryMechanic
+		then any Csgo_sasInterrupt foo:0 -17.96
+		ApplyContext "_auto_TellingStory:1:0,SrcGrp_CSGO_SASSTORY:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "C5M5EllisStory_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptTalkIdle],
+			[IsCsgo_sas],
+			[IsInStartArea],
+			[IsNotSaidLeavingSafeArea],
+			[IsNotSpeaking],
+			[IsMapc5m5_bridge],
+			[IsACoopMode],
+			[ChanceToFire10Percent],
+			[IsNotSrcGrp_CSGO_SASSTORY],
+			[_auto_IsStoryWait],
+			[_auto_NotStoryGate],
+		],
+		// 	forceweight 1
+		Response C5M5EllisStoryMechanic
+		then any Csgo_sasInterrupt foo:0 -18.21
+		ApplyContext "_auto_TellingStory:1:0,SrcGrp_CSGO_SASSTORY:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "C6M2EllisStory_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptTalkIdle],
+			[IsCsgo_sas],
+			[IsInStartArea],
+			[IsNotSaidLeavingSafeArea],
+			[IsNotSpeaking],
+			[isc6m2_bedlam],
+			[IsACoopMode],
+			[ChanceToFire20Percent],
+			[IsNotSrcGrp_CSGO_SASSTORY],
+			[_auto_IsStoryWait],
+			[_auto_NotStoryGate],
+		],
+		Response C6M2EllisStoryMechanic
+		then any Csgo_sasInterrupt foo:0 0.1
+		ApplyContext "_auto_TellingStory:1:0,SrcGrp_CSGO_SASSTORY:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "C6M2EllisStoryStart1_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC6M2Csgo_sasStoryStart1],
+			[IsCsgo_sas],
+			[_auto_NotDidInterrupt],
+		],
+		Response C6M2EllisStoryStart1Mechanic
+		then any Csgo_sasInterrupt foo:0 -26.93
+	},
+	{
+		name = "C6M3EllisBridgeStory_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptTalkIdle],
+			[IsCsgo_sas],
+			[IsNotSpeaking],
+			[isc6m3_port],
+			[IsACoopMode],
+			[IsNotInStartArea],
+			[ChanceToFire20Percent],
+			[IsSaidFinaleExchange],
+			[IsEndCsgo_sasBridgeStoryStart],
+			[IsNotSaidCsgo_sasBridgeStoryStart],
+			[IsNotSaidC6M3Elevator],
+		],
+		// 	forceweight 1
+		Response C6M3EllisBridgeStoryMechanic
+		then any Csgo_sasInterrupt foo:0 0.1
+		ApplyContext "Talk:1:0,_auto_TellingStory:1:0,SrcGrp_CSGO_SASSTORY:1:0,SaidCsgo_sasBridgeStoryStart:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "C6M3EllisBridgeStory1_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC6M3Csgo_sasBridgeStory1],
+			[IsCsgo_sas],
+			[IsNotSaidC6M3Elevator],
+			[_auto_NotDidInterrupt],
+		],
+		Response C6M3EllisBridgeStory1Mechanic
+		then self C6M3Csgo_sasBridgeStory1a foo:0 -24.62
+	},
+	{
+		name = "C6M3EllisBridgeStory1a_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC6M3Csgo_sasBridgeStory1a],
+			[IsCsgo_sas],
+			[IsNotSaidC6M3Elevator],
+			[_auto_NotDidInterrupt],
+		],
+		Response C6M3EllisBridgeStory1aMechanic
+		then any Csgo_sasInterrupt foo:0 0.1
+	},
+	{
+		name = "EllisStoryReac01_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptCsgo_sasStoryReac01],
+			[IsCsgo_sas],
+		],
+		Response EllisStoryReac01Mechanic
+	},
+	{
+		name = "EllisStoryReac01Goat_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptCsgo_sasStoryReac01],
+			[IsCsgo_sas],
+			[ismap_c1m4_atrium],
+		],
+		// 	forceweight 100
+		Response EllisStoryReac01GoatMechanic
+	},
+	{
+		name = "c6m3_outro_CSGO_SAS",
 		criteria = 
 		[
 			[Conceptc6m3_outro3],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[isC6m3_port],
 			[IsNotVersus],
 			[IsNotIncapacitated],
@@ -5517,1740 +6520,1566 @@ local jess_cliffe_rules =
 			[FromIsBiker],
 		],
 		// 	forceweight 1
-		Response c6m3_outroGambler
+		Response c6m3_outroMechanic
 	},
 	{
-		name = "c6m3_outroEllisCliffe",
+		name = "c6m3_outroZoeyOutro_CSGO_SAS",
 		criteria = 
 		[
 			[Conceptc6m3_outro3],
-			[IsCliffe],
-			[IsMechanicAlive],
-			[ChanceToFire50Percent],
-			[IsNotIncapacitated],
+			[IsCsgo_sas],
 			[isC6m3_port],
+			[IsZoeyIntroActor],
 			[IsNotVersus],
+			[IsNotIncapacitated],
+			[ChanceToFire100Percent],
 			[FromIsBiker],
 		],
-		// 	forceweight 5
-		Response c6m3_outroEllisGambler
+		// 	forceweight 2
+		Response c6m3_outroZoeyOutroMechanic
+		then gambler c6m3_outroL4D1011a foo:0 0.1
 	},
 	{
-		name = "c6m3_outroZoeyOutroCliffe",
+		name = "c6m3_outroRochelleOutro_CSGO_SAS",
 		criteria = 
 		[
-			[Conceptc6m3_outroL4D1011a],
-			[IsCliffe],
+			[Conceptc6m3_outroL4D1012a],
+			[IsCsgo_sas],
 			[IsNotIncapacitated],
-			[FromIsMechanic],
+			[FromIsProducer],
 		],
-		Response c6m3_outroZoeyOutroGambler
+		Response c6m3_outroRochelleOutroMechanic
 	},
 	{
-		name = "SurvivorSpotFirstWeaponsCliffe",
+		name = "SurvivorSpotFirstWeapons_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotPickedUpFirstAidKit],
 			[ismap_c1m1_hotel],
-			[IsNotSaidWorldC1M1First],
 			[IsNotSaidFirstWeapon],
-			[IsWorldTalkCliffe],
+			[IsNotSaidWorldC1M1First],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response SurvivorSpotFirstWeaponsGambler
+		Response SurvivorSpotFirstWeaponsMechanic
 		ApplyContext "SaidFirstWeapon:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedAdrenalineCliffe",
+		name = "SurvivorSpottedAdrenaline_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSmartLookAuto],
 			[IsAdrenaline],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedAdrenalineGambler
+		Response SurvivorSpottedAdrenalineMechanic
 		ApplyContext "SaidSpotAdrenaline:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedAdrenalineAutoCliffe",
+		name = "SurvivorSpottedAdrenalineAuto_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSmartLookAuto],
 			[IsNotInSafeSpot],
 			[IsNotAlone],
 			[IsNotSaidSpotAdrenaline],
 			[IsNotSaidSpot],
 			[IsAdrenaline],
-			[IsWorldTalkCliffe],
-			[_auto_NotSpottedVehicle],
+			[IsWorldTalkCsgo_sas],
 			[IsNotSpeakingWeight0],
+			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedAdrenalineGambler
+		Response SurvivorSpottedAdrenalineMechanic
 		ApplyContext "SaidSpotAdrenaline:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedAmmoCliffe",
+		name = "SurvivorSpottedAmmo_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
 			[IsAmmo],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSmartLookAuto],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedAmmoGambler
+		Response SurvivorSpottedAmmoMechanic
 		ApplyContext "SaidSpotAmmo:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedAmmoAutoCliffe",
+		name = "SurvivorSpottedAmmoAuto_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
 			[IsAmmo],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSmartLookAuto],
 			[IsNotInSafeSpot],
 			[IsNotAlone],
 			[IsNotSaidSpotAmmo],
 			[IsNotSaidSpot],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[IsNotSpeakingWeight0],
+			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedAmmoGambler
+		Response SurvivorSpottedAmmoMechanic
 		ApplyContext "SaidSpotAmmo:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedAmmo2Cliffe",
+		name = "SurvivorSpottedAmmo2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotAmmo],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotInSafeSpot],
 			[IsNotAlone],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedAmmo2Gambler
+		Response SurvivorSpottedAmmo2Mechanic
 	},
 	{
-		name = "SurvivorSpottedCoachCloseCliffe",
+		name = "SurvivorSpottedCoachClose_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerLookHere],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSmartLookAuto],
 			[SubjectIsCoach],
 			[IsCoachNear400],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response SurvivorSpottedCoachCloseGambler
+		Response SurvivorSpottedCoachCloseMechanic
 	},
 	{
-		name = "SurvivorSpottedCoachClose2Cliffe",
+		name = "SurvivorSpottedCoachClose2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerLook],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSmartLookAuto],
 			[SubjectIsCoach],
 			[IsCoachNear400],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response SurvivorSpottedCoachCloseGambler
+		Response SurvivorSpottedCoachCloseMechanic
 	},
 	{
-		name = "SurvivorSpottedCoachClose2C1Cliffe",
+		name = "SurvivorSpottedCoachClose2C1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerLook],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSmartLookAuto],
 			[SubjectIsCoach],
 			[IsCoachNear400],
-			[IsWorldTalkCliffe],
-			[C1M1orC1M2],
-			[IsNotSurvival],
+			[IsWorldTalkCsgo_sas],
+			[ismap_c1m1_hotel],
+			[NoKnowNames],
 		],
-		Response SurvivorSpottedCoachClose2C1Gambler
+		Response SurvivorSpottedCoachClose2C1Mechanic
 	},
 	{
-		name = "SurvivorSpottedCoachCloseC1Cliffe",
+		name = "SurvivorSpottedCoachCloseC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerLookHere],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSmartLookAuto],
 			[SubjectIsCoach],
 			[IsCoachNear400],
-			[IsWorldTalkCliffe],
-			[C1M1orC1M2],
-			[IsNotSurvival],
+			[IsWorldTalkCsgo_sas],
+			[ismap_c1m1_hotel],
+			[NoKnowNames],
 		],
-		Response SurvivorSpottedCoachClose2C1Gambler
+		Response SurvivorSpottedCoachClose2C1Mechanic
 	},
 	{
-		name = "SurvivorSpottedCoachFarCliffe",
+		name = "SurvivorSpottedCoachFar_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerLook],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSmartLookAuto],
 			[SubjectIsCoach],
 			[IsCoachFar400],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response SurvivorSpottedCoachFarGambler
+		Response SurvivorSpottedCoachFarMechanic
 	},
 	{
-		name = "SurvivorSpottedCoachFarC1Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerLook],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSmartLookAuto],
-			[SubjectIsCoach],
-			[IsCoachFar400],
-			[IsWorldTalkCliffe],
-			[C1M1orC1M2],
-			[IsNotSurvival],
-		],
-		Response SurvivorSpottedCoachFarC1Gambler
-	},
-	{
-		name = "SurvivorSpottedDefibrillatorCliffe",
+		name = "SurvivorSpottedDefibrillator_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSmartLookAuto],
 			[IsDefibrillator],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response SurvivorSpottedDefibrillatorGambler
+		Response SurvivorSpottedDefibrillatorMechanic
 		ApplyContext "SaidSpotDefibrillator:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedDefibrillatorAutoCliffe",
+		name = "SurvivorSpottedDefibrillatorAuto_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSmartLookAuto],
 			[IsNotInSafeSpot],
 			[IsNotAlone],
 			[IsNotSaidDefibrillator],
 			[IsNotSaidSpot],
 			[IsDefibrillator],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[IsNotSpeakingWeight0],
 		],
-		Response SurvivorSpottedDefibrillatorGambler
+		Response SurvivorSpottedDefibrillatorMechanic
 		ApplyContext "SaidSpotDefibrillator:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedGrenadeCliffe",
+		name = "SurvivorSpottedGamblerClose_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerLookHere],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSmartLookAuto],
+			[SubjectIsGambler],
+			[IsGamblerNear400],
+			[IsWorldTalkCsgo_sas],
+		],
+		Response SurvivorSpottedGamblerCloseMechanic
+	},
+	{
+		name = "SurvivorSpottedGamblerClose2_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerLook],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSmartLookAuto],
+			[SubjectIsGambler],
+			[IsGamblerNear400],
+			[IsWorldTalkCsgo_sas],
+		],
+		Response SurvivorSpottedGamblerClose2Mechanic
+	},
+	{
+		name = "SurvivorSpottedGamblerClose2C1_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerLook],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSmartLookAuto],
+			[SubjectIsGambler],
+			[IsGamblerNear400],
+			[IsWorldTalkCsgo_sas],
+			[ismap_c1m1_hotel],
+			[NoKnowNames],
+		],
+		Response SurvivorSpottedGamblerClose2C1Mechanic
+	},
+	{
+		name = "SurvivorSpottedGamblerCloseC1_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerLookHere],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSmartLookAuto],
+			[SubjectIsGambler],
+			[IsGamblerNear400],
+			[IsWorldTalkCsgo_sas],
+			[ismap_c1m1_hotel],
+			[NoKnowNames],
+		],
+		Response SurvivorSpottedGamblerClose2C1Mechanic
+	},
+	{
+		name = "SurvivorSpottedGamblerFar_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerLook],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSmartLookAuto],
+			[SubjectIsGambler],
+			[IsGamblerFar400],
+			[IsWorldTalkCsgo_sas],
+		],
+		Response SurvivorSpottedGamblerFarMechanic
+	},
+	{
+		name = "SurvivorSpottedGamblerFarC1_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerLook],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSmartLookAuto],
+			[SubjectIsGambler],
+			[IsGamblerFar400],
+			[IsWorldTalkCsgo_sas],
+			[ismap_c1m1_hotel],
+			[NoKnowNames],
+		],
+		Response SurvivorSpottedGamblerFarC1Mechanic
+	},
+	{
+		name = "SurvivorSpottedGrenade_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSmartLookAuto],
 			[IsPipeBomb],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedGrenadeGambler
+		Response SurvivorSpottedGrenadeMechanic
 		ApplyContext "SaidSpotGrenade:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedGrenadeAutoCliffe",
+		name = "SurvivorSpottedGrenadeAuto_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSmartLookAuto],
 			[IsNotInSafeSpot],
 			[IsNotAlone],
 			[IsNotSaidSpotGrenade],
 			[IsNotSaidSpot],
 			[IsPipeBomb],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[YesHasGrenade],
-			[_auto_NotSpottedVehicle],
 			[IsNotSpeakingWeight0],
+			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedGrenadeGambler
+		Response SurvivorSpottedGrenadeMechanic
 		ApplyContext "SaidSpotGrenade:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedGrenadeLauncherCliffe",
+		name = "SurvivorSpottedGrenadeLauncher_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSmartLookAuto],
 			[Isgrenade_launcher],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedGrenadeLauncherGambler
+		Response SurvivorSpottedGrenadeLauncherMechanic
 		ApplyContext "SaidSpotgrenade_launcher:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedGrenadeLauncherAutoCliffe",
+		name = "SurvivorSpottedGrenadeLauncherAuto_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSmartLookAuto],
 			[IsNotInSafeSpot],
 			[IsNotAlone],
 			[IsNotSaidSpotgrenade_launcher],
 			[IsNotSaidSpot],
 			[Isgrenade_launcher],
-			[IsWorldTalkCliffe],
-			[_auto_NotSpottedVehicle],
+			[IsWorldTalkCsgo_sas],
 			[IsNotSpeakingWeight0],
+			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedGrenadeLauncherGambler
+		Response SurvivorSpottedGrenadeLauncherMechanic
 		ApplyContext "SaidSpotgrenade_launcher:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedHealthCliffe",
+		name = "SurvivorSpottedHealth_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSmartLookAuto],
 			[IsFirstAidKit],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedHealthGambler
+		Response SurvivorSpottedHealthMechanic
 		ApplyContext "SaidSpotHealth:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedHealthAutoCliffe",
+		name = "SurvivorSpottedHealthAuto_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSmartLookAuto],
 			[IsNotInSafeSpot],
 			[IsNotAlone],
 			[IsNotSaidSpotHealth],
 			[IsNotSaidSpot],
 			[IsFirstAidKit],
-			[IsWorldTalkCliffe],
-			[_auto_NotSpottedVehicle],
+			[IsWorldTalkCsgo_sas],
 			[IsNotSpeakingWeight0],
+			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedHealthGambler
+		Response SurvivorSpottedHealthMechanic
 		ApplyContext "SaidSpotHealth:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedMechanicCloseCliffe",
-		criteria = 
-		[
-			[ConceptPlayerLookHere],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSmartLookAuto],
-			[SubjectIsMechanic],
-			[IsMechanicNear400],
-			[IsWorldTalkCliffe],
-		],
-		Response SurvivorSpottedMechanicCloseGambler
-	},
-	{
-		name = "SurvivorSpottedMechanicClose2Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerLook],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSmartLookAuto],
-			[SubjectIsMechanic],
-			[IsMechanicNear400],
-			[IsWorldTalkCliffe],
-		],
-		Response SurvivorSpottedMechanicClose2Gambler
-	},
-	{
-		name = "SurvivorSpottedMechanicClose2C1Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerLook],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSmartLookAuto],
-			[SubjectIsMechanic],
-			[IsMechanicNear400],
-			[IsWorldTalkCliffe],
-			[C1M1orC1M2],
-			[IsNotSurvival],
-		],
-		Response SurvivorSpottedMechanicClose2C1Gambler
-	},
-	{
-		name = "SurvivorSpottedMechanicCloseC1Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerLookHere],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSmartLookAuto],
-			[SubjectIsMechanic],
-			[IsMechanicNear400],
-			[IsWorldTalkCliffe],
-			[C1M1orC1M2],
-			[IsNotSurvival],
-		],
-		Response SurvivorSpottedMechanicClose2C1Gambler
-	},
-	{
-		name = "SurvivorSpottedMechanicFarCliffe",
-		criteria = 
-		[
-			[ConceptPlayerLook],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSmartLookAuto],
-			[SubjectIsMechanic],
-			[IsMechanicFar400],
-			[IsWorldTalkCliffe],
-		],
-		Response SurvivorSpottedMechanicFarGambler
-	},
-	{
-		name = "SurvivorSpottedMechanicFarC1Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerLook],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSmartLookAuto],
-			[SubjectIsMechanic],
-			[IsMechanicFar400],
-			[IsWorldTalkCliffe],
-			[C1M1orC1M2],
-			[IsNotSurvival],
-		],
-		Response SurvivorSpottedMechanicFarC1Gambler
-	},
-	{
-		name = "SurvivorSpottedMolotovCliffe",
+		name = "SurvivorSpottedMolotov_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSmartLookAuto],
 			[IsMolotov],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedMolotovGambler
+		Response SurvivorSpottedMolotovMechanic
 		ApplyContext "SaidSpotMolotov:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedMolotovAutoCliffe",
+		name = "SurvivorSpottedMolotovAuto_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSmartLookAuto],
 			[IsNotInSafeSpot],
 			[IsNotAlone],
 			[IsNotSaidSpotMolotov],
 			[IsNotSaidSpot],
 			[IsMolotov],
-			[IsWorldTalkCliffe],
-			[_auto_NotSpottedVehicle],
+			[IsWorldTalkCsgo_sas],
 			[IsNotSpeakingWeight0],
+			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedMolotovGambler
+		Response SurvivorSpottedMolotovMechanic
 		ApplyContext "SaidSpotMolotov:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedPillsCliffe",
+		name = "SurvivorSpottedPills_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSmartLookAuto],
 			[IsPainPills],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedPillsGambler
+		Response SurvivorSpottedPillsMechanic
 		ApplyContext "SaidSpotPills:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedPillsAutoCliffe",
+		name = "SurvivorSpottedPillsAuto_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSmartLookAuto],
 			[IsNotInSafeSpot],
 			[IsNotAlone],
 			[IsNotSaidSpotPills],
 			[IsNotSaidSpot],
 			[IsPainPills],
-			[IsWorldTalkCliffe],
-			[_auto_NotSpottedVehicle],
+			[IsWorldTalkCsgo_sas],
 			[IsNotSpeakingWeight0],
+			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedPillsGambler
+		Response SurvivorSpottedPillsMechanic
 		ApplyContext "SaidSpotPills:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedPillsAutoHasPillsCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsSmartLookAuto],
-			[IsNotInSafeSpot],
-			[YesHasPainPills],
-			[IsNotAlone],
-			[IsNotSaidSpotPills],
-			[IsNotSaidSpot],
-			[IsPainPills],
-			[ChanceToFire40Percent],
-			[IsWorldTalkCliffe],
-			[_auto_NotSpottedVehicle],
-			[IsNotSpeakingWeight0],
-		],
-		Response SurvivorSpottedPillsAutoHasPillsGambler
-		ApplyContext "SaidSpotPills:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedProducerCloseCliffe",
+		name = "SurvivorSpottedProducerClose_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerLookHere],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSmartLookAuto],
 			[SubjectIsProducer],
 			[IsProducerNear400],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response SurvivorSpottedProducerCloseGambler
+		Response SurvivorSpottedProducerCloseMechanic
 	},
 	{
-		name = "SurvivorSpottedProducerClose2Cliffe",
+		name = "SurvivorSpottedProducerClose2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerLook],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSmartLookAuto],
 			[SubjectIsProducer],
 			[IsProducerNear400],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response SurvivorSpottedProducerCloseGambler
+		Response SurvivorSpottedProducerClose2Mechanic
 	},
 	{
-		name = "SurvivorSpottedProducerClose2C1Cliffe",
+		name = "SurvivorSpottedProducerClose2C1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerLook],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSmartLookAuto],
 			[SubjectIsProducer],
 			[IsProducerNear400],
-			[IsWorldTalkCliffe],
-			[C1M1orC1M2],
-			[IsNotSurvival],
+			[IsWorldTalkCsgo_sas],
+			[ismap_c1m1_hotel],
+			[NoKnowNames],
 		],
-		Response SurvivorSpottedProducerClose2C1Gambler
+		Response SurvivorSpottedProducerClose2C1Mechanic
 	},
 	{
-		name = "SurvivorSpottedProducerCloseC1Cliffe",
+		name = "SurvivorSpottedProducerCloseC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerLookHere],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSmartLookAuto],
 			[SubjectIsProducer],
 			[IsProducerNear400],
-			[IsWorldTalkCliffe],
-			[C1M1orC1M2],
-			[IsNotSurvival],
+			[IsWorldTalkCsgo_sas],
+			[ismap_c1m1_hotel],
+			[NoKnowNames],
 		],
-		Response SurvivorSpottedProducerClose2C1Gambler
+		Response SurvivorSpottedProducerClose2C1Mechanic
 	},
 	{
-		name = "SurvivorSpottedProducerFarCliffe",
+		name = "SurvivorSpottedProducerFar_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerLook],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSmartLookAuto],
 			[SubjectIsProducer],
 			[IsProducerFar400],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response SurvivorSpottedProducerFarGambler
+		Response SurvivorSpottedProducerFarMechanic
 	},
 	{
-		name = "SurvivorSpottedProducerFarC1Cliffe",
+		name = "SurvivorSpottedProducerFarC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerLook],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSmartLookAuto],
 			[SubjectIsProducer],
 			[IsProducerFar400],
-			[IsWorldTalkCliffe],
-			[C1M1orC1M2],
-			[IsNotSurvival],
+			[IsWorldTalkCsgo_sas],
+			[ismap_c1m1_hotel],
+			[NoKnowNames],
 		],
-		Response SurvivorSpottedProducerFarC1Gambler
+		Response SurvivorSpottedProducerFarC1Mechanic
 	},
 	{
-		name = "SurvivorSpottedUpPack_ExplosiveCliffe",
+		name = "SurvivorSpottedUpPack_Explosive_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSmartLookAuto],
 			[IsUpgradePack_Explosive],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotSpottedVehicle],
-			[IsWorldTalkCliffe],
 		],
-		Response SurvivorSpottedUpPack_ExplosiveGambler
+		Response SurvivorSpottedUpPack_ExplosiveMechanic
 		ApplyContext "SaidSpotUpgradePack_Explosive:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedUpPack_ExplosiveAutoCliffe",
+		name = "SurvivorSpottedUpPack_ExplosiveAuto_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSmartLookAuto],
 			[IsNotAlone],
 			[IsNotSaidSpotUpgradePack_Explosive],
 			[IsNotSaidSpot],
 			[IsUpgradePack_Explosive],
-			[IsWorldTalkCliffe],
-			[_auto_NotSpottedVehicle],
+			[IsWorldTalkCsgo_sas],
 			[IsNotSpeakingWeight0],
+			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedUpPack_ExplosiveGambler
+		Response SurvivorSpottedUpPack_ExplosiveMechanic
 		ApplyContext "SaidSpotUpgradePack_Explosive:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedUpPack_IncendiaryCliffe",
+		name = "SurvivorSpottedUpPack_Incendiary_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSmartLookAuto],
 			[IsUpgradePack_Incendiary],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotSpottedVehicle],
-			[IsWorldTalkCliffe],
 		],
-		Response SurvivorSpottedUpPack_IncendiaryGambler
+		Response SurvivorSpottedUpPack_IncendiaryMechanic
 		ApplyContext "SaidSpotUpgradePack_Incendiary:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedUpPack_IncendiAutoCliffe",
+		name = "SurvivorSpottedUpPack_IncendiAuto_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSmartLookAuto],
 			[IsNotAlone],
 			[IsNotSaidSpotUpgradePack_Incendiary],
 			[IsNotSaidSpot],
 			[IsUpgradePack_Incendiary],
-			[IsWorldTalkCliffe],
-			[_auto_NotSpottedVehicle],
+			[IsWorldTalkCsgo_sas],
 			[IsNotSpeakingWeight0],
+			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedUpPack_IncendiaryGambler
+		Response SurvivorSpottedUpPack_IncendiaryMechanic
 		ApplyContext "SaidSpotUpgradePack_Incendiary:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedVomitJarCliffe",
+		name = "SurvivorSpottedVomitJar_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSmartLookAuto],
 			[IsVomitJar],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotSpottedVehicle],
-			[IsWorldTalkCliffe],
 		],
-		Response SurvivorSpottedVomitJarGambler
+		Response SurvivorSpottedVomitJarMechanic
 		ApplyContext "SaidSpotVomitJar:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedVomitJarAutoCliffe",
+		name = "SurvivorSpottedVomitJarAuto_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSmartLookAuto],
 			[IsNotInSafeSpot],
 			[IsNotAlone],
 			[IsNotSaidSpotVomitJar],
 			[IsNotSaidSpot],
 			[IsVomitJar],
-			[IsWorldTalkCliffe],
-			[_auto_NotSpottedVehicle],
+			[IsWorldTalkCsgo_sas],
 			[IsNotSpeakingWeight0],
+			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedVomitJarGambler
+		Response SurvivorSpottedVomitJarMechanic
 		ApplyContext "SaidSpotVomitJar:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedVomitJarAutoC1Cliffe",
+		name = "SurvivorSpottedVomitJarAutoC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSmartLookAuto],
 			[IsNotInSafeSpot],
 			[IsNotAlone],
 			[IsNotSaidSpotVomitJar],
 			[IsNotSaidSpot],
 			[IsVomitJar],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[ismap_c1m1_hotel],
 			[IsNotSpeakingWeight0],
 		],
-		Response SurvivorSpottedVomitJarAutoC1Gambler
+		Response SurvivorSpottedVomitJarAutoC1Mechanic
 		ApplyContext "SaidSpotVomitJar:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedVomitJarC1Cliffe",
+		name = "SurvivorSpottedVomitJarC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSmartLookAuto],
 			[IsVomitJar],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[ismap_c1m1_hotel],
 		],
-		Response SurvivorSpottedVomitJarAutoC1Gambler
+		Response SurvivorSpottedVomitJarAutoC1Mechanic
 		ApplyContext "SaidSpotVomitJar:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedWorldCloseCliffe",
+		name = "SurvivorSpottedWorldClose_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerLookHere],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSmartLookAuto],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response SurvivorSpottedWorldCloseGambler
+		Response SurvivorSpottedWorldCloseMechanic
 	},
 	{
-		name = "SurvivorSpottedArmoredC5M1Cliffe",
+		name = "SurvivorSpottedArmored_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnSpecial],
 			[IsSpecialTypeArmored],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsNotIncapacitated],
-			[ismap_c5m1_waterfront],
-			[IsNotSaidArmoredWarn],
-			[IsNotSpeakingWeight0],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedArmoredC5M1Gambler
-		ApplyContext "SaidArmoredWarn:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedArmoredCliffe",
-		criteria = 
-		[
-			[ConceptPlayerWarnSpecial],
-			[IsSpecialTypeArmored],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[IsNotSaidArmoredWarn],
 			[IsNotSpeakingWeight0],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedArmoredGambler
+		Response SurvivorSpottedArmoredMechanic
 		ApplyContext "SaidArmoredWarn:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedBoomerCliffe",
+		name = "SurvivorSpottedArmoredC5M1_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerWarnSpecial],
+			[IsSpecialTypeArmored],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsNotIncapacitated],
+			[IsNotSaidArmoredWarn],
+			[ismap_c5m1_waterfront],
+			[IsNotSpeakingWeight0],
+		],
+		Response SurvivorSpottedArmoredC5M1Mechanic
+		ApplyContext "SaidArmoredWarn:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedBoomer_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnSpecial],
 			[IsSpecialTypeBoomer],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[IsNotSpeakingWeight0],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedBoomerGambler
+		Response SurvivorSpottedBoomerMechanic
 		ApplyContext "SaidBoomerWarn:1:20,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedBoomerAlsoCliffe",
+		name = "SurvivorSpottedBoomerAlso_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerAlsoWarnSpecial],
 			[IsSpecialTypeBoomer],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedBoomerGambler
-		ApplyContext "SaidBoomerWarn:1:20,SaidSpecialWarn:1:30"
+		Response SurvivorSpottedBoomerMechanic
+		ApplyContext "SaidBoomerWarn:1:20,SaidSpecialWarn:1:30,Csgo_sasAlsoWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedBoomer2Cliffe",
+		name = "SurvivorSpottedBoomer2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnBoomer],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedBoomerGambler
+		Response SurvivorSpottedBoomerMechanic
 	},
 	{
-		name = "SurvivorSpottedBoomerC1M1Cliffe",
+		name = "SurvivorSpottedBoomerC1M1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnSpecial],
 			[IsSpecialTypeBoomer],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[ismap_c1m1_hotel],
 			[IsNotSpeakingWeight0],
 		],
-		Response SurvivorSpottedBoomerC1M1Gambler
+		Response SurvivorSpottedBoomerC1M1Mechanic
 		ApplyContext "SaidBoomerWarn:1:20,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedBoomerAlsoC1M1Cliffe",
+		name = "SurvivorSpottedBoomerAlsoC1M1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerAlsoWarnSpecial],
 			[IsSpecialTypeBoomer],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[ismap_c1m1_hotel],
 		],
-		Response SurvivorSpottedBoomerC1M1Gambler
+		Response SurvivorSpottedBoomerC1M1Mechanic
 		ApplyContext "SaidBoomerWarn:1:20,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedBoomer2C1Cliffe",
+		name = "SurvivorSpottedBoomer2C1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnBoomer],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[C1M1orC1M2],
 			[NoKnowBoomer],
 			[IsNotSurvival],
 		],
-		Response SurvivorSpottedBoomerC1M1Gambler
+		Response SurvivorSpottedBoomerC1M1Mechanic
 	},
 	{
-		name = "SurvivorSpottedBoomerC1M1CoachCliffe",
+		name = "SurvivorSpottedBoomerC1M2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnSpecial],
 			[IsSpecialTypeBoomer],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsNotIncapacitated],
-			[ismap_c1m1_hotel],
-			[IsCoachAlive],
-			[IsCoachNear400],
-			[IsNotCliffeInsultedCoachC1],
-			[ChanceToFire100Percent],
-			[IsNotSpeakingWeight0],
-		],
-		Response SurvivorSpottedBoomerC1M1CoachGambler
-		ApplyContext "SaidBoomerWarn:1:20,SaidSpecialWarn:1:30,CliffeInsultedCoach:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedBoomerC1M2Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerWarnSpecial],
-			[IsSpecialTypeBoomer],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[ismap_c1m2_streets],
 			[NoKnowBoomer],
 			[IsNotSpeakingWeight0],
 			[IsNotSurvival],
 		],
-		Response SurvivorSpottedBoomerC1M2Gambler
+		Response SurvivorSpottedBoomerC1M2Mechanic
+		then any Player.KnowBoomer foo:0 0.1
 		ApplyContext "SaidBoomerWarn:1:20,SaidSpecialWarn:1:30,KnowBoomer:1:0,Talk:1:6"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedBoomerAlsoC1M2Cliffe",
+		name = "SurvivorSpottedBoomerAlsoC1M2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerAlsoWarnSpecial],
 			[IsSpecialTypeBoomer],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[ismap_c1m2_streets],
 			[NoKnowBoomer],
 			[IsNotSurvival],
 		],
-		Response SurvivorSpottedBoomerC1M1Gambler
+		Response SurvivorSpottedBoomerC1M1Mechanic
 		ApplyContext "SaidBoomerWarn:1:20,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedCedaCliffe",
+		name = "SurvivorSpottedCeda_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnSpecial],
 			[IsSpecialTypeCeda],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[IsNotSaidCedaWarn],
 			[IsNotSpeakingWeight0],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedCedaGambler
+		Response SurvivorSpottedCedaMechanic
 		ApplyContext "SaidCedaWarn:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedCedaC1M1Cliffe",
+		name = "SurvivorSpottedCedaC1M1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnSpecial],
 			[IsSpecialTypeCeda],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[IsNotSaidCedaWarn],
 			[ismap_c1m1_hotel],
 			[IsNotSpeakingWeight0],
 		],
-		Response SurvivorSpottedCedaC1M1Gambler
+		Response SurvivorSpottedCedaC1M1Mechanic
 		ApplyContext "SaidCedaWarn:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedChargerCliffe",
+		name = "SurvivorSpottedCharger_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnSpecial],
 			[IsSpecialTypeCharger],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[IsNotSpeakingWeight0],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedChargerGambler
+		Response SurvivorSpottedChargerMechanic
 		ApplyContext "SaidChargerWarn:1:20,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedChargerAlsoCliffe",
+		name = "SurvivorSpottedChargerAlso_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerAlsoWarnSpecial],
 			[IsSpecialTypeCharger],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedChargerGambler
-		ApplyContext "SaidChargerWarn:1:20,SaidSpecialWarn:1:30"
+		Response SurvivorSpottedChargerMechanic
+		ApplyContext "SaidChargerWarn:1:20,SaidSpecialWarn:1:30,Csgo_sasAlsoWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedCharger2Cliffe",
+		name = "SurvivorSpottedCharger2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnCharger],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedChargerGambler
+		Response SurvivorSpottedChargerMechanic
 	},
 	{
-		name = "SurvivorSpottedChargerC1M1Cliffe",
+		name = "SurvivorSpottedChargerC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnSpecial],
 			[IsSpecialTypeCharger],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
-			[ismap_c1m1_hotel],
+			[C1M1orC1M2],
+			[NoKnowCharger],
 			[IsNotSpeakingWeight0],
+			[IsNotSurvival],
 		],
-		Response SurvivorSpottedChargerC1M1Gambler
+		Response SurvivorSpottedChargerC1Mechanic
 		ApplyContext "SaidChargerWarn:1:20,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedChargerAlsoC1M1Cliffe",
+		name = "SurvivorSpottedChargerAlsoC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerAlsoWarnSpecial],
 			[IsSpecialTypeCharger],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsNotIncapacitated],
-			[ismap_c1m1_hotel],
-		],
-		Response SurvivorSpottedChargerC1M1Gambler
-		ApplyContext "SaidChargerWarn:1:20,SaidSpecialWarn:1:30"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedCharger2C1Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerWarnCharger],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[C1M1orC1M2],
 			[NoKnowCharger],
 			[IsNotSurvival],
 		],
-		Response SurvivorSpottedChargerC1M1Gambler
-	},
-	{
-		name = "SurvivorSpottedChargerC1M2Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerWarnSpecial],
-			[IsSpecialTypeCharger],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsNotIncapacitated],
-			[ismap_c1m2_streets],
-			[NoKnowCharger],
-			[IsNotSpeakingWeight0],
-			[IsNotSurvival],
-		],
-		Response SurvivorSpottedChargerC1M2Gambler
-		ApplyContext "SaidChargerWarn:1:20,SaidSpecialWarn:1:30,KnowCharger:1:0,Talk:1:6"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedChargerAlsoC1M2Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerAlsoWarnSpecial],
-			[IsSpecialTypeCharger],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsNotIncapacitated],
-			[ismap_c1m2_streets],
-			[NoKnowCharger],
-			[IsNotSurvival],
-		],
-		Response SurvivorSpottedChargerC1M1Gambler
+		Response SurvivorSpottedChargerC1Mechanic
 		ApplyContext "SaidChargerWarn:1:20,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedClownC2M2Cliffe",
+		name = "SurvivorSpottedCharger2C1_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptPlayerWarnSpecial],
-			[IsSpecialTypeClown],
+			[ConceptPlayerWarnCharger],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
-			[Ismap_c2m2],
-			[IsNotSaidClownWarn],
-			[IsNotSpeakingWeight0],
+			[C1M1orC1M2],
+			[NoKnowCharger],
+			[IsNotSurvival],
 		],
-		Response SurvivorSpottedClownC2M2Gambler
-		ApplyContext "SaidClownWarn:1:0,SawClowns:++1"
-		applycontexttoworld
+		Response SurvivorSpottedChargerC1Mechanic
 	},
 	{
-		name = "SurvivorSpottedClownCliffe",
+		name = "SurvivorSpottedClown_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnSpecial],
 			[IsSpecialTypeClown],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[IsNotSaidClownWarn],
 			[IsNotSpeakingWeight0],
+			[_auto_ConcertNotLive],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedClownGambler
+		Response SurvivorSpottedClownMechanic
 		ApplyContext "SaidClownWarn:1:20,SawClowns:++1"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedFallenCliffe",
+		name = "SurvivorSpottedFallen_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnSpecial],
 			[IsSpecialTypeFallen],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[IsNotSaidFallenWarn],
 			[IsNotSpeakingWeight0],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedFallenGambler
+		Response SurvivorSpottedFallenMechanic
 		ApplyContext "SaidFallenWarn:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedHunterCliffe",
+		name = "SurvivorSpottedFirstClown_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerWarnSpecial],
+			[IsSpecialTypeClown],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsNotIncapacitated],
+			[IsNotSaidClownWarn],
+			[ismap_c2m2],
+			[IsNotSpeakingWeight0],
+		],
+		Response SurvivorSpottedFirstClownMechanic
+		ApplyContext "SaidClownWarn:1:0,SawClowns:++1"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedHunter_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnSpecial],
 			[IsSpecialTypeHunter],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[IsNotSpeakingWeight0],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedHunterGambler
+		Response SurvivorSpottedHunterMechanic
 		ApplyContext "SaidHunterWarn:1:20,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedHunterAlsoCliffe",
+		name = "SurvivorSpottedHunterAlso_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerAlsoWarnSpecial],
 			[IsSpecialTypeHunter],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedHunterGambler
-		ApplyContext "SaidHunterWarn:1:20,SaidSpecialWarn:1:30"
+		Response SurvivorSpottedHunterMechanic
+		ApplyContext "SaidHunterWarn:1:20,SaidSpecialWarn:1:30,Csgo_sasAlsoWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedHunter2Cliffe",
+		name = "SurvivorSpottedHunter2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnHunter],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedHunterGambler
+		Response SurvivorSpottedHunterMechanic
 	},
 	{
-		name = "SurvivorSpottedHunterC1M1Cliffe",
+		name = "SurvivorSpottedHunterC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnSpecial],
 			[IsSpecialTypeHunter],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
-			[ismap_c1m1_hotel],
+			[C1M1orC1M2],
+			[NoKnowHunter],
 			[IsNotSpeakingWeight0],
+			[IsNotSurvival],
 		],
-		Response SurvivorSpottedHunterC1M1Gambler
+		Response SurvivorSpottedHunterC1Mechanic
 		ApplyContext "SaidHunterWarn:1:20,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedHunterAlsoC1M1Cliffe",
+		name = "SurvivorSpottedHunterAlsoC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerAlsoWarnSpecial],
 			[IsSpecialTypeHunter],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsNotIncapacitated],
-			[ismap_c1m1_hotel],
-		],
-		Response SurvivorSpottedHunterC1M1Gambler
-		ApplyContext "SaidHunterWarn:1:20,SaidSpecialWarn:1:30"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedHunter2C1Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerWarnHunter],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[C1M1orC1M2],
 			[NoKnowHunter],
 			[IsNotSurvival],
 		],
-		Response SurvivorSpottedHunterC1M1Gambler
-	},
-	{
-		name = "SurvivorSpottedHunterC1M2Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerWarnSpecial],
-			[IsSpecialTypeHunter],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsNotIncapacitated],
-			[ismap_c1m2_streets],
-			[NoKnowHunter],
-			[IsNotSpeakingWeight0],
-			[IsNotSurvival],
-		],
-		Response SurvivorSpottedHunterC1M2Gambler
-		ApplyContext "SaidHunterWarn:1:20,SaidSpecialWarn:1:30,KnowHunter:1:0,Talk:1:6"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedHunterAlsoC1M2Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerAlsoWarnSpecial],
-			[IsSpecialTypeHunter],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsNotIncapacitated],
-			[ismap_c1m2_streets],
-			[NoKnowHunter],
-			[IsNotSurvival],
-		],
-		Response SurvivorSpottedHunterC1M1Gambler
+		Response SurvivorSpottedHunterC1Mechanic
 		ApplyContext "SaidHunterWarn:1:20,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedInfectedCliffe",
+		name = "SurvivorSpottedHunter2C1_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerWarnHunter],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsNotIncapacitated],
+			[C1M1orC1M2],
+			[NoKnowHunter],
+			[IsNotSurvival],
+		],
+		Response SurvivorSpottedHunterC1Mechanic
+	},
+	{
+		name = "SurvivorSpottedInfected_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerIncoming],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedInfectedGambler
+		Response SurvivorSpottedInfectedMechanic
 	},
 	{
-		name = "SurvivorSpottedJimmyCliffe",
+		name = "SurvivorSpottedJimmy_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnSpecial],
 			[IsSpecialTypeJimmy],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[IsNotSaidJimmyWarn],
 			[IsNotSpeakingWeight0],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedJimmyGambler
+		Response SurvivorSpottedJimmyMechanic
 		ApplyContext "SaidJimmyWarn:1:3"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedJockeyCliffe",
+		name = "SurvivorSpottedJockey_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnSpecial],
 			[IsSpecialTypeJockey],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[IsNotSpeakingWeight0],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedJockeyGambler
+		Response SurvivorSpottedJockeyMechanic
 		ApplyContext "SaidJockeyWarn:1:20,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedJockeyAlsoCliffe",
+		name = "SurvivorSpottedJockeyAlso_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerAlsoWarnSpecial],
 			[IsSpecialTypeJockey],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedJockeyGambler
-		ApplyContext "SaidJockeyWarn:1:20,SaidSpecialWarn:1:30"
+		Response SurvivorSpottedJockeyMechanic
+		ApplyContext "SaidJockeyWarn:1:20,SaidSpecialWarn:1:30,Csgo_sasAlsoWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedJockey2Cliffe",
+		name = "SurvivorSpottedJockey2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnJockey],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedJockeyGambler
+		Response SurvivorSpottedJockeyMechanic
 	},
 	{
-		name = "SurvivorSpottedJockeyC1M1Cliffe",
+		name = "SurvivorSpottedJockeyC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnSpecial],
 			[IsSpecialTypeJockey],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
-			[ismap_c1m1_hotel],
+			[C1M1orC1M2],
+			[NoKnowJockey],
 			[IsNotSpeakingWeight0],
+			[IsNotSurvival],
 		],
-		Response SurvivorSpottedJockeyC1M1Gambler
+		Response SurvivorSpottedJockeyC1Mechanic
 		ApplyContext "SaidJockeyWarn:1:20,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedJockeyAlsoC1M1Cliffe",
+		name = "SurvivorSpottedJockeyAlsoC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerAlsoWarnSpecial],
 			[IsSpecialTypeJockey],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsNotIncapacitated],
-			[ismap_c1m1_hotel],
-		],
-		Response SurvivorSpottedJockeyC1M1Gambler
-		ApplyContext "SaidJockeyWarn:1:20,SaidSpecialWarn:1:30"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedJockey2C1M1Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerWarnJockey],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[C1M1orC1M2],
 			[NoKnowJockey],
 			[IsNotSurvival],
 		],
-		Response SurvivorSpottedJockeyC1M1Gambler
-	},
-	{
-		name = "SurvivorSpottedJockeyC1M2Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerWarnSpecial],
-			[IsSpecialTypeJockey],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsNotIncapacitated],
-			[ismap_c1m2_streets],
-			[NoKnowJockey],
-			[IsNotSpeakingWeight0],
-			[IsNotSurvival],
-		],
-		Response SurvivorSpottedJockeyC1M2Gambler
-		ApplyContext "SaidJockeyWarn:1:20,SaidSpecialWarn:1:30,KnowJockey:1:0,Talk:1:6"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedJockeyAlsoC1M2Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerAlsoWarnSpecial],
-			[IsSpecialTypeJockey],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsNotIncapacitated],
-			[ismap_c1m2_streets],
-			[NoKnowJockey],
-			[IsNotSurvival],
-		],
-		Response SurvivorSpottedJockeyC1M1Gambler
+		Response SurvivorSpottedJockeyC1Mechanic
 		ApplyContext "SaidJockeyWarn:1:20,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedMudmenCliffe",
+		name = "SurvivorSpottedJockey2C1_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptPlayerWarnSpecial],
-			[IsSpecialTypeMudmen],
+			[ConceptPlayerWarnJockey],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
-			[IsNotSaidMudmenWarn],
-			[IsNotSpeakingWeight0],
-			[_auto_NotSpottedVehicle],
+			[C1M1orC1M2],
+			[NoKnowJockey],
+			[IsNotSurvival],
 		],
-		Response SurvivorSpottedMudmenGambler
-		ApplyContext "SaidMudmenWarn:1:20,SawMudMen:++1"
-		applycontexttoworld
+		Response SurvivorSpottedJockeyC1Mechanic
 	},
 	{
-		name = "SurvivorSpottedMudmenC3M2Cliffe",
+		name = "SurvivorSpottedMudmenC3M2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnSpecial],
 			[IsSpecialTypeMudmen],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[IsNotSaidMudmenWarn],
 			[ismapc3m2_swamp],
 			[IsNotSpeakingWeight0],
 		],
-		Response SurvivorSpottedMudmenGambler
+		Response SurvivorSpottedMudmenC3M2Mechanic
 		ApplyContext "SaidMudmenWarn:1:0,SawMudMen:++1"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedMudmen2Cliffe",
+		name = "SurvivorSpottedMudmen_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnSpecial],
 			[IsSpecialTypeMudmen],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsNotIncapacitated],
+			[IsNotSaidMudmenWarn],
+			[IsNotSpeakingWeight0],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedMudmenMechanic
+		ApplyContext "SaidMudmenWarn:1:20,SawMudMen:++1"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedMudmen2_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerWarnSpecial],
+			[IsSpecialTypeMudmen],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[IsNotSaidMudmenWarn],
 			[SawManyMudMen],
@@ -7258,880 +8087,810 @@ local jess_cliffe_rules =
 			[IsNotSpeakingWeight0],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedMudmen2Gambler
+		Response SurvivorSpottedMudmen2Mechanic
+		then gambler Player.SeeMudmen2a foo:0 -2.938
 		ApplyContext "SaidMudmenWarn:1:20,SawMudMen:++1"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedSmokerCliffe",
+		name = "SurvivorSpottedSmoker_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnSpecial],
 			[IsSpecialTypeSmoker],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[IsNotSpeakingWeight0],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedSmokerGambler
+		Response SurvivorSpottedSmokerMechanic
 		ApplyContext "SaidSmokerWarn:1:20,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedSmokerAlsoCliffe",
+		name = "SurvivorSpottedSmokerAlso_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerAlsoWarnSpecial],
 			[IsSpecialTypeSmoker],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedSmokerGambler
-		ApplyContext "SaidSmokerWarn:1:20,SaidSpecialWarn:1:30"
+		Response SurvivorSpottedSmokerMechanic
+		ApplyContext "SaidSmokerWarn:1:20,SaidSpecialWarn:1:30,Csgo_sasAlsoWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedSmoker2Cliffe",
+		name = "SurvivorSpottedSmoker2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnSmoker],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedSmokerGambler
+		Response SurvivorSpottedSmokerMechanic
 	},
 	{
-		name = "SurvivorSpottedSmokerC1Cliffe",
+		name = "SurvivorSpottedSmokerC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnSpecial],
 			[IsSpecialTypeSmoker],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[C1M1orC1M2],
 			[NoKnowSmoker],
 			[IsNotSpeakingWeight0],
 			[IsNotSurvival],
 		],
-		Response SurvivorSpottedSmokerC1Gambler
+		Response SurvivorSpottedSmokerC1Mechanic
 		ApplyContext "SaidSmokerWarn:1:20,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedSmokerAlsoC1Cliffe",
+		name = "SurvivorSpottedSmokerAlsoC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerAlsoWarnSpecial],
 			[IsSpecialTypeSmoker],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[C1M1orC1M2],
 			[NoKnowSmoker],
 			[IsNotSurvival],
 		],
-		Response SurvivorSpottedSmokerC1Gambler
+		Response SurvivorSpottedSmokerC1Mechanic
 		ApplyContext "SaidSmokerWarn:1:20,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedSmoker2C1Cliffe",
+		name = "SurvivorSpottedSmoker2C1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnSmoker],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[C1M1orC1M2],
 			[NoKnowSmoker],
 			[IsNotSurvival],
 		],
-		Response SurvivorSpottedSmokerC1Gambler
+		Response SurvivorSpottedSmokerC1Mechanic
 	},
 	{
-		name = "SurvivorSpottedSpitterCliffe",
+		name = "SurvivorSpottedSpitter_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnSpecial],
 			[IsSpecialTypeSpitter],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[IsNotSpeakingWeight0],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedSpitterGambler
+		Response SurvivorSpottedSpitterMechanic
 		ApplyContext "SaidSpitterWarn:1:20,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedSpitterAlsoCliffe",
+		name = "SurvivorSpottedSpitterAlso_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerAlsoWarnSpecial],
 			[IsSpecialTypeSpitter],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedSpitterGambler
-		ApplyContext "SaidSpitterWarn:1:20,SaidSpecialWarn:1:30"
+		Response SurvivorSpottedSpitterMechanic
+		ApplyContext "SaidSpitterWarn:1:20,SaidSpecialWarn:1:30,Csgo_sasAlsoWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedSpitter2Cliffe",
+		name = "SurvivorSpottedSpitter2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnSpitter],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedSpitterGambler
+		Response SurvivorSpottedSpitterMechanic
 	},
 	{
-		name = "SurvivorSpottedSpitterC1M1Cliffe",
+		name = "SurvivorSpottedSpitterC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnSpecial],
 			[IsSpecialTypeSpitter],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
-			[ismap_c1m1_hotel],
+			[C1M1orC1M2],
+			[NoKnowSpitter],
 			[IsNotSpeakingWeight0],
+			[IsNotSurvival],
 		],
-		Response SurvivorSpottedSpitterC1M1Gambler
+		Response SurvivorSpottedSpitterC1Mechanic
 		ApplyContext "SaidSpitterWarn:1:20,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedSpitterAlsoC1M1Cliffe",
+		name = "SurvivorSpottedSpitterAlsoC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerAlsoWarnSpecial],
 			[IsSpecialTypeSpitter],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsNotIncapacitated],
-			[ismap_c1m1_hotel],
-		],
-		Response SurvivorSpottedSpitterC1M1Gambler
-		ApplyContext "SaidSpitterWarn:1:20,SaidSpecialWarn:1:30"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedSpitter2C1Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerWarnSpitter],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[C1M1orC1M2],
 			[NoKnowSpitter],
 			[IsNotSurvival],
 		],
-		Response SurvivorSpottedSpitterC1M1Gambler
-	},
-	{
-		name = "SurvivorSpottedSpitterC1M2Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerWarnSpecial],
-			[IsSpecialTypeSpitter],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsNotIncapacitated],
-			[ismap_c1m2_streets],
-			[NoKnowSpitter],
-			[IsNotSpeakingWeight0],
-			[IsNotSurvival],
-		],
-		Response SurvivorSpottedSpitterC1M2Gambler
-		ApplyContext "SaidSpitterWarn:1:20,SaidSpecialWarn:1:30,KnowSpitter:1:0,Talk:1:6"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedSpitterAlsoC1M2Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerAlsoWarnSpecial],
-			[IsSpecialTypeSpitter],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsNotIncapacitated],
-			[ismap_c1m2_streets],
-			[NoKnowSpitter],
-			[IsNotSurvival],
-		],
-		Response SurvivorSpottedSpitterC1M1Gambler
+		Response SurvivorSpottedSpitterC1Mechanic
 		ApplyContext "SaidSpitterWarn:1:20,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedTankCliffe",
+		name = "SurvivorSpottedSpitter2C1_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerWarnSpitter],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsNotIncapacitated],
+			[C1M1orC1M2],
+			[NoKnowSpitter],
+			[IsNotSurvival],
+		],
+		Response SurvivorSpottedSpitterC1Mechanic
+	},
+	{
+		name = "SurvivorSpottedTank_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnSpecial],
 			[IsSpecialTypeTank],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[IsNotSpeakingWeight0],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedTankGambler
+		Response SurvivorSpottedTankMechanic
 		ApplyContext "SaidTankWarn:1:20,SaidTankWarn2:1:60"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedTank2Cliffe",
+		name = "SurvivorSpottedTank2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnTank],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedTankGambler
+		Response SurvivorSpottedTankMechanic
 	},
 	{
-		name = "SurvivorSpottedTankC1Cliffe",
+		name = "SurvivorSpottedTankC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnSpecial],
 			[IsSpecialTypeTank],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[C1M1orC1M2],
-			[IsNotSurvival],
 			[IsNotSpeakingWeight0],
+			[IsNotSurvival],
 		],
-		Response SurvivorSpottedTankC1Gambler
+		Response SurvivorSpottedTankC1Mechanic
 		ApplyContext "SaidTankWarn:1:20,SaidTankWarn2:1:60"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedTank2C1Cliffe",
+		name = "SurvivorAlsoSpottedTankC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnTank],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[C1M1orC1M2],
 			[IsNotSurvival],
 		],
-		Response SurvivorSpottedTankC1Gambler
+		Response SurvivorSpottedTankC1Mechanic
 	},
 	{
-		name = "SurvivorSpottedWitchCliffe",
+		name = "L4D1SpottedTank_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerWarnSpecial],
+			[IsSpecialTypeTank],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsNotIncapacitated],
+			[Isc6m3_port],
+			[IsNotSpeakingWeight0],
+			[IsNotVersus],
+			[IsNotSurvival],
+			[_auto_NotSpottedVehicle],
+		],
+		Response L4D1SpottedTankMechanic
+		ApplyContext "SaidTankWarn:1:20,SaidTankWarn2:1:60"
+		applycontexttoworld
+	},
+	{
+		name = "L4D1SpottedTank2_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerWarnTank],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsNotIncapacitated],
+			[Isc6m3_port],
+			[IsNotVersus],
+			[IsNotSurvival],
+			[_auto_NotSpottedVehicle],
+		],
+		Response L4D1SpottedTankMechanic
+	},
+	{
+		name = "SurvivorSpottedWitch_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnSpecial],
 			[IsSpecialTypeWitch],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[IsNotSaidWitchStartAttack],
 			[IsNotSpeakingWeight0],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedWitchGambler
+		Response SurvivorSpottedWitchMechanic
 		ApplyContext "SaidWitchWarn:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedWitch2Cliffe",
+		name = "SurvivorSpottedWitch2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnWitch],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[IsNotSaidWitchStartAttack],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedWitchGambler
+		Response SurvivorSpottedWitchMechanic
 	},
 	{
-		name = "SurvivorSpottedWitchC1Cliffe",
+		name = "SurvivorSpottedWitchC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnSpecial],
 			[IsSpecialTypeWitch],
 			[IsNotCoughing],
-			[IsNotAlone],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[IsNotSaidWitchStartAttack],
 			[C1M1orC1M2],
 			[IsNotSpeakingWeight0],
 		],
-		Response SurvivorSpottedWitchC1Gambler
+		Response SurvivorSpottedWitchC1Mechanic
 		ApplyContext "SaidWitchWarn:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedWitch2C1Cliffe",
+		name = "SurvivorSpottedWitch2C1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnWitch],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[IsNotSaidWitchStartAttack],
 			[C1M1orC1M2],
 			[IsNotSurvival],
 		],
-		Response SurvivorSpottedWitch2C1Gambler
+		Response SurvivorSpottedWitch2C1Mechanic
 	},
 	{
-		name = "PlayerAlertGiveItemCliffe",
+		name = "PlayerAlertGiveItem_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerAlertGiveItem],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[NotInIntenseCombat],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerAlertGiveItemGambler
+		Response PlayerAlertGiveItemMechanic
 	},
 	{
-		name = "PlayerAlertGiveItemC1Cliffe",
+		name = "PlayerAlertGiveItemCombat_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerAlertGiveItem],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[NotInIntenseCombat],
-			[IsWorldTalkCliffe],
-			[C1M1orC1M2],
-			[IsNotSurvival],
-		],
-		Response PlayerAlertGiveItemC1Gambler
-	},
-	{
-		name = "PlayerAlertGiveItemCombatCliffe",
-		criteria = 
-		[
-			[ConceptPlayerAlertGiveItem],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[InIntenseCombat],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerAlertGiveItemCombatGambler
+		Response PlayerAlertGiveItemCombatMechanic
 	},
 	{
-		name = "PlayerAlertGiveItemTankCliffe",
-		criteria = 
-		[
-			[ConceptPlayerAlertGiveItem],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsZombiePresentTank],
-			[IsSaidTankWarn2],
-			[IsWorldTalkCliffe],
-		],
-		Response PlayerAlertGiveItemCombatGambler
-	},
-	{
-		name = "PlayerFaultFriendlyFireCliffe",
+		name = "PlayerFaultFriendlyFire_CSGO_SAS",
 		criteria = 
 		[
 			[IsFaultConcept],
 			[IsFaultFriendlyFire],
-			[IsCliffe],
+			[IsCsgo_sas],
 		],
 		Response NoResponse
-		ApplyContext "SaidFaultFriendlyFire:1:0.1,SaidFaultFriendlyFireCliffe:1:0.1,ShotTeammateCliffe:1:6"
+		ApplyContext "SaidFaultFriendlyFire:1:0.1,SaidFaultFriendlyFireCsgo_sas:1:0.1,ShotTeammateCsgo_sas:1:6"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerFriendlyFireCliffe",
+		name = "PlayerFriendlyFire_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerFriendlyFire],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotFriendlyFire],
 			[IsNotIncapacitated],
 			[IsNotOnThirdStrike],
 			[IsDamageTypeBullet],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotZombiePresentTank],
 		],
-		Response PlayerFriendlyFireGambler
+		Response PlayerFriendlyFireMechanic
 		ApplyContext "FriendlyFire:1:10"
 	},
 	{
-		name = "PlayerFriendlyFire2Cliffe",
+		name = "PlayerFriendlyFire2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerFriendlyFire],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotFriendlyFire],
 			[IsNotIncapacitated],
 			[IsNotDamageTypeExplosive],
-			[IsTalk],
-			[IsTalkCliffe],
 			[IsOnThirdStrike],
-			[IsWorldTalkCliffe],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotZombiePresentTank],
 		],
-		Response PlayerFriendlyFire2Gambler
+		Response PlayerFriendlyFire2Mechanic
 		ApplyContext "FriendlyFire:1:10"
 	},
 	{
-		name = "PlayerFriendlyFireC1Cliffe",
+		name = "PlayerFriendlyFireC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerFriendlyFire],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotFriendlyFire],
 			[IsNotIncapacitated],
 			[IsNotOnThirdStrike],
 			[IsDamageTypeBullet],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsNotZombiePresentTank],
 			[ismap_c1m1_hotel],
 			[NoKnowNames],
-			[IsNotZombiePresentTank],
 		],
-		Response PlayerFriendlyFireC1Gambler
+		Response PlayerFriendlyFireC1Mechanic
 		ApplyContext "FriendlyFire:1:10"
 	},
 	{
-		name = "PlayerFriendlyFireFromCoachCliffe",
+		name = "PlayerFriendlyFireFromCoach_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerFriendlyFire],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotFriendlyFire],
 			[IsNotIncapacitated],
 			[IsNotOnThirdStrike],
 			[IsDamageTypeBullet],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
+			[SubjectIsCoach],
+			[ChanceToFire30Percent],
+			[IsWorldTalkCsgo_sas],
+			[IsNotZombiePresentTank],
+			[isNotmap_c1m1_hotel],
+		],
+		Response PlayerFriendlyFireFromCoachMechanic
+		ApplyContext "FriendlyFire:1:10"
+	},
+	{
+		name = "PlayerFriendlyFireFromCoachC1_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerFriendlyFire],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsNotFriendlyFire],
+			[IsNotIncapacitated],
+			[IsNotOnThirdStrike],
+			[IsDamageTypeBullet],
+			[IsTalk],
+			[IsTalkCsgo_sas],
 			[SubjectIsCoach],
 			[ChanceToFire50Percent],
-			[IsWorldTalkCliffe],
-			[isNotmap_c1m1_hotel],
+			[IsWorldTalkCsgo_sas],
 			[IsNotZombiePresentTank],
-		],
-		Response PlayerFriendlyFireFromCoachGambler
-		ApplyContext "FriendlyFire:1:10"
-	},
-	{
-		name = "PlayerFriendlyFireFromCoachNBCliffe",
-		criteria = 
-		[
-			[ConceptPlayerFriendlyFire],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsNotFriendlyFire],
-			[IsNotIncapacitated],
-			[IsNotOnThirdStrike],
-			[IsNotDamageTypeBullet],
-			[IsNotDamageTypeExplosive],
-			[IsTalk],
-			[IsTalkCliffe],
-			[SubjectIsCoach],
-			[ChanceToFire50Percent],
-			[IsWorldTalkCliffe],
-			[isNotmap_c1m1_hotel],
-			[IsNotZombiePresentTank],
-		],
-		Response PlayerFriendlyFireFromCoachNBGambler
-		ApplyContext "FriendlyFire:1:10"
-	},
-	{
-		name = "PlayerFriendlyFireFromMechanicCliffe",
-		criteria = 
-		[
-			[ConceptPlayerFriendlyFire],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsNotFriendlyFire],
-			[IsNotIncapacitated],
-			[IsNotOnThirdStrike],
-			[IsDamageTypeBullet],
-			[IsTalk],
-			[IsTalkCliffe],
-			[SubjectIsMechanic],
-			[ChanceToFire30Percent],
-			[IsWorldTalkCliffe],
-			[isNotmap_c1m1_hotel],
-			[IsNotZombiePresentTank],
-		],
-		Response PlayerFriendlyFireFromMechanicGambler
-		ApplyContext "FriendlyFire:1:10"
-	},
-	{
-		name = "PlayerFriendlyFireFromMechanicC1Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerFriendlyFire],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsNotFriendlyFire],
-			[IsNotIncapacitated],
-			[IsNotOnThirdStrike],
-			[IsDamageTypeBullet],
-			[IsTalk],
-			[IsTalkCliffe],
-			[SubjectIsMechanic],
-			[ChanceToFire50Percent],
-			[IsWorldTalkCliffe],
 			[ismap_c1m1_hotel],
 			[NoKnowNames],
-			[IsNotZombiePresentTank],
 		],
-		Response PlayerFriendlyFireFromMechanicC1Gambler
+		Response PlayerFriendlyFireFromCoachC1Mechanic
 		ApplyContext "FriendlyFire:1:10"
 	},
 	{
-		name = "PlayerFriendlyFireFromMechanicNBC1Cliffe",
+		name = "PlayerFriendlyFireFromGambler_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerFriendlyFire],
 			[IsNotCoughing],
-			[IsCliffe],
-			[IsNotFriendlyFire],
-			[IsNotIncapacitated],
-			[IsNotOnThirdStrike],
-			[IsNotDamageTypeBullet],
-			[IsNotDamageTypeExplosive],
-			[IsTalk],
-			[IsTalkCliffe],
-			[SubjectIsMechanic],
-			[ChanceToFire50Percent],
-			[IsWorldTalkCliffe],
-			[ismap_c1m1_hotel],
-			[NoKnowNames],
-			[IsNotZombiePresentTank],
-		],
-		Response PlayerFriendlyFireFromMechanicNBC1Gambler
-		ApplyContext "FriendlyFire:1:10"
-	},
-	{
-		name = "PlayerFriendlyFireFromMechanicNBCliffe",
-		criteria = 
-		[
-			[ConceptPlayerFriendlyFire],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsNotFriendlyFire],
-			[IsNotIncapacitated],
-			[IsNotOnThirdStrike],
-			[IsNotDamageTypeBullet],
-			[IsNotDamageTypeExplosive],
-			[IsTalk],
-			[IsTalkCliffe],
-			[SubjectIsMechanic],
-			[ChanceToFire50Percent],
-			[IsWorldTalkCliffe],
-			[IsNotZombiePresentTank],
-		],
-		Response PlayerFriendlyFireFromMechanicGambler
-		ApplyContext "FriendlyFire:1:10"
-	},
-	{
-		name = "PlayerFriendlyFireFromProducerCliffe",
-		criteria = 
-		[
-			[ConceptPlayerFriendlyFire],
-			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotFriendlyFire],
 			[IsNotIncapacitated],
 			[IsNotOnThirdStrike],
 			[IsDamageTypeBullet],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
+			[SubjectIsGambler],
+			[ChanceToFire50Percent],
+			[IsWorldTalkCsgo_sas],
+			[IsNotZombiePresentTank],
+			[isNotmap_c1m1_hotel],
+		],
+		Response PlayerFriendlyFireFromGamblerMechanic
+		ApplyContext "FriendlyFire:1:10"
+	},
+	{
+		name = "PlayerFriendlyFireFromProducer_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerFriendlyFire],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsNotFriendlyFire],
+			[IsNotIncapacitated],
+			[IsNotOnThirdStrike],
+			[IsDamageTypeBullet],
+			[IsTalk],
+			[IsTalkCsgo_sas],
 			[SubjectIsProducer],
 			[ChanceToFire30Percent],
-			[IsWorldTalkCliffe],
-			[isNotmap_c1m1_hotel],
+			[IsWorldTalkCsgo_sas],
 			[IsNotZombiePresentTank],
+			[isNotmap_c1m1_hotel],
 		],
-		Response PlayerFriendlyFireFromProducerGambler
+		Response PlayerFriendlyFireFromProducerMechanic
 		ApplyContext "FriendlyFire:1:10"
 	},
 	{
-		name = "PlayerFriendlyFireFromProducerC1Cliffe",
+		name = "PlayerFriendlyFireFromProducerC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerFriendlyFire],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotFriendlyFire],
 			[IsNotIncapacitated],
 			[IsNotOnThirdStrike],
 			[IsDamageTypeBullet],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[SubjectIsProducer],
 			[ChanceToFire50Percent],
-			[IsWorldTalkCliffe],
-			[ismap_c1m1_hotel],
-			[NoKnowNames],
-			[IsNotZombiePresentTank],
-		],
-		Response PlayerFriendlyFireFromProducerC1Gambler
-		ApplyContext "FriendlyFire:1:10"
-	},
-	{
-		name = "PlayerFriendlyFireFromProducerNBCliffe",
-		criteria = 
-		[
-			[ConceptPlayerFriendlyFire],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsNotFriendlyFire],
-			[IsNotIncapacitated],
-			[IsNotOnThirdStrike],
-			[IsNotDamageTypeBullet],
-			[IsNotDamageTypeExplosive],
-			[IsTalk],
-			[IsTalkCliffe],
-			[SubjectIsProducer],
-			[ChanceToFire50Percent],
-			[IsWorldTalkCliffe],
-			[IsNotZombiePresentTank],
-			[isNotmap_c1m1_hotel],
-		],
-		Response PlayerFriendlyFireFromProducerNBGambler
-		ApplyContext "FriendlyFire:1:10"
-	},
-	{
-		name = "PlayerFriendlyFireNoBulletCliffe",
-		criteria = 
-		[
-			[ConceptPlayerFriendlyFire],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsNotFriendlyFire],
-			[IsNotIncapacitated],
-			[IsNotOnThirdStrike],
-			[IsNotDamageTypeBullet],
-			[IsNotDamageTypeExplosive],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsNotZombiePresentTank],
-		],
-		Response PlayerFriendlyFireNoBulletGambler
-		ApplyContext "FriendlyFire:1:10"
-	},
-	{
-		name = "PlayerFriendlyFireNoBulletC1Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerFriendlyFire],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsNotFriendlyFire],
-			[IsNotIncapacitated],
-			[IsNotOnThirdStrike],
-			[IsNotDamageTypeBullet],
-			[IsNotDamageTypeExplosive],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[IsNotZombiePresentTank],
 			[ismap_c1m1_hotel],
 			[NoKnowNames],
 		],
-		Response PlayerFriendlyFireNoBulletC1Gambler
+		Response PlayerFriendlyFireFromProducerC1Mechanic
 		ApplyContext "FriendlyFire:1:10"
 	},
 	{
-		name = "PlayerFriendlyFireTankCliffe",
+		name = "PlayerFriendlyFireNoBullet_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerFriendlyFire],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
+			[IsNotFriendlyFire],
+			[IsNotIncapacitated],
+			[IsNotOnThirdStrike],
+			[IsNotDamageTypeBullet],
+			[IsNotDamageTypeExplosive],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsNotZombiePresentTank],
+		],
+		Response PlayerFriendlyFireNoBulletMechanic
+		ApplyContext "FriendlyFire:1:10"
+	},
+	{
+		name = "PlayerFriendlyFireNoBulletC1_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerFriendlyFire],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsNotFriendlyFire],
+			[IsNotIncapacitated],
+			[IsNotOnThirdStrike],
+			[IsNotDamageTypeBullet],
+			[IsNotDamageTypeExplosive],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsNotZombiePresentTank],
+			[ismap_c1m1_hotel],
+			[NoKnowNames],
+		],
+		Response PlayerFriendlyFireNoBulletC1Mechanic
+		ApplyContext "FriendlyFire:1:10"
+	},
+	{
+		name = "PlayerFriendlyFireTank_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerFriendlyFire],
+			[IsNotCoughing],
+			[IsCsgo_sas],
 			[IsNotFriendlyFire],
 			[IsNotIncapacitated],
 			[IsDamageTypeBullet],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsZombiePresentTank],
 			[IsSaidTankWarn2],
 			[IsNotIncapacitated],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[isNotmap_c1m1_hotel],
 			[isNotmap_c1m2_streets],
 		],
-		Response PlayerFriendlyFireTankGambler
+		Response PlayerFriendlyFireTankMechanic
 		ApplyContext "FriendlyFire:1:10"
 	},
 	{
-		name = "PlayerFriendlyFireTankC1Cliffe",
+		name = "PlayerFriendlyFireTankCoach_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerFriendlyFire],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotFriendlyFire],
 			[IsNotIncapacitated],
 			[IsDamageTypeBullet],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsZombiePresentTank],
 			[IsSaidTankWarn2],
+			[ChanceToFire30Percent],
 			[IsNotIncapacitated],
-			[IsWorldTalkCliffe],
-			[C1M1orC1M2],
-			[IsNotSurvival],
+			[SubjectIsCoach],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[isNotmap_c1m2_streets],
 		],
-		Response PlayerFriendlyFireTankC1Gambler
+		Response PlayerFriendlyFireTankCoachMechanic
 		ApplyContext "FriendlyFire:1:10"
 	},
 	{
-		name = "PlayerToTheRescueCliffe",
+		name = "PlayerFriendlyFireTankGambler_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerFriendlyFire],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsNotFriendlyFire],
+			[IsNotIncapacitated],
+			[IsDamageTypeBullet],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsZombiePresentTank],
+			[IsSaidTankWarn2],
+			[ChanceToFire30Percent],
+			[IsNotIncapacitated],
+			[SubjectIsGambler],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[isNotmap_c1m2_streets],
+		],
+		Response PlayerFriendlyFireTankGamblerMechanic
+		ApplyContext "FriendlyFire:1:10"
+	},
+	{
+		name = "PlayerFriendlyFireTankProducer_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerFriendlyFire],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsNotFriendlyFire],
+			[IsNotIncapacitated],
+			[IsDamageTypeBullet],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsZombiePresentTank],
+			[IsSaidTankWarn2],
+			[ChanceToFire30Percent],
+			[IsNotIncapacitated],
+			[SubjectIsProducer],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[isNotmap_c1m2_streets],
+		],
+		Response PlayerFriendlyFireTankProducerMechanic
+		ApplyContext "FriendlyFire:1:10"
+	},
+	{
+		name = "PlayerToTheRescue_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptSurvivorBotMovingToReviveFriend],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[NotInCombat],
 			[IsNotSaidRescueComing],
 			[IsDistanceSubjectO600],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerToTheRescueGambler
+		Response PlayerToTheRescueMechanic
 		ApplyContext "SaidRescueComing:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerToTheRescueRosCliffe",
+		name = "PlayerToTheRescueRos_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerToTheRescue],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerToTheRescueRosGambler
+		Response PlayerToTheRescueRosMechanic
 	},
 	{
-		name = "SurvivorTauntResponseCliffe",
+		name = "SurvivorTauntResponse_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerTaunt],
 			[IsSurvivor],
 			[IsNotSpeaking],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotVersus],
 		],
-		Response SurvivorTauntResponseGambler
+		Response SurvivorTauntResponseMechanic
 	},
 	{
-		name = "C4M1IdleComment01Cliffe",
+		name = "C4M1IdleComment01_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptTalkIdle],
@@ -8140,23 +8899,23 @@ local jess_cliffe_rules =
 			[ismap_c4m1_milltown_a],
 			[IsSaidc4m1_nogas],
 			[IsNotSpeaking],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotIncapacitated],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[NotInCombat],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[TimeSinceGroupInCombat02],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[_auto_NotNoGasGate],
 		],
-		Response C4M1IdleComment01Gambler
-		ApplyContext "Talk:1:2.788,_auto_NoGasGate:2:0"
+		Response C4M1IdleComment01Mechanic
+		ApplyContext "Talk:1:4.299,_auto_NoGasGate:2:0"
 		applycontexttoworld
 	},
 	{
-		name = "C4M2IdleCommentCane01Cliffe",
+		name = "C4M2IdleCommentCane01_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptTalkIdle],
@@ -8164,1307 +8923,1263 @@ local jess_cliffe_rules =
 			[IsSurvivor],
 			[ismap_c4m2_sugarmill_a],
 			[IsNotSpeaking],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotIncapacitated],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
-			[_auto_IsCliffeInCane],
+			[_auto_IsCsgo_sasInCane],
 			[_auto_NotCaneYellGated],
-			[_auto_NotLastSurvivorTalkedCliffe],
+			[_auto_NotLastSurvivorTalkedCsgo_sas],
 		],
-		Response C4M2IdleCommentCane01Gambler
-		ApplyContext "_auto_CaneYellGated:1:10,_auto_LastSurvivorTalkedCliffe:1:15"
+		Response C4M2IdleCommentCane01Mechanic
+		then any _c4m2_caneyell01 foo:0 0.01
+		ApplyContext "_auto_CaneYellGated:1:10,_auto_LastSurvivorTalkedCsgo_sas:1:15"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerChokeResponseCliffe",
+		name = "PlayerChokeResponse_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerChoke],
 			[IsSurvivor],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerChokeResponseGambler
-		ApplyContext "TalkCliffe:1:5"
+		Response PlayerChokeResponseMechanic
+		ApplyContext "TalkCsgo_sas:1:5"
 	},
 	{
-		name = "PlayerChokeResponseC1Cliffe",
+		name = "PlayerChokeResponseC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerChoke],
 			[IsSurvivor],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[C1M1orC1M2],
-			[NoKnowSmoker],
+			[NoKNowSmoker],
 			[IsNotSurvival],
 		],
-		Response PlayerChokeResponseC1Gambler
-		ApplyContext "TalkCliffe:1:5"
+		Response PlayerChokeResponseC1Mechanic
+		ApplyContext "TalkCsgo_sas:1:5"
 	},
 	{
-		name = "PlayerReloadingC502RunCliffe",
+		name = "PlayerReloadingC502Run_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerReloading],
 			[IsSurvivor],
 			[IsNotSpeaking],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotIncapacitated],
 			[IsMapc5m2_park],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotZombiePresentTank],
 			[ChanceToFire50Percent],
 			[_auto_IsAlarm],
 		],
-		Response PlayerReloadingC502RunGambler
+		Response PlayerReloadingC502RunMechanic
 	},
 	{
-		name = "PlayerReloadingTankCliffe",
+		name = "PlayerReloadingTank_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerReloading],
 			[IsSurvivor],
 			[IsNotSpeaking],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotIncapacitated],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidReloadingTank],
 			[IsZombiePresentTank],
 			[IsSaidTankWarn2],
-			[IsWorldTalkCliffe],
-			[isNotmap_c1m1_hotel],
-			[isNotmap_c1m2_streets],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotSpottedVehicle],
 		],
-		Response PlayerReloadingTankGambler
+		Response PlayerReloadingTankMechanic
 		ApplyContext "SaidReloadingTank:1:10,SaidTankWarn2:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerReloadingTankC1Cliffe",
+		name = "PlayerReloadingTankC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerReloading],
 			[IsSurvivor],
 			[IsNotSpeaking],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotIncapacitated],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidReloadingTank],
 			[IsZombiePresentTank],
 			[IsSaidTankWarn2],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[C1M1orC1M2],
 			[IsNotSurvival],
 		],
-		Response PlayerReloadingTankC1Gambler
+		Response PlayerReloadingTankC1Mechanic
 		ApplyContext "SaidReloadingTank:1:10,SaidTankWarn2:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerWitchChasingCliffe",
+		name = "PlayerWitchChasing_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerExertionMinor],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWitchPresent],
 			[SubjectIsNotWitch],
 			[IsNotSaidWitchChasing],
 			[IsSaidWitchAttacking],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotmap_c4m2],
 			[IsNotc6m1_riverbank],
 			[IsWitchAggro],
 		],
-		Response PlayerWitchChasingGambler
-		ApplyContext "SaidWitchChasing:1:5,TalkCliffe:1:2"
+		Response PlayerWitchChasingMechanic
+		ApplyContext "SaidWitchChasing:1:5,TalkCsgo_sas:1:2"
 	},
 	{
-		name = "PlayerWitchChasingC6M1Cliffe",
+		name = "PlayerWitchChasingC6M1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerExertionMinor],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWitchPresent],
 			[SubjectIsNotWitch],
 			[IsNotSaidWitchChasing],
 			[IsSaidWitchAttacking],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[isc6m1_riverbank],
 			[IsWitchAggro],
 		],
 		// 	forceweight 20
-		Response PlayerWitchChasingC6M1Gambler
-		ApplyContext "SaidWitchChasing:1:15,TalkCliffe:1:2"
+		Response PlayerWitchChasingC6M1Mechanic
+		ApplyContext "SaidWitchChasing:1:15,TalkCsgo_sas:1:2,SaidWitchStartAttack:1:15"
 	},
 	{
-		name = "PlayerWitchStartAttackCliffe",
+		name = "PlayerWitchStartAttackC6M1_CSGO_SAS",
 		criteria = 
 		[
 			[IsFaultConcept],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsFaultWitchHarassment],
+			[Isc6m1_riverbank],
 		],
-		Response PlayerWitchStartAttackGambler
-		ApplyContext "SaidWitchAttacking:1:15,TalkCliffe:1:2,SaidWitchStartAttack:1:15"
+		Response PlayerWitchStartAttackC6M1Mechanic
+		ApplyContext "SaidWitchAttacking:1:15,TalkCsgo_sas:1:4,SaidWitchStartAttack:1:15"
 	},
 	{
-		name = "PlayerWitchStartAttackC6M1Cliffe",
+		name = "PlayerWitchStartAttack_CSGO_SAS",
 		criteria = 
 		[
 			[IsFaultConcept],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsFaultWitchHarassment],
-			[isc6m1_riverbank],
 		],
-		Response PlayerWitchStartAttackC6M1Gambler
-		ApplyContext "SaidWitchAttacking:1:15,TalkCliffe:1:2,SaidWitchStartAttack:1:15"
+		Response PlayerWitchStartAttackMechanic
+		ApplyContext "SaidWitchAttacking:1:15,TalkCsgo_sas:1:2,SaidWitchStartAttack:1:15"
 	},
 	{
-		name = "WitchAggroCliffe",
+		name = "WitchAggro_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptWitchStartAttack],
-			[IsCliffe],
-			[Iswitch_aggro_onCliffe],
+			[IsCsgo_sas],
+			[Iswitch_aggro_onCsgo_sas],
 		],
 		Response NoResponse
 		ApplyContext "WitchAggro:++1"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorCriticalHurtCliffe",
+		name = "SurvivorCriticalHurt_CSGO_SAS",
 		criteria = 
 		[
 			[IsSurvivor],
 			[InPain],
 			[IsCriticalPain],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[SubjectIsNotJockey],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response SurvivorCriticalHurtGambler
+		Response SurvivorCriticalHurtMechanic
 	},
 	{
-		name = "SurvivorIncapacitatedHurtCliffe",
+		name = "SurvivorIncapacitatedHurt_CSGO_SAS",
 		criteria = 
 		[
 			[IsSurvivor],
 			[InPain],
 			[IsNotSpeaking],
 			[IsIncapacitatedPain],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response SurvivorIncapacitatedHurtGambler
+		Response SurvivorIncapacitatedHurtMechanic
 	},
 	{
-		name = "SurvivorJockeyHurtMajorCliffe",
+		name = "SurvivorJockeyHurtMajor_CSGO_SAS",
 		criteria = 
 		[
 			[IsSurvivor],
 			[InPain],
 			[IsMajorPain],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[SubjectIsJockey],
-			[IsNotSaidBeenJockeyedCliffe],
-			[IsWorldTalkCliffe],
+			[IsNotSaidBeenJockeyedCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsBeingJockeyed],
 		],
-		Response SurvivorJockeyHurtMajorGambler
-		ApplyContext "SaidBeenJockeyedCliffe:1:6,TalkCliffe:1:6"
+		Response SurvivorJockeyHurtMajorMechanic
+		then all commentjockey foo:0 -1.739
+		ApplyContext "SaidBeenJockeyedCsgo_sas:1:6,TalkCsgo_sas:1:6"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorJockeyHurtMinorCliffe",
+		name = "SurvivorJockeyHurtMinor_CSGO_SAS",
 		criteria = 
 		[
 			[IsSurvivor],
 			[InPain],
 			[IsMinorPain],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[SubjectIsJockey],
-			[IsNotSaidBeenJockeyedCliffe],
-			[IsWorldTalkCliffe],
+			[IsNotSaidBeenJockeyedCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsBeingJockeyed],
 		],
-		Response SurvivorJockeyHurtMajorGambler
-		ApplyContext "SaidBeenJockeyedCliffe:1:6,TalkCliffe:1:6"
+		Response SurvivorJockeyHurtMajorMechanic
+		then all commentjockey foo:0 -1.739
+		ApplyContext "SaidBeenJockeyedCsgo_sas:1:6,TalkCsgo_sas:1:6"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorJockeyHurtMajorC1Cliffe",
+		name = "SurvivorJockeyHurtMajorC1_CSGO_SAS",
 		criteria = 
 		[
 			[IsSurvivor],
 			[InPain],
 			[IsMajorPain],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[SubjectIsJockey],
-			[IsNotSaidBeenJockeyedCliffe],
-			[IsWorldTalkCliffe],
+			[IsNotSaidBeenJockeyedCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[C1M1orC1M2],
 			[NoKnowJockey],
 			[IsBeingJockeyed],
 			[IsNotSurvival],
 		],
-		Response SurvivorJockeyHurtMajorC1Gambler
-		ApplyContext "SaidBeenJockeyedCliffe:1:6,TalkCliffe:1:6"
+		Response SurvivorJockeyHurtMajorC1Mechanic
+		ApplyContext "SaidBeenJockeyedCsgo_sas:1:6,TalkCsgo_sas:1:6"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorJockeyHurtMinorC1Cliffe",
+		name = "SurvivorJockeyHurtMinorC1_CSGO_SAS",
 		criteria = 
 		[
 			[IsSurvivor],
 			[InPain],
 			[IsMinorPain],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[SubjectIsJockey],
-			[IsNotSaidBeenJockeyedCliffe],
-			[IsWorldTalkCliffe],
+			[IsNotSaidBeenJockeyedCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[C1M1orC1M2],
 			[NoKnowJockey],
 			[IsBeingJockeyed],
 			[IsNotSurvival],
 		],
-		Response SurvivorJockeyHurtMajorC1Gambler
-		ApplyContext "SaidBeenJockeyedCliffe:1:6,TalkCliffe:1:6"
+		Response SurvivorJockeyHurtMajorC1Mechanic
+		ApplyContext "SaidBeenJockeyedCsgo_sas:1:6,TalkCsgo_sas:1:6"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorMajorHurtCliffe",
+		name = "SurvivorMajorHurt_CSGO_SAS",
 		criteria = 
 		[
 			[IsSurvivor],
 			[InPain],
 			[IsMajorPain],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[SubjectIsNotJockey],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response SurvivorMajorHurtGambler
+		Response SurvivorMajorHurtMechanic
 	},
 	{
-		name = "SurvivorMinorHurtCliffe",
+		name = "SurvivorMinorHurt_CSGO_SAS",
 		criteria = 
 		[
 			[IsSurvivor],
 			[InPain],
 			[IsMinorPain],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[SubjectIsNotJockey],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response SurvivorMinorHurtGambler
+		Response SurvivorMinorHurtMechanic
 	},
 	{
-		name = "SurvivorReloadingCliffe",
+		name = "SurvivorReloading_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerReloading],
 			[IsSurvivor],
 			[IsNotSpeaking],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotIncapacitated],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[RecentGroupInCombat10],
 			[HasNotgrenadelauncher],
-			[IsWorldTalkCliffe],
-			[ChanceToFire50Percent],
+			[IsWorldTalkCsgo_sas],
 			[IsNotZombiePresentTank],
 			[NotInIntenseCombat],
-			[_auto_NotCliffeInWitchville],
+			[_auto_NotCsgo_sasInWitchville],
 			[_auto_NotAlarmV2],
 			[_auto_ConcertNotLive],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorReloadingGambler
+		Response SurvivorReloadingMechanic
 	},
 	{
-		name = "SurvivorReloadingIntenseCliffe",
+		name = "SurvivorReloadingIntense_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerReloading],
 			[IsSurvivor],
 			[IsNotSpeaking],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotIncapacitated],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[RecentGroupInCombat10],
 			[HasNotgrenadelauncher],
-			[IsWorldTalkCliffe],
-			[ChanceToFire50Percent],
+			[IsWorldTalkCsgo_sas],
 			[IsNotZombiePresentTank],
 			[InIntenseCombat],
-			[_auto_NotCliffeInWitchville],
+			[_auto_NotCsgo_sasInWitchville],
 			[_auto_NotAlarmV2],
 			[_auto_ConcertNotLive],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorReloadingIntenseGambler
+		Response SurvivorReloadingIntenseMechanic
 	},
 	{
-		name = "SurvivorReloadingC4M2Cliffe",
+		name = "SurvivorReloadingC4M2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerReloading],
 			[IsSurvivor],
 			[IsNotSpeaking],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotIncapacitated],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[RecentGroupInCombat10],
 			[HasNotgrenadelauncher],
-			[IsWorldTalkCliffe],
-			[ChanceToFire50Percent],
-			[IsWitchPresent],
-			[IsWarnHeardWitch],
+			[IsWorldTalkCsgo_sas],
 			[ismap_c4m2_sugarmill_a],
 			[IsNotSaidSafeSpotAhead],
 			[IsNotZombiePresentTank],
-			[_auto_IsCliffeInWitchville],
+			[_auto_IsCsgo_sasInWitchville],
 		],
-		Response SurvivorReloadingC4M2Gambler
+		Response SurvivorReloadingC4M2Mechanic
 	},
 	{
-		name = "PlayerHelpIncappedCliffe",
+		name = "PlayerHelpIncapped_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerHelp],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotCoughing],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsIncappedStarted],
 			[IsIncappedStarted2],
 			[IsIncapacitated],
 			[NotCalledForHelpRecently],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerHelpIncappedGambler
+		Response PlayerHelpIncappedMechanic
 		ApplyContext "CalledForHelp:1:7.5"
 	},
 	{
-		name = "PlayerHelpIncappedBleedingCliffe",
+		name = "PlayerHelpIncappedBleeing_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerHelp],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotCoughing],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsIncappedBleeding1],
 			[IsIncappedBleeding2],
 			[IsIncapacitated],
 			[NotCalledForHelpRecently],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerHelpIncappedBleedingGambler
+		Response PlayerHelpIncappedBleeingMechanic
 		ApplyContext "CalledForHelp:1:15"
 	},
 	{
-		name = "PlayerHelpIncappedLethargicCliffe",
+		name = "PlayerHelpIncappedLethargic_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerHelp],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotCoughing],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsIncappedLethargic],
 			[IsIncapacitated],
 			[NotCalledForHelpRecently],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerHelpIncappedLethargicGambler
+		Response PlayerHelpIncappedLethargicMechanic
 		ApplyContext "CalledForHelp:1:30"
 	},
 	{
-		name = "HelpResponseGamblerCliffe",
-		criteria = 
-		[
-			[ConceptFriendNeedsHelp],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotIncapacitated],
-			[IsInSafeSpot],
-			[FromIsCliffe],
-			[IsNotInStartArea],
-			[NotAloneInSafeSpot],
-			[IsWorldTalkCliffe],
-		],
-		Response HelpResponseGamblerGambler
-	},
-	{
-		name = "C2M1DoneFallingCliffe",
+		name = "C2M1DoneFalling_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC2M1DoneFalling],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotCoughing],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[_auto_NotDoneFalling],
 		],
-		Response C2M1DoneFallingGambler
-		ApplyContext "Talk:1:0.987,_auto_DoneFalling:1:0"
+		Response C2M1DoneFallingMechanic
+		then gambler _C2M1_Fall03 foo:0 0.01
+		ApplyContext "Talk:1:3.351,_auto_DoneFalling:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "C2M1FallingCliffe",
+		name = "C2M1DoneFalling2_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC2M1DoneFalling],
+			[IsCsgo_sas],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsNotCoughing],
+			[IsCoachAlive],
+			[IsCoachNear200],
+			[ChanceToFire50Percent],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[_auto_NotDoneFalling],
+		],
+		Response C2M1DoneFalling2Mechanic
+		then coach _C2M1_Fall01 foo:0 0.01
+		ApplyContext "Talk:1:2.044,_auto_DoneFalling:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "C2M1Falling_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC2M1Falling],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C2M1FallingGambler
-		ApplyContext "Talk:1:1.270"
+		Response C2M1FallingMechanic
+		then self EndOfWavWindow5 foo:0 0.01
+		ApplyContext "Talk:1:1.353"
 		applycontexttoworld
 	},
 	{
-		name = "C2M2CarouselOffCliffe",
+		name = "C2M2CarouselOff_CSGO_SAS",
 		criteria = 
 		[
 			[Conceptc2m2CarouselEnd],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C2M2CarouselOffGambler
-		ApplyContext "Talk:1:1.079,_auto_Alarm:2:0"
+		Response C2M2CarouselOffMechanic
+		ApplyContext "Talk:1:0.756,_auto_Alarm:2:0"
 		applycontexttoworld
 	},
 	{
-		name = "C2M2CarouselOnCliffe",
+		name = "C2M2CarouselOn_CSGO_SAS",
 		criteria = 
 		[
 			[Conceptc2m2CarouselStart],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C2M2CarouselOnGambler
+		Response C2M2CarouselOnMechanic
+		then any _C2M2_CaroStart03 foo:0 2.0
 		ApplyContext "_auto_Alarm:1:0,_auto_TimerLockA:1:6,WarnMegaMob:1:300,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "_C2M2_CaroStart01Cliffe",
-		criteria = 
-		[
-			[Concept_C2M2_CaroStart01],
-			[IsCliffe],
-			[IsNotIncapacitated],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _C2M2_CaroStart01Gambler
-	},
-	{
-		name = "C3M3BridgeButtonCliffe",
+		name = "C3M3BridgeButton_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC3M3BridgeButton],
 			[IsNotSaidC3M3BridgeButton],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidC3M3BridgeButton],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C3M3BridgeButtonGambler
+		Response C3M3BridgeButtonMechanic
 		ApplyContext "SaidC3M3BridgeButton:1:0,WarnMegaMob:1:300,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "EndOfWavWindow5Cliffe",
+		name = "EndOfWavWindow5_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptEndOfWavWindow5],
-			[IsCliffe],
+			[IsCsgo_sas],
 		],
-		Response EndOfWavWindow5Gambler
-		ApplyContext "_auto_CliffeWavWindow:1:0"
+		Response EndOfWavWindow5Mechanic
+		ApplyContext "_auto_Csgo_sasWavWindow:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerChainSawUsedCliffe",
+		name = "PlayerChainSawUsed_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptChainsawUsed],
 			[IsNotSaidChainSawUsed],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IntensityOver25],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerChainSawUsedGambler
+		Response PlayerChainSawUsedMechanic
 		ApplyContext "SaidChainSawUsed:1:90"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkC1M1AroundFireCliffe",
+		name = "PlayerRemarkC1M1AroundFire_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC1M1AroundFire],
 			[IsNotSaidC1M1AroundFire],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkC1M1AroundFireGambler
+		Response PlayerRemarkC1M1AroundFireMechanic
+		then any C1M1Cough foo:0 -1.348
 		ApplyContext "SaidC1M1AroundFire:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkC1M1OverTableCliffe",
+		name = "PlayerRemarkC1M1OverTable_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC1M1OverTable],
 			[IsNotSaidC1M1OverTable],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkC1M1OverTableGambler
+		Response PlayerRemarkC1M1OverTableMechanic
+		then any C1M1Cough foo:0 -0.627
 		ApplyContext "SaidC1M1OverTable:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkC1M1SearchRoomsCliffe",
+		name = "PlayerRemarkC1M1SearchRooms_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC1M1SearchRooms],
 			[IsNotSaidC1M1SearchRooms],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkC1M1SearchRoomsGambler
+		Response PlayerRemarkC1M1SearchRoomsMechanic
+		then any C1M1Cough foo:0 -3.339
 		ApplyContext "SaidC1M1SearchRooms:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkC1M1ThroughThisDoorCliffe",
+		name = "PlayerRemarkC1M1ThroughThisDoor_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC1M1ThroughThisDoor],
 			[IsNotSaidC1M1ThroughThisDoor],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkC1M1ThroughThisDoorGambler
+		Response PlayerRemarkC1M1ThroughThisDoorMechanic
+		then any C1M1Cough foo:0 -0.618
 		ApplyContext "SaidC1M1ThroughThisDoor:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkC1M3AlarmDoorsCliffe",
+		name = "PlayerRemarkC1M2SpotGunStore_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
+			[IsRemarkWorldC1M2SpotGunStore],
+			[IsNotSaidRemarkWorldC1M2SpotGunStore],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsSubjectNear800],
+			[IsWorldTalkCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkC1M2SpotGunStoreMechanic
+		ApplyContext "SaidRemarkWorldC1M2SpotGunStore:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkC1M3AlarmDoors_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
 			[IsC1M3AlarmDoors],
 			[IsNotSaidC1M3AlarmDoors],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[_auto_NotAlarm],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkC1M3AlarmDoorsGambler
+		Response PlayerRemarkC1M3AlarmDoorsMechanic
 		ApplyContext "SaidC1M3AlarmDoors:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkC1M3CarefulWindowsCliffe",
+		name = "PlayerRemarkC1M3CarefulWindows_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC1M3CarefulWindows],
 			[IsNotSaidC1M3CarefulWindows],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[_auto_NotAlarm],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkC1M3CarefulWindowsGambler
+		Response PlayerRemarkC1M3CarefulWindowsMechanic
 		ApplyContext "SaidC1M3CarefulWindows:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkC1M3CEDAGoneCliffe",
+		name = "PlayerRemarkC1M3CEDAGone_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC1M3CEDAGone],
 			[IsNotSaidC1M3CEDAGone],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear500],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkC1M3CEDAGoneGambler
+		Response PlayerRemarkC1M3CEDAGoneMechanic
 		ApplyContext "SaidC1M3CEDAGone:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkC1M3DiscoPantsCliffe",
+		name = "PlayerRemarkC1M3DownHere_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[IsC1M3DiscoPants],
-			[IsNotSaidC1M3DiscoPants],
-			[IsNotCoughing],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear500],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkC1M3DiscoPantsGambler
-		ApplyContext "SaidC1M3DiscoPants:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkC1M3DownHereCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC1M3DownHere],
 			[IsNotSaidC1M3DownHere],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkC1M3DownHereGambler
+		Response PlayerRemarkC1M3DownHereMechanic
 		ApplyContext "SaidC1M3DownHere:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkC1M3DownHere2Cliffe",
+		name = "PlayerRemarkC1M3DownHere2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC1M3DownHere2],
 			[IsNotSaidC1M3DownHere2],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkC1M3DownHereGambler
+		Response PlayerRemarkC1M3DownHereMechanic
 		ApplyContext "SaidC1M3DownHere2:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkC1M3DownTheEscalatorCliffe",
+		name = "PlayerRemarkC1M3DownTheEscalator_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC1M3DownTheEscalator],
 			[IsNotSaidC1M3DownTheEscalator],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkC1M3DownTheEscalatorGambler
+		Response PlayerRemarkC1M3DownTheEscalatorMechanic
 		ApplyContext "SaidC1M3DownTheEscalator:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkC1M3OverHereCliffe",
+		name = "PlayerRemarkC1M3OverHere_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC1M3OverHere],
 			[IsNotSaidC1M3OverHere],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkC1M3OverHereGambler
+		Response PlayerRemarkC1M3OverHereMechanic
 		ApplyContext "SaidC1M3OverHere:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkC1M3SearchRoomsCliffe",
+		name = "PlayerRemarkC1M3SearchRooms_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC1M3SearchRooms],
 			[IsNotSaidC1M3SearchRooms],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkC1M3SearchRoomsGambler
+		Response PlayerRemarkC1M3SearchRoomsMechanic
+		then any C1M1Cough foo:0 -3.339
 		ApplyContext "SaidC1M3SearchRooms:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkC1M3ThisWayCliffe",
+		name = "PlayerRemarkC1M3ThisWay_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC1M3ThisWay],
 			[IsNotSaidC1M3ThisWay],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkC1M3ThisWayGambler
+		Response PlayerRemarkC1M3ThisWayMechanic
 		ApplyContext "SaidC1M3ThisWay:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkC1M3ThroughHereCliffe",
+		name = "PlayerRemarkC1M3ThroughHere_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC1M3ThroughHere],
 			[IsNotSaidC1M3ThroughHere],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkC1M3ThroughHereGambler
+		Response PlayerRemarkC1M3ThroughHereMechanic
 		ApplyContext "SaidC1M3ThroughHere:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkC1M3TurnOffAlarm1Cliffe",
+		name = "PlayerRemarkC1M3TurnOffAlarm1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC1M3TurnOffAlarm1],
 			[IsNotSaidC1M3TurnOffAlarm1],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[_auto_IsAlarm],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkC1M3TurnOffAlarm1Gambler
+		Response PlayerRemarkC1M3TurnOffAlarm1Mechanic
 		ApplyContext "SaidC1M3TurnOffAlarm1:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkC1M3TurnOffAlarm2Cliffe",
+		name = "PlayerRemarkC1M3TurnOffAlarm2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC1M3TurnOffAlarm2],
 			[IsNotSaidC1M3TurnOffAlarm2],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[_auto_IsAlarm],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkC1M3TurnOffAlarm2Gambler
+		Response PlayerRemarkC1M3TurnOffAlarm2Mechanic
 		ApplyContext "SaidC1M3TurnOffAlarm2:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkC1M3TurnOffAlarm3Cliffe",
+		name = "PlayerRemarkC1M3TurnOffAlarm3_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC1M3TurnOffAlarm3],
 			[IsNotSaidC1M3TurnOffAlarm3],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[_auto_IsAlarm],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkC1M3TurnOffAlarm3Gambler
+		Response PlayerRemarkC1M3TurnOffAlarm3Mechanic
 		ApplyContext "SaidC1M3TurnOffAlarm3:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkC1M3UpEscalator1Cliffe",
+		name = "PlayerRemarkC1M3UpEscalator1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC1M3UpEscalator1],
 			[IsNotSaidC1M3UpEscalator1],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkC1M3UpEscalator1Gambler
+		Response PlayerRemarkC1M3UpEscalator1Mechanic
 		ApplyContext "SaidC1M3UpEscalator1:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkC1M3UpEscalator2Cliffe",
+		name = "PlayerRemarkC1M3UpEscalator2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC1M3UpEscalator2],
 			[IsNotSaidC1M3UpEscalator2],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkC1M3UpEscalator1Gambler
+		Response PlayerRemarkC1M3UpEscalator1Mechanic
 		ApplyContext "SaidC1M3UpEscalator2:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkC1M3UpEscalator3Cliffe",
+		name = "PlayerRemarkC1M3UpEscalator3_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC1M3UpEscalator3],
 			[IsNotSaidC1M3UpEscalator3],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkC1M3UpEscalator1Gambler
+		Response PlayerRemarkC1M3UpEscalator1Mechanic
 		ApplyContext "SaidC1M3UpEscalator3:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc2m1_carwreckageCliffe",
+		name = "PlayerRemarkc2m1_busblock_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m1_carwreckage],
-			[IsNotSaidc2m1_carwreckage],
+			[IsCsgo_sas],
+			[Isc2m1_busblock],
+			[IsNotSaidc2m1_busblock],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc2m1_carwreckageGambler
-		ApplyContext "Saidc2m1_carwreckage:1:0,Talk:1:1.543"
+		Response PlayerRemarkc2m1_busblockMechanic
+		then producer _C2M1MonsterTruck foo:0 0.02
+		ApplyContext "Saidc2m1_busblock:1:0,Talk:1:1.499"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc2m1_offrampCliffe",
+		name = "PlayerRemarkc2m1_checkrooms_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m1_offramp],
-			[IsNotSaidc2m1_offramp],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear400],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkc2m1_offrampGambler
-		ApplyContext "Saidc2m1_offramp:1:0,Talk:1:1.289"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkc2m1_checkroomsCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc2m1_checkrooms],
 			[IsNotSaidc2m1_checkrooms],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc2m1_checkroomsGambler
-		ApplyContext "Saidc2m1_checkrooms:1:0,Talk:1:1.430"
+		Response PlayerRemarkc2m1_checkroomsMechanic
+		ApplyContext "Saidc2m1_checkrooms:1:0,Talk:1:1.459"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc2m1_cliffCliffe",
+		name = "PlayerRemarkc2m1_cliff_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc2m1_cliff],
 			[IsNotSaidc2m1_cliff],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc2m1_cliffGambler
-		ApplyContext "Saidc2m1_cliff:1:0,Talk:1:1.763"
+		Response PlayerRemarkc2m1_cliffMechanic
+		ApplyContext "Saidc2m1_cliff:1:0,Talk:1:3.248"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc2m1_downstairsCliffe",
+		name = "PlayerRemarkc2m1_downstairs_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc2m1_downstairs],
 			[IsNotSaidc2m1_downstairs],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc2m1_downstairsGambler
-		ApplyContext "Saidc2m1_downstairs:1:0,Talk:1:0.797"
+		Response PlayerRemarkc2m1_downstairsMechanic
+		ApplyContext "Saidc2m1_downstairs:1:0,Talk:1:1.547"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc2m1_bridgeoutCliffe",
+		name = "PlayerRemarkc2m1_motelsign_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m1_bridgeout],
-			[IsNotSaidc2m1_bridgeout],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear400],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkc2m1_bridgeoutGambler
-		ApplyContext "Saidc2m1_bridgeout:1:0,Talk:1:0.746"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkc2m1_followriverCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m1_followriver],
-			[IsNotSaidc2m1_followriver],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear400],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkc2m1_followriverGambler
-		ApplyContext "Saidc2m1_followriver:1:0,Talk:1:0.822"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkc2m1_motelsignCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc2m1_motelsign],
 			[IsNotSaidc2m1_motelsign],
 			[IsNotSaidc2m1_throughmotel],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectFar100],
 			[ChanceToFire20Percent],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc2m1_motelsignGambler
+		Response PlayerRemarkc2m1_motelsignMechanic
 		ApplyContext "Saidc2m1_motelsign:1:0,Talk:1:1.428"
 		applycontexttoworld
 	},
 	{
-		name = "AUTOBLANK_PlayerRemarkc2m1_motelsignCliffe",
+		name = "AUTOBLANK_PlayerRemarkc2m1_motelsign_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc2m1_motelsign],
 			[IsNotSaidc2m1_motelsign],
 			[IsNotSaidc2m1_throughmotel],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectFar100],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response _PlayerInfoRemarkableBlankGambler
+		Response _PlayerInfoRemarkableBlankMechanic
 		ApplyContext "Saidc2m1_motelsign:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc2m1_parkCliffe",
+		name = "PlayerRemarkc2m1_offramp_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m1_park],
-			[IsNotSaidc2m1_park],
+			[IsCsgo_sas],
+			[Isc2m1_offramp],
+			[IsNotSaidc2m1_offramp],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear400],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc2m1_parkGambler
-		ApplyContext "Saidc2m1_park:1:0,Talk:1:2.050"
+		Response PlayerRemarkc2m1_offrampMechanic
+		ApplyContext "Saidc2m1_offramp:1:0,Talk:1:1.167"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc2m1_poolCliffe",
+		name = "PlayerRemarkc2m1_park_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
+			[Isc2m1_park],
+			[IsNotSaidc2m1_park],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear400],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkc2m1_parkMechanic
+		ApplyContext "Saidc2m1_park:1:0,Talk:1:2.273"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkc2m1_pool_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
 			[Isc2m1_pool],
 			[IsNotSaidc2m1_pool],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc2m1_poolGambler
-		ApplyContext "Saidc2m1_pool:1:0,Talk:1:3.037"
+		Response PlayerRemarkc2m1_poolMechanic
+		ApplyContext "Saidc2m1_pool:1:0,Talk:1:3.694"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc2m1_searchlightsCliffe",
+		name = "PlayerRemarkc2m1_searchlights_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc2m1_searchlights],
 			[IsNotSaidc2m1_searchlights],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectFar100],
 			[ChanceToFire100Percent],
 			[AutoIsNotScavenge],
@@ -9472,471 +10187,267 @@ local jess_cliffe_rules =
 			[IsNotSpeakingWeight0],
 		],
 		// 	forceweight 1
-		Response PlayerRemarkc2m1_searchlightsGambler
-		ApplyContext "Saidc2m1_searchlights:1:0,Talk:1:2.216"
+		Response PlayerRemarkc2m1_searchlightsMechanic
+		then any _c2m1_searchlights01 foo:0 0.01
+		ApplyContext "Saidc2m1_searchlights:1:0,Talk:1:3.371"
 		applycontexttoworld
 	},
 	{
-		name = "_c2m1_searchlights01Cliffe",
-		criteria = 
-		[
-			[Concept_c2m1_searchlights01],
-			[IsCliffe],
-			[NotInCombat],
-			[IssuerClose],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _c2m1_searchlights01Gambler
-		ApplyContext "Talk:1:1.903"
-		applycontexttoworld
-	},
-	{
-		name = "_c2m1_searchlights02Cliffe",
-		criteria = 
-		[
-			[Concept_c2m1_searchlights02],
-			[IsCliffe],
-			[NotInCombat],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _c2m1_searchlights02Gambler
-		ApplyContext "Talk:1:1.111"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkc2m1_throughhereCliffe",
+		name = "PlayerRemarkc2m1_throughhere_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc2m1_throughhere],
 			[IsNotSaidc2m1_throughhere],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc2m1_throughhereGambler
-		ApplyContext "Saidc2m1_throughhere:1:0,Talk:1:0.691"
+		Response PlayerRemarkc2m1_throughhereMechanic
+		ApplyContext "Saidc2m1_throughhere:1:0,Talk:1:0.718"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc2m1_throughmotelCliffe",
+		name = "PlayerRemarkc2m1_throughmotel_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc2m1_throughmotel],
 			[IsNotSaidc2m1_throughmotel],
 			[IsNotSaidc2m1_motelsign],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear500],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc2m1_throughmotelGambler
-		ApplyContext "Saidc2m1_throughmotel:1:0,Talk:1:2.201"
+		Response PlayerRemarkc2m1_throughmotelMechanic
+		ApplyContext "Saidc2m1_throughmotel:1:0,Talk:1:1.976"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc2m1_throughwindowCliffe",
+		name = "PlayerRemarkc2m1_throughwindow_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc2m1_throughwindow],
 			[IsNotSaidc2m1_throughwindow],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc2m1_throughwindowGambler
-		ApplyContext "Saidc2m1_throughwindow:1:0,Talk:1:1.021"
+		Response PlayerRemarkc2m1_throughwindowMechanic
+		ApplyContext "Saidc2m1_throughwindow:1:0,Talk:1:1.042"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc2m1_uphillCliffe",
+		name = "PlayerRemarkc2m1_uphill_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc2m1_uphill],
 			[IsNotSaidc2m1_uphill],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear400],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc2m1_uphillGambler
-		ApplyContext "Saidc2m1_uphill:1:0,Talk:1:1.859"
+		Response PlayerRemarkc2m1_uphillMechanic
+		ApplyContext "Saidc2m1_uphill:1:0,Talk:1:0.630"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc2m1_upstairsCliffe",
+		name = "PlayerRemarkc2m1_upstairs_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc2m1_upstairs],
 			[IsNotSaidc2m1_upstairs],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc2m1_upstairsGambler
-		ApplyContext "Saidc2m1_upstairs:1:0,Talk:1:1.220"
+		Response PlayerRemarkc2m1_upstairsMechanic
+		ApplyContext "Saidc2m1_upstairs:1:0,Talk:1:1.269"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc2m2_carouselCliffe",
+		name = "PlayerRemarkc2m2_cottoncandy_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m2_carousel],
-			[IsNotSaidc2m2_carousel],
+			[IsCsgo_sas],
+			[Isc2m2_cottoncandy],
+			[IsNotSaidc2m2_cottoncandy],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear300],
-			[ChanceToFire60Percent],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[_auto_NotAlarm],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkc2m2_carouselGambler
-		ApplyContext "Saidc2m2_carousel:1:0,Talk:1:4.850"
-		applycontexttoworld
-	},
-	{
-		name = "AUTOBLANK_PlayerRemarkc2m2_carouselCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m2_carousel],
-			[IsNotSaidc2m2_carousel],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
+			[_auto_NotCoachFoodBreak],
 			[_auto_NotAlarm],
 			[IsNotSpeakingWeight0],
 		],
-		Response _PlayerInfoRemarkableBlankGambler
-		ApplyContext "Saidc2m2_carousel:1:0"
+		Response PlayerRemarkc2m2_cottoncandyMechanic
+		then coach _C2M2_CottonCandy01 foo:0 0.01
+		ApplyContext "Saidc2m2_cottoncandy:1:0,Talk:1:2.708,_auto_CoachFoodBreak:1:15"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc2m2_carouselbuttonCliffe",
+		name = "PlayerRemarkc2m2_cottoncandy2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m2_carouselbutton],
-			[IsNotSaidc2m2_carouselbutton],
+			[IsCsgo_sas],
+			[Isc2m2_cottoncandy2],
+			[IsNotSaidc2m2_cottoncandy],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear150],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear500],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
-			[_auto_NotAlarm],
+			[_auto_NotCoachFoodBreak],
+			[_auto_NotAlarmV2],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc2m2_carouselbuttonGambler
-		ApplyContext "Saidc2m2_carouselbutton:1:0,Talk:1:2.416"
+		Response PlayerRemarkc2m2_cottoncandyMechanic
+		then coach _C2M2_CottonCandy01 foo:0 0.01
+		ApplyContext "Saidc2m2_cottoncandy:1:0,Talk:1:2.708,_auto_CoachFoodBreak:1:15"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc2m2_entrancesignCliffe",
+		name = "PlayerRemarkc2m2_entrancesign_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc2m2_entrancesign],
 			[IsNotSaidc2m2_entrancesign],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear600],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc2m2_entrancesignGambler
-		ApplyContext "Saidc2m2_entrancesign:1:0,Talk:1:3.821"
+		Response PlayerRemarkc2m2_entrancesignMechanic
+		ApplyContext "Saidc2m2_entrancesign:1:0,Talk:1:3.331"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc2m2_lilpeanutCliffe",
+		name = "_C2M2_CottonCandy01_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_C2M2_CottonCandy01],
+			[IsCsgo_sas],
+			[NotInCombat],
+			[ChanceToFire50Percent],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _C2M2_CottonCandy01Mechanic
+		then coach _C2M2_CottonCandy01 foo:0 0.01
+		ApplyContext "Talk:1:10.109"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkc2m2_kiddieland_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m2_lilpeanut],
-			[IsNotSaidc2m2_lilpeanut],
+			[IsCsgo_sas],
+			[Isc2m2_kiddieland],
+			[IsNotSaidc2m2_kiddieland],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear150],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear800],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc2m2_lilpeanutGambler
-		ApplyContext "Saidc2m2_lilpeanut:1:0"
+		Response PlayerRemarkc2m2_kiddielandMechanic
+		then any _C2M2_Kiddie01 foo:0 0.01
+		ApplyContext "Saidc2m2_kiddieland:1:0,Talk:1:3.403,_auto_CoachFoodBreak:1:15"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc2m2_ladderCliffe",
+		name = "PlayerRemarkc2m2_topofslide_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m2_ladder],
-			[IsNotSaidc2m2_ladder],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear150],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkc2m2_ladderGambler
-		ApplyContext "Saidc2m2_ladder:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkc2m2_backalleyCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m2_backalley],
-			[IsNotSaidc2m2_backalley],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear200],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkc2m2_backalleyGambler
-		ApplyContext "Saidc2m2_backalley:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "_C2M2_LikeTatersCliffe",
-		criteria = 
-		[
-			[Concept_C2M2_LikeTaters],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[NotInCombat],
-			[IsMechanicAlive],
-			[IsMechanicNear400],
-			[IsWorldTalkCliffe],
-			[ChanceToFire40Percent],
-		],
-		Response _C2M2_LikeTatersGambler
-		ApplyContext "TalkCliffe:1:2.427"
-	},
-	{
-		name = "PlayerRemarkc2m2_thistall2Cliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m2_thistall],
-			[IsNotSaidc2m2_thistall],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear150],
-			[IsMechanicAlive],
-			[IsMechanicNear400],
-			[ChanceToFire100Percent],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[_auto_NotAlarm],
-			[IsNotSpeakingWeight0],
-		],
-		// 	forceweight 1
-		Response PlayerRemarkc2m2_thistall2Gambler
-		ApplyContext "Saidc2m2_thistall:1:0,Talk:1:3.942"
-		applycontexttoworld
-	},
-	{
-		name = "_C2M2_ThisTall02Cliffe",
-		criteria = 
-		[
-			[Concept_C2M2_ThisTall02],
-			[IsCliffe],
-			[NotInCombat],
-			[IsSubjectDistNear500],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _C2M2_ThisTall02Gambler
-		ApplyContext "Talk:1:1.5"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkc2m2_topofslideCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc2m2_topofslide],
 			[IsNotSaidc2m2_topofslide],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear150],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc2m2_topofslideGambler
+		Response PlayerRemarkc2m2_topofslideMechanic
 		ApplyContext "Saidc2m2_topofslide:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc2m3_aroundblockCliffe",
+		name = "PlayerRemarkc2m3_coasteroff_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m3_aroundblock],
-			[IsNotSaidc2m3_aroundblock],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear150],
-			[TimeSinceGroupInCombat04],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkc2m3_aroundblockGambler
-		ApplyContext "Saidc2m3_aroundblock:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkc2m3_cementriverCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m3_cementriver],
-			[IsNotSaidc2m3_cementriver],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsSubjectNear200],
-			[ChanceToFire80Percent],
-			[IsMechanicAlive],
-			[IsMechanicNear300],
-			[TimeSinceGroupInCombat04],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkc2m3_cementriverGambler
-		ApplyContext "Saidc2m3_cementriver:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "AUTOBLANK_PlayerRemarkc2m3_cementriverCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m3_cementriver],
-			[IsNotSaidc2m3_cementriver],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsSubjectNear200],
-			[IsMechanicAlive],
-			[IsMechanicNear300],
-			[TimeSinceGroupInCombat04],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response _PlayerInfoRemarkableBlankGambler
-		ApplyContext "Saidc2m3_cementriver:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkc2m3_coasteroffCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc2m3_coasteroff],
 			[IsNotSaidc2m3_coasteroff],
 			[IsNotCoughing],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear400],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
@@ -9944,1853 +10455,1869 @@ local jess_cliffe_rules =
 			[_auto_IsTracksOK],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc2m3_coasteroffGambler
+		Response PlayerRemarkc2m3_coasteroffMechanic
 		ApplyContext "Saidc2m3_coasteroff:1:0,_auto_TimerLockA:1:8"
 		applycontexttoworld
 	},
 	{
-		name = "_c2m3_coollight02Cliffe",
-		criteria = 
-		[
-			[Concept_c2m3_coollight02],
-			[IsCliffe],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _c2m3_coollight02Gambler
-	},
-	{
-		name = "PlayerRemarkc2m3_screamingoakCliffe",
+		name = "PlayerRemarkc2m3_coollight_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m3_screamingoak],
-			[IsNotSaidc2m3_screamingoak],
+			[IsCsgo_sas],
+			[Isc2m3_coollight],
+			[IsNotSaidc2m3_coollight],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear800],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc2m3_screamingoakGambler
-		ApplyContext "Saidc2m3_screamingoak:1:0"
+		Response PlayerRemarkc2m3_coollightMechanic
+		ApplyContext "Saidc2m3_coollight:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc2m3_freshairCliffe",
+		name = "PlayerRemarkc2m3_coollightNick_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m3_freshair],
-			[IsNotSaidc2m3_freshair],
+			[IsCsgo_sas],
+			[Isc2m3_coollight],
+			[IsNotSaidc2m3_coollight],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear400],
-			[TimeSinceGroupInCombat02],
-			[ChanceToFire90Percent],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear200],
+			[IsGamblerNear200],
+			[IsGamblerAlive],
+			[ChanceToFire50Percent],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc2m3_freshairGambler
-		ApplyContext "Saidc2m3_freshair:1:0"
+		Response PlayerRemarkc2m3_coollightNickMechanic
+		then gambler _c2m3_coollight foo:0 0.1
+		ApplyContext "Saidc2m3_coollight:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "AUTOBLANK_PlayerRemarkc2m3_freshairCliffe",
+		name = "PlayerRemarkc2m3_hole_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m3_freshair],
-			[IsNotSaidc2m3_freshair],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear400],
-			[TimeSinceGroupInCombat02],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response _PlayerInfoRemarkableBlankGambler
-		ApplyContext "Saidc2m3_freshair:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkc2m3_holeCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc2m3_hole],
 			[IsNotSaidc2m3_hole],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc2m3_holeGambler
+		Response PlayerRemarkc2m3_holeMechanic
+		then any _c2m3_hole01 foo:0 0.1
 		ApplyContext "Saidc2m3_hole:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc2m3_longesttunnelCliffe",
+		name = "PlayerRemarkc2m3_overfence_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m3_longesttunnel],
-			[IsNotSaidc2m3_longesttunnel],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear300],
-			[TimeSinceGroupInCombat04],
-			[ChanceToFire80Percent],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkc2m3_longesttunnelGambler
-		ApplyContext "Saidc2m3_longesttunnel:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "AUTOBLANK_PlayerRemarkc2m3_longesttunnelCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m3_longesttunnel],
-			[IsNotSaidc2m3_longesttunnel],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear300],
-			[TimeSinceGroupInCombat04],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response _PlayerInfoRemarkableBlankGambler
-		ApplyContext "Saidc2m3_longesttunnel:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkc2m3_overfenceCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc2m3_overfence],
 			[IsNotSaidc2m3_overfence],
 			[IsNotCoughing],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear400],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc2m3_overfenceGambler
+		Response PlayerRemarkc2m3_overfenceMechanic
 		ApplyContext "Saidc2m3_overfence:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc2m3_rubbleCliffe",
+		name = "PlayerRemarkc2m3_screamingoak_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m3_rubble],
-			[IsNotSaidc2m3_rubble],
+			[IsCsgo_sas],
+			[Isc2m3_screamingoak],
+			[IsNotSaidc2m3_screamingoak],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear400],
-			[TimeSinceGroupInCombat02],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[_auto_IsTeamNearCoaster],
-			[_auto_NotAlarm],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkc2m3_rubbleGambler
-		ApplyContext "Saidc2m3_rubble:1:0,Talk:1:3.307,_auto_TimerLockA:1:12,_auto_CoasterExpo:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkc2m3_swanroomCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m3_swanroom],
-			[IsNotSaidc2m3_swanroom],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear500],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkc2m3_swanroomGambler
-		ApplyContext "Saidc2m3_swanroom:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkc2m3_tracks01Cliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m3_tracks01],
-			[IsNotSaidc2m3_tracks01],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear300],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[_auto_IsTracksOK],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkc2m3_tracks01Gambler
-		ApplyContext "Saidc2m3_tracks01:1:0,_auto_TimerLockA:1:8"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkc2m3_tracks02Cliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m3_tracks02],
-			[IsNotSaidc2m3_tracks02],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear300],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[_auto_IsTracksOK],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkc2m3_tracks01Gambler
-		ApplyContext "Saidc2m3_tracks02:1:0,_auto_TimerLockA:1:8"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkc2m3_tracks03Cliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m3_tracks03],
-			[IsNotSaidc2m3_tracks03],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear300],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[_auto_IsTracksOK],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkc2m3_tracks01Gambler
-		ApplyContext "Saidc2m3_tracks03:1:0,_auto_TimerLockA:1:8"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkc2m3_tracks04Cliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m3_tracks04],
-			[IsNotSaidc2m3_tracks04],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear300],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[_auto_IsTracksOK],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkc2m3_tracks01Gambler
-		ApplyContext "Saidc2m3_tracks04:1:0,_auto_TimerLockA:1:8"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkc2m3_tracks05Cliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m3_tracks05],
-			[IsNotSaidc2m3_tracks05],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear300],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[_auto_IsTracksOK],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkc2m3_tracks01Gambler
-		ApplyContext "Saidc2m3_tracks05:1:0,_auto_TimerLockA:1:8"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkc2m3_tracks06Cliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m3_tracks06],
-			[IsNotSaidc2m3_tracks06],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear300],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[_auto_IsTracksOK],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkc2m3_tracks01Gambler
-		ApplyContext "Saidc2m3_tracks06:1:0,_auto_TimerLockA:1:8"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkc2m3_tracks07Cliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m3_tracks07],
-			[IsNotSaidc2m3_tracks07],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear300],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[_auto_IsTracksOK],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkc2m3_tracks01Gambler
-		ApplyContext "Saidc2m3_tracks07:1:0,_auto_TimerLockA:1:8"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkc2m3_tracks08Cliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m3_tracks08],
-			[IsNotSaidc2m3_tracks08],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear300],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[_auto_IsTracksOK],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkc2m3_tracks01Gambler
-		ApplyContext "Saidc2m3_tracks08:1:0,_auto_TimerLockA:1:8"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkc2m3_ventCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m3_vent],
-			[IsNotSaidc2m3_vent],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear150],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkc2m3_ventGambler
-		ApplyContext "Saidc2m3_vent:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkc2m3_wayblockedCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m3_wayblocked],
-			[IsNotSaidc2m3_wayblocked],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear300],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkc2m3_wayblockedGambler
-		ApplyContext "Saidc2m3_wayblocked:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkc2m4_barnentryCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m4_barnentry],
-			[IsNotSaidc2m4_barnentry],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear500],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkc2m4_barnentryGambler
-		ApplyContext "Saidc2m4_barnentry:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkc2m4_bumpercarsCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m4_bumpercars],
-			[IsNotSaidc2m4_bumpercars],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear800],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc2m4_bumpercarsGambler
-		ApplyContext "Saidc2m4_bumpercars:1:0"
+		Response PlayerRemarkc2m3_screamingoakMechanic
+		ApplyContext "Saidc2m3_screamingoak:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc2m4_onroofCliffe",
+		name = "PlayerRemarkc2m3_swanpileup_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m4_onroof],
-			[IsNotSaidc2m4_onroof],
+			[IsCsgo_sas],
+			[Isc2m3_swanpileup],
+			[IsNotSaidc2m3_swanpileup],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear400],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear150],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc2m4_onroofGambler
-		ApplyContext "Saidc2m4_onroof:1:0"
+		Response PlayerRemarkc2m3_swanpileupMechanic
+		ApplyContext "Saidc2m3_swanpileup:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc2m4_pendoorCliffe",
+		name = "PlayerRemarkc2m3_swanroom_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
+			[Isc2m3_swanroom],
+			[IsNotSaidc2m3_swanroom],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear500],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkc2m3_swanroomMechanic
+		ApplyContext "Saidc2m3_swanroom:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkc2m3_tracks01_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[Isc2m3_tracks01],
+			[IsNotSaidc2m3_tracks01],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear300],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[_auto_IsTracksOK],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkc2m3_tracks01Mechanic
+		ApplyContext "Saidc2m3_tracks01:1:0,_auto_TimerLockA:1:8"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkc2m3_tracks02_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[Isc2m3_tracks02],
+			[IsNotSaidc2m3_tracks02],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear300],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[_auto_IsTracksOK],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkc2m3_tracks01Mechanic
+		ApplyContext "Saidc2m3_tracks02:1:0,_auto_TimerLockA:1:8"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkc2m3_tracks03_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[Isc2m3_tracks03],
+			[IsNotSaidc2m3_tracks03],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear300],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[_auto_IsTracksOK],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkc2m3_tracks01Mechanic
+		ApplyContext "Saidc2m3_tracks03:1:0,_auto_TimerLockA:1:8"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkc2m3_tracks04_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[Isc2m3_tracks04],
+			[IsNotSaidc2m3_tracks04],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear300],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[_auto_IsTracksOK],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkc2m3_tracks01Mechanic
+		ApplyContext "Saidc2m3_tracks04:1:0,_auto_TimerLockA:1:8"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkc2m3_tracks05_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[Isc2m3_tracks05],
+			[IsNotSaidc2m3_tracks05],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear300],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[_auto_IsTracksOK],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkc2m3_tracks01Mechanic
+		ApplyContext "Saidc2m3_tracks05:1:0,_auto_TimerLockA:1:8"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkc2m3_tracks06_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[Isc2m3_tracks06],
+			[IsNotSaidc2m3_tracks06],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear300],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[_auto_IsTracksOK],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkc2m3_tracks01Mechanic
+		ApplyContext "Saidc2m3_tracks06:1:0,_auto_TimerLockA:1:8"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkc2m3_tracks07_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[Isc2m3_tracks07],
+			[IsNotSaidc2m3_tracks07],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear300],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[_auto_IsTracksOK],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkc2m3_tracks01Mechanic
+		ApplyContext "Saidc2m3_tracks07:1:0,_auto_TimerLockA:1:8"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkc2m3_tracks08_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[Isc2m3_tracks08],
+			[IsNotSaidc2m3_tracks08],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear300],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[_auto_IsTracksOK],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkc2m3_tracks01Mechanic
+		ApplyContext "Saidc2m3_tracks08:1:0,_auto_TimerLockA:1:8"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkc2m3_vent_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[Isc2m3_vent],
+			[IsNotSaidc2m3_vent],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear150],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkc2m3_ventMechanic
+		ApplyContext "Saidc2m3_vent:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkc2m3_water_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[Isc2m3_water],
+			[IsNotSaidc2m3_water],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear150],
+			[ChanceToFire60Percent],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkc2m3_waterMechanic
+		then any _c2m3_water01 foo:0 0.1
+		ApplyContext "Saidc2m3_water:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "AUTOBLANK_PlayerRemarkc2m3_water_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[Isc2m3_water],
+			[IsNotSaidc2m3_water],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear150],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response _PlayerInfoRemarkableBlankMechanic
+		ApplyContext "Saidc2m3_water:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkc2m3_wayblocked_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[Isc2m3_wayblocked],
+			[IsNotSaidc2m3_wayblocked],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear300],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkc2m3_wayblockedMechanic
+		ApplyContext "Saidc2m3_wayblocked:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkc2m4_barnentry_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[Isc2m4_barnentry],
+			[IsNotSaidc2m4_barnentry],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear500],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkc2m4_barnentryMechanic
+		ApplyContext "Saidc2m4_barnentry:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkc2m4_bumpercars_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[Isc2m4_bumpercars],
+			[IsNotSaidc2m4_bumpercars],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear800],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkc2m4_bumpercarsMechanic
+		ApplyContext "Saidc2m4_bumpercars:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkc2m4_pendoor_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
 			[Isc2m4_pendoor],
 			[IsNotSaidc2m4_pendoor],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc2m4_pendoorGambler
+		Response PlayerRemarkc2m4_pendoorMechanic
 		ApplyContext "Saidc2m4_pendoor:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc2m4_moustachioCliffe",
+		name = "PlayerRemarkc2m4_moustachio_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc2m4_moustachio],
 			[IsNotSaidc2m4_moustachio],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc2m4_moustachioGambler
+		Response PlayerRemarkc2m4_moustachioMechanic
 		ApplyContext "Saidc2m4_moustachio:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc2m4_pensCliffe",
+		name = "PlayerRemarkc2m4_stadium_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m4_pens],
-			[IsNotSaidc2m4_pens],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear300],
-			[TimeSinceGroupInCombat02],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkc2m4_pensGambler
-		ApplyContext "Saidc2m4_pens:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "_C2M4_RibsCliffe",
-		criteria = 
-		[
-			[Concept_C2M4_Ribs],
-			[IsCliffe],
-			[IsTalk],
-			[NotInCombat],
-			[IssuerClose],
-			[IsNotCoughing],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _C2M4_RibsGambler
-	},
-	{
-		name = "PlayerRemarkc2m4_stadiumCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc2m4_stadium],
 			[IsNotSaidc2m4_stadium],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc2m4_stadiumGambler
+		Response PlayerRemarkc2m4_stadiumMechanic
 		ApplyContext "Saidc2m4_stadium:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc2m4_upbarnCliffe",
+		name = "PlayerRemarkc2m4_upbarn_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc2m4_upbarn],
 			[IsNotSaidc2m4_upbarn],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc2m4_upbarnGambler
+		Response PlayerRemarkc2m4_upbarnMechanic
 		ApplyContext "Saidc2m4_upbarn:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc2m4_evacCliffe",
+		name = "PlayerRemarkc2m5_button2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m4_evac],
-			[IsNotSaidc2m4_evac],
+			[IsCsgo_sas],
+			[Isc2m5_button2],
+			[IsNotSaidc2m5_button2],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear75],
+			[TimeSinceGroupInCombat02],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[_auto_IsButton1],
+			[_auto_NotButton2],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkc2m5_button2Mechanic
+		ApplyContext "Saidc2m5_button2:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkC3M3BridgeDown_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[IsC3M3BridgeDown],
+			[IsNotSaidC3M3BridgeDown],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear200],
+			[IsSaidC3M3BridgeButton],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkC3M3BridgeDownMechanic
+		ApplyContext "SaidC3M3BridgeDown:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkC3M1NoSwimming_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[IsC3M1NoSwimming],
+			[IsNotSaidC3M1NoSwimming],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc2m4_evacGambler
-		ApplyContext "Saidc2m4_evac:1:0"
+		Response PlayerRemarkC3M1NoSwimmingMechanic
+		ApplyContext "SaidC3M1NoSwimming:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc2m5_button2Cliffe",
+		name = "PlayerRemarkc3m2_parachutist_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m5_button2],
-			[IsNotSaidc2m5_button2],
+			[IsCsgo_sas],
+			[Isc3m2_parachutist],
+			[IsNotSaidc3m2_parachutist],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear75],
-			[TimeSinceGroupInCombat02],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear400],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
-			[_auto_IsButton1],
-			[_auto_NotButton2],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc2m5_button2Gambler
-		ApplyContext "Saidc2m5_button2:1:0"
+		// 	forceweight 10
+		Response PlayerRemarkc3m2_parachutistMechanic
+		ApplyContext "Saidc3m2_parachutist:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc2m5_button2CoachCliffe",
+		name = "PlayerRemarkc3m2_overtree_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[Isc2m5_button2],
-			[IsNotSaidc2m5_button2],
+			[IsCsgo_sas],
+			[IsC3M2OverTree],
+			[IsNotSaidC3M2OverTree],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear75],
-			[IsCoachAlive],
-			[IsCoachNear400],
-			[ChanceToFire10Percent],
-			[TimeSinceGroupInCombat02],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear400],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
-			[_auto_IsButton1],
-			[_auto_NotButton2],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc2m5_button2CoachGambler
-		ApplyContext "Saidc2m5_button2:1:0"
+		Response PlayerRemarkc3m2_overtreeMechanic
+		then any _C3M2Pirogue foo:0 0.1
+		ApplyContext "SaidC3M2OverTree:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkC3M2PlaneCrashCliffe",
+		name = "PlayerRemarkC3M2PlaneCrash_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC3M2PlaneCrash],
 			[IsNotSaidC3M2PlaneCrash],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSubjectNear600],
 			[IsNotSaidC3M2OpenDoor],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[ChanceToFire100Percent],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
 		// 	forceweight 1
-		Response PlayerRemarkC3M2PlaneCrashGambler
-		ApplyContext "SaidC3M2PlaneCrash:1:0,Talk:1:1.538"
+		Response PlayerRemarkC3M2PlaneCrashMechanic
+		ApplyContext "SaidC3M2PlaneCrash:1:0,Talk:1:3.419"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkC3M2PlaneDoorNagCliffe",
+		name = "PlayerRemarkC3M2PlaneDoorNag_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC3M2PlaneDoorNag],
 			[IsNotSaidC3M2PlaneDoorNag],
 			[IsNotCoughing],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSubjectNear500],
 			[IsNotSaidC3M2OpenDoor],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkC3M2PlaneDoorNagGambler
-		ApplyContext "SaidC3M2PlaneDoorNag:1:0,_auto_TimerLockA:1:15,Talk:1:3.340"
+		Response PlayerRemarkC3M2PlaneDoorNagMechanic
+		ApplyContext "SaidC3M2PlaneDoorNag:1:0,_auto_TimerLockA:1:15,Talk:1:2.270"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkC3M2PlaneDoorNagaCliffe",
+		name = "PlayerRemarkC3M2PlaneDoorNaga_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptTalkIdle],
-			[IsCliffe],
+			[IsCsgo_sas],
+			[IsSaidC3M2PlaneDoorNag],
+			[IsNotSaidC3M2OpenDoor],
+			[ismapc3m2_swamp],
 			[IsNotCoughing],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsSaidC3M2PlaneDoorNag],
-			[ismapc3m2_swamp],
-			[IsNotSaidC3M2OpenDoor],
+			[IsTalkCsgo_sas],
 			[IsNotZombiePresentTank],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[IsNotSpeakingWeight0],
 			[_auto_NotTimerLockA],
-			[_auto_NotTimerLockCliffe],
+			[_auto_NotTimerLockCsgo_sas],
 		],
-		Response PlayerRemarkC3M2PlaneDoorNagaGambler
-		ApplyContext "_auto_TimerLockA:1:20,_auto_TimerLockCliffe:1:40,Talk:1:1.377"
+		Response PlayerRemarkC3M2PlaneDoorNagaMechanic
+		ApplyContext "_auto_TimerLockA:1:20,_auto_TimerLockCsgo_sas:1:40,Talk:1:1.660"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkC3M2RoadCliffe",
+		name = "PlayerRemarkC3M2Road_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC3M2Road],
 			[IsNotSaidC3M2Road],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSubjectNear300],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkC3M2RoadGambler
-		ApplyContext "SaidC3M2Road:1:0,Talk:1:1.106"
+		Response PlayerRemarkC3M2RoadMechanic
+		ApplyContext "SaidC3M2Road:1:0,Talk:1:1.154"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkC3M2SickOfSwampCliffe",
+		name = "C3M2LeavingSafeRoom_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptSurvivorLeavingInitialCheckpoint],
+			[IsCsgo_sas],
+			[IsNotSaidLeavingSafeArea],
+			[ismapc3m2_swamp],
+			[_auto_NotTellingStory],
+		],
+		Response PlayerRemarkC3M2StartMechanic
+		ApplyContext "SaidLeavingSafeArea:1:0,Talk:1:1.547"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkC3M2StartDry_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[IsC3M2SickOfSwamp],
-			[IsNotSaidC3M2SickOfSwamp],
+			[IsCsgo_sas],
+			[IsC3M2StartDry],
+			[IsNotSaidC3M2StartDry],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsSubjectNear300],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsSubjectNear200],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkC3M2SickOfSwampGambler
-		ApplyContext "SaidC3M2SickOfSwamp:1:0,Talk:1:2.246"
+		Response PlayerRemarkC3M2StartDryMechanic
+		ApplyContext "SaidC3M2StartDry:1:0,Talk:1:1.497"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkC3M2Village1Cliffe",
+		name = "PlayerRemarkC3M2UnderWaterShack_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
+			[IsC3M2UnderWaterShack],
+			[IsNotSaidC3M2UnderWaterShack],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsSubjectNear300],
+			[IsWorldTalkCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkC3M2UnderWaterShackMechanic
+		ApplyContext "SaidC3M2UnderWaterShack:1:0,Talk:1:4.380"
+		applycontexttoworld
+	},
+	{
+		name = "_C3M2UnderwaterShack_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_C3M2UnderwaterShack],
+			[IsCsgo_sas],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IssuerClose],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response _C3M2UnderwaterShackMechanic
+	},
+	{
+		name = "PlayerRemarkC3M2Village1_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
 			[IsC3M2Village1],
 			[IsNotSaidC3M2Village1],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSubjectNear800],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkC3M2Village1Gambler
-		ApplyContext "SaidC3M2Village1:1:0,Talk:1:2.116"
+		Response PlayerRemarkC3M2Village1Mechanic
+		ApplyContext "SaidC3M2Village1:1:0,Talk:1:1.848"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkC3M3BodiesCliffe",
+		name = "PlayerRemarkC3M3LowerGate_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[IsC3M3Bodies],
-			[IsNotSaidC3M3Bodies],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear400],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkC3M3BodiesGambler
-		ApplyContext "SaidC3M3Bodies:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkC3M3LowerGateCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC3M3LowerGate],
 			[IsNotSaidC3M3BridgeButton],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear400],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkC3M3LowerGateGambler
+		Response PlayerRemarkC3M3LowerGateMechanic
+		then any InfoRemC3M3LowerGatea foo:0 10
 		ApplyContext "SaidC3M3LowerGate:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkC3M3MoreShacksCliffe",
+		name = "PlayerRemarkC3M3SearchHouses_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[IsC3M3MoreShacks],
-			[IsNotSaidC3M3MoreShacks],
+			[IsCsgo_sas],
+			[IsC3M3SearchHouses],
+			[IsNotSaidC3M3SearchHouses],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear400],
-			[ChanceToFire100Percent],
-			[IsNotSaidC3M3BridgeButton],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkC3M3MoreShacksGambler
-		ApplyContext "SaidC3M3MoreShacks:1:0"
+		Response PlayerRemarkC3M3SearchHousesMechanic
+		ApplyContext "SaidC3M3SearchHouses:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "AUTOBLANK_PlayerRemarkC3M3MoreShacksCliffe",
+		name = "PlayerRemarkC3M3Stairs_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[IsC3M3MoreShacks],
-			[IsNotSaidC3M3MoreShacks],
+			[IsCsgo_sas],
+			[IsC3M3Stairs],
+			[IsNotSaidC3M3Stairs],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear200],
-			[IsNotSaidC3M3BridgeButton],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear500],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response _PlayerInfoRemarkableBlankGambler
-		ApplyContext "SaidC3M3MoreShacks:1:0"
+		Response PlayerRemarkC3M3StairsMechanic
+		ApplyContext "SaidC3M3Stairs:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkC3M3ThisWayCliffe",
+		name = "PlayerRemarkC3M3StayUpHere_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
+			[IsC3M3StayUpHere],
+			[IsNotSaidC3M3StayUpHere],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear200],
+			[ChanceToFire30Percent],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkC3M3StayUpHereMechanic
+		ApplyContext "SaidC3M3StayUpHere:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "AUTOBLANK_PlayerRemarkC3M3StayUpHere_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[IsC3M3StayUpHere],
+			[IsNotSaidC3M3StayUpHere],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear100],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response _PlayerInfoRemarkableBlankMechanic
+		ApplyContext "SaidC3M3StayUpHere:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkC3M3ThisWay_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
 			[IsC3M3ThisWay],
 			[IsNotSaidC3M3ThisWay],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear400],
 			[ChanceToFire50Percent],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkC3M3ThisWayGambler
+		Response PlayerRemarkC3M3ThisWayMechanic
 		ApplyContext "SaidC3M3ThisWay:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "AUTOBLANK_PlayerRemarkC3M3ThisWayCliffe",
+		name = "AUTOBLANK_PlayerRemarkC3M3ThisWay_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC3M3ThisWay],
 			[IsNotSaidC3M3ThisWay],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear400],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response _PlayerInfoRemarkableBlankGambler
+		Response _PlayerInfoRemarkableBlankMechanic
 		ApplyContext "SaidC3M3ThisWay:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkC3M3ThroughHereCliffe",
+		name = "PlayerRemarkC3M3ThroughHere_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC3M3ThroughHere],
 			[IsNotSaidC3M3ThroughHere],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkC3M3ThroughHereGambler
+		Response PlayerRemarkC3M3ThroughHereMechanic
 		ApplyContext "SaidC3M3ThroughHere:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkC3M3ThroughThisHouseCliffe",
+		name = "PlayerRemarkC3M3ThroughThisHouse_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC3M3ThroughThisHouse],
 			[IsNotSaidC3M3ThroughThisHouse],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear400],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkC3M3ThroughThisHouseGambler
+		Response PlayerRemarkC3M3ThroughThisHouseMechanic
 		ApplyContext "SaidC3M3ThroughThisHouse:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkC3M3UnsanitaryCliffe",
+		name = "PlayerRemarkC3M3UpHere_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[IsC3M3Unsanitary],
-			[IsNotSaidC3M3Unsanitary],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear200],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkC3M3UnsanitaryGambler
-		ApplyContext "SaidC3M3Unsanitary:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkC3M3UpHereCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC3M3UpHere],
 			[IsNotSaidC3M3UpHere],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear100],
 			[IsNotSaidC3M3BridgeButton],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkC3M3UpHereGambler
+		Response PlayerRemarkC3M3UpHereMechanic
 		ApplyContext "SaidC3M3UpHere:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc3m4downroadCliffe",
+		name = "PlayerRemarkC3M3UsePlanks_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
+			[IsC3M3UsePlanks],
+			[IsNotSaidC3M3UsePlanks],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear400],
+			[ChanceToFire30Percent],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkC3M3UsePlanksMechanic
+		ApplyContext "SaidC3M3UsePlanks:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "AUTOBLANK_PlayerRemarkC3M3UsePlanks_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[IsC3M3UsePlanks],
+			[IsNotSaidC3M3UsePlanks],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear400],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response _PlayerInfoRemarkableBlankMechanic
+		ApplyContext "SaidC3M3UsePlanks:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkc3m4downroad_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
 			[Isc3m4downroad],
 			[IsNotSaidc3m4downroad],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear400],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc3m4downroadGambler
+		Response PlayerRemarkc3m4downroadMechanic
 		ApplyContext "Saidc3m4downroad:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc3m4scaffoldCliffe",
+		name = "PlayerRemarkc3m4radio_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
+			[Isc3m4radio],
+			[IsNotSaidc3m4radio],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear400],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[_auto_NotButton1],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkc3m4radioMechanic
+		ApplyContext "Saidc3m4radio:1:0,Talk:1:1.228"
+		applycontexttoworld
+	},
+	{
+		name = "_C3M4_Radio_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_C3M4_Radio],
+			[IsCsgo_sas],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IssuerClose],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[_auto_NotButton1],
+		],
+		Response _C3M4_RadioMechanic
+		ApplyContext "Talk:1:1.507"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkc3m4scaffold_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
 			[Isc3m4scaffold],
 			[IsNotSaidc3m4scaffold],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc3m4scaffoldGambler
+		Response PlayerRemarkc3m4scaffoldMechanic
 		ApplyContext "Saidc3m4scaffold:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc4m1_boatCliffe",
+		name = "PlayerRemarkc3m4shacks_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[Isc4m1_boat],
-			[IsNotSaidc4m1_boat],
+			[IsCsgo_sas],
+			[Isc3m4shacks],
+			[IsNotSaidc3m4shacks],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear200],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear400],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc4m1_boatGambler
-		ApplyContext "Saidc4m1_boat:1:0"
+		Response PlayerRemarkc3m4shacksMechanic
+		ApplyContext "Saidc3m4shacks:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc4m1_carcrashCliffe",
+		name = "PlayerRemarkc4m1_carcrash_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc4m1_carcrash],
 			[IsNotSaidc4m1_carcrash],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSubjectNear500],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[ChanceToFire50Percent],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc4m1_carcrashGambler
+		Response PlayerRemarkc4m1_carcrashMechanic
+		then any c4m1_wreck01 foo:0 0.01
 		ApplyContext "Saidc4m1_carcrash:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "AUTOBLANK_PlayerRemarkc4m1_carcrashCliffe",
+		name = "AUTOBLANK_PlayerRemarkc4m1_carcrash_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc4m1_carcrash],
 			[IsNotSaidc4m1_carcrash],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSubjectNear300],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response _PlayerInfoRemarkableBlankGambler
+		Response _PlayerInfoRemarkableBlankMechanic
 		ApplyContext "Saidc4m1_carcrash:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc4m1_garagesaleCliffe",
+		name = "PlayerRemarkc4m1_garagesale_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc4m1_garagesale],
 			[IsNotSaidc4m1_garagesale],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSubjectNear400],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc4m1_garagesaleGambler
+		Response PlayerRemarkc4m1_garagesaleMechanic
 		ApplyContext "Saidc4m1_garagesale:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc4m1_nogasCliffe",
+		name = "PlayerRemarkc4m1_nogas_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc4m1_nogas],
 			[IsNotSaidc4m1_nogas],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSubjectNear300],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc4m1_nogasGambler
-		ApplyContext "Saidc4m1_nogas:1:0,Talk:1:2.493,_auto_NoGasGate:1:25"
+		Response PlayerRemarkc4m1_nogasMechanic
+		then any c4m1_nogas01 foo:0 0.01
+		ApplyContext "Saidc4m1_nogas:1:0,Talk:1:0.929,_auto_NoGasGate:1:25"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc4m1_nogasMilkRunCliffe",
+		name = "PlayerRemarkc4m1_playgroundfar_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[Isc4m1_nogas],
-			[IsNotSaidc4m1_nogas],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsSubjectNear300],
-			[IsWorldTalkCliffe],
-			[Isc4m1MilkRun],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkc4m1_nogasMilkRunGambler
-		ApplyContext "Saidc4m1_nogas:1:0,Talk:1:2.493,_auto_NoGasGate:1:25"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkc4m1_nogasGunBagCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
-			[Isc4m1_nogas],
-			[IsNotSaidc4m1_nogas],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsSubjectNear300],
-			[IsWorldTalkCliffe],
-			[Isc4m1GunBag],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkc4m1_nogasGunBagGambler
-		ApplyContext "Saidc4m1_nogas:1:0,Talk:1:2.493,_auto_NoGasGate:1:25"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkc4m1_nogasToldCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
-			[Isc4m1_nogas],
-			[IsNotSaidc4m1_nogas],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsSubjectNear300],
-			[IsWorldTalkCliffe],
-			[Isc4m1IToldYouSo],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkc4m1_nogasToldGambler
-		ApplyContext "Saidc4m1_nogas:1:0,Talk:1:1.531,_auto_NoGasGate:1:25"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkc4m1_playgroundfarCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc4m1_playground],
 			[IsNotSaidc4m1_playground],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSubjectNear1000],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc4m1_playgroundfarGambler
+		Response PlayerRemarkc4m1_playgroundfarMechanic
 		ApplyContext "Saidc4m1_playground:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc4m1_playgroundnearCliffe",
+		name = "PlayerRemarkc4m1_playgroundnear_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc4m1_playground],
 			[IsNotSaidc4m1_playground],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSubjectNear300],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc4m1_playgroundnearGambler
+		Response PlayerRemarkc4m1_playgroundnearMechanic
 		ApplyContext "Saidc4m1_playground:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc4m1_throughhereACliffe",
+		name = "PlayerRemarkc4m1_throughhereA_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc4m1_throughhereA],
 			[IsNotSaidc4m1_throughhereA],
 			[IsNotCoughing],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSubjectNear400],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc4m1_throughhereAGambler
+		Response PlayerRemarkc4m1_throughhereAMechanic
 		ApplyContext "Saidc4m1_throughhereA:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc4m2_gasinsidesignCliffe",
+		name = "PlayerRemarkc4m2_gasinsidesign_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc4m2_gasinsidesign],
 			[IsNotSaidc4m2_gasinsidesign],
 			[IsNotSaidSafeSpotAhead],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear350],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc4m2_gasinsidesignGambler
+		Response PlayerRemarkc4m2_gasinsidesignMechanic
+		then any _c4m2_gasinside01 foo:0 0.01
 		ApplyContext "Saidc4m2_gasinsidesign:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc4m2_millentranceCliffe",
+		name = "PlayerRemarkc4m2_millentrance_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc4m2_millentrance],
 			[IsNotSaidc4m2_millentrance],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc4m2_millentranceGambler
+		Response PlayerRemarkc4m2_millentranceMechanic
 		ApplyContext "Saidc4m2_millentrance:1:0,c4m2_PastStart:1:0,_auto_InsideMill:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc4m2_millentranceexitCliffe",
+		name = "PlayerRemarkc4m2_millentranceexit_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc4m2_millentranceexit],
 			[IsNotSaidc4m2_millentranceexit],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc4m2_millentranceexitGambler
+		Response PlayerRemarkc4m2_millentranceexitMechanic
 		ApplyContext "Saidc4m2_millentranceexit:1:0,c4m2_PastStart:1:0,_auto_InsideMill:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc4m2_seegasstationCliffe",
+		name = "PlayerRemarkc4m2_seegasstation_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc4m2_seegasstation],
 			[IsNotSaidc4m2_seegasstation],
 			[IsNotSaidActivatedC4M2Elevator],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear150],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc4m2_seegasstationGambler
+		Response PlayerRemarkc4m2_seegasstationMechanic
+		then self _c4m2_seestation01 foo:0 0.01
 		ApplyContext "Talk:1:3,Saidc4m2_seegasstation:1:0,_auto_InsideMill:0:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc4m2_streetblockedCliffe",
+		name = "PlayerRemarkc4m2_streetblocked_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc4m2_streetblocked],
 			[IsNotSaidc4m2_streetblocked],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc4m2_streetblockedGambler
+		Response PlayerRemarkc4m2_streetblockedMechanic
+		then any _c4m2_streetblocked01 foo:0 0.01
 		ApplyContext "Saidc4m2_streetblocked:1:0,c4m2_PastStart:1:0,_auto_InsideMill:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc4m2_uprampCliffe",
+		name = "PlayerRemarkc4m2_upramp_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc4m2_upramp],
 			[IsNotSaidc4m2_upramp],
 			[IsNotCoughing],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear600],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc4m2_uprampGambler
+		Response PlayerRemarkc4m2_uprampMechanic
 		ApplyContext "Saidc4m2_upramp:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc4m2_upthestairsCliffe",
+		name = "PlayerRemarkc4m2_upthestairs_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc4m2_upthestairs],
 			[IsNotSaidc4m2_upthestairs],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear400],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc4m2_upthestairsGambler
+		Response PlayerRemarkc4m2_upthestairsMechanic
 		ApplyContext "Saidc4m2_upthestairs:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc4m2_useelevatorCliffe",
+		name = "PlayerRemarkc4m2_useelevator_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc4m2_useelevator],
 			[IsNotSaidc4m2_useelevator],
 			[IsNotSaidActivatedC4M2Elevator],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[IsSaidc4m2_seegasstation],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc4m2_useelevatorGambler
+		Response PlayerRemarkc4m2_useelevatorMechanic
 		ApplyContext "Saidc4m2_useelevator:1:0,_auto_InsideMill:0:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc4m2_waterpoolCliffe",
+		name = "PlayerRemarkc4m2_waterpool_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc4m2_waterpool],
 			[IsNotSaidc4m2_waterpool],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc4m2_waterpoolGambler
+		Response PlayerRemarkc4m2_waterpoolMechanic
+		then any _c4m2_waterpool02 foo:0 0.01
 		ApplyContext "Saidc4m2_waterpool:1:0,c4m2_PastPuddle:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc4m2_weatherCliffe",
+		name = "PlayerRemarkc4m2_weather_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc4m2_weather],
 			[IsNotSaidc4m2_weather],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear600],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc4m2_weatherGambler
+		Response PlayerRemarkc4m2_weatherMechanic
 		ApplyContext "Saidc4m2_weather:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc4m3_caneCliffe",
+		name = "PlayerRemarkc4m3_cane_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc4m3_cane],
 			[IsNotSaidc4m3_cane],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc4m3_caneGambler
+		Response PlayerRemarkc4m3_caneMechanic
 		ApplyContext "Saidc4m3_cane:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc4m3_crosshereCliffe",
+		name = "PlayerRemarkc4m3_crosshere_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc4m3_crosshere],
 			[IsNotSaidc4m3_crosshere],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear150],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc4m3_crosshereGambler
+		Response PlayerRemarkc4m3_crosshereMechanic
 		ApplyContext "Saidc4m3_crosshere:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc4m3_downhereCliffe",
+		name = "PlayerRemarkc4m3_downhere_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc4m3_downhere],
 			[IsNotSaidc4m3_downhere],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear150],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc4m3_downhereGambler
+		Response PlayerRemarkc4m3_downhereMechanic
 		ApplyContext "Saidc4m3_downhere:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc4m3_downstairsCliffe",
+		name = "PlayerRemarkc4m3_downstairs_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc4m3_downstairs],
 			[IsNotSaidc4m3_downstairs],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc4m3_downstairsGambler
+		Response PlayerRemarkc4m3_downstairsMechanic
 		ApplyContext "Saidc4m3_downstairs:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc4m3_ducatelsignCliffe",
+		name = "PlayerRemarkc4m3_ducatelsign_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc4m3_ducatelsign],
 			[IsNotSaidc4m3_ducatelsign],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc4m3_ducatelsignGambler
+		Response PlayerRemarkc4m3_ducatelsignMechanic
 		ApplyContext "Saidc4m3_ducatelsign:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc4m3_elevatorCliffe",
+		name = "PlayerRemarkc4m3_elevator_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc4m3_elevator],
 			[IsNotSaidc4m3_elevator],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear600],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc4m3_elevatorGambler
+		Response PlayerRemarkc4m3_elevatorMechanic
 		ApplyContext "Saidc4m3_elevator:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc4m3_floodedCliffe",
+		name = "PlayerRemarkc4m3_overtank_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[Isc4m3_flooded],
-			[IsNotSaidc4m3_flooded],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear100],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkc4m3_floodedGambler
-		ApplyContext "Saidc4m3_flooded:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkc4m3_overtankCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc4m3_overtank],
 			[IsNotSaidc4m3_overtank],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc4m3_overtankGambler
+		Response PlayerRemarkc4m3_overtankMechanic
 		ApplyContext "Saidc4m3_overtank:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc4m3_rainCliffe",
+		name = "PlayerRemarkc4m3_rain_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc4m3_rain],
 			[IsNotSaidc4m3_rain],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc4m3_rainGambler
+		Response PlayerRemarkc4m3_rainMechanic
+		then any _c4m3_rain01 foo:0 0.02
 		ApplyContext "Saidc4m3_rain:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc4m3_thiswayCliffe",
+		name = "PlayerRemarkc4m3_thisway_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc4m3_thisway],
 			[IsNotSaidc4m3_thisway],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear150],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc4m2_millentranceexitGambler
+		Response PlayerRemarkc4m2_millentranceexitMechanic
 		ApplyContext "Saidc4m3_thisway:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc4m3_uppipesCliffe",
+		name = "PlayerRemarkc4m3_uppipes_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc4m3_uppipes],
 			[IsNotSaidc4m3_uppipes],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc4m3_uppipesGambler
+		Response PlayerRemarkc4m3_uppipesMechanic
 		ApplyContext "Saidc4m3_uppipes:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc4m4_floodedCliffe",
+		name = "PlayerRemarkc4m4_flooded_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc4m4_flooded],
 			[NotInCombat],
-			[IsInStartArea],
-			[IsNotAlone],
 			[IsSubjectNear150],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
@@ -11798,3368 +12325,3834 @@ local jess_cliffe_rules =
 			[_auto_NotSafeRoomQuiet],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc4m4_floodedGambler
-		ApplyContext "_auto_SafeRoomStart:2:0"
+		Response PlayerRemarkc4m4_floodedMechanic
+		ApplyContext "SaidSaferoomRemarkIntro:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc4m4_garagesaleCliffe",
+		name = "PlayerRemarkc4m4_garagesale_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc4m4_garagesale],
 			[IsNotSaidc4m4_garagesale],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear1000],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc4m4_garagesaleGambler
+		Response PlayerRemarkc4m4_garagesaleMechanic
 		ApplyContext "Saidc4m4_garagesale:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc4m4_garagesale2Cliffe",
+		name = "PlayerRemarkc4m4_garagesale2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc4m4_garagesale2],
 			[IsNotSaidc4m4_garagesale],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear100],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc4m4_garagesaleGambler
+		Response PlayerRemarkc4m4_garagesaleMechanic
 		ApplyContext "Saidc4m4_garagesale:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc4m4_playgroundCliffe",
+		name = "PlayerRemarkc4m4_playground_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc4m4_playground],
 			[IsNotSaidc4m4_playground],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear800],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[_auto_NotLockA],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc4m4_playgroundGambler
+		Response PlayerRemarkc4m4_playgroundMechanic
 		ApplyContext "Saidc4m4_playground:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc4m4_porchlightCliffe",
+		name = "PlayerRemarkc4m4_porchlight_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc4m4_porchlight],
 			[IsNotSaidc4m4_porchlight],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear800],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc4m4_porchlightGambler
+		Response PlayerRemarkc4m4_porchlightMechanic
 		ApplyContext "Saidc4m4_porchlight:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc4m4_truckwreckCliffe",
+		name = "PlayerRemarkc4m4_truckwreck_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc4m4_truckwreck],
 			[IsNotSaidc4m4_truckwreck],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear800],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[_auto_NotLockA],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc4m4_truckwreckGambler
+		Response PlayerRemarkc4m4_truckwreckMechanic
 		ApplyContext "Saidc4m4_truckwreck:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc4m4_useroofsCliffe",
+		name = "PlayerRemarkc4m4_useroofs_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc4m4_useroofs],
 			[IsNotSaidc4m4_useroofs],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc4m4_useroofsGambler
+		Response PlayerRemarkc4m4_useroofsMechanic
 		ApplyContext "Saidc4m4_useroofs:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkpathc2m1_abandonedcarsCliffe",
+		name = "PlayerRemarkpathc2m1_billboard_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[Ispathc2m1_abandonedcars],
-			[IsNotSaidpathc2m1_abandonedcars],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsSubjectNear300],
-			[ChanceToFire60Percent],
-			[IsWorldTalkCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkpathc2m1_abandonedcarsGambler
-		ApplyContext "Saidpathc2m1_abandonedcars:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "AUTOBLANK_PlayerRemarkpathc2m1_abandonedcarsCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
-			[Ispathc2m1_abandonedcars],
-			[IsNotSaidpathc2m1_abandonedcars],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsSubjectNear300],
-			[IsWorldTalkCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response _PlayerInfoRemarkableBlankGambler
-		ApplyContext "Saidpathc2m1_abandonedcars:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkpathc2m1_billboardCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Ispathc2m1_billboard],
 			[IsNotSaidpathc2m1_billboard],
 			[IsNotCoughing],
 			[NotInCombat],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSubjectNear1000],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[IsNotSaidLeavingSafeArea],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkpathc2m1_billboardGambler
+		Response PlayerRemarkpathc2m1_billboardMechanic
+		then Coach _C2M1Billboard foo:0 0.01
 		ApplyContext "Saidpathc2m1_billboard:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkremark_caralarmCliffe",
+		name = "PlayerRemarkremark_caralarm_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isremark_caralarm],
 			[IsNotSaidremark_caralarm],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSubjectNear700],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkremark_caralarmGambler
+		Response PlayerRemarkremark_caralarmMechanic
 		ApplyContext "Saidremark_caralarm:1:300"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkremark_MidnightRidersBusCliffe",
+		name = "PlayerRemarkremark_MidnightRidersBus_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isremark_MidnightRidersBus],
 			[IsNotSaidremark_MidnightRidersBus],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear1500],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkremark_MidnightRidersBusGambler
+		Response PlayerRemarkremark_MidnightRidersBusMechanic
 		ApplyContext "Saidremark_MidnightRidersBus:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC1M1CedaMapsCliffe",
+		name = "PlayerRemarkWorldC1M1CedaMaps_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC1M1CedaMaps],
 			[IsNotSaidWorldC1M1CedaMaps],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC1M1CedaMapsGambler
-		ApplyContext "SaidWorldC1M1CedaMaps:1:0,Talk:1:4.334"
+		Response PlayerRemarkWorldC1M1CedaMapsMechanic
+		ApplyContext "SaidWorldC1M1CedaMaps:1:0,Talk:1:5.579"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC1M1KnowBoomerCliffe",
+		name = "PlayerRemarkWorldC1M1DownHere_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[IsWorldC1M1KnowBoomer],
-			[IsNotSaidWorldC1M1KnowBoomer],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear100],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkWorldC1M1KnowBoomerGambler
-		ApplyContext "SaidWorldC1M1KnowBoomer:1:0,Talk:1:3"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkWorldC1M1DownHereCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC1M1DownHere],
 			[IsNotSaidWorldC1M1DownHere],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear600],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC1M1DownHereGambler
+		Response PlayerRemarkWorldC1M1DownHereMechanic
 		ApplyContext "SaidWorldC1M1DownHere:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC1M1ElevatorBrokenCliffe",
+		name = "PlayerRemarkWorldC1M1DownStairs_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
+			[IsWorldC1M1DownStairs],
+			[IsNotSaidWorldC1M1DownStairs],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsSubjectNear400],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsWorldTalkCsgo_sas],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkWorldC1M1DownStairsMechanic
+		ApplyContext "SaidWorldC1M1DownStairs:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkWorldC1M1ElevatorBroken_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
 			[IsWorldC1M1ElevatorBroken],
 			[IsNotSaidWorldC1M1ElevatorBroken],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC1M1ElevatorBrokenGambler
+		Response PlayerRemarkWorldC1M1ElevatorBrokenMechanic
 		ApplyContext "SaidWorldC1M1ElevatorBroken:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "C1M1CrumbsCliffe",
-		criteria = 
-		[
-			[ConceptC1M1Crumbs],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response C1M1CrumbsGambler
-	},
-	{
-		name = "PlayerRemarkWorldC1M1FireRoomCliffe",
+		name = "PlayerRemarkWorldC1M1FireSpreading_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[IsWorldC1M1FireRoom],
-			[IsNotSaidWorldC1M1FireRoom],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear300],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkWorldC1M1FireRoomGambler
-		ApplyContext "SaidWorldC1M1FireRoom:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkWorldC1M1FireSpreadingCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC1M1FireSpreading],
 			[IsNotSaidWorldC1M1FireSpreading],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC1M1FireSpreadingGambler
+		Response PlayerRemarkWorldC1M1FireSpreadingMechanic
 		ApplyContext "SaidWorldC1M1FireSpreading:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC1M1FirstCliffe",
+		name = "PlayerRemarkWorldC1M1First_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC1M1First],
 			[IsNotSaidWorldC1M1First],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC1M1FirstGambler
+		Response PlayerRemarkWorldC1M1FirstMechanic
 		ApplyContext "SaidWorldC1M1First:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC1M1LedgeCliffe",
+		name = "PlayerRemarkWorldC1M1Ledge_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC1M1Ledge],
 			[IsNotSaidWorldC1M1Ledge],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC1M1LedgeGambler
+		Response PlayerRemarkWorldC1M1LedgeMechanic
 		ApplyContext "SaidWorldC1M1Ledge:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC1M2CloseCliffe",
+		name = "PlayerRemarkWorldC1M1StairsSign_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
+			[IsWorldC1M1StairsSign],
+			[IsNotSaidWorldC1M1StairsSign],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsSubjectNear300],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsWorldTalkCsgo_sas],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkWorldC1M1StairsSignMechanic
+		ApplyContext "SaidWorldC1M1StairsSign:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkWorldC1M2Close_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
 			[IsWorldC1M2Close],
 			[IsNotSaidWorldC1M2Close],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC1M2CloseGambler
+		Response PlayerRemarkWorldC1M2CloseMechanic
 		ApplyContext "SaidWorldC1M2Close:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC1M2DownStairsCliffe",
+		name = "PlayerRemarkWorldC1M2DownStairs_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC1M2DownStairs],
 			[IsNotSaidWorldC1M2DownStairs],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[TimeSinceGroupInCombat05],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC1M2DownStairsGambler
+		Response PlayerRemarkWorldC1M2DownStairsMechanic
 		ApplyContext "SaidWorldC1M2DownStairs:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC1M2AbandonedCliffe",
+		name = "PlayerRemarkWorldC1M2Abandoned_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC1M2Abandoned],
 			[IsNotSaidWorldC1M2Abandoned],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IntensityZero],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC1M2AbandonedGambler
+		Response PlayerRemarkWorldC1M2AbandonedMechanic
 		ApplyContext "SaidWorldC1M2Abandoned:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "_C1M2AbandonedCliffe",
-		criteria = 
-		[
-			[Concept_C1M2Abandoned],
-			[IsCliffe],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _C1M2AbandonedGambler
-	},
-	{
-		name = "PlayerRemarkWorldC1M2DumpsterCliffe",
+		name = "PlayerRemarkWorldC1M2Dumpster_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC1M2Dumpster],
 			[IsNotSaidWorldC1M2Dumpster],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC1M2DumpsterGambler
+		Response PlayerRemarkWorldC1M2DumpsterMechanic
 		ApplyContext "SaidWorldC1M2Dumpster:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC1M2InHereCliffe",
+		name = "PlayerRemarkWorldC1M2GunStoreClose_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
+			[IsWorldC1M2GunStoreClose],
+			[IsNotSaidWorldC1M2GunStoreClose],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear400],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkWorldC1M2GunStoreCloseMechanic
+		ApplyContext "SaidWorldC1M2GunStoreClose:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkWorldC1M2InHere_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
 			[IsWorldC1M2InHere],
 			[IsNotSaidWorldC1M2InHere],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear500],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC1M2InHereGambler
+		Response PlayerRemarkWorldC1M2InHereMechanic
 		ApplyContext "SaidWorldC1M2InHere:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC1M2JumpTruckCliffe",
+		name = "PlayerRemarkWorldC1M2JumpTruck_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC1M2JumpTruck],
 			[IsNotSaidWorldC1M2JumpTruck],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear400],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC1M2JumpTruckGambler
+		Response PlayerRemarkWorldC1M2JumpTruckMechanic
 		ApplyContext "SaidWorldC1M2JumpTruck:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC1M2MadeItCliffe",
+		name = "PlayerRemarkWorldC1M2MallSignHere_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[IsWorldC1M2MadeIt],
-			[IsNotSaidWorldC1M2MadeIt],
+			[IsCsgo_sas],
+			[IsWorldC1M2MallSignHere],
+			[IsNotSaidWorldC1M2MallSignHere],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear900],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear800],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC1M2MadeItGambler
-		ApplyContext "SaidWorldC1M2MadeIt:1:0"
+		Response PlayerRemarkWorldC1M2MallSignHereMechanic
+		ApplyContext "SaidWorldC1M2MallSignHere:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC1M2UpStairsCliffe",
+		name = "PlayerRemarkWorldC1M2MallThisWay_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
+			[IsWorldC1M2MallThisWay],
+			[IsNotSaidWorldC1M2MallThisWay],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear600],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkWorldC1M2MallThisWayMechanic
+		ApplyContext "SaidWorldC1M2MallThisWay:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkWorldC1M2UpStairs_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
 			[IsWorldC1M2UpStairs],
 			[IsNotSaidWorldC1M2UpStairs],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear600],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC1M2UpStairsGambler
+		Response PlayerRemarkWorldC1M2UpStairsMechanic
 		ApplyContext "SaidWorldC1M2UpStairs:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC3M1FeedGatorCliffe",
+		name = "PlayerRemarkWorldC3M1AmmoUp_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
+			[IsWorldC3M1AmmoUp],
+			[IsNotSaidWorldC3M1AmmoUp],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsSubjectNear400],
+			[IsWorldTalkCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkWorldC3M1AmmoUpMechanic
+		ApplyContext "SaidWorldC3M1AmmoUp:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkWorldC3M1CheckingHouses_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[IsWorldC3M1CheckingHouses],
+			[IsNotSaidWorldC3M1CheckingHouses],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsSubjectNear200],
+			[IsWorldTalkCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkWorldC3M1CheckingHousesMechanic
+		ApplyContext "SaidWorldC3M1CheckingHouses:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkWorldC3M1FeedGator_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
 			[IsWorldC3M1FeedGator],
 			[IsNotSaidWorldC3M1FeedGator],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSubjectNear400],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC3M1FeedGatorGambler
+		Response PlayerRemarkWorldC3M1FeedGatorMechanic
 		ApplyContext "SaidWorldC3M1FeedGator:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC3M1FerryNagCliffe",
+		name = "PlayerRemarkWorldC3M1FerryCrossing_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
+			[IsWorldC3M1FerryCrossing],
+			[IsNotSaidWorldC3M1FerryCrossing],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalkCsgo_sas],
+			[IsSubjectNear200],
+			[IsWorldTalkCsgo_sas],
+			[ChanceToFire100Percent],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		// 	forceweight 1
+		Response PlayerRemarkWorldC3M1FerryCrossingMechanic
+		then producer WorldC3M1FerryCrossingE01 foo:0 -6.143
+		ApplyContext "SaidWorldC3M1FerryCrossing:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkWorldC3M1FerryCrossingCoach_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[IsWorldC3M1FerryCrossing],
+			[IsNotSaidWorldC3M1FerryCrossing],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalkCsgo_sas],
+			[IsSubjectNear200],
+			[IsCoachAlive],
+			[IsWorldTalkCsgo_sas],
+			[ChanceToFire75Percent],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		// 	forceweight 2
+		Response PlayerRemarkWorldC3M1FerryCrossingCoachMechanic
+		then coach WorldC3M1FerryCrossingG01 foo:0 -4.268
+		ApplyContext "SaidWorldC3M1FerryCrossing:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkWorldC3M1FerryCrossingNick_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[IsWorldC3M1FerryCrossing],
+			[IsNotSaidWorldC3M1FerryCrossing],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalkCsgo_sas],
+			[IsSubjectNear200],
+			[IsGamblerAlive],
+			[IsWorldTalkCsgo_sas],
+			[ChanceToFire50Percent],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		// 	forceweight 3
+		Response PlayerRemarkWorldC3M1FerryCrossingNickMechanic
+		then gambler WorldC3M1FerryCrossingI01 foo:0 -2.234
+		ApplyContext "SaidWorldC3M1FerryCrossing:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkWorldC3M1FerryNag_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
 			[IsWorldC3M1FerryNag],
 			[IsNotSaidWorldC3M1FerryNag],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSubjectNear600],
 			[IsNotSaidC3M1CallFerry2],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC3M1FerryNagGambler
+		Response PlayerRemarkWorldC3M1FerryNagMechanic
 		ApplyContext "SaidWorldC3M1FerryNag:1:0,_auto_TimerLockA:1:15"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC502AlarmButtonCliffe",
+		name = "_C3M1CrazyMilitants_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptWorldC502AlarmButton],
-			[IsCliffe],
-			[IsNotCoughing],
-			[IsNotScavenge],
+			[Concept_C3M1CrazyMilitants],
+			[IsCsgo_sas],
 		],
-		Response PlayerRemarkWorldC502AlarmButtonGambler
+		Response _C3M1CrazyMilitantsMechanic
 	},
 	{
-		name = "PlayerRemarkWorldC502AlarmStoppedCliffe",
+		name = "PlayerRemarkWorldC3M1FerryNaga_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptWorldC502AlarmStopped],
-			[IsCliffe],
+			[ConceptTalkIdle],
+			[IsCsgo_sas],
 			[IsNotCoughing],
+			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsSaidWorldC3M1FerryNag],
+			[IsNotSaidC3M1CallFerry2],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsWorldTalkCsgo_sas],
+			[IsNotSpeakingWeight0],
+			[_auto_NotTimerLockA],
+			[_auto_NotTimerLockCsgo_sas],
 		],
-		Response PlayerRemarkWorldC502AlarmStoppedGambler
+		Response PlayerRemarkWorldC3M1FerryNagaMechanic
+		ApplyContext "_auto_TimerLockA:1:20,_auto_TimerLockCsgo_sas:1:40"
+		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC502AlleyCliffe",
+		name = "PlayerRemarkWorldC3M1GetBackUp_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
+			[IsWorldC3M1WeShouldGetBackUp],
+			[IsNotSaidWorldC3M1WeShouldGetBackUp],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsSubjectNear300],
+			[IsWorldTalkCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkWorldC3M1GetBackUpMechanic
+		ApplyContext "SaidWorldC3M1WeShouldGetBackUp:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkWorldC3M1Litter_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[IsWorldC3M1Litter],
+			[IsNotSaidWorldC3M1Litter],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsSubjectNear300],
+			[ChanceToFire20Percent],
+			[IsWorldTalkCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkWorldC3M1LitterMechanic
+		ApplyContext "SaidWorldC3M1Litter:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "AUTOBLANK_PlayerRemarkWorldC3M1Litter_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[IsWorldC3M1Litter],
+			[IsNotSaidWorldC3M1Litter],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsSubjectNear300],
+			[IsWorldTalkCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response _PlayerInfoRemarkableBlankMechanic
+		ApplyContext "SaidWorldC3M1Litter:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkWorldC3M1Path01_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[IsWorldC3M1Path01],
+			[IsNotSaidWorldC3M1Path01],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsSubjectNear400],
+			[IsWorldTalkCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkWorldC3M1Path01Mechanic
+		ApplyContext "SaidWorldC3M1Path01:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkWorldC3M1PlanksRight_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[IsWorldC3M1PlanksRight],
+			[IsNotSaidWorldC3M1PlanksRight],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsSubjectNear300],
+			[IsWorldTalkCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkWorldC3M1PlanksRightMechanic
+		ApplyContext "SaidWorldC3M1PlanksRight:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkWorldC3M1Stairs_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[IsWorldC3M1Stairs],
+			[IsNotSaidWorldC3M1Stairs],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsSubjectNear300],
+			[IsWorldTalkCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkWorldC3M1StairsMechanic
+		ApplyContext "SaidWorldC3M1Stairs:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkWorldC3M1StayOn_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[IsWorldC3M1StayOn],
+			[IsNotSaidWorldC3M1StayOn],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsSubjectNear200],
+			[IsWorldTalkCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkWorldC3M1StayOnMechanic
+		ApplyContext "SaidWorldC3M1StayOn:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkWorldC3M1Walkways_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[IsWorldC3M1Walkways],
+			[IsNotSaidWorldC3M1Walkways],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsSubjectNear600],
+			[IsWorldTalkCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkWorldC3M1WalkwaysMechanic
+		ApplyContext "SaidWorldC3M1Walkways:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkWorldC3M1WhichWay_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[IsWorldC3M1WhichWay],
+			[IsNotSaidWorldC3M1WhichWay],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsSubjectNear400],
+			[IsWorldTalkCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkWorldC3M1WhichWayMechanic
+		ApplyContext "SaidWorldC3M1WhichWay:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkWorldC502AlarmButton_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptWorldC502AlarmButton],
+			[IsCsgo_sas],
+			[IsNotCoughing],
+			[IsNotScavenge],
+		],
+		Response PlayerRemarkWorldC502AlarmButtonMechanic
+	},
+	{
+		name = "PlayerRemarkWorldC502AlarmStopped_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptWorldC502AlarmStopped],
+			[IsCsgo_sas],
+			[IsNotCoughing],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+		],
+		Response PlayerRemarkWorldC502AlarmStoppedMechanic
+	},
+	{
+		name = "PlayerRemarkWorldC502AlarmStopped2_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptWorldC502AlarmStopped2],
+			[IsCsgo_sas],
+			[IsNotCoughing],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+		],
+		Response PlayerRemarkWorldC502AlarmStopped2Mechanic
+	},
+	{
+		name = "PlayerRemarkWorldC502Alley_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
 			[IsWorldC502Alley],
 			[IsNotSaidWorldC502Alley],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSubjectNear300],
-			[IsWorldTalkCliffe],
-			[IsNotScavenge],
+			[IsWorldTalkCsgo_sas],
+			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC502AlleyGambler
+		Response PlayerRemarkWorldC502AlleyMechanic
 		ApplyContext "SaidWorldC52Alley:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC502BusStory2Cliffe",
-		criteria = 
-		[
-			[ConceptWorldC502BusStory2],
-			[IsCliffe],
-			[IsNotCoughing],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-		],
-		Response PlayerRemarkWorldC502BusStory2Gambler
-	},
-	{
-		name = "PlayerRemarkWorldC502NotZombies3Cliffe",
-		criteria = 
-		[
-			[ConceptWorldC502NotZombies3],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response PlayerRemarkWorldC502NotZombies3Gambler
-	},
-	{
-		name = "PlayerRemarkWorldC502SmellCliffe",
+		name = "PlayerRemarkWorldC502BusStory_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
+			[IsWorldC502BusStory],
+			[IsNotSaidWorldC502BusStory],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsSubjectNear400],
+			[IsGamblerNear200],
+			[ChanceToFire50Percent],
+			[IsWorldTalkCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[TimeSinceGroupInCombat02],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkWorldC502BusStoryMechanic
+		then Gambler WorldC502BusStory2 foo:0 -4.418
+		ApplyContext "SaidWorldC502BusStory:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "AUTOBLANK_PlayerRemarkWorldC502BusStory_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[IsWorldC502BusStory],
+			[IsNotSaidWorldC502BusStory],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsSubjectNear400],
+			[IsGamblerNear200],
+			[IsWorldTalkCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[TimeSinceGroupInCombat02],
+			[IsNotSpeakingWeight0],
+		],
+		Response _PlayerInfoRemarkableBlankMechanic
+		ApplyContext "SaidWorldC502BusStory:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkWorldC502BusStory2b_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptWorldC502BusStory2b],
+			[IsCsgo_sas],
+			[IsNotCoughing],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+		],
+		Response PlayerRemarkWorldC502BusStory2bMechanic
+		then self WorldC502BusStory2c foo:0 -2.060
+	},
+	{
+		name = "PlayerRemarkWorldC502BusStory2c_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptWorldC502BusStory2c],
+			[IsCsgo_sas],
+			[IsNotCoughing],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+		],
+		Response PlayerRemarkWorldC502BusStory2cMechanic
+	},
+	{
+		name = "PlayerRemarkWorldC502NotZombies2_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptWorldC502NotZombies2],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response PlayerRemarkWorldC502NotZombies2Mechanic
+	},
+	{
+		name = "PlayerRemarkWorldC502Run1_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptWorldC502AlarmButtonRun],
+			[IsCsgo_sas],
+			[IsNotCoughing],
+		],
+		Response PlayerRemarkWorldC502Run1Mechanic
+	},
+	{
+		name = "PlayerRemarkWorldSignReportUnusual_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptWorldSignReportUnusual2],
+			[IsCsgo_sas],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IssuerClose],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+		],
+		Response PlayerRemarkWorldSignReportUnusualMechanic
+	},
+	{
+		name = "PlayerRemarkWorldSignOfficialInstructions_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptWorldC502OfficialInstructions],
+			[IsCsgo_sas],
+			[IsNotCoughing],
+			[NotInCombat],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response PlayerRemarkWorldSignOfficialInstructionsMechanic
+	},
+	{
+		name = "PlayerRemarkWorldSignQuarantineZone_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptWorldC502QuarantineZone],
+			[IsCsgo_sas],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+		],
+		Response PlayerRemarkWorldSignQuarantineZoneMechanic
+	},
+	{
+		name = "PlayerRemarkWorldC502Smell_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
 			[IsWorldC502Smell],
 			[IsNotSaidWorldC502Smell],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSubjectNear600],
 			[IsNotSaidSmell],
 			[ChanceToFire50Percent],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC502SmellGambler
+		Response PlayerRemarkWorldC502SmellMechanic
 		ApplyContext "SaidWorldC502Smell:1:0,SaidSmell:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "AUTOBLANK_PlayerRemarkWorldC502SmellCliffe",
+		name = "AUTOBLANK_PlayerRemarkWorldC502Smell_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC502Smell],
 			[IsNotSaidWorldC502Smell],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSubjectNear600],
 			[IsNotSaidSmell],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response _PlayerInfoRemarkableBlankGambler
+		Response _PlayerInfoRemarkableBlankMechanic
 		ApplyContext "SaidWorldC502Smell:1:0,SaidSmell:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC502SmellBathCliffe",
+		name = "PlayerRemarkWorldC502Smell2_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptRemark],
-			[IsCliffe],
-			[IsWorldC502SmellBath],
-			[IsNotSaidWorldC502SmellBath],
+			[ConceptWorldC502Smell2],
+			[IsCsgo_sas],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsSubjectNear600],
-			[IsNotSaidSmell],
-			[ChanceToFire50Percent],
-			[IsWorldTalkCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkWorldC502SmellBathGambler
-		ApplyContext "SaidWorldC502SmellBath:1:0,SaidSmell:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "AUTOBLANK_PlayerRemarkWorldC502SmellBathCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
-			[IsWorldC502SmellBath],
-			[IsNotSaidWorldC502SmellBath],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsSubjectNear600],
-			[IsNotSaidSmell],
-			[IsWorldTalkCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response _PlayerInfoRemarkableBlankGambler
-		ApplyContext "SaidWorldC502SmellBath:1:0,SaidSmell:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkWorldC502SmellBath3Cliffe",
-		criteria = 
-		[
-			[ConceptWorldC502SmellBath3],
-			[IsCliffe],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSubjectNear300],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
+			[IsNotScavenge],
 		],
-		Response PlayerRemarkWorldC502SmellBath3Gambler
+		Response PlayerRemarkWorldC502Smell2Mechanic
 	},
 	{
-		name = "PlayerRemarkWorldC6M1_AcrossHereCliffe",
+		name = "PlayerRemarkWorldC502SmellBath2_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptWorldC502SmellBath2],
+			[IsCsgo_sas],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsSubjectNear300],
+			[IsWorldTalkCsgo_sas],
+			[IsNotScavenge],
+		],
+		Response PlayerRemarkWorldC502SmellBath2Mechanic
+		then Gambler WorldC502SmellBath3 foo:0 -2.916
+	},
+	{
+		name = "PlayerRemarkWorldC6M1_AcrossHere_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M1_AcrossHere],
 			[IsNotSaidWorldC6M1_AcrossHere],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M1_AcrossHereGambler
+		Response PlayerRemarkWorldC6M1_AcrossHereMechanic
 		ApplyContext "SaidWorldC6M1_AcrossHere:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M1_AlleyBelowCliffe",
+		name = "PlayerRemarkWorldC6M1_AlleyBelow_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M1_AlleyBelow],
 			[IsNotSaidWorldC6M1_AlleyBelow],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear400],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M1_AlleyBelowGambler
+		Response PlayerRemarkWorldC6M1_AlleyBelowMechanic
 		ApplyContext "SaidWorldC6M1_AlleyBelow:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M1_AlleyIntoBuildingCliffe",
+		name = "PlayerRemarkWorldC6M1_AlleyIntoBuilding_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M1_AlleyIntoBuilding],
 			[IsNotSaidWorldC6M1_AlleyIntoBuilding],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear400],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M1_AlleyIntoBuildingGambler
+		Response PlayerRemarkWorldC6M1_AlleyIntoBuildingMechanic
 		ApplyContext "SaidWorldC6M1_AlleyIntoBuilding:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M1_InAptsCliffe",
+		name = "PlayerRemarkWorldC6M1_InApts_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M1_InApts],
 			[IsNotSaidWorldC6M1_InApts],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M1_InAptsGambler
+		Response PlayerRemarkWorldC6M1_InAptsMechanic
 		ApplyContext "SaidWorldC6M1_InApts:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M1_IntoTheStoreCliffe",
+		name = "PlayerRemarkWorldC6M1_IntoThePark2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
+			[IsWorldC6M1_IntoThePark2],
+			[IsNotSaidWorldC6M1_IntoThePark2],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear300],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkWorldC6M1_IntoThePark2Mechanic
+		ApplyContext "SaidWorldC6M1_IntoThePark2:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkWorldC6M1_IntoTheStore_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
 			[IsWorldC6M1_IntoTheStore],
 			[IsNotSaidWorldC6M1_IntoTheStore],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear400],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M1_IntoTheStoreGambler
+		Response PlayerRemarkWorldC6M1_IntoTheStoreMechanic
 		ApplyContext "SaidWorldC6M1_IntoTheStore:1:0,JustSaidWorldC6M1_IntoTheStore:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M1_SafeRoomAlleyCliffe",
+		name = "PlayerRemarkWorldC6M1_PostWedding_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[IsWorldC6M1_SafeRoomAlley],
-			[IsNotSaidWorldC6M1_SafeRoomAlley],
+			[IsCsgo_sas],
+			[IsWorldC6M1_PostWedding],
+			[IsNotSaidWorldC6M1_PostWedding],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear600],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M1_SafeRoomAlleyGambler
+		Response PlayerRemarkWorldC6M1_PostWeddingMechanic
+		ApplyContext "SaidWorldC6M1_PostWedding:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkWorldC6M1_PostWeddingZ_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[IsWorldC6M1_PostWedding],
+			[IsNotSaidWorldC6M1_PostWedding],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear600],
+			[IsZoeyIntroActor],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkWorldC6M1_PostWeddingZMechanic
+		then Any WorldC6M1_PostWedding02a foo:0 -3.481
+		ApplyContext "SaidWorldC6M1_PostWedding:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkWorldC6M1_PostWeddingZC_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[IsWorldC6M1_PostWedding],
+			[IsNotSaidWorldC6M1_PostWedding],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear600],
+			[IsZoeyIntroActor],
+			[ChanceToFire20Percent],
+			[IsCoachAlive],
+			[IsCoachNear400],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkWorldC6M1_PostWeddingZCMechanic
+		then Coach WorldC6M1_PostWedding01a foo:0 -2.761
+		ApplyContext "SaidWorldC6M1_PostWedding:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkWorldC6M1_SafeRoomAlley_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[IsWorldC6M1_SafeRoomAlley],
+			[IsNotSaidWorldC6M1_SafeRoomAlley],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear600],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkWorldC6M1_SafeRoomAlleyMechanic
 		ApplyContext "SaidWorldC6M1_SafeRoomAlley:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M1_ThroughBarCliffe",
+		name = "PlayerRemarkWorldC6M1_ThroughBar_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M1_ThroughBar],
 			[IsNotSaidWorldC6M1_ThroughBar],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M1_ThroughBarGambler
+		Response PlayerRemarkWorldC6M1_ThroughBarMechanic
 		ApplyContext "SaidWorldC6M1_ThroughBar:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M1_UpHereCliffe",
+		name = "PlayerRemarkWorldC6M1_UpHere_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M1_UpHere],
 			[IsNotSaidWorldC6M1_UpHere],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M1_UpHereGambler
+		Response PlayerRemarkWorldC6M1_UpHereMechanic
 		ApplyContext "SaidWorldC6M1_UpHere:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M1_UpTheStairsCliffe",
+		name = "PlayerRemarkWorldC6M1_UpTheStairs_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M1_UpTheStairs],
 			[IsNotSaidWorldC6M1_UpTheStairs],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M1_UpTheStairsGambler
+		Response PlayerRemarkWorldC6M1_UpTheStairsMechanic
 		ApplyContext "SaidWorldC6M1_UpTheStairs:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M1_UpTheStairs2Cliffe",
+		name = "PlayerRemarkWorldC6M1_UpTheStairs2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M1_UpTheStairs2],
 			[IsNotSaidWorldC6M1_UpTheStairs2],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear400],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M1_UpTheStairs2Gambler
-		ApplyContext "SaidWorldC6M1_UpTheStairs2:1:0,Talk:1:1.596"
+		Response PlayerRemarkWorldC6M1_UpTheStairs2Mechanic
+		ApplyContext "SaidWorldC6M1_UpTheStairs2:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M1_WeddingWarnCliffe",
+		name = "PlayerRemarkWorldC6M1_WeddingWarn_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M1_WeddingWarn],
 			[IsNotSaidWorldC6M1_WeddingWarn],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[IsWitchPresent],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M1_WeddingWarnGambler
+		Response PlayerRemarkWorldC6M1_WeddingWarnMechanic
 		ApplyContext "SaidWorldC6M1_WeddingWarn:1:0,AtWedding:1:60"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M1_WeddingWarnAngelCliffe",
+		name = "PlayerRemarkWorldC6M2_AcrossPlank_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[IsWorldC6M1_WeddingWarn],
-			[IsNotSaidWorldC6M1_WeddingWarn],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear200],
-			[IsMechanicAlive],
-			[IsMechanicNear400],
-			[IsWitchPresent],
-			[IsZoeyIntroActor],
-			[IsEllisInLoveC6M1],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkWorldC6M1_WeddingWarnAngelGambler
-		ApplyContext "SaidWorldC6M1_WeddingWarn:1:0,AtWedding:1:60"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkWorldC6M2_AcrossPlankCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_AcrossPlank],
 			[IsNotSaidWorldC6M2_AcrossPlank],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear250],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_AcrossPlankGambler
+		Response PlayerRemarkWorldC6M2_AcrossPlankMechanic
 		ApplyContext "SaidWorldC6M2_AcrossPlank:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_AfterGate1Cliffe",
+		name = "PlayerRemarkWorldC6M2_AfterGate1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_AfterGate1],
 			[IsNotSaidWorldC6M2_AfterGate1],
 			[IsNotCoughing],
+			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear500],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_AfterGate1Gambler
+		Response PlayerRemarkWorldC6M2_AfterGate1Mechanic
 		ApplyContext "SaidWorldC6M2_AfterGate1:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_AfterGate2Cliffe",
+		name = "PlayerRemarkWorldC6M2_AfterGate2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_AfterGate2],
 			[IsNotSaidWorldC6M2_AfterGate2],
 			[IsNotCoughing],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear500],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_AfterGate2Gambler
+		Response PlayerRemarkWorldC6M2_AfterGate2Mechanic
+		then Gambler WorldC6M2_AfterGate201a foo:0 -1.968
 		ApplyContext "SaidWorldC6M2_AfterGate2:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_DownHereCliffe",
+		name = "PlayerRemarkWorldC6M2_AfterGateNick_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
+			[IsWorldC6M2_AfterGate2],
+			[IsNotSaidWorldC6M2_AfterGate2],
+			[IsNotCoughing],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsGamblerNear400],
+			[ChanceToFire50Percent],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear500],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkWorldC6M2_AfterGateNickMechanic
+		then Gambler WorldC6M2_AfterGate201a foo:0 -1.968
+		ApplyContext "SaidWorldC6M2_AfterGate2:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkWorldC6M2_DownHere_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
 			[IsWorldC6M2_DownHere],
 			[IsNotSaidWorldC6M2_DownHere],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_DownHereGambler
+		Response PlayerRemarkWorldC6M2_DownHereMechanic
 		ApplyContext "SaidWorldC6M2_DownHere:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_DownIntoBuildingCliffe",
+		name = "PlayerRemarkWorldC6M2_DownIntoBuilding_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_DownIntoBuilding],
 			[IsNotSaidWorldC6M2_DownIntoBuilding],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear400],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_DownIntoBuildingGambler
+		Response PlayerRemarkWorldC6M2_DownIntoBuildingMechanic
 		ApplyContext "SaidWorldC6M2_DownIntoBuilding:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_FinalLadderCliffe",
+		name = "PlayerRemarkWorldC6M2_FinalLadder_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_FinalLadder],
 			[IsNotSaidWorldC6M2_FinalLadder],
 			[IsNotCoughing],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_FinalLadderGambler
+		Response PlayerRemarkWorldC6M2_FinalLadderMechanic
 		ApplyContext "SaidWorldC6M2_FinalLadder:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_FinalWaterCliffe",
+		name = "PlayerRemarkWorldC6M2_FinalWater_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_FinalWater],
 			[IsNotSaidWorldC6M2_FinalWater],
 			[IsNotCoughing],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_FinalWaterGambler
+		Response PlayerRemarkWorldC6M2_FinalWaterMechanic
+		then Gambler WorldC6M2_FinalWater01a foo:0 -1.706
 		ApplyContext "SaidWorldC6M2_FinalWater:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_FinalWaterGoGoCliffe",
+		name = "PlayerRemarkWorldC6M2_FinalWaterNick_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[IsWorldC6M2_FinalWaterGoGo],
-			[IsNotSaidWorldC6M2_FinalWaterGoGo],
+			[IsCsgo_sas],
+			[IsWorldC6M2_FinalWater],
+			[IsNotSaidWorldC6M2_FinalWater],
 			[IsNotCoughing],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsGamblerNear400],
+			[ChanceToFire50Percent],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_FinalWaterGoGoGambler
+		Response PlayerRemarkWorldC6M2_FinalWaterNickMechanic
+		then Gambler WorldC6M2_FinalWater01a foo:0 -1.706
+		ApplyContext "SaidWorldC6M2_FinalWater:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkWorldC6M2_FinalWaterGoGo_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[IsWorldC6M2_FinalWaterGoGo],
+			[IsNotSaidWorldC6M2_FinalWaterGoGo],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear300],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkWorldC6M2_FinalWaterGoGoMechanic
 		ApplyContext "SaidWorldC6M2_FinalWaterGoGo:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_InJazzClubCliffe",
+		name = "PlayerRemarkWorldC6M2_InJazzClub_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_InJazzClub],
 			[IsNotSaidWorldC6M2_InJazzClub],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear1000],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_InJazzClubGambler
+		Response PlayerRemarkWorldC6M2_InJazzClubMechanic
 		ApplyContext "SaidWorldC6M2_InJazzClub:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_InSewer1Cliffe",
+		name = "PlayerRemarkWorldC6M2_InSewer2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[IsWorldC6M2_InSewer1],
-			[IsNotSaidWorldC6M2_InSewer1],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear200],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkWorldC6M2_InSewer1Gambler
-		ApplyContext "SaidWorldC6M2_InSewer1:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkWorldC6M2_InSewer2Cliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_InSewer2],
 			[IsNotSaidWorldC6M2_InSewer2],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[IsSaidWorldC6M2_InSewer1],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_InSewer2Gambler
+		Response PlayerRemarkWorldC6M2_InSewer2Mechanic
+		then Producer WorldC6M2_InSewer202a foo:0 -4.622
 		ApplyContext "SaidWorldC6M2_InSewer2:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_InSewerLadder1Cliffe",
+		name = "PlayerRemarkWorldC6M2_InSewerLadder1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_InSewerLadder1],
 			[IsNotSaidWorldC6M2_InSewerLadder1],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_InSewerLadder1Gambler
+		Response PlayerRemarkWorldC6M2_InSewerLadder1Mechanic
+		then Any WorldC6M2_InSewerLadder101a foo:0 -2.795
 		ApplyContext "SaidWorldC6M2_InSewerLadder1:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_IntoConstructionCliffe",
+		name = "PlayerRemarkWorldC6M2_IntoConstruction_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_IntoConstruction],
 			[IsNotSaidWorldC6M2_IntoConstruction],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear150],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_IntoConstructionGambler
+		Response PlayerRemarkWorldC6M2_IntoConstructionMechanic
 		ApplyContext "SaidWorldC6M2_IntoConstruction:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_IntoPoolHallCliffe",
+		name = "PlayerRemarkWorldC6M2_IntoPoolHall_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_IntoPoolHall],
 			[IsNotSaidWorldC6M2_IntoPoolHall],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_IntoPoolHallGambler
+		Response PlayerRemarkWorldC6M2_IntoPoolHallMechanic
 		ApplyContext "SaidWorldC6M2_IntoPoolHall:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_JukeBoxCliffe",
+		name = "PlayerRemarkWorldC6M2_JukeBox_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_JukeBox],
 			[IsNotSaidWorldC6M2_JukeBox],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear150],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_JukeBoxGambler
+		Response PlayerRemarkWorldC6M2_JukeBoxMechanic
 		ApplyContext "SaidWorldC6M2_JukeBox:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_JumpDownCliffe",
+		name = "PlayerRemarkWorldC6M2_JumpDown_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_JumpDown],
 			[IsNotSaidWorldC6M2_JumpDown],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_JumpDownGambler
+		Response PlayerRemarkWorldC6M2_JumpDownMechanic
 		ApplyContext "SaidWorldC6M2_JumpDown:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "C6M2FallingCliffe",
+		name = "C6M2Falling_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC2M1Falling],
-			[IsCliffe],
-			[isC6m2_bedlam],
+			[IsCsgo_sas],
+			[isc6m2_bedlam],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C6M2FallingGambler
+		Response C6M2FallingMechanic
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_OnTourWalk1Cliffe",
+		name = "PlayerRemarkWorldC6M2_OnTourWalk2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[IsWorldC6M2_OnTourWalk1],
-			[IsNotSaidWorldC6M2_OnTourWalk1],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear300],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkWorldC6M2_OnTourWalk1Gambler
-		ApplyContext "SaidWorldC6M2_OnTourWalk1:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkWorldC6M2_OnTourWalk2Cliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_OnTourWalk2],
 			[IsNotSaidWorldC6M2_OnTourWalk2],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_OnTourWalk2Gambler
+		Response PlayerRemarkWorldC6M2_OnTourWalk2Mechanic
 		ApplyContext "SaidWorldC6M2_OnTourWalk2:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_OnTourWalk3Cliffe",
+		name = "PlayerRemarkWorldC6M2_OnTourWalk3_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_OnTourWalk3],
 			[IsNotSaidWorldC6M2_OnTourWalk3],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_OnTourWalk3Gambler
+		Response PlayerRemarkWorldC6M2_OnTourWalk3Mechanic
 		ApplyContext "SaidWorldC6M2_OnTourWalk3:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_OpenGate1Cliffe",
+		name = "PlayerRemarkWorldC6M2_OpenGate1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_OpenGate1],
 			[IsNotSaidWorldC6M2_OpenGate1],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[IsNotSaidOpenedGate1],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_OpenGate1Gambler
+		Response PlayerRemarkWorldC6M2_OpenGate1Mechanic
 		ApplyContext "SaidWorldC6M2_OpenGate1:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_OpenGate2Cliffe",
+		name = "PlayerRemarkWorldC6M2_OpenGate2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_OpenGate2],
 			[IsNotSaidWorldC6M2_OpenGate2],
 			[IsNotCoughing],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[IsNotSaidOpenedGate2],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_OpenGate2Gambler
+		Response PlayerRemarkWorldC6M2_OpenGate2Mechanic
 		ApplyContext "SaidWorldC6M2_OpenGate2:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_OpenGate2EllisCliffe",
+		name = "PlayerRemarkWorldC6M2_Phase2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[IsWorldC6M2_OpenGate2],
-			[IsNotSaidWorldC6M2_OpenGate2],
-			[IsNotCoughing],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear200],
-			[IsSaidOpenedGate1BlameEllis],
-			[IsNotSaidOpenedGate2],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkWorldC6M2_OpenGate2EllisGambler
-		ApplyContext "SaidWorldC6M2_OpenGate2:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkWorldC6M2_Phase2Cliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_Phase2],
 			[IsNotSaidWorldC6M2_Phase2],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_Phase2Gambler
+		Response PlayerRemarkWorldC6M2_Phase2Mechanic
+		then Producer WorldC6M2_Phase201a foo:0 -1.792
 		ApplyContext "SaidWorldC6M2_Phase2:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_Phase2DownCliffe",
+		name = "PlayerRemarkWorldC6M2_Phase2Down_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_Phase2Down],
 			[IsNotSaidWorldC6M2_Phase2Down],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_Phase2DownGambler
+		Response PlayerRemarkWorldC6M2_Phase2DownMechanic
 		ApplyContext "SaidWorldC6M2_Phase2Down:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_Phase2DownIntenseCliffe",
+		name = "PlayerRemarkWorldC6M2_Phase2DownIntense_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_Phase2Down],
 			[IsNotSaidWorldC6M2_Phase2Down],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[IntensityOver75],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_Phase2DownIntenseGambler
+		Response PlayerRemarkWorldC6M2_Phase2DownIntenseMechanic
 		ApplyContext "SaidWorldC6M2_Phase2Down:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_PostGate1xCliffe",
+		name = "PlayerRemarkWorldC6M2_PostGate1x_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_PostGate1],
 			[IsNotSaidWorldC6M2_PostGate1],
 			[IsNotCoughing],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[IsSaidOpenedGate1],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_PostGate1xGambler
+		Response PlayerRemarkWorldC6M2_PostGate1xMechanic
 		ApplyContext "SaidWorldC6M2_PostGate1:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_SuitcaseCliffe",
+		name = "PlayerRemarkWorldC6M2_Tattoo_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[IsWorldC6M2_Suitcase],
-			[IsNotSaidWorldC6M2_Suitcase],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear100],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkWorldC6M2_SuitcaseGambler
-		ApplyContext "SaidWorldC6M2_Suitcase:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkWorldC6M2_TattooCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_Tattoo],
 			[IsNotSaidWorldC6M2_Tattoo],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_TattooGambler
+		Response PlayerRemarkWorldC6M2_TattooMechanic
 		ApplyContext "SaidWorldC6M2_Tattoo:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_TattooZoeyCliffe",
+		name = "PlayerRemarkWorldC6M2_TattooStory_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_Tattoo],
 			[IsNotSaidWorldC6M2_Tattoo],
+			[ExtraWeight10],
+			[ChanceToFire10Percent],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
-			[IsNotMentionedZoeyC6M2],
-			[IsMechanicAlive],
-			[IsMechanicNear400],
-			[IsZoeyIntroActor],
-			[ChanceToFire50Percent],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_TattooZoeyGambler
-		ApplyContext "SaidWorldC6M2_Tattoo:1:0"
+		Response PlayerRemarkWorldC6M2_TattooStoryMechanic
+		then any Csgo_sasInterrupt foo:0 -13.10
+		ApplyContext "SaidWorldC6M2_Tattoo:1:0,_auto_TellingStory:1:14"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_TourEntranceCliffe",
+		name = "PlayerRemarkWorldC6M2_TourEntrance_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_TourEntrance],
 			[IsNotSaidWorldC6M2_TourEntrance],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_TourEntranceGambler
+		Response PlayerRemarkWorldC6M2_TourEntranceMechanic
 		ApplyContext "SaidWorldC6M2_TourEntrance:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_UpCatWalkCliffe",
+		name = "PlayerRemarkWorldC6M2_UpCatWalk_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_UpCatWalk],
 			[IsNotSaidWorldC6M2_UpCatWalk],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_UpCatWalkGambler
+		Response PlayerRemarkWorldC6M2_UpCatWalkMechanic
 		ApplyContext "SaidWorldC6M2_UpCatWalk:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_UpStairsCliffe",
+		name = "PlayerRemarkWorldC6M2_UpStairs_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_UpStairs],
 			[IsNotSaidWorldC6M2_UpStairs],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_UpStairsGambler
+		Response PlayerRemarkWorldC6M2_UpStairsMechanic
 		ApplyContext "SaidWorldC6M2_UpStairs:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_UpStairs2Cliffe",
+		name = "PlayerRemarkWorldC6M2_UpStairs2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_UpStairs2],
 			[IsNotSaidWorldC6M2_UpStairs2],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_UpStairs2Gambler
+		Response PlayerRemarkWorldC6M2_UpStairs2Mechanic
 		ApplyContext "SaidWorldC6M2_UpStairs2:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M3_BridgeRunCliffe",
+		name = "PlayerRemarkWorldC6M3_BridgeRun_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M3_BridgeRun],
 			[IsNotSaidWorldC6M3_BridgeRun],
 			[IsNotCoughing],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear500],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M3_BridgeRunGambler
+		Response PlayerRemarkWorldC6M3_BridgeRunMechanic
+		then any WorldC6M3_ByBridge01 foo:0 -1.803
 		ApplyContext "SaidWorldC6M3_BridgeRun:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M3_ByBridgeCliffe",
+		name = "PlayerRemarkWorldC6M3_ByBridgeFrancis_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M3_ByBridge],
 			[IsNotSaidWorldC6M3_ByBridge],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear500],
+			[IsFrancisIntroActor],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[_auto_C6M3BridgeDown],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M3_ByBridgeGambler
+		Response PlayerRemarkWorldC6M3_ByBridgeFrancisMechanic
+		then biker WorldC6M3_ByBridge01 foo:0 0.3
 		ApplyContext "SaidWorldC6M3_ByBridge:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M3_ByBridgeLossCliffe",
+		name = "PlayerRemarkWorldC6M3_ByBridgeZoey_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M3_ByBridge],
 			[IsNotSaidWorldC6M3_ByBridge],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear500],
+			[IsZoeyIntroActor],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[_auto_C6M3BridgeDown],
 			[IsNotSpeakingWeight0],
-			[IsEveryoneAlive],
-			[_auto_SaidC6M3Bill],
-			[_auto_CliffeSawC6M3Bill],
 		],
-		Response PlayerRemarkWorldC6M3_ByBridgeLossGambler
+		Response PlayerRemarkWorldC6M3_ByBridgeZoeyMechanic
+		then teengirl WorldC6M3_ByBridge01 foo:0 0.3
 		ApplyContext "SaidWorldC6M3_ByBridge:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M3_BillCliffe",
+		name = "PlayerRemarkWorldFootLocker_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
+			[IsWorldFootLocker],
+			[IsNotSaidWorldFootLocker],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear500],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkWorldFootLockerMechanic
+		ApplyContext "SaidWorldFootLocker:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkWorldC6M3_Bill_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
 			[IsWorldC6M3_Bill],
 			[IsNotCoughing],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear100],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 			[_auto_NotC6M3Bill],
 		],
-		Response PlayerRemarkWorldC6M3_BillGambler
-		ApplyContext "_auto_CliffeC6M3Bill:1:0,_auto_C6M3Bill:1:0,SaidSomeoneDied:1:10"
+		Response PlayerRemarkWorldC6M3_BillMechanic
+		ApplyContext "_auto_Csgo_sasC6M3Bill:1:0,_auto_C6M3Bill:1:0,SaidSomeoneDied:1:10"
 		applycontexttoworld
 	},
 	{
-		name = "WorldC6M3LossZoeyCliffe",
+		name = "WorldC6M3LossLouis_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerLook],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSmartLookAuto],
+			[IsTalkCsgo_sas],
 			[Isc6m3_port],
-			[SubjectIsTeenGirl],
-			[IsTeenGirlNear400],
-			[IsWorldTalkCliffe],
+			[IsNotSmartLookAuto],
+			[IsSubjectNone],
+			[IsManagerNear500],
+			[IsWorldTalkCsgo_sas],
 			[_auto_SawC6M3Bill],
-			[_auto_CliffeSawC6M3Bill],
+			[_auto_Csgo_sasSawC6M3Bill],
 		],
-		Response WorldC6M3LossGambler
+		Response WorldC6M3LossMechanic
+		then Manager c6m3_loss foo:0 0.1
 		ApplyContext "_auto_C6M3Bill:2:0,Talk:1:15"
 		applycontexttoworld
 	},
 	{
-		name = "WorldC6M3LossFrancisCliffe",
+		name = "WorldC6M3LossLouis2_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptPlayerLook],
+			[ConceptPlayerLookHere],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSmartLookAuto],
+			[IsTalkCsgo_sas],
 			[Isc6m3_port],
-			[SubjectIsBiker],
-			[IsBikerNear400],
-			[IsWorldTalkCliffe],
+			[IsNotSmartLookAuto],
+			[IsSubjectNone],
+			[IsManagerNear500],
+			[IsWorldTalkCsgo_sas],
 			[_auto_SawC6M3Bill],
-			[_auto_CliffeSawC6M3Bill],
+			[_auto_Csgo_sasSawC6M3Bill],
 		],
-		Response WorldC6M3LossGambler
+		Response WorldC6M3LossMechanic
+		then Manager c6m3_loss foo:0 0.1
 		ApplyContext "_auto_C6M3Bill:2:0,Talk:1:15"
 		applycontexttoworld
 	},
 	{
-		name = "WorldC6M3Loss2Cliffe",
+		name = "WorldC6M3Loss2_CSGO_SAS",
 		criteria = 
 		[
 			[Conceptc6m3_loss],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 		],
-		Response WorldC6M3Loss2Gambler
+		Response WorldC6M3Loss2Mechanic
+		then from c6m3_loss2 foo:0 -0.7
 	},
 	{
-		name = "WorldC6M3Loss3Cliffe",
+		name = "WorldC6M3Loss3_CSGO_SAS",
 		criteria = 
 		[
-			[Conceptc6M3_loss2],
+			[Conceptc6m3_loss2],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 		],
-		Response WorldC6M3Loss3Gambler
+		Response WorldC6M3Loss3Mechanic
+		then from c6m3_loss3 foo:0 0.3
 	},
 	{
-		name = "PlayerRemarkWorldFootLockerCliffe",
+		name = "PlayerRemarkWorldSignColdBeer_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[IsWorldFootLocker],
-			[IsNotSaidWorldFootLocker],
+			[IsCsgo_sas],
+			[IsWorldSignColdBeer],
+			[IsNotSaidWorldSignColdBeer],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear500],
+			[IsTalkCsgo_sas],
+			[IsSubjectNear200],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldFootLockerGambler
-		ApplyContext "SaidWorldFootLocker:1:0"
+		Response PlayerRemarkWorldSignColdBeerMechanic
+		then Any WorldSignColdBeer2 foo:0 -2.701
+		ApplyContext "SaidWorldSignColdBeer:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerWorldSignHurricane2Cliffe",
+		name = "PlayerRemarkWorldSignPhotography2_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptWorldSignHurricane2],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IssuerClose],
-			[IsWorldTalkCliffe],
-		],
-		Response PlayerWorldSignHurricane2Gambler
-	},
-	{
-		name = "PlayerRemarkWorldSignRestricted2Cliffe",
-		criteria = 
-		[
-			[ConceptWorldSignRestrictedArea2],
-			[IsCliffe],
+			[ConceptWorldSignPhotography2],
+			[IsCsgo_sas],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IssuerClose],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
+			[IsNotScavenge],
 		],
-		Response PlayerRemarkWorldSignRestricted2Gambler
-		ApplyContext "Talk:1:1.993"
+		Response PlayerRemarkWorldSignPhotography2Mechanic
+		ApplyContext "Talk:1:1.763"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerWorldSignC5AlarmWillSoundCliffe",
+		name = "PlayerRemarkWorldSignReportSick2_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptWorldSignReportSick2],
+			[IsCsgo_sas],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IssuerClose],
+			[IsWorldTalkCsgo_sas],
+			[IsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response PlayerRemarkWorldSignReportSick2Mechanic
+		then Producer WorldSignReportSick3 foo:0 -1.323
+	},
+	{
+		name = "PlayerWorldSignC5AlarmWillSound_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldSignC5AlarmWillSound],
 			[IsNotSaidWorldSignC5AlarmWillSound],
 			[IsNotCoughing],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSubjectNear200],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerWorldSignC5AlarmWillSoundGambler
+		Response PlayerWorldSignC5AlarmWillSoundMechanic
+		then any WorldSignC5AlarmWillSound3 foo:0 0.1
 		ApplyContext "SaidWorldSignC5AlarmWillSound:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerWorldSignC5AlarmWillSound3bCliffe",
+		name = "PlayerWorldSignC5AlarmWillSound3_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptWorldSignC5AlarmWillSound3b],
-			[IsCliffe],
+			[ConceptWorldSignC5AlarmWillSound3],
+			[IsCsgo_sas],
 			[IsNotCoughing],
 			[NotInCombat],
 			[_auto_NotAlarm],
 		],
-		Response PlayerWorldSignC5AlarmWillSound3bGambler
+		Response PlayerWorldSignC5AlarmWillSound3Mechanic
+		then Gambler WorldSignC5AlarmWillSound3c foo:0 -1.502
 		ApplyContext "Talk:1:2"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerWorldSignC5AlarmWillSound3cCliffe",
+		name = "PlayerWorldSignC5AlarmWillSound3d_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptWorldSignC5AlarmWillSound3c],
-			[IsCliffe],
+			[ConceptWorldSignC5AlarmWillSound3d],
+			[IsCsgo_sas],
 			[IsNotCoughing],
 			[NotInCombat],
 			[_auto_NotAlarm],
 		],
-		Response PlayerWorldSignC5AlarmWillSound3cGambler
+		Response PlayerWorldSignC5AlarmWillSound3dMechanic
 		ApplyContext "Talk:1:2"
 		applycontexttoworld
 	},
 	{
-		name = "RespondAffirmativeCliffe",
+		name = "RespondAffirmative_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRespondAffirmative],
 			[IssuerMediumClose],
 			[IsNotCoughing],
 			[NotInCombat],
-			[isCliffe],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[isCsgo_sas],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response RespondAffirmativeGambler
+		Response RespondAffirmativeMechanic
 	},
 	{
-		name = "PlayerFollowMeCliffe",
+		name = "PlayerFollowMe_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerFollowMe],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerFollowMeGambler
+		Response PlayerFollowMeMechanic
 	},
 	{
-		name = "PlayerHelpCliffe",
+		name = "PlayerHelp_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerHelp],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotCoughing],
 			[IsTalk],
 			[IsNotIncapacitated],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerHelpGambler
+		Response PlayerHelpMechanic
 	},
 	{
-		name = "PlayerHurryUpCliffe",
+		name = "PlayerHurryUp_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerHurryUp],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerHurryUpGambler
+		Response PlayerHurryUpMechanic
 	},
 	{
-		name = "PlayerHurryUpC4M2Cliffe",
+		name = "PlayerHurryUpC4M2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerHurryUp],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotInSafeSpot],
 			[IsNotInCheckpoint],
 			[IsTalk],
-			[IsTalkCliffe],
-			[ismap_c4m2_sugarmill_a],
+			[IsTalkCsgo_sas],
 			[IsNotSaidSafeSpotAhead],
+			[ismap_c4m2_sugarmill_a],
 			[IsNotZombiePresentTank],
-			[IsWorldTalkCliffe],
-			[_auto_IsCliffeInWitchville],
+			[IsWorldTalkCsgo_sas],
+			[_auto_IsCsgo_sasInWitchville],
 		],
-		Response PlayerHurryUpC4M2Gambler
+		Response PlayerHurryUpC4M2Mechanic
 	},
 	{
-		name = "PlayerKillThatLightCliffe",
+		name = "PlayerKillThatLight_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerKillThatLight],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerKillThatLightGambler
+		Response PlayerKillThatLightMechanic
 	},
 	{
-		name = "PlayerLeadOnCliffe",
+		name = "PlayerLeadOn_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerLeadOn],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerLeadOnGambler
+		Response PlayerLeadOnMechanic
 	},
 	{
-		name = "PlayerMoveOnCliffe",
+		name = "PlayerMoveOn_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerMoveOn],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerMoveOnGambler
+		Response PlayerMoveOnMechanic
 	},
 	{
-		name = "PlayerStayTogetherCliffe",
+		name = "PlayerStayTogether_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerStayTogether],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerStayTogetherGambler
+		Response PlayerStayTogetherMechanic
 	},
 	{
-		name = "PlayerWatchOutBehindCliffe",
+		name = "PlayerWatchOutBehind_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWatchOutBehind],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerWatchOutBehindGambler
+		Response PlayerWatchOutBehindMechanic
 	},
 	{
-		name = "PlayerAskReadyCliffe",
+		name = "PlayerAskReady_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerAskReady],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerAskReadyGambler
+		Response PlayerAskReadyMechanic
 	},
 	{
-		name = "PlayerAskReadyC1Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerAskReady],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[ismap_c1m1_hotel],
-			[NoKnowNames],
-		],
-		Response PlayerAskReadyC1Gambler
-	},
-	{
-		name = "PlayerImWithYouCliffe",
+		name = "PlayerImWithYou_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerImWithYou],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerImWithYouGambler
+		Response PlayerImWithYouMechanic
 	},
 	{
-		name = "PlayerLaughCliffe",
+		name = "PlayerLaugh_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerLaugh],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotVersus],
 		],
-		Response PlayerLaughGambler
+		Response PlayerLaughMechanic
 	},
 	{
-		name = "PlayerLostCallCliffe",
+		name = "PlayerLostCall_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerLostCall],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerLostCallGambler
+		Response PlayerLostCallMechanic
 	},
 	{
-		name = "PlayerNiceJobResponseCliffe",
+		name = "PlayerNiceJobResponse_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerNiceJob],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerNiceJobResponseGambler
+		Response PlayerNiceJobResponseMechanic
 	},
 	{
-		name = "PlayerNoCliffe",
+		name = "PlayerNo_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerNo],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerNoGambler
+		Response PlayerNoMechanic
 	},
 	{
-		name = "PlayerNoFemaleCliffe",
-		criteria = 
-		[
-			[ConceptPlayerNo],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[SubjectIsProducer],
-			[IsSubjectDistNear200],
-			[ChanceToFire30Percent],
-			[IsWorldTalkCliffe],
-		],
-		Response PlayerNoFemaleGambler
-	},
-	{
-		name = "PlayerNoZoeyCliffe",
-		criteria = 
-		[
-			[ConceptPlayerNo],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[SubjectIsTeenGirl],
-			[IsSubjectDistNear200],
-			[ChanceToFire30Percent],
-			[IsWorldTalkCliffe],
-		],
-		Response PlayerNoFemaleGambler
-	},
-	{
-		name = "PlayerNoEllisCliffe",
-		criteria = 
-		[
-			[ConceptPlayerNo],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[SubjectIsMechanic],
-			[IsSubjectDistNear200],
-			[ChanceToFire30Percent],
-			[IsWorldTalkCliffe],
-		],
-		Response PlayerNoEllisGambler
-	},
-	{
-		name = "PlayerAnswerLostCallCliffe",
+		name = "PlayerAnswerLostCall_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerAnswerLostCall],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerAnswerLostCallGambler
+		Response PlayerAnswerLostCallMechanic
 	},
 	{
-		name = "KillStealCalledOutCliffe",
-		criteria = 
-		[
-			[ConceptKillStealCalledOut],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-		],
-		Response KillStealCalledOutGambler
-	},
-	{
-		name = "PlayerSorryCliffe",
+		name = "PlayerSorry_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSorry],
 			[IsNotCoughing],
-			[IsNotShotTeammateCliffe],
-			[IsCliffe],
+			[IsNotShotTeammateCsgo_sas],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerSorryGambler
+		Response PlayerSorryMechanic
 	},
 	{
-		name = "PlayerSorryFFCliffe",
+		name = "PlayerSorryFF_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSorry],
 			[IsNotCoughing],
-			[IsShotTeammateCliffe],
-			[IsCliffe],
+			[IsShotTeammateCsgo_sas],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerSorryFFGambler
+		Response PlayerSorryFFMechanic
 	},
 	{
-		name = "PlayerThanksCliffe",
+		name = "PlayerThanks_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerThanks],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerThanksGambler
+		Response PlayerThanksMechanic
 	},
 	{
-		name = "PlayerYellRunCliffe",
+		name = "PlayerYellRun_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerYellRun],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerYellRunGambler
+		Response PlayerYellRunMechanic
 	},
 	{
-		name = "PlayerYesCliffe",
+		name = "PlayerYes_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerYes],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerYesGambler
+		Response PlayerYesMechanic
 	},
 	{
-		name = "PlayerYouAreWelcomeCliffe",
+		name = "PlayerYouAreWelcome_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerYouAreWelcome],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerYouAreWelcomeGambler
+		Response PlayerYouAreWelcomeMechanic
 	},
 	{
-		name = "YouAreWelcomeCliffe",
+		name = "YouAreWelcome_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptYouAreWelcome],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[TimeSinceGroupInCombat05],
 			[IsNotSpeaking],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerYouAreWelcomeGambler
+		Response PlayerYouAreWelcomeMechanic
 	},
 	{
-		name = "PlayerYouAreWelcomeC1Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerYouAreWelcome],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[TimeSinceGroupInCombat05],
-			[IsNotSpeaking],
-			[IsWorldTalkCliffe],
-			[C1M1orC1M2],
-			[IsNotSurvival],
-		],
-		Response PlayerYouAreWelcomeC1Gambler
-	},
-	{
-		name = "YouAreWelcomeC1Cliffe",
-		criteria = 
-		[
-			[ConceptYouAreWelcome],
-			[IsNotCoughing],
-			[ChanceToFire50Percent],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[TimeSinceGroupInCombat05],
-			[IsNotSpeaking],
-			[IsWorldTalkCliffe],
-			[C1M1orC1M2],
-			[IsNotSurvival],
-		],
-		Response PlayerYouAreWelcomeC1Gambler
-	},
-	{
-		name = "YouAreWelcomeCoachCliffe",
+		name = "YouAreWelcomeCoach_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptYouAreWelcome],
 			[IsNotCoughing],
 			[IsNotSpeaking],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[FromIsCoach],
-			[TimeSinceGroupInCombat05],
 			[ChanceToFire30Percent],
-			[IsWorldTalkCliffe],
-			[isNotmap_c1m1_hotel],
-			[isNotmap_c1m2_streets],
+			[TimeSinceGroupInCombat05],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response YouAreWelcomeCoachGambler
+		Response YouAreWelcomeCoachMechanic
 	},
 	{
-		name = "YouAreWelcomeMechanicCliffe",
-		criteria = 
-		[
-			[ConceptPlayerYouAreWelcome],
-			[IsNotCoughing],
-			[IsNotSpeaking],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[FromIsMechanic],
-			[TimeSinceGroupInCombat05],
-			[ChanceToFire30Percent],
-			[IsWorldTalkCliffe],
-			[isNotmap_c1m1_hotel],
-			[isNotmap_c1m2_streets],
-		],
-		Response YouAreWelcomeMechanicGambler
-	},
-	{
-		name = "YouAreWelcomeProducerCliffe",
+		name = "YouAreWelcomeCoachC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptYouAreWelcome],
 			[IsNotCoughing],
 			[IsNotSpeaking],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[FromIsProducer],
-			[TimeSinceGroupInCombat05],
+			[IsTalkCsgo_sas],
+			[FromIsCoach],
 			[ChanceToFire30Percent],
-			[IsWorldTalkCliffe],
-			[isNotmap_c1m1_hotel],
-			[isNotmap_c1m2_streets],
+			[IsWorldTalkCsgo_sas],
+			[TimeSinceGroupInCombat05],
+			[ismap_c1m1_hotel],
+			[NoKnowNames],
 		],
-		Response YouAreWelcomeProducerGambler
+		Response YouAreWelcomeCoachC1Mechanic
 	},
 	{
-		name = "BotAttentionBattleCliffe",
+		name = "YouAreWelcomeGambler_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptYouAreWelcome],
+			[IsNotCoughing],
+			[IsNotSpeaking],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[FromIsGambler],
+			[ChanceToFire30Percent],
+			[TimeSinceGroupInCombat05],
+			[IsWorldTalkCsgo_sas],
+		],
+		Response YouAreWelcomeGamblerMechanic
+	},
+	{
+		name = "YouAreWelcomeGamblerC1_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptYouAreWelcome],
+			[IsNotCoughing],
+			[IsNotSpeaking],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[FromIsGambler],
+			[ChanceToFire30Percent],
+			[TimeSinceGroupInCombat05],
+			[IsWorldTalkCsgo_sas],
+			[ismap_c1m1_hotel],
+			[NoKnowNames],
+		],
+		Response YouAreWelcomeGamblerC1Mechanic
+	},
+	{
+		name = "YouAreWelcomeProducer_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptYouAreWelcome],
+			[IsNotCoughing],
+			[IsNotSpeaking],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[FromIsProducer],
+			[ChanceToFire30Percent],
+			[TimeSinceGroupInCombat05],
+			[IsWorldTalkCsgo_sas],
+		],
+		Response YouAreWelcomeProducerMechanic
+	},
+	{
+		name = "YouAreWelcomeProducerC1_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptYouAreWelcome],
+			[IsNotCoughing],
+			[IsNotSpeaking],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[FromIsProducer],
+			[ChanceToFire30Percent],
+			[TimeSinceGroupInCombat05],
+			[IsWorldTalkCsgo_sas],
+			[ismap_c1m1_hotel],
+			[NoKnowNames],
+		],
+		Response YouAreWelcomeProducerC1Mechanic
+	},
+	{
+		name = "BotAttentionBattle_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptSurvivorBotNoteHumanAttention],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotBotAttention],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[IsInBattlefield],
 			[TimeSinceGroupInCombat20],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[IsNotSpeakingWeight0],
 		],
-		Response BotAttentionBattleGambler
+		Response BotAttentionBattleMechanic
 		ApplyContext "SaidBotAttention:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "BotNoteHumanAttentionCliffe",
+		name = "BotNoteHumanAttention_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptSurvivorBotNoteHumanAttention],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotBotAttention],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[IsInStartArea],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[IsNotSpeakingWeight0],
 		],
-		Response BotNoteHumanAttentionGambler
+		Response BotNoteHumanAttentionMechanic
 		ApplyContext "SaidBotAttention:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerNegativeCliffe",
+		name = "PlayerNegative_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerNegative],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerNegativeGambler
+		Response PlayerNegativeMechanic
 	},
 	{
-		name = "PlayerShootCarNotCliffe",
+		name = "PlayerShootCarNot_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPanicEvent],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotCoughing],
-			[SubjectIsNotCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
+			[SubjectIsNotCsgo_sas],
 			[IsNotc5m3_cemetery],
+			[IsTalk],
+			[IsTalkCsgo_sas],
 			[IsCarAlarm],
 			[ChanceToFire60Percent],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerShootCarNotGambler
+		Response PlayerShootCarNotMechanic
 		ApplyContext "Saidremark_caralarm:1:300"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerShootCarCliffe",
+		name = "PlayerShootCar_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPanicEvent],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotCoughing],
-			[SubjectIsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
+			[SubjectIsCsgo_sas],
 			[IsNotc5m3_cemetery],
+			[IsTalk],
+			[IsTalkCsgo_sas],
 			[IsCarAlarm],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerShootCarGambler
+		Response PlayerShootCarMechanic
 		ApplyContext "Saidremark_caralarm:1:300"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerHeardBoomerCliffe",
+		name = "PlayerHeardBoomer_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerHeardBoomer],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotSpottedVehicle],
 		],
-		Response PlayerHeardBoomerGambler
+		Response PlayerHeardBoomerMechanic
 	},
 	{
-		name = "PlayerHeardHunterCliffe",
+		name = "PlayerHeardHunter_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerHeardHunter],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotSpottedVehicle],
 		],
-		Response PlayerHeardHunterGambler
+		Response PlayerHeardHunterMechanic
 	},
 	{
-		name = "PlayerHeardSmokerCliffe",
+		name = "PlayerHeardSmoker_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerHeardSmoker],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotSpottedVehicle],
 		],
-		Response PlayerHeardSmokerGambler
+		Response PlayerHeardSmokerMechanic
 	},
 	{
-		name = "PlayerHeardChargerCliffe",
+		name = "PlayerHeardCharger_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerHeardCharger],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotSpottedVehicle],
 		],
-		Response PlayerHeardChargerGambler
+		Response PlayerHeardChargerMechanic
 	},
 	{
-		name = "PlayerHeardSpitterCliffe",
+		name = "PlayerHeardSpitter_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerHeardSpitter],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotSpottedVehicle],
 		],
-		Response PlayerHeardSpitterGambler
+		Response PlayerHeardSpitterMechanic
 	},
 	{
-		name = "PlayerHeardJockeyCliffe",
+		name = "PlayerHeardJockey_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerHeardJockey],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotSpottedVehicle],
 		],
-		Response PlayerHeardJockeyGambler
+		Response PlayerHeardJockeyMechanic
 	},
 	{
-		name = "PlayerHeardBoomerC1Cliffe",
+		name = "PlayerHeardBoomerC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerHeardBoomer],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[C1M1orC1M2],
 			[NoKnowBoomer],
 		],
-		Response PlayerHeardBoomerC1Gambler
+		Response PlayerHeardBoomerC1Mechanic
 	},
 	{
-		name = "PlayerHeardHunterC1Cliffe",
+		name = "PlayerHeardHunterC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerHeardHunter],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[C1M1orC1M2],
 			[NoKnowHunter],
 		],
-		Response PlayerHeardBoomerC1Gambler
+		Response PlayerHeardBoomerC1Mechanic
 	},
 	{
-		name = "PlayerHeardSmokerC1Cliffe",
+		name = "PlayerHeardSmokerC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerHeardSmoker],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[C1M1orC1M2],
 			[NoKnowSmoker],
 		],
-		Response PlayerHeardBoomerC1Gambler
+		Response PlayerHeardBoomerC1Mechanic
 	},
 	{
-		name = "PlayerHeardChargerC1Cliffe",
+		name = "PlayerHeardChargerC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerHeardCharger],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[C1M1orC1M2],
 			[NoKnowCharger],
 		],
-		Response PlayerHeardBoomerC1Gambler
+		Response PlayerHeardBoomerC1Mechanic
 	},
 	{
-		name = "PlayerHeardSpitterC1Cliffe",
+		name = "PlayerHeardSpitterC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerHeardSpitter],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[C1M1orC1M2],
 			[NoKnowSpitter],
 		],
-		Response PlayerHeardBoomerC1Gambler
+		Response PlayerHeardBoomerC1Mechanic
 	},
 	{
-		name = "PlayerHeardJockeyC1Cliffe",
+		name = "PlayerHeardJockeyC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerHeardJockey],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[C1M1orC1M2],
 			[NoKnowJockey],
 		],
-		Response PlayerHeardJockeyC1Gambler
+		Response PlayerHeardJockeyC1Mechanic
 	},
 	{
-		name = "PlayerHeardTankCliffe",
+		name = "PlayerHeardTank_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerHeardTank],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotSpottedVehicle],
 		],
-		Response PlayerHeardTankGambler
+		Response PlayerHeardTankMechanic
 	},
 	{
-		name = "PlayerHeardWitchCliffe",
+		name = "PlayerHeardWitch_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerHeardWitch],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotSpottedVehicle],
 		],
-		Response PlayerHeardWitchGambler
+		Response PlayerHeardWitchMechanic
 	},
 	{
-		name = "PlayerHurrahCliffe",
+		name = "PlayerHurrah_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerHurrah],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerHurrahGambler
+		Response PlayerHurrahMechanic
 	},
 	{
-		name = "PlayerWarnCarefulCliffe",
+		name = "PlayerWarnCareful_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnCareful],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerWarnCarefulGambler
+		Response PlayerWarnCarefulMechanic
 	},
 	{
-		name = "SurvivorSpottedWorldFarCliffe",
+		name = "SurvivorSpottedWorldFar_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerLook],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSmartLookAuto],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response SurvivorSpottedWorldFarGambler
+		Response SurvivorSpottedWorldFarMechanic
 	},
 	{
-		name = "C6M3_PourFinishedCliffe",
+		name = "C6M3_PourFinished_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPourFinished],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsL4D1Alive],
 			[Isc6m3_port],
 			[ChanceToFire20Percent],
 		],
-		Response C6M3_PourFinishedGambler
+		Response C6M3_PourFinishedMechanic
+		then Manager L4D1_NiceJobPour foo:0 0
 		ApplyContext "Talk:1:3"
 		applycontexttoworld
 	},
 	{
-		name = "GasPour20MoreSCCliffe",
+		name = "GasPour20MoreSC_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPourFinished],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[Score20MoreSC],
 		],
-		Response GasPour20MoreSCGambler
-		ApplyContext "_auto_GasCountOK:1:4,_auto_NoGasPourLine:1:0"
+		Response GasPour20MoreSCMechanic
+		then self GasPour20More foo:0 0.01
+		ApplyContext "_auto_GasCountOK:1:4"
 		applycontexttoworld
 	},
 	{
-		name = "GasPour1MoreWaitCliffe",
+		name = "GasPour20MoreWait_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptGasPour20More],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsSpeaking],
 			[_auto_IsGasCountOK],
 		],
-		Response GasPour20MoreWaitGambler
+		Response GasPour20MoreWaitMechanic
+		then self GasPour20More foo:0 0.1
 	},
 	{
-		name = "GasPour10MoreSCCliffe",
+		name = "GasPour10MoreSC_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPourFinished],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[Score10MoreSC],
 		],
-		Response GasPour10MoreSCGambler
+		Response GasPour10MoreSCMechanic
+		then self GasPour10More foo:0 0.01
 		ApplyContext "_auto_GasCountOK:1:4"
 		applycontexttoworld
 	},
 	{
-		name = "GasPour10MoreWaitCliffe",
+		name = "GasPour10MoreWait_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptGasPour10More],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsSpeaking],
 			[_auto_IsGasCountOK],
 		],
-		Response GasPour10MoreWaitGambler
+		Response GasPour10MoreWaitMechanic
+		then self GasPour10More foo:0 0.1
 	},
 	{
-		name = "GasPour1MoreSCCliffe",
+		name = "GasPour1MoreSC_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPourFinished],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[Score1MoreSC],
 		],
-		Response GasPour1MoreSCGambler
+		Response GasPour1MoreSCMechanic
+		then self GasPour1More foo:0 0.01
 		ApplyContext "_auto_GasCountOK:1:4,_auto_NoGasPourLine:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "GasPour1MoreWaitCliffe",
+		name = "GasPour1MoreWait_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptGasPour1More],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsSpeaking],
 			[_auto_IsGasCountOK],
 		],
-		Response GasPour1MoreWaitGambler
+		Response GasPour1MoreWaitMechanic
+		then self GasPour1More foo:0 0.1
 	},
 	{
-		name = "GasPour2MoreSCCliffe",
+		name = "GasPour2MoreSC_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPourFinished],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[Score2MoreSC],
 		],
-		Response GasPour2MoreSCGambler
+		Response GasPour2MoreSCMechanic
+		then self GasPour2More foo:0 0.01
 		ApplyContext "_auto_GasCountOK:1:4"
 		applycontexttoworld
 	},
 	{
-		name = "GasPour2MoreWaitCliffe",
+		name = "GasPour2MoreWait_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptGasPour2More],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsSpeaking],
 			[_auto_IsGasCountOK],
 		],
-		Response GasPour2MoreWaitGambler
+		Response GasPour2MoreWaitMechanic
+		then self GasPour2More foo:0 0.1
 	},
 	{
-		name = "GasPour3MoreSCCliffe",
+		name = "GasPour3MoreSC_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPourFinished],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[Score3MoreSC],
 		],
-		Response GasPour3MoreSCGambler
+		Response GasPour3MoreSCMechanic
+		then self GasPour3More foo:0 0.01
 		ApplyContext "_auto_GasCountOK:1:4"
 		applycontexttoworld
 	},
 	{
-		name = "GasPour3MoreWaitCliffe",
+		name = "GasPour3MoreWait_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptGasPour3More],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsSpeaking],
 			[_auto_IsGasCountOK],
 		],
-		Response GasPour3MoreWaitGambler
+		Response GasPour3MoreWaitMechanic
+		then self GasPour3More foo:0 0.1
 	},
 	{
-		name = "GasPour5MoreSCCliffe",
+		name = "GasPour5MoreSC_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPourFinished],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[Score5MoreSC],
 		],
-		Response GasPour5MoreSCGambler
+		Response GasPour5MoreSCMechanic
+		then self GasPour5More foo:0 0.01
 		ApplyContext "_auto_GasCountOK:1:4"
 		applycontexttoworld
 	},
 	{
-		name = "GasPour5MoreWaitCliffe",
+		name = "GasPour5MoreWait_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptGasPour5More],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsSpeaking],
 			[_auto_IsGasCountOK],
 		],
-		Response GasPour5MoreWaitGambler
+		Response GasPour5MoreWaitMechanic
+		then self GasPour5More foo:0 0.1
 	},
 	{
-		name = "GasPourDoneSCCliffe",
+		name = "GasPourDoneSC_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPourFinished],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsScavenge],
 			[ScoreDoneSC],
 		],
-		Response GasPourDoneSCGambler
+		Response GasPourDoneSCMechanic
 		ApplyContext "Talk:1:3"
 		applycontexttoworld
 	},
 	{
-		name = "GasPourSCCliffe",
+		name = "GasPourSC_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPourStarted],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotAlone],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsScavenge],
 			[ChanceToFire50Percent],
 			[_auto_NotNoGasPourLine],
 		],
-		Response GasPourSCGambler
-		ApplyContext "TalkCliffe:1:2"
+		Response GasPourSCMechanic
+		ApplyContext "TalkCsgo_sas:1:2"
 	},
 	{
-		name = "GasPourSCSoloCliffe",
+		name = "GasPourSCSolo_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPourStarted],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsAlone],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsScavenge],
 			[ChanceToFire50Percent],
 			[_auto_NotNoGasPourLine],
 		],
-		Response GasPourSCSoloGambler
-		ApplyContext "TalkCliffe:1:2"
+		Response GasPourSCSoloMechanic
+		ApplyContext "TalkCsgo_sas:1:2"
 	},
 	{
-		name = "GasPourAloneCliffe",
+		name = "GasPourAlone_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPourStarted],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsAlone],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotScavenge],
 			[ChanceToFire50Percent],
 			[_auto_NotNoGasPourLine],
 		],
-		Response GasPourSCSoloGambler
-		ApplyContext "TalkCoach:1:2"
+		Response GasPourSCSoloMechanic
+		ApplyContext "TalkCsgo_sas:1:2"
 	},
 	{
-		name = "GrabbingGasSCCliffe",
+		name = "GrabbingGasSC_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerEquippedScavengeItem],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
 			[IsNotAlone],
 			[IsClosestSurvivorNear500],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[NotSaidGrabbingCan],
 		],
-		Response GrabbingGasSCGambler
+		Response GrabbingGasSCMechanic
 		ApplyContext "SaidGrabbingCan:1:8"
 	},
 	{
-		name = "PlayerShotGasCanCliffe",
+		name = "PlayerShotGasCan_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerShotGasCan],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidPlayerShotGasCan],
 			[IsScavenge],
 		],
-		Response PlayerShotGasCanGambler
+		Response PlayerShotGasCanMechanic
 		ApplyContext "SaidPlayerShotGasCan:1:10"
 		applycontexttoworld
 	},
 	{
-		name = "ScavengeStartCliffe",
+		name = "ScavengeStart_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptSurvivorLeavingCheckpoint],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsScavenge],
 			[IsNotSaidLeavingSafeArea],
 		],
-		Response ScavengeStartGambler
+		Response ScavengeStartMechanic
 		ApplyContext "SaidLeavingSafeArea:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "ScavengeStartC1M4Cliffe",
+		name = "ScavengeStartC1M4_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptSurvivorLeavingCheckpoint],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[ismap_c1m4_atrium],
 			[IsScavenge],
 			[IsNotSaidLeavingSafeArea],
 		],
-		Response FinaleStartC1M4Gambler
+		Response ScavengeStartC1M4Mechanic
 		ApplyContext "SaidLeavingSafeArea:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerCommentJockeyCliffe",
+		name = "PlayerCommentJockey_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptCommentJockey],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IssuerCloseEnough],
-			[FromIsNotProducer],
-			[FromIsNotTeenGirl],
 			[IsNotIncapacitated],
 			[IntensityUnder50],
-			[IsNotSaidBeenJockeyedCliffe],
-			[IsNotBeingJockeyed],
 			[IsNotSaidCommentJockey],
+			[IsNotSaidBeenJockeyedCsgo_sas],
+			[IsNotBeingJockeyed],
 		],
-		Response PlayerCommentJockeyGambler
+		Response PlayerCommentJockeyMechanic
+		then gambler commentjockey2 foo:0 0.1
 		ApplyContext "SaidCommentJockey:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerCommentJockey2Cliffe",
+		name = "PlayerCommentJockeyMale_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptCommentJockey2],
-			[IsCliffe],
+			[ConceptCommentJockey],
+			[IsCsgo_sas],
 			[IssuerCloseEnough],
-			[IsNotSaidBeenJockeyedCliffe],
-			[IsNotBeingJockeyed],
 			[IsNotIncapacitated],
+			[FromIsNotProducer],
+			[FromIsNotTeenGirl],
+			[ChanceToFire25Percent],
+			[IntensityUnder50],
+			[IsNotSaidCommentJockey],
+			[IsNotSaidBeenJockeyedCsgo_sas],
+			[IsNotBeingJockeyed],
 		],
-		Response PlayerCommentJockey2Gambler
+		Response PlayerCommentJockeyMaleMechanic
+		ApplyContext "SaidCommentJockey:1:0"
+		applycontexttoworld
 	},
 	{
-		name = "C4M2LockTheDoorCheckPointCliffe",
+		name = "C4M2LockTheDoorCheckPoint_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerLockTheDoorCheckPoint],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsInSafeSpot],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[ismap_c4m2_sugarmill_a],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C4M2LockTheDoorCheckPointGambler
+		Response C4M2LockTheDoorCheckPointMechanic
 	},
 	{
-		name = "GoingToDieCoachCoachCliffe",
+		name = "GoingToDieCoachCoach_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerGoingToDie],
 			[IsNotSpeaking],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotComplainBlock],
 			[IsCoachAlive],
 			[IsCoachNear200],
 			[ChanceToFire30Percent],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[IsNotInStartArea],
 			[IsNotInCheckpoint],
 			[_auto_NotSpottedVehicle],
 		],
-		Response GoingToDieCoachCoachGambler
+		Response GoingToDieCoachCoachMechanic
+		then coach coachcoaches foo:0 .5
 		ApplyContext "IsComplain:1:25"
 	},
 	{
-		name = "PlayerAlertGiveItemStopCliffe",
+		name = "PlayerAlertGiveItemStop_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptAlertGiveItemStop],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidAlertGiveItemStop],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerAlertGiveItemStopGambler
+		Response PlayerAlertGiveItemStopMechanic
 		ApplyContext "SaidAlertGiveItemStop:1:10"
 	},
 	{
-		name = "PlayerAlertGiveItemStopAnFirstAidCliffe",
+		name = "PlayerAlertGiveItemStopAnFirstAid_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptAlertGiveItemStopFirstAidA],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidAlertGiveItemStopFirstAid],
 			[NoHasFirstAidKit],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerAlertGiveItemStopAnFirstAidGambler
+		Response PlayerAlertGiveItemStopAnFirstAidMechanic
+		then subject AlertGiveItemStop foo:0 0
 	},
 	{
-		name = "PlayerAlertGiveItemStopQnFirstAidCliffe",
+		name = "PlayerAlertGiveItemStopC1_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptAlertGiveItemStop],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidAlertGiveItemStop],
+			[IsWorldTalkCsgo_sas],
+			[ismap_c1m1_hotel],
+			[NoKnowNames],
+		],
+		Response PlayerAlertGiveItemStopC1Mechanic
+		ApplyContext "SaidAlertGiveItemStop:1:10"
+	},
+	{
+		name = "PlayerAlertGiveItemStopQnFirstAid_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptBashWithItem],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsItemFirstAidKit],
 			[IsNotSaidAlertGiveItemStopFirstAid],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerAlertGiveItemStopQnFirstAidGambler
+		Response PlayerAlertGiveItemStopQnFirstAidMechanic
+		then subject AlertGiveItemStopFirstAidA foo:0 0
 		ApplyContext "SaidAlertGiveItemStopFirstAid:1:10"
 	},
 	{
-		name = "PlayerCoachPouncedCliffe",
+		name = "PlayerCoachPounced_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptSurvivorWasPounced],
@@ -15167,17 +16160,17 @@ local jess_cliffe_rules =
 			[IsNotCoughing],
 			[SubjectIsCoach],
 			[IsNotSaidCoachPounced],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerCoachPouncedGambler
+		Response PlayerCoachPouncedMechanic
 		ApplyContext "CoachPounced:1:60"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerCoachPouncedC1Cliffe",
+		name = "PlayerCoachPouncedC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptSurvivorWasPounced],
@@ -15185,400 +16178,497 @@ local jess_cliffe_rules =
 			[IsNotCoughing],
 			[SubjectIsCoach],
 			[IsNotSaidCoachPounced],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[C1M1orC1M2],
+			[NoKnowHunter],
 			[IsNotSurvival],
 		],
-		Response PlayerCoachPouncedC1Gambler
-		ApplyContext "CoachPounced:1:60"
+		Response PlayerCoachPouncedC1Mechanic
+		ApplyContext "SaidCoachPounced:1:60"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerEatPillsCliffe",
+		name = "PlayerGamblerPouncedC1_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptSurvivorWasPounced],
+			[ChanceToFire30Percent],
+			[IsNotCoughing],
+			[SubjectIsGambler],
+			[IsNotSaidGamblerPounced],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[C1M1orC1M2],
+			[NoKnowHunter],
+			[IsNotSurvival],
+		],
+		Response PlayerCoachPouncedC1Mechanic
+		ApplyContext "SaidGamblerPounced:1:60"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerEatPills_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptEatPills],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerEatPillsGambler
+		Response PlayerEatPillsMechanic
 	},
 	{
-		name = "PlayerGetInsideCheckPointCliffe",
+		name = "PlayerGamblerPounced_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptSurvivorWasPounced],
+			[ChanceToFire30Percent],
+			[IsNotCoughing],
+			[SubjectIsGambler],
+			[IsNotSaidGamblerPounced],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+		],
+		Response PlayerGamblerPouncedMechanic
+		ApplyContext "GamblerPounced:1:60"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerGetInsideCheckPoint_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerGetInsideCheckPoint],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsInSafeSpot],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[SomeoneOutsideSafeSpot],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response PlayerGetInsideCheckPointGambler
+		Response PlayerGetInsideCheckPointMechanic
+		then any StayTogetherInsideReponse foo:0 -1.898
 	},
 	{
-		name = "PlayerStayTogetherSaferoomCliffe",
+		name = "PlayerStayTogetherSaferoom_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerStayTogether],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsInSafeSpot],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[SomeoneOutsideSafeSpot],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response PlayerStayTogetherSaferoomGambler
+		Response PlayerStayTogetherSaferoomMechanic
 	},
 	{
-		name = "PlayerGetInsideCheckPointC2M2Cliffe",
+		name = "PlayerGetInsideCheckPointC2M2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerGetInsideCheckPoint],
 			[ismap_c2m2],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsInSafeSpot],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[SomeoneOutsideSafeSpot],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response PlayerGetInsideCheckPointC2M2Gambler
+		Response PlayerGetInsideCheckPointC2M2Mechanic
+		then any StayTogetherInsideReponse foo:0 0.3
 	},
 	{
-		name = "PlayerGetInsideCheckPointC4M3Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerGetInsideCheckPoint],
-			[isc4m3],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsInSafeSpot],
-			[IsTalk],
-			[IsTalkCliffe],
-			[SomeoneOutsideSafeSpot],
-			[IsWorldTalkCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response PlayerGetInsideCheckPointC4M3Gambler
-	},
-	{
-		name = "PlayerGrabbedByJockeyCliffe",
+		name = "PlayerGrabbedByJockey_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptSurvivorJockeyed],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidBeenJockeyedCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsNotSaidBeenJockeyedCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerGrabbedByJockeyGambler
-		ApplyContext "SaidBeenJockeyedCliffe:1:6,TalkCliffe:1:6"
+		Response PlayerGrabbedByJockeyMechanic
+		ApplyContext "SaidBeenJockeyedCsgo_sas:1:6,TalkCsgo_sas:1:6"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerGrabbedByJockeyC1Cliffe",
+		name = "PlayerGrabbedByJockeyC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptSurvivorJockeyed],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidBeenJockeyedCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsNotSaidBeenJockeyedCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[C1M1orC1M2],
 			[NoKnowJockey],
 			[IsNotSurvival],
 		],
-		Response PlayerGrabbedByJockeyC1Gambler
-		ApplyContext "SaidBeenJockeyedCliffe:1:6,TalkCliffe:1:6"
+		Response PlayerGrabbedByJockeyC1Mechanic
+		ApplyContext "SaidBeenJockeyedCsgo_sas:1:6,TalkCsgo_sas:1:6"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerGrenadeMolotovCliffe",
+		name = "PlayerGrenadeMolotov_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptThrewGrenade],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsGrenadeMolotov],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotSpottedVehicle],
 		],
-		Response PlayerGrenadeMolotovGambler
+		Response PlayerGrenadeMolotovMechanic
+		then Any GrenadeCareful foo:0 -0.821
 	},
 	{
-		name = "PlayerGrenadePipeBombCliffe",
+		name = "PlayerGrenadeMolotovTank_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptThrewGrenade],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsGrenadeMolotov],
+			[IsZombiePresentTank],
+			[IsSaidTankWarn2],
+			[IsWorldTalkCsgo_sas],
+			[_auto_NotSpottedVehicle],
+		],
+		Response PlayerGrenadeMolotovTankMechanic
+	},
+	{
+		name = "PlayerGrenadePipeBomb_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptThrewGrenade],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
 			[IsGrenadePipeBomb],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotSpottedVehicle],
 		],
-		Response PlayerGrenadePipeBombGambler
+		Response PlayerGrenadePipeBombMechanic
+		then Any GrenadeCareful foo:0 -0.579
 	},
 	{
-		name = "PlayerGrenadeVomitJarCliffe",
+		name = "PlayerGrenadeVomitJar_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptThrewGrenade],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsGrenadeVomitJar],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotSpottedVehicle],
 		],
-		Response PlayerGrenadeVomitJarGambler
+		Response PlayerGrenadeVomitJarMechanic
+		then Any GrenadeCareful foo:0 -1.598
 	},
 	{
-		name = "PlayerGrenadeVomitJarC1Cliffe",
+		name = "PlayerGrenadeVomitJarTank_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptThrewGrenade],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsGrenadeVomitJar],
-			[IsWorldTalkCliffe],
+			[IsZombiePresentTank],
+			[IsSaidTankWarn2],
+			[isNotmap_c1m1_hotel],
+			[isNotmap_c1m2_streets],
+			[IsWorldTalkCsgo_sas],
+			[_auto_NotSpottedVehicle],
+		],
+		Response PlayerGrenadeVomitJarTankMechanic
+	},
+	{
+		name = "PlayerGrenadeVomitJarC1_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptThrewGrenade],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsGrenadeVomitJar],
+			[IsWorldTalkCsgo_sas],
 			[ismap_c1m1_hotel],
 		],
-		Response PlayerGrenadeVomitJarC1Gambler
+		Response PlayerGrenadeVomitJarC1Mechanic
+		then Any GrenadeCareful foo:0 -1.517
 	},
 	{
-		name = "PlayerIncapacitatedInitialCliffe",
+		name = "PlayerIncapacitatedInitial_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerIncapacitated],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerIncapacitatedInitialGambler
-		ApplyContext "TalkCliffe:1:2"
+		Response PlayerIncapacitatedInitialMechanic
+		ApplyContext "TalkCsgo_sas:1:2"
 	},
 	{
-		name = "PlayerIncapacitatedInitialC1M2Cliffe",
+		name = "PlayerIncapacitatedInitialC1M2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerIncapacitated],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[ismap_c1m2_streets],
 			[IsC1M2WhitakerErrand],
 		],
-		Response PlayerIncapacitatedInitialC1M2Gambler
-		ApplyContext "TalkCliffe:1:2"
+		Response PlayerIncapacitatedInitialC1M2Mechanic
+		then orator C1M2SurvivorDown foo:0 0.1
+		ApplyContext "TalkCsgo_sas:1:2"
 	},
 	{
-		name = "PlayerKillConfirmationCliffe",
+		name = "PlayerKillConfirmation_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptKilledZombie],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[SubjectIsNotTank],
 			[SubjectIsNotAWitch],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSubjectFar300],
 			[ChanceToFire40Percent],
 			[isNotmap_c1m1_hotel],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[IsNotSpeakingWeight0],
 			[_auto_NotSpottedVehicle],
 		],
-		Response PlayerKillConfirmationGambler
+		Response PlayerKillConfirmationMechanic
+		then Any PlayerNiceShot foo:0 -0.399
 	},
 	{
-		name = "PlayerKillConfirmationC1M1Cliffe",
+		name = "PlayerKillConfirmationC1M1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptKilledZombie],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[SubjectIsNotTank],
-			[IsTalkCliffe],
+			[IsTalk],
+			[IsTalkCsgo_sas],
 			[IsUsingFirearm],
+			[IsSubjectFar300],
 			[ismap_c1m1_hotel],
 			[IsNotFirstKillC1],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerKillConfirmationC1M1Gambler
-		ApplyContext "Talk:1:3,FirstKill:1:0"
+		Response PlayerKillConfirmationC1M1Mechanic
+		ApplyContext "Talk:1:5,FirstKill:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerKillConfirmationC1M1MeleeCliffe",
+		name = "PlayerKillConfirmationC1M1Melee_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptKilledZombie],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[SubjectIsNotTank],
 			[SubjectIsNotBoomer],
 			[SubjectIsNotSmoker],
-			[IsTalkCliffe],
+			[IsTalk],
+			[IsTalkCsgo_sas],
 			[EquippedMeleeWeapon],
 			[ismap_c1m1_hotel],
 			[IsNotFirstKillC1],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerKillConfirmationC1M1MeleeGambler
-		ApplyContext "Talk:1:3,FirstKill:1:0"
+		Response PlayerKillConfirmationC1M1MeleeMechanic
+		ApplyContext "Talk:1:5,FirstKill:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "RightfulKillerCliffe",
+		name = "KillSteal_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptRightfulKiller],
+			[ConceptKillSteal],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
+			[IssuerReallyClose],
+			[IsCsgo_sasAlsoWarn],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsNotSpeakingWeight0],
 		],
-		Response RightfulKillerGambler
+		Response KillStealMechanic
+		then From RightfulKiller foo:0 -0.953
 	},
 	{
-		name = "PlayerKillTankConfirmationCliffe",
+		name = "InsistMine_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptInsistMine],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+		],
+		Response InsistMineMechanic
+		then From KillStealCalledOut foo:0 -1.545
+		ApplyContext "TalkCsgo_sas:1:1.1"
+	},
+	{
+		name = "PlayerKillSpitterConfirmation_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptKilledZombie],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
+			[SubjectIsSpitter],
+			[IsSubjectNear250],
+			[ChanceToFire20Percent],
+			[IsWorldTalkCsgo_sas],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerKillSpitterConfirmationMechanic
+	},
+	{
+		name = "PlayerKillSpitterGambler_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptKilledZombie],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[SubjectIsSpitter],
+			[IsGamblerNear400],
+			[ChanceToFire20Percent],
+			[IsWorldTalkCsgo_sas],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerKillSpitterGamblerMechanic
+	},
+	{
+		name = "PlayerKillTankConfirmation_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptKilledZombie],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
 			[SubjectIsTank],
 			[IsNotSaidTankDead],
 			[IsNotAlone],
 			[IsNotIncapacitated],
 			[IsRocking],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotFinaleStarted],
 			[_auto_NotSpottedVehicle],
 		],
-		Response PlayerKillTankConfirmationGambler
-		ApplyContext "SaidTankDead:1:60,TalkCliffe:1:5"
+		Response PlayerKillTankConfirmationMechanic
+		ApplyContext "SaidTankDead:1:60,TalkCsgo_sas:1:5"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerKillConfirmationEllisCloseCliffe",
+		name = "PlayerKillTankNotHealthy_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptKilledZombie],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[SubjectIsNotTank],
-			[SubjectIsNotAWitch],
-			[IsSubjectFar300],
-			[IsMechanicAlive],
-			[IsMechanicNear400],
-			[IsEllisAlsoWarn],
-			[ChanceToFire5Percent],
-			[IsNotAlone],
-			[IsNotIncapacitated],
-			[IsRocking],
-			[IsWorldTalkCliffe],
-			[_auto_NotFinaleStarted],
-			[_auto_NotSpottedVehicle],
-		],
-		// 	forceweight 100
-		Response PlayerKillConfirmationEllisCloseGambler
-	},
-	{
-		name = "PlayerKillTankNotHealthyCliffe",
-		criteria = 
-		[
-			[ConceptKilledZombie],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[SubjectIsTank],
 			[IsNotSaidTankDead],
 			[IsNotAlone],
 			[IsNotIncapacitated],
 			[IsNotHealthy],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotFinaleStarted],
 			[_auto_NotSpottedVehicle],
 		],
-		Response PlayerKillTankNotHealthyGambler
-		ApplyContext "SaidTankDead:1:60,TalkCliffe:1:5"
+		Response PlayerKillTankNotHealthyMechanic
+		ApplyContext "SaidTankDead:1:60,TalkCsgo_sas:1:5"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerKillTankConfirmationC1M2Cliffe",
+		name = "PlayerKillTankConfirmationC1M2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptKilledZombie],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[SubjectIsTank],
 			[IsNotSaidTankDead],
 			[IsNotIncapacitated],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[ismap_c1m2_streets],
 			[IsEveryoneAlive],
 			[IsNotSurvival],
 		],
-		Response PlayerKillTankConfirmationC1M2Gambler
+		Response PlayerKillTankConfirmationC1M2Mechanic
+		then csgo_sas C1M2TankInfo foo:0 0.1
 		ApplyContext "SaidTankDead:1:0,Talk:1:12"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerCr0wnedWitchCliffe",
+		name = "PlayerCr0wnedWitch_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptKilledZombie],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[SubjectIsAWitch],
 			[IsNotWitchAggro],
 		],
 		Response NoResponse
 	},
 	{
-		name = "PlayerKilledStartledWitchCliffe",
+		name = "PlayerKilledStartledWitch_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptKilledZombie],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[SubjectIsAWitch],
 			[IsWitchAggro],
 		],
@@ -15587,80 +16677,42 @@ local jess_cliffe_rules =
 		applycontexttoworld
 	},
 	{
-		name = "PlayerLockTheDoorCheckPointCliffe",
+		name = "PlayerLockTheDoorCheckPoint_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerLockTheDoorCheckPoint],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsInSafeSpot],
 			[IsNotAlone],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response PlayerLockTheDoorCheckPointGambler
+		Response PlayerLockTheDoorCheckPointMechanic
 	},
 	{
-		name = "PlayerLockTheDoorCheckPointC1Cliffe",
+		name = "PlayerLockTheDoorCheckPointC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerLockTheDoorCheckPoint],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsInSafeSpot],
+			[IsNotAlone],
 			[ismap_c1m1_hotel],
-			[IsNotAlone],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response PlayerLockTheDoorCheckPointC1Gambler
+		Response PlayerLockTheDoorCheckPointC1Mechanic
 	},
 	{
-		name = "PlayerMechanicPouncedCliffe",
-		criteria = 
-		[
-			[ConceptSurvivorWasPounced],
-			[ChanceToFire30Percent],
-			[IsNotCoughing],
-			[SubjectIsMechanic],
-			[IsNotSaidMechanicPounced],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-		],
-		Response PlayerMechanicPouncedGambler
-		ApplyContext "MechanicPounced:1:60"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerMechanicPouncedC1Cliffe",
-		criteria = 
-		[
-			[ConceptSurvivorWasPounced],
-			[ChanceToFire30Percent],
-			[IsNotCoughing],
-			[SubjectIsMechanic],
-			[IsNotSaidMechanicPounced],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[C1M1orC1M2],
-			[IsNotSurvival],
-		],
-		Response PlayerCoachPouncedC1Gambler
-		ApplyContext "MechanicPounced:1:60"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerProducerPouncedCliffe",
+		name = "PlayerProducerPounced_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptSurvivorWasPounced],
@@ -15668,17 +16720,17 @@ local jess_cliffe_rules =
 			[IsNotCoughing],
 			[SubjectIsProducer],
 			[IsNotSaidProducerPounced],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerProducerPouncedGambler
-		ApplyContext "ProducerPounced:1:60"
+		Response PlayerProducerPouncedMechanic
+		ApplyContext "SaidProducerPounced:1:60"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerProducerPouncedC1Cliffe",
+		name = "PlayerProducerPouncedC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptSurvivorWasPounced],
@@ -15686,42 +16738,43 @@ local jess_cliffe_rules =
 			[IsNotCoughing],
 			[SubjectIsProducer],
 			[IsNotSaidProducerPounced],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[C1M1orC1M2],
+			[NoKnowHunter],
 			[IsNotSurvival],
 		],
-		Response PlayerProducerPouncedC1Gambler
-		ApplyContext "ProducerPounced:1:60"
+		Response PlayerProducerPouncedC1Mechanic
+		ApplyContext "SaidProducerPounced:1:60"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRevivedByDefibrillatorCliffe",
+		name = "PlayerRevivedByDefibrillator_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRevivedByDefibrillator],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 		],
-		Response PlayerRevivedByDefibrillatorGambler
-		ApplyContext "TalkCliffe:1:3"
+		Response PlayerRevivedByDefibrillatorMechanic
+		ApplyContext "TalkCsgo_sas:1:3"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRevivedByDefibrillator2Cliffe",
+		name = "PlayerRevivedByDefibrillator2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRevivedByDefibrillatorDelayed],
-			[IsCliffe],
+			[IsCsgo_sas],
 		],
-		Response PlayerRevivedByDefibrillator2Gambler
-		ApplyContext "TalkCliffe:1:3"
+		Response PlayerRevivedByDefibrillator2Mechanic
+		ApplyContext "TalkCsgo_sas:1:3"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerSuggestMeHealthCliffe",
+		name = "PlayerSuggestMeHealth_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptTalkIdle],
@@ -15729,686 +16782,606 @@ local jess_cliffe_rules =
 			[TimeSinceGroupInCombat20],
 			[ChanceToFire50Percent],
 			[IsNotIncapacitated],
-			[YesHasFirstAidKit],
 			[IsNotSuggestedHealth],
-			[IsCliffe],
+			[YesHasFirstAidKit],
+			[IsCsgo_sas],
 			[IsNotBeingHealed],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerSuggestMeHealthGambler
+		Response PlayerSuggestMeHealthMechanic
+		then Any PlayerSuggestHealth foo:0 0
 	},
 	{
-		name = "PlayerSuggestHealthGenericCliffe",
+		name = "PlayerSuggestHealthGeneric_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSuggestHealth],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IssuerReallyClose],
 			[IsNotBeingHealed],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[TimeSinceGroupInCombat20],
 			[IsNotSpeakingWeight0],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerSuggestHealthGenericGambler
+		Response PlayerSuggestHealthGenericMechanic
 		ApplyContext "SuggestedHealth:1:120"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerSuggestHealthC1Cliffe",
+		name = "PlayerSuggestHealthC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSuggestHealth],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IssuerReallyClose],
 			[IsNotBeingHealed],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[TimeSinceGroupInCombat20],
 			[IsNotSpeakingWeight0],
-			[IsWorldTalkCliffe],
-			[C1M1orC1M2],
-			[IsNotSurvival],
+			[IsWorldTalkCsgo_sas],
+			[ismap_c1m1_hotel],
+			[NoKnowNames],
 		],
-		Response PlayerSuggestHealthC1Gambler
+		Response PlayerSuggestHealthC1Mechanic
 		ApplyContext "SuggestedHealth:1:120"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerSuggestHealthCoachCliffe",
+		name = "PlayerSuggestHealthCoach_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSuggestHealth],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IssuerReallyClose],
 			[IsNotBeingHealed],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[TimeSinceGroupInCombat20],
 			[IsNotSpeakingWeight0],
 			[FromIsCoach],
 			[ChanceToFire50Percent],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[isNotmap_c1m1_hotel],
-			[isNotmap_c1m2_streets],
 		],
-		Response PlayerSuggestHealthCoachGambler
+		Response PlayerSuggestHealthCoachMechanic
 		ApplyContext "SuggestedHealth:1:120"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerSuggestHealthMechanicCliffe",
+		name = "PlayerSuggestHealthGambler_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSuggestHealth],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IssuerReallyClose],
 			[IsNotBeingHealed],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[TimeSinceGroupInCombat20],
 			[IsNotSpeakingWeight0],
-			[FromIsMechanic],
+			[FromIsGambler],
 			[ChanceToFire50Percent],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[isNotmap_c1m1_hotel],
-			[isNotmap_c1m2_streets],
 		],
-		Response PlayerSuggestHealthMechanicGambler
+		Response PlayerSuggestHealthGamblerMechanic
 		ApplyContext "SuggestedHealth:1:120"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerSuggestHealthProducerCliffe",
+		name = "PlayerSuggestHealthProducer_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSuggestHealth],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IssuerReallyClose],
 			[IsNotBeingHealed],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotIncapacitated],
 			[TimeSinceGroupInCombat20],
 			[IsNotSpeakingWeight0],
 			[FromIsProducer],
 			[ChanceToFire50Percent],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[isNotmap_c1m1_hotel],
-			[isNotmap_c1m2_streets],
 		],
-		Response PlayerSuggestHealthProducerGambler
+		Response PlayerSuggestHealthProducerMechanic
 		ApplyContext "SuggestedHealth:1:120"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerTransitionCliffe",
+		name = "PlayerTransition_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerTransition],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidPlayerTransition],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotSomeoneDied],
 			[isNotmap_c1m1_hotel],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response PlayerTransitionGambler
+		Response PlayerTransitionMechanic
 		ApplyContext "SaidPlayerTransition:1:90"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerTransitionCloseCliffe",
+		name = "PlayerTransitionClose_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerTransition],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidPlayerTransition],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotAlone],
 			[IsSomeoneDied],
 			[isNotmap_c1m1_hotel],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response PlayerTransitionCloseGambler
+		Response PlayerTransitionCloseMechanic
 		ApplyContext "SaidPlayerTransition:1:90"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerTransitionSoloCliffe",
+		name = "PlayerTransitionC1M2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerTransition],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidPlayerTransition],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsAlone],
-			[IsSomeoneDied],
-			[isNotmap_c1m1_hotel],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response PlayerTransitionSoloGambler
-		ApplyContext "SaidPlayerTransition:1:90"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerTransitionC1M2Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerTransition],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsNotSaidPlayerTransition],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[ismap_c1m2_streets],
 			[IsNotAlone],
 			[IsNotSomeoneDied],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response PlayerTransitionC1M2Gambler
+		Response PlayerTransitionC1M2Mechanic
 		ApplyContext "SaidPlayerTransition:1:90"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerTransitionCloseC1M2Cliffe",
+		name = "PlayerTransitionCloseC1M2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerTransition],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidPlayerTransition],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[ismap_c1m2_streets],
 			[IsNotAlone],
 			[IsSomeoneDied],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response PlayerTransitionCloseC1M2Gambler
+		Response PlayerTransitionCloseC1M2Mechanic
 		ApplyContext "SaidPlayerTransition:1:90"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerTransitionC1M3Cliffe",
+		name = "PlayerTransitionC1M3_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerTransition],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidPlayerTransition],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[ismap_c1m3_mall],
 			[IsNotAlone],
 			[IsNotSomeoneDied],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response PlayerTransitionC1M3Gambler
+		Response PlayerTransitionC1M3Mechanic
 		ApplyContext "SaidPlayerTransition:1:90"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerTransitionC2M1Cliffe",
+		name = "PlayerTransitionC2M1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerTransition],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidPlayerTransition],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[ismap_c2m1],
 			[IsNotAlone],
 			[IsNotSomeoneDied],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response PlayerTransitionC2M1Gambler
+		Response PlayerTransitionC2M1Mechanic
 		ApplyContext "SaidPlayerTransition:1:90"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerTransitionC2M4Cliffe",
+		name = "PlayerTransitionC5M4_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerTransition],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidPlayerTransition],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[ismap_c2m4],
-			[IsNotAlone],
-			[IsNotSomeoneDied],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response PlayerTransitionC2M4Gambler
-		ApplyContext "SaidPlayerTransition:1:90"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerTransitionC4M2Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerTransition],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsNotSaidPlayerTransition],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[ismap_c4m2_sugarmill_a],
-			[IsNotAlone],
-			[IsNotSomeoneDied],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response PlayerTransitionC4M2Gambler
-		ApplyContext "SaidPlayerTransition:1:90"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerTransitionC4M3Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerTransition],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsNotSaidPlayerTransition],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[isc4m3],
-			[IsNotAlone],
-			[IsNotSomeoneDied],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response PlayerTransitionC4M3Gambler
-		ApplyContext "SaidPlayerTransition:1:90"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerTransitionC5M4Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerTransition],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsNotSaidPlayerTransition],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsMapc5m4_quarter],
 			[IsNotAlone],
 			[IsNotSomeoneDied],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response PlayerTransitionC5M4Gambler
+		Response PlayerTransitionC5M4Mechanic
 		ApplyContext "SaidPlayerTransition:1:90"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerTransitionCloseC6M1Cliffe",
+		name = "PlayerTransitionC6M2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerTransition],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidPlayerTransition],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[Isc6m1_riverbank],
-			[IsSomeoneDied],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response PlayerTransitionCloseC6M1Gambler
-		ApplyContext "SaidPlayerTransition:1:90"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerTransitionCloseC6M2Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerTransition],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsNotSaidPlayerTransition],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[Isc6m2_bedlam],
-			[IsSomeoneDied],
+			[IsZoeyIntroActor],
+			[IsNotAlone],
+			[IsNotSomeoneDied],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response PlayerTransitionCloseC6M1Gambler
+		Response PlayerTransitionC6M2Mechanic
 		ApplyContext "SaidPlayerTransition:1:90"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerUsingDefibrillatorCliffe",
+		name = "PlayerUsingDefibrillator_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerUsingDefibrillator],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerUsingDefibrillatorGambler
+		Response PlayerUsingDefibrillatorMechanic
 	},
 	{
-		name = "PlayerWarnHeardBoomerCliffe",
+		name = "PlayerWarnHeardBoomer_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnHearZombie],
 			[IsBoomerClass],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotAlone],
 			[IsClosestSurvivorNear1200],
+			[IsNotInCheckpoint],
+			[IsNotInSafeSpot],
 			[IsNotWarnHeardBoomer],
 			[NotInCombat],
 			[IsNotSaidSpecialWarn],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotSpottedVehicle],
 		],
-		Response PlayerWarnHeardBoomerGambler
+		Response PlayerWarnHeardBoomerMechanic
 		ApplyContext "WarnHeardBoomer:1:300,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerWarnHeardJockeyC1Cliffe",
+		name = "PlayerWarnHeardCharger_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerWarnHearZombie],
+			[IsChargerClass],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsNotAlone],
+			[IsClosestSurvivorNear1200],
+			[IsNotInCheckpoint],
+			[IsNotInSafeSpot],
+			[IsNotWarnHeardCharger],
+			[NotInCombat],
+			[IsNotSaidSpecialWarn],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[_auto_NotSpottedVehicle],
+		],
+		Response PlayerWarnHeardChargerMechanic
+		ApplyContext "WarnHeardCharger:1:300,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerWarnHeardHunter_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerWarnHearZombie],
+			[IsHunterClass],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsNotAlone],
+			[IsClosestSurvivorNear1200],
+			[IsNotInCheckpoint],
+			[IsNotInSafeSpot],
+			[IsNotWarnHeardHunter],
+			[NotInCombat],
+			[IsNotSaidSpecialWarn],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[_auto_NotSpottedVehicle],
+		],
+		Response PlayerWarnHeardHunterMechanic
+		ApplyContext "WarnHeardHunter:1:300,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerWarnHeardJockey_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnHearZombie],
 			[IsJockeyClass],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotAlone],
 			[IsClosestSurvivorNear1200],
+			[IsNotInCheckpoint],
+			[IsNotInSafeSpot],
 			[IsNotWarnHeardJockey],
 			[NotInCombat],
 			[IsNotSaidSpecialWarn],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[_auto_NotSpottedVehicle],
+		],
+		Response PlayerWarnHeardJockeyMechanic
+		ApplyContext "WarnHeardJockey:1:300,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerWarnHeardJockeyC1_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerWarnHearZombie],
+			[IsJockeyClass],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsNotAlone],
+			[IsClosestSurvivorNear1200],
+			[IsNotInCheckpoint],
+			[IsNotInSafeSpot],
+			[IsNotWarnHeardJockey],
+			[NotInCombat],
+			[IsNotSaidSpecialWarn],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[C1M1orC1M2],
 			[NoKnowJockey],
 			[IsNotSurvival],
 		],
-		Response PlayerWarnHeardJockeyC1Gambler
+		Response PlayerWarnHeardJockeyC1Mechanic
 		ApplyContext "WarnHeardJockey:1:300,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerWarnHeardBoomerC1Cliffe",
+		name = "PlayerWarnHeardSmoker_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerWarnHearZombie],
+			[IsSmokerClass],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsNotAlone],
+			[IsClosestSurvivorNear1200],
+			[IsNotInCheckpoint],
+			[IsNotInSafeSpot],
+			[IsNotWarnHeardSmoker],
+			[NotInCombat],
+			[IsNotSaidSpecialWarn],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[_auto_NotSpottedVehicle],
+		],
+		Response PlayerWarnHeardSmokerMechanic
+		ApplyContext "WarnHeardSmoker:1:300,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerWarnHeardSpitter_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerWarnHearZombie],
+			[IsSpitterClass],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsNotAlone],
+			[IsClosestSurvivorNear1200],
+			[IsNotInCheckpoint],
+			[IsNotInSafeSpot],
+			[IsNotWarnHeardSpitter],
+			[NotInCombat],
+			[IsNotSaidSpecialWarn],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[_auto_NotSpottedVehicle],
+		],
+		Response PlayerWarnHeardSpitterMechanic
+		ApplyContext "WarnHeardSpitter:1:300,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerWarnHeardBoomerC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnHearZombie],
 			[IsBoomerClass],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotAlone],
 			[IsClosestSurvivorNear1200],
+			[IsNotInCheckpoint],
+			[IsNotInSafeSpot],
 			[IsNotWarnHeardBoomer],
 			[NotInCombat],
 			[IsNotSaidSpecialWarn],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[C1M1orC1M2],
 			[NoKnowBoomer],
 			[IsNotSurvival],
 		],
-		Response PlayerWarnHeardBoomerC1Gambler
+		Response PlayerWarnHeardBoomerC1Mechanic
 		ApplyContext "WarnHeardBoomer:1:300,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerWarnHeardChargerC1Cliffe",
+		name = "PlayerWarnHeardChargerC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnHearZombie],
 			[IsChargerClass],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotAlone],
 			[IsClosestSurvivorNear1200],
+			[IsNotInCheckpoint],
+			[IsNotInSafeSpot],
 			[IsNotWarnHeardCharger],
 			[NotInCombat],
 			[IsNotSaidSpecialWarn],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[C1M1orC1M2],
 			[NoKnowCharger],
 			[IsNotSurvival],
 		],
-		Response PlayerWarnHeardBoomerC1Gambler
+		Response PlayerWarnHeardBoomerC1Mechanic
 		ApplyContext "WarnHeardCharger:1:300,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerWarnHeardHunterC1Cliffe",
+		name = "PlayerWarnHeardHunterC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnHearZombie],
 			[IsHunterClass],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotAlone],
 			[IsClosestSurvivorNear1200],
+			[IsNotInCheckpoint],
+			[IsNotInSafeSpot],
 			[IsNotWarnHeardHunter],
 			[NotInCombat],
 			[IsNotSaidSpecialWarn],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[C1M1orC1M2],
 			[NoKnowHunter],
 			[IsNotSurvival],
 		],
-		Response PlayerWarnHeardBoomerC1Gambler
+		Response PlayerWarnHeardBoomerC1Mechanic
 		ApplyContext "WarnHeardHunter:1:300,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerWarnHeardSmokerC1Cliffe",
+		name = "PlayerWarnHeardSmokerC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnHearZombie],
 			[IsSmokerClass],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotAlone],
 			[IsClosestSurvivorNear1200],
+			[IsNotInCheckpoint],
+			[IsNotInSafeSpot],
 			[IsNotWarnHeardSmoker],
 			[NotInCombat],
 			[IsNotSaidSpecialWarn],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[C1M1orC1M2],
 			[NoKnowSmoker],
 			[IsNotSurvival],
 		],
-		Response PlayerWarnHeardBoomerC1Gambler
+		Response PlayerWarnHeardBoomerC1Mechanic
 		ApplyContext "WarnHeardSmoker:1:300,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerWarnHeardSpitterC1Cliffe",
+		name = "PlayerWarnHeardSpitterC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnHearZombie],
 			[IsSpitterClass],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotAlone],
 			[IsClosestSurvivorNear1200],
+			[IsNotInCheckpoint],
+			[IsNotInSafeSpot],
 			[IsNotWarnHeardSpitter],
 			[NotInCombat],
 			[IsNotSaidSpecialWarn],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[C1M1orC1M2],
 			[NoKnowSpitter],
 			[IsNotSurvival],
 		],
-		Response PlayerWarnHeardBoomerC1Gambler
+		Response PlayerWarnHeardBoomerC1Mechanic
 		ApplyContext "WarnHeardSpitter:1:300,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerWarnHeardChargerCliffe",
-		criteria = 
-		[
-			[ConceptPlayerWarnHearZombie],
-			[IsChargerClass],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsNotAlone],
-			[IsClosestSurvivorNear1200],
-			[IsNotWarnHeardCharger],
-			[NotInCombat],
-			[IsNotSaidSpecialWarn],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[_auto_NotSpottedVehicle],
-		],
-		Response PlayerWarnHeardChargerGambler
-		ApplyContext "WarnHeardCharger:1:300,SaidSpecialWarn:1:30"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerWarnHeardHunterCliffe",
-		criteria = 
-		[
-			[ConceptPlayerWarnHearZombie],
-			[IsHunterClass],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsNotAlone],
-			[IsClosestSurvivorNear1200],
-			[IsNotWarnHeardHunter],
-			[NotInCombat],
-			[IsNotSaidSpecialWarn],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[_auto_NotSpottedVehicle],
-		],
-		Response PlayerWarnHeardHunterGambler
-		ApplyContext "WarnHeardHunter:1:300,SaidSpecialWarn:1:30"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerWarnHeardJockeyCliffe",
-		criteria = 
-		[
-			[ConceptPlayerWarnHearZombie],
-			[IsJockeyClass],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsNotAlone],
-			[IsClosestSurvivorNear1200],
-			[IsNotWarnHeardJockey],
-			[NotInCombat],
-			[IsNotSaidSpecialWarn],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[_auto_NotSpottedVehicle],
-		],
-		Response PlayerWarnHeardJockeyGambler
-		ApplyContext "WarnHeardJockey:1:300,SaidSpecialWarn:1:30"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerWarnHeardSmokerCliffe",
-		criteria = 
-		[
-			[ConceptPlayerWarnHearZombie],
-			[IsSmokerClass],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsNotAlone],
-			[IsClosestSurvivorNear1200],
-			[IsNotWarnHeardSmoker],
-			[NotInCombat],
-			[IsNotSaidSpecialWarn],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[_auto_NotSpottedVehicle],
-		],
-		Response PlayerWarnHeardSmokerGambler
-		ApplyContext "WarnHeardSmoker:1:300,SaidSpecialWarn:1:30"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerWarnHeardSpitterCliffe",
-		criteria = 
-		[
-			[ConceptPlayerWarnHearZombie],
-			[IsSpitterClass],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsNotAlone],
-			[IsClosestSurvivorNear1200],
-			[IsNotWarnHeardSpitter],
-			[NotInCombat],
-			[IsNotSaidSpecialWarn],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[_auto_NotSpottedVehicle],
-		],
-		Response PlayerWarnHeardSpitterGambler
-		ApplyContext "WarnHeardSpitter:1:300,SaidSpecialWarn:1:30"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerWarnHeardWitchCliffe",
+		name = "PlayerWarnHeardWitch_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnHearZombie],
@@ -16416,701 +17389,752 @@ local jess_cliffe_rules =
 			[IsNotCoughing],
 			[IsNotAlone],
 			[IsClosestSurvivorNear1200],
-			[IsCliffe],
+			[IsCsgo_sas],
+			[IsNotInCheckpoint],
+			[IsNotInSafeSpot],
 			[IsNotWarnHeardWitch],
 			[NotInCombat],
 			[IsNotSaidSpecialWarn],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotmap_c4m2],
 			[IsNotc6m1_riverbank],
 			[_auto_NotAlarmV2],
 			[_auto_NotFinaleStarted],
 		],
-		Response PlayerWarnHeardWitchGambler
+		Response PlayerWarnHeardWitchMechanic
+		then any PlayerKillThatLight foo:0 -1.652
 		ApplyContext "WarnHeardWitch:1:300,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerWarnHeardWitchC1Cliffe",
+		name = "PlayerWarnHeardWitchC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnHearZombie],
 			[IsWitchClass],
 			[IsNotCoughing],
-			[IsCliffe],
 			[IsNotAlone],
 			[IsClosestSurvivorNear1200],
+			[IsCsgo_sas],
+			[IsNotInCheckpoint],
+			[IsNotInSafeSpot],
 			[IsNotWarnHeardWitch],
 			[NotInCombat],
 			[IsNotSaidSpecialWarn],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[C1M1orC1M2],
-			[IsNotSurvival],
 		],
-		Response PlayerWarnHeardWitchC1Gambler
+		Response PlayerWarnHeardWitchC1Mechanic
 		ApplyContext "WarnHeardWitch:1:300,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerHeardWitchC1Cliffe",
+		name = "PlayerHeardWitchC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerHeardWitch],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[C1M1orC1M2],
 			[IsNotSurvival],
 		],
-		Response PlayerWarnHeardWitchC1Gambler
+		Response PlayerWarnHeardWitchC1Mechanic
 	},
 	{
-		name = "PlayerWarnHeardWitchC4M3Cliffe",
+		name = "Player_C1WorseThanZombies_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptPlayerWarnHearZombie],
-			[IsWitchClass],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsNotAlone],
-			[IsClosestSurvivorNear1200],
-			[IsNotWarnHeardWitch],
-			[NotInCombat],
-			[IsNotSaidSpecialWarn],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[isc4m3],
+			[ConceptPlayer_C1WorseThanZombies],
+			[IsCsgo_sas],
+			[IssuerClose],
+			[IsNotSpeakingWeight0],
 		],
-		Response PlayerWarnHeardWitchC4M3Gambler
-		ApplyContext "WarnHeardWitch:1:300,SaidSpecialWarn:1:30"
-		applycontexttoworld
+		Response Player_C1WorseThanZombiesMechanic
 	},
 	{
-		name = "PlayerWarnMegaMobCliffe",
+		name = "PlayerWarnMegaMob_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnMegaMob],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
+			[IsNotInCheckpoint],
+			[IsNotInSafeSpot],
 			[IsNotWarnMegaMob],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSpeaking],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[IsNotScavenge],
 			[_auto_NotSpottedVehicle],
 		],
-		Response PlayerWarnMegaMobGambler
+		Response PlayerWarnMegaMobMechanic
 		ApplyContext "WarnMegaMob:1:300,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerWarnWitchAngryCliffe",
+		name = "PlayerWarnWitchAngry_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptWitchGettingAngry],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotWarnAngryWitch],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotmap_c4m2],
 			[IsNotc6m1_riverbank],
 		],
-		Response PlayerWarnWitchAngryGambler
+		Response PlayerWarnWitchAngryMechanic
 		ApplyContext "WarnAngryWitch:1:5,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerWorldInfectedDet2Cliffe",
-		criteria = 
-		[
-			[ConceptWorldSignsInfectedDetected2],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IssuerClose],
-			[IsWorldTalkCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response PlayerWorldInfectedDet2Gambler
-	},
-	{
-		name = "PlayerWorldIntroC31BlankCliffe",
+		name = "PlayerWorldIntroC31Blank_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptintroC3M1],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidCXM1Intro],
 			[IsNotAlone],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response PlayerWorldIntroC31BlankGambler
+		Response PlayerWorldIntroC31BlankMechanic
+		then any WorldIntroC31 foo:0 5
 		ApplyContext "CXM1Intro:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerWorldIntroC51Cliffe",
+		name = "PlayerWorldIntroC51_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptintroC5M1],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidCXM1Intro],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response PlayerWorldIntroC51Gambler
+		Response PlayerWorldIntroC51Mechanic
+		then orator C5M1_intro001 foo:0 0.01
 		ApplyContext "CXM1Intro:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorCaughtVomitCliffe",
+		name = "SurvivorCaughtVomit_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerVomitInFace],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response SurvivorCaughtVomitGambler
-		ApplyContext "TalkCliffe:1:10"
+		Response SurvivorCaughtVomitMechanic
+		ApplyContext "TalkCsgo_sas:1:10"
 	},
 	{
-		name = "SurvivorchargerpoundCliffe",
+		name = "Survivorchargerpound_CSGO_SAS",
 		criteria = 
 		[
 			[Conceptchargerpound],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidchargerpound],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response SurvivorchargerpoundGambler
-		ApplyContext "Saidchargerpound:1:5,TalkCliffe:1:5"
+		Response SurvivorchargerpoundMechanic
+		ApplyContext "Saidchargerpound:1:5,TalkCsgo_sas:1:5"
 	},
 	{
-		name = "SurvivorchargerpoundC1Cliffe",
+		name = "SurvivorchargerpoundC1_CSGO_SAS",
 		criteria = 
 		[
 			[Conceptchargerpound],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidchargerpound],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[C1M1orC1M2],
 			[NoKnowCharger],
 			[IsNotSurvival],
 		],
-		Response SurvivorchargerpoundC1Gambler
-		ApplyContext "Saidchargerpound:1:5,TalkCliffe:1:5"
+		Response SurvivorchargerpoundC1Mechanic
+		ApplyContext "Saidchargerpound:1:5,TalkCsgo_sas:1:5"
 	},
 	{
-		name = "SurvivorchargerpoundC6M3Cliffe",
-		criteria = 
-		[
-			[Conceptchargerpound],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[isc6m3_port],
-			[ChanceToFire5Percent],
-			[IsWorldTalkCliffe],
-		],
-		Response SurvivorchargerpoundC6M3Gambler
-		ApplyContext "TalkCliffe:1:5"
-	},
-	{
-		name = "SurvivorCoughingCliffe",
+		name = "SurvivorCoughing_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptSurvivorCoughing],
 			[IsCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response SurvivorCoughingGambler
+		Response SurvivorCoughingMechanic
 	},
 	{
-		name = "SurvivorCoughingDeathCliffe",
+		name = "SurvivorCoughingDeath_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerDeath],
 			[IsCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotVersus],
 		],
-		Response SurvivorCoughingGambler
+		Response SurvivorCoughingMechanic
 	},
 	{
-		name = "SurvivorDeathCliffe",
+		name = "SurvivorDeath_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerDeath],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotVersus],
 		],
-		Response SurvivorDeathGambler
+		Response SurvivorDeathMechanic
 	},
 	{
-		name = "SurvivorGooedBySpitterCliffe",
+		name = "SurvivorGooedBySpitter_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptGooedBySpitter],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidGooedBySpitter],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[IsNotIncapacitated],
 		],
-		Response SurvivorGooedBySpitterGambler
-		ApplyContext "SaidGooedBySpitter:1:20,TalkCliffe:1:3"
+		Response SurvivorGooedBySpitterMechanic
+		ApplyContext "SaidGooedBySpitter:1:20,TalkCsgo_sas:1:3"
 	},
 	{
-		name = "SurvivorGooedBySpitterC1Cliffe",
+		name = "SurvivorGooedBySpitterC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptGooedBySpitter],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidGooedBySpitter],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[C1M1orC1M2],
 			[NoKnowSpitter],
 			[IsNotSurvival],
 			[IsNotIncapacitated],
 		],
-		Response SurvivorGooedBySpitterC1Gambler
-		ApplyContext "SaidGooedBySpitter:1:20,TalkCliffe:1:3"
+		Response SurvivorGooedBySpitterC1Mechanic
+		then csgo_sas Player.GooedBySpitterC1R foo:0 -2.951
+		ApplyContext "SaidGooedBySpitter:1:20,TalkCsgo_sas:1:3"
 	},
 	{
-		name = "SurvivorGrabbedByTongueCliffe",
+		name = "SurvivorGrabbedByTongue_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerGrabbedByTongue],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response SurvivorGrabbedByTongueGambler
+		Response SurvivorGrabbedByTongueMechanic
 	},
 	{
-		name = "SurvivorGrabbedByTongueC1Cliffe",
+		name = "SurvivorGrabbedByTongueC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerGrabbedByTongue],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[C1M1orC1M2],
 			[NoKnowSmoker],
 			[IsNotSurvival],
 		],
-		Response SurvivorGrabbedByTongueC1Gambler
+		Response SurvivorGrabbedByTongueC1Mechanic
 	},
 	{
-		name = "SurvivorNearCheckpointCliffe",
+		name = "SurvivorNearCheckpoint_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerNearCheckpoint],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidSafeSpotAhead],
 			[IsNotAlone],
 			[IsNotInCheckpoint],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response SurvivorNearCheckpointGambler
+		Response SurvivorNearCheckpointMechanic
 		ApplyContext "SaidSafeSpotAhead:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorNearCheckpointC1M1Cliffe",
+		name = "SurvivorNearCheckpointC1M1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerNearCheckpoint],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidSafeSpotAhead],
 			[IsNotAlone],
 			[IsNotInCheckpoint],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[ismap_c1m1_hotel],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response SurvivorNearCheckpointC1M1Gambler
+		Response SurvivorNearCheckpointC1M1Mechanic
 		ApplyContext "SaidSafeSpotAhead:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorNearCheckpointC1M3Cliffe",
+		name = "SurvivorNearCheckpointC1M2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerNearCheckpoint],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidSafeSpotAhead],
 			[IsNotAlone],
 			[IsNotInCheckpoint],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
+			[ismap_c1m2_streets],
+			[IsWorldTalkCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response SurvivorNearCheckpointC1M2Mechanic
+		ApplyContext "SaidSafeSpotAhead:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorNearCheckpointC1M3_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerNearCheckpoint],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsNotSaidSafeSpotAhead],
+			[IsNotAlone],
+			[IsNotInCheckpoint],
+			[IsTalk],
+			[IsTalkCsgo_sas],
 			[ismap_c1m3_mall],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response SurvivorNearCheckpointC1M3Gambler
+		Response SurvivorNearCheckpointC1M3Mechanic
 		ApplyContext "SaidSafeSpotAhead:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorNearCheckpointC2M1Cliffe",
+		name = "SurvivorNearCheckpointC2M1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerNearCheckpoint],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidSafeSpotAhead],
 			[IsNotAlone],
 			[IsNotInCheckpoint],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[ismap_c2m1],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response SurvivorNearCheckpointC2M1Gambler
+		Response SurvivorNearCheckpointC2M1Mechanic
 		ApplyContext "SaidSafeSpotAhead:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorNearCheckpointC2M2Cliffe",
+		name = "SurvivorNearCheckpointC2M2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerNearCheckpoint],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidSafeSpotAhead],
 			[IsNotAlone],
 			[IsNotInCheckpoint],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[ismap_c2m2],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response SurvivorNearCheckpointC2M2Gambler
+		Response SurvivorNearCheckpointC2M2Mechanic
+		then any _C2M2_SeeSafehouse01 foo:0 0.1
 		ApplyContext "SaidSafeSpotAhead:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorNearCheckpointC2M4Cliffe",
+		name = "SurvivorNearCheckpointC2M3_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerNearCheckpoint],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidSafeSpotAhead],
 			[IsNotAlone],
 			[IsNotInCheckpoint],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
+			[ismap_c2m3],
+			[IsWorldTalkCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response SurvivorNearCheckpointC2M3Mechanic
+		ApplyContext "SaidSafeSpotAhead:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorNearCheckpointC2M4_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerNearCheckpoint],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsNotSaidSafeSpotAhead],
+			[IsNotAlone],
+			[IsNotInCheckpoint],
+			[IsTalk],
+			[IsTalkCsgo_sas],
 			[ismap_c2m4],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response SurvivorNearCheckpointC2M4Gambler
+		Response SurvivorNearCheckpointC2M4Mechanic
 		ApplyContext "SaidSafeSpotAhead:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorNearCheckpointC3M2Cliffe",
+		name = "SurvivorNearCheckpointC3M1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerNearCheckpoint],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidSafeSpotAhead],
 			[IsNotAlone],
 			[IsNotInCheckpoint],
 			[IsTalk],
-			[IsTalkCliffe],
-			[ismapc3m2_swamp],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[ismap_c3m1_plankcountry],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response SurvivorNearCheckpointC3M2Gambler
+		Response SurvivorNearCheckpointC3M1Mechanic
 		ApplyContext "SaidSafeSpotAhead:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkC3M3SafeHouseAheadCliffe",
+		name = "SurvivorNearCheckpointC3M2_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerNearCheckpoint],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsNotSaidSafeSpotAhead],
+			[IsNotAlone],
+			[IsNotInCheckpoint],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[ismapc3m2_swamp],
+			[IsWorldTalkCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response SurvivorNearCheckpointC3M2Mechanic
+		ApplyContext "SaidSafeSpotAhead:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkC3M3SafeHouseAhead_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC3M3SafeHouseAhead],
 			[IsNotSaidSafeSpotAhead],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear400],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response SurvivorNearCheckpointGambler
+		Response SurvivorNearCheckpointC3M3Mechanic
 		ApplyContext "SaidSafeSpotAhead:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorNearCheckpointC4M1Cliffe",
+		name = "SurvivorNearCheckpointC4M1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerNearCheckpoint],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidSafeSpotAhead],
 			[IsNotAlone],
 			[IsNotInCheckpoint],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[ismap_c4m1_milltown_a],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response SurvivorNearCheckpointC4M1Gambler
+		Response SurvivorNearCheckpointC4M1Mechanic
 		ApplyContext "SaidSafeSpotAhead:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorNearCheckpointC4M2Cliffe",
+		name = "SurvivorNearCheckpointC4M2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerNearCheckpoint],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidSafeSpotAhead],
 			[IsNotAlone],
 			[IsNotInCheckpoint],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[ismap_c4m2_sugarmill_a],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response SurvivorNearCheckpointC4M2Gambler
+		Response SurvivorNearCheckpointC4M2Mechanic
 		ApplyContext "SaidSafeSpotAhead:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorNearCheckpointC4M3Cliffe",
+		name = "SurvivorNearCheckpointC4M3_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerNearCheckpoint],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidSafeSpotAhead],
 			[IsNotAlone],
 			[IsNotInCheckpoint],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[isc4m3],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response SurvivorNearCheckpointC4M3Gambler
+		Response SurvivorNearCheckpointC4M3Mechanic
 		ApplyContext "SaidSafeSpotAhead:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorNearCheckpointC4M4Cliffe",
+		name = "SurvivorNearCheckpointC4M4_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerNearCheckpoint],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidSafeSpotAhead],
 			[IsNotAlone],
 			[IsNotInCheckpoint],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[isc4m4],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response SurvivorNearCheckpointC4M4Gambler
+		Response SurvivorNearCheckpointC4M4Mechanic
 		ApplyContext "SaidSafeSpotAhead:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorNearCheckpointC5M2Cliffe",
+		name = "SurvivorNearCheckpointC5M2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerNearCheckpoint],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidSafeSpotAhead],
 			[IsNotAlone],
 			[IsNotInCheckpoint],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsMapc5m2_park],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response SurvivorNearCheckpointC5M2Gambler
+		Response SurvivorNearCheckpointC5M2Mechanic
 		ApplyContext "SaidSafeSpotAhead:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorNearCheckpointC5M4Cliffe",
+		name = "SurvivorNearCheckpointC5M3_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerNearCheckpoint],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidSafeSpotAhead],
 			[IsNotAlone],
 			[IsNotInCheckpoint],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsMapc5m3_cemetery],
+			[IsWorldTalkCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response SurvivorNearCheckpointC5M3Mechanic
+		ApplyContext "SaidSafeSpotAhead:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorNearCheckpointC5M4_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerNearCheckpoint],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsNotSaidSafeSpotAhead],
+			[IsNotAlone],
+			[IsNotInCheckpoint],
+			[IsTalk],
+			[IsTalkCsgo_sas],
 			[IsMapc5m4_quarter],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response SurvivorNearCheckpointC5M4Gambler
+		Response SurvivorNearCheckpointC5M4Mechanic
 		ApplyContext "SaidSafeSpotAhead:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorNearCheckpointC6M1Cliffe",
+		name = "SurvivorNearCheckpointC6M1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerNearCheckpoint],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidSafeSpotAhead],
 			[IsNotAlone],
 			[IsNotInCheckpoint],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[Isc6m1_riverbank],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response SurvivorNearCheckpointC6M1Gambler
+		Response SurvivorNearCheckpointC6M1Mechanic
 		ApplyContext "SaidSafeSpotAhead:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorNearCheckpointC6M2Cliffe",
+		name = "SurvivorNearCheckpointC6M2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerNearCheckpoint],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidSafeSpotAhead],
 			[IsNotAlone],
 			[IsNotInCheckpoint],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[Isc6m2_bedlam],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response SurvivorNearCheckpointC6M2Gambler
+		Response SurvivorNearCheckpointC6M2Mechanic
 		ApplyContext "SaidSafeSpotAhead:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorNearFinaleCliffe",
+		name = "SurvivorNearFinale_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerNearFinale],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidFinaleAhead],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotIncapacitated],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response SurvivorNearFinaleGambler
+		Response SurvivorNearFinaleMechanic
 		ApplyContext "SaidFinaleAhead:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorNearFinaleC1M4Cliffe",
+		name = "SurvivorNearFinaleC1M4_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerNearFinale],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidFinaleAhead],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotIncapacitated],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[ismap_c1m4_atrium],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
@@ -17120,81 +18144,81 @@ local jess_cliffe_rules =
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorNearFinaleC2M5Cliffe",
+		name = "SurvivorNearFinaleC2M5_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerNearFinale],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidFinaleAhead],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotIncapacitated],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[ismap_c2m5],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response SurvivorNearFinaleC2M5Gambler
+		Response SurvivorNearFinaleC2M5Mechanic
 		ApplyContext "SaidFinaleAhead:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorNearFinaleC3M4Cliffe",
+		name = "SurvivorNearFinaleC3M4_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerNearFinale],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidFinaleAhead],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotIncapacitated],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[ismapc3m4_plantation],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response SurvivorNearFinaleC3M4Gambler
+		Response SurvivorNearFinaleC3M4Mechanic
 		ApplyContext "SaidFinaleAhead:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorNearFinaleC4M5Cliffe",
+		name = "SurvivorNearFinaleC4M5_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerNearFinale],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidFinaleAhead],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotIncapacitated],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[isc4m5],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response SurvivorNearFinaleC4M5Gambler
+		Response NoResponse
 		ApplyContext "SaidFinaleAhead:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorNearFinaleC5M5Cliffe",
+		name = "SurvivorNearFinaleC5M5_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerNearFinale],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidFinaleAhead],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotIncapacitated],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[IsMapc5m5_bridge],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
@@ -17204,18 +18228,18 @@ local jess_cliffe_rules =
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorNearFinaleC6M3Cliffe",
+		name = "SurvivorNearFinaleC6M3_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerNearFinale],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidFinaleAhead],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotIncapacitated],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[Isc6m3_port],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
@@ -17225,620 +18249,527 @@ local jess_cliffe_rules =
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorPouncedByHunterCliffe",
+		name = "SurvivorPouncedByHunter_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptScreamWhilePounced],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response SurvivorPouncedByHunterGambler
-		ApplyContext "TalkCliffe:1:5"
+		Response SurvivorPouncedByHunterMechanic
+		ApplyContext "TalkCsgo_sas:1:5"
 	},
 	{
-		name = "SurvivorTankPoundCliffe",
+		name = "SurvivorTankPound_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerGroundPoundedByTank],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response SurvivorTankPoundGambler
-		ApplyContext "TalkCliffe:1:5"
+		Response SurvivorTankPoundMechanic
+		ApplyContext "TalkCsgo_sas:1:5"
 	},
 	{
-		name = "SurvivorTankPoundC1Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerGroundPoundedByTank],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[C1M1orC1M2],
-			[IsNotSurvival],
-		],
-		Response SurvivorTankPoundC1Gambler
-		ApplyContext "TalkCliffe:1:5"
-	},
-	{
-		name = "SurvivorVocalizeBackUpCliffe",
+		name = "SurvivorVocalizeBackUp_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerBackUp],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotCoughing],
 			[IsNotInSafeSpot],
 			[IsNotInCheckpoint],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response SurvivorVocalizeBackUpGambler
+		Response SurvivorVocalizeBackUpMechanic
 	},
 	{
-		name = "SurvivorVocalizeEmphaticGoCliffe",
+		name = "SurvivorVocalizeEmphaticGo_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerEmphaticGo],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotCoughing],
 			[IsNotInSafeSpot],
 			[IsNotInCheckpoint],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response SurvivorVocalizeEmphaticGoGambler
+		Response SurvivorVocalizeEmphaticGoMechanic
 	},
 	{
-		name = "SurvivorVocalizeGoingToDieCliffe",
+		name = "SurvivorVocalizeGoingToDie_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerGoingToDie],
 			[IsNotSpeaking],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotComplainBlock],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[IsNotInStartArea],
 			[IsNotInCheckpoint],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorVocalizeGoingToDieGambler
+		Response SurvivorVocalizeGoingToDieMechanic
 		ApplyContext "IsComplain:1:25"
 	},
 	{
-		name = "SurvivorVocalizeGoingToDie3Cliffe",
+		name = "SurvivorVocalizeGoingToDie3_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerGoingToDie],
 			[IsNotSpeaking],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsOnThirdStrike],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotComplainBlock],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[IsNotInStartArea],
 			[IsNotInCheckpoint],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorVocalizeGoingToDie3Gambler
+		Response SurvivorVocalizeGoingToDie3Mechanic
 		ApplyContext "IsComplain:1:25"
 	},
 	{
-		name = "SurvivorVocalizeLookOutCliffe",
+		name = "SurvivorVocalizeLookOut_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerLookOut],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorVocalizeLookOutGambler
+		Response SurvivorVocalizeLookOutMechanic
 	},
 	{
-		name = "SurvivorVocalizeThisWayCliffe",
+		name = "SurvivorVocalizeThisWay_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerThisWay],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response SurvivorVocalizeThisWayGambler
+		Response SurvivorVocalizeThisWayMechanic
 	},
 	{
-		name = "SurvivorVocalizeWaitHereCliffe",
+		name = "SurvivorVocalizeWaitHere_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWaitHere],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response SurvivorVocalizeWaitHereGambler
+		Response SurvivorVocalizeWaitHereMechanic
 	},
 	{
-		name = "SurvivorWarnSpitterIncomingCliffe",
+		name = "SurvivorWarnSpitterIncoming_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptWarnSpitterIncoming],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidWarnSpitterIncoming],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorWarnSpitterIncomingGambler
+		Response SurvivorWarnSpitterIncomingMechanic
 		ApplyContext "SaidWarnSpitterIncoming:1:10"
 	},
 	{
-		name = "SurvivorWarnSpitterIncomingC1Cliffe",
+		name = "SurvivorWarnSpitterIncomingC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptWarnSpitterIncoming],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidWarnSpitterIncoming],
-			[IsWorldTalkCliffe],
 			[C1M1orC1M2],
+			[IsWorldTalkCsgo_sas],
 			[NoKnowSpitter],
 			[IsNotSurvival],
 		],
-		Response SurvivorWarnSpitterIncomingC1Gambler
+		Response SurvivorWarnSpitterIncomingC1Mechanic
 		ApplyContext "SaidWarnSpitterIncoming:1:10"
 	},
 	{
-		name = "PlayerLedgeHangEndCliffe",
+		name = "PlayerLedgeHangEnd_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerLedgeHangEnd],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerLedgeHangEndGambler
-		ApplyContext "TalkCliffe:1:5"
+		Response PlayerLedgeHangEndMechanic
+		ApplyContext "TalkCsgo_sas:1:5"
 	},
 	{
-		name = "PlayerLedgeHangMiddleCliffe",
+		name = "PlayerLedgeHangMiddle_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerLedgeHangMiddle],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerLedgeHangMiddleGambler
-		ApplyContext "TalkCliffe:1:5"
+		Response PlayerLedgeHangMiddleMechanic
+		ApplyContext "TalkCsgo_sas:1:5"
 	},
 	{
-		name = "PlayerLedgeHangStartCliffe",
+		name = "PlayerLedgeHangStart_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerLedgeHangStart],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerLedgeHangStartGambler
-		ApplyContext "TalkCliffe:1:5"
+		Response PlayerLedgeHangStartMechanic
+		ApplyContext "TalkCsgo_sas:1:5"
 	},
 	{
-		name = "SurvivorFirstDeathCliffe",
+		name = "SurvivorFirstDeath_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptSurvivorDied],
 			[IsNotCoughing],
 			[SurvivorDiedNearEnough],
-			[IsCliffe],
-			[IsNotSaidSomeoneDied],
+			[IsCsgo_sas],
 			[IsEveryoneAlive],
+			[IsNotSaidSomeoneDied],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidFaultFriendlyFireGeneral],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response SurvivorFirstDeathGambler
+		Response SurvivorFirstDeathMechanic
 		ApplyContext "SaidSomeoneDied:1:10"
 		applycontexttoworld
 	},
 	{
-		name = "DeathOneCliffe",
+		name = "SurvivorFirstDeathC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptSurvivorDied],
 			[IsNotCoughing],
 			[SurvivorDiedNearEnough],
-			[IsCliffe],
+			[IsCsgo_sas],
+			[IsEveryoneAlive],
+			[IsNotSaidSomeoneDied],
+			[ismap_c1m1_hotel],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidFaultFriendlyFireGeneral],
+			[IsWorldTalkCsgo_sas],
+			[NoKnowNames],
+		],
+		Response SurvivorFirstDeathC1Mechanic
+		ApplyContext "SaidSomeoneDied:1:10"
+		applycontexttoworld
+	},
+	{
+		name = "DeathOne_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptSurvivorDied],
+			[IsNotCoughing],
+			[SurvivorDiedNearEnough],
+			[IsCsgo_sas],
 			[IsWithTwo],
 			[IsNotSaidSomeoneDied],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidFaultFriendlyFireGeneral],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response DeathOneGambler
+		Response DeathOneMechanic
 		ApplyContext "SaidSomeoneDied:1:10"
 		applycontexttoworld
 	},
 	{
-		name = "DoubleDeath2Cliffe",
+		name = "DoubleDeath_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptSurvivorDied],
 			[IsNotCoughing],
 			[SurvivorDiedNearEnough],
-			[IsCliffe],
-			[IsNotSaidSomeoneDied],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
 			[IsClosestSurvivorNear400],
 			[IsWithOnlyThree],
 			[IsNotIncapacitated],
 			[IsNotSaidFaultFriendlyFireGeneral],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response DoubleDeath2Gambler
+		Response DoubleDeathMechanic
 		ApplyContext "SaidSomeoneDied:1:10"
 		applycontexttoworld
 	},
 	{
-		name = "DoubleDeath2MechanicCliffe",
+		name = "DoubleDeathProducer_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptSurvivorDied],
 			[IsNotCoughing],
 			[SurvivorDiedNearEnough],
-			[IsCliffe],
-			[IsNotSaidSomeoneDied],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsMechanicAlive],
-			[IsMechanicNear400],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsProducerAlive],
+			[IsProducerNear400],
 			[IsWithOnlyThree],
+			[ChanceToFire100Percent],
 			[IsNotIncapacitated],
-			[IsNotDeadMechanic],
-			[ChanceToFire50Percent],
+			[IsNotDeadProducer],
 			[IsNotSaidFaultFriendlyFireGeneral],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[isNotmap_c1m1_hotel],
 		],
-		Response DoubleDeath2MechanicGambler
+		Response DoubleDeathProducerMechanic
 		ApplyContext "SaidSomeoneDied:1:10"
 		applycontexttoworld
 	},
 	{
-		name = "TeamKillCliffe",
+		name = "TeamKill_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptSurvivorDied],
 			[IsNotCoughing],
 			[SurvivorDiedReallyClose],
-			[IsCliffe],
-			[IsNotSaidSomeoneDied],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSaidFaultFriendlyFireGeneral],
-			[IsNotSaidFaultFriendlyFireCliffe],
-			[IsWorldTalkCliffe],
+			[IsNotSaidFaultFriendlyFireCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response TeamKillGambler
-		ApplyContext "SaidSomeoneDied:1:10,TalkCliffe:1:4"
+		Response TeamKillMechanic
+		ApplyContext "SaidSomeoneDied:1:10,TalkCsgo_sas:1:4"
 		applycontexttoworld
 	},
 	{
-		name = "TeamKillFromMechanicCliffe",
+		name = "TeamKillFromCoach_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptSurvivorDied],
 			[IsNotCoughing],
 			[SurvivorDiedReallyClose],
-			[IsCliffe],
-			[IsNotSaidSomeoneDied],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSaidFaultFriendlyFireGeneral],
-			[IsNotSaidFaultFriendlyFireCliffe],
-			[IsSaidFaultFriendlyFireMechanic],
-			[IsWorldTalkCliffe],
+			[IsSaidFaultFriendlyFireCoach],
+			[ChanceToFire50Percent],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response TeamKillFromMechanicGambler
-		ApplyContext "SaidSomeoneDied:1:10,TalkCliffe:1:2"
+		Response TeamKillFromCoachMechanic
+		ApplyContext "SaidSomeoneDied:1:10,TalkCsgo_sas:1:3"
 		applycontexttoworld
 	},
 	{
-		name = "TeamKillFromProducerCliffe",
+		name = "TeamKillFromGambler_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptSurvivorDied],
 			[IsNotCoughing],
 			[SurvivorDiedReallyClose],
-			[IsCliffe],
-			[IsNotSaidSomeoneDied],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSaidFaultFriendlyFireGeneral],
-			[IsNotSaidFaultFriendlyFireCliffe],
+			[IsSaidFaultFriendlyFireGambler],
+			[ChanceToFire50Percent],
+			[IsWorldTalkCsgo_sas],
+		],
+		Response TeamKillFromGamblerMechanic
+		ApplyContext "SaidSomeoneDied:1:10,TalkCsgo_sas:1:2"
+		applycontexttoworld
+	},
+	{
+		name = "TeamKillFromProducer_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptSurvivorDied],
+			[IsNotCoughing],
+			[SurvivorDiedReallyClose],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsSaidFaultFriendlyFireGeneral],
 			[IsSaidFaultFriendlyFireProducer],
-			[IsWorldTalkCliffe],
+			[ChanceToFire50Percent],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response TeamKillFromProducerGambler
-		ApplyContext "SaidSomeoneDied:1:10,TalkCliffe:1:2"
+		Response TeamKillFromProducerMechanic
+		ApplyContext "SaidSomeoneDied:1:10,TalkCsgo_sas:1:2"
 		applycontexttoworld
 	},
 	{
-		name = "TeamKillFromTeenGirlCliffe",
-		criteria = 
-		[
-			[ConceptSurvivorDied],
-			[IsNotCoughing],
-			[SurvivorDiedReallyClose],
-			[IsCliffe],
-			[IsNotSaidSomeoneDied],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsSaidFaultFriendlyFireGeneral],
-			[IsNotSaidFaultFriendlyFireCliffe],
-			[IsSaidFaultFriendlyFireTeenGirl],
-			[IsWorldTalkCliffe],
-		],
-		Response TeamKillFromProducerGambler
-		ApplyContext "SaidSomeoneDied:1:10,TalkCliffe:1:2"
-		applycontexttoworld
-	},
-	{
-		name = "C6M1TakeSubMachineGunCliffe",
+		name = "C6M1TakeSubMachineGun_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpSMG],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[isc6m1_riverbank],
 			[IsJustSaidWorldC6M1_IntoTheStore],
-			[IsFrancisIntroActor],
 		],
-		Response C6M1TakeSubMachineGunGambler
+		Response C6M1TakeSubMachineGunMechanic
 		ApplyContext "JustSaidWorldC6M1_IntoTheStore:2:0"
 		applycontexttoworld
 	},
 	{
-		name = "C6M1TakeSubMachineGunSilencedCliffe",
+		name = "C6M1TakeSubMachineGunSilenced_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpSmg_silenced],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[isc6m1_riverbank],
 			[IsJustSaidWorldC6M1_IntoTheStore],
-			[IsFrancisIntroActor],
 		],
-		Response C6M1TakeSubMachineGunGambler
+		Response C6M1TakeSubMachineGunMechanic
 		ApplyContext "JustSaidWorldC6M1_IntoTheStore:2:0"
 		applycontexttoworld
 	},
 	{
-		name = "C6M1TakePumpShotgunCliffe",
+		name = "C6M1TakePumpShotgun_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpPumpShotgun],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[isc6m1_riverbank],
 			[IsJustSaidWorldC6M1_IntoTheStore],
-			[IsFrancisIntroActor],
 		],
-		Response C6M1TakeSubMachineGunGambler
+		Response C6M1TakeSubMachineGunMechanic
 		ApplyContext "JustSaidWorldC6M1_IntoTheStore:2:0"
 		applycontexttoworld
 	},
 	{
-		name = "C6M1TakeChromeShotgunCliffe",
+		name = "C6M1TakeChromeShotgun_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpShotgun_Chrome],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[isc6m1_riverbank],
 			[IsJustSaidWorldC6M1_IntoTheStore],
-			[IsFrancisIntroActor],
 		],
-		Response C6M1TakeSubMachineGunGambler
+		Response C6M1TakeSubMachineGunMechanic
 		ApplyContext "JustSaidWorldC6M1_IntoTheStore:2:0"
 		applycontexttoworld
 	},
 	{
-		name = "C6M1TakeCSSMP5Cliffe",
+		name = "C6M1TakeCSSMP5_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpSmg_mp5],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[isc6m1_riverbank],
 			[IsJustSaidWorldC6M1_IntoTheStore],
-			[IsFrancisIntroActor],
 		],
-		Response C6M1TakeSubMachineGunGambler
+		Response C6M1TakeSubMachineGunMechanic
 		ApplyContext "JustSaidWorldC6M1_IntoTheStore:2:0"
 		applycontexttoworld
 	},
 	{
-		name = "C6M1TakeSubMachineGunZoeyIntroCliffe",
-		criteria = 
-		[
-			[ConceptPlayerPickup],
-			[IsCliffe],
-			[IsPickedUpSMG],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[isc6m1_riverbank],
-			[IsJustSaidWorldC6M1_IntoTheStore],
-			[IsZoeyIntroActor],
-		],
-		Response C6M1TakeSubMachineGunZoeyIntroGambler
-		ApplyContext "JustSaidWorldC6M1_IntoTheStore:2:0"
-		applycontexttoworld
-	},
-	{
-		name = "C6M1TakeSubMachineGunSilencedZoeyIntroCliffe",
-		criteria = 
-		[
-			[ConceptPlayerPickup],
-			[IsCliffe],
-			[IsPickedUpSmg_silenced],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[isc6m1_riverbank],
-			[IsJustSaidWorldC6M1_IntoTheStore],
-			[IsZoeyIntroActor],
-		],
-		Response C6M1TakeSubMachineGunZoeyIntroGambler
-		ApplyContext "JustSaidWorldC6M1_IntoTheStore:2:0"
-		applycontexttoworld
-	},
-	{
-		name = "C6M1TakePumpShotgunZoeyIntroCliffe",
-		criteria = 
-		[
-			[ConceptPlayerPickup],
-			[IsCliffe],
-			[IsPickedUpPumpShotgun],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[isc6m1_riverbank],
-			[IsJustSaidWorldC6M1_IntoTheStore],
-			[IsZoeyIntroActor],
-		],
-		Response C6M1TakeSubMachineGunZoeyIntroGambler
-		ApplyContext "JustSaidWorldC6M1_IntoTheStore:2:0"
-		applycontexttoworld
-	},
-	{
-		name = "C6M1TakeChromeShotgunZoeyIntroCliffe",
-		criteria = 
-		[
-			[ConceptPlayerPickup],
-			[IsCliffe],
-			[IsPickedUpShotgun_Chrome],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[isc6m1_riverbank],
-			[IsJustSaidWorldC6M1_IntoTheStore],
-			[IsZoeyIntroActor],
-		],
-		Response C6M1TakeSubMachineGunZoeyIntroGambler
-		ApplyContext "JustSaidWorldC6M1_IntoTheStore:2:0"
-		applycontexttoworld
-	},
-	{
-		name = "C6M1TakeCSSMP5ZoeyIntroCliffe",
-		criteria = 
-		[
-			[ConceptPlayerPickup],
-			[IsCliffe],
-			[IsPickedUpSmg_mp5],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[isc6m1_riverbank],
-			[IsJustSaidWorldC6M1_IntoTheStore],
-			[IsZoeyIntroActor],
-		],
-		Response C6M1TakeSubMachineGunZoeyIntroGambler
-		ApplyContext "JustSaidWorldC6M1_IntoTheStore:2:0"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorDeployUpExplosivesCliffe",
+		name = "SurvivorDeployUpExplosives_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerDeployingUpgradeAmmo],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSpeaking],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotSaidDeployUpgradePack_Explosive],
 			[HasUpgradePack_Explosive],
 			[IsNotInStartArea],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorDeployUpExplosivesGambler
+		Response SurvivorDeployUpExplosivesMechanic
 		ApplyContext "SaidDeployUpgradePack_Explosive:1:30"
 	},
 	{
-		name = "SurvivorDeployUpIncendiaryCliffe",
+		name = "SurvivorDeployUpIncendiary_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerDeployingUpgradeAmmo],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSpeaking],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotSaidDeployUpgradePack_Incendiary],
 			[HasUpgradePack_Incendiary],
 			[IsNotInStartArea],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorDeployUpIncendiaryGambler
+		Response SurvivorDeployUpIncendiaryMechanic
 		ApplyContext "SaidDeployUpgradePack_Incendiary:1:30"
 	},
 	{
-		name = "SurvivorPickupAdrenalineCliffe",
+		name = "SurvivorPickupAdrenaline_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpAdrenaline],
 			[IsNotSpeaking],
 			[ChanceToFire30Percent],
@@ -17846,20 +18777,20 @@ local jess_cliffe_rules =
 			[IsNotInSafeSpot],
 			[IsNotInStartArea],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupAdrenalineGambler
+		Response SurvivorPickupAdrenalineMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupAutoShotgunCliffe",
+		name = "SurvivorPickupAutoShotgun_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpAutoShotgun],
 			[IsNotSpeaking],
 			[ChanceToFire30Percent],
@@ -17867,20 +18798,21 @@ local jess_cliffe_rules =
 			[IsNotInSafeSpot],
 			[IsNotInStartArea],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupAutoShotgunGambler
+		Response SurvivorPickupAutoShotgunMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupSpasShotgunCliffe",
+		name = "SurvivorPickupSpasShotgun_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpShotgun_spas],
 			[IsNotSpeaking],
 			[ChanceToFire30Percent],
@@ -17888,431 +18820,372 @@ local jess_cliffe_rules =
 			[IsNotInSafeSpot],
 			[IsNotInStartArea],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupAutoShotgunGambler
+		Response SurvivorPickupAutoShotgunMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupbaseball_batCliffe",
+		name = "SurvivorPickupbaseball_bat_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpbaseball_bat],
 			[IsNotSpeaking],
 			[ChanceToFire30Percent],
 			[NotPickedUpItem],
 			[IsNotInSafeSpot],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotInStartArea],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupbaseball_batGambler
+		Response SurvivorPickupbaseball_batMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupbaseShovelCliffe",
+		name = "SurvivorPickupShovel_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpShovel],
 			[IsNotSpeaking],
 			[ChanceToFire30Percent],
 			[NotPickedUpItem],
 			[IsNotInSafeSpot],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotInStartArea],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupbaseShovelGambler
+		Response SurvivorPickupShovelMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupchainsawCliffe",
+		name = "SurvivorPickupchainsaw_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpchainsaw],
 			[IsNotSpeaking],
 			[NotPickedUpItem],
 			[IsNotInSafeSpot],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotInStartArea],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupchainsawGambler
+		Response SurvivorPickupchainsawMechanic
+		then All AskWhat foo:0 0
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupcricket_batCliffe",
+		name = "SurvivorPickupKnife_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
-			[IsPickedUpcricket_bat],
-			[IsNotSpeaking],
-			[ChanceToFire30Percent],
-			[NotPickedUpItem],
-			[IsNotInSafeSpot],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsNotInStartArea],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorPickupcricket_batGambler
-		ApplyContext "PickedUpItem:1:30"
-	},
-	{
-		name = "SurvivorPickupCricketBatCliffe",
-		criteria = 
-		[
-			[ConceptPlayerPickup],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsPickedUpcricket_bat],
-			[IsNotSpeaking],
-			[ChanceToFire30Percent],
-			[NotPickedUpItem],
-			[IsNotInSafeSpot],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsNotInStartArea],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorPickupCricketBatGambler
-		ApplyContext "PickedUpItem:1:30"
-	},
-	{
-		name = "SurvivorPickupKnifeCliffe",
-		criteria = 
-		[
-			[ConceptPlayerPickup],
-			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpKnife],
 			[IsNotSpeaking],
 			[ChanceToFire30Percent],
 			[NotPickedUpItem],
 			[IsNotInSafeSpot],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotInStartArea],
 			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupKnifeGambler
+		Response SurvivorPickupKnifeMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupCrowBarCliffe",
+		name = "SurvivorPickupcricket_bat_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
+			[IsPickedUpcricket_bat],
+			[IsNotSpeaking],
+			[ChanceToFire30Percent],
+			[NotPickedUpItem],
+			[IsNotInSafeSpot],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsNotInStartArea],
+			[isNotmap_c1m1_hotel],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorPickupcricket_batMechanic
+		ApplyContext "PickedUpItem:1:30"
+	},
+	{
+		name = "SurvivorPickupPitchfork_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerPickup],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsPickedUpPitchfork],
+			[IsNotSpeaking],
+			[ChanceToFire30Percent],
+			[NotPickedUpItem],
+			[IsNotInSafeSpot],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsNotInStartArea],
+			[isNotmap_c1m1_hotel],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorPickupPitchforkMechanic
+		ApplyContext "PickedUpItem:1:30"
+	},
+	{
+		name = "SurvivorPickupCrowBar_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerPickup],
+			[IsNotCoughing],
+			[IsCsgo_sas],
 			[IsPickedUpCrowBar],
 			[IsNotSpeaking],
 			[ChanceToFire30Percent],
 			[NotPickedUpItem],
 			[IsNotInSafeSpot],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotInStartArea],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupCrowBarGambler
+		Response SurvivorPickupCrowBarMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupDefibrillatorCliffe",
+		name = "SurvivorPickupDefibrillator_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpDefibrillator],
 			[ChanceToFire30Percent],
 			[NotPickedUpItem],
 			[IsNotInSafeSpot],
 			[IsNotSpeaking],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotInStartArea],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupDefibrillatorGambler
+		Response SurvivorPickupDefibrillatorMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupelectric_guitarCliffe",
+		name = "SurvivorPickupelectric_guitar_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpelectric_guitar],
 			[IsNotSpeaking],
 			[ChanceToFire30Percent],
 			[NotPickedUpItem],
 			[IsNotInSafeSpot],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotInStartArea],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupelectric_guitarGambler
+		Response SurvivorPickupelectric_guitarMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupFireAxeCliffe",
+		name = "SurvivorPickupFireAxe_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpFireAxe],
-			[IsNotSpeaking],
 			[ChanceToFire30Percent],
 			[NotPickedUpItem],
 			[IsNotInSafeSpot],
+			[IsNotSpeaking],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotInStartArea],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupFireAxeGambler
+		Response SurvivorPickupFireAxeMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupFirstAidKitCliffe",
+		name = "SurvivorPickupFirstAidKit_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpFirstAidKit],
 			[IsNotSpeaking],
 			[ChanceToFire30Percent],
 			[NotPickedUpItem],
 			[IsNotInSafeSpot],
-			[IsNotInStartArea],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsNotInStartArea],
 			[IsNotScavenge],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupFirstAidKitGambler
+		Response SurvivorPickupFirstAidKitMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupFirstSMGCliffe",
+		name = "SurvivorPickupFirstSMG_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpSmg_silenced],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidPickupFirstSMG],
-			[IsEveryoneAlive],
 			[IsSaidC1M1OpenDoor],
 			[ExtraWeight10],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response SurvivorPickupFirstSMGGambler
+		Response SurvivorPickupFirstSMGMechanic
 		ApplyContext "SaidPickupFirstSMG:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorPickupFirstSMG2AliveCliffe",
-		criteria = 
-		[
-			[ConceptPlayerPickup],
-			[IsCliffe],
-			[IsPickedUpSmg_silenced],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidPickupFirstSMG],
-			[IsWithTwo],
-			[IsSaidC1M1OpenDoor],
-			[ExtraWeight10],
-			[IsWorldTalkCliffe],
-		],
-		Response SurvivorPickupFirstSMG2AliveGambler
-		ApplyContext "SaidPickupFirstSMG:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorPickupFirstPumpShotgunCliffe",
-		criteria = 
-		[
-			[ConceptPlayerPickup],
-			[IsCliffe],
-			[IsPickedUpPumpShotgun],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidPickupFirstShotgun],
-			[ismap_c1m1_hotel],
-			[IsWorldTalkCliffe],
-		],
-		Response SurvivorPickupFirstShotgunGambler
-		ApplyContext "SaidPickupFirstShotgun:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorPickupFirstPumpShotgunCliffe",
-		criteria = 
-		[
-			[ConceptPlayerPickup],
-			[IsCliffe],
-			[IsPickedUpShotgun_Chrome],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidPickupFirstShotgun],
-			[ismap_c1m1_hotel],
-			[IsWorldTalkCliffe],
-		],
-		Response SurvivorPickupFirstShotgunGambler
-		ApplyContext "SaidPickupFirstShotgun:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorPickupFirstPistolCliffe",
-		criteria = 
-		[
-			[ConceptPlayerPickup],
-			[IsCliffe],
-			[IsPickedUpSecondPistol],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidPickupFirstPistol],
-			[IsNotInStartArea],
-			[ismap_c1m1_hotel],
-			[IsWorldTalkCliffe],
-		],
-		Response SurvivorPickupFirstPistolGambler
-		ApplyContext "SaidPickupFirstPistol:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorPickupFryingPanCliffe",
+		name = "SurvivorPickupFryingPan_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpFryingPan],
 			[IsNotSpeaking],
 			[ChanceToFire30Percent],
 			[NotPickedUpItem],
 			[IsNotInSafeSpot],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotInStartArea],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupFryingPanGambler
+		Response SurvivorPickupFryingPanMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupGolfCLubCliffe",
+		name = "SurvivorPickupGolfCLub_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpGolfClub],
 			[IsNotSpeaking],
 			[ChanceToFire30Percent],
 			[NotPickedUpItem],
 			[IsNotInSafeSpot],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotInStartArea],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupGolfCLubGambler
+		Response SurvivorPickupGolfCLubMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupGrenadeLauncherCliffe",
+		name = "SurvivorPickupGrenadeLauncher_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpGrenadeLauncher],
 			[NotPickedUpItem],
 			[IsNotInSafeSpot],
 			[IsNotSpeaking],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotInStartArea],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupGrenadeLauncherGambler
+		Response SurvivorPickupGrenadeLauncherMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupGunC1M2Cliffe",
+		name = "SurvivorPickupGunC1M2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSpeaking],
 			[IsTalk],
 			[IsSaidC1M2InsideGunShop],
 			[IsNotPickedUpFirstAidKit],
 			[IsNotPickedUpAmmo],
 			[IsNotPickedUpVomitJar],
-			[IsNotPickedUpPainPills],
-			[IsNotPickedUpAdrenaline],
 			[IsNotPickedUpLaserSights],
+			[IsNotPickedUpAdrenaline],
+			[IsNotPickedUpPainPills],
 			[IsNotPickedUpMolotov],
 			[IsNotPickedUpPipeBomb],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[IsNotSaidC1M2InsideGunShopPickUp],
 			[ChanceToFire50Percent],
 			[_auto_NotButton1],
 		],
-		Response SurvivorPickupGunC1M2Gambler
+		Response SurvivorPickupGunC1M2Mechanic
 		ApplyContext "SaidC1M2InsideGunShopPickUp:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorPickupHuntingRifleCliffe",
+		name = "SurvivorPickupHuntingRifle_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpHuntingRifle],
 			[IsNotSpeaking],
 			[ChanceToFire30Percent],
@@ -18320,20 +19193,21 @@ local jess_cliffe_rules =
 			[IsNotInSafeSpot],
 			[IsNotInStartArea],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupHuntingRifleGambler
+		Response SurvivorPickupHuntingRifleMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupMilitarySniperCliffe",
+		name = "SurvivorPickupMilitarySniper_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpSniper_Military],
 			[IsNotSpeaking],
 			[ChanceToFire30Percent],
@@ -18341,20 +19215,21 @@ local jess_cliffe_rules =
 			[IsNotInSafeSpot],
 			[IsNotInStartArea],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupHuntingRifleGambler
+		Response SurvivorPickupHuntingRifleMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupScoutSniperCliffe",
+		name = "SurvivorPickupScoutSniper_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpSniper_scout],
 			[IsNotSpeaking],
 			[ChanceToFire30Percent],
@@ -18362,20 +19237,21 @@ local jess_cliffe_rules =
 			[IsNotInSafeSpot],
 			[IsNotInStartArea],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupHuntingRifleGambler
+		Response SurvivorPickupHuntingRifleMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupAWPSniperCliffe",
+		name = "SurvivorPickupAWPSniper_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpSniper_awp],
 			[IsNotSpeaking],
 			[ChanceToFire30Percent],
@@ -18383,20 +19259,21 @@ local jess_cliffe_rules =
 			[IsNotInSafeSpot],
 			[IsNotInStartArea],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupHuntingRifleGambler
+		Response SurvivorPickupHuntingRifleMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupIncendiaryAmmoCliffe",
+		name = "SurvivorPickupIncendiaryAmmo_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpIncendiaryAmmo],
 			[IsNotSpeaking],
 			[ChanceToFire30Percent],
@@ -18404,62 +19281,43 @@ local jess_cliffe_rules =
 			[IsNotInSafeSpot],
 			[IsNotInStartArea],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupIncendiaryAmmoGambler
+		Response SurvivorPickupIncendiaryAmmoMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupKatanaCliffe",
+		name = "SurvivorPickupKatana_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpKatana],
 			[IsNotSpeaking],
 			[ChanceToFire30Percent],
 			[NotPickedUpItem],
 			[IsNotInSafeSpot],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotInStartArea],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupKatanaGambler
+		Response SurvivorPickupKatanaMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupPitchforkCliffe",
+		name = "SurvivorPickupLaserSightsAlways_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
-			[IsPickedUpPitchfork],
-			[IsNotSpeaking],
-			[ChanceToFire30Percent],
-			[NotPickedUpItem],
-			[IsNotInSafeSpot],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsNotInStartArea],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorPickupPitchforkGambler
-		ApplyContext "PickedUpItem:1:30"
-	},
-	{
-		name = "SurvivorPickupLaserSightsAlwaysCliffe",
-		criteria = 
-		[
-			[ConceptPlayerPickup],
-			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpLaserSights],
 			[IsNotSpeaking],
 			[IsBotNotAvailable],
@@ -18469,62 +19327,63 @@ local jess_cliffe_rules =
 			[IsNotInCheckpoint],
 			[IsNotInSafeSpot],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsNotInStartArea],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupLaserSightsAlwaysGambler
+		Response SurvivorPickupLaserSightsAlwaysMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupM60Cliffe",
+		name = "SurvivorPickupM60_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpM60],
 			[IsNotSpeaking],
 			[NotPickedUpItem],
 			[IsNotInSafeSpot],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotInStartArea],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupM60Gambler
+		Response SurvivorPickupM60Mechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupMacheteCliffe",
+		name = "SurvivorPickupMachete_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpMachete],
 			[IsNotSpeaking],
 			[ChanceToFire30Percent],
 			[NotPickedUpItem],
 			[IsNotInSafeSpot],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotInStartArea],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupMacheteGambler
+		Response SurvivorPickupMacheteMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupMagnumCliffe",
+		name = "SurvivorPickupMagnum_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpMagnum],
 			[IsNotSpeaking],
 			[ChanceToFire30Percent],
@@ -18532,20 +19391,21 @@ local jess_cliffe_rules =
 			[IsNotInSafeSpot],
 			[IsNotInStartArea],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupMagnumGambler
+		Response SurvivorPickupMagnumMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupMolotovCliffe",
+		name = "SurvivorPickupMolotov_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpMolotov],
 			[IsNotSpeaking],
 			[ChanceToFire30Percent],
@@ -18553,42 +19413,43 @@ local jess_cliffe_rules =
 			[IsNotInSafeSpot],
 			[IsNotInStartArea],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupMolotovGambler
+		Response SurvivorPickupMolotovMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupPainPillsCliffe",
+		name = "SurvivorPickupPainPills_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpPainPills],
-			[IsNotSpeaking],
 			[ChanceToFire30Percent],
 			[NotPickedUpItem],
 			[IsNotInSafeSpot],
+			[IsNotSpeaking],
 			[IsNotInStartArea],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotScavenge],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupPainPillsGambler
+		Response SurvivorPickupPainPillsMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupPipeBombCliffe",
+		name = "SurvivorPickupPipeBomb_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpPipeBomb],
 			[IsNotSpeaking],
 			[ChanceToFire30Percent],
@@ -18596,20 +19457,21 @@ local jess_cliffe_rules =
 			[IsNotInSafeSpot],
 			[IsNotInStartArea],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupPipeBombGambler
+		Response SurvivorPickupPipeBombMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupPumpShotgunCliffe",
+		name = "SurvivorPickupPumpShotgun_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpPumpShotgun],
 			[IsNotSpeaking],
 			[ChanceToFire30Percent],
@@ -18617,20 +19479,21 @@ local jess_cliffe_rules =
 			[IsNotInSafeSpot],
 			[IsNotInStartArea],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupPumpShotgunGambler
+		Response SurvivorPickupPumpShotgunMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupChromeShotgunCliffe",
+		name = "SurvivorPickupChromeShotgun_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpShotgun_Chrome],
 			[IsNotSpeaking],
 			[ChanceToFire30Percent],
@@ -18638,42 +19501,43 @@ local jess_cliffe_rules =
 			[IsNotInSafeSpot],
 			[IsNotInStartArea],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupPumpShotgunGambler
+		Response SurvivorPickupPumpShotgunMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupRifleCliffe",
+		name = "SurvivorPickupRifle_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpRifle],
 			[IsNotSpeaking],
-			[IsInSafeSpot],
 			[ChanceToFire30Percent],
 			[NotPickedUpItem],
 			[IsNotInSafeSpot],
 			[IsNotInStartArea],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupRifleGambler
+		Response SurvivorPickupRifleMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupDesertRifleCliffe",
+		name = "SurvivorPickupDesertRifle_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpRifle_Desert],
 			[IsNotSpeaking],
 			[ChanceToFire30Percent],
@@ -18681,20 +19545,21 @@ local jess_cliffe_rules =
 			[IsNotInSafeSpot],
 			[IsNotInStartArea],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupRifleGambler
+		Response SurvivorPickupDesertRifleMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupAK47RifleCliffe",
+		name = "SurvivorPickupAK47Rifle_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpRifle_AK47],
 			[IsNotSpeaking],
 			[ChanceToFire30Percent],
@@ -18702,20 +19567,21 @@ local jess_cliffe_rules =
 			[IsNotInSafeSpot],
 			[IsNotInStartArea],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupRifleGambler
+		Response SurvivorPickupDesertRifleMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupSG552RifleCliffe",
+		name = "SurvivorPickupSG552Rifle_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpRifle_sg552],
 			[IsNotSpeaking],
 			[ChanceToFire30Percent],
@@ -18723,20 +19589,21 @@ local jess_cliffe_rules =
 			[IsNotInSafeSpot],
 			[IsNotInStartArea],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupRifleGambler
+		Response SurvivorPickupDesertRifleMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupSecondPistolCliffe",
+		name = "SurvivorPickupSecondPistol_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpSecondPistol],
 			[IsNotSpeaking],
 			[ChanceToFire30Percent],
@@ -18744,20 +19611,21 @@ local jess_cliffe_rules =
 			[IsNotInSafeSpot],
 			[IsNotInStartArea],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupSecondPistolGambler
+		Response SurvivorPickupSecondPistolMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupSMGCliffe",
+		name = "SurvivorPickupSMG_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpSMG],
 			[IsNotSpeaking],
 			[ChanceToFire30Percent],
@@ -18765,1677 +19633,1982 @@ local jess_cliffe_rules =
 			[IsNotInSafeSpot],
 			[IsNotInStartArea],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupSMGGambler
+		Response SurvivorPickupSMGMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupSilencedSMGCliffe",
+		name = "SurvivorPickupSilencedSMG_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
-			[IsPickedUpSmg_silenced],
+			[IsCsgo_sas],
+			[IsPickedUpSMG_silenced],
 			[IsNotSpeaking],
 			[ChanceToFire30Percent],
 			[NotPickedUpItem],
 			[IsNotInSafeSpot],
 			[IsNotInStartArea],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupSMGGambler
+		Response SurvivorPickupSMGMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupMP5SMGCliffe",
+		name = "SurvivorPickupMP5SMG_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
-			[IsPickedUpSmg_mp5],
+			[IsCsgo_sas],
+			[IsPickedUpSMG_mp5],
 			[IsNotSpeaking],
 			[ChanceToFire30Percent],
 			[NotPickedUpItem],
 			[IsNotInSafeSpot],
 			[IsNotInStartArea],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupSMGGambler
+		Response SurvivorPickupSMGMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickuptonfaCliffe",
+		name = "SurvivorPickuptonfa_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUptonfa],
 			[IsNotSpeaking],
 			[ChanceToFire30Percent],
 			[NotPickedUpItem],
 			[IsNotInSafeSpot],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotInStartArea],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickuptonfaGambler
+		Response SurvivorPickuptonfaMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupUpExplosiveAmmoCliffe",
+		name = "SurvivorPickupUpExplosiveAmmo_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpExplosiveAmmo],
 			[ChanceToFire30Percent],
 			[NotPickedUpItem],
 			[IsNotInSafeSpot],
 			[IsNotSpeaking],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotInStartArea],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupUpExplosiveAmmoGambler
+		Response SurvivorPickupUpExplosiveAmmoMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupUpExplosivesCliffe",
+		name = "SurvivorPickupUpExplosives_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpUpgradePack_Explosive],
 			[NotPickedUpItem],
 			[IsNotInSafeSpot],
 			[IsNotSpeaking],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotInStartArea],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupUpExplosivesGambler
+		Response SurvivorPickupUpExplosivesMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupUpIncendiaryCliffe",
+		name = "SurvivorPickupUpIncendiary_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpUpgradePack_Incendiary],
+			[IsNotSpeaking],
 			[NotPickedUpItem],
 			[IsNotInSafeSpot],
-			[IsNotSpeaking],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotInStartArea],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorPickupUpIncendiaryGambler
+		Response SurvivorPickupUpIncendiaryMechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupVomitJarCliffe",
+		name = "SurvivorPickupVomitJar_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpVomitJar],
 			[IsNotSpeaking],
-			[IsNotInSafeSpot],
-			[ChanceToFire30Percent],
-			[NotPickedUpItem],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorPickupVomitJarGambler
-		ApplyContext "PickedUpItem:1:30,TalkCliffe:1:3"
-	},
-	{
-		name = "SurvivorPickupVomitJarAlwaysC1Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerPickup],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsPickedUpVomitJar],
 			[ChanceToFire30Percent],
 			[NotPickedUpItem],
 			[IsNotInSafeSpot],
 			[IsNotInStartArea],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorPickupVomitJarMechanic
+		ApplyContext "PickedUpItem:1:30"
+	},
+	{
+		name = "SurvivorPickupVomitJarAlwaysC1_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerPickup],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsPickedUpVomitJar],
+			[ChanceToFire30Percent],
+			[NotPickedUpItem],
+			[IsNotInSafeSpot],
 			[IsNotSpeaking],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[ismap_c1m1_hotel],
 		],
-		Response SurvivorPickupVomitJarAlwaysC1Gambler
+		Response SurvivorPickupVomitJarAlwaysC1Mechanic
 		ApplyContext "PickedUpItem:1:30"
 	},
 	{
-		name = "Player_TakeVomitJarCliffe",
-		criteria = 
-		[
-			[ConceptPlayer_TakeVomitJarC1a],
-			[IsCliffe],
-			[ChanceToFire10Percent],
-		],
-		Response Player_TakeVomitJarGambler
-	},
-	{
-		name = "PlayerGettingRevivedCliffe",
+		name = "PlayerGettingRevived_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptReviveFriendDown],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerGettingRevivedGambler
+		Response PlayerGettingRevivedMechanic
+		then From ReviveFriendDownFinal foo:0 -0.608
 	},
 	{
-		name = "PlayerHealOtherCliffe",
+		name = "PlayerGettingRevivedCrybaby_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptReviveFriendDown],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsCsgo_sasCrybaby],
+			[FromIsProducer],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+		],
+		Response PlayerGettingRevivedCrybabyMechanic
+		then From ReviveFriendDownFinal foo:0 -1.447
+	},
+	{
+		name = "PlayerHealOther_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerHealingOther],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[NotInIntenseCombat],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerHealOtherGambler
-		ApplyContext "TalkCliffe:1:5"
+		Response PlayerHealOtherMechanic
+		ApplyContext "TalkCsgo_sas:1:5"
 	},
 	{
-		name = "PlayerHealOtherC1Cliffe",
+		name = "PlayerHealOtherC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerHealingOther],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[C1M1orC1M2],
+			[IsTalkCsgo_sas],
 			[NotInIntenseCombat],
-			[IsNotSurvival],
+			[IsWorldTalkCsgo_sas],
+			[ismap_c1m1_hotel],
 		],
-		Response PlayerHealOtherC1Gambler
-		ApplyContext "TalkCliffe:1:5"
+		Response PlayerHealOtherC1Mechanic
+		ApplyContext "TalkCsgo_sas:1:5"
 	},
 	{
-		name = "PlayerHealOtherCombatCliffe",
+		name = "PlayerHealOtherCombat_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerHealingOther],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[InIntenseCombat],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response PlayerHealOtherCombatGambler
-		ApplyContext "TalkCliffe:1:5"
+		Response PlayerHealOtherCombatMechanic
+		ApplyContext "TalkCsgo_sas:1:5"
 	},
 	{
-		name = "PlayerHealOtherTankCliffe",
+		name = "PlayerHealOtherTank_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerHealingOther],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsZombiePresentTank],
 			[IsSaidTankWarn2],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
 		// 	forceweight 30
-		Response PlayerHealOtherCombatGambler
-		ApplyContext "TalkCliffe:1:5"
+		Response PlayerHealOtherCombatMechanic
+		ApplyContext "TalkCsgo_sas:1:5"
 	},
 	{
-		name = "PlayerLedgeSaveCliffe",
+		name = "PlayerLedgeSave_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerLedgeSave],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotSpottedVehicle],
 		],
-		Response PlayerLedgeSaveGambler
-		ApplyContext "TalkCliffe:1:5"
+		Response PlayerLedgeSaveMechanic
+		ApplyContext "TalkCsgo_sas:1:5"
 	},
 	{
-		name = "PlayerReviveFriendCliffe",
+		name = "PlayerReviveFriend_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerReviveFriend],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[NotInIntenseCombat],
 			[_auto_NotSpottedVehicle],
 		],
-		Response PlayerReviveFriendGambler
-		ApplyContext "TalkCliffe:1:2"
+		Response PlayerReviveFriendMechanic
+		then Subject ReviveFriendDown foo:0 -0.664
+		ApplyContext "TalkCsgo_sas:1:2"
 	},
 	{
-		name = "PlayerReviveFriendBCliffe",
+		name = "PlayerReviveFriendB_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptReviveFriendDownFinal],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotReviveInterrupt],
 		],
-		Response PlayerReviveFriendBGambler
+		Response PlayerReviveFriendBMechanic
 	},
 	{
-		name = "PlayerReviveFriendBCoachCliffe",
-		criteria = 
-		[
-			[ConceptReviveFriendDownFinal],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsNotReviveInterrupt],
-			[FromIsCoach],
-			[ChanceToFire10Percent],
-			[isNotmap_c1m1_hotel],
-			[isNotmap_c1m2_streets],
-		],
-		Response PlayerReviveFriendBCoachGambler
-	},
-	{
-		name = "PlayerReviveFriendBEllisCliffe",
-		criteria = 
-		[
-			[ConceptReviveFriendDownFinal],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsNotReviveInterrupt],
-			[FromIsMechanic],
-			[ChanceToFire10Percent],
-			[isNotmap_c1m1_hotel],
-			[isNotmap_c1m2_streets],
-		],
-		Response PlayerReviveFriendBEllisGambler
-	},
-	{
-		name = "PlayerReviveFriendCriticalCliffe",
+		name = "PlayerReviveFriendCritical_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerReviveFriendCritical],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[NotInIntenseCombat],
 			[_auto_NotSpottedVehicle],
 		],
-		Response PlayerReviveFriendCriticalGambler
-		ApplyContext "TalkCliffe:1:5"
+		Response PlayerReviveFriendCriticalMechanic
+		ApplyContext "TalkCsgo_sas:1:5"
 	},
 	{
-		name = "PlayerReviveFriendLoudCliffe",
+		name = "PlayerReviveFriendLoud_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerReviveFriend],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsZombiePresentTank],
 			[IsSaidTankWarn2],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotSpottedVehicle],
 		],
 		// 	forceweight 30
-		Response PlayerReviveFriendLoudGambler
-		ApplyContext "TalkCliffe:1:5"
+		Response PlayerReviveFriendLoudMechanic
+		ApplyContext "TalkCsgo_sas:1:5"
 	},
 	{
-		name = "PlayerLedgeSaveCriticalCliffe",
+		name = "PlayerLedgeSaveCritical_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerLedgeSaveCritical],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotSpottedVehicle],
 		],
-		Response PlayerLedgeSaveGambler
-		ApplyContext "TalkCliffe:1:5"
+		Response PlayerLedgeSaveMechanic
+		ApplyContext "TalkCsgo_sas:1:5"
 	},
 	{
-		name = "PlayerReviveFriendFFCliffe",
+		name = "PlayerReviveFriendLoud2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerReviveFriend],
 			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsShotTeammateCliffe],
-			[IsWorldTalkCliffe],
-			[NotInIntenseCombat],
-			[_auto_NotSpottedVehicle],
-		],
-		// 	forceweight 20
-		Response PlayerReviveFriendFFGambler
-		ApplyContext "TalkCliffe:1:5"
-	},
-	{
-		name = "PlayerReviveFriendCriticalFFCliffe",
-		criteria = 
-		[
-			[ConceptPlayerReviveFriendCritical],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsShotTeammateCliffe],
-			[IsWorldTalkCliffe],
-			[NotInIntenseCombat],
-			[_auto_NotSpottedVehicle],
-		],
-		// 	forceweight 20
-		Response PlayerReviveFriendFFGambler
-		ApplyContext "TalkCoach:1:5"
-	},
-	{
-		name = "PlayerReviveFriendLoud2Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerReviveFriend],
-			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[InIntenseCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotSpottedVehicle],
 		],
-		Response PlayerReviveFriendLoudGambler
-		ApplyContext "TalkCliffe:1:5"
+		Response PlayerReviveFriendLoudMechanic
+		ApplyContext "TalkCsgo_sas:1:5"
 	},
 	{
-		name = "PlayerReviveFriendLoudCritCliffe",
+		name = "PlayerReviveFriendLoudCrit_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerReviveFriendCritical],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[InIntenseCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotSpottedVehicle],
 		],
-		Response PlayerReviveFriendLoudGambler
-		ApplyContext "TalkCliffe:1:5"
+		Response PlayerReviveFriendLoudMechanic
+		ApplyContext "TalkCsgo_sas:1:5"
 	},
 	{
-		name = "PlayerReviveFriendLoudCrit2Cliffe",
+		name = "PlayerReviveFriendLoudCrit2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerReviveFriendCritical],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsZombiePresentTank],
 			[IsSaidTankWarn2],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotSpottedVehicle],
 		],
 		// 	forceweight 30
-		Response PlayerReviveFriendLoudGambler
-		ApplyContext "TalkCliffe:1:5"
+		Response PlayerReviveFriendLoudMechanic
+		ApplyContext "TalkCsgo_sas:1:5"
 	},
 	{
-		name = "_C1M1_ElevatorHelloCliffe",
+		name = "_C1M1_ElevatorHello_CSGO_SAS",
 		criteria = 
 		[
 			[Concept_C1M1_ElevatorHello],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _C1M1_ElevatorHelloGambler
+		Response _C1M1_ElevatorHelloMechanic
 	},
 	{
-		name = "_C1M1_ElevatorHelloAllAliveExtra1Cliffe",
+		name = "_C1M1_ElevatorHello02c_CSGO_SAS",
 		criteria = 
 		[
-			[Concept_C1M1_ElevatorHelloAllAliveExtra1],
-			[IsCliffe],
+			[Concept_C1M1_ElevatorHello02c],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _C1M1_ElevatorHelloAllAliveExtra1Gambler
+		Response _C1M1_ElevatorHello02cMechanic
+		then producer _C1M1_ElevatorHello03c foo:0 -1.856
 	},
 	{
-		name = "_C1M1_ElevatorHelloAllAliveExtra2Cliffe",
+		name = "_C1M1_ElevatorHello03a_CSGO_SAS",
 		criteria = 
 		[
-			[Concept_C1M1_ElevatorHelloAllAliveExtra2],
-			[IsCliffe],
+			[Concept_C1M1_ElevatorHello03a],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _C1M1_ElevatorHelloAllAliveExtra2Gambler
+		Response _C1M1_ElevatorHello03aMechanic
+		then self _C1M1_ElevatorHello03e foo:0 -8.671
 	},
 	{
-		name = "_C1M1_ElevatorHello01bCliffe",
+		name = "_C1M1_ElevatorHello03e_CSGO_SAS",
 		criteria = 
 		[
-			[Concept_C1M1_ElevatorHello01b],
-			[IsCliffe],
+			[Concept_C1M1_ElevatorHello03e],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _C1M1_ElevatorHello01bGambler
+		Response _C1M1_ElevatorHello03eMechanic
 	},
 	{
-		name = "_C1M1_ElevatorHello10cCliffe",
+		name = "_C1M1_ElevatorHello03d_CSGO_SAS",
 		criteria = 
 		[
-			[Concept_C1M1_ElevatorHello10c],
-			[IsCliffe],
+			[Concept_C1M1_ElevatorHello03d],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _C1M1_ElevatorHello10cGambler
+		Response _C1M1_ElevatorHello03dMechanic
+		then gambler _C1M1_ElevatorHello04d foo:0 -0.479
 	},
 	{
-		name = "_C1M1_ElevatorHello04cCliffe",
+		name = "_C1M1_ElevatorHello05b_CSGO_SAS",
 		criteria = 
 		[
-			[Concept_C1M1_ElevatorHello04c],
-			[IsCliffe],
+			[Concept_C1M1_ElevatorHello05b],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _C1M1_ElevatorHello04cGambler
+		Response _C1M1_ElevatorHello05bMechanic
 	},
 	{
-		name = "_C1M1_ElevatorHello04eCliffe",
+		name = "_C1M1_ElevatorHello05cRochelle_CSGO_SAS",
 		criteria = 
 		[
-			[Concept_C1M1_ElevatorHello04e],
-			[IsCliffe],
+			[Concept_C1M1_ElevatorHello05c],
+			[IsCsgo_sas],
+			[FromIsProducer],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _C1M1_ElevatorHello04eGambler
+		Response _C1M1_ElevatorHello05cRochelleMechanic
+		then coach _C1M1_ElevatorHello03c foo:0 0.1
 	},
 	{
-		name = "_C1M1_ElevatorHello04dCliffe",
+		name = "_C1M1_ElevatorHello05cCoach_CSGO_SAS",
 		criteria = 
 		[
-			[Concept_C1M1_ElevatorHello04d],
-			[IsCliffe],
+			[Concept_C1M1_ElevatorHello05c],
+			[IsCsgo_sas],
+			[FromIsCoach],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _C1M1_ElevatorHello04dGambler
+		Response _C1M1_ElevatorHello05cCoachMechanic
+		then Producer _C1M1_ElevatorHello03c foo:0 0.1
 	},
 	{
-		name = "_C1M1_ElevatorHello13dCliffe",
+		name = "_C1M1_ElevatorHello05cNick_CSGO_SAS",
 		criteria = 
 		[
-			[Concept_C1M1_ElevatorHello13d],
-			[IsCliffe],
+			[Concept_C1M1_ElevatorHello05c],
+			[IsCsgo_sas],
+			[FromIsGambler],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _C1M1_ElevatorHello13dGambler
+		Response _C1M1_ElevatorHello05cNickMechanic
+		then Producer _C1M1_ElevatorHello11a foo:0 0.1
 	},
 	{
-		name = "_c1m4startelevator5aCliffe",
+		name = "_C1M1_ElevatorHello07b_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_C1M1_ElevatorHello07b],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _C1M1_ElevatorHello07bMechanic
+		then producer _C1M1_ElevatorHello07c foo:0 0.1
+	},
+	{
+		name = "_C1M1_ElevatorHello07d_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_C1M1_ElevatorHello07d],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _C1M1_ElevatorHello07dMechanic
+		then coach _C1M1_ElevatorHello07g foo:0 0.1
+	},
+	{
+		name = "_C1M1_ElevatorHello07f_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_C1M1_ElevatorHello07f],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _C1M1_ElevatorHello07fMechanic
+		then any c1m1_elevator_ready2 foo:0 0.1
+		ApplyContext "LongElevatorIntro:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "_C1M1_ElevatorHello08a_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_C1M1_ElevatorHello08a],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _C1M1_ElevatorHello08aMechanic
+		then producer _C1M1_ElevatorHello08b foo:0 0.1
+	},
+	{
+		name = "_C1M1_ElevatorHello08c_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_C1M1_ElevatorHello08c],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _C1M1_ElevatorHello08cMechanic
+		then producer _C1M1_ElevatorHello08d foo:0 0.1
+	},
+	{
+		name = "_C1M1_ElevatorHello08e_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_C1M1_ElevatorHello08e],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _C1M1_ElevatorHello08eMechanic
+		then coach _C1M1_ElevatorHello07g foo:0 0.1
+	},
+	{
+		name = "_C1M1_ElevatorHello09a_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_C1M1_ElevatorHello09a],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _C1M1_ElevatorHello09aMechanic
+		then producer _C1M1_ElevatorHello09a foo:0 0.1
+	},
+	{
+		name = "_C1M1_ElevatorHello12a_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_C1M1_ElevatorHello12a],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _C1M1_ElevatorHello12aMechanic
+		then Coach _C1M1_ElevatorHello07g foo:0 0.1
+	},
+	{
+		name = "_C1M1_ElevatorHello13a_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_C1M1_ElevatorHello13a],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _C1M1_ElevatorHello13aMechanic
+		then from _C1M1_ElevatorHello13a foo:0 -2.554
+	},
+	{
+		name = "_c1m4startelevator2_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_c1m4startelevator2],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _c1m4startelevator2Mechanic
+		then any _c1m4startelevator5a foo:0 -8.777
+	},
+	{
+		name = "_c1m4startelevator2a_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_c1m4startelevator2a],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _c1m4startelevator2aMechanic
+		then csgo_sas _c1m4startelevator3e foo:0 -2.084
+	},
+	{
+		name = "_c1m4startelevator2b_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_c1m4startelevator2b],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _c1m4startelevator2bMechanic
+		then csgo_sas _c1m4startelevator3c foo:0 -1.250
+	},
+	{
+		name = "_c1m4startelevator2c_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_c1m4startelevator2c],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _c1m4startelevator2cMechanic
+		then producer _c1m4startelevator5a foo:0 -12.096
+	},
+	{
+		name = "_c1m4startelevator3_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_c1m4startelevator3],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _c1m4startelevator3Mechanic
+		then producer _c1m4startelevator3a foo:0 0.2
+	},
+	{
+		name = "_c1m4startelevator3b_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_c1m4startelevator3b],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _c1m4startelevator3bMechanic
+		then producer _c1m4startelevator3c foo:0 0.2
+	},
+	{
+		name = "_c1m4startelevator3c_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_c1m4startelevator3c],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _c1m4startelevator3cMechanic
+		then coach _c1m4startelevator5a foo:0 -4.225
+	},
+	{
+		name = "_c1m4startelevator3d_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_c1m4startelevator3d],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _c1m4startelevator3dMechanic
+		then gambler _c1m4startelevator5a foo:0 -4.225
+	},
+	{
+		name = "_c1m4startelevator3e_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_c1m4startelevator3e],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _c1m4startelevator3eMechanic
+		then gambler _c1m4startelevator5a foo:0 -8.562
+	},
+	{
+		name = "_c1m4startelevator5a_CSGO_SAS",
 		criteria = 
 		[
 			[Concept_c1m4startelevator5a],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _c1m4startelevator5aGambler
+		Response _c1m4startelevator5aMechanic
+		then any _c1m4startelevatorLast foo:0 -4.282
 	},
 	{
-		name = "_c1m4startelevator6a1Cliffe",
+		name = "_c1m4startelevator5a1_CSGO_SAS",
 		criteria = 
 		[
-			[Concept_c1m4startelevator6a1],
-			[IsCliffe],
+			[Concept_c1m4startelevator5a1],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _c1m4startelevator6a1Gambler
+		Response _c1m4startelevator5a1Mechanic
+		then gambler _c1m4startelevator6a1 foo:0 -4.779
 	},
 	{
-		name = "_c1m4startelevatorLastCliffe",
+		name = "_c1m4startelevator5b_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_c1m4startelevator5b],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _c1m4startelevator5bMechanic
+		then csgo_sas _c1m4startelevator5a foo:0 -2.936
+	},
+	{
+		name = "_c1m4startelevatorLast_CSGO_SAS",
 		criteria = 
 		[
 			[Concept_c1m4startelevatorLast],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[ElevatorTimeNotUp],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _c1m4startelevatorLastGambler
+		Response _c1m4startelevatorLastMechanic
 		ApplyContext "Talk:1:5"
 		applycontexttoworld
 	},
 	{
-		name = "_c1m4startelevatorLastTimeUpCliffe",
+		name = "_c1m4startelevatorLastTimeUp_CSGO_SAS",
 		criteria = 
 		[
 			[Concept_c1m4startelevatorLast],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[ElevatorTimeUp],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _c1m4startelevatorLastGambler
+		Response NoResponse
 		ApplyContext "Talk:0:0"
 		applycontexttoworld
 	},
 	{
-		name = "_C2M1_Fall03Cliffe",
+		name = "_c2m1_searchlights01_CSGO_SAS",
 		criteria = 
 		[
-			[Concept_C2M1_Fall03],
-			[IsCliffe],
+			[Concept_c2m1_searchlights01],
+			[IsCsgo_sas],
 			[NotInCombat],
 			[IssuerClose],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _C2M1_Fall03Gambler
+		Response _c2m1_searchlights01Mechanic
+		ApplyContext "Talk:1:2.662"
+		applycontexttoworld
 	},
 	{
-		name = "_C2M1_Fall05Cliffe",
+		name = "_c2m1_searchlights04_CSGO_SAS",
 		criteria = 
 		[
-			[Concept_C2M1_Fall05],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _C2M1_Fall05Gambler
-	},
-	{
-		name = "_c2m1_searchlights03Cliffe",
-		criteria = 
-		[
-			[Concept_c2m1_searchlights03],
-			[IsCliffe],
+			[Concept_c2m1_searchlights04],
+			[IsCsgo_sas],
 			[NotInCombat],
-			[IssuerReallyClose],
+			[IssuerClose],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _c2m1_searchlights03Gambler
-		ApplyContext "Talk:1:4.257"
+		Response _c2m1_searchlights04Mechanic
+		then from _c2m1_searchlights04 foo:0 0.1
+		ApplyContext "Talk:1:2.662"
 		applycontexttoworld
 	},
 	{
-		name = "_C2M1abandoned02Cliffe",
-		criteria = 
-		[
-			[Concept_C2M1abandoned02],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _C2M1abandoned02Gambler
-	},
-	{
-		name = "_C2M1Billboard01Cliffe",
-		criteria = 
-		[
-			[Concept_C2M1Billboard01],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _C2M1Billboard01Gambler
-		ApplyContext "Talk:1:3.411"
-		applycontexttoworld
-	},
-	{
-		name = "_C2M2_Bathroom01Cliffe",
+		name = "_C2M2_Bathroom01_CSGO_SAS",
 		criteria = 
 		[
 			[Concept_C2M2_Bathroom01],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[NotInCombat],
 			[IsSubjectDistNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _C2M2_Bathroom01Gambler
+		Response _C2M2_Bathroom01Mechanic
 	},
 	{
-		name = "_C2M2_CaroButton01Cliffe",
+		name = "_C2M2_CaroStart03_CSGO_SAS",
 		criteria = 
 		[
-			[Concept_C2M2_CaroButton01],
-			[IsCliffe],
-			[NotInCombat],
-			[IsSubjectDistNear500],
-			[ChanceToFire80Percent],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _C2M2_CaroButton01Gambler
-		ApplyContext "Talk:1:3.411"
-		applycontexttoworld
-	},
-	{
-		name = "_C2M2_Kiddie01Cliffe",
-		criteria = 
-		[
-			[Concept_C2M2_Kiddie01],
-			[IsCliffe],
-			[NotInCombat],
-			[IsSubjectDistNear500],
-			[ChanceToFire50Percent],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _C2M2_Kiddie01Gambler
-		ApplyContext "Talk:1:5.314"
-		applycontexttoworld
-	},
-	{
-		name = "_C2M2_Kiddie04Cliffe",
-		criteria = 
-		[
-			[Concept_C2M2_Kiddie04],
-			[IsCliffe],
-			[NotInCombat],
-			[IsSubjectDistNear500],
-			[ChanceToFire80Percent],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _C2M2_Kiddie04Gambler
-		ApplyContext "Talk:1:1.424"
-		applycontexttoworld
-	},
-	{
-		name = "_C2M2_SeeSafehouse01Cliffe",
-		criteria = 
-		[
-			[Concept_C2M2_SeeSafehouse01],
-			[IsCliffe],
+			[Concept_C2M2_CaroStart03],
+			[IsCsgo_sas],
 			[IsNotIncapacitated],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _C2M2_SeeSafehouse01Gambler
+		Response _C2M2_CaroStart03Mechanic
+		then self _C2M2_CaroStart04 foo:0 0.2
 	},
 	{
-		name = "_C2M2_Steak01Cliffe",
+		name = "_C2M2_CaroStart04_CSGO_SAS",
 		criteria = 
 		[
-			[Concept_C2M2_Steak01],
-			[IsCliffe],
+			[Concept_C2M2_CaroStart04],
+			[IsCsgo_sas],
+			[IsNotIncapacitated],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _C2M2_CaroStart04Mechanic
+	},
+	{
+		name = "_C2M2_Kiddie03_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_C2M2_Kiddie03],
+			[IsCsgo_sas],
 			[NotInCombat],
 			[IsSubjectDistNear500],
 			[ChanceToFire80Percent],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
-			[_auto_NotAlarm],
 		],
-		Response _C2M2_Steak01Gambler
-		ApplyContext "Talk:1:4.641"
+		Response _C2M2_Kiddie03Mechanic
+		then any _C2M2_Kiddie04 foo:0 0.1
+		ApplyContext "Talk:1:5.572"
 		applycontexttoworld
 	},
 	{
-		name = "_C2M2_ThisTall01Cliffe",
+		name = "_C2M2_Peanut01_CSGO_SAS",
 		criteria = 
 		[
-			[Concept_C2M2_ThisTall01],
-			[IsCliffe],
+			[Concept_C2M2_Peanut01],
+			[IsCsgo_sas],
 			[NotInCombat],
-			[IsSubjectDistNear500],
+			[IsSubjectDistNear800],
 			[ChanceToFire80Percent],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
-			[_auto_NotAlarm],
 		],
-		Response _C2M2_ThisTall01Gambler
-		ApplyContext "Talk:1:2.272"
+		Response _C2M2_Peanut01Mechanic
+		ApplyContext "Talk:1:6.681"
 		applycontexttoworld
 	},
 	{
-		name = "_c2m3_coaster02Cliffe",
+		name = "_C2M2_Slide01_CSGO_SAS",
 		criteria = 
 		[
-			[Concept_c2m3_coaster02],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[_auto_NotAlarm],
-		],
-		Response _c2m3_coaster02Gambler
-		ApplyContext "Talk:1:1.745"
-		applycontexttoworld
-	},
-	{
-		name = "_c2m3_coaster05Cliffe",
-		criteria = 
-		[
-			[Concept_c2m3_coaster05],
-			[IsCliffe],
-			[ChanceToFire60Percent],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[_auto_NotAlarm],
-		],
-		Response _c2m3_coaster05Gambler
-		ApplyContext "Talk:1:4.144"
-		applycontexttoworld
-	},
-	{
-		name = "_c2m3_hole01Cliffe",
-		criteria = 
-		[
-			[Concept_c2m3_hole01],
-			[IsCliffe],
-			[IssuerReallyClose],
-			[IsNotCoughing],
+			[Concept_C2M2_Slide01],
+			[IsCsgo_sas],
 			[NotInCombat],
+			[IsSubjectDistNear400],
+			[ChanceToFire80Percent],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _C2M2_Slide01Mechanic
+		ApplyContext "Talk:1:2.922"
+		applycontexttoworld
+	},
+	{
+		name = "_C2M2_ThisTall02_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_C2M2_ThisTall02],
+			[IsCsgo_sas],
+			[NotInCombat],
+			[IssuerClose],
+			[ChanceToFire80Percent],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _C2M2_ThisTall02Mechanic
+		ApplyContext "Talk:1:2.201"
+		applycontexttoworld
+	},
+	{
+		name = "_C2M2_ThisTall02Nick_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_C2M2_ThisTall02],
+			[IsCsgo_sas],
+			[NotInCombat],
+			[IssuerClose],
+			[FromIsGambler],
+			[Csgo_sasNotTall],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		// 	forceweight 100
+		Response _C2M2_ThisTall02NickMechanic
+		then Gambler _C2M2_ThisTall02 foo:0 0.1
+		ApplyContext "Talk:1:2.201"
+		applycontexttoworld
+	},
+	{
+		name = "_C2M2_LikeTaters_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_C2M2_LikeTaters],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[_auto_NotDownHole],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response _c2m3_hole01Gambler
+		Response _C2M2_LikeTatersMechanic
+		ApplyContext "TalkCsgo_sas:1:4.435"
 	},
 	{
-		name = "_c2m3_water01Cliffe",
+		name = "_C2M2_Kiddie06_CSGO_SAS",
 		criteria = 
 		[
-			[Concept_c2m3_water01],
-			[IsCliffe],
+			[Concept_C2M2_Kiddie06],
+			[IsCsgo_sas],
+			[NotInCombat],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _C2M2_ThisTall02Mechanic
+		ApplyContext "Talk:1:2.201,Csgo_sasTallJoke:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "_c2m3_cement01_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_c2m3_cement01],
+			[IsCsgo_sas],
+			[NotInCombat],
+			[IsNotIncapacitated],
+			[IsNotCoughing],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[AutoIsNotSurvival],
+			[AutoIsNotScavenge],
+		],
+		Response _c2m3_cement01Mechanic
+	},
+	{
+		name = "_c2m3_coaster01_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_c2m3_coaster01],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[_auto_NotAlarm],
+		],
+		Response _c2m3_coaster01Mechanic
+		then self _c2m3_coaster07 foo:0 0.3
+		ApplyContext "Talk:1:2.653"
+		applycontexttoworld
+	},
+	{
+		name = "_c2m3_coaster03_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_c2m3_coaster03],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[_auto_NotAlarm],
+		],
+		Response _c2m3_coaster03Mechanic
+		ApplyContext "Talk:1:2.171"
+		applycontexttoworld
+	},
+	{
+		name = "_c2m3_coaster06_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_c2m3_coaster06],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[_auto_NotAlarm],
+		],
+		Response _c2m3_coaster06Mechanic
+		then self _c2m3_coaster07 foo:0 0.3
+		ApplyContext "Talk:1:2.653"
+		applycontexttoworld
+	},
+	{
+		name = "_c2m3_coaster07_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_c2m3_coaster07],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[_auto_NotAlarm],
+		],
+		Response _c2m3_coaster07Mechanic
+		then any _c2m3_coaster05 foo:0 0.01
+		ApplyContext "Talk:1:2.194"
+		applycontexttoworld
+	},
+	{
+		name = "_c2m3_coaster08_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_c2m3_coaster08],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[_auto_NotAlarm],
+		],
+		Response _c2m3_coaster08Mechanic
+		then self _c2m3_coaster07 foo:0 0.3
+		ApplyContext "Talk:1:2.653"
+		applycontexttoworld
+	},
+	{
+		name = "_c2m3_coollight01_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_c2m3_coollight01],
+			[IsCsgo_sas],
 			[IssuerClose],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _c2m3_water01Gambler
+		Response _c2m3_coollight01Mechanic
 	},
 	{
-		name = "_C2M4_GateOpen001Cliffe",
+		name = "_c2m3_howcool_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_c2m3_howcool],
+			[IsCsgo_sas],
+			[ChanceToFire50Percent],
+			[NotInCombat],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _c2m3_howcoolMechanic
+	},
+	{
+		name = "_C2M4_GateOpen001_CSGO_SAS",
 		criteria = 
 		[
 			[Concept_C2M4_GateOpen001],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotIncapacitated],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _C2M4_GateOpen001Gambler
+		Response _C2M4_GateOpen001Mechanic
 	},
 	{
-		name = "_C4_BigStormHits01Cliffe",
+		name = "_C4_BigStormHits01_CSGO_SAS",
 		criteria = 
 		[
 			[Concept_C4_BigStormHits01],
-			[IsCliffe],
-			[_auto_NotC4CliffeInCover],
+			[IsCsgo_sas],
+			[_auto_NotC4Csgo_sasInCover],
 			[_auto_IsTimerA],
 			[FromIsAnOrator],
 		],
-		Response _C4_BigStormHits01Gambler
-		ApplyContext "Talk:1:1.363"
+		Response _C4_BigStormHits01Mechanic
+		then any _C4_BigStormHits02 foo:0 0.04
+		ApplyContext "Talk:1:1.139"
 		applycontexttoworld
 	},
 	{
-		name = "_C4_BigStormHits02Cliffe",
+		name = "_C4_BigStormHits02_CSGO_SAS",
 		criteria = 
 		[
 			[Concept_C4_BigStormHits02],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotCoughing],
 			[IssuerClose],
 			[IsNotIncapacitated],
-			[_auto_NotC4CliffeInCover],
+			[_auto_NotC4Csgo_sasInCover],
 		],
-		Response _C4_BigStormHits02Gambler
-		ApplyContext "Talk:1:1.241"
+		Response _C4_BigStormHits02Mechanic
+		ApplyContext "Talk:1:1.845"
 		applycontexttoworld
 	},
 	{
-		name = "_c4m1_rainresponseCliffe",
+		name = "_c4m1_rainresponse_CSGO_SAS",
 		criteria = 
 		[
 			[Concept_c4m1_rainresponse],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[NotInCombat],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSaidc4m1_rainresponse],
 		],
-		Response _c4m1_rainresponseGambler
+		Response _c4m1_rainresponseMechanic
 		ApplyContext "Saidc4m1_rainresponse:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "C4M1IntroCliffe",
+		name = "C4M1Intro_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptIntroC4M1],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidCXM1Intro],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C4M1IntroGambler
+		Response C4M1IntroMechanic
+		then orator _c4m1Intro01 foo:0 0.01
 		ApplyContext "CXM1Intro:1:0,Saidremark_caralarm:1:400"
 		applycontexttoworld
 	},
 	{
-		name = "_c4m1Intro03Cliffe",
-		criteria = 
-		[
-			[Concept_c4m1Intro03],
-			[IsCliffe],
-			[IsEveryoneAlive],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _c4m1Intro03Gambler
-	},
-	{
-		name = "_c4m1Intro04Cliffe",
-		criteria = 
-		[
-			[Concept_c4m1Intro04],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _c4m1Intro04Gambler
-	},
-	{
-		name = "_c4m1Intro05Cliffe",
+		name = "_c4m1Intro05_CSGO_SAS",
 		criteria = 
 		[
 			[Concept_c4m1Intro05],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _c4m1Intro05Gambler
+		Response _c4m1Intro05Mechanic
+		then coach _c4m1Intro05 foo:0 0.01
 	},
 	{
-		name = "_c4m1Intro07Cliffe",
+		name = "_c4m1Intro07_CSGO_SAS",
 		criteria = 
 		[
 			[Concept_c4m1Intro07],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _c4m1Intro07Gambler
-		ApplyContext "c4m1GunBag:1:0"
-		applycontexttoworld
+		Response _c4m1Intro07Mechanic
+		then any _c4m1Intro07 foo:0 0.01
 	},
 	{
-		name = "_c4m1Intro08Cliffe",
+		name = "_c4m1Intro08_CSGO_SAS",
 		criteria = 
 		[
 			[Concept_c4m1Intro08],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _c4m1Intro08Gambler
+		Response _c4m1Intro08Mechanic
+		then any _c4m1Intro09 foo:0 -1.0
 	},
 	{
-		name = "_c4m1Intro09Cliffe",
+		name = "_c4m1Intro12_CSGO_SAS",
 		criteria = 
 		[
-			[Concept_c4m1Intro09],
-			[IsCliffe],
+			[Concept_c4m1Intro12],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _c4m1Intro09Gambler
+		Response _c4m1Intro12Mechanic
+		then coach _c4m1Intro14 foo:0 -0.30
 	},
 	{
-		name = "_c4m1Intro11Cliffe",
+		name = "_c4m1Intro16_CSGO_SAS",
 		criteria = 
 		[
-			[Concept_c4m1Intro11],
-			[IsCliffe],
+			[Concept_c4m1Intro16],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _c4m1Intro11Gambler
-		ApplyContext "c4m1IToldYouSo:1:0"
-		applycontexttoworld
+		Response _c4m1Intro16Mechanic
+		then gambler _c4m1Intro07 foo:0 0.01
 	},
 	{
-		name = "_c4m1Intro13Cliffe",
-		criteria = 
-		[
-			[Concept_c4m1Intro13],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _c4m1Intro13Gambler
-	},
-	{
-		name = "_c4m1Intro02Cliffe",
-		criteria = 
-		[
-			[Concept_c4m1Intro02],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _c4m1Intro02Gambler
-		ApplyContext "c4m1MilkRun:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "_c4m2_caneyell01Cliffe",
+		name = "_c4m2_caneyell01_CSGO_SAS",
 		criteria = 
 		[
 			[Concept_c4m2_caneyell01],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[ChanceToFire50Percent],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
-			[_auto_IsCliffeInCane],
+			[_auto_IsCsgo_sasInCane],
 		],
-		Response _c4m2_caneyell01Gambler
+		Response _c4m2_caneyell01Mechanic
 	},
 	{
-		name = "_c4m2_ElevatorHere01Cliffe",
+		name = "_c4m2_ElevatorHere01_CSGO_SAS",
 		criteria = 
 		[
 			[Concept_c4m2_ElevatorHere01],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotIncapacitated],
 			[IsNotCoughing],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _c4m2_ElevatorHere01Gambler
+		Response _c4m2_ElevatorHere01Mechanic
 	},
 	{
-		name = "_c4m2_seestation01Cliffe",
+		name = "_c4m2_gasinside01_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_c4m2_gasinside01],
+			[IsCsgo_sas],
+			[NotInCombat],
+			[IsSubjectDistNear400],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[_auto_NotCsgo_sasInCane],
+		],
+		Response _c4m2_gasinside01Mechanic
+	},
+	{
+		name = "_c4m2_seestation01_CSGO_SAS",
 		criteria = 
 		[
 			[Concept_c4m2_seestation01],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsSubjectDistNear200],
 			[IsNotSaidActivatedC4M2Elevator],
 			[NotInCombat],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _c4m2_seestation01Gambler
+		Response _c4m2_seestation01Mechanic
 		ApplyContext "Talk:1:2"
 		applycontexttoworld
 	},
 	{
-		name = "_c4m2_seestation03Cliffe",
+		name = "_c4m2_seestation02N_CSGO_SAS",
 		criteria = 
 		[
-			[Concept_c4m2_seestation03],
-			[IsCliffe],
-			[IsSubjectDistNear150],
+			[Concept_c4m2_seestation02],
+			[IsCsgo_sas],
+			[IsSubjectDistNear400],
 			[IsNotSaidActivatedC4M2Elevator],
+			[FromIsGambler],
 			[NotInCombat],
-			[ChanceToFire50Percent],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _c4m2_seestation03Gambler
+		Response _c4m2_seestation02NMechanic
+		then from _c4m2_seestation03 foo:0 0.01
 		ApplyContext "Talk:1:2"
 		applycontexttoworld
 	},
 	{
-		name = "_c4m2_streetblocked01Cliffe",
+		name = "_c4m2_seestation02R_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_c4m2_seestation02],
+			[IsCsgo_sas],
+			[IsSubjectDistNear400],
+			[IsNotSaidActivatedC4M2Elevator],
+			[FromIsProducer],
+			[NotInCombat],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _c4m2_seestation02RMechanic
+		then from _c4m2_seestation03 foo:0 0.01
+		ApplyContext "Talk:1:2"
+		applycontexttoworld
+	},
+	{
+		name = "_c4m2_streetblocked01_CSGO_SAS",
 		criteria = 
 		[
 			[Concept_c4m2_streetblocked01],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsSubjectDistNear400],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _c4m2_streetblocked01Gambler
+		Response _c4m2_streetblocked01Mechanic
 	},
 	{
-		name = "_c4m2_streetblocked01bCliffe",
+		name = "_c4m2_streetblocked01b_CSGO_SAS",
 		criteria = 
 		[
 			[Concept_c4m2_streetblocked01],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsSubjectDistFar400],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _c4m2_streetblocked01bGambler
+		Response _c4m2_streetblocked01bMechanic
+		then subject _c4m2_streetblocked02 foo:0 0.01
 	},
 	{
-		name = "_c4m2_streetblocked02Cliffe",
+		name = "_c4m2_streetblocked02_CSGO_SAS",
 		criteria = 
 		[
 			[Concept_c4m2_streetblocked02],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _c4m2_streetblocked01Gambler
+		Response _c4m2_streetblocked01Mechanic
 	},
 	{
-		name = "_c4m2_Witchville01Cliffe",
+		name = "_c4m2_waterpool01_CSGO_SAS",
 		criteria = 
 		[
-			[Concept_c4m2_Witchville01],
-			[IsCliffe],
-			[IssuerClose],
+			[Concept_c4m2_waterpool01],
+			[IsCsgo_sas],
+			[IsSubjectDistNear400],
 			[NotInCombat],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _c4m2_Witchville01Gambler
+		Response _c4m2_waterpool01Mechanic
 	},
 	{
-		name = "_c4m2_Witchville05Cliffe",
+		name = "_c4m2_Witchville05_CSGO_SAS",
 		criteria = 
 		[
 			[Concept_c4m2_Witchville05],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IssuerClose],
 			[NotInCombat],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _c4m2_Witchville05Gambler
+		Response _c4m2_Witchville05Mechanic
 	},
 	{
-		name = "_c4m3_rain01Cliffe",
+		name = "_c4m3_rain02_CSGO_SAS",
 		criteria = 
 		[
-			[Concept_c4m3_rain01],
-			[IsCliffe],
+			[Concept_c4m3_rain02],
+			[IsCsgo_sas],
 			[NotInCombat],
 			[IsSubjectDistNear400],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _c4m3_rain01Gambler
+		Response _c4m3_rain02Mechanic
 	},
 	{
-		name = "_c4m3_startsafe02Cliffe",
+		name = "_c4m3_startsafe02_CSGO_SAS",
 		criteria = 
 		[
 			[Concept_c4m3_startsafe02],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _c4m3_startsafe02Gambler
+		Response _c4m3_startsafe02Mechanic
+		then any _c4m3_startsafe03 foo:0 0.2
 	},
 	{
-		name = "_c4m3_startsafe04Cliffe",
+		name = "_c4m3_startsafe03_CSGO_SAS",
 		criteria = 
 		[
-			[Concept_c4m3_startsafe04],
-			[IsCliffe],
+			[Concept_c4m3_startsafe03],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _c4m3_startsafe04Gambler
+		Response _c4m3_startsafe03Mechanic
+		then self IntroEnd foo:0 0.1
 	},
 	{
-		name = "_C4M5_BoatComing01Cliffe",
+		name = "_C4M4_FLOODED01_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_C4M4_FLOODED01],
+			[IsCsgo_sas],
+			[ChanceToFire50Percent],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _C4M4_FLOODED01Mechanic
+	},
+	{
+		name = "_C4M4_garagesale01_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_C4M4_garagesale01],
+			[IsCsgo_sas],
+			[IssuerClose],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _C4M4_garagesale01Mechanic
+	},
+	{
+		name = "_C4M5_BoatComing01_CSGO_SAS",
 		criteria = 
 		[
 			[Concept_C4M5_BoatComing01],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _C4M5_BoatComing01Gambler
+		Response _C4M5_BoatComing01Mechanic
 	},
 	{
-		name = "_C4M5_FinaleStart01Cliffe",
+		name = "_C4M5_Intro03_CSGO_SAS",
 		criteria = 
 		[
-			[Concept_C4M5_FinaleStart01],
-			[IsCliffe],
+			[Concept_C4M5_Intro03],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _C4M5_FinaleStart01Gambler
+		Response _C4M5_Intro03Mechanic
+		then any _C4M5_Intro04 foo:0 0.1
 	},
 	{
-		name = "_C4M5_Intro02Cliffe",
-		criteria = 
-		[
-			[Concept_C4M5_Intro02],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _C4M5_Intro02Gambler
-	},
-	{
-		name = "_C4M5_Intro04Cliffe",
+		name = "_C4M5_Intro04_CSGO_SAS",
 		criteria = 
 		[
 			[Concept_C4M5_Intro04],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _C4M5_Intro04Gambler
+		Response _C4M5_Intro04Mechanic
+		then self IntroEnd foo:0 0.1
 	},
 	{
-		name = "PlayerRemarkc4m5_BurgerTankCliffe",
+		name = "PlayerRemarkc4m5_BurgerTank_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isc4m5_burgertank],
 			[IsNotSaidc4m5_burgertank],
 			[IsNotCoughing],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSubjectNear1000],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc4m5_BurgerTankGambler
+		Response PlayerRemarkc4m5_BurgerTankMechanic
 		ApplyContext "Saidc4m5_burgertank:1:0,Talk:1:2"
 		applycontexttoworld
 	},
 	{
-		name = "_introc1m1Cliffe",
+		name = "_introc1m1_CSGO_SAS",
 		criteria = 
 		[
 			[Concept_introc1m1],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotAlone],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _introc1m1Gambler
+		Response _introc1m1Mechanic
+		then any _introc1m1a01 foo:0 -1
 	},
 	{
-		name = "_introc1m1AloneCliffe",
+		name = "_introc1m1Alone_CSGO_SAS",
 		criteria = 
 		[
 			[Concept_introc1m1],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsAlone],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _introc1m1AloneGambler
+		Response _introc1m1AloneMechanic
 	},
 	{
-		name = "_introc1m1a01Cliffe",
+		name = "_introc1m1MovieIntro_CSGO_SAS",
 		criteria = 
 		[
-			[Concept_introc1m1a01],
-			[IsCliffe],
+			[Concept_introc1m1],
+			[IsCsgo_sas],
+			[IsNotAlone],
+			[ExtraWeight10],
+			[ChanceToFire5Percent],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _introc1m1a01Gambler
+		Response _introc1m1MovieIntroMechanic
+		then self _introc1m1MovieIntro foo:0 0.5
 	},
 	{
-		name = "_introc1m1a04Cliffe",
-		criteria = 
-		[
-			[Concept_introc1m1a04],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _introc1m1a04Gambler
-	},
-	{
-		name = "_introc1m1b02Cliffe",
-		criteria = 
-		[
-			[Concept_introc1m1b02],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _introc1m1a04Gambler
-	},
-	{
-		name = "_introc1m1b03Cliffe",
-		criteria = 
-		[
-			[Concept_introc1m1b03],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _introc1m1b03Gambler
-	},
-	{
-		name = "_introc1m1b04Cliffe",
-		criteria = 
-		[
-			[Concept_introc1m1b04],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _introc1m1b04Gambler
-	},
-	{
-		name = "_introc1m1helileftCliffe",
-		criteria = 
-		[
-			[Concept_introc1m1helileft],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _introc1m1helileftGambler
-	},
-	{
-		name = "_introc1m1b05Cliffe",
-		criteria = 
-		[
-			[Concept_introc1m1b05],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _introc1m1b05Gambler
-	},
-	{
-		name = "_introc1m1b06Cliffe",
-		criteria = 
-		[
-			[Concept_introc1m1b06],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _introc1m1b06Gambler
-	},
-	{
-		name = "_introc1m1b08donutsCliffe",
-		criteria = 
-		[
-			[Concept_introc1m1b08donuts],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _introc1m1b08donutsGambler
-	},
-	{
-		name = "_introc1m1b09Cliffe",
-		criteria = 
-		[
-			[Concept_introc1m1b09],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _introc1m1b09Gambler
-	},
-	{
-		name = "_introc1m1b10Cliffe",
-		criteria = 
-		[
-			[Concept_introc1m1b10],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _introc1m1b10Gambler
-	},
-	{
-		name = "_introc1m1lastCliffe",
-		criteria = 
-		[
-			[Concept_introc1m1last],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _introc1m1lastGambler
-	},
-	{
-		name = "_introc1m1lastweaponsCliffe",
-		criteria = 
-		[
-			[Concept_introc1m1lastweapons],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _introc1m1lastGambler
-	},
-	{
-		name = "_introc1m1b11Cliffe",
-		criteria = 
-		[
-			[Concept_introc1m1b11],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _introc1m1b11Gambler
-	},
-	{
-		name = "_introc1m1MovieIntroCliffe",
+		name = "_introc1m1MovieIntro2_CSGO_SAS",
 		criteria = 
 		[
 			[Concept_introc1m1MovieIntro],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _introc1m1MovieIntroGambler
+		Response _introc1m1MovieIntro2Mechanic
+		then producer _introc1m1MovieIntro foo:0 -1.5
 	},
 	{
-		name = "_introc1m1c02Cliffe",
+		name = "_introc1m1a04_CSGO_SAS",
 		criteria = 
 		[
-			[Concept_introc1m1c02],
-			[IsCliffe],
+			[Concept_introc1m1a04],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _introc1m1c02Gambler
+		Response _introc1m1a04Mechanic
+		then gambler _introc1m1b03 foo:0 -1.120
 	},
 	{
-		name = "BlankTestoCliffe",
+		name = "_introc1m1a05_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_introc1m1a05],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _introc1m1a05Mechanic
+		then gambler _introc1m1b10 foo:0 0.1
+	},
+	{
+		name = "_introc1m1b02_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_introc1m1b02],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _introc1m1b02Mechanic
+		then gambler _introc1m1b03 foo:0 -1.120
+	},
+	{
+		name = "_introc1m1b03_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_introc1m1b03],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _introc1m1b03Mechanic
+		then gambler _introc1m1b06 foo:0 0.1
+	},
+	{
+		name = "_introc1m1last_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_introc1m1last],
+			[IsCsgo_sas],
+			[FromIsNotCoach],
+			[ChanceToFire30Percent],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _introc1m1lastMechanic
+		then self IntroEnd foo:0 0.1
+	},
+	{
+		name = "_introc1m1lastCoach_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_introc1m1last],
+			[IsCsgo_sas],
+			[FromIsCoach],
+			[ChanceToFire30Percent],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _introc1m1lastCoachMechanic
+		then self IntroEnd foo:0 0.1
+	},
+	{
+		name = "_introc1m1b05_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_introc1m1b05],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _introc1m1b05Mechanic
+		then any _introc1m1b08 foo:0 0.1
+	},
+	{
+		name = "_introc1m1b06_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_introc1m1b06],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _introc1m1b06Mechanic
+		then any _introc1m1last foo:0 -5.084
+	},
+	{
+		name = "_introc1m1b08_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_introc1m1b08],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _introc1m1b08Mechanic
+		then any _introc1m1last foo:0 -5.084
+	},
+	{
+		name = "_introc1m1firealert_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_introc1m1firealert],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _introc1m1firealertMechanic
+		then coach _introc1m1b08 foo:0 0.1
+	},
+	{
+		name = "BlankTesto_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptBlankTesto],
-			[IsCliffe],
+			[IsCsgo_sas],
 		],
 		Response NoResponse
 		ApplyContext "_auto_BlankTesto:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "c1m1_elevator_door_openCliffe",
+		name = "c1m1_elevator_door_open_CSGO_SAS",
 		criteria = 
 		[
 			[Conceptc1m1_elevator_door_open2],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response c1m1_elevator_door_openGambler
+		Response c1m1_elevator_door_openMechanic
+		then all C1M1Cough foo:0 -1.399
 	},
 	{
-		name = "c1m1_elevator_ready2Cliffe",
+		name = "c1m1_elevator_ready2_CSGO_SAS",
 		criteria = 
 		[
 			[Conceptc1m1_elevator_ready2],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidC1M1OpenDoor],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response c1m1_elevator_ready2Gambler
-		ApplyContext "SaidC1M1OpenDoor:1:30,Talk:0:0"
+		Response c1m1_elevator_ready2Mechanic
+		then Csgo_sas C1M1Cough foo:0 -0.618
+		ApplyContext "SaidC1M1OpenDoor:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "_C1M1_ElevatorHello2AliveNickIntro1Cliffe",
+		name = "_C1M1_ElevatorHello2AliveName1_CSGO_SAS",
 		criteria = 
 		[
-			[Concept_C1M1_ElevatorHello2AliveCliffeIntro1],
-			[IsCliffe],
+			[Concept_C1M1_ElevatorHello2AliveName1],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _C1M1_ElevatorHello2AliveNickIntro1Gambler
+		Response _C1M1_ElevatorHello2AliveName1Mechanic
+		then any _C1M1_ElevatorHello2AliveName2 foo:0 -0.911
 	},
 	{
-		name = "_C1M1_ElevatorHello2AliveExtra1Cliffe",
+		name = "_C1M1_ElevatorHello2AliveName2_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_C1M1_ElevatorHello2AliveName2],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _C1M1_ElevatorHello2AliveName2Mechanic
+		then any _C1M1_ElevatorHello2AliveExtra1 foo:0 -0.911
+	},
+	{
+		name = "_C1M1_ElevatorHello2AliveExtra1_CSGO_SAS",
 		criteria = 
 		[
 			[Concept_C1M1_ElevatorHello2AliveExtra1],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _C1M1_ElevatorHello2AliveExtra1Gambler
+		Response _C1M1_ElevatorHello2AliveExtra1Mechanic
+		then any _C1M1_ElevatorHello2AliveExtra2 foo:0 0.1
 	},
 	{
-		name = "_C1M1_ElevatorHello2AliveExtra2Cliffe",
+		name = "_C1M1_ElevatorHello2AliveExtra2_CSGO_SAS",
 		criteria = 
 		[
 			[Concept_C1M1_ElevatorHello2AliveExtra2],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _C1M1_ElevatorHello2AliveExtra2Gambler
+		Response _C1M1_ElevatorHello2AliveExtra2Mechanic
 	},
 	{
-		name = "_C1M1_ElevatorHello3AliveExtra1Cliffe",
-		criteria = 
-		[
-			[Concept_C1M1_ElevatorHello3AliveExtra1],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _C1M1_ElevatorHello3AliveExtra1Gambler
-	},
-	{
-		name = "_C1M1_ElevatorHello3AliveNickIntro1Cliffe",
-		criteria = 
-		[
-			[Concept_C1M1_ElevatorHello3AliveCliffeIntro1],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _C1M1_ElevatorHello3AliveNickIntro1Gambler
-		ApplyContext "CliffeIntroduced:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "_C1M1_ElevatorHello3AliveNickIntro2Cliffe",
-		criteria = 
-		[
-			[Concept_C1M1_ElevatorHello3AliveCliffeIntro2],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _C1M1_ElevatorHello3AliveNickIntro2Gambler
-	},
-	{
-		name = "_C1M1_ElevatorHello3AliveName1Cliffe",
+		name = "_C1M1_ElevatorHello3AliveName1_CSGO_SAS",
 		criteria = 
 		[
 			[Concept_C1M1_ElevatorHello3AliveName1],
-			[IsCliffe],
-			[IsNotCliffeIntroduced],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _C1M1_ElevatorHello3AliveName1Gambler
-		ApplyContext "CliffeIntroduced:1:0"
+		Response _C1M1_ElevatorHello3AliveName1Mechanic
+		then any _C1M1_ElevatorHello3AliveName2 foo:0 -1.856
+	},
+	{
+		name = "_C1M1_ElevatorHello3AliveName1R_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_C1M1_ElevatorHello3AliveName1],
+			[FromIsProducer],
+			[ChanceToFire100Percent],
+			[IsRochelleElevatorIntro],
+			[IsNotCsgo_sasIntroduced],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _C1M1_ElevatorHello3AliveName1RMechanic
+		then from _C1M1_ElevatorHello3AliveExtra2 foo:0 -1.856
+		ApplyContext "Csgo_sasIntroduced:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "_C1M1_ElevatorHello3AliveName2RCliffe",
+		name = "_C1M1_ElevatorHello3AliveName2R_CSGO_SAS",
 		criteria = 
 		[
 			[Concept_C1M1_ElevatorHello3AliveName2],
-			[IsCliffe],
-			[IsRochelleElevatorIntro],
 			[FromIsProducer],
-			[IsNotCliffeIntroduced],
+			[IsRochelleElevatorIntro],
 			[ChanceToFire100Percent],
+			[IsNotCsgo_sasIntroduced],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _C1M1_ElevatorHello3AliveName2RGambler
-		ApplyContext "CliffeIntroduced:1:0"
+		Response _C1M1_ElevatorHello3AliveName2RMechanic
+		then from _C1M1_ElevatorHello3AliveName2 foo:0 -1.856
+		ApplyContext "Csgo_sasIntroduced:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "_C1M1_ElevatorHello3AliveName2Cliffe",
+		name = "_C1M1_ElevatorHello3AliveName2_CSGO_SAS",
 		criteria = 
 		[
-			[Concept_C1M1_ElevatorHello3AliveCliffeIntro2],
-			[IsCliffe],
-			[IsNotCliffeIntroduced],
+			[Concept_C1M1_ElevatorHello3AliveName2],
+			[IsCsgo_sas],
+			[IsNotCsgo_sasIntroduced],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _C1M1_ElevatorHello3AliveName2Gambler
-		ApplyContext "CliffeIntroduced:1:0"
+		Response _C1M1_ElevatorHello3AliveName2Mechanic
+		then any _C1M1_ElevatorHello3WhoIsDead foo:0 -0.911
+		ApplyContext "Csgo_sasIntroduced:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "_C1M1_ElevatorHello3AliveNameDeadRCliffe",
+		name = "_C1M1_ElevatorHello3AliveWhoIsDead_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_C1M1_ElevatorHello3AliveWhoIsDead],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _C1M1_ElevatorHello3AliveWhoIsDeadMechanic
+		then any _C1M1_ElevatorHello3NameDead foo:0 -0.671
+	},
+	{
+		name = "_C1M1_ElevatorHello3AliveNameDeadR_CSGO_SAS",
 		criteria = 
 		[
 			[Concept_C1M1_ElevatorHello3AliveNameDead],
-			[IsCliffe],
 			[IsProducerNotAlive],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _C1M1_ElevatorHello3AliveNameDeadRGambler
+		Response _C1M1_ElevatorHello3AliveNameDeadRMechanic
 	},
 	{
-		name = "_C1M1_ElevatorHello3AliveNameDeadECliffe",
+		name = "_C1M1_ElevatorHello3AliveNameDeadC_CSGO_SAS",
 		criteria = 
 		[
 			[Concept_C1M1_ElevatorHello3AliveNameDead],
-			[IsCliffe],
-			[IsMechanicNotAlive],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response _C1M1_ElevatorHello3AliveNameDeadEGambler
-	},
-	{
-		name = "_C1M1_ElevatorHello3AliveNameDeadCCliffe",
-		criteria = 
-		[
-			[Concept_C1M1_ElevatorHello3AliveNameDead],
-			[IsCliffe],
 			[IsCoachNotAlive],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response _C1M1_ElevatorHello3AliveNameDeadCGambler
+		Response _C1M1_ElevatorHello3AliveNameDeadCMechanic
+		then any _C1M1_ElevatorHello3NameDead foo:0 -0.671
 	},
 	{
-		name = "C1M1CoughCliffe",
+		name = "_C1M1_ElevatorHello3AliveNameDeadN_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_C1M1_ElevatorHello3AliveNameDead],
+			[IsGamblerNotAlive],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response _C1M1_ElevatorHello3AliveNameDeadNMechanic
+	},
+	{
+		name = "Concept_C1M1_ElevatorHello3AliveNameDeadSelf_CSGO_SAS",
+		criteria = 
+		[
+			[Concept_C1M1_ElevatorHello3AliveNameDead],
+			[IsCsgo_sas],
+			[IsCoachAlive],
+			[ChanceToFire30Percent],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response Concept_C1M1_ElevatorHello3AliveNameDeadSelfMechanic
+		then coach _C1M1_ElevatorHello3AliveNameDead2 foo:0 0.1
+	},
+	{
+		name = "C1M1Cough_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC1M1Cough],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[ismap_c1m1_hotel],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C1M1CoughGambler
+		Response C1M1CoughMechanic
 	},
 	{
-		name = "C1M3AlarmOffaCliffe",
+		name = "C1M2SafeRoom_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptTalkIdle],
+			[IsCsgo_sas],
+			[NotInCombat],
+			[ismap_c1m2_streets],
+			[IsInStartArea],
+			[IsNotAlone],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[_auto_IsSafeRoomStart],
+			[_auto_NotSafeRoomQuiet],
+			[IsNotSaidLeavingSafeArea],
+			[IsNotSpeakingWeight0],
+		],
+		Response C1M2SafeRoomMechanic
+		then gambler C1M2SafeRoomb1 foo:0 -3.584
+		ApplyContext "_auto_SafeRoomStart:2:0"
+		applycontexttoworld
+	},
+	{
+		name = "C1M2SafeRooma4_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC1M2SafeRooma4],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C1M2SafeRooma4Mechanic
+		then producer C1M2SafeRooma3 foo:0 0.1
+	},
+	{
+		name = "C1M2SafeRooma3_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC1M2SafeRooma3],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C1M2SafeRooma3Mechanic
+		then producer C1M2SafeRooma4 foo:0 0.1
+	},
+	{
+		name = "C1M3AlarmOffa_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC1M3AlarmOffa],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsSubjectDistNear600],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C1M3AlarmOffaGambler
+		Response C1M3AlarmOffaMechanic
 	},
 	{
-		name = "C1M3SafeRoomCliffe",
+		name = "C1M3SafeRoom_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptTalkIdle],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[NotInCombat],
 			[IsInStartArea],
 			[IsNotAlone],
@@ -20447,85 +21620,51 @@ local jess_cliffe_rules =
 			[_auto_IsSafeRoomStart],
 			[IsNotSpeakingWeight0],
 		],
-		Response C1M3SafeRoomGambler
+		Response C1M3SafeRoomMechanic
+		then self IntroEnd foo:0 0.1
 		ApplyContext "_auto_SafeRoomStart:2:0"
 		applycontexttoworld
 	},
 	{
-		name = "C1M3SafeRoom2aCliffe",
+		name = "C1M3SafeRoom2e_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC1M3SafeRoom2a],
-			[IsCliffe],
+			[ConceptC1M3SafeRoom2e],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C1M3SafeRoom2aGambler
+		Response C1M3SafeRoom2eMechanic
+		then self IntroEnd foo:0 0.1
 	},
 	{
-		name = "C1M3SafeRoom2bCliffe",
+		name = "C1M4NearFinale03c_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC1M3SafeRoom2b],
-			[IsCliffe],
+			[ConceptC1M4NearFinale03c],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C1M3SafeRoom2bGambler
+		Response C1M4NearFinale03cMechanic
 	},
 	{
-		name = "C1M4NearFinale02aCliffe",
-		criteria = 
-		[
-			[ConceptC1M4NearFinale02a],
-			[IsCliffe],
-			[IssuerClose],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response C1M4NearFinale02aGambler
-	},
-	{
-		name = "C1M4NearFinale02cCliffe",
-		criteria = 
-		[
-			[ConceptC1M4NearFinale02c],
-			[IsCliffe],
-			[IssuerClose],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response C1M4NearFinale02cGambler
-	},
-	{
-		name = "C1M4NearFinale02eCliffe",
-		criteria = 
-		[
-			[ConceptC1M4NearFinale02e],
-			[IsCliffe],
-			[IsSubjectDistNear400],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response C1M4NearFinale02eGambler
-	},
-	{
-		name = "c1m4NearFinale1Cliffe",
+		name = "c1m4NearFinale1_CSGO_SAS",
 		criteria = 
 		[
 			[Conceptc1m4NearFinale1],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response c1m4NearFinale1Gambler
+		Response c1m4NearFinale1Mechanic
 	},
 	{
-		name = "C1M4SafeRoomCliffe",
+		name = "C1M4SafeRoom_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptTalkIdle],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[NotInCombat],
 			[IsInStartArea],
 			[IsNotAlone],
@@ -20537,671 +21676,649 @@ local jess_cliffe_rules =
 			[_auto_IsSafeRoomStart],
 			[IsNotSpeakingWeight0],
 		],
-		Response C1M4SafeRoomGambler
+		Response C1M4SafeRoomMechanic
+		then csgo_sas C1M4SafeRoom2c1 foo:0 1.250
 		ApplyContext "_auto_SafeRoomStart:2:0"
 		applycontexttoworld
 	},
 	{
-		name = "C1M4SafeRoom2a2Cliffe",
+		name = "C1M4SafeRoom2a1_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC1M4SafeRoom2a2],
-			[IsCliffe],
+			[ConceptC1M4SafeRoom2a1],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C1M4SafeRoom2a2Gambler
+		Response C1M4SafeRoom2a1Mechanic
+		then gambler C1M4SafeRoom2a2 foo:0 -5.969
 	},
 	{
-		name = "C1M4SafeRoom2a4Cliffe",
+		name = "C1M4SafeRoom2b1_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC1M4SafeRoom2a4],
-			[IsCliffe],
+			[ConceptC1M4SafeRoom2b1],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C1M4SafeRoom2a4Gambler
+		Response C1M4SafeRoom2b1Mechanic
+		then producer C1M4SafeRoom2b2 foo:0 -5.969
 	},
 	{
-		name = "C1M4SafeRoomEndCliffe",
+		name = "C1M4SafeRoom2b3_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC1M4SafeRoom2b3],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C1M4SafeRoom2b3Mechanic
+		then csgo_sas C1M4SafeRoom2b4 foo:0 -1.539
+	},
+	{
+		name = "C1M4SafeRoom2b4_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC1M4SafeRoom2b4],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C1M4SafeRoom2b4Mechanic
+		then coach C1M4SafeRoom2b5 foo:0 -1.719
+	},
+	{
+		name = "C1M4SafeRoom2a5_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC1M4SafeRoom2a5],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C1M4SafeRoom2a5Mechanic
+		then self IntroEnd foo:0 0.1
+	},
+	{
+		name = "C1M4SafeRoom2c1_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC1M4SafeRoom2c1],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C1M4SafeRoom2c1Mechanic
+		then self IntroEnd foo:0 0.1
+	},
+	{
+		name = "C1M4SafeRoomEnd_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptSurvivorLeavingInitialCheckpoint],
 			[ismap_c1m4_atrium],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidLeavingSafeArea],
 			[_auto_NotTellingStory],
 		],
-		Response C1M4SafeRoomEndGambler
+		Response C1M4SafeRoomEndMechanic
 		ApplyContext "SaidLeavingSafeArea:1:0,Talk:0:0"
 		applycontexttoworld
 	},
 	{
-		name = "C2M1IntroStartCliffe",
+		name = "C1M4FinaleStartResponse_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC1M4FinaleStartResponse],
+			[IsCsgo_sas],
+		],
+		Response C1M4FinaleStartResponseMechanic
+	},
+	{
+		name = "C2M1IntroStart_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptIntroC2M1],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidCXM1Intro],
 			[IsNotAlone],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C2M1IntroStartGambler
+		Response C2M1IntroStartMechanic
+		then Any C2M1Intro002 foo:0 0.01
 		ApplyContext "CXM1Intro:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "C2M1Intro002Cliffe",
+		name = "C2M1Intro002_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC2M1Intro002],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C2M1Intro002Gambler
+		Response C2M1Intro002Mechanic
+		then Any C2M1Intro002 foo:0 0.02
 	},
 	{
-		name = "LeavingC2M1StartCliffe",
+		name = "C2M1Intro003_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptSurvivorLeavingCheckpoint],
-			[IsNotSaidLeavingSafeArea],
-			[IsCliffe],
-			[Ismap_c2m1],
+			[ConceptC2M1Intro003],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C2M1Intro003Mechanic
+		then Any C2M1Intro002 foo:0 0.02
+	},
+	{
+		name = "C2M1Intro005_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC2M1Intro005],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C2M1Intro005Mechanic
+		then any C2M1Intro_400 foo:0 0.5
+		ApplyContext "Talk:1:10"
+		applycontexttoworld
+	},
+	{
+		name = "C2M1Intro008_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC2M1Intro008],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsInStartArea],
+		],
+		Response C2M1Intro008Mechanic
+	},
+	{
+		name = "C2M1Intro009_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC2M1Intro009],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C2M1Intro009Mechanic
+		then self IntroEnd foo:0 0.1
+	},
+	{
+		name = "C2M4PenSmell001_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC2M4PenSmell001],
+			[IsCsgo_sas],
 			[IsTalk],
-		],
-		Response LeavingC2M1StartGambler
-		ApplyContext "SaidLeavingSafeArea:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "C2M1Intro_400Cliffe",
-		criteria = 
-		[
-			[ConceptC2M1Intro_400],
-			[IsCliffe],
+			[NotInCombat],
+			[IsGamblerNear400],
+			[IsNotCoughing],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C2M1Intro_400Gambler
-		ApplyContext "Talk:1:5.363"
-		applycontexttoworld
+		Response C2M4PenSmell001Mechanic
 	},
 	{
-		name = "C4EnterCoverCliffe",
+		name = "C2M5_lipsync001_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC2M5_lipsync001],
+			[IsCsgo_sas],
+			[TimeSinceGroupInCombat02],
+			[NotInCombat],
+			[IsNotSpeaking],
+			[IsGamblerNear400],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[_auto_NotButton2],
+		],
+		Response C2M5_lipsync001Mechanic
+	},
+	{
+		name = "C2M5_lipsync002_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC2M5_lipsync002],
+			[IsCsgo_sas],
+			[TimeSinceGroupInCombat02],
+			[NotInCombat],
+			[IsNotSpeaking],
+			[IsCoachAlive],
+			[IsCoachNear400],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[_auto_NotButton2],
+		],
+		Response C2M5_lipsync002Mechanic
+	},
+	{
+		name = "C4EnterCover_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC4EnterCover],
-			[IsCliffe],
+			[IsCsgo_sas],
 		],
 		Response NoResponse
-		ApplyContext "_auto_C4CliffeInCover:1:0"
+		ApplyContext "_auto_C4Csgo_sasInCover:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "C4ExitCoverCliffe",
+		name = "C4ExitCover_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC4ExitCover],
-			[IsCliffe],
+			[IsCsgo_sas],
 		],
 		Response NoResponse
-		ApplyContext "_auto_C4CliffeInCover:0:0"
+		ApplyContext "_auto_C4Csgo_sasInCover:0:0"
 		applycontexttoworld
 	},
 	{
-		name = "c4m1_InBurgerTank01Cliffe",
-		criteria = 
-		[
-			[Conceptc4m1_InBurgerTank01],
-			[IsCliffe],
-			[NotInCombat],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response c4m1_InBurgerTank01Gambler
-		ApplyContext "TalkCliffe:1:3"
-		applycontexttoworld
-	},
-	{
-		name = "C4FinaleStartCliffe",
+		name = "C4FinaleStart_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC4FinaleStart],
-			[IsCliffe],
+			[IsCsgo_sas],
 		],
-		Response C4FinaleStartGambler
+		Response C4FinaleStartMechanic
+		then any _C4M5_FinaleStart01 foo:0 0.01
 		ApplyContext "_auto_NoLostCall:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkc4m1_InBurgerTankCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
-			[Isc4m1_InBurgerTank],
-			[IsNotSaidc4m1_InBurgerTank],
-			[IsNotCoughing],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsSubjectNear200],
-			[IsWorldTalkCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkc4m1_InBurgerTankGambler
-		ApplyContext "Saidc4m1_InBurgerTank:1:0,TalkCliffe:1:4"
-		applycontexttoworld
-	},
-	{
-		name = "c4m1_nogas01Cliffe",
+		name = "c4m1_nogas01_CSGO_SAS",
 		criteria = 
 		[
 			[Conceptc4m1_nogas01],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[NotInCombat],
 			[IsSubjectDistNear500],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response c4m1_nogas01Gambler
-		ApplyContext "Talk:1:2.502"
+		Response c4m1_nogas01Mechanic
+		then any c4m1_nogas02 foo:0 0.01
+		ApplyContext "Talk:1:3.179"
 		applycontexttoworld
 	},
 	{
-		name = "c4m1_nogas02Cliffe",
+		name = "c4m1_nogas10_CSGO_SAS",
 		criteria = 
 		[
-			[Conceptc4m1_nogas02],
-			[IsCliffe],
+			[Conceptc4m1_nogas10],
+			[IsCsgo_sas],
 			[NotInCombat],
-			[IsSubjectDistNear500],
+			[IsSubjectDistNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response c4m1_nogas02Gambler
-		ApplyContext "Talk:1:1.950"
+		Response c4m1_nogas10Mechanic
+		then any c4m1_nogas02 foo:0 0.01
+		ApplyContext "Talk:1:3.179"
 		applycontexttoworld
 	},
 	{
-		name = "c4m1_nogas04Cliffe",
+		name = "c4m1_wreck01_CSGO_SAS",
 		criteria = 
 		[
-			[Conceptc4m1_nogas04],
-			[IsCliffe],
+			[Conceptc4m1_wreck01],
+			[IsCsgo_sas],
 			[NotInCombat],
-			[IsSubjectDistNear500],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response c4m1_nogas04Gambler
-		ApplyContext "Talk:1:2.497"
-		applycontexttoworld
+		Response c4m1_wreck01Mechanic
+		then self c4m1_wreck02 foo:0 0.03
 	},
 	{
-		name = "c4m1_nogas05Cliffe",
+		name = "c4m1_wreck02_CSGO_SAS",
 		criteria = 
 		[
-			[Conceptc4m1_nogas05],
-			[IsCliffe],
+			[Conceptc4m1_wreck02],
+			[IsCsgo_sas],
 			[NotInCombat],
-			[IsSubjectDistNear500],
+			[ChanceToFire60Percent],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response c4m1_nogas05Gambler
-		ApplyContext "Talk:1:2.502"
-		applycontexttoworld
+		Response c4m1_wreck02Mechanic
 	},
 	{
-		name = "GasPour20MoreCliffe",
+		name = "GasPour20More_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptGasPour20More],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSpeaking],
 			[_auto_IsGasCountOK],
 		],
-		Response GasPour20MoreGambler
+		Response GasPour20MoreMechanic
 	},
 	{
-		name = "GasPour10MoreTalkCliffe",
+		name = "GasPour10MoreTalk_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptGasPour10More],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSpeaking],
 			[_auto_IsGasCountOK],
 		],
-		Response GasPour10MoreTalkGambler
+		Response GasPour10MoreTalkMechanic
 	},
 	{
-		name = "GasPour1MoreCliffe",
+		name = "GasPour1More_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptGasPour1More],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSpeaking],
 			[_auto_IsGasCountOK],
 		],
-		Response GasPour1MoreGambler
+		Response GasPour1MoreMechanic
 	},
 	{
-		name = "GasPour2MoreCliffe",
+		name = "GasPour2More_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptGasPour2More],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSpeaking],
 			[_auto_IsGasCountOK],
 		],
-		Response GasPour2MoreGambler
+		Response GasPour2MoreMechanic
 	},
 	{
-		name = "GasPour3MoreCliffe",
+		name = "GasPour3More_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptGasPour3More],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSpeaking],
 			[_auto_IsGasCountOK],
 		],
-		Response GasPour3MoreGambler
+		Response GasPour3MoreMechanic
 	},
 	{
-		name = "GasPour5MoreCliffe",
+		name = "GasPour5More_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptGasPour5More],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSpeaking],
 			[_auto_IsGasCountOK],
 		],
-		Response GasPour5MoreGambler
+		Response GasPour5MoreMechanic
 	},
 	{
-		name = "HistoricTour01aCliffe",
+		name = "Player_CoverMeC1R_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptHistoricTour01a],
-			[IsCliffe],
+			[ConceptPlayer_CoverMeC1R],
+			[IsCsgo_sas],
+			[ChanceToFire20Percent],
 		],
-		Response HistoricTour01aGambler
+		Response Player_CoverMeC1RMechanic
 	},
 	{
-		name = "Player_SeeMudmen2aCliffe",
+		name = "Player_CoverMeC1RCoach1_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptPlayer_SeeMudmen2a],
-			[IsCliffe],
-			[IssuerClose],
+			[ConceptPlayer_CoverMeC1RCoach1],
+			[IsCsgo_sas],
+			[ChanceToFire20Percent],
 		],
-		Response Player_SeeMudmen2aGambler
+		Response Player_CoverMeC1RCoach1Mechanic
+		then coach Player.CoverMeC1RCoach2 foo:0 -2.261
+		ApplyContext "TalkCoach:1:3"
+		applycontexttoworld
 	},
 	{
-		name = "Player_TakeBatR2Cliffe",
+		name = "Player_GooedBySpitterC1R_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptPlayer_TakeBatR2],
-			[IsCliffe],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[ConceptPlayer_GooedBySpitterC1R],
+			[IsCsgo_sas],
+			[IsNotIncapacitated],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response Player_TakeBatR2Gambler
+		Response Player_GooedBySpitterC1RMechanic
 	},
 	{
-		name = "Player_KnowHunterC1Cliffe",
+		name = "Player_KnowHunterC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayer_KnowHunter],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IssuerClose],
 			[IsNotIncapacitated],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotSpeakingWeight0],
 		],
-		Response Player_KnowHunterC1Gambler
-		ApplyContext "Talk:1:6"
-		applycontexttoworld
+		Response Player_KnowHunterC1Mechanic
+		then from Player.KnowHunter2 foo:0 0.1
 	},
 	{
-		name = "Player_KnowBoomerC1Cliffe",
+		name = "Player_KnowBoomerC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayer_KnowBoomer],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IssuerClose],
 			[IsNotIncapacitated],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotSpeakingWeight0],
 		],
-		Response Player_KnowBoomerC1Gambler
-		ApplyContext "Talk:1:6"
-		applycontexttoworld
+		Response Player_KnowBoomerC1Mechanic
 	},
 	{
-		name = "Player_KnowChargerC1Cliffe",
+		name = "Player_KnowChargerC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayer_KnowCharger],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IssuerClose],
 			[IsNotIncapacitated],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotSpeakingWeight0],
 		],
-		Response Player_KnowChargerC1Gambler
-		ApplyContext "Talk:1:6"
-		applycontexttoworld
+		Response Player_KnowChargerC1Mechanic
 	},
 	{
-		name = "Player_KnowJockeyC1Cliffe",
+		name = "Player_KnowJockeyC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayer_KnowJockey],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IssuerClose],
 			[IsNotIncapacitated],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotSpeakingWeight0],
 		],
-		Response Player_KnowJockeyC1Gambler
-		ApplyContext "Talk:1:5"
-		applycontexttoworld
+		Response Player_KnowJockeyC1Mechanic
 	},
 	{
-		name = "Player_KnowSmokerC1Cliffe",
-		criteria = 
-		[
-			[ConceptPlayer_KnowSmoker],
-			[IsCliffe],
-			[IssuerClose],
-			[IsNotIncapacitated],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsNotSpeakingWeight0],
-		],
-		Response Player_KnowSmokerC1Gambler
-		ApplyContext "Talk:1:6"
-		applycontexttoworld
-	},
-	{
-		name = "Player_KnowSpitterC1Cliffe",
-		criteria = 
-		[
-			[ConceptPlayer_KnowSpitter],
-			[IsCliffe],
-			[IssuerClose],
-			[IsNotIncapacitated],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsNotSpeakingWeight0],
-		],
-		Response Player_KnowSpitterC1Gambler
-		ApplyContext "Talk:1:5"
-		applycontexttoworld
-	},
-	{
-		name = "Player_NotPackingHeatCliffe",
-		criteria = 
-		[
-			[ConceptPlayer_NotPackingHeat],
-			[IsCliffe],
-		],
-		Response Player_NotPackingHeatGambler
-	},
-	{
-		name = "Player_NotPackingHeat2Cliffe",
-		criteria = 
-		[
-			[ConceptPlayer_NotPackingHeat2],
-			[IsCliffe],
-		],
-		Response Player_NotPackingHeat2Gambler
-	},
-	{
-		name = "Player_WhinyNickCliffe",
-		criteria = 
-		[
-			[ConceptPlayer_WhinyCliffe],
-			[IsCliffe],
-		],
-		Response Player_WhinyNickGambler
-	},
-	{
-		name = "C1M2TankInfoCliffe",
+		name = "C1M2TankInfo_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC1M2TankInfo],
-			[IsCliffe],
+			[IsCsgo_sas],
 		],
-		Response C1M2TankInfoGambler
+		Response C1M2TankInfoMechanic
+		then producer C1M2TankInfo foo:0 0.1
 	},
 	{
-		name = "PlayerCr0wnedBrideCliffe",
+		name = "Player_KnowSpitterC1_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayer_KnowSpitter],
+			[IsCsgo_sas],
+			[IssuerClose],
+			[IsNotIncapacitated],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsNotSpeakingWeight0],
+		],
+		Response Player_KnowSpitterC1Mechanic
+	},
+	{
+		name = "PlayerCr0wnedBride_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptKilledZombie],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[SubjectIsAWitch],
 			[KilledByCr0wn],
 			[IsNotWitchAggro],
 			[ChanceToFire100Percent],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[isc6m1_riverbank],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
 		// 	forceweight 101
-		Response PlayerCr0wnedBrideGambler
+		Response PlayerCr0wnedBrideMechanic
+		then any WeddingWitchDead02 foo:0 3.1
 	},
 	{
-		name = "PlayerCr0wnedBrideCoachCliffe",
-		criteria = 
-		[
-			[ConceptKilledZombie],
-			[IsNotCoughing],
-			[IsCliffe],
-			[SubjectIsAWitch],
-			[KilledByCr0wn],
-			[IsNotWitchAggro],
-			[IsCoachAlive],
-			[IsCoachNear400],
-			[ChanceToFire50Percent],
-			[IsTalk],
-			[IsTalkCliffe],
-			[isc6m1_riverbank],
-			[IsWorldTalkCliffe],
-		],
-		// 	forceweight 102
-		Response PlayerCr0wnedBrideCoachGambler
-	},
-	{
-		name = "PlayerCr0wnedBrideProducerCliffe",
-		criteria = 
-		[
-			[ConceptKilledZombie],
-			[IsNotCoughing],
-			[IsCliffe],
-			[SubjectIsAWitch],
-			[KilledByCr0wn],
-			[IsNotWitchAggro],
-			[IsProducerAlive],
-			[IsProducerNear400],
-			[ChanceToFire25Percent],
-			[IsTalk],
-			[IsTalkCliffe],
-			[isc6m1_riverbank],
-			[IsWorldTalkCliffe],
-		],
-		// 	forceweight 102
-		Response PlayerCr0wnedBrideProducerGambler
-	},
-	{
-		name = "WeddingWitchDead02Cliffe",
+		name = "WeddingWitchDead02_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptWeddingWitchDead02],
-			[IsCliffe],
+			[IsCsgo_sas],
 		],
-		Response WeddingWitchDead02Gambler
+		Response WeddingWitchDead02Mechanic
+		then producer WeddingWitchDead02a foo:0 0.1
 	},
 	{
-		name = "WeddingWitchDead03Cliffe",
+		name = "WorldIntroC31a2_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptWeddingWitchDead03],
-			[IsCliffe],
-		],
-		Response WeddingWitchDead03Gambler
-	},
-	{
-		name = "WeddingWitchDead04Cliffe",
-		criteria = 
-		[
-			[ConceptWeddingWitchDead04],
-			[IsCliffe],
-		],
-		Response WeddingWitchDead04Gambler
-	},
-	{
-		name = "WorldIntroC31a1Cliffe",
-		criteria = 
-		[
-			[ConceptWorldIntroC31a1],
-			[IsCliffe],
+			[ConceptWorldIntroC31a2],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response WorldIntroC31a1Gambler
+		Response WorldIntroC31a2Mechanic
+		then gambler WorldIntroC31a3 foo:0 -3.934
 	},
 	{
-		name = "WorldIntroC31a3Cliffe",
+		name = "WorldIntroC31c1_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptWorldIntroC31a3],
-			[IsCliffe],
+			[ConceptWorldIntroC31c1],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response WorldIntroC31a3Gambler
+		Response WorldIntroC31c1Mechanic
+		then gambler WorldIntroC31c2 foo:0 -7.301
 	},
 	{
-		name = "WorldIntroC31b1Cliffe",
+		name = "WorldIntroC31d2_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptWorldIntroC31b1],
-			[IsCliffe],
+			[ConceptWorldIntroC31d2],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response WorldIntroC31b1Gambler
+		Response WorldIntroC31d2Mechanic
+		then self IntroEnd foo:0 0.1
 	},
 	{
-		name = "WorldIntroC31c2Cliffe",
+		name = "WorldIntroC31e2a_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptWorldIntroC31c2],
-			[IsCliffe],
+			[ConceptWorldIntroC31e2a],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response WorldIntroC31c2Gambler
+		Response WorldIntroC31e2aMechanic
+		then gambler WorldIntroC31e3a foo:0 -1.367
 	},
 	{
-		name = "WorldIntroC31c4Cliffe",
-		criteria = 
-		[
-			[ConceptWorldIntroC31c4],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response WorldIntroC31c4Gambler
-	},
-	{
-		name = "WorldIntroC31d1Cliffe",
-		criteria = 
-		[
-			[ConceptWorldIntroC31d1],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response WorldIntroC31d1Gambler
-	},
-	{
-		name = "WorldIntroC31e3aCliffe",
-		criteria = 
-		[
-			[ConceptWorldIntroC31e3a],
-			[IsCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-		],
-		Response WorldIntroC31e3aGambler
-	},
-	{
-		name = "WorldIntroC3f2Cliffe",
+		name = "WorldIntroC3f2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptWorldIntroC3f2],
-			[IsCliffe],
+			[IsCsgo_sas],
+			[IssuerClose],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response WorldIntroC3f2Gambler
+		Response WorldIntroC3f2Mechanic
+		then self IntroEnd foo:0 0.1
 	},
 	{
-		name = "PlayerCoverMeHealCliffe",
+		name = "WorldIntroC31g1_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptWorldIntroC31g1],
+			[IsCsgo_sas],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response WorldIntroC31g1Mechanic
+		then coach WorldIntroC31g2 foo:0 -3.349
+	},
+	{
+		name = "PlayerCoverMeHeal_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerHealing],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotAskedForCover],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotAlone],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotSpottedVehicle],
 		],
-		Response PlayerCoverMeHealGambler
+		Response PlayerCoverMeHealMechanic
 		ApplyContext "AskForCover:1:30"
 	},
 	{
-		name = "PlayerCoverMeHealC1Cliffe",
+		name = "PlayerCoverMeHealC1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerHealing],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotAskedForCover],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotAlone],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[ismap_c1m1_hotel],
 		],
-		Response PlayerCoverMeHealC1Gambler
+		Response PlayerCoverMeHealC1Mechanic
 		ApplyContext "AskForCover:1:30"
 	},
 	{
-		name = "Player_LostCallC6M3Cliffe",
+		name = "Player_LostCallC6M3_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptTalkIdle],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsClosestSurvivorFar3000],
 			[IsNotAlone],
 			[IsNotSaidPlayerLostCall],
@@ -21209,16 +22326,16 @@ local jess_cliffe_rules =
 			[ChanceToFire100Percent],
 			[IsNotSpeakingWeight0],
 		],
-		Response Player_LostCallC6M3Gambler
+		Response Player_LostCallC6M3Mechanic
 		ApplyContext "SaidPlayerLostCall:1:50"
 		applycontexttoworld
 	},
 	{
-		name = "AutoPlayerLostCallCliffe",
+		name = "AutoPlayerLostCall_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptTalkIdle],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsClosestSurvivorFar3000],
 			[IsNotAlone],
 			[IsNotSaidPlayerLostCall],
@@ -21226,38 +22343,39 @@ local jess_cliffe_rules =
 			[IsNotSpeakingWeight0],
 			[_auto_NotSpottedVehicle],
 		],
-		Response AutoPlayerLostCallGambler
+		Response AutoPlayerLostCallMechanic
 		ApplyContext "SaidPlayerLostCall:1:50"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedChainsawCliffe",
+		name = "SurvivorSpottedChainsaw_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidSomeoneDied],
 			[IsNotSmartLookAuto],
 			[IsChainsaw],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedChainsawGambler
+		Response SurvivorSpottedChainsawMechanic
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedChainsawAutoCliffe",
+		name = "SurvivorSpottedChainsawAuto_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidSomeoneDied],
 			[IsSmartLookAuto],
 			[IsNotInSafeSpot],
@@ -21265,42 +22383,44 @@ local jess_cliffe_rules =
 			[IsNotSaidSpotWeapons],
 			[IsNotSaidSpot],
 			[IsChainsaw],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[IsNotSpeakingWeight0],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedChainsawGambler
+		Response SurvivorSpottedChainsawMechanic
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedcricket_batCliffe",
+		name = "SurvivorSpottedcricket_bat_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidSomeoneDied],
 			[IsNotSmartLookAuto],
 			[Iscricket_bat],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedcricket_batGambler
+		Response SurvivorSpottedcricket_batMechanic
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedcricket_batAutoCliffe",
+		name = "SurvivorSpottedcricket_batAuto_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidSomeoneDied],
 			[IsSmartLookAuto],
 			[IsNotInSafeSpot],
@@ -21308,42 +22428,44 @@ local jess_cliffe_rules =
 			[IsNotSaidSpotWeapons],
 			[IsNotSaidSpot],
 			[Iscricket_bat],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[IsNotSpeakingWeight0],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedcricket_batGambler
+		Response SurvivorSpottedcricket_batMechanic
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedcrowbarCliffe",
+		name = "SurvivorSpottedcrowbar_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidSomeoneDied],
 			[IsNotSmartLookAuto],
 			[Iscrowbar],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedcrowbarGambler
+		Response SurvivorSpottedcrowbarMechanic
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedcrowbarAutoCliffe",
+		name = "SurvivorSpottedcrowbarAuto_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidSomeoneDied],
 			[IsSmartLookAuto],
 			[IsNotInSafeSpot],
@@ -21351,23 +22473,24 @@ local jess_cliffe_rules =
 			[IsNotSaidSpotWeapons],
 			[IsNotSaidSpot],
 			[Iscrowbar],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[IsNotSpeakingWeight0],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedcrowbarGambler
+		Response SurvivorSpottedcrowbarMechanic
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedGolfClubCliffe",
+		name = "SurvivorSpottedGolfClub_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidSomeoneDied],
 			[IsSmartLookAuto],
 			[IsNotInSafeSpot],
@@ -21375,61 +22498,64 @@ local jess_cliffe_rules =
 			[IsNotSaidSpotWeapons],
 			[IsNotSaidSpot],
 			[IsGolfClub],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[IsNotSpeakingWeight0],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedGolfClubGambler
+		Response SurvivorSpottedGolfClubMechanic
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedGolfClubAutoCliffe",
+		name = "SurvivorSpottedGolfClubAuto_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidSomeoneDied],
 			[IsNotSmartLookAuto],
 			[IsGolfClub],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedGolfClubGambler
+		Response SurvivorSpottedGolfClubMechanic
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedGuitarCliffe",
+		name = "SurvivorSpottedGuitar_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidSomeoneDied],
 			[IsNotSmartLookAuto],
 			[IsGuitar],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedGuitarGambler
+		Response SurvivorSpottedGuitarMechanic
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedGuitarAutoCliffe",
+		name = "SurvivorSpottedGuitarAuto_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidSomeoneDied],
 			[IsSmartLookAuto],
 			[IsNotInSafeSpot],
@@ -21437,42 +22563,44 @@ local jess_cliffe_rules =
 			[IsNotSaidSpotWeapons],
 			[IsNotSaidSpot],
 			[IsGuitar],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[IsNotSpeakingWeight0],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedGuitarGambler
+		Response SurvivorSpottedGuitarMechanic
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedKatanaCliffe",
+		name = "SurvivorSpottedKatana_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidSomeoneDied],
 			[IsNotSmartLookAuto],
 			[IsKatana],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedKatanaGambler
+		Response SurvivorSpottedKatanaMechanic
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedKatanaAutoCliffe",
+		name = "SurvivorSpottedKatanaAuto_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidSomeoneDied],
 			[IsSmartLookAuto],
 			[IsNotInSafeSpot],
@@ -21480,42 +22608,43 @@ local jess_cliffe_rules =
 			[IsNotSaidSpotWeapons],
 			[IsNotSaidSpot],
 			[IsKatana],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[IsNotSpeakingWeight0],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedKatanaGambler
+		Response SurvivorSpottedKatanaMechanic
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedLaserSightsCliffe",
+		name = "SurvivorSpottedLaserSights_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidSomeoneDied],
 			[IsNotSmartLookAuto],
 			[IsLaserSights],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedLaserSightsGambler
+		Response SurvivorSpottedLaserSightsMechanic
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedLaserSightsAutoCliffe",
+		name = "SurvivorSpottedLaserSightsAuto_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidSomeoneDied],
 			[IsSmartLookAuto],
 			[IsNotInSafeSpot],
@@ -21523,46 +22652,46 @@ local jess_cliffe_rules =
 			[IsNotSaidSpotWeapons],
 			[IsNotSaidSpot],
 			[IsLaserSights],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[IsNotSpeakingWeight0],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedLaserSightsGambler
+		Response SurvivorSpottedLaserSightsMechanic
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorBotPickupLaserSightsSpottedCliffe",
+		name = "SurvivorBotPickupLaserSightsSpotted_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpLaserSights],
 			[IsNotSpeaking],
 			[IsBotIsAvailable],
-			[IsNotInStartArea],
+			[IsNotInSafeSpot],
 			[IsNotInCheckpoint],
-			[IsNotInSafeSpot],
+			[IsNotInStartArea],
 			[IsNotSaidSpotWeapons],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedLaserSightsGambler
+		Response SurvivorSpottedLaserSightsMechanic
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedM60Cliffe",
+		name = "SurvivorSpottedM60_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidSomeoneDied],
 			[IsSmartLookAuto],
 			[IsNotInSafeSpot],
@@ -21570,61 +22699,64 @@ local jess_cliffe_rules =
 			[IsNotSaidSpotWeapons],
 			[IsNotSaidSpot],
 			[IsM60],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[IsNotSpeakingWeight0],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedM60Gambler
+		Response SurvivorSpottedM60Mechanic
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedM60AutoCliffe",
+		name = "SurvivorSpottedM60Auto_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidSomeoneDied],
 			[IsNotSmartLookAuto],
 			[IsM60],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedM60Gambler
+		Response SurvivorSpottedM60Mechanic
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedMacheteCliffe",
+		name = "SurvivorSpottedMachete_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidSomeoneDied],
 			[IsNotSmartLookAuto],
 			[IsMachete],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedMacheteGambler
+		Response SurvivorSpottedMacheteMechanic
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedMacheteAutoCliffe",
+		name = "SurvivorSpottedMacheteAuto_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidSomeoneDied],
 			[IsSmartLookAuto],
 			[IsNotInSafeSpot],
@@ -21632,42 +22764,44 @@ local jess_cliffe_rules =
 			[IsNotSaidSpotWeapons],
 			[IsNotSaidSpot],
 			[IsMachete],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[IsNotSpeakingWeight0],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedMacheteGambler
+		Response SurvivorSpottedMacheteMechanic
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedMagnumCliffe",
+		name = "SurvivorSpottedMagnum_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidSomeoneDied],
 			[IsNotSmartLookAuto],
 			[IsMagnum],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedMagnumGambler
+		Response SurvivorSpottedMagnumMechanic
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedMagnumAutoCliffe",
+		name = "SurvivorSpottedMagnumAuto_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidSomeoneDied],
 			[IsSmartLookAuto],
 			[IsNotInSafeSpot],
@@ -21675,429 +22809,44 @@ local jess_cliffe_rules =
 			[IsNotSaidSpotWeapons],
 			[IsNotSaidSpot],
 			[IsMagnum],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[IsNotSpeakingWeight0],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedMagnumGambler
+		Response SurvivorSpottedMagnumMechanic
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedtonfaCliffe",
+		name = "SurvivorSpottedSecondPistol_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidSomeoneDied],
-			[IsNotSmartLookAuto],
-			[Istonfa],
-			[IsWorldTalkCliffe],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedtonfaGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedtonfaAutoCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidSomeoneDied],
-			[IsSmartLookAuto],
-			[IsNotInSafeSpot],
-			[IsNotAlone],
-			[IsNotSaidSpotWeapons],
-			[IsNotSaidSpot],
-			[Istonfa],
-			[IsWorldTalkCliffe],
-			[IsNotSpeakingWeight0],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedtonfaGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedAutoShotgunCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidSomeoneDied],
-			[IsNotSmartLookAuto],
-			[IsAutoShotgun],
-			[IsWorldTalkCliffe],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedShotgunGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedAutoShotgunAutoCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidSomeoneDied],
-			[IsSmartLookAuto],
-			[IsNotInSafeSpot],
-			[IsNotAlone],
-			[IsNotSaidSpotWeapons],
-			[IsNotSaidSpot],
-			[IsAutoShotgun],
-			[IsWorldTalkCliffe],
-			[IsNotSpeakingWeight0],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedShotgunGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedShotgun_ChromeCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidSomeoneDied],
-			[IsNotSmartLookAuto],
-			[IsShotgun_Chrome],
-			[IsWorldTalkCliffe],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedShotgunGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedShotgun_ChromeAutoCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidSomeoneDied],
-			[IsSmartLookAuto],
-			[IsNotInSafeSpot],
-			[IsNotAlone],
-			[IsNotSaidSpotWeapons],
-			[IsNotSaidSpot],
-			[IsShotgun_Chrome],
-			[IsWorldTalkCliffe],
-			[IsNotSpeakingWeight0],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedShotgunGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedShotgun_spasCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidSomeoneDied],
-			[IsNotSmartLookAuto],
-			[IsShotgun_spas],
-			[IsWorldTalkCliffe],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedShotgunGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedShotgun_spasAutoCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidSomeoneDied],
-			[IsSmartLookAuto],
-			[IsNotInSafeSpot],
-			[IsNotAlone],
-			[IsNotSaidSpotWeapons],
-			[IsNotSaidSpot],
-			[IsShotgun_spas],
-			[IsWorldTalkCliffe],
-			[IsNotSpeakingWeight0],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedShotgunGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedPumpShotgunCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidSomeoneDied],
-			[IsNotSmartLookAuto],
-			[IsPumpShotgun],
-			[IsWorldTalkCliffe],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedShotgunGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedPumpShotgunAutoCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidSomeoneDied],
-			[IsSmartLookAuto],
-			[IsNotInSafeSpot],
-			[IsNotAlone],
-			[IsNotSaidSpotWeapons],
-			[IsNotSaidSpot],
-			[IsPumpShotgun],
-			[IsWorldTalkCliffe],
-			[IsNotSpeakingWeight0],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedShotgunGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedRifleCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidSomeoneDied],
-			[IsNotSmartLookAuto],
-			[IsRifle],
-			[IsWorldTalkCliffe],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedARGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedRifleAutoCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidSomeoneDied],
-			[IsSmartLookAuto],
-			[IsNotInSafeSpot],
-			[IsNotAlone],
-			[IsNotSaidSpotWeapons],
-			[IsNotSaidSpot],
-			[IsRifle],
-			[IsWorldTalkCliffe],
-			[IsNotSpeakingWeight0],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedARGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedRifle_AK47Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidSomeoneDied],
-			[IsNotSmartLookAuto],
-			[IsRifle_AK47],
-			[IsWorldTalkCliffe],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedARGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedRifle_AK47AutoCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidSomeoneDied],
-			[IsSmartLookAuto],
-			[IsNotInSafeSpot],
-			[IsNotAlone],
-			[IsNotSaidSpotWeapons],
-			[IsNotSaidSpot],
-			[IsRifle_AK47],
-			[IsWorldTalkCliffe],
-			[IsNotSpeakingWeight0],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedARGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedRifle_desertCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidSomeoneDied],
-			[IsNotSmartLookAuto],
-			[IsRifle_desert],
-			[IsWorldTalkCliffe],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedARGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedRifle_desertAutoCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidSomeoneDied],
-			[IsSmartLookAuto],
-			[IsNotInSafeSpot],
-			[IsNotAlone],
-			[IsNotSaidSpotWeapons],
-			[IsNotSaidSpot],
-			[IsRifle_desert],
-			[IsWorldTalkCliffe],
-			[IsNotSpeakingWeight0],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedARGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedRifle_SG552Cliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidSomeoneDied],
-			[IsNotSmartLookAuto],
-			[IsRifle_sg552],
-			[IsWorldTalkCliffe],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedARGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedRifle_SG552AutoCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidSomeoneDied],
-			[IsSmartLookAuto],
-			[IsNotInSafeSpot],
-			[IsNotAlone],
-			[IsNotSaidSpotWeapons],
-			[IsNotSaidSpot],
-			[IsRifle_sg552],
-			[IsWorldTalkCliffe],
-			[IsNotSpeakingWeight0],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedARGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedSecondPistolCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidSomeoneDied],
 			[IsNotSmartLookAuto],
 			[IsSecondPistol],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedSecondPistolGambler
+		Response SurvivorSpottedMagnumMechanic
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedSecondPistolAutoCliffe",
+		name = "SurvivorSpottedSecondPistolAuto_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidSomeoneDied],
 			[IsSmartLookAuto],
 			[IsNotInSafeSpot],
@@ -22105,1247 +22854,1820 @@ local jess_cliffe_rules =
 			[IsNotSaidSpotWeapons],
 			[IsNotSaidSpot],
 			[IsSecondPistol],
-			[IsWorldTalkCliffe],
-			[IsNotSpeakingWeight0],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedSecondPistolGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedSMGCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsSMG],
-			[IsNotSaidSomeoneDied],
-			[IsNotSmartLookAuto],
-			[IsWorldTalkCliffe],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedWeaponGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedSMGAutoCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsSMG],
-			[IsNotSaidSomeoneDied],
-			[IsSmartLookAuto],
-			[IsNotInSafeSpot],
-			[IsNotAlone],
-			[IsNotSaidSpotWeapons],
-			[IsNotSaidSpot],
-			[IsWorldTalkCliffe],
-			[IsNotSpeakingWeight0],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedWeaponGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedSilencedSMGCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsSMG_silenced],
-			[IsNotSaidSomeoneDied],
-			[IsNotSmartLookAuto],
-			[IsWorldTalkCliffe],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedWeaponGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedSilencedSMGAutoCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsSMG_silenced],
-			[IsNotSaidSomeoneDied],
-			[IsSmartLookAuto],
-			[IsNotInSafeSpot],
-			[IsNotAlone],
-			[IsNotSaidSpotWeapons],
-			[IsNotSaidSpot],
-			[IsWorldTalkCliffe],
-			[IsNotSpeakingWeight0],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedWeaponGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedMP5SMGCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsSMG_mp5],
-			[IsNotSaidSomeoneDied],
-			[IsNotSmartLookAuto],
-			[IsWorldTalkCliffe],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedWeaponGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedMP5SMGAutoCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsSMG_mp5],
-			[IsNotSaidSomeoneDied],
-			[IsSmartLookAuto],
-			[IsNotInSafeSpot],
-			[IsNotAlone],
-			[IsNotSaidSpotWeapons],
-			[IsNotSaidSpot],
-			[IsWorldTalkCliffe],
-			[IsNotSpeakingWeight0],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedWeaponGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedHuntingRifleCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsHuntingRifle],
-			[IsNotSaidSomeoneDied],
-			[IsNotSmartLookAuto],
-			[IsWorldTalkCliffe],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedWeaponGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedHuntingRifleAutoCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsHuntingRifle],
-			[IsNotSaidSomeoneDied],
-			[IsSmartLookAuto],
-			[IsNotInSafeSpot],
-			[IsNotAlone],
-			[IsNotSaidSpotWeapons],
-			[IsNotSaidSpot],
-			[IsWorldTalkCliffe],
-			[IsNotSpeakingWeight0],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedWeaponGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedMilitarySniperCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsSniper_military],
-			[IsNotSaidSomeoneDied],
-			[IsNotSmartLookAuto],
-			[IsWorldTalkCliffe],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedWeaponGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedMilitarySniperAutoCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsSniper_military],
-			[IsNotSaidSomeoneDied],
-			[IsSmartLookAuto],
-			[IsNotInSafeSpot],
-			[IsNotAlone],
-			[IsNotSaidSpotWeapons],
-			[IsNotSaidSpot],
-			[IsWorldTalkCliffe],
-			[IsNotSpeakingWeight0],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedWeaponGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedScoutSniperCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsSniper_scout],
-			[IsNotSaidSomeoneDied],
-			[IsNotSmartLookAuto],
-			[IsWorldTalkCliffe],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedWeaponGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedScoutSniperAutoCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsSniper_scout],
-			[IsNotSaidSomeoneDied],
-			[IsSmartLookAuto],
-			[IsNotInSafeSpot],
-			[IsNotAlone],
-			[IsNotSaidSpotWeapons],
-			[IsNotSaidSpot],
-			[IsWorldTalkCliffe],
-			[IsNotSpeakingWeight0],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedWeaponGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedAWPSniperCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsSniper_awp],
-			[IsNotSaidSomeoneDied],
-			[IsNotSmartLookAuto],
-			[IsWorldTalkCliffe],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedWeaponGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedAWPSniperAutoCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsSniper_awp],
-			[IsNotSaidSomeoneDied],
-			[IsSmartLookAuto],
-			[IsNotInSafeSpot],
-			[IsNotAlone],
-			[IsNotSaidSpotWeapons],
-			[IsNotSaidSpot],
-			[IsWorldTalkCliffe],
-			[IsNotSpeakingWeight0],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedWeaponGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedBaseballBatCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidSomeoneDied],
-			[IsNotSmartLookAuto],
-			[Isbaseball_bat],
-			[IsWorldTalkCliffe],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedMeleeWeaponGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedBaseballBatAutoCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidSomeoneDied],
-			[IsSmartLookAuto],
-			[IsNotInSafeSpot],
-			[IsNotAlone],
-			[IsNotSaidSpotWeapons],
-			[IsNotSaidSpot],
-			[Isbaseball_bat],
-			[IsWorldTalkCliffe],
-			[IsNotSpeakingWeight0],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedMeleeWeaponGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedFryingPanCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidSomeoneDied],
-			[IsNotSmartLookAuto],
-			[IsFryingPan],
-			[IsWorldTalkCliffe],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedMeleeWeaponGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedFryingPanAutoCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidSomeoneDied],
-			[IsSmartLookAuto],
-			[IsNotInSafeSpot],
-			[IsNotAlone],
-			[IsNotSaidSpotWeapons],
-			[IsNotSaidSpot],
-			[IsFryingPan],
-			[IsWorldTalkCliffe],
-			[IsNotSpeakingWeight0],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedMeleeWeaponGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedAxeCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidSomeoneDied],
-			[IsNotSmartLookAuto],
-			[IsFireAxe],
-			[IsWorldTalkCliffe],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedMeleeWeaponGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedAxeAutoCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidSomeoneDied],
-			[IsSmartLookAuto],
-			[IsNotInSafeSpot],
-			[IsNotAlone],
-			[IsNotSaidSpotWeapons],
-			[IsNotSaidSpot],
-			[IsFireAxe],
-			[IsWorldTalkCliffe],
-			[IsNotSpeakingWeight0],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedMeleeWeaponGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedShovelCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidSomeoneDied],
-			[IsNotSmartLookAuto],
-			[IsShovel],
-			[IsWorldTalkCliffe],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedMeleeWeaponGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedShovelAutoCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidSomeoneDied],
-			[IsSmartLookAuto],
-			[IsNotInSafeSpot],
-			[IsNotAlone],
-			[IsNotSaidSpotWeapons],
-			[IsNotSaidSpot],
-			[IsShovel],
-			[IsWorldTalkCliffe],
-			[IsNotSpeakingWeight0],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedMeleeWeaponGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedPitchforkCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidSomeoneDied],
-			[IsNotSmartLookAuto],
-			[IsPitchfork],
-			[IsWorldTalkCliffe],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedMeleeWeaponGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedPitchforkAutoCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidSomeoneDied],
-			[IsSmartLookAuto],
-			[IsNotInSafeSpot],
-			[IsNotAlone],
-			[IsNotSaidSpotWeapons],
-			[IsNotSaidSpot],
-			[IsPitchfork],
-			[IsWorldTalkCliffe],
-			[IsNotSpeakingWeight0],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedMeleeWeaponGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedKnifeCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidSomeoneDied],
-			[IsKnife],
-			[IsNotSmartLookAuto],
-			[IsWorldTalkCliffe],
-			[isNotmap_c1m1_hotel],
-			[_auto_NotSpottedVehicle],
-		],
-		Response SurvivorSpottedMeleeWeaponGambler
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-	{
-		name = "SurvivorSpottedKnifeAutoCliffe",
-		criteria = 
-		[
-			[ConceptPlayerSpotWeapon],
-			[IsNotCoughing],
-			[IsCliffe],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsNotSaidSomeoneDied],
-			[IsSmartLookAuto],
-			[IsNotInSafeSpot],
-			[IsNotAlone],
-			[IsNotSaidSpotWeapons],
-			[IsNotSaidSpot],
-			[IsKnife],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[isNotmap_c1m1_hotel],
 			[IsNotSpeakingWeight0],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedMeleeWeaponGambler
+		Response SurvivorSpottedMagnumMechanic
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedPistolCliffe",
+		name = "SurvivorSpottedtonfa_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptPlayerSpotPistol],
+			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidSomeoneDied],
 			[IsNotSmartLookAuto],
-			[IsWorldTalkCliffe],
+			[Istonfa],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedPistolGambler
+		Response SurvivorSpottedtonfaMechanic
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedOtherWeaponCliffe",
+		name = "SurvivorSpottedtonfaAuto_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsSmartLookAuto],
+			[IsNotInSafeSpot],
+			[IsNotAlone],
+			[IsNotSaidSpotWeapons],
+			[IsNotSaidSpot],
+			[Istonfa],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[IsNotSpeakingWeight0],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedtonfaMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedAutoShotgun_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsNotSmartLookAuto],
+			[IsAutoShotgun],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedShotgunMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedAutoShotgunAuto_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsSmartLookAuto],
+			[IsNotInSafeSpot],
+			[IsNotAlone],
+			[IsNotSaidSpotWeapons],
+			[IsNotSaidSpot],
+			[IsAutoShotgun],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[IsNotSpeakingWeight0],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedShotgunMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedPumpShotgun_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsNotSmartLookAuto],
+			[IsPumpShotgun],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedShotgunMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedPumpShotgunAuto_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsSmartLookAuto],
+			[IsNotInSafeSpot],
+			[IsNotAlone],
+			[IsNotSaidSpotWeapons],
+			[IsNotSaidSpot],
+			[IsPumpShotgun],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[IsNotSpeakingWeight0],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedShotgunMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedShotgun_Chrome_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsNotSmartLookAuto],
+			[IsShotgun_Chrome],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedShotgunMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedShotgun_spas_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsSmartLookAuto],
+			[IsNotInSafeSpot],
+			[IsNotAlone],
+			[IsNotSaidSpotWeapons],
+			[IsNotSaidSpot],
+			[IsShotgun_spas],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[IsNotSpeakingWeight0],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedShotgunMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedShotgun_spasAuto_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsNotSmartLookAuto],
+			[IsShotgun_spas],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedShotgunMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedSMG_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsNotSmartLookAuto],
+			[IsSMG],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedSMGMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedSMGAuto_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsSmartLookAuto],
+			[IsNotInSafeSpot],
+			[IsNotAlone],
+			[IsNotSaidSpotWeapons],
+			[IsNotSaidSpot],
+			[IsSMG],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[IsNotSpeakingWeight0],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedSMGMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedSMG_silenced_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsNotSmartLookAuto],
+			[IsSmg_silenced],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedSMGMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedSMG_silencedAuto_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsSmartLookAuto],
+			[IsNotInSafeSpot],
+			[IsNotAlone],
+			[IsNotSaidSpotWeapons],
+			[IsNotSaidSpot],
+			[IsSmg_silenced],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[IsNotSpeakingWeight0],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedSMGMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedMP5SMG_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsNotSmartLookAuto],
+			[IsSMG_mp5],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedSMGMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedMP5SMGAuto_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsSmartLookAuto],
+			[IsNotInSafeSpot],
+			[IsNotAlone],
+			[IsNotSaidSpotWeapons],
+			[IsNotSaidSpot],
+			[IsSMG_mp5],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[IsNotSpeakingWeight0],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedSMGMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedHuntingRifle_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsNotSmartLookAuto],
+			[IsHuntingRifle],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedHuntingRifleMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedHuntingRifleAuto_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsSmartLookAuto],
+			[IsNotInSafeSpot],
+			[IsNotAlone],
+			[IsNotSaidSpotWeapons],
+			[IsNotSaidSpot],
+			[IsHuntingRifle],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[IsNotSpeakingWeight0],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedHuntingRifleMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedRifle_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsNotSmartLookAuto],
+			[IsRifle],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedWeaponMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedRifleAuto_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsSmartLookAuto],
+			[IsNotInSafeSpot],
+			[IsNotAlone],
+			[IsNotSaidSpotWeapons],
+			[IsNotSaidSpot],
+			[IsRifle],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[IsNotSpeakingWeight0],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedWeaponMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedRifle_AK47_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsNotSmartLookAuto],
+			[IsRifle_AK47],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedWeaponMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedRifle_AK47Auto_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsSmartLookAuto],
+			[IsNotInSafeSpot],
+			[IsNotAlone],
+			[IsNotSaidSpotWeapons],
+			[IsNotSaidSpot],
+			[IsRifle_AK47],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[IsNotSpeakingWeight0],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedWeaponMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedRifle_desert_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsNotSmartLookAuto],
+			[IsRifle_desert],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedWeaponMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedRifle_desertAuto_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsSmartLookAuto],
+			[IsNotInSafeSpot],
+			[IsNotAlone],
+			[IsNotSaidSpotWeapons],
+			[IsNotSaidSpot],
+			[IsRifle_desert],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[IsNotSpeakingWeight0],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedWeaponMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedRifle_SG552_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsNotSmartLookAuto],
+			[IsRifle_sg552],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedWeaponMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedRifle_SG552Auto_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsSmartLookAuto],
+			[IsNotInSafeSpot],
+			[IsNotAlone],
+			[IsNotSaidSpotWeapons],
+			[IsNotSaidSpot],
+			[IsRifle_sg552],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[IsNotSpeakingWeight0],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedWeaponMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedMilitarySniper_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsNotSmartLookAuto],
+			[IsSniper_military],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedWeaponMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedMilitarySniperAuto_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsSmartLookAuto],
+			[IsNotInSafeSpot],
+			[IsNotAlone],
+			[IsNotSaidSpotWeapons],
+			[IsNotSaidSpot],
+			[IsSniper_military],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[IsNotSpeakingWeight0],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedWeaponMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedScoutSniper_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsNotSmartLookAuto],
+			[IsSniper_scout],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedWeaponMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedScoutSniperAuto_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsSmartLookAuto],
+			[IsNotInSafeSpot],
+			[IsNotAlone],
+			[IsNotSaidSpotWeapons],
+			[IsNotSaidSpot],
+			[IsSniper_scout],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[IsNotSpeakingWeight0],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedWeaponMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedAWPSniper_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsNotSmartLookAuto],
+			[IsSniper_awp],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedWeaponMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedAWPSniperAuto_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsSmartLookAuto],
+			[IsNotInSafeSpot],
+			[IsNotAlone],
+			[IsNotSaidSpotWeapons],
+			[IsNotSaidSpot],
+			[IsSniper_awp],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[IsNotSpeakingWeight0],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedWeaponMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedBaseBallBat_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsNotSmartLookAuto],
+			[Isbaseball_bat],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedMeleeWeaponMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedBaseBallBatAuto_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsSmartLookAuto],
+			[IsNotInSafeSpot],
+			[IsNotAlone],
+			[IsNotSaidSpotWeapons],
+			[IsNotSaidSpot],
+			[Isbaseball_bat],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[IsNotSpeakingWeight0],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedMeleeWeaponMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedFryingPan_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsNotSmartLookAuto],
+			[IsFryingPan],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedMeleeWeaponMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedFryingPanAuto_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsSmartLookAuto],
+			[IsNotInSafeSpot],
+			[IsNotAlone],
+			[IsNotSaidSpotWeapons],
+			[IsNotSaidSpot],
+			[IsFryingPan],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[IsNotSpeakingWeight0],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedMeleeWeaponMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedAxe_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsNotSmartLookAuto],
+			[IsFireAxe],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedMeleeWeaponMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedAxeAuto_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsSmartLookAuto],
+			[IsNotInSafeSpot],
+			[IsNotAlone],
+			[IsNotSaidSpotWeapons],
+			[IsNotSaidSpot],
+			[IsFireAxe],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[IsNotSpeakingWeight0],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedMeleeWeaponMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedShovel_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsNotSmartLookAuto],
+			[IsShovel],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedMeleeWeaponMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedShovelAuto_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsSmartLookAuto],
+			[IsNotInSafeSpot],
+			[IsNotAlone],
+			[IsNotSaidSpotWeapons],
+			[IsNotSaidSpot],
+			[IsShovel],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[IsNotSpeakingWeight0],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedMeleeWeaponMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedPitchfork_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsNotSmartLookAuto],
+			[IsPitchfork],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedMeleeWeaponMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedPitchforkAuto_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsSmartLookAuto],
+			[IsNotInSafeSpot],
+			[IsNotAlone],
+			[IsNotSaidSpotWeapons],
+			[IsNotSaidSpot],
+			[IsPitchfork],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[IsNotSpeakingWeight0],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedMeleeWeaponMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedKnife_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsKnife],
+			[IsNotSmartLookAuto],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedMeleeWeaponMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedKnifeAuto_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotWeapon],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsSmartLookAuto],
+			[IsNotInSafeSpot],
+			[IsNotAlone],
+			[IsNotSaidSpotWeapons],
+			[IsNotSaidSpot],
+			[IsKnife],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[IsNotSpeakingWeight0],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedMeleeWeaponMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedOtherWeapon_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotOtherWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidSomeoneDied],
 			[IsNotSmartLookAuto],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedWeaponGambler
+		Response SurvivorSpottedWeaponMechanic
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedShotgunCliffe",
+		name = "SurvivorSpottedWeaponPistol_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerSpotPistol],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSaidSomeoneDied],
+			[IsNotSmartLookAuto],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
+			[_auto_NotSpottedVehicle],
+		],
+		Response SurvivorSpottedMagnumMechanic
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedShotgun_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotShotgun],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSaidSomeoneDied],
 			[IsNotSmartLookAuto],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
+			[isNotmap_c1m1_hotel],
 			[_auto_NotSpottedVehicle],
 		],
-		Response SurvivorSpottedShotgunGambler
+		Response SurvivorSpottedShotgunMechanic
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "C2M3AlarmOffNagCliffe",
+		name = "C2M3AlarmOffNag_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptTalkIdle],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[ChanceToFire50Percent],
 			[IsNotIncapacitated],
 			[ismap_c2m3],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[_auto_IsAlarm],
-			[_auto_IsTracksOk],
+			[_auto_IsTracksOK],
 			[_auto_NotTimerLockA],
-			[_auto_NotTimerLockCliffe],
+			[_auto_NotTimerLockCsgo_sas],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc2m3_coasteroffGambler
-		ApplyContext "_auto_TimerLockA:1:8,_auto_TimerLockCliffe:1:11"
+		Response PlayerRemarkc2m3_coasteroffMechanic
+		ApplyContext "_auto_TimerLockA:1:8,_auto_TimerLockCsgo_sas:1:11"
 		applycontexttoworld
 	},
 	{
-		name = "AskWhatCliffe",
+		name = "C2M3Chopper001_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptAskWhat],
-			[IsCliffe],
-		],
-		Response AskWhatGambler
-	},
-	{
-		name = "C13M1IntroStartCliffe",
-		criteria = 
-		[
-			[ConceptIntroC13M1],
-			[IsCliffe],
-			[IsNotSaidCXM1Intro],
-			[IsNotAlone],
+			[ConceptC2M3Chopper001],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsSubjectDistNear400],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C13M1IntroStartGambler
+		Response C2M3Chopper001Mechanic
+	},
+	{
+		name = "SurvivorSpottedBikerClose_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerLookHere],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSmartLookAuto],
+			[SubjectIsBiker],
+			[IsSubjectDistNear400],
+			[IsWorldTalkCsgo_sas],
+		],
+		Response SurvivorSpottedBikerCloseMechanic
+	},
+	{
+		name = "SurvivorSpottedBikerClose2_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerLook],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSmartLookAuto],
+			[SubjectIsBiker],
+			[IsSubjectDistNear400],
+			[IsWorldTalkCsgo_sas],
+		],
+		Response SurvivorSpottedBikerCloseMechanic
+	},
+	{
+		name = "SurvivorSpottedManagerClose_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerLookHere],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSmartLookAuto],
+			[SubjectIsManager],
+			[IsSubjectDistNear400],
+			[IsWorldTalkCsgo_sas],
+		],
+		Response SurvivorSpottedManagerCloseMechanic
+	},
+	{
+		name = "SurvivorSpottedManagerClose2_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerLook],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSmartLookAuto],
+			[SubjectIsManager],
+			[IsSubjectDistNear400],
+			[IsWorldTalkCsgo_sas],
+		],
+		Response SurvivorSpottedManagerCloseMechanic
+	},
+	{
+		name = "SurvivorSpottedNamVetClose2_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerLook],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSmartLookAuto],
+			[SubjectIsNamVet],
+			[IsSubjectDistNear400],
+			[IsWorldTalkCsgo_sas],
+		],
+		Response SurvivorSpottedNamVetClose2Mechanic
+	},
+	{
+		name = "SurvivorSpottedNamVetClose_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerLookHere],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSmartLookAuto],
+			[SubjectIsNamVet],
+			[IsSubjectDistNear400],
+			[IsWorldTalkCsgo_sas],
+		],
+		Response SurvivorSpottedNamVetClose2Mechanic
+	},
+	{
+		name = "SurvivorSpottedNamVetFar_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerLook],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSmartLookAuto],
+			[SubjectIsNamVet],
+			[IsSubjectDistFar400],
+			[IsWorldTalkCsgo_sas],
+		],
+		Response SurvivorSpottedNamVetFarMechanic
+	},
+	{
+		name = "SurvivorSpottedTeenGirlClose_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerLookHere],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSmartLookAuto],
+			[SubjectIsTeenGirl],
+			[IsSubjectDistNear400],
+			[IsWorldTalkCsgo_sas],
+		],
+		Response SurvivorSpottedTeenGirlCloseMechanic
+	},
+	{
+		name = "SurvivorSpottedTeenGirlClose2_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerLook],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsNotSmartLookAuto],
+			[SubjectIsTeenGirl],
+			[IsSubjectDistNear400],
+			[IsWorldTalkCsgo_sas],
+		],
+		Response SurvivorSpottedTeenGirlCloseMechanic
+	},
+	{
+		name = "C13M1IntroStart_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptIntroC13M1],
+			[IsCsgo_sas],
+			[IsNotSaidCXM1Intro],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+		],
+		Response C13M1IntroStartMechanic
+		then any C13M1Intro2 foo:0 0.1
 		ApplyContext "CXM1Intro:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "C13M1Intro2Cliffe",
+		name = "C13M1Intro2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC13M1Intro2],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
+			[C13M1Csgo_sasNotPanicking],
 		],
-		Response C13M1Intro2Gambler
+		Response C13M1Intro2Mechanic
+		then any C13M1Intro3 foo:0 0.1
 	},
 	{
-		name = "C13M1Intro3Cliffe",
+		name = "C13M1Intro3_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC13M1Intro3],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
+			[C13M1Csgo_sasNotPanicking],
 		],
-		Response C13M1Intro3Gambler
+		Response C13M1Intro3Mechanic
+		then any C13M1IntroLast foo:0 0.1
 	},
 	{
-		name = "C13M1IntroLastCliffe",
+		name = "C13M1IntroLast_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC13M1IntroLast],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
+			[C13M1Csgo_sasNotPanicking],
 		],
-		Response C13M1IntroLastGambler
+		Response C13M1IntroLastMechanic
+		then self IntroEnd foo:0 0.1
 	},
 	{
-		name = "C13M1IntroLocationLastCliffe",
+		name = "C13M1IntroLocationLast_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC13M1IntroLocationLast],
-			[IsCliffe],
+			[IsCsgo_sas],
+			[C13M1Csgo_sasNotPanicking],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C13M1IntroLocationLastGambler
+		Response C13M1IntroLocationLastMechanic
+		then self IntroEnd foo:0 0.1
 	},
 	{
-		name = "RemarkC13M1UpHillCliffe",
+		name = "RemarkC13M1UpHill_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC13M1UpHill],
 			[IsNotRemarkedC13M1UpHill],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear100],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkC3M3UpHereGambler
+		Response PlayerRemarkc2m1_uphillMechanic
 		ApplyContext "RemarkedC13M1UpHill:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "RemarkC13M1DownHereCliffe",
+		name = "RemarkC13M1DownHere_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC13M1DownHere],
 			[IsNotRemarkedC13M1DownHere],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkC1M3DownHereGambler
+		Response PlayerRemarkC1M3DownHereMechanic
 		ApplyContext "RemarkedC13M1DownHere:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "RemarkC13M1ThroughHereCliffe",
+		name = "RemarkC13M1ThroughHere_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC13M1ThroughHere],
 			[IsNotRemarkedC13M1ThroughHere],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response RemarkC13M1ThroughHereGambler
+		Response RemarkC13M1ThroughHereMechanic
 		ApplyContext "RemarkedC13M1ThroughHere:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "RemarkC13M1ThroughWindowCliffe",
+		name = "RemarkC13M1ThroughWindow_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC13M1ThroughWindow],
 			[IsNotRemarkedC13M1ThroughWindow],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc2m1_throughwindowGambler
+		Response PlayerRemarkc2m1_throughwindowMechanic
 		ApplyContext "RemarkedC13M1ThroughWindow:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "RemarkC13M1UpStepsCliffe",
+		name = "RemarkC13M1UpSteps_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC13M1UpSteps],
 			[IsNotRemarkedC13M1UpSteps],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc5m3upstepsGambler
+		Response PlayerRemarkWorldC6M1_UpTheStairs2Mechanic
 		ApplyContext "RemarkedC13M1UpSteps:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "RemarkC13M1CrossHereCliffe",
+		name = "RemarkC13M1CrossHere_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC13M1CrossHere],
 			[IsNotRemarkedC13M1CrossHere],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear150],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc4m3_crosshereGambler
+		Response PlayerRemarkWorldC6M1_AcrossHereMechanic
 		ApplyContext "RemarkedC13M1CrossHere:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "RemarkC13M1PreBunkerOpenCliffe",
+		name = "RemarkC13M1PreBunkerOpen_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC13M1PreBunkerOpen],
 			[IsNotRemarkedC13M1PreBunkerOpen],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response RemarkC13M1PreBunkerOpenGambler
+		Response RemarkC13M1PreBunkerOpenMechanic
 		ApplyContext "RemarkedC13M1PreBunkerOpen:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "C13M1OpeningBunkerCliffe",
+		name = "C13M1OpeningBunker_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC13M1OpeningBunker],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotC13M1OpeningBunker],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response PlayerC3M2OpenDoor2Gambler
+		Response PlayerC3M2OpenDoor2Mechanic
 		ApplyContext "C13M1OpeningBunker:1:0,RemarkedC13M1PreBunkerOpen:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "RemarkC13M2UpHillCliffe",
+		name = "RemarkC13M2UpHill_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC13M2UpHill],
 			[IsNotRemarkedC13M2UpHill],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear100],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response RemarkC13M2UpHillGambler
+		Response RemarkC13M2UpHillMechanic
 		ApplyContext "RemarkedC13M2UpHill:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "RemarkC13M2DownHereCliffe",
+		name = "RemarkC13M2DownHere_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC13M2DownHere],
 			[IsNotRemarkedC13M2DownHere],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkC1M3DownHereGambler
+		Response PlayerRemarkC1M3DownHereMechanic
 		ApplyContext "RemarkedC13M2DownHere:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "RemarkC13M2UpLadderCliffe",
+		name = "RemarkC13M2UpLadder_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC13M2UpLadder],
 			[IsNotRemarkedC13M2UpLadder],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc5m3upladderGambler
+		Response PlayerRemarkc5m3upladderMechanic
 		ApplyContext "RemarkedC13M2UpStairs:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "RemarkC13M2UpStairsCliffe",
+		name = "RemarkC13M2UpStairs_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC13M2UpStairs],
 			[IsNotRemarkedC13M2UpStairs],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkc5m3upstepsGambler
+		Response PlayerRemarkWorldC6M1_UpTheStairs2Mechanic
 		ApplyContext "RemarkedC13M2UpStairs:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "C13M2TankApproachingCliffe",
+		name = "C13M2TankApproaching_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC13M2TankApproaching],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotNoticedC13M2ShakingGround],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C13M2TankApproachingGambler
+		Response C13M2TankApproachingMechanic
 		ApplyContext "NoticedC13M2ShakingGround:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "C13M2BarrelsIgnitedCliffe",
+		name = "C13M2BarrelsIgnited_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC13M2BarrelsIgnited],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotC13M2IgnitedBarrels],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C13M2BarrelsIgnitedGambler
+		Response C13M2BarrelsIgnitedMechanic
+		then any C13M2Barrels1 foo:0 5
 		ApplyContext "C13M2IgnitedBarrels:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "C13M2Barrels1Cliffe",
+		name = "C13M2Barrels1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC13M2Barrels1],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C13M2Barrels1Gambler
+		Response C13M2Barrels1Mechanic
+		then any C13M2Barrels2 foo:0 0.1
 		ApplyContext "Talk:1:3"
 		applycontexttoworld
 	},
 	{
-		name = "C13M2Barrels2Cliffe",
+		name = "C13M2Barrels2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC13M2Barrels2],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C13M2Barrels2Gambler
+		Response C13M2Barrels2Mechanic
 		ApplyContext "Talk:1:3"
 		applycontexttoworld
 	},
 	{
-		name = "RemarkC13M3DownHereCliffe",
+		name = "RemarkC13M3DownHere_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC13M3DownHere],
 			[IsNotRemarkedC13M3DownHere],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkC1M3DownHereGambler
+		Response PlayerRemarkC1M3DownHereMechanic
 		ApplyContext "RemarkedC13M3DownHere:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "C13M3ApproachingTankerCliffe",
+		name = "C13M3ApproachingTanker_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC13M3ApproachingTanker],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSawC13M3Tanker],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C13M3ApproachingTankerGambler
+		Response C13M3ApproachingTankerMechanic
+		then any C13M3Tanker1 foo:0 3
 		ApplyContext "SawC13M3Tanker:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "C13M3Tanker1Cliffe",
+		name = "C13M3Tanker1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC13M3Tanker1],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C13M3Tanker1Gambler
+		Response C13M3Tanker1Mechanic
+		then any C13M3Tanker2 foo:0 -0.3
 		ApplyContext "Talk:1:3"
 		applycontexttoworld
 	},
 	{
-		name = "C13M3Tanker2Cliffe",
+		name = "C13M3Tanker2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC13M3Tanker2],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C13M3Tanker2Gambler
+		Response C13M3Tanker2Mechanic
+		then any C13M3Tanker3 foo:0 3
 		ApplyContext "Talk:1:3"
 		applycontexttoworld
 	},
 	{
-		name = "C13M3Tanker3Cliffe",
+		name = "C13M3Tanker3_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC13M3Tanker3],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C13M3Tanker3Gambler
+		Response C13M3Tanker3Mechanic
 		ApplyContext "Talk:1:3"
 		applycontexttoworld
 	},
 	{
-		name = "C13M3OnScaffoldCliffe",
+		name = "C13M3OnScaffold_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC13M3OnScaffold],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotOnC13M3Scaffold],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C13M3OnScaffoldGambler
+		Response PlayerRemarkWorldC1M2DownStairsMechanic
 		ApplyContext "OnC13M3Scaffold:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "C13M3AirstrikeCliffe",
+		name = "C13M3Airstrike_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC13M3Airstrike],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotWitnissedC13M3Airstrike],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C13M3AirstrikeGambler
+		Response C13M3AirstrikeMechanic
+		then any C13M3Airstrike2 foo:0 0.01
 		ApplyContext "WitnissedC13M3Airstrike:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "C13M3Airstrike2Cliffe",
+		name = "C13M3Airstrike2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC13M3Airstrike2],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C13M3Airstrike2Gambler
+		Response C13M3Airstrike2Mechanic
 		ApplyContext "Talk:1:3"
 		applycontexttoworld
 	},
 	{
-		name = "C13M4Button1Cliffe",
+		name = "C13M4Button1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC13M4Button1],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C13M4Button1Gambler
+		Response C13M4Button1Mechanic
+		then orator C13M4FinaleBrief foo:0 0.3
 		ApplyContext "Talk:1:3"
 		applycontexttoworld
 	},
 	{
-		name = "C13M4FinaleTriggeredCliffe",
+		name = "C13M4FinaleTriggered_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptFinaleTriggered],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[ismapc13m4_cutthroatcreek],
-			[IsTriggeredByCliffe],
+			[IsTriggeredByCsgo_sas],
 			[_auto_NotFinaleStarted],
 		],
-		Response C13M4FinaleTriggeredGambler
-		ApplyContext "_auto_Finale:1:0,_auto_TalkingCliffe:1:0"
+		Response C13M4FinaleTriggeredMechanic
+		then orator C13M4FinaleStart foo:0 0.01
+		ApplyContext "_auto_Finale:1:0,_auto_TalkingCsgo_sas:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "C13M4FinaleStart2Cliffe",
+		name = "C13M4FinaleStart2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC13M4FinaleStart2],
-			[IsCliffe],
-			[_auto_IsTalkingCliffe],
+			[IsCsgo_sas],
+			[_auto_IsTalkingCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C13M4FinaleStart2Gambler
+		Response C13M4FinaleStart2Mechanic
 		ApplyContext "Talk:1:3"
 		applycontexttoworld
 	},
 	{
-		name = "C13M4DownCreekCliffe",
+		name = "C13M4DownCreek_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC13M4DownCreek],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotInC13M4Creek],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response PlayerRemarkWorldC6M2_FinalWaterGambler
+		Response C13M4DownCreekMechanic
 		ApplyContext "Talk:1:3,InC13M4Creek:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "C13M4InSmokeCliffe",
+		name = "C13M4InSmoke_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC13M4InSmoke],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotInC13M4Smoke],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response SurvivorCoughingGambler
-		ApplyContext "TalkCliffe:1:3,InC13M4Smoke:1:0"
+		Response SurvivorCoughingMechanic
+		ApplyContext "TalkCsgo_sas:1:3,InC13M4Smoke:1:0"
 	},
 	{
-		name = "C13M4NoticedHelicopterCliffe",
+		name = "C13M4NoticedHelicopter_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC13M4NoticedHelicopter],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotNoticedC13M4Helicopter],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C13M4NoticedHelicopterGambler
+		Response C13M4NoticedHelicopterMechanic
 		ApplyContext "Talk:1:3,NoticedC13M4Helicopter:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "C13M4AlmostThereCliffe",
+		name = "C13M4AlmostThere_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC13M4AlmostThere],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotC13M4AlmostThere],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C13M4AlmostThereGambler
+		Response C13M4AlmostThereMechanic
 		ApplyContext "Talk:1:3,C13M4AlmostThere:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "C13M4SpottedVehicleCliffe",
+		name = "C13M4SpottedVehicle_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptFinalVehicleSpotted],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[ismapc13m4_cutthroatcreek],
 			[_auto_IsFinaleStarted],
 		],
-		Response C13M4SpottedVehicleGambler
+		Response C13M4SpottedVehicleMechanic
+		then pilot C13M4PilotEscapeNag foo:0 2
 		ApplyContext "_auto_Finale:2:0,_auto_TimerLockA:1:5"
 		applycontexttoworld
 	},
 	{
-		name = "C13M4GetToVehicleCliffe",
+		name = "C13M4GetToVehicle_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptGetToVehicle],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[ismapc13m4_cutthroatcreek],
 			[IsNotCoughing],
 			[IsNotIncapacitated],
@@ -23356,19 +24678,19 @@ local jess_cliffe_rules =
 			[IsNotInRescueVehicle],
 			[_auto_IsEscapeReady],
 			[_auto_NotTimerLockA],
-			[_auto_NotTimerLockCliffe],
+			[_auto_NotTimerLockCsgo_sas],
 			[IsNotSpeakingWeight0],
 		],
-		Response C13M4GetToVehicleGambler
-		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockCliffe:1:30"
+		Response C13M4GetToVehicleMechanic
+		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockCsgo_sas:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "C13M4InsideVehicleCliffe",
+		name = "C13M4InsideVehicle_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptGetToVehicle],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[ismapc13m4_cutthroatcreek],
 			[IsNotCoughing],
 			[IsNotIncapacitated],
@@ -23379,19 +24701,35 @@ local jess_cliffe_rules =
 			[IsInRescueVehicle],
 			[_auto_IsEscapeReady],
 			[_auto_NotTimerLockA],
-			[_auto_NotTimerLockCliffe],
+			[_auto_NotTimerLockCsgo_sas],
 			[IsNotSpeakingWeight0],
 		],
-		Response C5M5InsideHeliGambler
-		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockCliffe:1:30"
+		Response C13M4InsideVehicleMechanic
+		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockCsgo_sas:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "SafeRoomStartCliffe",
+		name = "EllisStoryStart_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptTalkIdle],
-			[IsCliffe],
+			[IsCsgo_sas],
+			[IsNotSpeaking],
+			[AutoIsNotScavenge],
+			[AutoIsNotSurvival],
+			[IsNotSrcGrp_CSGO_SASSTORYINIT],
+		],
+		// 	forceweight 1
+		Response NoResponse
+		ApplyContext "_auto_StoryWait:1:0,_auto_StoryGate:1:60,SrcGrp_CSGO_SASSTORYINIT:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "SafeRoomStart_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptTalkIdle],
+			[IsCsgo_sas],
 			[IsInStartArea],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
@@ -23402,12 +24740,12 @@ local jess_cliffe_rules =
 		applycontexttoworld
 	},
 	{
-		name = "IntroEndCliffe",
+		name = "IntroEnd_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptIntroEnd],
-			[IsCliffe],
-			[FromIsCliffe],
+			[IsCsgo_sas],
+			[FromIsCsgo_sas],
 			[IsNotSaidLeavingSafeArea],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
@@ -23417,11 +24755,11 @@ local jess_cliffe_rules =
 		applycontexttoworld
 	},
 	{
-		name = "LeavingSafeAreaCliffe",
+		name = "LeavingSafeArea_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptSurvivorLeavingCheckpoint],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidLeavingSafeArea],
 		],
 		Response NoResponse
@@ -23429,11 +24767,11 @@ local jess_cliffe_rules =
 		applycontexttoworld
 	},
 	{
-		name = "LeavingSafeRoomCliffe",
+		name = "LeavingSafeRoom_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptSurvivorLeavingInitialCheckpoint],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidLeavingSafeArea],
 		],
 		Response NoResponse
@@ -23441,12 +24779,12 @@ local jess_cliffe_rules =
 		applycontexttoworld
 	},
 	{
-		name = "FinaleTriggeredCliffe",
+		name = "FinaleTriggered_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptFinaleTriggered],
-			[IsCliffe],
-			[IsTriggeredByCliffe],
+			[IsCsgo_sas],
+			[IsTriggeredByCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[_auto_NotFinaleStarted],
@@ -23456,26 +24794,11 @@ local jess_cliffe_rules =
 		applycontexttoworld
 	},
 	{
-		name = "FinaleTriggeredCliffe",
-		criteria = 
-		[
-			[ConceptFinaleTriggered],
-			[IsCliffe],
-			[IsTriggeredByCliffe],
-			[AutoIsNotScavenge],
-			[AutoIsNotSurvival],
-			[_auto_NotFinaleStarted],
-		],
-		Response NoResponse
-		ApplyContext "_auto_Finale:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "FinalVehicleSpottedCliffe",
+		name = "FinalVehicleSpotted_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptFinalVehicleSpotted],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[_auto_IsFinaleStarted],
 			[_auto_NotEscapeReady],
 		],
@@ -23484,11 +24807,11 @@ local jess_cliffe_rules =
 		applycontexttoworld
 	},
 	{
-		name = "FinalVehicleArrivedCliffe",
+		name = "FinalVehicleArrived_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptFinalVehicleArrived],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[_auto_HasSpottedVehicle],
 			[_auto_NotEscapeReady],
 		],
@@ -23497,308 +24820,366 @@ local jess_cliffe_rules =
 		applycontexttoworld
 	},
 	{
-		name = "L4D1PlayerNiceShotCliffe",
+		name = "L4D1PlayerNiceShot_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptL4D1PlayerNiceShot],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsSubjectDistNear1500],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotSpeaking],
 			[ChanceToFire70Percent],
 		],
-		Response L4D1PlayerNiceShotGambler
+		Response L4D1PlayerNiceShotMechanic
 	},
 	{
-		name = "L4D1PlayerNiceShotFrancisCliffe",
+		name = "L4D1PlayerNiceShotFrancis_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptL4D1PlayerNiceShot],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsSubjectDistNear1500],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[SubjectIsBiker],
 			[ChanceToFire70Percent],
 			[IsNotSpeaking],
 		],
-		Response L4D1PlayerNiceShotFrancisGambler
+		Response L4D1PlayerNiceShotFrancisMechanic
 	},
 	{
-		name = "L4D1PlayerNiceShotLouisCliffe",
+		name = "L4D1PlayerNiceShotLouis_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptL4D1PlayerNiceShot],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsSubjectDistNear1500],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[SubjectIsManager],
 			[ChanceToFire70Percent],
 			[IsNotSpeaking],
 		],
-		Response L4D1PlayerNiceShotLouisGambler
+		Response L4D1PlayerNiceShotLouisMechanic
 	},
 	{
-		name = "L4D1PlayerNiceShotZoeyCliffe",
+		name = "L4D1PlayerNiceShotZoey_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptL4D1PlayerNiceShot],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsSubjectDistNear1500],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[SubjectIsTeenGirl],
 			[ChanceToFire70Percent],
 			[IsNotSpeaking],
 		],
-		Response L4D1PlayerNiceShotZoeyGambler
+		Response L4D1PlayerNiceShotZoeyMechanic
 	},
 	{
-		name = "C6M3GasPourCliffe",
+		name = "C6M3GasPour_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPourStarted],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotScavenge],
 			[isC6M3_Port],
 			[ChanceToFire70Percent],
 		],
-		Response C6M3GasPourGambler
-		ApplyContext "TalkCliffe:1:2"
+		Response C6M3GasPourMechanic
+		ApplyContext "TalkCsgo_sas:1:2"
 	},
 	{
-		name = "C6M1_IntotheparkNoHealthCliffe",
+		name = "C6M1_IntotheparkNoHealth_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC6M1_IntotheparkNoHealth],
-			[IsCliffe],
+			[IsCsgo_sas],
 		],
-		Response C6M1_IntotheparkNoHealthGambler
+		Response C6M1_IntotheparkNoHealthMechanic
 	},
 	{
-		name = "C6M1Intro_01Biker05Cliffe",
+		name = "C6M1Intro_01a_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC6M1Intro_01a],
+			[IsCsgo_sas],
+			[IsNotVersus],
+		],
+		Response C6M1Intro_01aMechanic
+		then Biker C6M1Intro_01b foo:0 -6.365
+	},
+	{
+		name = "C6M1Intro_01Biker02_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptintroC6M1],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsFrancisIntroActor],
 			[IsNotSaidIntroScene],
-			[FrancisGroup5],
+			[FrancisGroup2],
 			[IsNotVersus],
 		],
-		Response C6M1Intro_01Biker05Gambler
+		Response C6M1Intro_01Biker02Mechanic
+		then Biker C6M1Intro_24b foo:0 -12.798
 		ApplyContext "SaidIntroScene:1:0,Talk:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "C6M1Intro_07bCliffe",
+		name = "C6M1Intro_01c_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC6M1Intro_07b],
-			[IsCliffe],
+			[ConceptC6M1Intro_01c],
+			[IsCsgo_sas],
+			[IsNotVersus],
 		],
-		Response C6M1Intro_07bGambler
+		Response C6M1Intro_01cMechanic
+		then Biker C6M1Intro_01d foo:0 -0.982
 	},
 	{
-		name = "C6M1Intro_09aCliffe",
+		name = "C6M1Intro_01TeenGirl04_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC6M1Intro_09a],
-			[IsCliffe],
+			[ConceptintroC6M1],
+			[IsCsgo_sas],
+			[IsZoeyIntroActor],
+			[IsNotSaidIntroScene],
+			[MoreThan60],
+			[LessThan100],
+			[IsNotVersus],
 		],
-		Response C6M1Intro_09aGambler
+		Response C6M1Intro_01TeenGirl04Mechanic
+		then TeenGirl C6M1Intro_23a foo:0 -2.512
+		ApplyContext "SaidIntroScene:1:0,Talk:1:30"
+		applycontexttoworld
 	},
 	{
-		name = "C6M1Intro_09bCliffe",
+		name = "C6M1Intro_02a_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC6M1Intro_09b],
-			[IsCliffe],
+			[ConceptC6M1Intro_02a],
+			[IsCsgo_sas],
 		],
-		Response C6M1Intro_09bGambler
+		Response C6M1Intro_02aMechanic
+		then Biker C6M1Intro_02b foo:0 -4.221
 	},
 	{
-		name = "C6M1Intro_09dCliffe",
+		name = "C6M1Intro_11a_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC6M1Intro_09d],
-			[IsCliffe],
+			[ConceptC6M1Intro_11a],
+			[IsCsgo_sas],
 		],
-		Response C6M1Intro_09dGambler
+		Response C6M1Intro_11aMechanic
+		then TeenGirl C6M1Intro_11b foo:0 -5.419
 	},
 	{
-		name = "C6M1Intro_10eCliffe",
+		name = "C6M1Intro_11c_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC6M1Intro_10e],
-			[IsCliffe],
+			[ConceptC6M1Intro_11c],
+			[IsCsgo_sas],
 		],
-		Response C6M1Intro_10eGambler
+		Response C6M1Intro_11cMechanic
+		then Any WorldC6M1_HistoricTour foo:0 1
+	},
+	{
+		name = "C6M1Intro_12b_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC6M1Intro_12b],
+			[IsCsgo_sas],
+		],
+		Response C6M1Intro_12bMechanic
+		then Producer C6M1Intro_12c foo:0 -4.691
+	},
+	{
+		name = "C6M1Intro_13a_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC6M1Intro_13a],
+			[IsCsgo_sas],
+		],
+		Response C6M1Intro_13aMechanic
+		then Coach C6M1Intro_13b foo:0 -14.217
+	},
+	{
+		name = "C6M1Intro_13c_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC6M1Intro_13c],
+			[IsCsgo_sas],
+		],
+		Response C6M1Intro_13cMechanic
+		then TeenGirl C6M1Intro_13d foo:0 -3.537
+	},
+	{
+		name = "C6M1Intro_13f_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC6M1Intro_13f],
+			[IsCsgo_sas],
+		],
+		Response C6M1Intro_13fMechanic
 		ApplyContext "Talk:0:0"
 		applycontexttoworld
 	},
 	{
-		name = "C6M1Intro_11dCliffe",
+		name = "C6M1Intro_23b_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC6M1Intro_11d],
-			[IsCliffe],
+			[ConceptC6M1Intro_23b],
+			[IsCsgo_sas],
 		],
-		Response C6M1Intro_11dGambler
+		Response C6M1Intro_23bMechanic
+		then TeenGirl C6M1Intro_23c foo:0 -7.488
+	},
+	{
+		name = "C6M1Intro_23d_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC6M1Intro_23d],
+			[IsCsgo_sas],
+		],
+		Response C6M1Intro_23dMechanic
+		then Any WorldC6M1_HistoricTour foo:0 -4.369
 		ApplyContext "Talk:0:0"
 		applycontexttoworld
 	},
 	{
-		name = "C6M1Intro_14aCliffe",
+		name = "C6M1Intro_24c_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC6M1Intro_14a],
-			[IsCliffe],
+			[ConceptC6M1Intro_24c],
+			[IsCsgo_sas],
 		],
-		Response C6M1Intro_14aGambler
+		Response C6M1Intro_24cMechanic
+		then Biker C6M1Intro_24d foo:0 -2.841
 	},
 	{
-		name = "C6M1Intro_14cCliffe",
+		name = "C6M1Intro_24e_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC6M1Intro_14c],
-			[IsCliffe],
+			[ConceptC6M1Intro_24e],
+			[IsCsgo_sas],
 		],
-		Response C6M1Intro_14cGambler
-	},
-	{
-		name = "C6M1Intro_15aCliffe",
-		criteria = 
-		[
-			[ConceptC6M1Intro_15a],
-			[IsCliffe],
-		],
-		Response C6M1Intro_15aGambler
-	},
-	{
-		name = "C6M1Intro_15eCliffe",
-		criteria = 
-		[
-			[ConceptC6M1Intro_15e],
-			[IsCliffe],
-		],
-		Response C6M1Intro_15eGambler
+		Response C6M1Intro_24eMechanic
 		ApplyContext "Talk:0:0"
 		applycontexttoworld
 	},
 	{
-		name = "C6M1Intro_16aCliffe",
-		criteria = 
-		[
-			[ConceptC6M1Intro_16a],
-			[IsCliffe],
-		],
-		Response C6M1Intro_16aGambler
-	},
-	{
-		name = "LeavingC6M1StartCliffe",
+		name = "LeavingC6M1Start_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptSurvivorLeavingCheckpoint],
-			[IsCliffe],
+			[IsCsgo_sas],
 		],
-		Response LeavingC6M1StartGambler
+		Response LeavingC6M1StartMechanic
 		ApplyContext "LeftC6M1Start:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "RemWorldC6M1_WeddingWarn02Cliffe",
+		name = "RemWorldC6M1_WeddingWarn02_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemWorldC6M1_WeddingWarn02],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsSubjectDistNear800],
 		],
-		Response RemWorldC6M1_WeddingWarn02Gambler
+		Response RemWorldC6M1_WeddingWarn02Mechanic
 		ApplyContext "AtWedding:1:60, CoachCake:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "WorldC6M1_HistoricTourCliffe",
+		name = "WorldC6M1_WeddingWarn03a_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptWorldC6M1_HistoricTour],
-			[IsCliffe],
-			[IsNotLeftC6M1Start],
+			[ConceptWorldC6M1_WeddingWarn03a],
+			[IsCsgo_sas],
 		],
-		Response WorldC6M1_HistoricTourGambler
+		Response WorldC6M1_WeddingWarn03aMechanic
+		then Producer WorldC6M1_WeddingWarn03b foo:0 -0.799
+		ApplyContext "AtWedding:1:60"
+		applycontexttoworld
 	},
 	{
-		name = "WorldC6M1_PostWedding02aCliffe",
-		criteria = 
-		[
-			[ConceptWorldC6M1_PostWedding02a],
-			[IsCliffe],
-			[IsSubjectDistNear800],
-		],
-		Response WorldC6M1_PostWedding02aGambler
-	},
-	{
-		name = "WorldC6M1_WeddingWarn05aCliffe",
-		criteria = 
-		[
-			[ConceptWorldC6M1_WeddingWarn05a],
-			[IsCliffe],
-			[IsSubjectDistNear800],
-		],
-		Response WorldC6M1_WeddingWarn05aGambler
-	},
-	{
-		name = "C6M2_OpenGate1Cliffe",
+		name = "C6M2_OpenGate1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC6M2_OpenGate1],
-			[IsCliffe],
+			[IsCsgo_sas],
 		],
-		Response C6M2_OpenGate1Gambler
+		Response C6M2_OpenGate1Mechanic
 		ApplyContext "SaidOpenedGate1:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "C6M2_OpenGate1aCliffe",
+		name = "C6M2_OpenGate1b_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC6M2_OpenGate1a],
-			[IsCliffe],
+			[ConceptC6M2_OpenGate1b],
+			[IsCsgo_sas],
 		],
-		Response C6M2_OpenGate1aGambler
+		Response C6M2_OpenGate1bMechanic
 	},
 	{
-		name = "C6M2_OpenGate2Cliffe",
+		name = "C6M2_OpenGate1Blame_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC6M2_OpenGate1],
+			[IsCsgo_sas],
+			[IsGamblerNear800Weight0],
+		],
+		Response C6M2_OpenGate1BlameMechanic
+		then Gambler C6M2_OpenGate1a foo:0 0.01
+		ApplyContext "SaidOpenedGate1:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "C6M2_OpenGate2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC6M2_OpenGate2],
-			[IsCliffe],
+			[IsCsgo_sas],
 		],
-		Response C6M2_OpenGate2Gambler
+		Response C6M2_OpenGate2Mechanic
 		ApplyContext "Said:OpenedGate2:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "C6M2SafeRoomCliffe",
+		name = "C6M2LeavingSafeRoom_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptSurvivorLeavingInitialCheckpoint],
+			[IsCsgo_sas],
+			[IsNotSaidC6M2LeavingSafeRoom],
+			[isc6m2_bedlam],
+			[ChanceToFire70Percent],
+		],
+		Response C6M2LeavingSafeRoomMechanic
+		ApplyContext "SaidC6M2LeavingSafeRoom:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "C6M2SafeRoom_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptTalkIdle],
 			[Joined3],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[isC6m2_bedlam],
 			[IsInStartArea],
 			[AutoIsNotScavenge],
@@ -23806,402 +25187,351 @@ local jess_cliffe_rules =
 			[IsNotSaidC6M2SafeRoom],
 			[IsNotSpeakingWeight0],
 		],
-		Response C6M2SafeRoomGambler
+		Response C6M2SafeRoomMechanic
+		then any C6M2SafeRoom2 foo:0 3
 		ApplyContext "SaidC6M2SafeRoom:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "DLC1_C6M2_SafeRoomConvo01Cliffe",
+		name = "DLC1_C6M2_SafeRoomConvo02a_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptDLC1_C6M2_SafeRoomConvo02a],
+			[IsCsgo_sas],
+		],
+		Response DLC1_C6M2_SafeRoomConvo02aMechanic
+		then Gambler DLC1_C6M2_SafeRoomConvo02b foo:0 -3.509
+	},
+	{
+		name = "DLC1_C6M2_SafeRoomConvo03_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC6M2SafeRoom2],
-			[IsCliffe],
-			[IsFrancisIntroActor],
-			[FrancisGroup5],
-			[IsNotSaidC6M2SafeRoom2],
-		],
-		Response DLC1_C6M2_SafeRoomConvo01Gambler
-		ApplyContext "SaidC6M2SafeRoom2:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "DLC1_C6M2_SafeRoomConvo01bCliffe",
-		criteria = 
-		[
-			[ConceptDLC1_C6M2_SafeRoomConvo01b],
-			[IsCliffe],
-		],
-		Response DLC1_C6M2_SafeRoomConvo01bGambler
-	},
-	{
-		name = "DLC1_C6M2_SafeRoomConvo02Cliffe",
-		criteria = 
-		[
-			[ConceptC6M2SafeRoom2],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsFrancisIntroActor],
 			[FrancisGroup1],
 			[IsNotSaidC6M2SafeRoom2],
 		],
-		Response DLC1_C6M2_SafeRoomConvo02Gambler
+		Response DLC1_C6M2_SafeRoomConvo03Mechanic
+		then Producer DLC1_C6M2_SafeRoomConvo03a foo:0 -3.330
 		ApplyContext "SaidC6M2SafeRoom2:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "DLC1_C6M2_SafeRoomConvo02bCliffe",
+		name = "DLC1_C6M2_SafeRoomConvo03b_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptDLC1_C6M2_SafeRoomConvo02b],
-			[IsCliffe],
+			[ConceptDLC1_C6M2_SafeRoomConvo03b],
+			[IsCsgo_sas],
 		],
-		Response DLC1_C6M2_SafeRoomConvo02bGambler
+		Response DLC1_C6M2_SafeRoomConvo03bMechanic
+		then Producer DLC1_C6M2_SafeRoomConvo03c foo:0 -16.180
 	},
 	{
-		name = "DLC1_C6M2_SafeRoomConvo06aCliffe",
-		criteria = 
-		[
-			[ConceptDLC1_C6M2_SafeRoomConvo06a],
-			[IsCliffe],
-		],
-		Response DLC1_C6M2_SafeRoomConvo06aGambler
-	},
-	{
-		name = "DLC1_C6M2_SafeRoomConvo07aCliffe",
-		criteria = 
-		[
-			[ConceptDLC1_C6M2_SafeRoomConvo07a],
-			[IsCliffe],
-		],
-		Response DLC1_C6M2_SafeRoomConvo07aGambler
-	},
-	{
-		name = "DLC1_C6M2_SafeRoomConvo08Cliffe",
+		name = "DLC1_C6M2_SafeRoomConvo06_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC6M2SafeRoom2],
-			[IsCliffe],
-			[IsNotSaidC6M2SafeRoom2],
-		],
-		Response DLC1_C6M2_SafeRoomConvo08Gambler
-		ApplyContext "SaidC6M2SafeRoom2:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "DLC1_C6M2_SafeRoomConvo08aCliffe",
-		criteria = 
-		[
-			[ConceptDLC1_C6M2_SafeRoomConvo08a],
-			[IsCliffe],
-		],
-		Response DLC1_C6M2_SafeRoomConvo08aGambler
-	},
-	{
-		name = "DLC1_C6M2_SafeRoomConvo08cCliffe",
-		criteria = 
-		[
-			[ConceptDLC1_C6M2_SafeRoomConvo08c],
-			[IsCliffe],
-		],
-		Response DLC1_C6M2_SafeRoomConvo08cGambler
-	},
-	{
-		name = "DLC1_C6M2_SafeRoomConvo08eCliffe",
-		criteria = 
-		[
-			[ConceptDLC1_C6M2_SafeRoomConvo08e],
-			[IsCliffe],
-		],
-		Response DLC1_C6M2_SafeRoomConvo08eGambler
-	},
-	{
-		name = "DLC1_C6M2_SafeRoomConvo09bCliffe",
-		criteria = 
-		[
-			[ConceptDLC1_C6M2_SafeRoomConvo09b],
-			[IsCliffe],
-		],
-		Response DLC1_C6M2_SafeRoomConvo09bGambler
-	},
-	{
-		name = "DLC1_C6M2_SafeRoomConvo10Cliffe",
-		criteria = 
-		[
-			[ConceptC6M2SafeRoom2],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsZoeyIntroActor],
-			[ZoeyGroup2],
+			[ZoeyGroup1],
 			[IsNotSaidC6M2SafeRoom2],
 		],
-		Response DLC1_C6M2_SafeRoomConvo10Gambler
+		Response DLC1_C6M2_SafeRoomConvo06Mechanic
+		then Any DLC1_C6M2_SafeRoomConvo07a foo:0 -6.763
 		ApplyContext "SaidC6M2SafeRoom2:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "DLC1_C6M2_SafeRoomConvo10bCliffe",
+		name = "DLC1_C6M2_SafeRoomConvo08_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptDLC1_C6M2_SafeRoomConvo10b],
-			[IsCliffe],
+			[ConceptC6M2SafeRoom2],
+			[IsCsgo_sas],
+			[IsNotSaidC6M2SafeRoom2],
 		],
-		Response DLC1_C6M2_SafeRoomConvo10bGambler
-	},
-	{
-		name = "DLC1_C6M2_SafeRoomConvo10dCliffe",
-		criteria = 
-		[
-			[ConceptDLC1_C6M2_SafeRoomConvo10d],
-			[IsCliffe],
-		],
-		Response DLC1_C6M2_SafeRoomConvo10dGambler
-	},
-	{
-		name = "DLC1_C6M2_SafeRoomConvo11bCliffe",
-		criteria = 
-		[
-			[ConceptDLC1_C6M2_SafeRoomConvo11b],
-			[IsCliffe],
-		],
-		Response DLC1_C6M2_SafeRoomConvo11bGambler
-	},
-	{
-		name = "DLC1_C6M2_SafeRoomConvo12aCliffe",
-		criteria = 
-		[
-			[ConceptDLC1_C6M2_SafeRoomConvo12a],
-			[IsCliffe],
-		],
-		Response DLC1_C6M2_SafeRoomConvo12aGambler
-	},
-	{
-		name = "DLC1_C6M2_SafeRoomConvo12cCliffe",
-		criteria = 
-		[
-			[ConceptDLC1_C6M2_SafeRoomConvo12c],
-			[IsCliffe],
-		],
-		Response DLC1_C6M2_SafeRoomConvo12cGambler
-	},
-	{
-		name = "DLC1_C6M2_SafeRoomConvo13aCliffe",
-		criteria = 
-		[
-			[ConceptDLC1_C6M2_SafeRoomConvo13a],
-			[IsCliffe],
-		],
-		Response DLC1_C6M2_SafeRoomConvo13aGambler
-	},
-	{
-		name = "DLC1_C6M2_SafeRoomConvo13cCliffe",
-		criteria = 
-		[
-			[ConceptDLC1_C6M2_SafeRoomConvo13c],
-			[IsCliffe],
-		],
-		Response DLC1_C6M2_SafeRoomConvo13cGambler
-	},
-	{
-		name = "DLC1_C6M2_SafeRoomConvo14fCliffe",
-		criteria = 
-		[
-			[ConceptDLC1_C6M2_SafeRoomConvo14f],
-			[IsCliffe],
-		],
-		Response DLC1_C6M2_SafeRoomConvo14fGambler
-	},
-	{
-		name = "DLC1_C6M2_SafeRoomConvo15cCliffe",
-		criteria = 
-		[
-			[ConceptDLC1_C6M2_SafeRoomConvo15c],
-			[IsCliffe],
-		],
-		Response DLC1_C6M2_SafeRoomConvo15cGambler
-		ApplyContext "Talk:1:0.749"
+		Response DLC1_C6M2_SafeRoomConvo08Mechanic
+		then Producer DLC1_C6M2_SafeRoomConvo15a foo:0 -4.114
+		ApplyContext "SaidC6M2SafeRoom2:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "WorldC6M2_AfterGate201aCliffe",
+		name = "DLC1_C6M2_SafeRoomConvo11a_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptWorldC6M2_AfterGate201a],
-			[IsCliffe],
+			[ConceptDLC1_C6M2_SafeRoomConvo11a],
+			[IsCsgo_sas],
 		],
-		Response WorldC6M2_AfterGate201aGambler
+		Response DLC1_C6M2_SafeRoomConvo11aMechanic
+		then Gambler DLC1_C6M2_SafeRoomConvo11b foo:0 -4.069
 	},
 	{
-		name = "WorldC6M2_FinalWater01aCliffe",
+		name = "DLC1_C6M2_SafeRoomConvo14b_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptWorldC6M2_FinalWater01a],
-			[IsCliffe],
+			[ConceptDLC1_C6M2_SafeRoomConvo14b],
+			[IsCsgo_sas],
 		],
-		Response WorldC6M2_FinalWater01aGambler
+		Response DLC1_C6M2_SafeRoomConvo14bMechanic
+		then Producer DLC1_C6M2_SafeRoomConvo14c foo:0 -2.922
 	},
 	{
-		name = "WorldC6M2_InSewer101cCliffe",
+		name = "DLC1_C6M2_SafeRoomConvo15_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptWorldC6M2_InSewer101c],
-			[IsCliffe],
+			[ConceptC6M2SafeRoom2],
+			[IsCsgo_sas],
+			[IsNotSaidC6M2SafeRoom2],
 		],
-		Response WorldC6M2_InSewer101cGambler
+		Response DLC1_C6M2_SafeRoomConvo15Mechanic
+		then Coach DLC1_C6M2_SafeRoomConvo16a1 foo:0 -3.684
+		ApplyContext "SaidC6M2SafeRoom2:1:0"
+		applycontexttoworld
 	},
 	{
-		name = "WorldC6M2_InSewer102bCliffe",
+		name = "DLC1_C6M2_SafeRoomConvo16b_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptWorldC6M2_InSewer102b],
-			[IsCliffe],
+			[ConceptDLC1_C6M2_SafeRoomConvo16b],
+			[IsCsgo_sas],
 		],
-		Response WorldC6M2_InSewer102bGambler
+		Response DLC1_C6M2_SafeRoomConvo16bMechanic
+		then Producer DLC1_C6M2_SafeRoomConvo16c foo:0 -1.763
 	},
 	{
-		name = "WorldC6M2_InSewer201aCliffe",
+		name = "DLC1_C6M2_SafeRoomConvo16b1_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptWorldC6M2_InSewer201a],
-			[IsCliffe],
+			[ConceptDLC1_C6M2_SafeRoomConvo16b1],
+			[IsCsgo_sas],
 		],
-		Response WorldC6M2_InSewer201aGambler
+		Response DLC1_C6M2_SafeRoomConvo16b1Mechanic
+		then Coach DLC1_C6M2_SafeRoomConvo16e foo:0 -1.763
 	},
 	{
-		name = "WorldC6M2_InSewer202aCliffe",
+		name = "DLC1_C6M2_SafeRoomConvo16d_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptWorldC6M2_InSewer202a],
-			[IsCliffe],
+			[ConceptDLC1_C6M2_SafeRoomConvo16d],
+			[IsCsgo_sas],
 		],
-		Response WorldC6M2_InSewer202aGambler
+		Response DLC1_C6M2_SafeRoomConvo16dMechanic
 	},
 	{
-		name = "WorldC6M2_InSewerLadder101aCliffe",
+		name = "DLC1_C6M2_SafeRoomConvo16f_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptWorldC6M2_InSewerLadder101a],
-			[IsCliffe],
+			[ConceptDLC1_C6M2_SafeRoomConvo16f],
+			[IsCsgo_sas],
 		],
-		Response WorldC6M2_InSewerLadder101aGambler
+		Response DLC1_C6M2_SafeRoomConvo16fMechanic
 	},
 	{
-		name = "WorldC6M2_OnTourWalk101aCliffe",
+		name = "DLC1_C6M2_SafeRoomConvo17_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptWorldC6M2_OnTourWalk101a],
-			[IsCliffe],
+			[ConceptC6M2SafeRoom2],
+			[IsCsgo_sas],
+			[IsZoeyIntroActor],
+			[IsNotSaidC6M2SafeRoom2],
 		],
-		Response WorldC6M2_OnTourWalk101aGambler
+		Response DLC1_C6M2_SafeRoomConvo17Mechanic
+		then Producer DLC1_C6M2_SafeRoomConvo18a foo:0 -3.626
+		ApplyContext "SaidC6M2SafeRoom2:1:0"
+		applycontexttoworld
 	},
 	{
-		name = "WorldC6M2_OnTourWalk102aCliffe",
+		name = "DLC1_C6M2_SafeRoomConvo17a_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptWorldC6M2_OnTourWalk102a],
-			[IsCliffe],
+			[ConceptDLC1_C6M2_SafeRoomConvo17a],
+			[IsCsgo_sas],
 		],
-		Response WorldC6M2_OnTourWalk102aGambler
+		Response DLC1_C6M2_SafeRoomConvo17aMechanic
+		then Producer DLC1_C6M2_SafeRoomConvo17b foo:0 -7.751
 	},
 	{
-		name = "WorldC6M2_Tattoo01b_Cliffe",
+		name = "DLC1_C6M2_SafeRoomConvo18b_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptWorldC6M2_Tattoo01b_],
-			[IsCliffe],
+			[ConceptDLC1_C6M2_SafeRoomConvo18b],
+			[IsCsgo_sas],
 		],
-		Response WorldC6M2_Tattoo01b_Gambler
+		Response DLC1_C6M2_SafeRoomConvo18bMechanic
+		then Coach DLC1_C6M2_SafeRoomConvo18c foo:0 -2.705
 	},
 	{
-		name = "WorldC6M2_Tattoo03a_Cliffe",
+		name = "DLC1_C6M2_SafeRoomConvo19a_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptWorldC6M2_Tattoo03a_],
-			[IsCliffe],
+			[ConceptDLC1_C6M2_SafeRoomConvo19a],
+			[IsCsgo_sas],
 		],
-		Response WorldC6M2_Tattoo03a_Gambler
+		Response DLC1_C6M2_SafeRoomConvo19aMechanic
+		then Coach DLC1_C6M2_SafeRoomConvo19b foo:0 -2.249
 	},
 	{
-		name = "C6M3_BridgeDownCliffe",
+		name = "DLC1_C6M2_SafeRoomConvo19c_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptDLC1_C6M2_SafeRoomConvo19c],
+			[IsCsgo_sas],
+		],
+		Response DLC1_C6M2_SafeRoomConvo19cMechanic
+		then Coach DLC1_C6M2_SafeRoomConvo19d foo:0 -6.193
+	},
+	{
+		name = "DLC1_C6M2_SafeRoomConvo19e_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptDLC1_C6M2_SafeRoomConvo19e],
+			[IsCsgo_sas],
+		],
+		Response DLC1_C6M2_SafeRoomConvo19eMechanic
+	},
+	{
+		name = "DLC1_C6M2_SafeRoomConvo20_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC6M2SafeRoom2],
+			[IsCsgo_sas],
+			[IsNotSaidC6M2SafeRoom2],
+		],
+		Response DLC1_C6M2_SafeRoomConvo20Mechanic
+		then Producer DLC1_C6M2_SafeRoomConvo21a foo:0 -12.293
+		ApplyContext "SaidC6M2SafeRoom2:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "DLC1_C6M2_SafeRoomConvo21b_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptDLC1_C6M2_SafeRoomConvo21b],
+			[IsCsgo_sas],
+		],
+		Response DLC1_C6M2_SafeRoomConvo21bMechanic
+	},
+	{
+		name = "WorldC6M2_FinalWater01b_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptWorldC6M2_FinalWater01b],
+			[IsCsgo_sas],
+		],
+		Response WorldC6M2_FinalWater01bMechanic
+	},
+	{
+		name = "WorldC6M2_InSewer101a_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptWorldC6M2_InSewer101a],
+			[IsCsgo_sas],
+		],
+		Response WorldC6M2_InSewer101aMechanic
+		then Gambler WorldC6M2_InSewer101c foo:0 -0.999
+	},
+	{
+		name = "WorldC6M2_OnTourWalk102b_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptWorldC6M2_OnTourWalk102b],
+			[IsCsgo_sas],
+		],
+		Response WorldC6M2_OnTourWalk102bMechanic
+	},
+	{
+		name = "WorldC6M2_Tattoo03b__CSGO_SAS",
+		criteria = 
+		[
+			[ConceptWorldC6M2_Tattoo03b_],
+			[IsCsgo_sas],
+		],
+		Response WorldC6M2_Tattoo03b_Mechanic
+	},
+	{
+		name = "C6M3_BridgeDown_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC6M3_BridgeDown],
-			[IsCliffe],
+			[IsCsgo_sas],
 		],
-		Response C6M3_BridgeDownGambler
+		Response C6M3_BridgeDownMechanic
 		ApplyContext "SaidGetToCar:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "C6M3_BridgeGettoCarCliffe",
+		name = "C6M3_BridgeGettoCar_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptGetToVehicle],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidGetToCar],
 			[Isc6m3_port],
 		],
-		Response C6M3_BridgeGettoCarGambler
+		Response C6M3_BridgeGettoCarMechanic
 		ApplyContext "SaidGetToCar:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "C6M3_elevatorCliffe",
+		name = "C6M3_elevator_CSGO_SAS",
 		criteria = 
 		[
 			[Conceptc6m3_elevatorCancel],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidC6M3Elevator],
 			[IsC6M3_port],
 		],
 		// 	forceweight 1
-		Response C6M3_elevatorGambler
+		Response C6M3_elevatorMechanic
 		ApplyContext "SaidC6M3Elevator:1:0,Talk:0:0"
 		applycontexttoworld
 	},
 	{
-		name = "C6M3_elevatorFrancisCliffe",
+		name = "C6M3_elevatorZoey_CSGO_SAS",
 		criteria = 
 		[
 			[Conceptc6m3_elevatorCancel],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidC6M3Elevator],
 			[IsC6M3_port],
-			[IsFrancisIntroActor],
+			[IsZoeyIntroActor],
 			[IsNotVersus],
-			[FrancisGroup5],
+			[ZoeyGroup1],
 		],
 		// 	forceweight 1
-		Response C6M3_elevatorFrancisGambler
+		Response C6M3_elevatorZoeyMechanic
 		ApplyContext "SaidC6M3Elevator:1:0,Talk:0:0"
 		applycontexttoworld
 	},
 	{
-		name = "C6M3_GivenItemBikerCliffe",
+		name = "C6M3_GivenItemBiker_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsDonorBiker],
 			[Isc6m3_portHeavy],
 		],
-		Response C6M3_GivenItemBikerGambler
+		Response C6M3_GivenItemBikerMechanic
 	},
 	{
-		name = "C6M3_GivenItemTeenGirlCliffe",
+		name = "C6M3_GivenItemTeenGirl_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsDonorTeenGirl],
 			[Isc6m3_portHeavy],
 		],
-		Response C6M3_GivenItemTeenGirlGambler
+		Response C6M3_GivenItemTeenGirlMechanic
 	},
 	{
-		name = "C6M3SafeRoomCliffe",
+		name = "C6M3SafeRoom_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptTalkIdle],
 			[Joined3],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[isC6m3_port],
 			[IsInStartArea],
 			[AutoIsNotScavenge],
@@ -24209,1576 +25539,1624 @@ local jess_cliffe_rules =
 			[IsNotSaidC6M3SafeRoom],
 			[IsNotSpeakingWeight0],
 		],
-		Response C6M3SafeRoomGambler
+		Response C6M3SafeRoomMechanic
+		then any C6M3SafeRoom2 foo:0 3
 		ApplyContext "SaidC6M3SafeRoom:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "DLC1_C6M3_SafeRoomConvo02Cliffe",
+		name = "DLC1_C6M3_SafeRoomConvo01a_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptDLC1_C6M3_SafeRoomConvo01a],
+			[IsCsgo_sas],
+			[IsInStartArea],
+		],
+		Response DLC1_C6M3_SafeRoomConvo01aMechanic
+		then Producer DLC1_C6M3_SafeRoomConvo01b foo:0 -7.373
+	},
+	{
+		name = "DLC1_C6M3_SafeRoomConvo01c_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptDLC1_C6M3_SafeRoomConvo01c],
+			[IsCsgo_sas],
+		],
+		Response DLC1_C6M3_SafeRoomConvo01cMechanic
+	},
+	{
+		name = "DLC1_C6M3_SafeRoomConvo02e_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptDLC1_C6M3_SafeRoomConvo02e],
+			[IsCsgo_sas],
+			[IsInStartArea],
+		],
+		Response DLC1_C6M3_SafeRoomConvo02eMechanic
+	},
+	{
+		name = "DLC1_C6M3_SafeRoomConvo03a_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptDLC1_C6M3_SafeRoomConvo03a],
+			[IsCsgo_sas],
+			[IsInStartArea],
+		],
+		Response DLC1_C6M3_SafeRoomConvo03aMechanic
+		then Gambler DLC1_C6M3_SafeRoomConvo03b foo:0 -1.144
+	},
+	{
+		name = "DLC1_C6M3_SafeRoomConvo03c_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptDLC1_C6M3_SafeRoomConvo03c],
+			[IsCsgo_sas],
+			[IsInStartArea],
+		],
+		Response DLC1_C6M3_SafeRoomConvo03cMechanic
+		then Gambler DLC1_C6M3_SafeRoomConvo03d foo:0 -1.799
+	},
+	{
+		name = "DLC1_C6M3_SafeRoomConvo04a_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptDLC1_C6M3_SafeRoomConvo04a],
+			[IsCsgo_sas],
+			[IsInStartArea],
+		],
+		Response DLC1_C6M3_SafeRoomConvo04aMechanic
+		then Producer DLC1_C6M3_SafeRoomConvo04b foo:0 -3.659
+	},
+	{
+		name = "DLC1_C6M3_SafeRoomConvo04d_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptDLC1_C6M3_SafeRoomConvo04d],
+			[IsCsgo_sas],
+			[IsInStartArea],
+		],
+		Response DLC1_C6M3_SafeRoomConvo04dMechanic
+	},
+	{
+		name = "DLC1_C6M3_SafeRoomConvo05a_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptDLC1_C6M3_SafeRoomConvo05a],
+			[IsCsgo_sas],
+			[IsInStartArea],
+		],
+		Response DLC1_C6M3_SafeRoomConvo05aMechanic
+		then Gambler DLC1_C6M3_SafeRoomConvo05b foo:0 -2.546
+	},
+	{
+		name = "DLC1_C6M3_SafeRoomConvo06_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC6M3SafeRoom2],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidC6M3SafeRoom2],
 			[IsFrancisIntroActor],
-			[FrancisGroup5],
+			[FrancisGroup4],
 			[IsInStartArea],
 		],
-		Response DLC1_C6M3_SafeRoomConvo02Gambler
+		Response DLC1_C6M3_SafeRoomConvo06Mechanic
+		then Producer DLC1_C6M3_SafeRoomConvo06a foo:0 -5.805
 		ApplyContext "SaidC6M3SafeRoom2:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "DLC1_C6M3_SafeRoomConvo02bCliffe",
+		name = "DLC1_C6M3_SafeRoomConvo06b_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptDLC1_C6M3_SafeRoomConvo02b],
-			[IsCliffe],
-		],
-		Response DLC1_C6M3_SafeRoomConvo02bGambler
-	},
-	{
-		name = "DLC1_C6M3_SafeRoomConvo02dCliffe",
-		criteria = 
-		[
-			[ConceptDLC1_C6M3_SafeRoomConvo02d],
-			[IsCliffe],
+			[ConceptDLC1_C6M3_SafeRoomConvo06b],
+			[IsCsgo_sas],
 			[IsInStartArea],
 		],
-		Response DLC1_C6M3_SafeRoomConvo02dGambler
+		Response DLC1_C6M3_SafeRoomConvo06bMechanic
 	},
 	{
-		name = "DLC1_C6M3_SafeRoomConvo03bCliffe",
+		name = "DLC1_C6M3_SafeRoomConvo07a_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptDLC1_C6M3_SafeRoomConvo03b],
-			[IsCliffe],
+			[ConceptDLC1_C6M3_SafeRoomConvo07a],
+			[IsCsgo_sas],
 			[IsInStartArea],
 		],
-		Response DLC1_C6M3_SafeRoomConvo03bGambler
+		Response DLC1_C6M3_SafeRoomConvo07aMechanic
+		then Producer DLC1_C6M3_SafeRoomConvo07b foo:0 -2.804
 	},
 	{
-		name = "DLC1_C6M3_SafeRoomConvo03dCliffe",
+		name = "DLC1_C6M3_SafeRoomConvo07c_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptDLC1_C6M3_SafeRoomConvo03d],
-			[IsCliffe],
+			[ConceptDLC1_C6M3_SafeRoomConvo07c],
+			[IsCsgo_sas],
 			[IsInStartArea],
 		],
-		Response DLC1_C6M3_SafeRoomConvo03dGambler
+		Response DLC1_C6M3_SafeRoomConvo07cMechanic
 	},
 	{
-		name = "DLC1_C6M3_SafeRoomConvo04cCliffe",
+		name = "DLC1_C6M3_SafeRoomConvo08a_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptDLC1_C6M3_SafeRoomConvo04c],
-			[IsCliffe],
+			[ConceptDLC1_C6M3_SafeRoomConvo08a],
+			[IsCsgo_sas],
 			[IsInStartArea],
 		],
-		Response DLC1_C6M3_SafeRoomConvo04cGambler
+		Response DLC1_C6M3_SafeRoomConvo08aMechanic
+		then Coach DLC1_C6M3_SafeRoomConvo08b foo:0 -1.669
 	},
 	{
-		name = "DLC1_C6M3_SafeRoomConvo05Cliffe",
+		name = "DLC1_C6M3_SafeRoomConvo08c_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptC6M3SafeRoom2],
-			[IsCliffe],
-			[IsNotSaidC6M3SafeRoom2],
-			[IsZoeyIntroActor],
-			[ZoeyGroup1],
+			[ConceptDLC1_C6M3_SafeRoomConvo08c],
+			[IsCsgo_sas],
 			[IsInStartArea],
 		],
-		Response DLC1_C6M3_SafeRoomConvo05Gambler
-		ApplyContext "SaidC6M3SafeRoom2:1:0"
-		applycontexttoworld
+		Response DLC1_C6M3_SafeRoomConvo08cMechanic
+		then Csgo_sas DLC1_C6M3_SafeRoomConvo08d foo:0 -0.936
 	},
 	{
-		name = "DLC1_C6M3_SafeRoomConvo05bCliffe",
+		name = "DLC1_C6M3_SafeRoomConvo08d_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptDLC1_C6M3_SafeRoomConvo05b],
-			[IsCliffe],
+			[ConceptDLC1_C6M3_SafeRoomConvo08d],
+			[IsCsgo_sas],
 			[IsInStartArea],
 		],
-		Response DLC1_C6M3_SafeRoomConvo05bGambler
+		Response DLC1_C6M3_SafeRoomConvo08dMechanic
+		then Csgo_sas DLC1_C6M3_SafeRoomConvo08f foo:0 -1.479
 	},
 	{
-		name = "DLC1_C6M3_SafeRoomConvo05dCliffe",
+		name = "DLC1_C6M3_SafeRoomConvo08e_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptDLC1_C6M3_SafeRoomConvo05d],
-			[IsCliffe],
+			[ConceptDLC1_C6M3_SafeRoomConvo08e],
+			[IsCsgo_sas],
 			[IsInStartArea],
 		],
-		Response DLC1_C6M3_SafeRoomConvo05dGambler
+		Response DLC1_C6M3_SafeRoomConvo08eMechanic
+		then Csgo_sas DLC1_C6M3_SafeRoomConvo08f foo:0 -2.608
 	},
 	{
-		name = "IncapBounceCliffe",
+		name = "DLC1_C6M3_SafeRoomConvo08f_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptDLC1_C6M3_SafeRoomConvo08f],
+			[IsCsgo_sas],
+			[IsInStartArea],
+		],
+		Response DLC1_C6M3_SafeRoomConvo08fMechanic
+		then Producer DLC1_C6M3_SafeRoomConvo08g foo:0 -5.514
+	},
+	{
+		name = "DLC1_C6M3_SafeRoomConvo09a_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptDLC1_C6M3_SafeRoomConvo09a],
+			[IsCsgo_sas],
+			[IsInStartArea],
+		],
+		Response DLC1_C6M3_SafeRoomConvo09aMechanic
+		then Producer DLC1_C6M3_SafeRoomConvo09b foo:0 -13.536
+	},
+	{
+		name = "IncapBounce_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptSurvivorIncapacitated],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidInCapBounce],
 			[isC6m3_port],
 		],
-		Response IncapBounceGambler
+		Response IncapBounceMechanic
+		then Biker InCapBounce2 foo:0 0
 		ApplyContext "SaidInCapBounce:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "C6M3_CansDoneCliffe",
+		name = "C6M3_CansDone_CSGO_SAS",
 		criteria = 
 		[
 			[Conceptc6m3escapeready],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsC6M3_Port],
 			[IsNotSaidc6m3escapeready],
 		],
-		Response C6M3_CansDoneGambler
+		Response C6M3_CansDoneMechanic
+		then any EmphaticArriveRun foo:0 -1.830
 		ApplyContext "Saidc6m3escapeready:1:0,Talk:1:5"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedFallenCliffe",
+		name = "L4D1AlsoSpottedTank_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerAlsoWarnTank],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[Isc6m3_port],
+		],
+		Response L4D1AlsoSpottedTankMechanic
+		ApplyContext "SaidTankWarn:1:20,SaidSpecialWarn:1:30,SaidTankWarn2:1:60"
+		applycontexttoworld
+	},
+	{
+		name = "L4D1SpottedTank_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptPlayerWarnSpecial],
+			[IsSpecialTypeTank],
+			[IsNotCoughing],
+			[IsCsgo_sas],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[Isc6m3_port],
+			[IsNotSpeakingWeight0],
+		],
+		Response L4D1SpottedTankMechanic
+		ApplyContext "SaidTankWarn:1:20,SaidSpecialWarn:1:30,SaidTankWarn2:1:60"
+		applycontexttoworld
+	},
+	{
+		name = "SurvivorSpottedFallen_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerWarnSpecial],
 			[IsSpecialTypeFallen],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsNotSaidFallenWarn],
 			[IsNotSpeakingWeight0],
 		],
-		Response SurvivorSpottedFallenGambler
+		Response SurvivorSpottedFallenMechanic
 		ApplyContext "SaidFallenWarn:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerWitchChasingC6M1Cliffe",
+		name = "PlayerWitchChasingC6M1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerExertionMinor],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWitchPresent],
 			[SubjectIsNotWitch],
-			[IsNotSaidCliffeWitchChasing],
-			[IsSaidCliffeWitchAttacking],
+			[IsNotSaidCsgo_sasWitchChasing],
+			[IsSaidCsgo_sasWitchAttacking],
 			[isc6m1_riverbank],
 		],
 		// 	forceweight 20
-		Response PlayerWitchChasingC6M1Gambler
-		ApplyContext "SaidCliffeWitchChasing:1:15,TalkCliffe:1:2"
+		Response PlayerWitchChasingC6M1Mechanic
+		ApplyContext "SaidCsgo_sasWitchChasing:1:15,TalkCsgo_sas:1:2"
 	},
 	{
-		name = "PlayerRemarkremark_MidnightRidersBusCliffe",
+		name = "PlayerRemarkremark_MidnightRidersBus_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[Isremark_MidnightRidersBus],
 			[IsNotSaidremark_MidnightRidersBus],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear1500],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkremark_MidnightRidersBusGambler
+		Response PlayerRemarkremark_MidnightRidersBusMechanic
 		ApplyContext "Saidremark_MidnightRidersBus:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M1_AcrossHereCliffe",
+		name = "PlayerRemarkWorldC6M1_AcrossHere_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M1_AcrossHere],
 			[IsNotSaidWorldC6M1_AcrossHere],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M1_AcrossHereGambler
+		Response PlayerRemarkWorldC6M1_AcrossHereMechanic
 		ApplyContext "SaidWorldC6M1_AcrossHere:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M1_AlleyBelowCliffe",
+		name = "PlayerRemarkWorldC6M1_AlleyBelow_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M1_AlleyBelow],
 			[IsNotSaidWorldC6M1_AlleyBelow],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear400],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M1_AlleyBelowGambler
+		Response PlayerRemarkWorldC6M1_AlleyBelowMechanic
 		ApplyContext "SaidWorldC6M1_AlleyBelow:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M1_AlleyIntoBuildingCliffe",
+		name = "PlayerRemarkWorldC6M1_AlleyIntoBuilding_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M1_AlleyIntoBuilding],
 			[IsNotSaidWorldC6M1_AlleyIntoBuilding],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear400],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M1_AlleyIntoBuildingGambler
+		Response PlayerRemarkWorldC6M1_AlleyIntoBuildingMechanic
 		ApplyContext "SaidWorldC6M1_AlleyIntoBuilding:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M1_InAptsCliffe",
+		name = "PlayerRemarkWorldC6M1_InApts_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M1_InApts],
 			[IsNotSaidWorldC6M1_InApts],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M1_InAptsGambler
+		Response PlayerRemarkWorldC6M1_InAptsMechanic
 		ApplyContext "SaidWorldC6M1_InApts:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M1_IntotheparkCliffe",
+		name = "PlayerRemarkWorldC6M1_Intothepark_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M1_Intothepark],
 			[IsNotSaidWorldC6M1_Intothepark],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M1_IntotheparkGambler
+		Response PlayerRemarkWorldC6M1_IntotheparkMechanic
 		ApplyContext "SaidWorldC6M1_Intothepark:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M1_IntoThePark2Cliffe",
+		name = "PlayerRemarkWorldC6M1_IntoThePark2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M1_IntoThePark2],
 			[IsNotSaidWorldC6M1_IntoThePark2],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M1_IntoThePark2Gambler
+		Response PlayerRemarkWorldC6M1_IntoThePark2Mechanic
 		ApplyContext "SaidWorldC6M1_IntoThePark2:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M1_IntoTheStoreCliffe",
+		name = "PlayerRemarkWorldC6M1_IntoTheStore_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M1_IntoTheStore],
 			[IsNotSaidWorldC6M1_IntoTheStore],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear400],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M1_IntoTheStoreGambler
+		Response PlayerRemarkWorldC6M1_IntoTheStoreMechanic
 		ApplyContext "SaidWorldC6M1_IntoTheStore:1:0,JustSaidWorldC6M1_IntoTheStore:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M1_SafeRoomAlleyCliffe",
+		name = "PlayerRemarkWorldC6M1_PostWedding_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
+			[IsWorldC6M1_PostWedding],
+			[IsNotSaidWorldC6M1_PostWedding],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear600],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkWorldC6M1_PostWeddingMechanic
+		ApplyContext "SaidWorldC6M1_PostWedding:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkWorldC6M1_PostWeddingZ_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[IsWorldC6M1_PostWedding],
+			[IsNotSaidWorldC6M1_PostWedding],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear600],
+			[IsZoeyIntroActor],
+			[ZoeyGroup1],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkWorldC6M1_PostWeddingZMechanic
+		then Any WorldC6M1_PostWedding02a foo:0 -3.481
+		ApplyContext "SaidWorldC6M1_PostWedding:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkWorldC6M1_PostWeddingZC_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
+			[IsWorldC6M1_PostWedding],
+			[IsNotSaidWorldC6M1_PostWedding],
+			[IsNotCoughing],
+			[NotInCombat],
+			[IsTalk],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
+			[IsSubjectNear600],
+			[IsZoeyIntroActor],
+			[ZoeyGroup2],
+			[IsCoachNear800Weight0],
+			[IsNotSpeakingWeight0],
+		],
+		Response PlayerRemarkWorldC6M1_PostWeddingZCMechanic
+		then Coach WorldC6M1_PostWedding01a foo:0 -2.761
+		ApplyContext "SaidWorldC6M1_PostWedding:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "PlayerRemarkWorldC6M1_SafeRoomAlley_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptRemark],
+			[IsCsgo_sas],
 			[IsWorldC6M1_SafeRoomAlley],
 			[IsNotSaidWorldC6M1_SafeRoomAlley],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear600],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M1_SafeRoomAlleyGambler
+		Response PlayerRemarkWorldC6M1_SafeRoomAlleyMechanic
 		ApplyContext "SaidWorldC6M1_SafeRoomAlley:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M1_ThroughBarCliffe",
+		name = "PlayerRemarkWorldC6M1_ThroughBar_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M1_ThroughBar],
 			[IsNotSaidWorldC6M1_ThroughBar],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M1_ThroughBarGambler
+		Response PlayerRemarkWorldC6M1_ThroughBarMechanic
 		ApplyContext "SaidWorldC6M1_ThroughBar:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M1_UpHereCliffe",
+		name = "PlayerRemarkWorldC6M1_UpHere_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M1_UpHere],
 			[IsNotSaidWorldC6M1_UpHere],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M1_UpHereGambler
+		Response PlayerRemarkWorldC6M1_UpHereMechanic
 		ApplyContext "SaidWorldC6M1_UpHere:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M1_UpTheStairsCliffe",
+		name = "PlayerRemarkWorldC6M1_UpTheStairs_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M1_UpTheStairs],
 			[IsNotSaidWorldC6M1_UpTheStairs],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M1_UpTheStairsGambler
+		Response PlayerRemarkWorldC6M1_UpTheStairsMechanic
 		ApplyContext "SaidWorldC6M1_UpTheStairs:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M1_UpTheStairs2Cliffe",
+		name = "PlayerRemarkWorldC6M1_UpTheStairs2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M1_UpTheStairs2],
 			[IsNotSaidWorldC6M1_UpTheStairs2],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear400],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M1_UpTheStairs2Gambler
-		ApplyContext "SaidWorldC6M1_UpTheStairs2:1:0,Talk:1:1.596"
+		Response PlayerRemarkWorldC6M1_UpTheStairs2Mechanic
+		ApplyContext "SaidWorldC6M1_UpTheStairs2:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M1_WeddingWarnCliffe",
+		name = "PlayerRemarkWorldC6M1_WeddingWarn_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M1_WeddingWarn],
 			[IsNotSaidWorldC6M1_WeddingWarn],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M1_WeddingWarnGambler
+		Response PlayerRemarkWorldC6M1_WeddingWarnMechanic
 		ApplyContext "SaidWorldC6M1_WeddingWarn:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M1_WeddingWarn1Cliffe",
+		name = "PlayerRemarkWorldC6M1_WeddingWarn1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M1_WeddingWarn1],
 			[IsNotSaidWorldC6M1_WeddingWarn],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M1_WeddingWarn1Gambler
+		Response PlayerRemarkWorldC6M1_WeddingWarn1Mechanic
 		ApplyContext "SaidWorldC6M1_WeddingWarn:1:0,AtWedding:1:60"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M1_WeddingWarn2Cliffe",
+		name = "PlayerRemarkWorldC6M1_WeddingWarn2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M1_WeddingWarn2],
 			[IsNotSaidWorldC6M1_WeddingWarn],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M1_WeddingWarn2Gambler
+		Response PlayerRemarkWorldC6M1_WeddingWarn2Mechanic
 		ApplyContext "SaidWorldC6M1_WeddingWarn:1:0,AtWedding:1:60"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M1_WeddingWarn3Cliffe",
+		name = "PlayerRemarkWorldC6M1_WeddingWarn3_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M1_WeddingWarn3],
 			[IsNotSaidWorldC6M1_WeddingWarn],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M1_WeddingWarn3Gambler
+		Response PlayerRemarkWorldC6M1_WeddingWarn3Mechanic
 		ApplyContext "SaidWorldC6M1_WeddingWarn:1:0,AtWedding:1:60"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M1_WeddingWarnAngelCliffe",
+		name = "PlayerRemarkWorldC6M2_AcrossPlank_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[IsWorldC6M1_WeddingWarn],
-			[IsNotSaidWorldC6M1_WeddingWarn],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear200],
-			[IsMechanicNear800Weight0],
-			[IsZoeyIntroActor],
-			[ZoeyGroup2],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkWorldC6M1_WeddingWarnAngelGambler
-		ApplyContext "SaidWorldC6M1_WeddingWarn:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkWorldC6M1_WeddingWarnEllisCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
-			[IsWorldC6M1_WeddingWarn],
-			[IsNotSaidWorldC6M1_WeddingWarn],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear200],
-			[IsMechanicNear800Weight0],
-			[IsZoeyIntroActor],
-			[ZoeyGroup1],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkWorldC6M1_WeddingWarnEllisGambler
-		ApplyContext "SaidWorldC6M1_WeddingWarn:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkWorldC6M2_AcrossPlankCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_AcrossPlank],
 			[IsNotSaidWorldC6M2_AcrossPlank],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear250],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_AcrossPlankGambler
+		Response PlayerRemarkWorldC6M2_AcrossPlankMechanic
 		ApplyContext "SaidWorldC6M2_AcrossPlank:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_AfterGate1Cliffe",
+		name = "PlayerRemarkWorldC6M2_AfterGate1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_AfterGate1],
 			[IsNotSaidWorldC6M2_AfterGate1],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear500],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_AfterGate1Gambler
+		Response PlayerRemarkWorldC6M2_AfterGate1Mechanic
 		ApplyContext "SaidWorldC6M2_AfterGate1:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_AfterGate2Cliffe",
+		name = "PlayerRemarkWorldC6M2_AfterGate2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_AfterGate2],
 			[IsNotSaidWorldC6M2_AfterGate2],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear500],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_AfterGate2Gambler
+		Response PlayerRemarkWorldC6M2_AfterGate2Mechanic
+		then Gambler WorldC6M2_AfterGate201a foo:0 -1.968
 		ApplyContext "SaidWorldC6M2_AfterGate2:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_DownHereCliffe",
+		name = "PlayerRemarkWorldC6M2_DownHere_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_DownHere],
 			[IsNotSaidWorldC6M2_DownHere],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_DownHereGambler
+		Response PlayerRemarkWorldC6M2_DownHereMechanic
 		ApplyContext "SaidWorldC6M2_DownHere:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_DownIntoBuildingCliffe",
+		name = "PlayerRemarkWorldC6M2_DownIntoBuilding_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_DownIntoBuilding],
 			[IsNotSaidWorldC6M2_DownIntoBuilding],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear400],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_DownIntoBuildingGambler
+		Response PlayerRemarkWorldC6M2_DownIntoBuildingMechanic
 		ApplyContext "SaidWorldC6M2_DownIntoBuilding:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_FinalLadderCliffe",
+		name = "PlayerRemarkWorldC6M2_FinalLadder_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_FinalLadder],
 			[IsNotSaidWorldC6M2_FinalLadder],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_FinalLadderGambler
+		Response PlayerRemarkWorldC6M2_FinalLadderMechanic
 		ApplyContext "SaidWorldC6M2_FinalLadder:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_FinalWaterCliffe",
+		name = "PlayerRemarkWorldC6M2_FinalWater_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_FinalWater],
 			[IsNotSaidWorldC6M2_FinalWater],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_FinalWaterGambler
+		Response PlayerRemarkWorldC6M2_FinalWaterMechanic
+		then Gambler WorldC6M2_FinalWater01a foo:0 -1.706
 		ApplyContext "SaidWorldC6M2_FinalWater:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_FinalWaterGoGoCliffe",
+		name = "PlayerRemarkWorldC6M2_FinalWaterGoGo_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_FinalWaterGoGo],
 			[IsNotSaidWorldC6M2_FinalWaterGoGo],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_FinalWaterGoGoGambler
+		Response PlayerRemarkWorldC6M2_FinalWaterGoGoMechanic
 		ApplyContext "SaidWorldC6M2_FinalWaterGoGo:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_InJazzClubCliffe",
+		name = "PlayerRemarkWorldC6M2_InJazzClub_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_InJazzClub],
 			[IsNotSaidWorldC6M2_InJazzClub],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear1000],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_InJazzClubGambler
+		Response PlayerRemarkWorldC6M2_InJazzClubMechanic
 		ApplyContext "SaidWorldC6M2_InJazzClub:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_InSewer1Cliffe",
+		name = "PlayerRemarkWorldC6M2_InSewer2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[IsWorldC6M2_InSewer1],
-			[IsNotSaidWorldC6M2_InSewer1],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear200],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkWorldC6M2_InSewer1Gambler
-		ApplyContext "SaidWorldC6M2_InSewer1:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkWorldC6M2_InSewer2Cliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_InSewer2],
 			[IsNotSaidWorldC6M2_InSewer2],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[IsSaidWorldC6M2_InSewer1],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_InSewer2Gambler
+		Response PlayerRemarkWorldC6M2_InSewer2Mechanic
+		then Producer WorldC6M2_InSewer202a foo:0 -4.622
 		ApplyContext "SaidWorldC6M2_InSewer2:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_InSewerLadder1Cliffe",
+		name = "PlayerRemarkWorldC6M2_InSewerLadder1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_InSewerLadder1],
 			[IsNotSaidWorldC6M2_InSewerLadder1],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_InSewerLadder1Gambler
+		Response PlayerRemarkWorldC6M2_InSewerLadder1Mechanic
+		then Any WorldC6M2_InSewerLadder101a foo:0 -2.795
 		ApplyContext "SaidWorldC6M2_InSewerLadder1:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_IntoConstructionCliffe",
+		name = "PlayerRemarkWorldC6M2_IntoConstruction_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_IntoConstruction],
 			[IsNotSaidWorldC6M2_IntoConstruction],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear150],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_IntoConstructionGambler
+		Response PlayerRemarkWorldC6M2_IntoConstructionMechanic
 		ApplyContext "SaidWorldC6M2_IntoConstruction:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_IntoPoolHallCliffe",
+		name = "PlayerRemarkWorldC6M2_IntoPoolHall_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_IntoPoolHall],
 			[IsNotSaidWorldC6M2_IntoPoolHall],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_IntoPoolHallGambler
+		Response PlayerRemarkWorldC6M2_IntoPoolHallMechanic
 		ApplyContext "SaidWorldC6M2_IntoPoolHall:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_JukeBoxCliffe",
+		name = "PlayerRemarkWorldC6M2_JukeBox_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_JukeBox],
 			[IsNotSaidWorldC6M2_JukeBox],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear150],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_JukeBoxGambler
+		Response PlayerRemarkWorldC6M2_JukeBoxMechanic
 		ApplyContext "SaidWorldC6M2_JukeBox:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_JumpDownCliffe",
+		name = "PlayerRemarkWorldC6M2_JumpDown_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_JumpDown],
 			[IsNotSaidWorldC6M2_JumpDown],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_JumpDownGambler
+		Response PlayerRemarkWorldC6M2_JumpDownMechanic
 		ApplyContext "SaidWorldC6M2_JumpDown:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_OnTourWalk1Cliffe",
+		name = "PlayerRemarkWorldC6M2_OnTourWalk2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[IsWorldC6M2_OnTourWalk1],
-			[IsNotSaidWorldC6M2_OnTourWalk1],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear300],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkWorldC6M2_OnTourWalk1Gambler
-		ApplyContext "SaidWorldC6M2_OnTourWalk1:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkWorldC6M2_OnTourWalk2Cliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_OnTourWalk2],
 			[IsNotSaidWorldC6M2_OnTourWalk2],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_OnTourWalk2Gambler
+		Response PlayerRemarkWorldC6M2_OnTourWalk2Mechanic
 		ApplyContext "SaidWorldC6M2_OnTourWalk2:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_OnTourWalk3Cliffe",
+		name = "PlayerRemarkWorldC6M2_OnTourWalk3_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_OnTourWalk3],
 			[IsNotSaidWorldC6M2_OnTourWalk3],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_OnTourWalk3Gambler
+		Response PlayerRemarkWorldC6M2_OnTourWalk3Mechanic
 		ApplyContext "SaidWorldC6M2_OnTourWalk3:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_OpenGate1Cliffe",
+		name = "PlayerRemarkWorldC6M2_OpenGate1_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_OpenGate1],
 			[IsNotSaidWorldC6M2_OpenGate1],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[IsNotSaidOpenedGate1],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_OpenGate1Gambler
+		Response PlayerRemarkWorldC6M2_OpenGate1Mechanic
 		ApplyContext "SaidWorldC6M2_OpenGate1:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_OpenGate2Cliffe",
+		name = "PlayerRemarkWorldC6M2_OpenGate2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_OpenGate2],
 			[IsNotSaidWorldC6M2_OpenGate2],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[IsNotSaidOpenedGate2],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_OpenGate2Gambler
+		Response PlayerRemarkWorldC6M2_OpenGate2Mechanic
 		ApplyContext "SaidWorldC6M2_OpenGate2:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_Phase2Cliffe",
+		name = "PlayerRemarkWorldC6M2_Phase2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_Phase2],
 			[IsNotSaidWorldC6M2_Phase2],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_Phase2Gambler
+		Response PlayerRemarkWorldC6M2_Phase2Mechanic
+		then Producer WorldC6M2_Phase201a foo:0 -1.792
 		ApplyContext "SaidWorldC6M2_Phase2:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_Phase2DownCliffe",
+		name = "PlayerRemarkWorldC6M2_Phase2Down_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_Phase2Down],
 			[IsNotSaidWorldC6M2_Phase2Down],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_Phase2DownGambler
+		Response PlayerRemarkWorldC6M2_Phase2DownMechanic
 		ApplyContext "SaidWorldC6M2_Phase2Down:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_Phase2DownIntenseCliffe",
+		name = "PlayerRemarkWorldC6M2_Phase2DownIntense_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_Phase2Down],
 			[IsNotSaidWorldC6M2_Phase2Down],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[IntensityOver75],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_Phase2DownIntenseGambler
+		Response PlayerRemarkWorldC6M2_Phase2DownIntenseMechanic
 		ApplyContext "SaidWorldC6M2_Phase2Down:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_PostGate1xCliffe",
+		name = "PlayerRemarkWorldC6M2_PostGate1x_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_PostGate1],
 			[IsNotSaidWorldC6M2_PostGate1],
 			[IsNotCoughing],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[IsSaidOpenedGate1],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_PostGate1xGambler
+		Response PlayerRemarkWorldC6M2_PostGate1xMechanic
 		ApplyContext "SaidWorldC6M2_PostGate1:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_SafeRoomCliffe",
+		name = "PlayerRemarkWorldC6M2_SafeRoom_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_SafeRoom],
 			[IsNotSaidWorldC6M2_SafeRoom],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear800],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_SafeRoomGambler
+		Response PlayerRemarkWorldC6M2_SafeRoomMechanic
 		ApplyContext "SaidWorldC6M2_SafeRoom:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_SuitcaseCliffe",
+		name = "PlayerRemarkWorldC6M2_Tattoo_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[IsWorldC6M2_Suitcase],
-			[IsNotSaidWorldC6M2_Suitcase],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear100],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkWorldC6M2_SuitcaseGambler
-		ApplyContext "SaidWorldC6M2_Suitcase:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkWorldC6M2_TattooCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_Tattoo],
 			[IsNotSaidWorldC6M2_Tattoo],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_TattooGambler
+		Response PlayerRemarkWorldC6M2_TattooMechanic
 		ApplyContext "SaidWorldC6M2_Tattoo:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_TattooZoeyCliffe",
+		name = "PlayerRemarkWorldC6M2_TourEntrance_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
-			[IsWorldC6M2_Tattoo],
-			[IsNotSaidWorldC6M2_Tattoo],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear300],
-			[IsMechanicNear800Weight0],
-			[IsZoeyIntroActor],
-			[ZoeyGroup1],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkWorldC6M2_TattooZoeyGambler
-		ApplyContext "SaidWorldC6M2_Tattoo:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkWorldC6M2_TattooZoey2Cliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
-			[IsWorldC6M2_Tattoo],
-			[IsNotSaidWorldC6M2_Tattoo],
-			[IsNotCoughing],
-			[NotInCombat],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsSubjectNear300],
-			[IsMechanicNear800Weight0],
-			[IsZoeyIntroActor],
-			[ZoeyGroup2],
-			[IsNotSpeakingWeight0],
-		],
-		Response PlayerRemarkWorldC6M2_TattooZoey2Gambler
-		ApplyContext "SaidWorldC6M2_Tattoo:1:0"
-		applycontexttoworld
-	},
-	{
-		name = "PlayerRemarkWorldC6M2_TourEntranceCliffe",
-		criteria = 
-		[
-			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_TourEntrance],
 			[IsNotSaidWorldC6M2_TourEntrance],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_TourEntranceGambler
+		Response PlayerRemarkWorldC6M2_TourEntranceMechanic
 		ApplyContext "SaidWorldC6M2_TourEntrance:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_UpCatWalkCliffe",
+		name = "PlayerRemarkWorldC6M2_UpCatWalk_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_UpCatWalk],
 			[IsNotSaidWorldC6M2_UpCatWalk],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_UpCatWalkGambler
+		Response PlayerRemarkWorldC6M2_UpCatWalkMechanic
 		ApplyContext "SaidWorldC6M2_UpCatWalk:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_UpStairsCliffe",
+		name = "PlayerRemarkWorldC6M2_UpStairs_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_UpStairs],
 			[IsNotSaidWorldC6M2_UpStairs],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_UpStairsGambler
+		Response PlayerRemarkWorldC6M2_UpStairsMechanic
 		ApplyContext "SaidWorldC6M2_UpStairs:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M2_UpStairs2Cliffe",
+		name = "PlayerRemarkWorldC6M2_UpStairs2_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M2_UpStairs2],
 			[IsNotSaidWorldC6M2_UpStairs2],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear200],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M2_UpStairs2Gambler
+		Response PlayerRemarkWorldC6M2_UpStairs2Mechanic
 		ApplyContext "SaidWorldC6M2_UpStairs2:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M3_BridgeRunCliffe",
+		name = "PlayerRemarkWorldC6M3_BridgeRun_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M3_BridgeRun],
 			[IsNotSaidWorldC6M3_BridgeRun],
 			[IsNotCoughing],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear500],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M3_BridgeRunGambler
+		Response PlayerRemarkWorldC6M3_BridgeRunMechanic
+		then any WorldC6M3_ByBridge01 foo:0 -1.803
 		ApplyContext "SaidWorldC6M3_BridgeRun:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldC6M3_ByBridgeCliffe",
+		name = "PlayerRemarkWorldC6M3_ByBridge_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldC6M3_ByBridge],
 			[IsNotSaidWorldC6M3_ByBridge],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear300],
 			[IsSaidFinalVehicleArrived],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldC6M3_ByBridgeGambler
+		Response PlayerRemarkWorldC6M3_ByBridgeMechanic
 		ApplyContext "SaidWorldC6M3_ByBridge:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "PlayerRemarkWorldFootLockerCliffe",
+		name = "PlayerRemarkWorldFootLocker_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptRemark],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsWorldFootLocker],
 			[IsNotSaidWorldFootLocker],
 			[IsNotCoughing],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[IsSubjectNear500],
 			[IsNotSpeakingWeight0],
 		],
-		Response PlayerRemarkWorldFootLockerGambler
+		Response PlayerRemarkWorldFootLockerMechanic
 		ApplyContext "SaidWorldFootLocker:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "C6M3_PourFinishedCliffe",
+		name = "C6M3_PourFinished_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPourFinished],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 			[Isc6m3_port],
 			[ChanceToFire20Percent],
 		],
-		Response C6M3_PourFinishedGambler
+		Response C6M3_PourFinishedMechanic
+		then Manager L4D1_NiceJobPour foo:0 0
 		ApplyContext "Talk:1:3"
 	},
 	{
-		name = "SurvivorNearFinaleC6M3Cliffe",
+		name = "SurvivorNearFinaleC6M3_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerNearFinale],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsNotSaidFinaleAhead],
 			[NotInCombat],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotIncapacitated],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[Isc6m3_port],
 		],
-		Response SurvivorNearFinaleC6M3Gambler
+		Response SurvivorNearFinaleC6M3Mechanic
 		ApplyContext "SaidFinaleAhead:1:0"
 		applycontexttoworld
 	},
 	{
-		name = "C6M1TakeSubMachineGunCliffe",
+		name = "SurvivorPickupGolfCLub_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
-			[IsPickedUpSMG],
-			[IsNotSpeaking],
-			[ChanceToFire30Percent],
-			[CliffeNotPickedUpItem],
-			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
-			[IsJustSaidWorldC6M1_IntoTheStore],
-			[FrancisGroup5],
-		],
-		Response C6M1TakeSubMachineGunGambler
-		ApplyContext "CliffePickedUpItem:1:30"
-	},
-	{
-		name = "SurvivorPickupGolfCLubCliffe",
-		criteria = 
-		[
-			[ConceptPlayerPickup],
-			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpGolfClub],
 			[IsNotSpeaking],
-			[CliffeNotPickedUpItem],
+			[Csgo_sasNotPickedUpItem],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response SurvivorPickupGolfCLubGambler
-		ApplyContext "CliffePickedUpItem:1:30"
+		Response SurvivorPickupGolfCLubMechanic
+		ApplyContext "Csgo_sasPickedUpItem:1:30"
 	},
 	{
-		name = "SurvivorPickupM60Cliffe",
+		name = "SurvivorPickupM60_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerPickup],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsPickedUpM60],
 			[IsNotSpeaking],
-			[CliffeNotPickedUpItem],
+			[Csgo_sasNotPickedUpItem],
 			[IsTalk],
-			[IsTalkCliffe],
-			[IsWorldTalkCliffe],
+			[IsTalkCsgo_sas],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response SurvivorPickupM60Gambler
-		ApplyContext "CliffePickedUpItem:1:30"
+		Response SurvivorPickupM60Mechanic
+		ApplyContext "Csgo_sasPickedUpItem:1:30"
 	},
 	{
-		name = "HistoricTour01aCliffe",
+		name = "WeddingWitchDead04_CSGO_SAS",
 		criteria = 
 		[
-			[ConceptHistoricTour01a],
-			[IsCliffe],
+			[ConceptWeddingWitchDead04],
+			[IsCsgo_sas],
 		],
-		Response HistoricTour01aGambler
+		Response WeddingWitchDead04Mechanic
 	},
 	{
-		name = "WeddingWitchDead03Cliffe",
-		criteria = 
-		[
-			[ConceptWeddingWitchDead03],
-			[IsCliffe],
-		],
-		Response WeddingWitchDead03Gambler
-	},
-	{
-		name = "Player_LostCallC6M3Cliffe",
+		name = "Player_LostCallC6M3_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptTalkIdle],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsClosestSurvivorFar3000],
 			[IsNotSaidPlayerLostCall],
 			[Isc6m3_port],
 			[ChanceToFire100Percent],
 			[IsNotSpeakingWeight0],
 		],
-		Response Player_LostCallC6M3Gambler
+		Response Player_LostCallC6M3Mechanic
 		ApplyContext "SaidPlayerLostCall:1:50"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedGolfClubCliffe",
+		name = "SurvivorSpottedGolfClub_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSmartLookAuto],
 			[IsNotInSafeSpot],
 			[IsNotAlone],
 			[IsNotSaidSpotWeapons],
 			[IsNotSaidSpot],
 			[IsGolfClub],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[IsNotSpeakingWeight0],
 		],
-		Response SurvivorSpottedGolfClubGambler
+		Response SurvivorSpottedGolfClubMechanic
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedGolfClubAutoCliffe",
+		name = "SurvivorSpottedGolfClubAuto_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSmartLookAuto],
 			[IsGolfClub],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response SurvivorSpottedGolfClubAutoGambler
+		Response SurvivorSpottedGolfClubAutoMechanic
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedM60Cliffe",
+		name = "SurvivorSpottedM60_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsSmartLookAuto],
 			[IsNotInSafeSpot],
 			[IsNotAlone],
 			[IsNotSaidSpotWeapons],
 			[IsNotSaidSpot],
 			[IsM60],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 			[IsNotSpeakingWeight0],
 		],
-		Response SurvivorSpottedM60Gambler
+		Response SurvivorSpottedM60Mechanic
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "SurvivorSpottedM60AutoCliffe",
+		name = "SurvivorSpottedM60Auto_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptPlayerSpotWeapon],
 			[IsNotCoughing],
-			[IsCliffe],
+			[IsCsgo_sas],
 			[IsTalk],
-			[IsTalkCliffe],
+			[IsTalkCsgo_sas],
 			[IsNotSmartLookAuto],
 			[IsM60],
-			[IsWorldTalkCliffe],
+			[IsWorldTalkCsgo_sas],
 		],
-		Response SurvivorSpottedM60AutoGambler
+		Response SurvivorSpottedM60AutoMechanic
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 	{
-		name = "C1M2InsideGunShopCliffe",
+		name = "C1M2InsideGunShop_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC1M2InsideGunShop],
-			[PanicEventCliffe],
+			[PanicEventCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C1M2InsideGunShopGambler
+		Response C1M2InsideGunShopMechanic
+		then csgo_sas C1M2InsideGunShop2 foo:0 0
 	},
 	{
-		name = "C1M3AlarmOffOratorCliffe",
+		name = "C1M3AlarmOffOrator_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC1M3AlarmOff],
-			[PanicEventCliffe],
+			[PanicEventCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 		],
-		Response C1M3AlarmOffOratorGambler
+		Response C1M3AlarmOffOratorMechanic
+		then csgo_sas C1M3AlarmOff2 foo:0 0
 		ApplyContext "_auto_Alarm:2:0"
 		applycontexttoworld
 	},
 	{
-		name = "C1M3BrokeWindowOratorCliffe",
+		name = "C1M3BrokeWindowOrator_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC1M3BrokeWindow],
-			[PanicEventCliffe],
+			[PanicEventCsgo_sas],
 			[AutoIsNotScavenge],
 			[AutoIsNotSurvival],
 			[_auto_NotAlarm],
 		],
-		Response C1M3BrokeWindowOratorGambler
+		Response C1M3BrokeWindowOratorMechanic
+		then csgo_sas C1M3AlarmActive foo:0 0
 		ApplyContext "_auto_Alarm:1:0,WarnMegaMob:1:300,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 	{
-		name = "HitCraneButtonCliffe",
+		name = "HitCraneButton_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptAirport02CraneStarted],
-			[PanicEventCliffe],
+			[PanicEventCsgo_sas],
 		],
-		Response HitCraneButtonGambler
+		Response HitCraneButtonMechanic
+		then Csgo_sas airport02_creshendoCrane foo:0  .01
 	},
 	{
-		name = "Airport03FireStartedCliffe",
+		name = "Airport03FireStarted_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptAirport03FireStarted],
-			[PanicEventCliffe],
+			[PanicEventCsgo_sas],
 		],
-		Response Airport03FireStartedGambler
+		Response Airport03FireStartedMechanic
+		then Csgo_sas Airport03FireStartedX foo:0  .01
 	},
 	{
-		name = "FinaleSceneTriggerFrancisCliffe",
+		name = "FinaleSceneTriggerZoey_CSGO_SAS",
 		criteria = 
 		[
 			[ConceptC6M3Stairs],
-			[IsCliffe],
+			[IsCsgo_sas],
+			[IsNotSaidFinaleExchange],
+			[Isc6m3_port],
+			[IsZoeyIntroActor],
+			[IsNotVersus],
+		],
+		Response FinaleSceneTriggerZoeyMechanic
+		ApplyContext "SaidFinaleExchange:1:0,Talk:1:28,SaidCsgo_sasBridgeStoryStart:1:60,EndCsgo_sasBridgeStoryStart:1:0"
+		applycontexttoworld
+	},
+	{
+		name = "FinaleSceneTriggerFrancis_CSGO_SAS",
+		criteria = 
+		[
+			[ConceptC6M3Stairs],
+			[IsCsgo_sas],
 			[IsNotSaidFinaleExchange],
 			[Isc6m3_port],
 			[IsFrancisIntroActor],
 			[IsNotVersus],
 		],
-		Response FinaleSceneTriggerFrancisGambler
-		ApplyContext "SaidFinaleExchange:1:0,Talk:1:27,SaidEllisBridgeStoryStart:1:60,EndEllisBridgeStoryStart:1:0"
+		Response FinaleSceneTriggerFrancisMechanic
+		ApplyContext "SaidFinaleExchange:1:0,Talk:1:29,SaidCsgo_sasBridgeStoryStart:1:60,EndCsgo_sasBridgeStoryStart:1:0"
 		applycontexttoworld
 	},
 ];
 
-rr_ProcessRules(jess_cliffe_rules);
+rr_ProcessRules(csgo_sas_rules);
