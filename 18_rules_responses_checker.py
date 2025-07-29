@@ -42,7 +42,7 @@ def scan_nut_folder(folder_path):
 
 
 # === Run it ===
-folder = "..\..\[custom talker] replica soldier"
+folder = "..\..\[custom talker] yusuke kudo"
 missing_funcs = scan_nut_folder(folder)
 
 if missing_funcs:

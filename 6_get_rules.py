@@ -62,7 +62,9 @@ def write_grouped_blocks_to_file(folder_path, output_path, suffix_find_replace, 
             out.write(f"// {file} {'='*100}\n\n")
 
             for block_type, original_name, block_lines, matched_suffix in blocks:
-                replaced_name = replace_suffix(original_name, suffix_find_replace)
+                # replaced_name = replace_suffix(original_name, suffix_find_replace)
+                replaced_name = replace_suffix(original_name, suffix_find_replace) if block_type.lower() == "rule" else original_name
+
                 new_block = []
 
                 for line in block_lines:
@@ -86,19 +88,21 @@ def write_grouped_blocks_to_file(folder_path, output_path, suffix_find_replace, 
                         # Rename nested Response references inside Rule blocks
                         # Match lines like: Response SomeName
                         # Only do it if current block is a Rule
-                        if block_type.lower() == "rule":
-                            response_match = re.match(r'(Response\s+)([A-Za-z0-9_\.><]+)', stripped_line, flags=re.IGNORECASE)
-                            if response_match:
-                                prefix, resp_name = response_match.groups()
-                                # Rename the response name using the same replace_suffix function
-                                new_resp_name = replace_suffix(resp_name, suffix_find_replace)
-                                # Rebuild the line, keeping original indentation
-                                indent = original_line[:len(original_line) - len(stripped_line)]
-                                line = indent + prefix + new_resp_name
-                            else:
-                                line = original_line
-                        else:
-                            line = original_line
+                        # if block_type.lower() == "rule":
+                        #     response_match = re.match(r'(Response\s+)([A-Za-z0-9_\.><]+)', stripped_line, flags=re.IGNORECASE)
+                        #     if response_match:
+                        #         prefix, resp_name = response_match.groups()
+                        #         # Rename the response name using the same replace_suffix function
+                        #         new_resp_name = replace_suffix(resp_name, suffix_find_replace)
+                        #         # Rebuild the line, keeping original indentation
+                        #         indent = original_line[:len(original_line) - len(stripped_line)]
+                        #         line = indent + prefix + new_resp_name
+                        #     else:
+                        #         line = original_line
+                        # else:
+                        #     line = original_line
+
+                        line = original_line
 
                     new_block.append(line)
 
@@ -117,9 +121,9 @@ if __name__ == "__main__":
         output_path="6_rules.txt",
         suffix_find_replace={
             
-            "Coach": "Replica",
+            # "Coach": "Replica",
             
-            # "Gambler": "Cliffe",
+            "Gambler": "Cliffe",
 
             # "Namvet": "Mike",
             # "NamVet": "Mike",

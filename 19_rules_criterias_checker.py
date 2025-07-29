@@ -51,7 +51,7 @@ def scan_for_used_criteria(folder_path):
 
 # === Run it ===
 # where you use the criteria
-check_folder = "..\..\[custom talker] replica soldier"
+check_folder = "..\..\[custom talker] yusuke kudo"
 # where the actual functions are defined
 criterias_folder = "..\..\[custom talker ] base"
 

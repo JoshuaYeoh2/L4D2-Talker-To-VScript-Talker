@@ -1,10 +1,5 @@
 // ====================================================================================================
 
-comment out forceweights in the rules
-//forceweight 30
-
-// ====================================================================================================
-
 before optimizing criterias,
 do the scripts in criterias_case_sensitive folder
 

@@ -47,13 +47,13 @@ if __name__ == "__main__":
             # "namvet": "mike",
             # "bill": "mike",
 
-            # "gambler": "yusuke",
-            # "nick": "yusuke",
+            "gambler": "cliffe",
+            "nick": "cliffe",
 
             # "producer": "sara",
             # "rochelle": "sara",
 
-            "coach": "replica",
+            # "coach": "replica",
 
             # "mechanic": "blake",
             # "ellis": "blake"
