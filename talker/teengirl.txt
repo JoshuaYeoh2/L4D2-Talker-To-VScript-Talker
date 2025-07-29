@@ -6032,7 +6032,7 @@ Response PlayerHurrahTeenGirl
 	scene "scenes/TeenGirl/Hurrah16.vcd"  //Oh yeah!
 	scene "scenes/TeenGirl/Hurrah19.vcd"  then Any HurrahAlso foo:0 -1.291 //No stopping us!
 	scene "scenes/TeenGirl/Hurrah20.vcd"  then Any HurrahAlso foo:0 -2.027 //We are unstoppable
-	scene "scenes/TeenGirl/Hurrah22.vcd" odds 5 then  HurrahAlso foo:0 -3.221 //Oh yeah, oh yeah, oh yeah
+	scene "scenes/TeenGirl/Hurrah22.vcd" odds 5 then any HurrahAlso foo:0 -3.221 //Oh yeah, oh yeah, oh yeah
 	scene "scenes/TeenGirl/Hurrah23.vcd" odds 5 //Well, that was refreshing
 	scene "scenes/TeenGirl/Hurrah31.vcd"  //Oh god, we're gonna be okay
 	scene "scenes/TeenGirl/Hurrah34.vcd" odds 4 //Okayyy, okayyy, okay.
@@ -8384,7 +8384,7 @@ Response PlayerShotGasCanTeenGirl
 Rule PlayerShotGasCanTeenGirl
 {
 	criteria ConceptPlayerShotGasCan IsTeenGirl IsNotSaidPlayerShotGasCan IsScavenge
-	ApplyContext "SaidPlayerShotGasCan1:10"
+	ApplyContext "SaidPlayerShotGasCan:1:10"
 	applycontexttoworld
 	Response PlayerShotGasCanTeenGirl
 }

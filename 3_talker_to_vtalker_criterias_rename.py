@@ -92,11 +92,13 @@ def extract_matching_functions(input_path, output_path, replacements):
 if __name__ == "__main__":
     extract_matching_functions(
         input_path="1_criterias.nut",
-        output_path="3_criterias_custom_temp.nut",
+        output_path="3_criterias_custom.nut",
         replacements={
 
-            "gambler": "cliffe",
-            "nick": "cliffe",
+            "coach": "replica",
+
+            # "gambler": "cliffe",
+            # "nick": "cliffe",
 
             # "namvet": "mike",
             # "bill": "mike",

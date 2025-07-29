@@ -44,16 +44,17 @@ if __name__ == "__main__":
         output="8_rules_name_replace.txt",
         criteria_find_replace={
             
-            "gambler": "cliffe",
-
             # "namvet": "mike",
             # "bill": "mike",
 
             # "gambler": "yusuke",
             # "nick": "yusuke",
+
             # "producer": "sara",
             # "rochelle": "sara",
-            # "coach": "haruka",
+
+            "coach": "replica",
+
             # "mechanic": "blake",
             # "ellis": "blake"
         },

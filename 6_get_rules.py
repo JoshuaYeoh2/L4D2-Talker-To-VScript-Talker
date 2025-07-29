@@ -117,7 +117,9 @@ if __name__ == "__main__":
         output_path="6_rules.txt",
         suffix_find_replace={
             
-            "Gambler": "Cliffe",
+            "Coach": "Replica",
+            
+            # "Gambler": "Cliffe",
 
             # "Namvet": "Mike",
             # "NamVet": "Mike",

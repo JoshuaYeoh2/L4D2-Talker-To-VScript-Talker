@@ -111,7 +111,9 @@ if __name__ == "__main__":
         output_path="4_responses.txt",
         suffix_find_replace={
 
-            "Gambler": "Cliffe",
+            "Coach": "Replica",
+
+            # "Gambler": "Cliffe",
 
             # "Namvet": "Mike",
             # "NamVet": "Mike",

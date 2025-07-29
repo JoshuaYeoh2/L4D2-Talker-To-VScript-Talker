@@ -95,17 +95,17 @@ if __name__ == "__main__":
         output_path="3_criterias_custom_temp.nut",
         replacements={
 
-            "gambler": "cliffe",
-            "nick": "cliffe",
-
             # "namvet": "mike",
             # "bill": "mike",
             
             # "gambler": "yusuke",
             # "nick": "yusuke",
+
             # "producer": "sara",
             # "rochelle": "sara",
-            # "coach": "haruka",
+
+            "coach": "replica",
+
             # "mechanic": "blake",
             # "ellis": "blake",
         }

@@ -1,7476 +1,6957 @@
 	Sounds = 
 	{
+		// coach.txt ====================================================================================================
+		_PlayerInfoRemarkableBlankReplica = [
+			"player/survivor/voice/replica/blank.wav"
+		],
+		C1M1InSmokeReplica = [
+			"player/survivor/voice/replica/cough01.wav",  //[Coughing from smoke]
+			"player/survivor/voice/replica/cough02.wav",  //[Coughing from smoke]
+			"player/survivor/voice/replica/cough03.wav",  //[Coughing from smoke]
+			"player/survivor/voice/replica/cough06.wav"  //[Coughing from smoke]
+		],
+		C1M3AlarmOffReplica = [
+			"player/survivor/voice/replica/worldc1m3b31.wav"  //Got it!
+		],
+		C1M3AlarmActiveReplica = [
+			"player/survivor/voice/replica/worldc1m3b28.wav",  //We gotta turn off that alarm!
+			"player/survivor/voice/replica/worldc1m3b29.wav"  //Last one to turn off the alarm is a rotten egg!
+		],
+		C4M3SaferoomReplica = [
+			"player/survivor/voice/replica/worldc4m3b01.wav",  //Allright, people. Everybody got a can?
+			"player/survivor/voice/replica/worldc4m301.wav"  //We got our shit, let's get back to the boat.
+		],
+		L4D1PlayerNiceShotFrancisReplica = [
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1killing06.wav",  //Nice shot Francis!
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1killing07.wav"  //Nice shot Francis!
+		],
+		L4D1PlayerNiceShotFrancisC6M3Replica = [
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1killing05.wav",  //Thanks Francis!
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1killing06.wav",  //Nice shot Francis!
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1killing07.wav"  //Nice shot Francis!
+		],
+		L4D1PlayerNiceShotLouisReplica = [
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1killing02.wav"  //Louis in the house!
+		],
+		L4D1PlayerNiceShotLouisC6M3Replica = [
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1killing02.wav",  //Louis in the house!
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1killing01.wav"  //Alright Louis, keep tearing 'em up!
+		],
+		L4D1PlayerNiceShotZoeyReplica = [
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1killing03.wav",  //Go Zoey!
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1killing04.wav",  //Keep it up Zoey!
+			"player/survivor/voice/replica/niceshotfemale01.wav"  //All right girl.
+		],
+		PlayerNiceShotReplica = [
+			"player/survivor/voice/replica/nicejob02.wav",  //Nice work.
+			"player/survivor/voice/replica/nicejob03.wav",  //Allright, you doin' good.
+			"player/survivor/voice/replica/nicejob05.wav",  //Way to go.
+			"player/survivor/voice/replica/nicejob06.wav",  //Allright now, you done good,.
+			"player/survivor/voice/replica/nicejob07.wav",  //Nice, keep goin at em like that.
+			"player/survivor/voice/replica/nicejob08.wav",  //That there was nice work.
+			"player/survivor/voice/replica/nicejob09.wav",  //Allright. You beat their ass good.
+			"player/survivor/voice/replica/nicejob10.wav",  //You done good.
+			"player/survivor/voice/replica/nicejob12.wav",  //Come one now, keep it up, keep it up.
+			"player/survivor/voice/replica/niceshot01.wav",  //Nice shot..
+			"player/survivor/voice/replica/niceshot02.wav",  //Damn. Good one.
+			"player/survivor/voice/replica/niceshot03.wav",  //Good one!
+			"player/survivor/voice/replica/niceshot04.wav",  //You on it.
+			"player/survivor/voice/replica/niceshot05.wav",  //You got it.
+			"player/survivor/voice/replica/niceshot06.wav",  //ohh hoo hoo, allright!
+			"player/survivor/voice/replica/niceshot07.wav",  //Damn. I'm impressed.
+			"player/survivor/voice/replica/niceshot08.wav",  //You nailed it.
+			"player/survivor/voice/replica/niceshot09.wav",  //You beat 'em.
+			"player/survivor/voice/replica/niceshot10.wav"  //Well alright now, you're in charge.
+		],
+		PlayerNiceShotGamblerReplica = [
+			"player/survivor/voice/replica/niceshotgambler01.wav"  //NIce kill Nick.
+		],
+		PlayerNiceShotMechanicReplica = [
+			"player/survivor/voice/replica/niceshotellis01.wav",  //Nice shot, youngin'.
+			"player/survivor/voice/replica/niceshotmechanic01.wav",  //Ellis, nice shot.
+			"player/survivor/voice/replica/niceshot11.wav"  //Alright now, yeah!  You got it, boy!
+		],
+		PlayerNiceShotProducerReplica = [
+			"player/survivor/voice/replica/niceshotproducer01.wav"  //Ro that was a nice shot.
+		],
+		SurvivorMournGamblerReplica = [
+			"player/survivor/voice/replica/survivormournnick01.wav",  //NIck, you gonna be missed.
+			"player/survivor/voice/replica/survivormournnick02.wav"  //Bye Nick.
+		],
+		SurvivorMournGamblerC1Replica = [
+			"player/survivor/voice/replica/survivormourngamblerc101.wav",  //NIck, we're gonna miss your gun.
+			"player/survivor/voice/replica/survivormourngamblerc102.wav"  //Damn. Nick, this just got a whole lot harder.
+		],
+		SurvivorMournMechanicReplica = [
+			"player/survivor/voice/replica/survivormournellis01.wav",  //Boy, I'm going to miss your goofy ass.
+			"player/survivor/voice/replica/survivormournellis02.wav"  //Bye Ellis.
+		],
+		SurvivorMournMechanicC1Replica = [
+			"player/survivor/voice/replica/survivormournmechanicc101.wav",  //Ahh damnit, I can't take losing anymore people.
+			"player/survivor/voice/replica/survivormournmechanicc102.wav"  //Little man, we are goin' to miss you.
+		],
+		SurvivorMournProducerReplica = [
+			"player/survivor/voice/replica/survivormournrochelle01.wav",  //Ahh baby girl, goodbye.
+			"player/survivor/voice/replica/survivormournrochelle02.wav",  //Oh Ro, oh Ro man...
+			"player/survivor/voice/replica/survivormournrochelle03.wav"  //Ahh baby girl, mmm.
+		],
+		SurvivorMournProducerC1Replica = [
+			"player/survivor/voice/replica/survivormournproducerc101.wav",  //Gentlemen, we just lost the best thing in our little group.
+			"player/survivor/voice/replica/survivormournproducerc102.wav"  //Damn. Baby, I should have tried to protect you more.
+		],
+		_C1M1_ElevatorHelloStartAllAliveReplica = [
+			"player/survivor/voice/replica/worldc1m1b96.wav"  //So. Pleased to meet you. You can call me Coach. What's your name?
+		],
+		C1M1_ElevatorHelloStart3AliveReplica = [
+			"player/survivor/voice/replica/worldc1m1b106.wav",  //5.916 There we go. Most people call me Coach. And we're gonna be okay. Just gotta keep our heads.
+			"player/survivor/voice/replica/worldc1m1b107.wav",  //3.385 There we go. Most people call me Coach. And we're gonna be okay. Just gotta keep our heads.
+			"player/survivor/voice/replica/worldc1m1b120.wav"  //We got to work together. We can't lose anyone else. My name's Coach, what you folks call yourselves?
+		],
+		C1M1_ElevatorHelloStart3AliveEReplica = [
+			"player/survivor/voice/replica/survivormournmechanicc101.wav"  //Ahh damnit, I can't take losing anymore people.
+		],
+		C1M1_ElevatorHelloStart2AliveReplica = [
+			"player/survivor/voice/replica/worldc1m1b96.wav",  // So. Pleased to meet you. You can call me Coach. What's your name?
+			"player/survivor/voice/replica/worldc1m1b115.wav"  //We are not off to a good start.
+		],
+		C1M1_ElevatorHelloStart2AliveRReplica = [
+			"player/survivor/voice/replica/worldc1m1b100.wav"  //My name's Coach. I don't like bein' here any more than you do-but if we gotta fight, we might as well fight together.
+		],
+		C3M1FerryInTransitReplica = [
+			"player/survivor/voice/replica/worldc3m109.wav"  //Boat's almost here!
+		],
+		Playerc1m1_enter_elevatorReplica = [
+			"player/survivor/voice/replica/worldc1m1b85.wav",  //This elevator's still on!
+			"player/survivor/voice/replica/worldc1m1b86.wav",  //Hey, this elevator's still on!
+			"player/survivor/voice/replica/worldc1m1b87.wav",  //Thank Jesus, this one's still on. I ain't walkin' down thirty flights of stairs.
+			"player/survivor/voice/replica/worldc1m1b88.wav",  //I don't think you're supposed to use an elevator when the buildin's on fire.
+			"player/survivor/voice/replica/worldc1m1b91.wav",  //Everybody into the elevator!
+			"player/survivor/voice/replica/worldc1m1b92.wav",  //Get in the elevator!
+			"player/survivor/voice/replica/worldc1m1b113.wav"  //I don't think you're supposed to use an elevator when the buildin's on fire.
+		],
+		Playerc1m1_elevator_pushbuttonReplica = [
+			"player/survivor/voice/replica/worldc1m1b90.wav"  //Hit the button before this turns into a bad idea.
+		],
+		C1M1ElevatorRulesReplica = [
+			"player/survivor/voice/replica/worldc1m1b89.wav"  //You think that rule still applies if there's zombies in the building?
+		],
+		PlayerRemarkC1M2PreAlarmDoorReplica = [
+			"player/survivor/voice/replica/worldc1m2b37.wav"  //Here comes the alarm.
+		],
+		C1M2AlarmDoor2Replica = [
+			"player/survivor/voice/replica/emphaticgo02.wav",  //Let's go people.
+			"player/survivor/voice/replica/emphaticgo05.wav",  //Go go GO!
+			"player/survivor/voice/replica/emphaticgo06.wav",  //MOVE IT!
+			"player/survivor/voice/replica/worldc1m2b39.wav"  //Grab the cola!
+		],
+		PlayerC1M2GrabbingColaReplica = [
+			"player/survivor/voice/replica/worldc1m2b40.wav",  //I got the cola, let's get back!
+			"player/survivor/voice/replica/worldc1m2b41.wav"  //Alright, I got the crazy man's cola! Let's go!
+		],
+		PlayerC1M2GrabbingCola2Replica = [
+			"player/survivor/voice/replica/worldc1m2b42.wav",  //I got the cola!
+			"player/survivor/voice/replica/worldc1m2b43.wav"  //Grabbin' cola!
+		],
+		PlayerC1M2FirstOutsideResponseReplica = [
+			"player/survivor/voice/replica/worldc1m2b30.wav",  //Well man-I'll get you your drinks, but you better help us.
+			"player/survivor/voice/replica/worldc1m2b31.wav",  //I hear ya my man. I understand your need for snacks. But I just gotta be clear that if we get 'em, you ARE gonna help us.
+			"player/survivor/voice/replica/worldc1m2b32.wav",  //I hear ya, my man. I understand your need for snacks. But I just gotta be clear that if we get 'em, you ARE gonna help us.
+			"player/survivor/voice/replica/worldc1m2b34.wav",  //Finally something that makes sense to me. A man and his snacks. We'll hook ya up. Just don't forget to take care of us.
+			"player/survivor/voice/replica/worldc1m2b34.wav",  //Finally something that makes sense to me. A man and his snacks. We'll hook ya up. Just don't forget to take care of us.
+			"player/survivor/voice/replica/worldc1m2b35.wav"  //I have never killed zombies on a snack run, but today is a day of firsts. If you don't mind us using your guns to do it, we're good to go.
+		],
+		C1M2FirstOutsideResponse8aReplica = [
+			"player/survivor/voice/replica/worldc1m2b33.wav"  //Cola and nuts? Could go for some myself. Better not be diet cola. Because that I will not do.
+		],
+		C1M2FirstOutsideResponse8bReplica = [
+			"player/survivor/voice/replica/worldc1m2b36.wav"  //Nick, don't give me that look. Cola and nuts might be this man's last meal, we can't deny him that. We get him his snacks, he helps us. I'm good with it.
+		],
+		PlayerC1M2InsideGunShop2Replica = [
+			"player/survivor/voice/replica/worldc1m2b25.wav",  //Paydirt!
+			"player/survivor/voice/replica/worldc1m2b27.wav",  //Haha, paydirt!
+			"player/survivor/voice/replica/worldc1m2b28.wav",  //Pretty sure alla these'll kill them zombies.
+			"player/survivor/voice/replica/worldc1m2b29.wav"  //This here is A LOT of guns.
+		],
+		PlayerC3M1CallFerry2Replica = [
+			"player/survivor/voice/replica/worldc3m107.wav",  //Get ready, callin' the boat.
+			"player/survivor/voice/replica/worldc3m108.wav"  //Boat's coming!
+		],
+		PlayerC3M1FerryLandedIdleReplica = [
+			"player/survivor/voice/replica/worldc3m110.wav",  //Get on the boat!
+			"player/survivor/voice/replica/worldc3m111.wav"  //Everyone on the boat!
+		],
+		PlayerC3M1FerryLaunched2aReplica = [
+			"player/survivor/voice/replica/blank.wav"  //Blank
+		],
+		PlayerC3M2ComingHomeReplica = [
+			"player/survivor/voice/replica/worldc3m208.wav",  //Hello!
+			"player/survivor/voice/replica/worldc3m209.wav",  //Anyone there!?!!
+			"player/survivor/voice/replica/worldc3m211.wav"  //Anyone home!
+		],
+		PlayerC3M2OpenDoor2Replica = [
+			"player/survivor/voice/replica/worldc3m2b04.wav",  //I'm opening it!
+			"player/survivor/voice/replica/worldc3m2b05.wav",  //I'm opening this door!
+			"player/survivor/voice/replica/worldc3m207.wav"  //Everyone geared up?
+		],
+		Playerc5m4floatstart2Replica = [
+			"player/survivor/voice/replica/miscdirectional42.wav"  //I hit it!
+		],
+		PlayercoachcoachesReplica = [
+			"player/survivor/voice/replica/goingtodier01.wav",  //Come on now, put it all out there.
+			"player/survivor/voice/replica/goingtodier02.wav",  //Come on, it's all you.
+			"player/survivor/voice/replica/goingtodier03.wav",  //That's it. Stay focused.
+			"player/survivor/voice/replica/goingtodier04.wav",  //Stay with us.
+			"player/survivor/voice/replica/goingtodier05.wav",  //That's it. Yeah. Fight thru it.
+			"player/survivor/voice/replica/goingtodier06.wav",  //Come on now, walk that shit off.
+			"player/survivor/voice/replica/goingtodier07.wav",  //Keep it up, come on, keep it up, keep it up. You're gonna make it.
+			"player/survivor/voice/replica/goingtodier08.wav",  //Hey. Listen to me, you are gonna make it.
+			"player/survivor/voice/replica/goingtodier09.wav",  //They put a hurtin on ya but ain't no thing.
+			"player/survivor/voice/replica/goingtodier10.wav"  //Come on now, put it behind ya, you good, you good.
+		],
+		PlayercoachcoachesGamblerReplica = [
+			"player/survivor/voice/replica/goingtodiergambler01.wav",  //Nick, ain't gonna leave ya man.
+			"player/survivor/voice/replica/goingtodiergambler02.wav",  //Nick, ain't gonna leave ya man.
+			"player/survivor/voice/replica/goingtodiergambler03.wav"  //Nick, at least you dressed for a funeral.
+		],
+		PlayercoachcoachesMechanicReplica = [
+			"player/survivor/voice/replica/goingtodiermechanic01.wav",  //Come on Ellis. Ya got it in ya.
+			"player/survivor/voice/replica/goingtodiermechanic02.wav"  //Come on youngin' if I can do it, you can do it.
+		],
+		PlayercoachcoachesProducerReplica = [
+			"player/survivor/voice/replica/goingtodierproducer01.wav",  //Come on girl, we ain't gonna leave you behind.
+			"player/survivor/voice/replica/goingtodierproducer02.wav",  //Come on girl, we ain't gonna leave you behind.
+			"player/survivor/voice/replica/goingtodierproducer03.wav"  //I know you got in ya girl, keep at it.
+		],
+		PlayerRelaxedSighReplica = [
+			"player/survivor/voice/replica/painrelieftfirstaid02.wav",  //Ooh. That's what I'm talkin' about.
+			"player/survivor/voice/replica/painrelieftfirstaid03.wav",  //Ohhh yeahhh. Yeah.
+			"player/survivor/voice/replica/painrelieftfirstaid04.wav",  //That's what I'm talkin' about.
+			"player/survivor/voice/replica/painrelieftfirstaid05.wav",  //All good now.
+			"player/survivor/voice/replica/painrelieftfirstaid06.wav",  //Ohhh yeahhh.
+			"player/survivor/voice/replica/painrelieftfirstaid07.wav",  //That's what I'm talkin' about.
+			"player/survivor/voice/replica/painrelieftfirstaid08.wav",  //All good now.
+			"player/survivor/voice/replica/painrelieftfirstaid09.wav"  //Yesss!
+		],
+		PlayerStayTogetherInsideReponseReplica = [
+			"player/survivor/voice/replica/goingtodie06.wav",  //I'm goin as fast as I can.
+			"player/survivor/voice/replica/goingtodie26.wav",  //Goin' as fast as I can.
+			"player/survivor/voice/replica/goingtodie29.wav",  //I hear ya! I'm movin'.
+			"player/survivor/voice/replica/goingtodie30.wav",  //Can't go no faster.
+			"player/survivor/voice/replica/goingtodie31.wav"  //I'm hurt too bad to go any faster.
+		],
+		PlayerUseAdrenalineReplica = [
+			"player/survivor/voice/replica/painrelieftfirstaid01.wav",  //Aahhh...
+			"player/survivor/voice/replica/painrelieftpills01.wav"  //Ooff, ahh.
+		],
+		PlayerWorldC3M1FerryCrossingA01Replica = [
+			"player/survivor/voice/replica/worldc3m122.wav"  //I normally stay the hell away from swamps on principle.  You remember that movie with that golfer that got his hand ate by a gator?  That shit's real.
+		],
+		PlayerWorldC3M1FerryCrossingD01Replica = [
+			"player/survivor/voice/replica/worldc3m124.wav",  //Maybe we oughta just stop this boat right here and live the rest of years between the shores.
+			"player/survivor/voice/replica/worldc3m125.wav"  //Look, maybe we oughta just stop this boat right here and live the rest of years between the shores.
+		],
+		PlayerWorldC3M1FerryCrossingD02Replica = [
+			"player/survivor/voice/replica/worldc3m123.wav"  //Hell. sometimes its best not to find out what you don't know.
+		],
+		_C3M1CrazyMilitantsReplica = [
+			"player/survivor/voice/replica/worldc3m114.wav",  //I seen that movie. It don't end well.
+			"player/survivor/voice/replica/worldc3m115.wav"  //Nah, that don't sound good at all.
+		],
+		PlayerWorldC3M1FerryCrossingG01Replica = [
+			"player/survivor/voice/replica/worldc3m116.wav",  //Though I walk through the valley of the shadow of death, I will fear no evil
+			"player/survivor/voice/replica/worldc3m117.wav"  //Though I walk through the valley of the shadow of death, I will fear no evil
+		],
+		PlayerWorldC3M1FerryCrossingG03Replica = [
+			"player/survivor/voice/replica/worldc3m118.wav"  //Nick, we're goin into a swamp filled with zombies.  Y'all want me to lie to ya?
+		],
+		PlayerWorldC3M1FerryCrossingI03Replica = [
+			"player/survivor/voice/replica/worldc3m120.wav",  //Heh, alright. Look at you youngin' given Nick some shit right back.
+			"player/survivor/voice/replica/worldc3m121.wav"  //Look at you youngin' given Nick some shit.
+		],
+		PlayerWorldC3M1FerryCrossingM5Replica = [
+			"player/survivor/voice/replica/worldc3m119.wav"  //Nick, don't pay no attention to that boy.
+		],
+		PlayerWorldC3M1Walkways2Replica = [
+			"player/survivor/voice/replica/worldc3m127.wav",  //Yeah, don't wander off.
+			"player/survivor/voice/replica/worldc3m128.wav"  //Girls got the right idea.
+		],
+		PlayerWorldIntroC31Replica = [
+			"player/survivor/voice/replica/worldc3m101.wav",  //I can see their point.
+			"player/survivor/voice/replica/worldc3m102.wav",  //No CEDA, No Military.  Stay out.
+			"player/survivor/voice/replica/worldc3m102.wav",  //No CEDA, No Military.  Stay out.
+			"player/survivor/voice/replica/worldc3m102.wav",  //No CEDA, No Military.  Stay out.
+			"player/survivor/voice/replica/worldc3m1b03.wav",  //Ahhh, I've had worse landings. Actually, that's a lie to spare your feelings. That crash was pretty bad.
+			"player/survivor/voice/replica/worldc3m1b02.wav",  //That was some shit, the pilot becoming a zombie right before our eyes. Nice shooting Nick.
+			"player/survivor/voice/replica/worldc3m1b04.wav",  //You know what? No more helicopters. I'm just saying that now. I'm good.
+			"player/survivor/voice/replica/worldc3m1b06.wav",  //That was the first time I was in a helicopter. I always imagined it with less zombies.
+			"player/survivor/voice/replica/worldc3m1b10.wav"  //Anyone check where we were before we went down?
+		],
+		RescuedSurvivorReplica = [
+			"player/survivor/voice/replica/scenariojoin01.wav",  //I'm here!
+			"player/survivor/voice/replica/scenariojoin02.wav",  //Hello!
+			"player/survivor/voice/replica/scenariojoin03.wav",  //I'm here!
+			"player/survivor/voice/replica/scenariojoin04.wav"  //Hey, I'm here!
+		],
+		PlayerGivenItemReplica = [
+			"player/survivor/voice/replica/thanks01.wav",  //Thanks.
+			"player/survivor/voice/replica/thanks06.wav"  //Allrighht thanks.
+		],
+		ItemDonorProducerReplica = [
+			"player/survivor/voice/replica/thanksproducer01.wav"  //Can always count on you, Ro.
+		],
+		ItemDonorMechanicReplica = [
+			"player/survivor/voice/replica/thanksmechanic01.wav"  //I owe you one, Ellis.
+		],
+		ItemDonorGamblerReplica = [
+			"player/survivor/voice/replica/thanksgambler01.wav"  //Thanks, Nick, you're all right.
+		],
+		ItemDonorBikerReplica = [
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1killing05.wav"  //Thanks Francis!
+		],
+		ItemDonorTeenGirlReplica = [
+			"player/survivor/voice/replica/thanks01.wav",  //Thanks.
+			"player/survivor/voice/replica/thanks06.wav"  //Allrighht thanks.
+		],
+		ItemDonorManagerReplica = [
+			"player/survivor/voice/replica/thanks01.wav",  //Thanks.
+			"player/survivor/voice/replica/thanks06.wav"  //Allrighht thanks.
+		],
+		ItemDonorNamVetReplica = [
+			"player/survivor/voice/replica/thanks01.wav",  //Thanks.
+			"player/survivor/voice/replica/thanks06.wav"  //Allrighht thanks.
+		],
+		ReviveMeInterruptedReplica = [
+			"player/survivor/voice/replica/hurtminor01.wav",  //[pain noise - short minor pain]
+			"player/survivor/voice/replica/hurtminor02.wav",  //[pain noise - short minor pain]
+			"player/survivor/voice/replica/hurtminor03.wav",  //[pain noise - short minor pain]
+			"player/survivor/voice/replica/hurtminor04.wav",  //[pain noise - short minor pain]
+			"player/survivor/voice/replica/hurtminor05.wav",  //[pain noise - short minor pain]
+			"player/survivor/voice/replica/hurtminor06.wav",  //[pain noise - short minor pain]
+			"player/survivor/voice/replica/hurtminor07.wav",  //[pain noise - short minor pain]
+			"player/survivor/voice/replica/hurtminor08.wav",  //[pain noise - short minor pain]
+			"player/survivor/voice/replica/hurtminor09.wav",  //[pain noise - short minor pain]
+			"player/survivor/voice/replica/hurtminor10.wav",  //[Pain noise - short minor pain]
+			"player/survivor/voice/replica/hurtminor11.wav",  //[Pain noise - short minor pain]
+			"player/survivor/voice/replica/hurtminor12.wav",  //[Pain noise - short minor pain]
+			"player/survivor/voice/replica/hurtminor13.wav",  //[Pain noise - short minor pain]
+			"player/survivor/voice/replica/hurtminor14.wav",  //[Pain noise - short minor pain]
+			"player/survivor/voice/replica/hurtminor15.wav"  //[Pain noise - short minor pain]
+		],
+		ReviveMeInterruptedMajorReplica = [
+			"player/survivor/voice/replica/hurtmajor01.wav",  //[Pain noise - huh]
+			"player/survivor/voice/replica/hurtmajor02.wav",  //[Pain noise - huh]
+			"player/survivor/voice/replica/hurtmajor03.wav",  //[Pain noise - ahh]
+			"player/survivor/voice/replica/hurtmajor04.wav",  //[Pain noise - oy]
+			"player/survivor/voice/replica/hurtmajor05.wav",  //[Pain noise - ugh]
+			"player/survivor/voice/replica/hurtmajor06.wav",  //[Pain noise - ugh]
+			"player/survivor/voice/replica/hurtmajor07.wav",  //[Pain noise - ugh]
+			"player/survivor/voice/replica/hurtmajor08.wav",  //[Pain noise - ugh]
+			"player/survivor/voice/replica/hurtmajor09.wav",  //[Pain noise - ugh]
+			"player/survivor/voice/replica/hurtmajor10.wav",  //[Pain noise - ugh]
+			"player/survivor/voice/replica/hurtmajor11.wav"  //[Pain noise - ugh]
+		],
+		ReviveMeInterruptedCriticalReplica = [
+			"player/survivor/voice/replica/hurtcritical01.wav",  //[Pain noise - loud major pain]
+			"player/survivor/voice/replica/hurtcritical02.wav",  //[Pain noise - loud major pain]
+			"player/survivor/voice/replica/hurtcritical03.wav",  //[Pain noise - loud major pain]
+			"player/survivor/voice/replica/hurtcritical04.wav",  //[Pain noise - loud major pain]
+			"player/survivor/voice/replica/hurtcritical05.wav",  //[Pain noise - loud major pain]
+			"player/survivor/voice/replica/hurtcritical06.wav",  //[Pain noise - loud major pain]
+			"player/survivor/voice/replica/hurtcritical07.wav",  //[Pain noise - loud major pain]
+			"player/survivor/voice/replica/hurtcritical08.wav"  //[Pain noise - loud major pain]
+		],
+		ReviveThanksReplica = [
+			"player/survivor/voice/replica/thanks01.wav",  //Thanks.
+			"player/survivor/voice/replica/thanks06.wav",  //Allrighht thanks.
+			"player/survivor/voice/replica/thanks07.wav"  //THANKS!
+		],
+		ReviveThanksGamblerReplica = [
+			"player/survivor/voice/replica/thanksgambler01.wav"  //Thanks, Nick, you're all right.
+		],
+		ReviveThanksMechanicReplica = [
+			"player/survivor/voice/replica/thanksmechanic01.wav"  //I owe you one, Ellis.
+		],
+		ReviveThanksProducerReplica = [
+			"player/survivor/voice/replica/thanksproducer01.wav"  //Can always count on you, Ro.
+		],
+		ReviveThanksBikerReplica = [
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1killing05.wav"  //Thanks Francis!
+		],
+		AutoYouAreWelcomeReplica = [
+			"player/survivor/voice/replica/youarewelcome01.wav",  //It ain't nothin.
+			"player/survivor/voice/replica/youarewelcome02.wav",  //We cool.
+			"player/survivor/voice/replica/youarewelcome03.wav",  //We straight.
+			"player/survivor/voice/replica/youarewelcome04.wav",  //It's all good.
+			"player/survivor/voice/replica/youarewelcome05.wav"  //You're Welcome.
+		],
+		BotPlayer_YourWelcomeReplica = [
+			"player/survivor/voice/replica/youarewelcome01.wav",  //It ain't nothin.
+			"player/survivor/voice/replica/youarewelcome02.wav",  //We cool.
+			"player/survivor/voice/replica/youarewelcome03.wav",  //We straight.
+			"player/survivor/voice/replica/youarewelcome04.wav",  //It's all good.
+			"player/survivor/voice/replica/youarewelcome05.wav"  //You're Welcome.
+		],
+		BotReassureComingReplica = [
+			"player/survivor/voice/replica/yes01.wav",  //Yeah.
+			"player/survivor/voice/replica/yes02.wav",  //Yeah.
+			"player/survivor/voice/replica/yes03.wav",  //Yes.
+			"player/survivor/voice/replica/yes04.wav",  //Oh Yeah.
+			"player/survivor/voice/replica/yes05.wav",  //For sure.
+			"player/survivor/voice/replica/yes06.wav",  //Know that's right.
+			"player/survivor/voice/replica/yes07.wav",  //Positively.
+			"player/survivor/voice/replica/yes08.wav",  //Yeah.
+			"player/survivor/voice/replica/yes10.wav"  //Sho sho.
+		],
+		BotReassureNearbyReplica = [
+			"player/survivor/voice/replica/imwithyou01.wav",  //I've got ya.
+			"player/survivor/voice/replica/imwithyou02.wav",  //I'm right behind ya.
+			"player/survivor/voice/replica/imwithyou03.wav",  //I'm with ya.
+			"player/survivor/voice/replica/imwithyou04.wav",  //I got yer back.
+			"player/survivor/voice/replica/imwithyou05.wav",  //We tight.
+			"player/survivor/voice/replica/imwithyou06.wav"  //We tight.
+		],
+		BotYesReadyReplica = [
+			"player/survivor/voice/replica/yes01.wav",  //Yeah.
+			"player/survivor/voice/replica/yes02.wav",  //Yeah.
+			"player/survivor/voice/replica/yes03.wav",  //Yes.
+			"player/survivor/voice/replica/yes04.wav",  //Oh Yeah.
+			"player/survivor/voice/replica/yes05.wav",  //For sure.
+			"player/survivor/voice/replica/yes06.wav",  //Know that's right.
+			"player/survivor/voice/replica/yes07.wav",  //Positively.
+			"player/survivor/voice/replica/yes08.wav",  //Yeah.
+			"player/survivor/voice/replica/yes10.wav"  //Sho sho.
+		],
+		C1M2LeavingSafeRoomReplica = [
+			"player/survivor/voice/replica/worldc1m2b04.wav",  //Let's go find that mall.
+			"player/survivor/voice/replica/worldc1m2b01.wav",  //Let's go find that mall.
+			"player/survivor/voice/replica/worldc1m2b02.wav",  //Let's go find that helicopter.
+			"player/survivor/voice/replica/worldc1m2b05.wav"  //Let's go find that helicopter.
+		],
+		C1M2SafeRoomb2Replica = [
+			"player/survivor/voice/replica/worldc1m1b14.wav",  //Mister... I don't think I like your attitude.
+			"player/survivor/voice/replica/worldc1m1b19.wav",  //Mister... I don't like your attitude.
+			"player/survivor/voice/replica/worldc1m1b20.wav"  //Mister... I don't think I like your attitude.
+		],
+		C1M2TankerAttackReplica = [
+			"player/survivor/voice/replica/worldc1m2b44.wav",  //Barrier's down! Let's move, baby!
+			"player/survivor/voice/replica/worldc1m2b45.wav",  //Path clear! Let's get to that mall!
+			"player/survivor/voice/replica/worldc1m2b46.wav",  //[laughs] When that man says he's gonna clear a path, he clears a path!
+			"player/survivor/voice/replica/worldc1m2b47.wav",  //That's how I used clear a path when I played college ball.
+			"player/survivor/voice/replica/worldc1m2b48.wav",  //Path's clear! Let's move, baby!
+			"player/survivor/voice/replica/worldc1m2b49.wav"  //Path's clear! Let's get to that mall!
+		],
+		c1m4escapeReplica = [
+			"player/survivor/voice/replica/worldc1m4b33.wav",  //Here we come, New Orleans!
+			"player/survivor/voice/replica/worldc1m4b36.wav",  //HIT IT!
+			"player/survivor/voice/replica/worldc1m4b41.wav"  //Woo! Thank you, Mr. Gibbs.
+		],
+		c1m4escapeEllisReplica = [
+			"player/survivor/voice/replica/blank.wav"  //
+		],
+		c1m4escapeEllisSuccessReplica = [
+			"player/survivor/voice/replica/worldc1m4b38.wav",  //Go, Ellis. Go!
+			"player/survivor/voice/replica/worldc1m4b39.wav",  //Go, Ellis. Go!
+			"player/survivor/voice/replica/worldc1m4b40.wav"  //PUNCH IT, ELLIS!
+		],
+		C1M4GasPourReplica = [
+			"player/survivor/voice/replica/worldc1m4b12.wav",  //Oh, come on, baby, come on...
+			"player/survivor/voice/replica/worldc1m4b13.wav",  //Oh, come on, baby, come on...
+			"player/survivor/voice/replica/worldc1m4b14.wav",  //Please, baby, baby, please, please...
+			"player/survivor/voice/replica/worldc1m4b15.wav",  //Oh, come on, baby, come on...
+			"player/survivor/voice/replica/worldc1m4b16.wav",  //Hurry up, hurrrry upppp...
+			"player/survivor/voice/replica/worldc1m4b17.wav"  //Come onnnn, come onnnnnn...
+		],
+		C1M4PlayerGetToRescueVehicleReplica = [
+			"player/survivor/voice/replica/worldc1m4b34.wav",  //GET TO THE CAR!
+			"player/survivor/voice/replica/worldc1m4b35.wav"  //GET TO THE CAR, PEOPLE!
+		],
+		c1m4startelevatorReplica = [
+			"player/survivor/voice/replica/worldc1m4b03.wav",  //Alright, so...Getting' evac'd ain't happening. Anybody got an idea, now's the time.
+			"player/survivor/voice/replica/worldc1m4b04.wav"  //Looks like we're gonna have to save ourselves. Anybody got an idea, speak up, we're listenin'.
+		],
+		C6M3GasPourReplica = [
+			"player/survivor/voice/replica/dlc1_c6m3_cans01.wav",  //Filling the generator.
+			"player/survivor/voice/replica/dlc1_c6m3_cans02.wav"  //Pouring a can.
+		],
+		GasPourReplica = [
+			"player/survivor/voice/replica/worldc1m4b18.wav",  //Fillin' it up here!
+			"player/survivor/voice/replica/dlc1_c6m3_cans02.wav"  //Pouring a can.
+		],
+		FinaleStartC1M4Replica = [
+			"player/survivor/voice/replica/worldc1m4b11.wav",  //Haul ass and get gas!
+			"player/survivor/voice/replica/worldc1m4b20.wav",  //Let's go! Find a gas can!
+			"player/survivor/voice/replica/worldc1m4b21.wav",  //Let's get this car gassed up!
+			"player/survivor/voice/replica/worldc1m4b07.wav"  //If we see a Jimmy Gibbs zombie. somebody else is gonna have to kill him.
+		],
+		GasPourDoneC1M4Replica = [
+			"player/survivor/voice/replica/worldc1m4b32.wav",  //We're all gassed up, get to the car!
+			"player/survivor/voice/replica/worldc1m4b37.wav"  //Sorry about this, Mr. Gibbs.
+		],
+		_C2M2EntranceReplica = [
+			"player/survivor/voice/replica/worldc2m139.wav"  //Well nobody but the zombies.
+		],
+		C2M2CarouselIdleReplica = [
+			"player/survivor/voice/replica/worldc2m212.wav",  //Turn that shit off!
+			"player/survivor/voice/replica/worldc2m213.wav",  //Turn it off!
+			"player/survivor/voice/replica/worldc2m214.wav",  //Stop it!
+			"player/survivor/voice/replica/worldc2m217.wav"  //Turn it off, turn the damn thing off!
+		],
+		C2M3RubbleNagIdleReplica = [
+			"player/survivor/voice/replica/worldc2m317.wav",  //Hit it.
+			"player/survivor/voice/replica/worldc2m318.wav"  //Let's get it going.
+		],
+		C2M2SafeRoomReplica = [
+			"player/survivor/voice/replica/worldc2m2b03.wav",  //Hey, the Midnight Riders! I used to LOVE that band. Best pyrotechnics in the business.
+			"player/survivor/voice/replica/worldc2m2b08.wav"  //Hey! The Midnight Riders!
+		],
+		_C2M2_Riders04Replica = [
+			"player/survivor/voice/replica/worldc2m2b05.wav",  //[singing] ...Gotta reach for the top, stay on that mountainnnn... dunh-nuh-NAH-nuh-NAH-nha!
+			"player/survivor/voice/replica/worldc2m2b06.wav",  //[singing] ...Every lady's crazy when her daddy's not around... dunh-nuh-NAH-nuh-NAH-nha!
+			"player/survivor/voice/replica/worldc2m2b04.wav",  //Hell yes! I got ALL their albums. Even their new stuff that ain't no good.
+			"player/survivor/voice/replica/worldc2m2b09.wav"  //Hell yes! I got ALL their albums. Even their new stuff that ain't no good.
+		],
+		_C2M2_Riders05Replica = [
+			"player/survivor/voice/replica/worldc2m2b11.wav",  //Best light show in the business, though.
+			"player/survivor/voice/replica/worldc2m2b12.wav"  //Best backup singers you ever want to hear.
+		],
+		_C2M2_Riders07Replica = [
+			"player/survivor/voice/replica/worldc2m2b04.wav",  //Hell yes! I got ALL their albums. Even their new stuff that ain't no good.
+			"player/survivor/voice/replica/worldc2m2b09.wav",  //
+			"player/survivor/voice/replica/worldc2m2b10.wav",  //You kiddin' me?! They were... were... No, not really. They had one good song.
+			"player/survivor/voice/replica/worldc2m2b13.wav"  //
+		],
+		_C2M2_Slide01Replica = [
+			"player/survivor/voice/replica/worldc2m208.wav"  //Heyheyhey, man. Can't go down the slide without your sack.
+		],
+		c2m3CoasterEndReplica = [
+			"player/survivor/voice/replica/worldc2m3b22.wav"  //Okay, alarm's off!
+		],
+		C2M3CoasterRunGoReplica = [
+			"player/survivor/voice/replica/emphaticgo02.wav",  //Let's go people.
+			"player/survivor/voice/replica/emphaticgo04.wav",  //Go go go!
+			"player/survivor/voice/replica/emphaticgo05.wav"  //Go go GO!
+		],
+		C2M3CoasterStartReplica = [
+			"player/survivor/voice/replica/worldc2m319.wav",  //Get ready to run, I'm hittin' it.
+			"player/survivor/voice/replica/worldc2m320.wav"  //That set off the alarm!
+		],
+		c2m3SeeChopperReplica = [
+			"player/survivor/voice/replica/worldc2m3b15.wav"  //There's a chopper!
+		],
+		C2M4ButtonPressedReplica = [
+			"player/survivor/voice/replica/worldc2m210.wav"  //I'm opening the gate!
+		],
+		C2M4Gate000Replica = [
+			"player/survivor/voice/replica/worldc2m3b13.wav",  //We'll have to get this gate open.
+			"player/survivor/voice/replica/worldc2m4b05.wav",  //I know how we can signal that chopper.
+			"player/survivor/voice/replica/worldc2m401.wav",  //We got to get into the stadium.
+			"player/survivor/voice/replica/worldc2m402.wav",  //Let's get into the stadium.
+			"player/survivor/voice/replica/worldc2m4b01.wav",  //Let's get inside the stadium, I have an idea!
+			"player/survivor/voice/replica/worldc2m4b03.wav",  //Midnight Riders are supposed to play here?
+			"player/survivor/voice/replica/worldc2m5b11.wav"  //Midnight Rider's finale? That'll alert the goddamn chopper.
+		],
+		C2M4GateIdleReplica = [
+			"player/survivor/voice/replica/miscdirectional39.wav",  //Press the button!
+			"player/survivor/voice/replica/worldc2m211.wav"  //Gotta keep movin', open the gate.
+		],
+		C2M4GateOpenCalloutReplica = [
+			"player/survivor/voice/replica/worldc2m2b35.wav"  //Gate's open!
+		],
+		c2m4SeeChopperReplica = [
+			"player/survivor/voice/replica/worldc2m3b16.wav",  //There's that chopper again!
+			"player/survivor/voice/replica/worldc2m3b17.wav",  //There goes the chopper!
+			"player/survivor/voice/replica/worldc2m4b04.wav"  //We need to signal the chopper!
+		],
+		C2M4Gate001Replica = [
+			"player/survivor/voice/replica/worldc2m4b01.wav",  //Let's get inside the stadium, I have an idea!
+			"player/survivor/voice/replica/worldc2m4b02.wav"  //Midnight Riders to the rescue!
+		],
+		C2M4Gate002Replica = [
+			"player/survivor/voice/replica/worldc2m4b05.wav"  //I know how we can signal that chopper.
+		],
+		C2M4Gate003Replica = [
+			"player/survivor/voice/replica/worldc2m4b01.wav"  //Let's get inside the stadium, I have an idea!
+		],
+		C2M4Gate003EllisReplica = [
+			"player/survivor/voice/replica/worldc2m4b06.wav"  //Ellis, you ready to rock?
+		],
+		C2M5_Button2YellReplica = [
+			"player/survivor/voice/replica/worldc2m5b38.wav",  //Finale's on! Get ready to rock!
+			"player/survivor/voice/replica/worldc2m5b33.wav",  //This is gonna be good!
+			"player/survivor/voice/replica/worldc2m5b35.wav"  //This is gonna be good!
+		],
+		C2M5_ChoppercomingReplica = [
+			"player/survivor/voice/replica/worldc2m5b105.wav",  //The chopper saw us!
+			"player/survivor/voice/replica/worldc2m5b106.wav",  //The chopper's coming!
+			"player/survivor/voice/replica/worldc2m5b115.wav",  //The chopper saw us!
+			"player/survivor/voice/replica/worldc2m5b116.wav"  //The chopper's coming!
+		],
+		C2M5_PlanWorkedReplica = [
+			"player/survivor/voice/replica/worldc2m5b107.wav",  //The Midnight Riders saved us!
+			"player/survivor/voice/replica/worldc2m5b110.wav",  //I'll be damned! Even I didn't think that was gonna happen!
+			"player/survivor/voice/replica/worldc2m5b111.wav",  //I'll be damned! Even I didn't think that was gonna work!
+			"player/survivor/voice/replica/worldc2m5b117.wav",  //All right, Midnight Riders!
+			"player/survivor/voice/replica/worldc2m5b119.wav"  //I'll be damned! Even I didn't think that was gonna work!
+		],
+		C2M5_PlanWorkedMadReplica = [
+			"player/survivor/voice/replica/worldc2m5b109.wav",  //It's working!
+			"player/survivor/voice/replica/worldc2m5b118.wav"  //It's working!
+		],
+		C2M5ChopperNagReplica = [
+			"player/survivor/voice/replica/worldc2m5b125.wav",  //Everyone to the chopper!
+			"player/survivor/voice/replica/worldc2m5b126.wav"  //Get on that chopper!
+		],
+		C2M5InChopperNagReplica = [
+			"player/survivor/voice/replica/worldc2m5b123.wav",  //Get on the chopper!
+			"player/survivor/voice/replica/worldc2m5b124.wav"  //WOOO! Get on the chopper!
+		],
+		C2M5ChopperNagNickCheckReplica = [
+			"player/survivor/voice/replica/blank.wav"  //
+		],
+		C2M5Button1Replica = [
+			"player/survivor/voice/replica/miscdirectional42.wav"  //I hit it!
+		],
+		C2M5InArenaNagReplica = [
+			"player/survivor/voice/replica/worldc2m5b21.wav",  //We need to start the finale!
+			"player/survivor/voice/replica/worldc2m5b42.wav",  //Turn on the lights!
+			"player/survivor/voice/replica/worldc2m5b43.wav",  //Hit the lights!
+			"player/survivor/voice/replica/worldc2m5b51.wav",  //Turn on the lights!
+			"player/survivor/voice/replica/worldc2m5b53.wav",  //Hit the spotlights!
+			"player/survivor/voice/replica/worldc2m5b65.wav"  //Turn on the lights!
+		],
+		C2M5SingingReplica = [
+			"player/survivor/voice/replica/worldc2m2b05.wav",  //[singing] ...Gotta reach for the top, stay on that mountainnnn... dunh-nuh-NAH-nuh-NAH-nha!
+			"player/survivor/voice/replica/worldc2m2b06.wav"  //[singing] ...Every lady's crazy when her daddy's not around... dunh-nuh-NAH-nuh-NAH-nha!
+		],
+		SurvivorReloadingC2M5Replica = [
+			"player/survivor/voice/replica/worldc2m5b55.wav",  //MORE! MORE! WE NEED MORE!
+			"player/survivor/voice/replica/worldc2m5b56.wav",  //ROCK IT OUT!
+			"player/survivor/voice/replica/worldc2m5b61.wav",  //Let loose!
+			"player/survivor/voice/replica/worldc2m5b88.wav",  //MORE! MORE! WE NEED MORE!
+			"player/survivor/voice/replica/worldc2m5b89.wav",  //ROCK IT OUT!
+			"player/survivor/voice/replica/taunt07.wav",  //[Loud, evil laugh]
+			"player/survivor/voice/replica/laughter15.wav",  //[Loud, hearty laugh]
+			"player/survivor/voice/replica/laughter22.wav",  //[Loud, evil laugh]
+			"player/survivor/voice/replica/laughter23.wav"  //[Loud, evil laugh]
+		],
+		SurvivorVocalizeLookOutC2M5Replica = [
+			"player/survivor/voice/replica/worldc2m5b104.wav",  //Turn it up! I love this part!
+			"player/survivor/voice/replica/worldc2m5b102.wav",  //They nailed this damn song!
+			"player/survivor/voice/replica/worldc2m5b59.wav",  //I love this song! I love ALL these notes!
+			"player/survivor/voice/replica/worldc2m5b67.wav",  //This music IS GREAT!
+			"player/survivor/voice/replica/worldc2m5b68.wav",  //I forgot how much I like this song!
+			"player/survivor/voice/replica/worldc2m5b69.wav",  //They nailed this damn song!
+			"player/survivor/voice/replica/worldc2m5b91.wav",  //I love this music! I love ALL these notes!
+			"player/survivor/voice/replica/worldc2m5b100.wav",  //This music IS GREAT!
+			"player/survivor/voice/replica/worldc2m5b101.wav"  //I forgot how much I like this song!
+		],
+		PlayerKillTankConfirmationC2M5Replica = [
+			"player/survivor/voice/replica/worldc2m5b103.wav",  //I ain't normally a rock music man, but damn I love the Riders!
+			"player/survivor/voice/replica/worldc2m5b108.wav",  //All right Midnight Riders!
+			"player/survivor/voice/replica/worldc2m5b57.wav",  //Woooo! Midnight Riders RUUUUULE!
+			"player/survivor/voice/replica/worldc2m5b58.wav",  //I love you, Midnight Riders!
+			"player/survivor/voice/replica/worldc2m5b70.wav",  //I ain't normally a rock music man, but damn I love the Riders!
+			"player/survivor/voice/replica/worldc2m5b90.wav",  //I love you, Midnight Riders!
+			"player/survivor/voice/replica/hurrah09.wav",  //We got up in their shit.
+			"player/survivor/voice/replica/hurrah20.wav"  //That is how you kick some ASS, baby!
+		],
+		C2M5ReloadingTankReplica = [
+			"player/survivor/voice/replica/worldc2m5b113.wav",  //We need to kill the Tank before he lands!
+			"player/survivor/voice/replica/worldc2m5b122.wav",  //We gotta kill the Tank before he lands!
+			"player/survivor/voice/replica/worldc2m5b66.wav",  //Come on Midnight Riders!
+			"player/survivor/voice/replica/worldc2m5b99.wav"  //Come on Midnight Riders!
+		],
+		C2M5ConcertTankResponseReplica = [
+			"player/survivor/voice/replica/worldc2m5b114.wav",  //You heard the man, kill the Tank!
+			"player/survivor/voice/replica/worldc2m5b121.wav"  //You heard the man, kill the Tank!
+		],
+		C2M5SaferoomReplica = [
+			"player/survivor/voice/replica/worldc2m5b04.wav",  //Y'all know the Midnight Riders? They gonna save us.
+			"player/survivor/voice/replica/worldc2m5b12.wav",  //Okay, here's the plan.
+			"player/survivor/voice/replica/worldc2m5b12.wav",  //Okay, here's the plan.
+			"player/survivor/voice/replica/worldc2m5b12.wav"  //Okay, here's the plan.
+		],
+		c2m5_intro001Replica = [
+			"player/survivor/voice/replica/worldc2m5b14.wav",  //First we do a quick check around for corn dogs. Nah, I'm just playin'.
+			"player/survivor/voice/replica/worldc2m5b15.wav"  //First we look for supplies.
+		],
+		c2m5_intro002Replica = [
+			"player/survivor/voice/replica/worldc2m5b16.wav",  //Then we start the Midnight Rider finale. It's all kinds of fireworks, smokepots, and lights and shit. That chopper pilot can't miss it.
+			"player/survivor/voice/replica/worldc2m5b16.wav",  //Then we start the Midnight Rider finale. It's all kinds of fireworks, smokepots, and lights and shit. That chopper pilot can't miss it.
+			"player/survivor/voice/replica/worldc2m5b17.wav",  //Then we start the Midnight Rider finale. It's all kinds of fireworks, smokepots, and lights and shit. That chopper pilot can't miss it.
+			"player/survivor/voice/replica/worldc2m5b17.wav"  //Then we start the Midnight Rider finale. It's all kinds of fireworks, smokepots, and lights and shit. That chopper pilot can't miss it.
+		],
+		c2m5_intro003Replica = [
+			"player/survivor/voice/replica/worldc2m5b15.wav",  //First we look for supplies.
+			"player/survivor/voice/replica/worldc2m5b18.wav"  //I love the Riders. Nobody has a bigger finale than them. All we need to do is start it up, and the chopper pilot's sure as hell gonna see us.
+		],
+		c2m5_intro006Replica = [
+			"player/survivor/voice/replica/worldc2m5b02.wav",  //We start their finale, that chopper is gonna know something's up.
+			"player/survivor/voice/replica/worldc2m5b05.wav"  //We start their finale, that chopper is gonna know something's up.
+		],
+		c2m5_intro007Replica = [
+			"player/survivor/voice/replica/worldc2m5b03.wav",  //Because nobody - and I mean NOBODY - has a bigger pyrotechnics show than the Midnight Riders.
+			"player/survivor/voice/replica/worldc2m5b06.wav",  //Because nobody - and I mean NOBODY - has a bigger light show than the Midnight Riders.
+			"player/survivor/voice/replica/worldc2m5b03.wav",  //Because nobody - and I mean NOBODY - has a bigger pyrotechnics show than the Midnight Riders.
+			"player/survivor/voice/replica/worldc2m5b06.wav"  //Because nobody - and I mean NOBODY - has a bigger light show than the Midnight Riders.
+		],
+		c2m5_intro008Replica = [
+			"player/survivor/voice/replica/worldc2m5b12.wav",  //Okay, here's the plan.
+			"player/survivor/voice/replica/worldc2m5b12.wav",  //Okay, here's the plan.
+			"player/survivor/voice/replica/worldc2m5b12.wav"  //Okay, here's the plan.
+		],
+		c2m5_intro010Replica = [
+			"player/survivor/voice/replica/worldc2m5b09.wav",  //It's been a long time since I seen the Riders, but if their finale's the same, that'll signal the chopper pilot. We just need to start it.
+			"player/survivor/voice/replica/worldc2m5b10.wav",  //It's been a long time since I seen the Riders, but if their finale's the same, that'll signal the chopper pilot. We just need to start it.
+			"player/survivor/voice/replica/worldc2m5b09.wav",  //It's been a long time since I seen the Riders, but if their finale's the same, that'll signal the chopper pilot. We just need to start it.
+			"player/survivor/voice/replica/worldc2m5b10.wav"  //It's been a long time since I seen the Riders, but if their finale's the same, that'll signal the chopper pilot. We just need to start it.
+		],
+		c2m5_intro012Replica = [
+			"player/survivor/voice/replica/worldc2m5b08.wav"  //These zombies better be ready to rock.
+		],
+		c2m5_intro014Replica = [
+			"player/survivor/voice/replica/worldc2m5b03.wav",  //Because nobody - and I mean NOBODY - has a bigger pyrotechnics show than the Midnight Riders.
+			"player/survivor/voice/replica/worldc2m5b06.wav"  //Because nobody - and I mean NOBODY - has a bigger light show than the Midnight Riders.
+		],
+		c2m5_intro016Replica = [
+			"player/survivor/voice/replica/worldc2m5b08.wav"  //These zombies better be ready to rock.
+		],
+		c2m5_intro017Replica = [
+			"player/survivor/voice/replica/worldc2m5b01.wav",  //Y'all know the Midnight Riders? They gonna save us.
+			"player/survivor/voice/replica/worldc2m5b04.wav",  //Y'all know the Midnight Riders? They gonna save us.
+			"player/survivor/voice/replica/worldc2m5b01.wav",  //Y'all know the Midnight Riders? They gonna save us.
+			"player/survivor/voice/replica/worldc2m5b04.wav"  //Y'all know the Midnight Riders? They gonna save us.
+		],
+		C2M5ChopperOCDReplica = [
+			"player/survivor/voice/replica/nickocd03.wav"  //Nick, get your OCD-smelling ass in the chopper!
+		],
+		C2M3SaferoomReplica = [
+			"player/survivor/voice/replica/worldc2m3b01.wav",  //Well-looks like we're going through the tunnel of love, people. No hanky panky.
+			"player/survivor/voice/replica/worldc2m3b02.wav"  //Well-looks like we're going through the tunnel of love, people. Stay close to me.
+		],
+		C2M3SafeIntro010Replica = [
+			"player/survivor/voice/replica/worldc2m3b05.wav"  //How many tunnel of love memories YOU got, Nick?
+		],
+		C2M3SafeIntro011Replica = [
+			"player/survivor/voice/replica/worldc2m3b03.wav",  //Nick, I was on the football team. Coach did just fine.
+			"player/survivor/voice/replica/worldc2m3b04.wav",  //Coach didn't do too bad for himself back in the day, Nick.
+			"player/survivor/voice/replica/worldc2m3b05.wav"  //How many tunnel of love memories YOU got, Nick?
+		],
+		C3M1FerryEnd2Replica = [
+			"player/survivor/voice/replica/moveon02.wav",  //Come on, people, let's get with it.
+			"player/survivor/voice/replica/moveon05.wav",  //We should get movin', ya hear me?
+			"player/survivor/voice/replica/moveon06.wav",  //Alright, let's get it on.
+			"player/survivor/voice/replica/moveon10.wav"  //All right, let's roll.
+		],
+		C3M2DisgustReplica = [
+			"player/survivor/voice/replica/gooedbyspitterc103.wav",  //You have got to be kidding me.
+			"player/survivor/voice/replica/reactionnegative17.wav"  //Son of a bitch.
+		],
+		InfoRemc3m2_parachutist2Replica = [
+			"player/survivor/voice/replica/worldc3m203.wav"  //Shit, why would you ever jump out of a plane?
+		],
+		C3M3SafeRoom2b2Replica = [
+			"player/survivor/voice/replica/worldc3m301.wav",  //All right, this just makes me sad.
+			"player/survivor/voice/replica/worldc3m303.wav"  //I don't want to think that, but I gotta agree.
+		],
+		C3M3SafeRoom2c2Replica = [
+			"player/survivor/voice/replica/worldc3m3b01.wav"  //They headed to the river, sounds like a good idea.
+		],
+		C3M3SafeRoom2c3Replica = [
+			"player/survivor/voice/replica/worldc3m3b02.wav",  //I don't want to stay here, let's follow 'em.
+			"player/survivor/voice/replica/worldc3m306.wav"  //Might as well head there as well.
+		],
+		InfoRemC3M3LowerGateaReplica = [
+			"player/survivor/voice/replica/worldc3m308.wav"  //Lower the bridge.
+		],
+		C3M4BoatNagsReplica = [
+			"player/survivor/voice/replica/worldc3m422.wav",  //Run to the boat!
+			"player/survivor/voice/replica/worldc3m423.wav"  //Everyone onto the boat!
+		],
+		C3M4InBoatNagsReplica = [
+			"player/survivor/voice/replica/worldc3m421.wav",  //Get on the boat!
+			"player/survivor/voice/replica/worldc3m424.wav"  //Get your asses on the boat!
+		],
+		C3M4Button1AReplica = [
+			"player/survivor/voice/replica/worldc3m405.wav",  //I'm gonna try calling someone.
+			"player/survivor/voice/replica/worldc3m406.wav",  //Anyone out there?
+			"player/survivor/voice/replica/worldc3m407.wav"  //Can anyone here me?
+		],
+		C3M4Button1BReplica = [
+			"player/survivor/voice/replica/worldc3m406.wav",  //Anyone out there?
+			"player/survivor/voice/replica/worldc3m407.wav"  //Can anyone here me?
+		],
+		C3M4ButtonHowManyAnswer4Replica = [
+			"player/survivor/voice/replica/worldc3m411.wav",  //We are a party of four.
+			"player/survivor/voice/replica/worldc3m412.wav",  //There ain't nothin' but four of us left.
+			"player/survivor/voice/replica/worldc3m413.wav",  //Look, what difference does it make?
+			"player/survivor/voice/replica/worldc3m414.wav"  //Shit man, four of us, come pick us up.
+		],
+		C3M4ButtonHowManyAnswer3Replica = [
+			"player/survivor/voice/replica/worldc3m4b01.wav",  //Three of us left.
+			"player/survivor/voice/replica/worldc3m413.wav"  //Look, what difference does it make?
+		],
+		C3M4ButtonHowManyAnswer2Replica = [
+			"player/survivor/voice/replica/worldc3m4b02.wav",  //Only two of us.
+			"player/survivor/voice/replica/worldc3m410.wav",  //Only a couple of us made it.
+			"player/survivor/voice/replica/worldc3m413.wav"  //Look, what difference does it make?
+		],
+		C3M4ButtonHowManyAnswer1Replica = [
+			"player/survivor/voice/replica/worldc3m4b03.wav",  //Just me.
+			"player/survivor/voice/replica/worldc3m413.wav"  //Look, what difference does it make?
+		],
+		C3M4ButtonAnswerEllisReplica = [
+			"player/survivor/voice/replica/worldc3m415.wav"  //Nah, you got it, Ellis.
+		],
+		C3M4Button201Replica = [
+			"player/survivor/voice/replica/worldc3m408.wav",  //Shit, we're at the plantation house.
+			"player/survivor/voice/replica/worldc3m409.wav"  //We're at the big house.
+		],
+		C3M4Button202Replica = [
+			"player/survivor/voice/replica/worldc3m4b04.wav",  //Well don't be long now.
+			"player/survivor/voice/replica/worldc3m4b05.wav",  //I hear ya, we'll be here.
+			"player/survivor/voice/replica/worldc3m4b06.wav",  //We ain't goin' anywhere.
+			"player/survivor/voice/replica/worldc3m416.wav",  //Don't worry, we're stayin' put.
+			"player/survivor/voice/replica/worldc3m417.wav",  //Oh you know we'll be here. We ain't got any other pressin' engagements.
+			"player/survivor/voice/replica/worldc3m418.wav",  //You show up and we'll be here.
+			"player/survivor/voice/replica/worldc3m419.wav",  //I hear ya.
+			"player/survivor/voice/replica/worldc3m420.wav"  //Roger that.
+		],
+		C3M4GateBlow01Replica = [
+			"player/survivor/voice/replica/worldc3m4b07.wav",  //Oh shit! Gate open!
+			"player/survivor/voice/replica/worldc3m4b08.wav",  //That's my kind of guy, let's go!
+			"player/survivor/voice/replica/worldc3m4b09.wav",  //Gate's open, let's go!
+			"player/survivor/voice/replica/worldc3m4b10.wav"  //Our Cajun friend opened the gate!
+		],
+		C4GoingToDieCoachReplica = [
+			"player/survivor/voice/replica/worldc4m3goingtodie01.wav"  //I am not dying in a goddamn sugar mill.
+		],
+		C4StormBlindIdleReplica = [
+			"player/survivor/voice/replica/worldc4m304.wav",  //Thunder!
+			"player/survivor/voice/replica/worldc4m305.wav",  //Lightning!
+			"player/survivor/voice/replica/worldc4m405.wav",  //I can't see shit.
+			"player/survivor/voice/replica/worldc4m406.wav",  //I can't see shit in this rain.
+			"player/survivor/voice/replica/worldc4m407.wav",  //Come on! Let's find a place to hide while this blows over!
+			"player/survivor/voice/replica/worldc4m409.wav",  //Better not be any goddamn instant mud people, just add water.
+			"player/survivor/voice/replica/worldc4m410.wav",  //Man, I ain't ever gonna be dry.
+			"player/survivor/voice/replica/miscdirectional66.wav",  //Can't see two feet. Shit.
+			"player/survivor/voice/replica/miscdirectional67.wav",  //Can't see a goddamn thing.
+			"player/survivor/voice/replica/miscdirectional68.wav",  //Can't see a goddamn thing.
+			"player/survivor/voice/replica/miscdirectional69.wav"  //Can't see two feet. Shit.
+		],
+		_c4m1Intro03Replica = [
+			"player/survivor/voice/replica/worldc4m1b07.wav"  //We should be in and out here. Get the gas, get back to shore, signal Virgil with the flare gun in the gun bag. Then we just, uh... um... aw, HELL. Tell me SOMEONE brought the GUN BAG.
+		],
+		_c4m1Intro04Replica = [
+			"player/survivor/voice/replica/worldc4m101.wav",  //Don't think we got much choice in the matter.
+			"player/survivor/voice/replica/worldc4m102.wav"  //He's good people.
+		],
+		_c4m1Intro05Replica = [
+			"player/survivor/voice/replica/worldc4m1b06.wav"  //What gun bag? Oh for-TELL ME we didn't forget the guns.
+		],
+		_c4m1Intro06Replica = [
+			"player/survivor/voice/replica/worldc4m103.wav"  //Don't jinx us, Nick.
+		],
+		_c4m1Intro07Replica = [
+			"player/survivor/voice/replica/worldc4m1b02.wav"  //ME? I told Nick to grab the guns!
+		],
+		_c4m1Intro09Replica = [
+			"player/survivor/voice/replica/worldc4m1b01.wav",  //Look here, the gas station's right across the street. We coulda already been there and back by now. Come on.
+			"player/survivor/voice/replica/worldc4m1b05.wav"  //Look here, the gas station's right across the street. We coulda already been there and back by now. Come on.
+		],
+		_c4m1Intro14Replica = [
+			"player/survivor/voice/replica/no11.wav"  //No.
+		],
+		_c4m1Intro16Replica = [
+			"player/survivor/voice/replica/worldc4m1b03.wav",  //Look, I'm a generously proportioned man! Gettin' off a rockin' boat takes CONCENTRATION!
+			"player/survivor/voice/replica/worldc4m1b04.wav"  //Look, I'm a generously proportioned man! Gettin' off a rockin' boat takes CONCENTRATION!
+		],
+		C4M2IdleWitchville01Replica = [
+			"player/survivor/voice/replica/worldc4m202.wav",  //Goddamn it, wha't with all these witches.
+			"player/survivor/voice/replica/worldc4m203.wav",  //Bitches every ten feet in this goddamn place.
+			"player/survivor/voice/replica/worldc4m211.wav",  //Goddamn it, wha't with all these witches.
+			"player/survivor/voice/replica/worldc4m2b09.wav",  //Whole lotta witches round here...
+			"player/survivor/voice/replica/worldc4m2b10.wav"  //Lotta damn witches up in this place.
+		],
+		C4M2PushedButtonReplica = [
+			"player/survivor/voice/replica/miscdirectional42.wav"  //I hit it!
+		],
+		C4M5BoatNagsReplica = [
+			"player/survivor/voice/replica/worldc4m4b20.wav"  //GET TO THE BOAT!
+		],
+		_C4M5_BoatComing01Replica = [
+			"player/survivor/voice/replica/worldc4m4b18.wav",  //LOOK UP THERE! VIRGIL SEES US!
+			"player/survivor/voice/replica/worldc4m4b19.wav",  //THERE'S VIRGIL!
+			"player/survivor/voice/replica/worldc4m414.wav",  //He's back! Let's go!
+			"player/survivor/voice/replica/worldc4m415.wav"  //He came back, everyone to the boat!
+		],
+		C4FinaleStartReplica = [
+			"player/survivor/voice/replica/worldc4m412.wav",  //I knew Burger Tank wouldn't let us down.
+			"player/survivor/voice/replica/worldc4m413.wav",  //Burger tank to the rescue!
+			"player/survivor/voice/replica/worldc4m4b14.wav"  //The sign's lit!
+		],
+		_C4M5_FinaleStart01Replica = [
+			"player/survivor/voice/replica/worldc4m4b15.wav"  //
+		],
+		C4M5SafeRoomReplica = [
+			"player/survivor/voice/replica/worldc4m401.wav"  //Let's go, almost back to the boat.
+		],
+		_C4M5_Intro03Replica = [
+			"player/survivor/voice/replica/worldc4m411.wav",  //We can use the Burger Tank sign to signal him.
+			"player/survivor/voice/replica/worldc4m4b11.wav"  //If we fire up the Burger Tank sign, Virgil might see it.
+		],
+		_C4M5_Intro04Replica = [
+			"player/survivor/voice/replica/worldc4m4b12.wav"  //Let's do it.
+		],
+		PlayerRemarkc4m5_BurgerTankReplica = [
+			"player/survivor/voice/replica/worldc4m4b09.wav",  //Burger Tank! Oh, we made it!
+			"player/survivor/voice/replica/worldc4m4b10.wav",  //I have NEVER been so happy to see a Burger Tank! And believe me, I have been HAPPY to see some Burger Tanks!
+			"player/survivor/voice/replica/worldc4m4b13.wav"  //Fire up the sign!
+		],
+		C5M1_intro002Replica = [
+			"player/survivor/voice/replica/worldc5m1b01.wav"  //Thanks, Virgil. You stay safe, brother.
+		],
+		C5M1_intro004Replica = [
+			"player/survivor/voice/replica/worldc5m1b02.wav",  //We made it REAL damn far, people. I'm proud of you. Now let's just cross that last mile.
+			"player/survivor/voice/replica/worldc5m1b03.wav",  //We BEEN through hell getting here. Now we're at the last mile. Let's make this COUNT.
+			"player/survivor/voice/replica/worldc5m1b04.wav",  //All right people, let's get to that bridge.
+			"player/survivor/voice/replica/worldc5m1b05.wav"  //We're almost home free, people.
+		],
+		C5M1_intro008Replica = [
+			"player/survivor/voice/replica/world02.wav"  //Oh yeaah. Our goal is right next to the bridge, ON THE OTHER MOTHER F'IN SIDE OF THE RIVER!
+		],
+		C5M1Flyby01Replica = [
+			"player/survivor/voice/replica/worldc5m1b06.wav",  //Military's still active here!
+			"player/survivor/voice/replica/worldc5m1b07.wav",  //They're still flying jets!
+			"player/survivor/voice/replica/worldc5m1b09.wav"  //Alright, Military's still here!
+		],
+		C5M1Flyby03Replica = [
+			"player/survivor/voice/replica/worldc5m1b08.wav"  //It means they haven't abandoned New Orleans. C'mon, let's move!
+		],
+		C5M2_signcontagious01Replica = [
+			"player/survivor/voice/replica/worldsigns07.wav"  //It sure is.
+		],
+		C5M2AlarmNagReplica = [
+			"player/survivor/voice/replica/worldc5m2b12.wav",  //KEEP MOVIN'!
+			"player/survivor/voice/replica/worldc5m2b13.wav",  //JUST RUN!
+			"player/survivor/voice/replica/worldc5m2b14.wav",  //GET THE LEAD OUT, PEOPLE!
+			"player/survivor/voice/replica/worldc5m2b15.wav",  //WE GOTTA TURN OFF THAT ALARM!
+			"player/survivor/voice/replica/worldc5m2b16.wav"  //MOVE!
+		],
+		C5M2Freeway01Replica = [
+			"player/survivor/voice/replica/worldc5m2b03.wav"  //Allright, then, let's follow it!
+		],
+		PlayerRemarkc5m2busstationReplica = [
+			"player/survivor/voice/replica/worldc5m2b17.wav"  //Through the bus station!
+		],
+		PlayerRemarkc5m2parkReplica = [
+			"player/survivor/voice/replica/worldc5m2b01.wav"  //C'mon, let's head through the park!
+		],
+		C5M3AlarmFieldNagsReplica = [
+			"player/survivor/voice/replica/worldc5m3b21.wav",  //Everybody take it slow, now.
+			"player/survivor/voice/replica/worldc5m3b22.wav",  //Everybody take it slow, now.
+			"player/survivor/voice/replica/worldc5m3b23.wav",  //Move careful, watch your fire, and we'll be just fine.
+			"player/survivor/voice/replica/worldc5m3b24.wav"  //Move careful, watch your fire, and we'll be just fine.
+		],
+		C5M3Bodies01Replica = [
+			"player/survivor/voice/replica/worldc5m2b06.wav"  //[annoyed] How does bein' so right feel, Nick?
+		],
+		C5M3Bodies03Replica = [
+			"player/survivor/voice/replica/worldc5m2b05.wav"  //I don't know shit. We gonna keep movin'.
+		],
+		C5M3FirstInAlarmReplica = [
+			"player/survivor/voice/replica/worldc5m3b19.wav",  //Alarms everywhere, people. Watch yourselves!
+			"player/survivor/voice/replica/worldc5m3b20.wav"  //Alarms everywhere, people. Watch yourselves!
+		],
+		C5M3Freeway01Replica = [
+			"player/survivor/voice/replica/worldc5m3b03.wav"  //Bridge can't be too far now.
+		],
+		C5M3GraveNagsReplica = [
+			"player/survivor/voice/replica/blank.wav"  //
+		],
+		C5M3Jets2Replica = [
+			"player/survivor/voice/replica/worldc5m3b27.wav"  //MOTHERF- GODDAMN.
+		],
+		C5M3OnBridgeReplica = [
+			"player/survivor/voice/replica/worldc5m3b26.wav"  //We did it, people! We're on the bridge! We're almost outta this place.
+		],
+		C5M3SeeGraveyard02Replica = [
+			"player/survivor/voice/replica/worldc5m3b30.wav"  //Get your ass movin', Nick.
+		],
+		C5M3SeeGraveyard03Replica = [
+			"player/survivor/voice/replica/worldc5m3b31.wav"  //I heard that. Let's move
+		],
+		C5M3ShootCarReplica = [
+			"player/survivor/voice/replica/worldc5m3b28.wav"  //MOTHERF-
+		],
+		C5M3ShootCar2Replica = [
+			"player/survivor/voice/replica/reactionnegative04.wav",  //Man this is about to get all baghdad and shit..
+			"player/survivor/voice/replica/reactionnegative05.wav"  //Oh hell, this about to get bad.
+		],
+		C5M3ShootCar3Replica = [
+			"player/survivor/voice/replica/worldc5m3b25.wav"  //WOULD YOU STOP SHOOTIN' THE GODDAMN CARS!
+		],
+		C5M3ShootCar3EllisReplica = [
+			"player/survivor/voice/replica/world03.wav"  //Boy, you ain't got any sense in that head, do you?
+		],
+		C5M3Sniper01Replica = [
+			"player/survivor/voice/replica/worldc5m3b13.wav",  //Man, I hope not.
+			"player/survivor/voice/replica/worldc5m3b15.wav"  //Man, I hope not.
+		],
+		PlayerRemarkc5m3bodiesReplica = [
+			"player/survivor/voice/replica/worldc5m2b04.wav"  //These ain't zombies. Somebody's been shootin' people.
+		],
+		PlayerRemarkc5m3crashedheliReplica = [
+			"player/survivor/voice/replica/worldc5m3b08.wav"  //Zombies didn't bring down that chopper.
+		],
+		PlayerRemarkc5m3freewayReplica = [
+			"player/survivor/voice/replica/worldc5m3b01.wav",  //This freeway's gotta hook up with the bridge.
+			"player/survivor/voice/replica/worldc5m3b02.wav"  //This freeway's gotta hook up with the bridge.
+		],
+		PlayerRemarkc5m3insewerReplica = [
+			"player/survivor/voice/replica/blank.wav"  //Blank
+		],
+		PlayerRemarkc5m3manholeReplica = [
+			"player/survivor/voice/replica/worldc5m3b16.wav"  //Everybody in the sewer.
+		],
+		PlayerRemarkc5m3manhole2Replica = [
+			"player/survivor/voice/replica/worldc5m3b18.wav"  //Nick! Good news - we're going down into this sewer.
+		],
+		PlayerRemarkc5m3offhighwayReplica = [
+			"player/survivor/voice/replica/blank.wav"  //
+		],
+		PlayerRemarkc5m3seegraveyardReplica = [
+			"player/survivor/voice/replica/worldc5m3b29.wav"  //Allright. Shit. Nobody panic. We gonna head down and find another way up onto the bridge.
+		],
+		PlayerRemarkc5m3sewercommentReplica = [
+			"player/survivor/voice/replica/worldc5m3b17.wav"  //Man, Nick, you picked a bad day to wear your white suit.
+		],
+		PlayerRemarkc5m3sniperReplica = [
+			"player/survivor/voice/replica/worldc5m3b12.wav"  //I hope those hash marks mean zombies.
+		],
+		PlayerRemarkc5m3upladderReplica = [
+			"player/survivor/voice/replica/miscdirectional23.wav"  //Up that ladder!
+		],
+		PlayerRemarkc5m3upstepsReplica = [
+			"player/survivor/voice/replica/world12.wav"  //Up here.
+		],
+		PlayerRemarkc5m3warzoneReplica = [
+			"player/survivor/voice/replica/worldc5m3b09.wav"  //There was some kinda war goin on out here.
+		],
+		C5M4BombExtReplica = [
+			"player/survivor/voice/replica/worldc5m4b04.wav",  //Damn! That one was close!
+			"player/survivor/voice/replica/worldc5m4b05.wav"  //Shit. Damn, that one was close!
+		],
+		C5M4BombInt01Replica = [
+			"player/survivor/voice/replica/worldc5m4b03.wav"  //SHIT!
+		],
+		C5M4BombInt01AReplica = [
+			"player/survivor/voice/replica/worldc5m4b01.wav"  //Man, they're lighting up this whole place. We gotta get to the bridge.
+		],
+		C5M4BombInt03Replica = [
+			"player/survivor/voice/replica/worldc5m4b02.wav"  //STOP BOMBING US.
+		],
+		PlayerRemarkc5m4inminifinaleReplica = [
+			"player/survivor/voice/replica/blank.wav"  //
+		],
+		PlayerRemarkc5m4seebridgeReplica = [
+			"player/survivor/voice/replica/world01.wav",  //There's the bridge.
+			"player/survivor/voice/replica/worldc5m4b06.wav"  //There're the bridge!
+		],
+		EllisStoryInterruptReplica = [
+			"player/survivor/voice/replica/ellisinterrupt02.wav"  //We ain't got time for this, Ellis.
+		],
+		EllisStoryInterruptGenericReplica = [
+			"player/survivor/voice/replica/ellisinterrupt01.wav",  //Boy, you are WEARIN' me out.
+			"player/survivor/voice/replica/ellisinterrupt02.wav",  //We ain't got time for this, Ellis.
+			"player/survivor/voice/replica/worldc1m1b51.wav"  //You're tirin' me REAL fast, son.
+		],
+		EllisStoryInterruptC1M2Replica = [
+			"player/survivor/voice/replica/ellisinterrupt03.wav",  //Uh huh.
+			"player/survivor/voice/replica/ellisinterrupt04.wav",  //Uh huh.
+			"player/survivor/voice/replica/ellisinterrupt05.wav",  //Uh huh.
+			"player/survivor/voice/replica/ellisinterrupt06.wav"  //Uh huh.
+		],
+		EllisStoryInterruptC3M2Replica = [
+			"player/survivor/voice/replica/ellisinterrupt08.wav",  //I'm listenin'!
+			"player/survivor/voice/replica/ellisinterrupt09.wav",  //I'm listening. But this better be about pancakes.
+			"player/survivor/voice/replica/ellisinterrupt10.wav"  //All right, you MENTIONED pancakes, but it wasn't really ABOUT them, was it?
+		],
+		EllisStoryReac01Replica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo15.wav"  //Girl! What are you doing?
+		],
+		C5M5_Button2Replica = [
+			"player/survivor/voice/replica/worldc5m510.wav"  //Once it's down, lets go!
+		],
+		C5M5_GateDownReplica = [
+			"player/survivor/voice/replica/hurryup02.wav"  //Haul some ass y'all.
+		],
+		C5M5_SurvivorConv01Replica = [
+			"player/survivor/voice/replica/worldc5m5b11.wav"  //Hey! There's four of us on the bridge!
+		],
+		C5M5_SurvivorConv02Replica = [
+			"player/survivor/voice/replica/worldc5m5b12.wav"  //We are NOT infected.
+		],
+		C5M5_SurvivorConv03Replica = [
+			"player/survivor/voice/replica/worldc5m5b13.wav",  //"Encountered"? Boy, I am covered in zombie blood and puke and eyeballs and twenty other parts I don't even recognize. We are immune as SHIT.
+			"player/survivor/voice/replica/worldc5m5b17.wav"  //"Encountered"? Boy, I am covered in zombie blood, puke, eyeballs and twenty other parts I don't even recognize. We are immune as SHIT."
+		],
+		C5M5_SurvivorConv04Replica = [
+			"player/survivor/voice/replica/worldc5m504.wav",  //I hear ya man.  See ya soon.
+			"player/survivor/voice/replica/worldc5m506.wav",  //Wind up the chopper, because here we come.
+			"player/survivor/voice/replica/worldc5m5b14.wav",  //We're on our way.
+			"player/survivor/voice/replica/worldc3m420.wav"  //Roger that.
+		],
+		C5M5_SurvivorConv05Replica = [
+			"player/survivor/voice/replica/worldc5m505.wav",  //We gotcha. We used to that shit by now.
+			"player/survivor/voice/replica/worldc5m507.wav",  //Where the hell isn't filled with zombies?
+			"player/survivor/voice/replica/worldc5m5b14.wav",  //We're on our way.
+			"player/survivor/voice/replica/worldc3m420.wav"  //Roger that.
+		],
+		C5M5_LowerTheBridgeReplica = [
+			"player/survivor/voice/replica/worldc5m509.wav",  //
+			"player/survivor/voice/replica/worldc5m508.wav",  //
+			"player/survivor/voice/replica/worldc5m5b15.wav"  //
+		],
+		C5M5Button1Replica = [
+			"player/survivor/voice/replica/worldc5m5b10.wav"  //Hello!
+		],
+		C5M5Button1BuzzardRunReplica = [
+			"player/survivor/voice/replica/worldc5m501.wav",  //Hey, y'all! Stop!
+			"player/survivor/voice/replica/worldc5m502.wav",  //Stop, y'all!
+			"player/survivor/voice/replica/worldc5m503.wav"  //Hey! We're on the bridge!
+		],
+		C5M5HearSoldiersReplica = [
+			"player/survivor/voice/replica/worldc5m5b08.wav"  //Those sound like soldiers! Somebody talk to 'em.
+		],
+		C5M5HearSoldiersNagReplica = [
+			"player/survivor/voice/replica/worldc5m5b09.wav"  //Somebody pick up the radio.
+		],
+		C5M5RescueStartReplica = [
+			"player/survivor/voice/replica/worldc5m5b24.wav",  //THERE'S OUR CHOPPER! COME ON!
+			"player/survivor/voice/replica/worldc5m513.wav",  //Wind up the chopper, because he we come.
+			"player/survivor/voice/replica/worldc5m512.wav",  //Copter's working! Let's go!
+			"player/survivor/voice/replica/worldc5m511.wav"  //
+		],
+		C5M5RunToHeliReplica = [
+			"player/survivor/voice/replica/worldc5m5b25.wav"  //GET TO THE CHOPPER!
+		],
+		C5M5RunToHeliRareReplica = [
+			"player/survivor/voice/replica/worldc5m5b26.wav"  //We walked through a WORLD OF SHIT to get here! We are not gonna die now! We are NOT gonna DIE NOW!
+		],
+		C5M5SurvivorSpottedTankEscapeReplica = [
+			"player/survivor/voice/replica/worldc5m5b18.wav"  //You want to TEST me? I been through HELL to get to here! You are NOT the one to take me down!
+		],
+		C5M5BridgeDestroyed2Replica = [
+			"player/survivor/voice/replica/transitionclose11.wav"  //Allright. We allright y'all. We made it.
+		],
+		C5M5SafeRoomReplica = [
+			"player/survivor/voice/replica/worldc5m5b01.wav"  //Allrightallright. We gonna stroll across that bridge, and the army's gonna take care of us.
+		],
+		C5M5_saferoom002Replica = [
+			"player/survivor/voice/replica/worldc5m5b02.wav",  //Well, you free to make yourself a new life here in this room, Nick.
+			"player/survivor/voice/replica/worldc5m5b03.wav",  //Well, you free to make yourself a new life here in this room, Nick.
+			"player/survivor/voice/replica/worldc5m5b05.wav",  //Nah. We good.
+			"player/survivor/voice/replica/worldc5m5b06.wav",  //Let's go, Nick.
+			"player/survivor/voice/replica/worldc5m5b07.wav"  //Let's go, Nick.
+		],
+		C5M5_saferoom004Replica = [
+			"player/survivor/voice/replica/worldc5m5b04.wav"  //No.
+		],
+		C5M5_saferoom005Replica = [
+			"player/survivor/voice/replica/worldc5m5b02.wav",  //Well, you free to make yourself a new life here in this room, Nick.
+			"player/survivor/voice/replica/worldc5m5b03.wav"  //Well, you free to make yourself a new life here in this room, Nick.
+		],
+		PlayerReviveParishReplica = [
+			"player/survivor/voice/replica/worldc5m5b20.wav",  //Man, we are too close. I am NOT gonna let you die here.
+			"player/survivor/voice/replica/worldc5m5b21.wav",  //We are too close. I am NOT gonna let you die here.
+			"player/survivor/voice/replica/worldc5m5b22.wav"  //Man, we are too close. I am NOT gonna let you die here.
+		],
+		PlayerReviveParishProducerReplica = [
+			"player/survivor/voice/replica/worldc5m5b21.wav",  //We are too close. I am NOT gonna let you die here.
+			"player/survivor/voice/replica/worldc5m5b23.wav"  //Girl, I am NOT gonna let you die here.
+		],
+		PlayerKillTankConfirmationC5M5Replica = [
+			"player/survivor/voice/replica/world10.wav"  //Run!
+		],
+		C6M1_IntotheparkNoHealthReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_intopark01.wav",  //Don't run off without a health kit.
+			"player/survivor/voice/replica/dlc1_c6m1_intopark02.wav",  //Grab a health kit.
+			"player/survivor/voice/replica/dlc1_c6m1_intopark03.wav",  //Everyone grab a health kit.
+			"player/survivor/voice/replica/dlc1_c6m1_intopark04.wav"  //Health kits everyone!
+		],
+		C6M1Intro_01TeenGirl04Replica = [
+			"player/survivor/voice/replica/dlc1_c6m1_initialmeeting01.wav"  //Hey, hello there! You wanna let the bridge down for us?
+		],
+		C6M1Intro_04bReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_initialmeeting02.wav"  //Y'all can't climb down there and save us a trip?
+		],
+		C6M1Intro_08aReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_initialmeeting03.wav"  //Got it. We'll holla back at you when we get there.
+		],
+		C6M1Intro_13bReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_initialmeeting04.wav"  //You been killin' zombies for the better part of 2 days boy you can talk to a girl.
+		],
+		C6M1Intro_13eReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_initialmeeting05.wav"  //Okay, the boy says thank you.
+		],
+		C6M1Intro_20aReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_initialmeeting07.wav",  //(to group) Tell me this boy ain't for real.
+			"player/survivor/voice/replica/dlc1_c6m1_initialmeeting08.wav"  //(to group) Tell me this boy ain't for real.
+		],
+		C6M1Intro_20bReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_initialmeeting06.wav"  //No. Can you lower the bridge?
+		],
+		C6M1Intro_20dReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_initialmeeting09.wav"  //Shit, okay. Yes, we are vampires? All of us are vampires?
+		],
+		C6M1Intro_20gReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_initialmeeting10.wav"  //Dear lord, why'd I ever leave Savannah.
+		],
+		C6M1Intro_ConfirmObjectiveReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_initialmeeting03.wav"  //Got it. We'll holla back at you when we get there.
+		],
+		C6M1TakeSubMachineGun01Replica = [
+			"player/survivor/voice/replica/dlc1_c6m1_intostore04.wav"  //Nick, you gotta pull yourself together.
+		],
+		WorldC6M1_HistoricTourReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_historicsign01.wav",  //Historic Under-the-River Tour! This could be pretty interesting!
+			"player/survivor/voice/replica/dlc1_c6m1_historicsign02.wav",  //Let's all try this under-the-river tour to get across.
+			"player/survivor/voice/replica/dlc1_c6m1_historicsign03.wav"  //Sign says there's an under-the-river tour, that'll get us across.
+		],
+		WorldC6M1_PostWedding01aReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_weddingpostwitch01.wav",  //No Ellis.
+			"player/survivor/voice/replica/dlc1_c6m1_weddingpostwitch02.wav"  //Got to keep your head on killin' zombies, Ellis.
+		],
+		WorldC6M1_WeddingWarn03aReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_weddingwitch01.wav"  //Come on, Nick, not the time.
+		],
+		WorldC6M1_WeddingWarn04aReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_weddingwitch02.wav",  //Man, I hope we don't see a tank in a tuxedo.
+			"player/survivor/voice/replica/dlc1_c6m1_weddingwitch03.wav"  //Man, I hope we don't see a tank in a tuxedo.
+		],
+		C6M2_OpenGate1Replica = [
+			"player/survivor/voice/replica/dlc1_c6m1_alarmdooropen01.wav",  //I opened it.
+			"player/survivor/voice/replica/dlc1_c6m1_alarmdooropen02.wav",  //Open, let's go!
+			"player/survivor/voice/replica/dlc1_c6m2_bridge1raisehitit02.wav"  //I hit it!
+		],
+		C6M2_OpenGate2Replica = [
+			"player/survivor/voice/replica/dlc1_c6m2_bridge1raiseactive03.wav"  //That is some slow ass shit.
+		],
+		DLC1_C6M2_SafeRoomConvo01aReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo01.wav"  //Nick. Son. I think we got bigger problems.
+		],
+		DLC1_C6M2_SafeRoomConvo09aReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo03.wav"  //Oh, come on, you aren't afraid of a little dirt are you?
+		],
+		DLC1_C6M2_SafeRoomConvoGamblerStartReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo07.wav"  //Nick, tell me you ain't looking forward to this under-the-river tour.
+		],
+		DLC1_C6M2_SafeRoomConvo12bReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo05.wav"  //You damn right. Under a river.
+		],
+		DLC1_C6M2_SafeRoomConvo12dReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo06.wav"  //Uh, historical shit. Man, how am I supposed to know? I ain't been there yet.
+		],
+		DLC1_C6M2_SafeRoomConvo13bReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo08.wav"  //Man, Nick you got a find a way to cheer your ass up. We ain't got much to look forward to.
+		],
+		DLC1_C6M2_SafeRoomConvo13dReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo09.wav",  //There you go Nick. Stay positive.
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo10.wav"  //There you go Nick. Stay positive. Maybe you'll knock all his teeth out.
+		],
+		DLC1_C6M2_SafeRoomConvo14dReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo11.wav"  //Oh. In my heart, I'm there already.
+		],
+		DLC1_C6M2_SafeRoomConvo15bReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo12.wav"  //Man, I keep hoping we find an open burger tank.
+		],
+		DLC1_C6M2_SafeRoomConvo16aReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo13.wav"  //Ellis, you do know that eventually we're gonna have to leave that car behind. Right?
+		],
+		DLC1_C6M2_SafeRoomConvo16cReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo14.wav"  //Boy, the Military ain't exactly going to strap it to the bottom of a helicopter.
+		],
+		DLC1_C6M2_SafeRoomConvo18cReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo15.wav"  //Girl! What are you doing?
+		],
+		DLC1_C6M2_SafeRoomConvo18eReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo16.wav"  //Listen, if you let your guard down for one minute we all pay the price.
+		],
+		DLC1_C6M2_SafeRoomConvoStartReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo17.wav",  //Man, I just realized with all this runnin', climbin' and fightin', I ain't even had time to eat.
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo20.wav",  //All this runnin' we been doing? I bet I lost, what, five pounds.
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo02.wav",  //City of Rayford! They used to have a boiled peanut festival here. Good memories.
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo04.wav"  //I heard all about this under-the-river tour, supposed to be pretty damn good. Real educational.
+		],
+		DLC1_C6M2_SafeRoomConvo19bReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo18.wav"  //[happily] I bet I'm losin' some serious weight! [laughs proudly] Two more days, I'll be takin' my BELT in a notch.
+		],
+		DLC1_C6M2_SafeRoomConvo19dReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo19.wav"  //Man, I forgot about that.
+		],
+		WorldC6M2_InSewer101aReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_phase2inwater01.wav"  //Nick my man, face it. We are walkin' through shit.
+		],
+		WorldC6M2_InSewer102aReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_phase2inwater02.wav",  //Hey Nick, try and keep your head above water.
+			"player/survivor/voice/replica/dlc1_c6m2_phase2inwater03.wav",  //Don't trip, Nick. [laughs]
+			"player/survivor/voice/replica/dlc1_c6m2_phase2inwater04.wav",  //Gotta keep your head above water, man.[laughs]
+			"player/survivor/voice/replica/dlc1_c6m2_phase2inwater05.wav",  //Nick, if I give you a piggy back ride, will you shut up about the sewer?
+			"player/survivor/voice/replica/dlc1_c6m2_phase2inwater06.wav"  //Nick, if I give you a piggy back ride, will you shut up about the sewer?
+		],
+		WorldC6M2_InSewer202aReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_phase2inwater07.wav",  //Oh, Jesus! Ellis!
+			"player/survivor/voice/replica/dlc1_c6m2_phase2inwater08.wav"  //Oh, come on! Jesus! Ellis!
+		],
+		WorldC6M2_InSewerLadder101aReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_phase2inwater09.wav"  //Hey hey hey, hold on, boy. Let me get out the water!
+		],
+		WorldC6M2_OnTourWalk101cReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_historictour02.wav"  //Yeah. It's a shithole.
+		],
+		WorldC6M2_OnTourWalk103aReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_historictour05.wav",  //Aw, shut up, Nick
+			"player/survivor/voice/replica/dlc1_c6m2_historictour06.wav"  //Aw, shut up, Nick
+		],
+		WorldC6M2_Tattoo02bReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_tattoo02.wav",  //Shit, it's allll south of the border.
+			"player/survivor/voice/replica/dlc1_c6m2_tattoo03.wav",  //Coach's got a lot of real estate.
+			"player/survivor/voice/replica/dlc1_c6m2_tattoo04.wav"  //Hey, Coach keeps his secrets.
+		],
+		C6M3_BridgeDownReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_bridge2up01.wav",  //Bridge here, let's go!
+			"player/survivor/voice/replica/dlc1_c6m3_finalebridgerun03.wav",  //Bridge is down, let's go!
+			"player/survivor/voice/replica/dlc1_c6m3_finalebridgerun03.wav"  //Bridge is down, let's go!
+		],
+		C6M3_BridgeGettoCarReplica = [
+			"player/survivor/voice/replica/dlc1_c6m3_finalebridgerun01.wav",  //Get to the car!
+			"player/survivor/voice/replica/dlc1_c6m3_finalebridgerun02.wav"  //Let's get to the car!
+		],
+		C6M3_elevatorReplica = [
+			"player/survivor/voice/replica/dlc1_c6m3_elevator01.wav",  //No messin' around let's get these cans.
+			"player/survivor/voice/replica/dlc1_c6m3_elevator03.wav",  //We do this and get back to the car.
+			"player/survivor/voice/replica/dlc1_c6m3_elevator04.wav",  //Let's fill that generator and then get back to the car.
+			"player/survivor/voice/replica/dlc1_c6m3_elevator05.wav",  //Alright, look, no messin' around let's get these cans.
+			"player/survivor/voice/replica/dlc1_c6m3_elevator07.wav",  //We do this and get back to the car.
+			"player/survivor/voice/replica/dlc1_c6m3_elevator08.wav"  //Let's fill that generator and then get back to the car.
+		],
+		C6M3_elevatorZoeyReplica = [
+			"player/survivor/voice/replica/dlc1_c6m3_elevator02.wav",  //Ellis. Keep your mind on the cans not the girl.
+			"player/survivor/voice/replica/dlc1_c6m3_elevator06.wav"  //Ellis. Keep your mind on the cans not the girl.
+		],
+		C6M3_GivenItemBikerReplica = [
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1items01.wav",  //Thanks for sharing!
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1items02.wav",  //Thanks my man.
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1items03.wav",  //Man, you guys are all right.
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1items08.wav",  //Thanks my man.
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1items11.wav"  //We owe you one.
+		],
+		C6M3_GivenItemTeenGirlReplica = [
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1items04.wav",  //Hey, thanks for the supplies.
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1items05.wav",  //We owe you one.
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1items07.wav",  //Thanks for sharing!
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1items09.wav",  //You guys are all right.
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1items10.wav"  //Thanks for the supplies.
+		],
+		DLC1_C6M3_SafeRoomConvo02eReplica = [
+			"player/survivor/voice/replica/dlc1_c6m3_saferoomconvo01.wav"  //Sometimes you just gotta have faith, Nick.
+		],
+		DLC1_C6M3_SafeRoomConvoZoeyStartReplica = [
+			"player/survivor/voice/replica/dlc1_c6m3_saferoomconvo02.wav",  //Ellis. It's showtime, buddy.
+			"player/survivor/voice/replica/dlc1_c6m3_saferoomconvo03.wav",  //Ellis, you ready to meet that Zoey girl again?
+			"player/survivor/voice/replica/dlc1_c6m3_saferoomconvo04.wav",  //Ellis, you ready to meet that Zoey girl again?
+			"player/survivor/voice/replica/dlc1_c6m3_saferoomconvo05.wav"  //Hey, Ellis, you ready to meet that Zoey girl again? [laughs]
+		],
+		DLC1_C6M3_SafeRoomConvoFrancisStartReplica = [
+			"player/survivor/voice/replica/dlc1_c6m3_saferoomconvo06.wav"  //I don't trust that biker. He's probably long gone by now.
+		],
+		DLC1_C6M3_SafeRoomConvo08bReplica = [
+			"player/survivor/voice/replica/dlc1_c6m3_saferoomconvo07.wav"  //Minute we left, bet ya he stole the Jimmy Gibbs Jr.
+		],
+		IncapBounceReplica = [
+			"player/survivor/voice/replica/blank.wav"  //
+		],
+		c6m3_outroReplica = [
+			"player/survivor/voice/replica/dlc1_c6m3_finalecinematic01.wav",  //Let's go!
+			"player/survivor/voice/replica/dlc1_c6m3_finalecinematic02.wav",  //N'awlins baby, here we come!
+			"player/survivor/voice/replica/dlc1_c6m3_finalecinematic03.wav"  //Coach's goin for a ride!
+		],
+		SurvivorSpotFirstWeaponsReplica = [
+			"player/survivor/voice/replica/worldc1m1b22.wav",  //If everyone's good with it, we should stick together.
+			"player/survivor/voice/replica/worldc1m1b23.wav",  //We better grab a weapon. Might need to defend ourselves.
+			"player/survivor/voice/replica/worldc1m1b24.wav",  //I'm not a violent man. But I ain't stupid neither. Let's grab some weapons.
+			"player/survivor/voice/replica/worldc1m1b25.wav",  //Arm up. I don't have a good feeling about this.
+			"player/survivor/voice/replica/worldc1m1b26.wav",  //Grab whatever you can find to hit something with.
+			"player/survivor/voice/replica/worldc1m1b27.wav"  //I don't like the sounds comin' from downstairs.
+		],
+		SurvivorSpottedAdrenalineReplica = [
+			"player/survivor/voice/replica/adrenaline01.wav"  //Adrenaline shot here!
+		],
+		SurvivorSpottedAmmoReplica = [
+			"player/survivor/voice/replica/spotammo01.wav",  //Ammo here!
+			"player/survivor/voice/replica/spotammo02.wav",  //Ammo here!
+			"player/survivor/voice/replica/spotammo03.wav",  //Ammo up here!
+			"player/survivor/voice/replica/spotammo04.wav"  //Hey, ammo here!
+		],
+		SurvivorSpottedAmmo2Replica = [
+			"player/survivor/voice/replica/spotammo01.wav",  //Ammo here!
+			"player/survivor/voice/replica/spotammo02.wav"  //Ammo here!
+		],
+		SurvivorSpottedDefibrillatorReplica = [
+			"player/survivor/voice/replica/defibrillator01.wav",  //Chest paddles here.
+			"player/survivor/voice/replica/defibrillator02.wav"  //Defib unit here.
+		],
+		SurvivorSpottedGamblerCloseReplica = [
+			"player/survivor/voice/replica/namenick02.wav",  //Nick.
+			"player/survivor/voice/replica/namenick03.wav",  //Nicolas.
+			"player/survivor/voice/replica/namenick06.wav"  //Niiick.
+		],
+		SurvivorSpottedGamblerClose2C1Replica = [
+			"player/survivor/voice/replica/namegamblerc104.wav",  //Hey suit.
+			"player/survivor/voice/replica/namegamblerc105.wav",  //Hey suit.
+			"player/survivor/voice/replica/namegamblerc106.wav",  //Hey suit.
+			"player/survivor/voice/replica/namegamblerc107.wav",  //Sir.
+			"player/survivor/voice/replica/namegamblerc108.wav"  //Sir.
+		],
+		SurvivorSpottedGamblerFarReplica = [
+			"player/survivor/voice/replica/namenick01.wav",  //Nick!
+			"player/survivor/voice/replica/namenick04.wav",  //Nicky.
+			"player/survivor/voice/replica/namenick07.wav",  //Nick!
+			"player/survivor/voice/replica/namenick09.wav",  //NI-colas!
+			"player/survivor/voice/replica/namenick10.wav",  //NI-colas!
+			"player/survivor/voice/replica/namenick11.wav"  //NI-colas!
+		],
+		SurvivorSpottedGamblerFarC1Replica = [
+			"player/survivor/voice/replica/namegamblerc101.wav",  //Hey suit.
+			"player/survivor/voice/replica/namegamblerc102.wav",  //Sir.
+			"player/survivor/voice/replica/namegamblerc103.wav"  //Sir.
+		],
+		SurvivorSpottedGrenadeReplica = [
+			"player/survivor/voice/replica/spotgrenades01.wav",  //Got a pipe bomb here.
+			"player/survivor/voice/replica/spotgrenades02.wav",  //Pipe bomb!
+			"player/survivor/voice/replica/spotgrenades06.wav",  //Pipe bombs!
+			"player/survivor/voice/replica/spotgrenades10.wav"  //Pipe bombs here!
+		],
+		SurvivorSpottedGrenadeLauncherReplica = [
+			"player/survivor/voice/replica/spotgrenadelauncher01.wav",  //Grenade launcher.
+			"player/survivor/voice/replica/spotgrenadelauncher02.wav",  //Goddamn grenade launcher.
+			"player/survivor/voice/replica/spotgrenadelauncher03.wav"  //Grenade launcher up here.
+		],
+		SurvivorSpottedHealthReplica = [
+			"player/survivor/voice/replica/spotfirstaid01.wav",  //First Aid Kit here!
+			"player/survivor/voice/replica/spotfirstaid02.wav",  //First Aid kit here!
+			"player/survivor/voice/replica/spotfirstaid03.wav"  //First Aid here!
+		],
+		SurvivorSpottedMechanicCloseReplica = [
+			"player/survivor/voice/replica/nameellis08.wav",  //ellis
+			"player/survivor/voice/replica/nameellis09.wav",  //ellis
+			"player/survivor/voice/replica/nameellis10.wav",  //Youngin.
+			"player/survivor/voice/replica/nameellis11.wav",  //Boy.
+			"player/survivor/voice/replica/nameellis12.wav"  //Youngin.
+		],
+		SurvivorSpottedMechanicClose2C1Replica = [
+			"player/survivor/voice/replica/nameellis10.wav"  //Youngin.
+		],
+		SurvivorSpottedMechanicFarReplica = [
+			"player/survivor/voice/replica/nameellis02.wav",  //Ellis!
+			"player/survivor/voice/replica/nameellis03.wav",  //Ellis.
+			"player/survivor/voice/replica/nameellis04.wav",  //Ellis!
+			"player/survivor/voice/replica/nameellis05.wav",  //Ellis.
+			"player/survivor/voice/replica/nameellis06.wav",  //ELLIS!
+			"player/survivor/voice/replica/nameellis07.wav"  //Boyyy!
+		],
+		SurvivorSpottedMechanicFarC1Replica = [
+			"player/survivor/voice/replica/nameellis07.wav",  //Boyyy!
+			"player/survivor/voice/replica/nameellis11.wav",  //Boy.
+			"player/survivor/voice/replica/nameellis12.wav"  //Youngin.
+		],
+		SurvivorSpottedMolotovReplica = [
+			"player/survivor/voice/replica/spotgrenades04.wav",  //Molotov's over here.
+			"player/survivor/voice/replica/spotgrenades07.wav",  //Molotovs!
+			"player/survivor/voice/replica/spotgrenades11.wav"  //Molotovs here!
+		],
+		SurvivorSpottedPillsReplica = [
+			"player/survivor/voice/replica/spotpills01.wav",  //Pills here!
+			"player/survivor/voice/replica/spotpills02.wav"  //We got pills!
+		],
+		SurvivorSpottedPillsAutoHasPillsReplica = [
+			"player/survivor/voice/replica/spotpills03.wav"  //Anyone need some pills?
+		],
+		SurvivorSpottedProducerCloseReplica = [
+			"player/survivor/voice/replica/namerochelle01.wav",  //Ro!
+			"player/survivor/voice/replica/namerochelle02.wav",  //Rochelle.
+			"player/survivor/voice/replica/namerochelle04.wav",  //Girl.
+			"player/survivor/voice/replica/namerochelle10.wav",  //rochelle
+			"player/survivor/voice/replica/namerochelle11.wav"  //ro
+		],
+		SurvivorSpottedProducerClose2C1Replica = [
+			"player/survivor/voice/replica/nameproducerc101.wav",  //Girl.
+			"player/survivor/voice/replica/nameproducerc103.wav",  //Sweety.
+			"player/survivor/voice/replica/nameproducerc104.wav",  //Excuse me, sweety.
+			"player/survivor/voice/replica/nameproducerc107.wav",  //Uh, girl.
+			"player/survivor/voice/replica/nameproducerc108.wav",  //Sweetheart
+			"player/survivor/voice/replica/nameproducerc109.wav",  //Excuse me, sweety.
+			"player/survivor/voice/replica/nameproducerc110.wav",  //Miss.
+			"player/survivor/voice/replica/nameproducerc111.wav"  //Sweety.
+		],
+		SurvivorSpottedProducerFarReplica = [
+			"player/survivor/voice/replica/namerochelle05.wav",  //Girl.
+			"player/survivor/voice/replica/namerochelle07.wav",  //Ro!
+			"player/survivor/voice/replica/namerochelle08.wav"  //ROCHELLE!
+		],
+		SurvivorSpottedProducerFarC1Replica = [
+			"player/survivor/voice/replica/nameproducerc102.wav",  //Girl.
+			"player/survivor/voice/replica/nameproducerc105.wav",  //Girl.
+			"player/survivor/voice/replica/nameproducerc106.wav"  //Hey, girl.
+		],
+		SurvivorSpottedUpPack_ExplosiveReplica = [
+			"player/survivor/voice/replica/explosiveammo01.wav",  //Explosive rounds here!
+			"player/survivor/voice/replica/explosiveammo02.wav"  //Frag rounds here!
+		],
+		SurvivorSpottedUpPack_IncendiaryReplica = [
+			"player/survivor/voice/replica/incendammo01.wav"  //Fire bullets here!
+		],
+		SurvivorSpottedVomitJarReplica = [
+			"player/survivor/voice/replica/boomerjar01.wav",  //Boomer bile here!
+			"player/survivor/voice/replica/boomerjar04.wav"  //Boomer bile here!
+		],
+		SurvivorSpottedVomitJarAutoC1Replica = [
+			"player/survivor/voice/replica/boomerjar05.wav"  //Bottle of... ugh... puke here.
+		],
+		SurvivorSpottedWorldCloseReplica = [
+			"player/survivor/voice/replica/lookhere01.wav",  //Look at this.
+			"player/survivor/voice/replica/lookhere02.wav",  //What do ya'all make of this?
+			"player/survivor/voice/replica/lookhere03.wav",  //Check this shit out.
+			"player/survivor/voice/replica/lookhere04.wav"  //Look at this.
+		],
+		SurvivorSpottedArmoredReplica = [
+			"player/survivor/voice/replica/seearmored03.wav",  //Shoot that zombie in the back!
+			"player/survivor/voice/replica/seearmored04.wav"  //Shoot that zombie in the back!
+		],
+		SurvivorSpottedArmoredC5M1Replica = [
+			"player/survivor/voice/replica/seearmored01.wav",  //That zombie's got armor. I want armor!
+			"player/survivor/voice/replica/seearmored02.wav",  //Well I'll be damned, that zombie's wearin' armor!
+			"player/survivor/voice/replica/seearmored05.wav"  //Those zombies are goddamn bullet proof!
+		],
+		SurvivorSpottedBoomerReplica = [
+			"player/survivor/voice/replica/warnboomer01.wav",  //BOOMER!
+			"player/survivor/voice/replica/warnboomer02.wav",  //BOOMER!
+			"player/survivor/voice/replica/warnboomer03.wav",  //BOOMER!
+			"player/survivor/voice/replica/warnboomer04.wav"  //BOOMER!
+		],
+		SurvivorSpottedBoomerC1M1Replica = [
+			"player/survivor/voice/replica/warnboomerc101.wav",  //Fat guy!
+			"player/survivor/voice/replica/warnboomerc102.wav",  //Roly poly!
+			"player/survivor/voice/replica/warnboomerc103.wav",  //Fat thing!
+			"player/survivor/voice/replica/worldc1m1b126.wav"  //It's that big one that pukes on ya!
+		],
+		SurvivorSpottedBoomerC1M2Replica = [
+			"player/survivor/voice/replica/worldc1m1b127.wav"  //That's what they call a boomer...
+		],
+		SurvivorSpottedCedaReplica = [
+			"player/survivor/voice/replica/seehazmat01.wav",  //What are those guys doing in those suits?
+			"player/survivor/voice/replica/seehazmat02.wav"  //What's with those suits?
+		],
+		SurvivorSpottedChargerReplica = [
+			"player/survivor/voice/replica/warncharger01.wav",  //CHARGER!
+			"player/survivor/voice/replica/warncharger02.wav",  //CHARGER!
+			"player/survivor/voice/replica/warncharger03.wav"  //CHARGER!
+		],
+		SurvivorSpottedChargerC1M1Replica = [
+			"player/survivor/voice/replica/warnchargerc101.wav",  //Big arm!
+			"player/survivor/voice/replica/warnchargerc102.wav",  //One arm!
+			"player/survivor/voice/replica/worldc1m1b130.wav"  //It's that one that runs at you.
+		],
+		SurvivorSpottedChargerC1M2Replica = [
+			"player/survivor/voice/replica/worldc1m1b131.wav"  //They call them Chargers.
+		],
+		SurvivorSpottedClownReplica = [
+			"player/survivor/voice/replica/seeclowns05.wav",  //Shoot the clown!
+			"player/survivor/voice/replica/seeclowns06.wav",  //That clown's attracting zombies!
+			"player/survivor/voice/replica/seeclowns07.wav"  //Shoot the clown!
+		],
+		SurvivorSpottedFallenReplica = [
+			"player/survivor/voice/replica/dlc1_fallensurvior03.wav",  //Get that zombie!
+			"player/survivor/voice/replica/dlc1_fallensurvior04.wav",  //Kill that zombie, it's got something.
+			"player/survivor/voice/replica/dlc1_fallensurvior05.wav",  //Get that zombie!
+			"player/survivor/voice/replica/dlc1_fallensurvior06.wav"  //Take that zombie out!
+		],
+		SurvivorSpottedFirstClownReplica = [
+			"player/survivor/voice/replica/seeclowns01.wav",  //CLOWNS!?!??
+			"player/survivor/voice/replica/seeclowns02.wav",  //CLOWNS!? Give me a break.
+			"player/survivor/voice/replica/seeclowns03.wav",  //CLOWNS!?!??
+			"player/survivor/voice/replica/seeclowns04.wav"  //Clowns?
+		],
+		SurvivorSpottedHunterReplica = [
+			"player/survivor/voice/replica/warnhunter01.wav",  //We gotta HUNTER!
+			"player/survivor/voice/replica/warnhunter02.wav",  //HUNTER!
+			"player/survivor/voice/replica/warnhunter03.wav",  //HUNTER!
+			"player/survivor/voice/replica/warnhunter04.wav"  //HUNTER!
+		],
+		SurvivorSpottedHunterC1M1Replica = [
+			"player/survivor/voice/replica/warnhunterc101.wav",  //We got a Jumper!
+			"player/survivor/voice/replica/warnhunterc102.wav",  //Crazy legs!
+			"player/survivor/voice/replica/worldc1m1b128.wav"  //It's that mean one that pounces on ya.
+		],
+		SurvivorSpottedHunterC1M2Replica = [
+			"player/survivor/voice/replica/worldc1m1b129.wav"  //Think they call 'em Hunters.
+		],
+		SurvivorSpottedInfectedReplica = [
+			"player/survivor/voice/replica/incoming01.wav",  //Here they come!
+			"player/survivor/voice/replica/incoming02.wav",  //Here they come!
+			"player/survivor/voice/replica/incoming03.wav",  //Ah shit, this ain't gonna be good.
+			"player/survivor/voice/replica/incoming04.wav",  //Shit, Get ready!
+			"player/survivor/voice/replica/incoming05.wav",  //Allright now, they comin'.
+			"player/survivor/voice/replica/incoming06.wav",  //It's on.
+			"player/survivor/voice/replica/incoming07.wav",  //Game on, baby!
+			"player/survivor/voice/replica/incoming08.wav",  //INCOMING!
+			"player/survivor/voice/replica/incoming09.wav",  //Alright, let's put on our game faces, they're comin!
+			"player/survivor/voice/replica/incoming10.wav"  //Y'all stay close, it's on!
+		],
+		SurvivorSpottedJimmyReplica = [
+			"player/survivor/voice/replica/worldc1m3b21.wav",  //Heyyy! Jimmy Gibbs!
+			"player/survivor/voice/replica/worldc1m4b10.wav",  //Forgive us Jimmy, but we need your car.
+			"player/survivor/voice/replica/worldc1m4b37.wav"  //Sorry about this, Mr. Gibbs.
+		],
+		SurvivorSpottedJockeyReplica = [
+			"player/survivor/voice/replica/warnjockey01.wav",  //JOCKEY!
+			"player/survivor/voice/replica/warnjockey02.wav",  //JOCKEY!
+			"player/survivor/voice/replica/warnjockey03.wav"  //JOCKEY!
+		],
+		SurvivorSpottedJockeyC1M1Replica = [
+			"player/survivor/voice/replica/warnjockeyc101.wav",  //Little guy!
+			"player/survivor/voice/replica/warnjockeyc102.wav",  //Little creep!
+			"player/survivor/voice/replica/warnjockeyc103.wav"  //Skittish one.
+		],
+		SurvivorSpottedJockeyC1M2Replica = [
+			"player/survivor/voice/replica/worldc1m1b135.wav"  //I think they're called Jockeys.
+		],
+		SurvivorSpottedMudmenReplica = [
+			"player/survivor/voice/replica/seemudmen02.wav"  //Shoot the mudmen!
+		],
+		SurvivorSpottedMudmenC3M2Replica = [
+			"player/survivor/voice/replica/seemudmen01.wav"  //Mudmen!
+		],
+		SurvivorSpottedSmokerReplica = [
+			"player/survivor/voice/replica/warnsmoker01.wav",  //SMOKER!
+			"player/survivor/voice/replica/warnsmoker02.wav",  //SMOKER!
+			"player/survivor/voice/replica/warnsmoker03.wav"  //SMOKER!
+		],
+		SurvivorSpottedSmokerC1Replica = [
+			"player/survivor/voice/replica/warnsmokerc101.wav",  //Smokin' one.
+			"player/survivor/voice/replica/warnsmokerc102.wav"  //Tonguer!
+		],
+		SurvivorSpottedSpitterReplica = [
+			"player/survivor/voice/replica/warnspitter01.wav",  //SPITTER!
+			"player/survivor/voice/replica/warnspitter02.wav",  //SPITTER!
+			"player/survivor/voice/replica/warnspitter03.wav"  //SPITTER!
+		],
+		SurvivorSpottedSpitterC1M1Replica = [
+			"player/survivor/voice/replica/warnspitterc101.wav",  //Crazy woman!
+			"player/survivor/voice/replica/warnspitterc102.wav",  //Neck!
+			"player/survivor/voice/replica/warnspitterc103.wav",  //Spitting thing!
+			"player/survivor/voice/replica/worldc1m1b132.wav"  //It's that spittin' zombie.
+		],
+		SurvivorSpottedSpitterC1M2Replica = [
+			"player/survivor/voice/replica/worldc1m1b133.wav"  //They've been calling them things Spitters.
+		],
+		SurvivorSpottedTankReplica = [
+			"player/survivor/voice/replica/heardhulk01.wav",  //Oh SHIT! TANK!
+			"player/survivor/voice/replica/heardhulk02.wav",  //TANK!
+			"player/survivor/voice/replica/heardhulk03.wav",  //I'm gonna beat that tank's ass.
+			"player/survivor/voice/replica/heardhulk04.wav",  //We all gotta shoot the tank, ya hear me?
+			"player/survivor/voice/replica/warntank01.wav",  //TANK!
+			"player/survivor/voice/replica/warntank02.wav",  //TANK!
+			"player/survivor/voice/replica/warntank03.wav"  //TANK!
+		],
+		SurvivorSpottedTankC1Replica = [
+			"player/survivor/voice/replica/warntankc101.wav",  //Some kind of super ass zombie.
+			"player/survivor/voice/replica/warntankc102.wav",  //Gigantic thing!
+			"player/survivor/voice/replica/warntankc103.wav"  //HOLY SHIT WHAT IS THAT?!?!
+		],
+		L4D1SpottedTankReplica = [
+			"player/survivor/voice/replica/dlc1_l4d1tank01.wav",  //Lead 'em back to the bridge!
+			"player/survivor/voice/replica/dlc1_l4d1tank02.wav",  //Lead the tanks back to the bridge!
+			"player/survivor/voice/replica/dlc1_l4d1tank03.wav",  //Two tanks!
+			"player/survivor/voice/replica/dlc1_l4d1tank04.wav",  //Shit! Two tanks!
+			"player/survivor/voice/replica/dlc1_l4d1tank05.wav"  //Shit! Two tanks!
+		],
+		SurvivorSpottedWitchReplica = [
+			"player/survivor/voice/replica/warnwitch01.wav",  //Witch!
+			"player/survivor/voice/replica/warnwitch02.wav",  //We gotta witch!
+			"player/survivor/voice/replica/warnwitch03.wav",  //Witch!
+			"player/survivor/voice/replica/warnwitch04.wav",  //I see that Bitch!
+			"player/survivor/voice/replica/warnwitch05.wav",  //Bitch!
+			"player/survivor/voice/replica/warnwitch06.wav"  //Witch.
+		],
+		SurvivorSpottedWitchC1M2Replica = [
+			"player/survivor/voice/replica/warnwitch04.wav",  //I see that Bitch!
+			"player/survivor/voice/replica/warnwitch05.wav"  //Bitch!
+		],
+		PlayerAlertGiveItemReplica = [
+			"player/survivor/voice/replica/alertgiveitem01.wav",  //Take it. Hell, I don't need it.
+			"player/survivor/voice/replica/alertgiveitem02.wav",  //You make sure you use this now.
+			"player/survivor/voice/replica/alertgiveitem03.wav",  //Ain't no shame in gettin' some help.
+			"player/survivor/voice/replica/alertgiveitem04.wav",  //Take this.
+			"player/survivor/voice/replica/alertgiveitem05.wav"  //Here ya go.
+		],
+		PlayerAlertGiveItemC1Replica = [
+			"player/survivor/voice/replica/alertgiveitemc101.wav",  //You can have this.
+			"player/survivor/voice/replica/alertgiveitemc102.wav",  //Excuse me, here ya go.
+			"player/survivor/voice/replica/alertgiveitemc103.wav"  //Hey, you can have this.
+		],
+		PlayerAlertGiveItemCombatReplica = [
+			"player/survivor/voice/replica/alertgiveitemcombat01.wav",  //Take it.
+			"player/survivor/voice/replica/alertgiveitemcombat02.wav",  //Here.
+			"player/survivor/voice/replica/alertgiveitemcombat03.wav",  //Have it.
+			"player/survivor/voice/replica/alertgiveitemcombat04.wav",  //Take it.
+			"player/survivor/voice/replica/alertgiveitemcombat05.wav"  //Here.
+		],
+		PlayerFriendlyFireReplica = [
+			"player/survivor/voice/replica/friendlyfire03.wav",  //Where in the hell ya think you're shootin?
+			"player/survivor/voice/replica/friendlyfire04.wav",  //Watch where you're shooting!
+			"player/survivor/voice/replica/friendlyfire05.wav",  //Cut that shit out!
+			"player/survivor/voice/replica/friendlyfire06.wav",  //I swear to god you can't shoot worth shit.
+			"player/survivor/voice/replica/friendlyfire07.wav",  //There's gonna be some biblical shit happening to you if you do that again.
+			"player/survivor/voice/replica/friendlyfire08.wav",  //Shoot me again, and you gonna be meetin' your maker right soon.
+			"player/survivor/voice/replica/friendlyfire09.wav",  //Let's not all start shootin' each other now.
+			"player/survivor/voice/replica/friendlyfire11.wav",  //Man, I swear to god you can't shoot worth shit.
+			"player/survivor/voice/replica/friendlyfire13.wav",  //Shootin' me? That's some crazy shit.
+			"player/survivor/voice/replica/friendlyfire14.wav",  //You do know you shootin' me right?
+			"player/survivor/voice/replica/friendlyfire16.wav",  //Are you outta your mind shootin' at me?
+			"player/survivor/voice/replica/friendlyfire17.wav",  //Will you cut that shit out?
+			"player/survivor/voice/replica/friendlyfire18.wav",  //Yo! Stop shooting me, all right?
+			"player/survivor/voice/replica/friendlyfire19.wav",  //Y'all gotta stop shootin me.
+			"player/survivor/voice/replica/friendlyfire20.wav",  //GODDAMNIT STOP SHOOTIN ME!
+			"player/survivor/voice/replica/friendlyfire21.wav",  //Ah hell no! Do not shoot me.
+			"player/survivor/voice/replica/friendlyfire22.wav",  //Come on now, seriously.
+			"player/survivor/voice/replica/friendlyfire23.wav",  //Stop shooting me.
+			"player/survivor/voice/replica/friendlyfire24.wav",  //Don't be shooting me.
+			"player/survivor/voice/replica/friendlyfire25.wav",  //You are shooting me!
+			"player/survivor/voice/replica/friendlyfire26.wav",  //That's some bullshit.
+			"player/survivor/voice/replica/friendlyfire27.wav",  //Do that again and I'll come back on you.
+			"player/survivor/voice/replica/friendlyfire28.wav",  //You shot me!
+			"player/survivor/voice/replica/friendlyfire29.wav"  //Man, you shot me?
+		],
+		PlayerFriendlyFireC1Replica = [
+			"player/survivor/voice/replica/friendlyfirec101.wav",  //Y'all need to focus!
+			"player/survivor/voice/replica/friendlyfirec102.wav",  //Listen, y'all, We need to pull together as a team.
+			"player/survivor/voice/replica/friendlyfirec103.wav",  //Now come on now, Let's put some effort into this.
+			"player/survivor/voice/replica/friendlyfirec104.wav",  //I'm trying to tell you, shooting each other is not helping each other.
+			"player/survivor/voice/replica/friendlyfirec106.wav",  //Y'all shootin' me.
+			"player/survivor/voice/replica/friendlyfirec107.wav",  //Let's not be shootin' each other people.
+			"player/survivor/voice/replica/friendlyfire15.wav"  //Look, try shootin' some damn zombies instead of me.
+		],
+		PlayerFriendlyFire2Replica = [
+			"player/survivor/voice/replica/teamkillaccident01.wav",  //Woah, that there is some screwed up shit.
+			"player/survivor/voice/replica/teamkillaccident02.wav",  //You gotta watch where you aimin' that thing.
+			"player/survivor/voice/replica/teamkillaccident03.wav",  //Man, are you wrong in the head shootin like that?
+			"player/survivor/voice/replica/teamkillaccident04.wav"  //What the hell are you on shootin' like that.
+		],
+		PlayerFriendlyFireFromGamblerReplica = [
+			"player/survivor/voice/replica/friendlyfirec1gambler01.wav",  //Nicolas, I thought you knew how to use a gun.
+			"player/survivor/voice/replica/friendlyfirec1gambler02.wav",  //Nick! You shot me!
+			"player/survivor/voice/replica/friendlyfirec1gambler03.wav",  //Hey Nick, that was my ass you shot.
+			"player/survivor/voice/replica/friendlyfirec1gambler04.wav"  //Quit shootin' me Nick.
+		],
+		PlayerFriendlyFireFromMechanicReplica = [
+			"player/survivor/voice/replica/friendlyfirec1mechanic01.wav",  //Ellis, settle down boy.  Ya shot me.
+			"player/survivor/voice/replica/friendlyfirec1mechanic02.wav",  //Ellis! I'll take that gun away from ya!
+			"player/survivor/voice/replica/friendlyfirec1mechanic03.wav",  //Ellis you are shooting me!
+			"player/survivor/voice/replica/friendlyfirec1mechanic04.wav",  //Ellis damnit, you shot me!
+			"player/survivor/voice/replica/friendlyfire01.wav",  //Ahhh hell no boy, don't you be shootin' me.
+			"player/survivor/voice/replica/friendlyfire10.wav",  //Youngin, stop that shit.
+			"player/survivor/voice/replica/friendlyfiremale01.wav"  //Boy, quit pointing that thing my way.
+		],
+		PlayerFriendlyFireFromMechanicC1Replica = [
+			"player/survivor/voice/replica/friendlyfire01.wav",  //Ahhh hell no boy, don't you be shootin' me.
+			"player/survivor/voice/replica/friendlyfire10.wav",  //Youngin, stop that shit.
+			"player/survivor/voice/replica/friendlyfiremale01.wav"  //Boy, quit pointing that thing my way.
+		],
+		PlayerFriendlyFireFromProducerReplica = [
+			"player/survivor/voice/replica/friendlyfirec1producer01.wav",  //Ro! Quit shootin' me.
+			"player/survivor/voice/replica/friendlyfirec1producer02.wav",  //Rochelle girl, you shot me.
+			"player/survivor/voice/replica/friendlyfirec1producer03.wav",  //Ro! What's gotten into you girl?
+			"player/survivor/voice/replica/friendlyfirec1producer04.wav",  //Ro! You know damn well better than that.
+			"player/survivor/voice/replica/friendlyfirefemale01.wav",  //Little sister, you gotta learn to shoot.
+			"player/survivor/voice/replica/friendlyfirefemale02.wav"  //Girl, you gotta learn to shoot.
+		],
+		PlayerFriendlyFireFromProducerC1Replica = [
+			"player/survivor/voice/replica/friendlyfirefemale01.wav",  //Little sister, you gotta learn to shoot.
+			"player/survivor/voice/replica/friendlyfirefemale02.wav"  //Girl, you gotta learn to shoot.
+		],
+		PlayerFriendlyFireNoBulletReplica = [
+			"player/survivor/voice/replica/friendlyfire05.wav",  //Cut that shit out!
+			"player/survivor/voice/replica/friendlyfire17.wav"  //Will you cut that shit out?
+		],
+		PlayerFriendlyFireNoBulletC1Replica = [
+			"player/survivor/voice/replica/friendlyfire02.wav",  //Excuse me? EXCUSE ME?!?!
+			"player/survivor/voice/replica/friendlyfirec103.wav",  //Now come on now, Let's put some effort into this.
+			"player/survivor/voice/replica/friendlyfirec105.wav",  //Work as a team people, work as a team.
+			"player/survivor/voice/replica/friendlyfirec108.wav",  //Come'on y'all - none of that.
+			"player/survivor/voice/replica/friendlyfirec109.wav",  //Come on now, seriously.
+			"player/survivor/voice/replica/friendlyfirec110.wav"  //STOP! I am getting pissed off!
+		],
+		PlayerFriendlyFireTankReplica = [
+			"player/survivor/voice/replica/friendlyfiretank01.wav",  //Don't shoot ME! Shoot the Tank!
+			"player/survivor/voice/replica/friendlyfiretank06.wav",  //Hey! Shoot the Tank!
+			"player/survivor/voice/replica/friendlyfiretank05.wav",  //Do I LOOK like a ten-foot-tall monster?
+			"player/survivor/voice/replica/friendlyfiretank07.wav"  //Aggghh! The TANK!
+		],
+		PlayerFriendlyFireTankC1Replica = [
+			"player/survivor/voice/replica/friendlyfiretank05.wav"  //Do I LOOK like a ten-foot-tall monster?
+		],
+		PlayerFriendlyFireTankGamblerReplica = [
+			"player/survivor/voice/replica/friendlyfiretank04.wav"  //Shoot the TANK, Nick!
+		],
+		PlayerFriendlyFireTankMechanicReplica = [
+			"player/survivor/voice/replica/friendlyfiretank02.wav"  //Not me, Ellis! Shoot the Tank!
+		],
+		PlayerFriendlyFireTankProducerReplica = [
+			"player/survivor/voice/replica/friendlyfiretank03.wav"  //Shoot the TANK, Ro!
+		],
+		PlayerToTheRescueReplica = [
+			"player/survivor/voice/replica/totherescue01.wav",  //Hang on, hang on, I'm comin!
+			"player/survivor/voice/replica/totherescue02.wav",  //Hang in there, I'm coming!
+			"player/survivor/voice/replica/totherescue03.wav",  //I hear ya, I'm comin'!
+			"player/survivor/voice/replica/totherescue04.wav",  //I comin', I comin'.
+			"player/survivor/voice/replica/totherescue05.wav",  //On my way! Right now!
+			"player/survivor/voice/replica/totherescue06.wav"  //Hang on, I'm comin'
+		],
+		PlayerToTheRescueRosReplica = [
+			"player/survivor/voice/replica/totherescue01.wav",  //Hang on, hang on, I'm comin!
+			"player/survivor/voice/replica/totherescue02.wav",  //Hang in there, I'm coming!
+			"player/survivor/voice/replica/totherescue03.wav",  //I hear ya, I'm comin'!
+			"player/survivor/voice/replica/totherescue04.wav",  //I comin', I comin'.
+			"player/survivor/voice/replica/totherescue05.wav",  //On my way! Right now!
+			"player/survivor/voice/replica/totherescue06.wav"  //Hang on, I'm comin'
+		],
+		SurvivorTauntResponseReplica = [
+			"player/survivor/voice/replica/taunt01.wav",  //Hell yeah!
+			"player/survivor/voice/replica/taunt02.wav",  //Goddamn right!
+			"player/survivor/voice/replica/taunt03.wav",  //Goddamn right!
+			"player/survivor/voice/replica/taunt04.wav",  //Aw riiiight.
+			"player/survivor/voice/replica/taunt05.wav",  //Oh hell yeah!
+			"player/survivor/voice/replica/taunt06.wav",  //Ooh. How ya like me now? Mmm.
+			"player/survivor/voice/replica/taunt07.wav",  //[Loud, evil laugh]
+			"player/survivor/voice/replica/taunt08.wav"  //[Loud, evil laugh]
+		],
+		C4M1IdleComment01Replica = [
+			"player/survivor/voice/replica/worldc4m1b18.wav",  //Keep your eyes open for landmarks. We gonna have to come back through here.
+			"player/survivor/voice/replica/worldc4m1b19.wav"  //Now, try to remember where the ammo dumps're at. We might need some on the way back.
+		],
+		C4M2IdleCommentCane01Replica = [
+			"player/survivor/voice/replica/worldc4m2b27.wav",  //KEEP MOVING! HEAD FOR THE SIGN!
+			"player/survivor/voice/replica/worldc4m2b28.wav"  //HEAD TOWARD THE SIGN!
+		],
+		PlayerChokeResponseReplica = [
+			"player/survivor/voice/replica/choke01.wav",  //[Choking]
+			"player/survivor/voice/replica/choke02.wav",  //[Choking]
+			"player/survivor/voice/replica/choke03.wav",  //[Choking]
+			"player/survivor/voice/replica/choke04.wav",  //[Choking - yells screaming for help]
+			"player/survivor/voice/replica/choke05.wav",  //[Choking - yells screaming for help]
+			"player/survivor/voice/replica/choke06.wav",  //[Choking]
+			"player/survivor/voice/replica/choke07.wav",  //This bitch is chokin' me! [Choking]
+			"player/survivor/voice/replica/choke08.wav",  //[Choking - yells screaming for help]
+			"player/survivor/voice/replica/choke09.wav",  //[Choking]
+			"player/survivor/voice/replica/choke10.wav",  //[Choking]
+			"player/survivor/voice/replica/choke11.wav",  //[Choking]
+			"player/survivor/voice/replica/choke12.wav",  //[Choking]
+			"player/survivor/voice/replica/choke13.wav"  //[Choking]
+		],
+		PlayerReloadingC502RunReplica = [
+			"player/survivor/voice/replica/world11.wav"  //Just run!
+		],
+		PlayerReloadingTankReplica = [
+			"player/survivor/voice/replica/battlecrytank01.wav",  //Shoot that big mother!
+			"player/survivor/voice/replica/battlecrytank02.wav",  //Keep pouring it on!
+			"player/survivor/voice/replica/battlecrytank03.wav",  //Shoot it! Shoot it!
+			"player/survivor/voice/replica/battlecrytank04.wav",  //Don't stop now, shoot it!
+			"player/survivor/voice/replica/battlecrytank05.wav",  //Hit it! Hit it!
+			"player/survivor/voice/replica/battlecrytank06.wav"  //Shoot it!
+		],
+		PlayerReloadingTankC1Replica = [
+			"player/survivor/voice/replica/heardtanklc101.wav",  //We are going to have to focus on that thing.
+			"player/survivor/voice/replica/heardtanklc102.wav",  //Ahhh nooooo.
+			"player/survivor/voice/replica/heardtanklc103.wav",  //That thing is too dang big.
+			"player/survivor/voice/replica/heardtanklc104.wav"  //Ohhh.. that ain't fair.
+		],
+		PlayerWitchChasingReplica = [
+			"player/survivor/voice/replica/witchchasing01.wav",  //The bitch is chasing me!
+			"player/survivor/voice/replica/witchchasing02.wav",  //Bitch on my ass!
+			"player/survivor/voice/replica/witchchasing03.wav",  //Run, run, witch coming through!
+			"player/survivor/voice/replica/witchchasing05.wav",  //Coming through! Witch on my ass!
+			"player/survivor/voice/replica/witchchasing06.wav"  //Get out of the way! Witch!!!!
+		],
+		PlayerWitchChasingC6M1Replica = [
+			"player/survivor/voice/replica/dlc1_c6m1_weddingwitchchasing01.wav",  //Bride's chasing me!
+			"player/survivor/voice/replica/dlc1_c6m1_weddingwitchchasing02.wav"  //Ugly brides chasing me! Brides chasing me!
+		],
+		PlayerWitchStartAttackReplica = [
+			"player/survivor/voice/replica/exclamation01.wav",  //Oh Shit!
+			"player/survivor/voice/replica/witchchasing07.wav",  //Aw shit. Witch! Witch! Witch!
+			"player/survivor/voice/replica/heardtanklc102.wav",  //Ahhh nooooo.
+			"player/survivor/voice/replica/witchchasing04.wav",  //Shoot the witch! Shoot the witch!
+			"player/survivor/voice/replica/battlecrytank03.wav",  //Shoot it! Shoot it!
+			"player/survivor/voice/replica/battlecrytank06.wav"  //Shoot it!
+		],
+		PlayerWitchStartAttackC6M1Replica = [
+			"player/survivor/voice/replica/dlc1_c6m1_weddingwitchchasing03.wav"  //Kill the bride! Kill the bride!
+		],
+		SurvivorCriticalHurtReplica = [
+			"player/survivor/voice/replica/hurtcritical01.wav",  //[Pain noise - loud major pain]
+			"player/survivor/voice/replica/hurtcritical02.wav",  //[Pain noise - loud major pain]
+			"player/survivor/voice/replica/hurtcritical03.wav",  //[Pain noise - loud major pain]
+			"player/survivor/voice/replica/hurtcritical04.wav",  //[Pain noise - loud major pain]
+			"player/survivor/voice/replica/hurtcritical05.wav",  //[Pain noise - loud major pain]
+			"player/survivor/voice/replica/hurtcritical06.wav",  //[Pain noise - loud major pain]
+			"player/survivor/voice/replica/hurtcritical07.wav",  //[Pain noise - loud major pain]
+			"player/survivor/voice/replica/hurtcritical08.wav"  //[Pain noise - loud major pain]
+		],
+		SurvivorIncapacitatedHurtReplica = [
+			"player/survivor/voice/replica/incapacitatedinjury01.wav",  //[Ahhhh - terrified yell]
+			"player/survivor/voice/replica/incapacitatedinjury02.wav",  //[Ahhhh - terrified yell]
+			"player/survivor/voice/replica/incapacitatedinjury03.wav",  //[Ahhhh - terrified yell]
+			"player/survivor/voice/replica/incapacitatedinjury04.wav",  //[Ahhhh - terrified yell]
+			"player/survivor/voice/replica/incapacitatedinjury05.wav",  //[Ahhhh - terrified yell]
+			"player/survivor/voice/replica/incapacitatedinjury06.wav",  //[Ahhhh - terrified yell]
+			"player/survivor/voice/replica/incapacitatedinjury07.wav",  //[Ahhhh - terrified yell]
+			"player/survivor/voice/replica/incapacitatedinjury08.wav",  //[Ahhhh - terrified yell]
+			"player/survivor/voice/replica/incapacitatedinjury09.wav",  //[Ahhhh - terrified yell]
+			"player/survivor/voice/replica/incapacitatedinjury10.wav",  //[Ahhhh - terrified yell]
+			"player/survivor/voice/replica/incapacitatedinjury11.wav"  //[Ahhhh - terrified yell]
+		],
+		SurvivorJockeyHurtMajorReplica = [
+			"player/survivor/voice/replica/grabbedbyjockey01.wav",  //Jockey on me!
+			"player/survivor/voice/replica/grabbedbyjockey02.wav",  //JOCKEY ON MY BACK!
+			"player/survivor/voice/replica/grabbedbyjockey03.wav",  //Oh lord no, that things on me!
+			"player/survivor/voice/replica/grabbedbyjockey04.wav",  //Agh, that things on me!
+			"player/survivor/voice/replica/grabbedbyjockey05.wav",  //Kill the thing on my back!
+			"player/survivor/voice/replica/grabbedbyjockey06.wav",  //Ellis is that you? What the hell!?!?
+			"player/survivor/voice/replica/grabbedbyjockey07.wav",  //OH SHIT GET THIS THING OFF ME!
+			"player/survivor/voice/replica/grabbedbyjockey08.wav",  //Gah, get this thing off my back!
+			"player/survivor/voice/replica/hurtcritical05.wav",  //[Pain noise - loud major pain]
+			"player/survivor/voice/replica/hurtmajor05.wav",  //[Pain noise - ugh]
+			"player/survivor/voice/replica/hurtmajor08.wav",  //[Pain noise - ugh]
+			"player/survivor/voice/replica/screamwhilepounced01.wav",  //GET IT OFF! [angry]
+			"player/survivor/voice/replica/screamwhilepounced04.wav"  //GET IT OFF!
+		],
+		SurvivorJockeyHurtMajorC1Replica = [
+			"player/survivor/voice/replica/grabbedbyjockey04.wav",  //Agh, that things on me!
+			"player/survivor/voice/replica/grabbedbyjockey05.wav",  //Kill the thing on my back!
+			"player/survivor/voice/replica/grabbedbyjockey08.wav"  //Gah, get this thing off my back!
+		],
+		SurvivorMajorHurtReplica = [
+			"player/survivor/voice/replica/hurtmajor01.wav",  //[Pain noise - huh]
+			"player/survivor/voice/replica/hurtmajor02.wav",  //[Pain noise - huh]
+			"player/survivor/voice/replica/hurtmajor03.wav",  //[Pain noise - ahh]
+			"player/survivor/voice/replica/hurtmajor04.wav",  //[Pain noise - oy]
+			"player/survivor/voice/replica/hurtmajor05.wav",  //[Pain noise - ugh]
+			"player/survivor/voice/replica/hurtmajor06.wav",  //[Pain noise - ugh]
+			"player/survivor/voice/replica/hurtmajor07.wav",  //[Pain noise - ugh]
+			"player/survivor/voice/replica/hurtmajor08.wav",  //[Pain noise - ugh]
+			"player/survivor/voice/replica/hurtmajor09.wav",  //[Pain noise - ugh]
+			"player/survivor/voice/replica/hurtmajor10.wav",  //[Pain noise - ugh]
+			"player/survivor/voice/replica/hurtmajor11.wav"  //[Pain noise - ugh]
+		],
+		SurvivorMinorHurtReplica = [
+			"player/survivor/voice/replica/hurtminor01.wav",  //[Pain noise - short minor pain]
+			"player/survivor/voice/replica/hurtminor02.wav",  //[Pain noise - short minor pain]
+			"player/survivor/voice/replica/hurtminor03.wav",  //[Pain noise - short minor pain]
+			"player/survivor/voice/replica/hurtminor04.wav",  //[Pain noise - short minor pain]
+			"player/survivor/voice/replica/hurtminor05.wav",  //[Pain noise - short minor pain]
+			"player/survivor/voice/replica/hurtminor06.wav",  //[Pain noise - short minor pain]
+			"player/survivor/voice/replica/hurtminor07.wav",  //[Pain noise - short minor pain]
+			"player/survivor/voice/replica/hurtminor08.wav",  //[Pain noise - short minor pain]
+			"player/survivor/voice/replica/hurtminor09.wav",  //[Pain noise - short minor pain]
+			"player/survivor/voice/replica/hurtminor10.wav",  //[Pain noise - short minor pain]
+			"player/survivor/voice/replica/hurtminor11.wav",  //[Pain noise - short minor pain]
+			"player/survivor/voice/replica/hurtminor12.wav",  //[Pain noise - short minor pain]
+			"player/survivor/voice/replica/hurtminor13.wav",  //[Pain noise - short minor pain]
+			"player/survivor/voice/replica/hurtminor14.wav",  //[Pain noise - short minor pain]
+			"player/survivor/voice/replica/hurtminor15.wav"  //[Pain noise - short minor pain]
+		],
+		SurvivorReloadingReplica = [
+			"player/survivor/voice/replica/reloading01.wav",  //Reloading!
+			"player/survivor/voice/replica/reloading02.wav",  //Reloading!
+			"player/survivor/voice/replica/reloading03.wav",  //Reloading!
+			"player/survivor/voice/replica/reloading04.wav",  //Reloading!
+			"player/survivor/voice/replica/reloading05.wav",  //Reloading!
+			"player/survivor/voice/replica/reloading06.wav",  //Reloading!
+			"player/survivor/voice/replica/reloading07.wav"  //Reloading!
+		],
+		SurvivorReloadingIntenseReplica = [
+			"player/survivor/voice/replica/reloadintense01.wav",  //Reloading!
+			"player/survivor/voice/replica/reloadintense02.wav",  //Re-god-damn-loading!
+			"player/survivor/voice/replica/reloadintense03.wav",  //Gotta reload!
+			"player/survivor/voice/replica/reloadintense04.wav",  //Reloading!
+			"player/survivor/voice/replica/reloadintense05.wav",  //Reloading!
+			"player/survivor/voice/replica/reloadintense06.wav",  //Reloading!
+			"player/survivor/voice/replica/reloadintense07.wav",  //Reloading!
+			"player/survivor/voice/replica/reloadintense08.wav"  //Reloading!
+		],
+		SurvivorReloadingC4M2Replica = [
+			"player/survivor/voice/replica/reloadingquiet01.wav",  //Reloading...
+			"player/survivor/voice/replica/reloadingquiet02.wav",  //Reloading...
+			"player/survivor/voice/replica/reloadingquiet03.wav",  //Reloading...
+			"player/survivor/voice/replica/reloadingquiet04.wav",  //Reloading...
+			"player/survivor/voice/replica/reloadingquiet05.wav",  //Reloading...
+			"player/survivor/voice/replica/reloadingquiet06.wav"  //Reloading...
+		],
+		PlayerHelpIncappedReplica = [
+			"player/survivor/voice/replica/callforrescue11.wav",  //Hey y'all, we're a team! Come get me!
+			"player/survivor/voice/replica/help01.wav",  //I need some help!
+			"player/survivor/voice/replica/help03.wav",  //Hey y'all I need some help.
+			"player/survivor/voice/replica/help04.wav",  //Could use some help over here.
+			"player/survivor/voice/replica/help06.wav"  //Help!
+		],
+		PlayerHelpIncappedBleedingReplica = [
+			"player/survivor/voice/replica/ledgehangstart01.wav",  //Ahh shit, need a hand.
+			"player/survivor/voice/replica/ledgehangstart02.wav",  //This is screwed up ya' all, I need some help.
+			"player/survivor/voice/replica/ledgehangmiddle02.wav",  //Man, shit's gettin' old, help!
+			"player/survivor/voice/replica/help05.wav",  //Get ya ass over here and help me!
+			"player/survivor/voice/replica/help02.wav"  //Help! [Screamed angrily]
+		],
+		PlayerHelpIncappedLethargicReplica = [
+			"player/survivor/voice/replica/ledgehangend02.wav",  //HEY! I CAN'T HOLD ON ANYMORE!
+			"player/survivor/voice/replica/ledgehangend03.wav"  //HELP ME UP ALREADY!
+		],
+		HelpResponseCoachReplica = [
+			"player/survivor/voice/replica/blank.wav"  //Blank
+		],
+		C2M1FallingReplica = [
+			"player/survivor/voice/replica/worldc2m129.wav",  //Whoaaa! Whoa!
+			"player/survivor/voice/replica/worldc2m130.wav",  //Whoa, whoa, whoa, Whoaaa!
+			"player/survivor/voice/replica/worldc2m2b33.wav"  //WOOOOAH!
+		],
+		C2M2CarouselOffReplica = [
+			"player/survivor/voice/replica/worldc2m2b36.wav"  //It's off.
+		],
+		C2M2CarouselOnReplica = [
+			"player/survivor/voice/replica/worldc2m2b35.wav",  //Gate's open!
+			"player/survivor/voice/replica/worldc2m2b35.wav"  //Gate's open!
+		],
+		C3M3BridgeButtonReplica = [
+			"player/survivor/voice/replica/worldc2m319.wav"  //Get ready to run, I'm hittin' it.
+		],
+		PlayerChainSawUsedReplica = [
+			"player/survivor/voice/replica/battlecry01.wav",  //EAT THAT SHIT!
+			"player/survivor/voice/replica/battlecry02.wav",  //How you like that?
+			"player/survivor/voice/replica/battlecry03.wav",  //HOW THAT FEEL?
+			"player/survivor/voice/replica/battlecry04.wav",  //YEAH!
+			"player/survivor/voice/replica/battlecry05.wav",  //CHEW ON THAT!
+			"player/survivor/voice/replica/battlecry06.wav",  //ALLRIGHT!
+			"player/survivor/voice/replica/battlecry07.wav",  //GYEAHHHHHH!
+			"player/survivor/voice/replica/battlecry08.wav",  //GRRRR YEAH!
+			"player/survivor/voice/replica/battlecry09.wav"  //WHOOO! YEAH BABY!
+		],
+		PlayerRemarkC1M1OverTableReplica = [
+			"player/survivor/voice/replica/followme01.wav",  //Come on y' all this way.
+			"player/survivor/voice/replica/followme02.wav",  //This way.
+			"player/survivor/voice/replica/world06.wav"  //Over here.
+		],
+		PlayerRemarkC1M1SearchRoomsReplica = [
+			"player/survivor/voice/replica/worldc1m1b84.wav"  //Search these rooms. Might be something we can use.
+		],
+		PlayerRemarkC1M1ThroughThisDoorReplica = [
+			"player/survivor/voice/replica/miscdirectional19.wav"  //Through this door!
+		],
+		PlayerRemarkC1M2SpotGunStoreReplica = [
+			"player/survivor/voice/replica/worldc1m2b22.wav",  //Gun store's just down these stairs!
+			"player/survivor/voice/replica/worldc1m2b21.wav"  //That gun store's just up ahead. Let's stock up and keep moving.
+		],
+		PlayerRemarkC1M3AlarmDoorsReplica = [
+			"player/survivor/voice/replica/worldc1m3b26.wav"  //Get ready, alarm is gonna sound.
+		],
+		PlayerRemarkC1M3CarefulWindowsReplica = [
+			"player/survivor/voice/replica/warncareful02.wav"  //Shit ain't right, be careful.
+		],
+		PlayerRemarkC1M3CEDAGoneReplica = [
+			"player/survivor/voice/replica/worldc1m3b36.wav"  //What the hell is CEDA doing?
+		],
+		PlayerRemarkC1M3DiscoPantsReplica = [
+			"player/survivor/voice/replica/worldc1m3b10.wav",  //Hmm. About time a store gives a man a haircut while he buys himself some pants.
+			"player/survivor/voice/replica/worldc1m3b17.wav"  //About time a store gives a man a haircut while he buys himself some pants.
+		],
+		PlayerRemarkC1M3DownHereReplica = [
+			"player/survivor/voice/replica/miscdirectional34.wav",  //We can get down here!
+			"player/survivor/voice/replica/world08.wav",  //Down here.
+			"player/survivor/voice/replica/worldc2m114.wav",  //Down here.
+			"player/survivor/voice/replica/worldc2m116.wav"  //Head down this way.
+		],
+		PlayerRemarkC1M3DownTheEscalatorReplica = [
+			"player/survivor/voice/replica/worldc1m3b08.wav",  //Down this escalator!
+			"player/survivor/voice/replica/worldc1m3b09.wav"  //Down that escalator!
+		],
+		PlayerRemarkC1M3FoodCourtNotOkayReplica = [
+			"player/survivor/voice/replica/worldc1m3b34.wav",  //...poor food court never stood a chance...
+			"player/survivor/voice/replica/worldc1m3b39.wav"  //...poor food court never stood a chance...
+		],
+		PlayerRemarkC1M3FoodCourtOkayReplica = [
+			"player/survivor/voice/replica/worldc1m3b11.wav",  //I hope the food court's okay.
+			"player/survivor/voice/replica/worldc1m3b12.wav",  //Please, lord, let the food court be okay.
+			"player/survivor/voice/replica/worldc1m3b13.wav",  //I could roll up a whole pizza right now, eat it sub-style.
+			"player/survivor/voice/replica/worldc1m3b14.wav",  //If I see a zombie running at me with a sample tray, I ain't shootin' it.
+			"player/survivor/voice/replica/worldc1m3b15.wav",  //I hope the food court's okay.
+			"player/survivor/voice/replica/worldc1m3b16.wav"  //Please, Lord, let the food court be okay.
+		],
+		PlayerRemarkC1M3OverHereReplica = [
+			"player/survivor/voice/replica/miscdirectional05.wav",  //Over this door!
+			"player/survivor/voice/replica/miscdirectional19.wav"  //Through this door!
+		],
+		PlayerRemarkC1M3SearchRoomsReplica = [
+			"player/survivor/voice/replica/worldc1m1b84.wav"  //Search these rooms. Might be something we can use.
+		],
+		PlayerRemarkC1M3ThisWayReplica = [
+			"player/survivor/voice/replica/worldc1m3b18.wav",  //Evac's this way!
+			"player/survivor/voice/replica/worldc1m3b19.wav",  //Evac's that way!
+			"player/survivor/voice/replica/worldc1m3b20.wav"  //Evac's up ahead!
+		],
+		PlayerRemarkC1M3ThroughHereReplica = [
+			"player/survivor/voice/replica/miscdirectional07.wav",  //Through here!
+			"player/survivor/voice/replica/miscdirectional17.wav",  //Let's go through here!
+			"player/survivor/voice/replica/miscdirectional22.wav",  //Through that gate!
+			"player/survivor/voice/replica/worldc1m1b139.wav"  //Let's go through here.
+		],
+		PlayerRemarkC1M3TurnOffAlarm1Replica = [
+			"player/survivor/voice/replica/worldc1m3b28.wav"  //We gotta turn off that alarm!
+		],
+		PlayerRemarkC1M3TurnOffAlarm2Replica = [
+			"player/survivor/voice/replica/yellrun03.wav",  //Don't stop running!
+			"player/survivor/voice/replica/worldc1m3b27.wav"  //Keep going!
+		],
+		PlayerRemarkC1M3TurnOffAlarm3Replica = [
+			"player/survivor/voice/replica/worldc1m3b30.wav"  //Someone turn off the alarm!
+		],
+		PlayerRemarkC1M3UpEscalator1Replica = [
+			"player/survivor/voice/replica/worldc1m3b06.wav",  //Up this escalator!
+			"player/survivor/voice/replica/worldc1m3b07.wav"  //Up that escalator!
+		],
+		PlayerRemarkc2m1_campsiteReplica = [
+			"player/survivor/voice/replica/worldc2m136.wav"  //We ain't the only ones that thought to take this short-cut
+		],
+		PlayerRemarkc2m1_checkroomsReplica = [
+			"player/survivor/voice/replica/worldc2m125.wav",  //Check the rooms.
+			"player/survivor/voice/replica/worldc2m1b10.wav"  //Check the rooms. Might be somethin' useful.
+		],
+		PlayerRemarkc2m1_cliffReplica = [
+			"player/survivor/voice/replica/worldc2m1b13.wav",  //Whoa... Take it slow down this hill. Looks like a pretty big drop.
+			"player/survivor/voice/replica/worldc2m1b14.wav",  //Watch yerself on this hill...
+			"player/survivor/voice/replica/worldc2m1b16.wav",  //Whoa... Take it slow down this hill. Looks like a pretty big drop.
+			"player/survivor/voice/replica/worldc2m1b17.wav"  //Watch yerself on this hill...
+		],
+		PlayerRemarkc2m1_downstairsReplica = [
+			"player/survivor/voice/replica/worldc2m114.wav"  //Down here.
+		],
+		PlayerRemarkc2m1_bridgeoutReplica = [
+			"player/survivor/voice/replica/worldc2m127.wav"  //Bridge is out.
+		],
+		PlayerRemarkc2m1_followriverReplica = [
+			"player/survivor/voice/replica/worldc2m128.wav"  //We gotta cross the valley.
+		],
+		PlayerRemarkc2m1_motelsignReplica = [
+			"player/survivor/voice/replica/worldc2m120.wav"  //Whispering oaks motel?  Sheeet....  I know where we are.
+		],
+		PlayerRemarkc2m1_offrampReplica = [
+			"player/survivor/voice/replica/worldc2m115.wav",  //Alright, take the off ramp.
+			"player/survivor/voice/replica/worldc2m1b06.wav"  //Down this off ramp!
+		],
+		PlayerRemarkc2m1_parkReplica = [
+			"player/survivor/voice/replica/worldc2m1b08.wav",  //There it is! Whisperin' Oaks! Man, I had some times there.
+			"player/survivor/voice/replica/worldc2m1b15.wav"  //There she is! Whispering Oaks!
+		],
+		PlayerRemarkc2m1_searchlightsReplica = [
+			"player/survivor/voice/replica/lookhere01.wav",  //Look at this.
+			"player/survivor/voice/replica/worldc2m1b05.wav",  //Look, searchlights! I bet that's Whisperin' Oaks.
+			"player/survivor/voice/replica/worldc2m1b04.wav",  //Look, searchlights! Might be survivors there, we should check it out.
+			"player/survivor/voice/replica/worldc2m105.wav",  //Look at those lights to the left! They're having a party!
+			"player/survivor/voice/replica/worldc2m106.wav",  //Well, might as well head to those light and join the party.
+			"player/survivor/voice/replica/worldc2m108.wav",  //Well now, if we're picking directions, I say head towards the spinning lights.
+			"player/survivor/voice/replica/worldc2m109.wav",  //If we're picking directions, I say head towards the spinning lights.
+			"player/survivor/voice/replica/worldc2m110.wav",  //I don't think zombies turned those lights on.
+			"player/survivor/voice/replica/worldc2m111.wav",  //I don't think zombies turned those lights on.
+			"player/survivor/voice/replica/worldc2m117.wav",  //Ah hell, those lights are an amusement park!
+			"player/survivor/voice/replica/worldc2m118.wav",  //Jesus Christ, that's a Ferris wheel lit up.
+			"player/survivor/voice/replica/worldc2m119.wav"  //Let's head to the amusement park, ain't like we have anywhere else to go.
+		],
+		PlayerRemarkc2m1_searchlightsNickReplica = [
+			"player/survivor/voice/replica/worldc2m1b04.wav",  //Look, searchlights! Might be survivors there, we should check it out.
+			"player/survivor/voice/replica/worldc2m105.wav",  //Look at those lights to the left! They're having a party!
+			"player/survivor/voice/replica/worldc2m106.wav"  //Well, might as well head to those light and join the party.
+		],
+		PlayerRemarkc2m1_throughhereReplica = [
+			"player/survivor/voice/replica/miscdirectional19.wav"  //Through this door!
+		],
+		PlayerRemarkc2m1_throughmotelReplica = [
+			"player/survivor/voice/replica/worldc2m124.wav",  //We gotta figure a way around this motel.
+			"player/survivor/voice/replica/worldc2m1b09.wav"  //Highway's blocked! Let's check out the motel!
+		],
+		PlayerRemarkc2m1_throughwindowReplica = [
+			"player/survivor/voice/replica/miscdirectional13.wav"  //Through this window!
+		],
+		PlayerRemarkc2m1_uphillReplica = [
+			"player/survivor/voice/replica/worldc2m322.wav"  //Up the hill.
+		],
+		PlayerRemarkc2m1_upstairsReplica = [
+			"player/survivor/voice/replica/worldc2m126.wav"  //Let's try the second floor.
+		],
+		PlayerRemarkc2m2_burgersReplica = [
+			"player/survivor/voice/replica/worldc2m2b23.wav"  //I find a Burger Tank in this place? I'm-a be a one-man cheeseburger apocalypse.
+		],
+		PlayerRemarkc2m2_candymachineReplica = [
+			"player/survivor/voice/replica/worldc2m2b37.wav"  //Damn it. They can't keep a candy machine filled up around here?
+		],
+		PlayerRemarkc2m2_carouselbuttonReplica = [
+			"player/survivor/voice/replica/worldc2m209.wav"  //Alright, this is gonna open the gate and what the hell else?
+		],
+		PlayerRemarkc2m2_cobblerReplica = [
+			"player/survivor/voice/replica/worldc2m2b24.wav"  //Mmmhmm. Peach cobbler.
+		],
+		PlayerRemarkc2m2_cottoncandyReplica = [
+			"player/survivor/voice/replica/worldc2m2b25.wav",  //Cotton Candy. The king of foods.
+			"player/survivor/voice/replica/worldc2m2b26.wav"  //Ah yeah. Cotton Candy. The wise pharaoh of food. Sittin' atop the food pyramid, passin' judgement on all lesser foods.
+		],
+		PlayerRemarkc2m2_entrancesignReplica = [
+			"player/survivor/voice/replica/worldc2m203.wav",  //Man, I loved this place as a kid.
+			"player/survivor/voice/replica/worldc2m138.wav"  //Hm. Lights on, but nobody's home.
+		],
+		PlayerRemarkc2m2_lilpeanutReplica = [
+			"player/survivor/voice/replica/worldc2m2b14.wav",  //That peanut's got crazy eyes. They FOLLOW you.
+			"player/survivor/voice/replica/worldc2m2b15.wav",  //That peanut man's got wild, crazy eyes.
+			"player/survivor/voice/replica/worldc2m2b16.wav",  //I don't like that peanut.
+			"player/survivor/voice/replica/worldc2m2b17.wav",  //I DO NOT like that little peanut.
+			"player/survivor/voice/replica/worldc2m2b18.wav",  //I have NEVER liked that peanut.
+			"player/survivor/voice/replica/worldc2m2b19.wav"  //I have NEVER liked that peanut.
+		],
+		PlayerRemarkc2m2_ladderReplica = [
+			"player/survivor/voice/replica/worldc2m207.wav"  //Let's try the roof.
+		],
+		PlayerRemarkc2m2_favoriterideReplica = [
+			"player/survivor/voice/replica/worldc2m205.wav"  //I was a lil' peanut riding these.  This here was my favorite.
+		],
+		PlayerRemarkc2m2_kettlekornReplica = [
+			"player/survivor/voice/replica/worldc2m2b22.wav"  //Oh, baby, I could destroy some kettle corn right now.
+		],
+		PlayerRemarkc2m2_miscfoodReplica = [
+			"player/survivor/voice/replica/worldc2m2b20.wav",  //All these signs are making me hungry.
+			"player/survivor/voice/replica/worldc2m204.wav",  //Look, let's just find the corndog stand and hold out there.
+			"player/survivor/voice/replica/worldc2m2b21.wav"  //Elephant ears... funnel cakes... corn dogs... Man, these signs are bringin' back some memories.
+		],
+		_C2M2_OkraReplica = [
+			"player/survivor/voice/replica/worldc2m2b27.wav"  //And what's your point?
+		],
+		PlayerRemarkc2m2_steakeReplica = [
+			"player/survivor/voice/replica/worldc2m2b28.wav"  //Once the world goes back to normal? I'm buyin' you guys a steak dinner.
+		],
+		PlayerRemarkc2m2_thistallReplica = [
+			"player/survivor/voice/replica/worldc2m2b31.wav"  //'You must be this tall to ride.' Well-least there won't be no jockeys in there.
+		],
+		PlayerRemarkc2m2_thistall2Replica = [
+			"player/survivor/voice/replica/worldc2m2b32.wav"  //'You must be this tall to ride.' Sorry Ellis. It's been real man.
+		],
+		PlayerRemarkc2m2_topofslideReplica = [
+			"player/survivor/voice/replica/worldc4m205.wav"  //We gotta hurry.
+		],
+		PlayerRemarkc2m3_coasteroffReplica = [
+			"player/survivor/voice/replica/worldc2m323.wav",  //Turn that shit off.
+			"player/survivor/voice/replica/worldc2m324.wav",  //Kill that alarm.
+			"player/survivor/voice/replica/worldc2m3b18.wav",  //We gotta turn that alarm off!
+			"player/survivor/voice/replica/worldc2m3b19.wav"  //Somebody turn off that alarm!
+		],
+		PlayerRemarkc2m3_coollightReplica = [
+			"player/survivor/voice/replica/worldc2m301.wav",  //Hey. No smoochin' y'all.
+			"player/survivor/voice/replica/worldc2m3b07.wav"  //Back in the day, I had some posters that woulda looked GOOD in this light.
+		],
+		PlayerRemarkc2m3_freshairReplica = [
+			"player/survivor/voice/replica/worldc2m308.wav"  //Hm. Shit. First time I ever couldn't wait to get out of the tunnel of love.
+		],
+		PlayerRemarkc2m3_holeReplica = [
+			"player/survivor/voice/replica/worldc2m3b08.wav"  //Down this hole!
+		],
+		PlayerRemarkc2m3_longesttunnelReplica = [
+			"player/survivor/voice/replica/worldc2m3b10.wav",  //I don't remember the tunnel of love bein' this LONG. I musta had something else on my mind.
+			"player/survivor/voice/replica/worldc2m3b11.wav"  //I don't remember the tunnel of love bein' this LONG. I musta had something else on my mind.
+		],
+		PlayerRemarkc2m3_overfenceReplica = [
+			"player/survivor/voice/replica/miscdirectional27.wav"  //Over this fence!
+		],
+		PlayerRemarkc2m3_rubbleReplica = [
+			"player/survivor/voice/replica/worldc2m313.wav",  //We're blocked by the coaster.
+			"player/survivor/voice/replica/worldc2m314.wav",  //We're blocked by the Screaming Oak.
+			"player/survivor/voice/replica/worldc2m315.wav"  //The only way over is on the coaster.
+		],
+		PlayerRemarkc2m3_swanroomReplica = [
+			"player/survivor/voice/replica/worldc2m304.wav"  //In the maintenance room.
+		],
+		PlayerRemarkc2m3_tracks01Replica = [
+			"player/survivor/voice/replica/worldc2m3b20.wav",  //Just keep following the tracks and we'll get through this!
+			"player/survivor/voice/replica/worldc2m3b21.wav"  //Stay on the tracks!
+		],
+		PlayerRemarkc2m3_waterReplica = [
+			"player/survivor/voice/replica/worldc2m3b06.wav"  //This water don't look natural...
+		],
+		PlayerRemarkc2m3_wayblockedReplica = [
+			"player/survivor/voice/replica/worldc2m206.wav"  //Blocked down here.
+		],
+		PlayerRemarkc2m4_barnentryReplica = [
+			"player/survivor/voice/replica/worldc2m408.wav",  //Through the farm exhibits.
+			"player/survivor/voice/replica/worldc2m409.wav"  //Through the farm hall.
+		],
+		PlayerRemarkc2m4_bumpercarsReplica = [
+			"player/survivor/voice/replica/worldc2m325.wav",  //Through the bumper cars!
+			"player/survivor/voice/replica/worldc2m326.wav"  //Through the bumper cars!
+		],
+		PlayerRemarkc2m4_pendoorReplica = [
+			"player/survivor/voice/replica/miscdirectional19.wav"  //Through this door!
+		],
+		PlayerRemarkc2m4_stadiumReplica = [
+			"player/survivor/voice/replica/worldc2m403.wav",  //How the hell we gonna get in there?
+			"player/survivor/voice/replica/worldc2m404.wav"  //There's the Peach Bowl!
+		],
+		PlayerRemarkc2m4_upbarnReplica = [
+			"player/survivor/voice/replica/worldc2m410.wav"  //Over the roof!
+		],
+		PlayerRemarkc2m5_button2Replica = [
+			"player/survivor/voice/replica/worldc2m5b25.wav",  //Well ain't this a bitch, they got a tape for their music. To think I used to like these guys.
+			"player/survivor/voice/replica/worldc2m5b26.wav",  //Lip syncing old ass bitches, they got a tape back here.
+			"player/survivor/voice/replica/worldc2m5b27.wav",  //There's a tape back here, this is all setup for the finale.
+			"player/survivor/voice/replica/worldc2m5b28.wav",  //The Rider's have their finale all cued up back here.
+			"player/survivor/voice/replica/worldc2m5b29.wav",  //When I hit this tape deck, it's all gonna start. Get ready!
+			"player/survivor/voice/replica/worldc2m5b30.wav",  //There's a tape back here, this is all setup for the finale.
+			"player/survivor/voice/replica/worldc2m5b31.wav",  //The Rider's have their finale all cued up back here.
+			"player/survivor/voice/replica/worldc2m5b32.wav",  //This tape's gonna start the finale! Get ready!
+			"player/survivor/voice/replica/worldc2m5b34.wav",  //When we start this tape, it's gonna be on. So get ready!
+			"player/survivor/voice/replica/worldc2m5b36.wav",  //When we start this tape, get ready! The music's gonna be INCREDIBLY GOOD, but try to focus.
+			"player/survivor/voice/replica/worldc2m5b37.wav"  //Get ready to rock, I'm gonna start the finale!
+		],
+		PlayerRemarkC3M3BridgeDownReplica = [
+			"player/survivor/voice/replica/emphaticgo02.wav",  //Let's go people.
+			"player/survivor/voice/replica/worldc3m310.wav",  //Bridge is down, let's go!
+			"player/survivor/voice/replica/worldc3m3b03.wav"  //Let's keep moving.
+		],
+		PlayerRemarkC3M2PlaneCrashReplica = [
+			"player/survivor/voice/replica/worldc3m204.wav",  //All right, now I understand why you would jump out of a plane.
+			"player/survivor/voice/replica/worldc3m2b01.wav"  //Looks like we weren't the only people crashing today.
+		],
+		PlayerRemarkC3M2PlaneCrashNickReplica = [
+			"player/survivor/voice/replica/worldc3m2b02.wav"  //Nick, you didn't shoot this pilot too did you?
+		],
+		_C3M2PirogueReplica = [
+			"player/survivor/voice/replica/worldc3m202.wav"  //Ellis, that's just a boat.
+		],
+		PlayerRemarkC3M2PlaneDoorNagReplica = [
+			"player/survivor/voice/replica/worldc3m206.wav",  //You know an alarm will sound when we open this.
+			"player/survivor/voice/replica/worldc3m2b03.wav"  //This here is gonna set off an alarm, get ready.
+		],
+		PlayerRemarkC3M2PlaneDoorNagaReplica = [
+			"player/survivor/voice/replica/worldc3m205.wav"  //We gotta open this door.
+		],
+		PlayerRemarkC3M2SickOfSwampReplica = [
+			"player/survivor/voice/replica/worldc3m201.wav"  //This swamp shit's gettin' old.
+		],
+		PlayerRemarkC3M2Village1Replica = [
+			"player/survivor/voice/replica/worldc3m210.wav"  //Lights are on!
+		],
+		PlayerRemarkC3M2WhereAreWeReplica = [
+			"player/survivor/voice/replica/worldc3m1b08.wav",  //Where in the hell are we?
+			"player/survivor/voice/replica/worldc3m1b09.wav"  //Where in the hell are we?
+		],
+		PlayerRemarkC3M3LowerGateReplica = [
+			"player/survivor/voice/replica/worldc3m307.wav"  //We have to lower this bridge.
+		],
+		PlayerRemarkC3M3SearchHousesReplica = [
+			"player/survivor/voice/replica/worldc3m304.wav",  //I don't think they'd mind if we look for supplies.
+			"player/survivor/voice/replica/worldc3m305.wav"  //Careful lookin' for supplies, show respect.
+		],
+		PlayerRemarkC3M3StayUpHereReplica = [
+			"player/survivor/voice/replica/worldc3m311.wav",  //Stay up here!
+			"player/survivor/voice/replica/worldc3m3b03.wav"  //Let's keep moving.
+		],
+		PlayerRemarkC3M3ThisWayReplica = [
+			"player/survivor/voice/replica/followme01.wav",  //Come on y' all this way.
+			"player/survivor/voice/replica/followme02.wav",  //This way.
+			"player/survivor/voice/replica/miscdirectional12.wav"  //C'mon, this way!
+		],
+		PlayerRemarkC3M3ThroughHereReplica = [
+			"player/survivor/voice/replica/miscdirectional19.wav",  //Through this door!
+			"player/survivor/voice/replica/world05.wav"  //Through here.
+		],
+		PlayerRemarkC3M3ThroughThisHouseReplica = [
+			"player/survivor/voice/replica/world05.wav"  //Through here.
+		],
+		PlayerRemarkC3M3UpHereReplica = [
+			"player/survivor/voice/replica/world12.wav"  //Up here.
+		],
+		PlayerRemarkc3m4downroadReplica = [
+			"player/survivor/voice/replica/worldc4m115.wav",  //Down this street.
+			"player/survivor/voice/replica/worldc4m117.wav"  //Keep going down the street.
+		],
+		PlayerRemarkc3m4radioReplica = [
+			"player/survivor/voice/replica/worldc3m404.wav"  //Let's try the radio.
+		],
+		PlayerRemarkc3m4scaffoldReplica = [
+			"player/survivor/voice/replica/blank.wav"  //
+		],
+		PlayerRemarkc3m4shacksReplica = [
+			"player/survivor/voice/replica/worldc3m402.wav"  //Search these houses.
+		],
+		PlayerRemarkc4m1_carcrashReplica = [
+			"player/survivor/voice/replica/worldc4m1b25.wav"  //That's a nasty damn wreck.
+		],
+		PlayerRemarkc4m1_garagesaleReplica = [
+			"player/survivor/voice/replica/worldc4m1b24.wav"  //Let's cut through the garage sale.
+		],
+		PlayerRemarkc4m1_InBurgerTankReplica = [
+			"player/survivor/voice/replica/worldc4m104.wav",  //Shit. All these zombies should help you swallow.
+			"player/survivor/voice/replica/worldc4m105.wav",  //Man, I sure wish the Burger Tank was open.
+			"player/survivor/voice/replica/worldc4m106.wav",  //I sure wish the Burger Tank was open.
+			"player/survivor/voice/replica/worldc4m105.wav",  //Man, I sure wish the Burger Tank was open.
+			"player/survivor/voice/replica/worldc4m106.wav"  //I sure wish the Burger Tank was open.
+		],
+		PlayerRemarkc4m1_nogasReplica = [
+			"player/survivor/voice/replica/worldc4m1b10.wav"  //Outta gas. Shit.
+		],
+		PlayerRemarkc4m1_playgroundfarReplica = [
+			"player/survivor/voice/replica/worldc4m1b23.wav",  //Through that playground!
+			"player/survivor/voice/replica/worldc4m1b22.wav"  //Through this playground!
+		],
+		PlayerRemarkc4m1_throughhereAReplica = [
+			"player/survivor/voice/replica/miscdirectional07.wav"  //Through here!
+		],
+		PlayerRemarkc4m2_gasinsidesignReplica = [
+			"player/survivor/voice/replica/worldc4m2b30.wav",  //Says there's gas inside.
+			"player/survivor/voice/replica/worldc4m2b33.wav",  //Pump's empty. Let's check inside.
+			"player/survivor/voice/replica/worldc4m2b31.wav"  //[reading sign] Gas inside.
+		],
+		PlayerRemarkc4m2_millentranceReplica = [
+			"player/survivor/voice/replica/miscdirectional10.wav"  //In here!
+		],
+		PlayerRemarkc4m2_millentranceexitReplica = [
+			"player/survivor/voice/replica/miscdirectional09.wav",  //This way!
+			"player/survivor/voice/replica/miscdirectional12.wav"  //C'mon, this way!
+		],
+		PlayerRemarkc4m2_seegasstationReplica = [
+			"player/survivor/voice/replica/worldc4m2b18.wav"  //There's the gas station!
+		],
+		PlayerRemarkc4m2_streetblockedReplica = [
+			"player/survivor/voice/replica/worldc4m2b01.wav",  //Road's blocked.
+			"player/survivor/voice/replica/worldc4m1b28.wav",  //There's the sugar mill!
+			"player/survivor/voice/replica/worldc4m116.wav"  //There's the mill..
+		],
+		PlayerRemarkc4m2_uprampReplica = [
+			"player/survivor/voice/replica/worldc4m2b16.wav"  //Up that ramp!
+		],
+		PlayerRemarkc4m2_upthestairsReplica = [
+			"player/survivor/voice/replica/world12.wav"  //Up here.
+		],
+		PlayerRemarkc4m2_useelevatorReplica = [
+			"player/survivor/voice/replica/worldc4m2b15.wav",  //Head for the grain elevator!
+			"player/survivor/voice/replica/worldc4m2b20.wav"  //We can take that elevator down to the field.
+		],
+		PlayerRemarkc4m2_waterpoolReplica = [
+			"player/survivor/voice/replica/worldc4m2b05.wav",  //Water's starting to pool. We gotta move!
+			"player/survivor/voice/replica/worldc4m2b06.wav",  //[pointing at huge puddle] Look, it's already starting to flood.
+			"player/survivor/voice/replica/worldc4m204.wav",  //Storm's startin' to kick up.
+			"player/survivor/voice/replica/worldc4m206.wav"  //Come on people, let's do this before the storm hits.
+		],
+		PlayerRemarkc4m2_weatherReplica = [
+			"player/survivor/voice/replica/worldc4m2b03.wav",  //Hurry up, people. We don't wanna get stuck out here in a storm.
+			"player/survivor/voice/replica/worldc4m2b04.wav",  //If this rain really comes, we gonna get washed away.
+			"player/survivor/voice/replica/worldc4m2b08.wav"  //People, if this rain really comes, we gonna be in trouble.
+		],
+		PlayerRemarkc4m3_caneReplica = [
+			"player/survivor/voice/replica/miscdirectional45.wav"  //Retrace our steps! Head through the field!
+		],
+		PlayerRemarkc4m3_crosshereReplica = [
+			"player/survivor/voice/replica/miscdirectional30.wav",  //We can cross here!
+			"player/survivor/voice/replica/miscdirectional54.wav"  //Cross here!
+		],
+		PlayerRemarkc4m3_downhereReplica = [
+			"player/survivor/voice/replica/miscdirectional01.wav",  //Jump down here!
+			"player/survivor/voice/replica/miscdirectional11.wav",  //Down here!
+			"player/survivor/voice/replica/world08.wav"  //Down here.
+		],
+		PlayerRemarkc4m3_downstairsReplica = [
+			"player/survivor/voice/replica/miscdirectional49.wav"  //Back down the stairs!
+		],
+		PlayerRemarkc4m3_ducatelsignReplica = [
+			"player/survivor/voice/replica/miscdirectional70.wav"  //There's the sign. We're almost outta the mill.
+		],
+		PlayerRemarkc4m3_elevatorReplica = [
+			"player/survivor/voice/replica/miscdirectional47.wav"  //We can take the elevator back up!
+		],
+		PlayerRemarkc4m3_floodedReplica = [
+			"player/survivor/voice/replica/miscdirectional58.wav",  //The whole damn place is flooded.
+			"player/survivor/voice/replica/miscdirectional59.wav",  //This place is under water.
+			"player/survivor/voice/replica/worldc4m306.wav",  //This is flooding.
+			"player/survivor/voice/replica/worldc4m307.wav"  //It's all flooded.
+		],
+		PlayerRemarkc4m3_flooded2Replica = [
+			"player/survivor/voice/replica/worldc4m308.wav",  //Goddamn this is slow going.
+			"player/survivor/voice/replica/worldc4m309.wav"  //This shit's worse than the swamp.
+		],
+		PlayerRemarkc4m3_overtankReplica = [
+			"player/survivor/voice/replica/miscdirectional51.wav"  //We can cross on that tank!
+		],
+		PlayerRemarkc4m3_rainReplica = [
+			"player/survivor/voice/replica/worldc4m302.wav",  //Damn. It's really stormin' now.
+			"player/survivor/voice/replica/worldc4m303.wav"  //It is coming down.
+		],
+		PlayerRemarkc4m3_uppipesReplica = [
+			"player/survivor/voice/replica/miscdirectional55.wav"  //Up this pipe!
+		],
+		PlayerRemarkc4m4_floodedReplica = [
+			"player/survivor/voice/replica/worldc4m402.wav",  //Towns flooded.
+			"player/survivor/voice/replica/worldc4m403.wav",  //Damn, I'm all turned around now.
+			"player/survivor/voice/replica/worldc4m404.wav"  //I think it's raining even harder now.
+		],
+		PlayerRemarkc4m4_garagesaleReplica = [
+			"player/survivor/voice/replica/worldc4m4b06.wav"  //The yard sale! We're goin' the right way!
+		],
+		PlayerRemarkc4m4_playgroundReplica = [
+			"player/survivor/voice/replica/worldc4m4b07.wav"  //There's the playground! We're close!
+		],
+		PlayerRemarkc4m4_porchlightReplica = [
+			"player/survivor/voice/replica/worldc4m4b03.wav",  //We passed these lights on the way in!
+			"player/survivor/voice/replica/worldc4m4b04.wav"  //I remember that porch light.
+		],
+		PlayerRemarkc4m4_truckwreckReplica = [
+			"player/survivor/voice/replica/worldc4m4b05.wav"  //There's that busted up truck.
+		],
+		PlayerRemarkc4m4_useroofsReplica = [
+			"player/survivor/voice/replica/worldc4m4b02.wav",  //Keep to high ground!
+			"player/survivor/voice/replica/worldc4m408.wav",  //Try sticking to the dry ground.
+			"player/survivor/voice/replica/miscdirectional62.wav"  //Get to high ground!
+		],
+		PlayerRemarkc5m2peopleReplica = [
+			"player/survivor/voice/replica/world05.wav"  //Through here.
+		],
+		PlayerRemarkpathc2m1_billboardReplica = [
+			"player/survivor/voice/replica/worldc2m1b03.wav"  //Hey, Whisperin' Oaks! Shit, I used to go there when I was a kid!
+		],
+		PlayerRemarkremark_MidnightRidersBusReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_midnightriders01.wav",  //Man, I think I just saw... nah.
+			"player/survivor/voice/replica/dlc1_c6m2_midnightriders02.wav",  //I must be dreaming.
+			"player/survivor/voice/replica/dlc1_c6m2_midnightriders03.wav"  //I think I just saw... nah.
+		],
+		PlayerRemarkWorldC1M1CedaMapsReplica = [
+			"player/survivor/voice/replica/worldc1m1b45.wav",  //Look at that map. We need to get ourselves to New Orleans.
+			"player/survivor/voice/replica/worldc1m1b46.wav",  //Would you look at this map. Folks, I think N'awlins is the last city standing in the COUNTRY.
+			"player/survivor/voice/replica/worldc1m1b47.wav",  //Man, LOOK at this map. We're all that's left.
+			"player/survivor/voice/replica/worldc1m1b48.wav",  //We need to get to New Orleans.
+			"player/survivor/voice/replica/worldc1m1b49.wav"  //Would you look at this. Folks, I think N'awlins is the last city standing.
+		],
+		PlayerRemarkWorldC1M1KnowBoomerReplica = [
+			"player/survivor/voice/replica/worldc1m1b52.wav",  //Oh man, look at that thing in there.
+			"player/survivor/voice/replica/worldc1m1b53.wav"  //How they HELL did they capture this thing already?
+		],
+		PlayerRemarkWorldC1M1DownHereReplica = [
+			"player/survivor/voice/replica/miscdirectional11.wav",  //Down here!
+			"player/survivor/voice/replica/world05.wav",  //Through here.
+			"player/survivor/voice/replica/world08.wav"  //Down here.
+		],
+		PlayerRemarkWorldC1M1DownStairsReplica = [
+			"player/survivor/voice/replica/miscdirectional49.wav"  //Back down the stairs!
+		],
+		PlayerRemarkWorldC1M1ElevatorBrokenReplica = [
+			"player/survivor/voice/replica/worldc1m1b61.wav",  //Elevator's out!
+			"player/survivor/voice/replica/worldc1m1b62.wav"  //Oh, crumbs! Elevator's out!
+		],
+		PlayerRemarkWorldC1M1FireRoomReplica = [
+			"player/survivor/voice/replica/worldc1m1b57.wav"  //Fire over here, too.
+		],
+		PlayerRemarkWorldC1M1FireSpreadingReplica = [
+			"player/survivor/voice/replica/worldc1m1b54.wav",  //We gotta find a way around this fire!
+			"player/survivor/voice/replica/worldc1m1b55.wav",  //This way's blocked!
+			"player/survivor/voice/replica/worldc1m1b56.wav",  //[coughing] The fire's spreading!
+			"player/survivor/voice/replica/worldc1m1b59.wav"  //The fire's spreading!
+		],
+		PlayerRemarkWorldC1M1FirstReplica = [
+			"player/survivor/voice/replica/worldc1m1b28.wav",  //Damn. Sweet Georgia Brown...
+			"player/survivor/voice/replica/worldc1m1b29.wav",  //Sweet Georgia Brown...
+			"player/survivor/voice/replica/worldc1m1b30.wav",  //Mm. Sweet Hosanna...
+			"player/survivor/voice/replica/worldc1m1b31.wav",  //Sweet Hosanna...
+			"player/survivor/voice/replica/worldc1m1b32.wav",  //These things move like greased lightning!
+			"player/survivor/voice/replica/worldc1m1b33.wav",  //Sweet Georgia Brown...
+			"player/survivor/voice/replica/worldc1m1b34.wav",  //Oh... sweet Hosanna...
+			"player/survivor/voice/replica/worldc1m1b38.wav",  //Jumpin' Jehosaphat! What ARE these things?
+			"player/survivor/voice/replica/worldc1m1b39.wav"  //Y'all know what the hell these things are?
+		],
+		PlayerRemarkWorldC1M1LedgeReplica = [
+			"player/survivor/voice/replica/worldc1m1b65.wav",  //Man, it don't feel right breakin' property like this.
+			"player/survivor/voice/replica/worldc1m1b66.wav",  //We can walk along the ledge!
+			"player/survivor/voice/replica/worldc1m1b67.wav",  //Let's try the ledge!
+			"player/survivor/voice/replica/worldc1m1b68.wav"  //We can get around the fire out here.
+		],
+		PlayerRemarkWorldC1M1StairsSignReplica = [
+			"player/survivor/voice/replica/worldc1m1b63.wav",  //Gotta find some stairs.
+			"player/survivor/voice/replica/worldc1m1b64.wav"  //Let's get to the stairs.
+		],
+		PlayerRemarkWorldC1M2CloseReplica = [
+			"player/survivor/voice/replica/worldc1m2b15.wav",  //Stay with me! That mall's JUST up ahead!
+			"player/survivor/voice/replica/worldc1m2b16.wav"  //Look alive! We're getting close to the mall!
+		],
+		PlayerRemarkWorldC1M2DownStairsReplica = [
+			"player/survivor/voice/replica/world08.wav",  //Down here.
+			"player/survivor/voice/replica/worldc2m114.wav"  //Down here.
+		],
+		PlayerRemarkWorldC1M2AbandonedReplica = [
+			"player/survivor/voice/replica/worldc1m2b18.wav"  //Shit. This place is DESERTED. It's startin' to creep me out.
+		],
+		PlayerRemarkWorldC1M2DumpsterReplica = [
+			"player/survivor/voice/replica/worldc1m2b14.wav"  //Over the dumpster!
+		],
+		PlayerRemarkWorldC1M2GunStoreCloseReplica = [
+			"player/survivor/voice/replica/worldc1m2b19.wav",  //That gun store's around here somewhere.
+			"player/survivor/voice/replica/worldc1m2b20.wav"  //We're getting close to that gun store.
+		],
+		PlayerRemarkWorldC1M2InHereReplica = [
+			"player/survivor/voice/replica/worldc1m2b10.wav",  //Mall's over this bridge!
+			"player/survivor/voice/replica/worldc1m2b11.wav"  //Bridge to the mall's blocked! We gotta find another way.
+		],
+		PlayerRemarkWorldC1M2JumpTruckReplica = [
+			"player/survivor/voice/replica/worldc1m2b13.wav"  //We can jump down onto this truck!
+		],
+		PlayerRemarkWorldC1M2MallSignHereReplica = [
+			"player/survivor/voice/replica/worldc1m2b50.wav"  //Ha-HA! There's the mall!
+		],
+		PlayerRemarkWorldC1M2MallThisWayReplica = [
+			"player/survivor/voice/replica/worldc1m2b06.wav",  //Mall's THAT way! Let's move!
+			"player/survivor/voice/replica/worldc1m2b07.wav",  //We're headin' the right way to the mall.
+			"player/survivor/voice/replica/worldc1m2b08.wav"  //Mall's that way! Just keep followin' the signs!
+		],
+		PlayerRemarkWorldC1M2UpStairsReplica = [
+			"player/survivor/voice/replica/miscdirectional09.wav",  //This way!
+			"player/survivor/voice/replica/miscdirectional12.wav"  //C'mon, this way!
+		],
+		PlayerRemarkWorldC3M1FerryCrossingReplica = [
+			"player/survivor/voice/replica/worldc3m1b12.wav"  //Man. When you're forced to turn to people livin' in a swamp to help you get out of a city? I don't think CEDA's doing their job right.
+		],
+		PlayerRemarkWorldC3M1FeedGatorReplica = [
+			"player/survivor/voice/replica/worldc3m129.wav"  //Do not feed the gators.
+		],
+		PlayerRemarkWorldC3M1FerryNagReplica = [
+			"player/survivor/voice/replica/worldc3m106.wav"  //We gotta call that boat over here.
+		],
+		PlayerRemarkWorldC3M1FerryNagaReplica = [
+			"player/survivor/voice/replica/worldc3m112.wav",  //Hit the button.
+			"player/survivor/voice/replica/worldc3m113.wav"  //Hit it, let's cross this bitch..
+		],
+		PlayerRemarkWorldC3M1Path01Replica = [
+			"player/survivor/voice/replica/worldc3m105.wav",  //Anything in those houses?
+			"player/survivor/voice/replica/worldc3m402.wav"  //Search these houses.
+		],
+		PlayerRemarkWorldC3M1StayOnReplica = [
+			"player/survivor/voice/replica/worldc3m126.wav"  //Stay on the walk ways.
+		],
+		PlayerRemarkWorldC502AlarmButtonReplica = [
+			"player/survivor/voice/replica/worldc5m2b09.wav",  //RUN!
+			"player/survivor/voice/replica/worldc5m2b10.wav",  //MOVE YOUR ASSES!
+			"player/survivor/voice/replica/worldc5m2b11.wav"  //GO!
+		],
+		PlayerRemarkWorldC502AlarmStoppedReplica = [
+			"player/survivor/voice/replica/killconfirmation01.wav"  //Got it!
+		],
+		PlayerRemarkWorldC502AlleyReplica = [
+			"player/survivor/voice/replica/world05.wav"  //Through here.
+		],
+		PlayerRemarkWorldC502NotZombies2Replica = [
+			"player/survivor/voice/replica/worlddead03.wav",  //They been shot.
+			"player/survivor/voice/replica/worlddead04.wav"  //Shit got bad here.
+		],
+		PlayerRemarkWorldC502NotZombies3bReplica = [
+			"player/survivor/voice/replica/worlddead02.wav"  //Yeah, true that.
+		],
+		PlayerRemarkWorldC502Smell2Replica = [
+			"player/survivor/voice/replica/worlddead01.wav"  //Smells like people have been living here and shit.
+		],
+		PlayerRemarkWorldC6M1_AcrossHereReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_backalley10.wav"  //Get your ass across the walk-way.
+		],
+		PlayerRemarkWorldC6M1_AlleyBelowReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_backalley02.wav",  //Down this alley.
+			"player/survivor/voice/replica/dlc1_c6m1_backalley03.wav",  //We need to get up there.
+			"player/survivor/voice/replica/dlc1_c6m1_backalley04.wav",  //We have to get into this building.
+			"player/survivor/voice/replica/dlc1_c6m1_backalley05.wav",  //Let's all get up there.
+			"player/survivor/voice/replica/dlc1_c6m1_backalley06.wav",  //Down this alley.
+			"player/survivor/voice/replica/dlc1_c6m1_backalley07.wav"  //Down here.
+		],
+		PlayerRemarkWorldC6M1_AlleyIntoBuildingReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_backalley08.wav",  //Into these apartments.
+			"player/survivor/voice/replica/dlc1_c6m1_backalley09.wav",  //Across the walk-way.
+			"player/survivor/voice/replica/dlc1_c6m1_backalley14.wav"  //Y'all get in there.
+		],
+		PlayerRemarkWorldC6M1_InAptsReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_backalley12.wav",  //In here.
+			"player/survivor/voice/replica/dlc1_c6m1_backalley13.wav",  //Get in there.
+			"player/survivor/voice/replica/dlc1_c6m1_backalley15.wav",  //Search these rooms for supplies.
+			"player/survivor/voice/replica/dlc1_c6m1_backalley16.wav"  //We're goin' this way..
+		],
+		PlayerRemarkWorldC6M1_IntoTheStoreReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_intostore01.wav",  //Through this store.
+			"player/survivor/voice/replica/dlc1_c6m1_intostore03.wav"  //Let's get in the store.
+		],
+		PlayerRemarkWorldC6M1_PostWeddingReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_weddingpostwitch03.wav"  //Check those tents.
+		],
+		PlayerRemarkWorldC6M1_PostWeddingCakeReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_weddingpostwitch04.wav"  //Guns in these here tents. Damn, but no cake.
+		],
+		PlayerRemarkWorldC6M1_SafeRoomAlleyReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_backalley01.wav"  //Behind this bus.
+		],
+		PlayerRemarkWorldC6M1_ThroughBarReplica = [
+			"player/survivor/voice/replica/miscdirectional07.wav",  //Through here!
+			"player/survivor/voice/replica/world05.wav",  //Through here.
+			"player/survivor/voice/replica/worldc1m1b139.wav"  //Let's go through here.
+		],
+		PlayerRemarkWorldC6M1_UpHereReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_backalley11.wav",  //Back this way.
+			"player/survivor/voice/replica/world12.wav"  //Up here.
+		],
+		PlayerRemarkWorldC6M1_UpTheStairsReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_upstairs01.wav",  //Go upstairs.
+			"player/survivor/voice/replica/dlc1_c6m1_upstairs02.wav"  //Let's try upstairs.
+		],
+		PlayerRemarkWorldC6M1_UpTheStairs2Replica = [
+			"player/survivor/voice/replica/dlc1_c6m2_upstairs01.wav"  //Up the stairs.
+		],
+		PlayerRemarkWorldC6M1_WeddingWarnReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_wedding01.wav",  //Damn. This here wedding didn't end well.
+			"player/survivor/voice/replica/dlc1_c6m1_wedding02.wav",  //Look, uh, anyone see the wedding cake?
+			"player/survivor/voice/replica/dlc1_c6m1_wedding03.wav",  //Anyone see the wedding cake?
+			"player/survivor/voice/replica/dlc1_c6m1_wedding04.wav",  //Bride. Wedding. Gotta be cake around here somewhere.
+			"player/survivor/voice/replica/dlc1_c6m1_wedding05.wav",  //Bride. Wedding. Gotta be cake around here somewhere.
+			"player/survivor/voice/replica/dlc1_c6m1_wedding06.wav"  //Shhh.. does anyone see the wedding cake.
+		],
+		PlayerRemarkWorldC6M2_AcrossPlankReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_overplank01.wav",  //Over this plank.
+			"player/survivor/voice/replica/dlc1_c6m2_overplank02.wav",  //Hurry up and get your asses over this plank.
+			"player/survivor/voice/replica/dlc1_c6m2_overplank03.wav",  //Oh shit, do not look down.
+			"player/survivor/voice/replica/dlc1_c6m2_overplank04.wav"  //Easy now, don't be playin' on this board.
+		],
+		PlayerRemarkWorldC6M2_AfterGate1Replica = [
+			"player/survivor/voice/replica/dlc1_c6m2_phase2inwater10.wav"  //Don't stop people!
+		],
+		PlayerRemarkWorldC6M2_AfterGate2Replica = [
+			"player/survivor/voice/replica/dlc1_c6m2_inwaterfindladder01.wav",  //There's gotta be a ladder here somewhere.
+			"player/survivor/voice/replica/dlc1_c6m2_inwaterfindladder02.wav",  //Let's find ourselves a ladder.
+			"player/survivor/voice/replica/dlc1_c6m2_inwaterfindladder03.wav",  //Holla if you see a ladder.
+			"player/survivor/voice/replica/dlc1_c6m2_inwaterfindladder04.wav",  //We need to get on the catwalks.
+			"player/survivor/voice/replica/dlc1_c6m2_inwaterfindladder05.wav",  //We need to get out of this shit.
+			"player/survivor/voice/replica/dlc1_c6m2_inwaterfindladder06.wav",  //Keep running, that alarm ain't goin' off.
+			"player/survivor/voice/replica/dlc1_c6m2_inwaterfindladder07.wav"  //That alarm is gonna keep goin'!
+		],
+		PlayerRemarkWorldC6M2_DownHereReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_backalley07.wav",  //Down here.
+			"player/survivor/voice/replica/miscdirectional34.wav",  //We can get down here!
+			"player/survivor/voice/replica/world08.wav",  //Down here.
+			"player/survivor/voice/replica/worldc2m114.wav"  //Down here.
+		],
+		PlayerRemarkWorldC6M2_DownIntoBuildingReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_upthroughbuilding01.wav",  //Through this building.
+			"player/survivor/voice/replica/dlc1_c6m2_upthroughbuilding02.wav",  //In here.
+			"player/survivor/voice/replica/dlc1_c6m2_upthroughbuilding03.wav",  //Down these stairs.
+			"player/survivor/voice/replica/dlc1_c6m2_upthroughbuilding04.wav",  //Get in there.
+			"player/survivor/voice/replica/dlc1_c6m2_upthroughbuilding05.wav"  //Everyone get in there.
+		],
+		PlayerRemarkWorldC6M2_FinalLadderReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_bridge2up02.wav",  //Come on, let's get out of this sewer!
+			"player/survivor/voice/replica/dlc1_c6m2_bridge2up03.wav"  //Come on people, don't stand around, let's go!
+		],
+		PlayerRemarkWorldC6M2_FinalWaterReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_finalwater01.wav",  //Back in the water.
+			"player/survivor/voice/replica/dlc1_c6m2_finalwater02.wav",  //Back in the water!
+			"player/survivor/voice/replica/dlc1_c6m2_finalwater03.wav",  //Ah hell, more water.
+			"player/survivor/voice/replica/dlc1_c6m2_finalwater04.wav"  //Ah hell, back in the water!
+		],
+		PlayerRemarkWorldC6M2_FinalWaterGoGoReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_phase2inwater10.wav",  //Don't stop people!
+			"player/survivor/voice/replica/worldc4m2b29.wav"  //KEEP MOVING!
+		],
+		PlayerRemarkWorldC6M2_InJazzClubReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_jazzclub01.wav",  //Into the Jazz Club.
+			"player/survivor/voice/replica/dlc1_c6m2_jazzclub02.wav"  //Tour's in the Jazz Club.
+		],
+		PlayerRemarkWorldC6M2_InSewer1Replica = [
+			"player/survivor/voice/replica/dlc1_c6m2_phase2inwater11.wav"  //Come on now, let's just get through this shit.
+		],
+		PlayerRemarkWorldC6M2_InSewer1GamblerReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_phase2inwater12.wav"  //Alright, let's keep moving. Unless Nick wants to stop and take a bath
+		],
+		PlayerRemarkWorldC6M2_InSewerLadder1Replica = [
+			"player/survivor/voice/replica/dlc1_c6m2_upladder101.wav",  //Let's get out of the water.
+			"player/survivor/voice/replica/dlc1_c6m2_upladder102.wav",  //Everybody up there!
+			"player/survivor/voice/replica/dlc1_c6m2_upladder103.wav",  //All right, out of the water.
+			"player/survivor/voice/replica/dlc1_c6m2_upladder104.wav"  //Everyone up there!
+		],
+		PlayerRemarkWorldC6M2_IntoConstructionReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_constructionsite01.wav",  //Let's get down there.
+			"player/survivor/voice/replica/dlc1_c6m2_constructionsite02.wav"  //Down by the pipe.
+		],
+		PlayerRemarkWorldC6M2_IntoPoolHallReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_intopoolhall01.wav",  //Into the pool hall.
+			"player/survivor/voice/replica/dlc1_c6m2_intopoolhall02.wav",  //Get into the pool hall.
+			"player/survivor/voice/replica/dlc1_c6m2_intopoolhall03.wav"  //Go through these windows.
+		],
+		PlayerRemarkWorldC6M2_JukeBoxReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_startingjukebox01.wav",  //This jukebox is all right.
+			"player/survivor/voice/replica/dlc1_c6m2_startingjukebox02.wav"  //Oh shit, this thing is still on!
+		],
+		PlayerRemarkWorldC6M2_JumpDownReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_phase2jumpinwater01.wav",  //Together people.
+			"player/survivor/voice/replica/dlc1_c6m2_phase2jumpinwater02.wav"  //Don't get left behind.
+		],
+		PlayerRemarkWorldC6M2_OnTourWalk1Replica = [
+			"player/survivor/voice/replica/dlc1_c6m2_historictour01.wav",  //Man, this is a real...
+			"player/survivor/voice/replica/dlc1_c6m2_historictour03.wav",  //Man, LOOK at all this, uh... uh... Aw, this tour is bullshit.
+			"player/survivor/voice/replica/dlc1_c6m2_historictour04.wav",  //Man, LOOK at all this, uh... uh... Aw, man, this tour is bullshit.
+			"player/survivor/voice/replica/dlc1_c6m2_historictour09.wav"  //Shit, they must have locked up all the history to keep it safe.
+		],
+		PlayerRemarkWorldC6M2_OnTourWalk2Replica = [
+			"player/survivor/voice/replica/dlc1_c6m2_historictour07.wav",  //Keep to the walkway.
+			"player/survivor/voice/replica/dlc1_c6m2_historictour08.wav"  //Follow the walkway.
+		],
+		PlayerRemarkWorldC6M2_OpenGate1Replica = [
+			"player/survivor/voice/replica/dlc1_c6m1_alarmdoor01.wav",  //This here door is going to sound when we open it.
+			"player/survivor/voice/replica/dlc1_c6m1_alarmdoor02.wav",  //You know this shit's going to get loud.
+			"player/survivor/voice/replica/dlc1_c6m1_alarmdoor03.wav",  //Let's get ready before we open that door.
+			"player/survivor/voice/replica/dlc1_c6m2_bridge1raise03.wav",  //Shit, we gotta hit that button.
+			"player/survivor/voice/replica/dlc1_c6m2_bridge1raise04.wav"  //This looks like the only way.
+		],
+		PlayerRemarkWorldC6M2_OpenGate2Replica = [
+			"player/survivor/voice/replica/dlc1_c6m2_bridge2raise02.wav",  //Second time better be the charm.
+			"player/survivor/voice/replica/dlc1_c6m2_bridge2raise03.wav"  //Oh damn, another one of these things?
+		],
+		PlayerRemarkWorldC6M2_OpenGate2EllisReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_bridge2raise03.wav"  //Ellis, don't break it this time.
+		],
+		PlayerRemarkWorldC6M2_Phase2Replica = [
+			"player/survivor/voice/replica/dlc1_c6m2_phase201.wav",  //Tour's over? Shit.
+			"player/survivor/voice/replica/dlc1_c6m2_phase202.wav",  //Tour's over? Bullshit.
+			"player/survivor/voice/replica/dlc1_c6m2_phase203.wav",  //Phase two coming in 2010? Shit phase one ain't done.
+			"player/survivor/voice/replica/dlc1_c6m2_phase204.wav",  //Phase two my ass.
+			"player/survivor/voice/replica/dlc1_c6m2_phase205.wav",  //Phase two coming in 2010? Shit phase one ain't done.
+			"player/survivor/voice/replica/dlc1_c6m2_phase206.wav"  //Phase two my ass.
+		],
+		PlayerRemarkWorldC6M2_Phase2DownReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_phase207.wav"  //Down the stairs.
+		],
+		PlayerRemarkWorldC6M2_Phase2DownIntenseReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_phase208.wav",  //Get your asses down the stairs!
+			"player/survivor/voice/replica/dlc1_c6m2_phase209.wav",  //Come on, y'all, haul ass down the stairs!
+			"player/survivor/voice/replica/dlc1_c6m2_phase210.wav",  //Haul ass down the stairs!
+			"player/survivor/voice/replica/dlc1_c6m2_phase211.wav"  //DOWN DOWN DOWN!
+		],
+		PlayerRemarkWorldC6M2_PostGate1xReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_bridgecollapse01.wav",  //Damn, back in water people.
+			"player/survivor/voice/replica/dlc1_c6m2_bridgecollapse02.wav",  //Let's just get this over with.
+			"player/survivor/voice/replica/dlc1_c6m2_bridgecollapse03.wav",  //Can't stay up here all day y'all.
+			"player/survivor/voice/replica/dlc1_c6m2_bridgecollapse04.wav"  //One more time!
+		],
+		PlayerRemarkWorldC6M2_SuitcaseReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_suitcasepistols01.wav"  //[singing] "...a suitcase full of pistols and MON-NAY!"
+		],
+		PlayerRemarkWorldC6M2_TourEntranceReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_ticketcounter01.wav"  //Here we go, under the river.
+		],
+		PlayerRemarkWorldC6M2_UpCatWalkReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_upcatwalk01.wav",  //A ladder!
+			"player/survivor/voice/replica/dlc1_c6m2_upcatwalk02.wav",  //Ladder!
+			"player/survivor/voice/replica/dlc1_c6m2_upcatwalk03.wav"  //Thank you Jesus, a ladder!
+		],
+		PlayerRemarkWorldC6M2_UpStairsReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_upstairs01.wav",  //Up the stairs.
+			"player/survivor/voice/replica/dlc1_c6m2_upstairs02.wav"  //Let's get up to that street.
+		],
+		PlayerRemarkWorldC6M2_UpStairs2Replica = [
+			"player/survivor/voice/replica/dlc1_c6m1_upstairs01.wav",  //Go upstairs.
+			"player/survivor/voice/replica/dlc1_c6m1_upstairs02.wav"  //Let's try upstairs.
+		],
+		PlayerRemarkWorldC6M3_BridgeRunReplica = [
+			"player/survivor/voice/replica/dlc1_c6m3_finalebridgerun04.wav",  //Come on people, GET TO THE CAR! GET TO THE CAR!
+			"player/survivor/voice/replica/dlc1_c6m3_finalebridgerun05.wav"  //We gotta run, GO!
+		],
+		PlayerRemarkWorldC6M3_ByBridgeReplica = [
+			"player/survivor/voice/replica/dlc1_c6m3_finalefinalgas01.wav",  //You three keep safe.
+			"player/survivor/voice/replica/dlc1_c6m3_finalefinalgas02.wav",  //We owe you.
+			"player/survivor/voice/replica/dlc1_c6m3_finalefinalgas03.wav",  //You good? See y'all!
+			"player/survivor/voice/replica/dlc1_c6m3_finalefinalgas04.wav"  //Well alright.  We're gonna remember y'all.
+		],
+		PlayerRemarkWorldFootLockerReplica = [
+			"player/survivor/voice/replica/dlc1_footlocker03.wav",  //Open up the locker.
+			"player/survivor/voice/replica/dlc1_footlocker04.wav",  //Open the bitch up.
+			"player/survivor/voice/replica/dlc1_footlocker05.wav"  //Search the lockers.
+		],
+		PlayerRemarkWorldC6M3_BillReplica = [
+			"player/survivor/voice/replica/blank.wav"  //
+		],
+		WorldC6M3LossReplica = [
+			"player/survivor/voice/replica/dlc1_c6m3_loss01.wav",  //Sorry to hear it.
+			"player/survivor/voice/replica/dlc1_c6m3_loss04.wav"  //Sorry to hear it.
+		],
+		WorldC6M3Loss2Replica = [
+			"player/survivor/voice/replica/dlc1_c6m3_loss03.wav",  //Shit. Not a lot of good news goin' around these days.
+			"player/survivor/voice/replica/dlc1_c6m3_loss06.wav",  //Shit. Not a lot of good news goin' around these days.
+			"player/survivor/voice/replica/blank.wav"  //
+		],
+		WorldC6M3Loss3Replica = [
+			"player/survivor/voice/replica/dlc1_c6m3_loss02.wav",  //Damn... I think we're all losin' people.
+			"player/survivor/voice/replica/dlc1_c6m3_loss05.wav"  //I think we're all losin' people.
+		],
+		PlayerRemarkWorldSignContagiousReplica = [
+			"player/survivor/voice/replica/worldsigns29.wav",  //Highly contagious area.
+			"player/survivor/voice/replica/worldsigns31.wav",  //Barricade your homes.
+			"player/survivor/voice/replica/worldsigns32.wav",  //Stay together.
+			"player/survivor/voice/replica/worldsigns33.wav"  //Wait for official instructions.
+		],
+		PlayerRemarkWorldSignContagiousRochelleReplica = [
+			"player/survivor/voice/replica/worldsigns29.wav",  //Highly contagious area.
+			"player/survivor/voice/replica/worldsigns30.wav"  //Arm yourself.
+		],
+		PlayerRemarkWorldSignContagiousEllisReplica = [
+			"player/survivor/voice/replica/worldsigns33.wav"  //Wait for official instructions.
+		],
+		PlayerRemarkWorldSignDeadlyForceReplica = [
+			"player/survivor/voice/replica/worldsigns06.wav",  //This shit says: Use of deadly force authorized.
+			"player/survivor/voice/replica/worldsigns08.wav"  //Use of deadly force authorized. Shit. Allright. It sure is.
+		],
+		PlayerRemarkWorldSignDeadlyForce2Replica = [
+			"player/survivor/voice/replica/worldsigns07.wav"  //It sure is.
+		],
+		PlayerRemarkWorldSignOfficialInstructionsReplica = [
+			"player/survivor/voice/replica/worldsigns34.wav"  //Wait my ass.
+		],
+		PlayerRemarkWorldSignBarricadeHomesReplica = [
+			"player/survivor/voice/replica/worldsigns35.wav",  //Hide?
+			"player/survivor/voice/replica/worldsigns36.wav",  //Hide.
+			"player/survivor/voice/replica/worldsigns37.wav"  //Hide? Pussies.
+		],
+		PlayerRemarkWorldSignFormLineReplica = [
+			"player/survivor/voice/replica/worldsigns14.wav"  //Form orderly line.
+		],
+		PlayerRemarkWorldSignPhotographyReplica = [
+			"player/survivor/voice/replica/worldsigns21.wav"  //Photography prohibited.
+		],
+		PlayerRemarkWorldSignReportSickReplica = [
+			"player/survivor/voice/replica/worldsigns16.wav",  //Report the sick.
+			"player/survivor/voice/replica/worldsigns39.wav"  //Report the sick.
+		],
+		PlayerRemarkWorldSignReportUnusReplica = [
+			"player/survivor/voice/replica/worldsigns27.wav"  //Report unusual behavoir.
+		],
+		PlayerRemarkWorldSignRestrictedAreaReplica = [
+			"player/survivor/voice/replica/worldsigns04.wav",  //Restricted area.
+			"player/survivor/voice/replica/worldsigns19.wav"  //Restricted area.
+		],
+		PlayerRemarkWorldSignsInfectedDetReplica = [
+			"player/survivor/voice/replica/worldsigns23.wav",  //Infected detected in this area.
+			"player/survivor/voice/replica/worldsigns23.wav"  //Infected detected in this area.
+		],
+		PlayerRemarkWorldSignStayInGroupReplica = [
+			"player/survivor/voice/replica/worldsigns17.wav"  //Stay in your group.
+		],
+		PlayerRemarkWorldSignStayInGroup2Replica = [
+			"player/survivor/voice/replica/worldsigns18.wav"  //That's what I keep sayin'
+		],
+		PlayerRemarkWorldSignWhereIsCEDAReplica = [
+			"player/survivor/voice/replica/worldsigns09.wav"  //Where is CEDA.
+		],
+		PlayerRemarkWorldSignWhereIsCEDARochelleReplica = [
+			"player/survivor/voice/replica/worldsigns09.wav"  //Where is CEDA.
+		],
+		PlayerRemarkWorldSignWhereIsCEDAEllisReplica = [
+			"player/survivor/voice/replica/worldsigns02.wav",  //Quarantine.
+			"player/survivor/voice/replica/worldsigns15.wav"  //Quarantine zone. No unauthorized admittance.
+		],
+		PlayerRemarkWorldSignWhereIsCEDA2Replica = [
+			"player/survivor/voice/replica/worldsigns10.wav",  //Zombiefied.
+			"player/survivor/voice/replica/worldsigns11.wav"  //Good question, where in the hell is CEDA. Cause I'd like to shoot some of their asses.
+		],
+		PlayerWorldSignC5AlarmWillSoundReplica = [
+			"player/survivor/voice/replica/worldsigns12.wav",  //Warning.  Alarm will sound if door is opened before clearance from tower.
+			"player/survivor/voice/replica/worldc5m2b07.wav",  //Alarm's gonna sound when we open the door.
+			"player/survivor/voice/replica/worldc5m2b08.wav"  //Get ready to run.
+		],
+		PlayerWorldSignC5AlarmWillSound3Replica = [
+			"player/survivor/voice/replica/world14.wav"  //Gotta agree with that.
+		],
+		RespondAffirmativeReplica = [
+			"player/survivor/voice/replica/yes04.wav",  //Oh Yeah.
+			"player/survivor/voice/replica/yes05.wav",  //For sure.
+			"player/survivor/voice/replica/yes07.wav",  //Positively.
+			"player/survivor/voice/replica/yes10.wav"  //Sho sho.
+		],
+		PlayerFollowMeReplica = [
+			"player/survivor/voice/replica/followme01.wav",  //Come on y' all this way.
+			"player/survivor/voice/replica/followme02.wav",  //This way.
+			"player/survivor/voice/replica/followme03.wav",  //Come on, this way.
+			"player/survivor/voice/replica/followme04.wav",  //Follow me.
+			"player/survivor/voice/replica/followme05.wav",  //This way.
+			"player/survivor/voice/replica/followme06.wav"  //Y'all stay close.
+		],
+		PlayerHelpReplica = [
+			"player/survivor/voice/replica/help01.wav",  //I need some help!
+			"player/survivor/voice/replica/help02.wav",  //Help! [Screamed angrily]
+			"player/survivor/voice/replica/help03.wav",  //Hey y'all I need some help.
+			"player/survivor/voice/replica/help04.wav",  //Could use some help over here.
+			"player/survivor/voice/replica/help05.wav"  //Get ya ass over here and help me!
+		],
+		PlayerHurryUpReplica = [
+			"player/survivor/voice/replica/hurryup01.wav",  //Come on, we gotta go.
+			"player/survivor/voice/replica/hurryup02.wav",  //Haul some ass y'all.
+			"player/survivor/voice/replica/hurryup03.wav",  //Hurry up!
+			"player/survivor/voice/replica/hurryup04.wav",  //Hurry up!
+			"player/survivor/voice/replica/hurryup05.wav",  //Hurry!
+			"player/survivor/voice/replica/hurryup06.wav",  //Move your damn ass!
+			"player/survivor/voice/replica/hurryup07.wav",  //Haul some ass y'all.
+			"player/survivor/voice/replica/hurryup08.wav",  //Alright, people, you best hop to it.
+			"player/survivor/voice/replica/hurryup09.wav",  //Let's go, let's go all right?
+			"player/survivor/voice/replica/hurryup10.wav",  //You best hop to it.
+			"player/survivor/voice/replica/hurryup11.wav"  //Let's go, let's go all right?
+		],
+		PlayerHurryUpC4M2Replica = [
+			"player/survivor/voice/replica/emphaticgoquiet01.wav",  //Just keep going.
+			"player/survivor/voice/replica/emphaticgoquiet02.wav",  //Go, go, go!
+			"player/survivor/voice/replica/emphaticgoquiet03.wav"  //Let's keep moving!
+		],
+		PlayerKillThatLightReplica = [
+			"player/survivor/voice/replica/killthatlight01.wav",  //Turn off ya light.
+			"player/survivor/voice/replica/killthatlight02.wav",  //Kill that light.
+			"player/survivor/voice/replica/killthatlight03.wav",  //Hey, kill that light.
+			"player/survivor/voice/replica/killthatlight04.wav",  //Ya all need to kill your lights.
+			"player/survivor/voice/replica/killthatlight05.wav",  //No lights.
+			"player/survivor/voice/replica/killthatlight06.wav"  //Lights out.
+		],
+		PlayerLeadOnReplica = [
+			"player/survivor/voice/replica/leadon01.wav",  //I'll follow ya.
+			"player/survivor/voice/replica/leadon02.wav",  //I'm followin ya.
+			"player/survivor/voice/replica/leadon03.wav",  //All right, I with ya.
+			"player/survivor/voice/replica/leadon04.wav"  //Lead on man.
+		],
+		PlayerMoveOnReplica = [
+			"player/survivor/voice/replica/moveon01.wav",  //Allright, let's go.
+			"player/survivor/voice/replica/moveon02.wav",  //Come on, people, let's get with it.
+			"player/survivor/voice/replica/moveon03.wav",  //Allright allright, gotta keep movin'.
+			"player/survivor/voice/replica/moveon04.wav",  //We gonna put up tents and shit or keep movin'?
+			"player/survivor/voice/replica/moveon05.wav",  //We should get movin', ya hear me?
+			"player/survivor/voice/replica/moveon06.wav",  //Alright, let's get it on.
+			"player/survivor/voice/replica/moveon07.wav",  //All right, let's roll.
+			"player/survivor/voice/replica/moveon08.wav",  //Let's get it on.
+			"player/survivor/voice/replica/moveon09.wav",  //Alright people, let's get it on.
+			"player/survivor/voice/replica/moveon10.wav"  //All right, let's roll.
+		],
+		PlayerStayTogetherReplica = [
+			"player/survivor/voice/replica/staytogether01.wav",  //Stay close people!
+			"player/survivor/voice/replica/staytogether02.wav",  //Y'all stay close.
+			"player/survivor/voice/replica/staytogether03.wav",  //Keep tight.
+			"player/survivor/voice/replica/staytogether04.wav"  //No one wander off.
+		],
+		PlayerWatchOutBehindReplica = [
+			"player/survivor/voice/replica/watchoutbehind01.wav",  //Behind us!
+			"player/survivor/voice/replica/watchoutbehind02.wav",  //Behind us!
+			"player/survivor/voice/replica/watchoutbehind03.wav",  //They're behind us!
+			"player/survivor/voice/replica/watchoutbehind04.wav",  //Behind us.
+			"player/survivor/voice/replica/watchoutbehind05.wav"  //Behind us.
+		],
+		PlayerAskReadyReplica = [
+			"player/survivor/voice/replica/askready01.wav",  //You kids ready?
+			"player/survivor/voice/replica/askready02.wav",  //We ready?
+			"player/survivor/voice/replica/askready03.wav",  //We all ready?
+			"player/survivor/voice/replica/askready04.wav",  //Ready?
+			"player/survivor/voice/replica/askready05.wav",  //Ready?
+			"player/survivor/voice/replica/askready06.wav",  //Everyone ready for this shit?
+			"player/survivor/voice/replica/askready07.wav",  //Everybody ready?
+			"player/survivor/voice/replica/askready08.wav",  //We ready to get it on?
+			"player/survivor/voice/replica/askready09.wav"  //Hey, we ready to get it on?
+		],
+		PlayerImWithYouReplica = [
+			"player/survivor/voice/replica/imwithyou01.wav",  //I've got ya.
+			"player/survivor/voice/replica/imwithyou02.wav",  //I'm right behind ya.
+			"player/survivor/voice/replica/imwithyou03.wav",  //I'm with ya.
+			"player/survivor/voice/replica/imwithyou04.wav",  //I got yer back.
+			"player/survivor/voice/replica/imwithyou05.wav",  //We tight.
+			"player/survivor/voice/replica/imwithyou06.wav"  //We tight.
+		],
+		PlayerLaughReplica = [
+			"player/survivor/voice/replica/laughter01.wav",  //<Short laugh>
+			"player/survivor/voice/replica/laughter02.wav",  //
+			"player/survivor/voice/replica/laughter03.wav",  //
+			"player/survivor/voice/replica/laughter04.wav",  //<Hearty Laugh>
+			"player/survivor/voice/replica/laughter05.wav",  //
+			"player/survivor/voice/replica/laughter06.wav",  //<Short laugh>
+			"player/survivor/voice/replica/laughter07.wav",  //<Short laugh>
+			"player/survivor/voice/replica/laughter08.wav",  //
+			"player/survivor/voice/replica/laughter09.wav",  //
+			"player/survivor/voice/replica/laughter10.wav",  //
+			"player/survivor/voice/replica/laughter11.wav",  //
+			"player/survivor/voice/replica/laughter12.wav",  //
+			"player/survivor/voice/replica/laughter13.wav",  //<Hearty Laugh>
+			"player/survivor/voice/replica/laughter14.wav",  //<Hearty Laugh>
+			"player/survivor/voice/replica/laughter15.wav",  //
+			"player/survivor/voice/replica/laughter16.wav",  //
+			"player/survivor/voice/replica/laughter17.wav",  //
+			"player/survivor/voice/replica/laughter18.wav",  //
+			"player/survivor/voice/replica/laughter19.wav",  //
+			"player/survivor/voice/replica/laughter20.wav",  //
+			"player/survivor/voice/replica/laughter21.wav",  //
+			"player/survivor/voice/replica/laughter22.wav",  //<Hearty Laugh>
+			"player/survivor/voice/replica/laughter23.wav"  //
+		],
+		PlayerLostCallReplica = [
+			"player/survivor/voice/replica/lostcall01.wav",  //Where you all at?
+			"player/survivor/voice/replica/lostcall02.wav",  //Hey! Anyone out there?
+			"player/survivor/voice/replica/lostcall03.wav"  //Holler back at me folks!
+		],
+		PlayerNiceJobResponseReplica = [
+			"player/survivor/voice/replica/nicejob01.wav",  //Nice.
+			"player/survivor/voice/replica/nicejob02.wav",  //Nice work.
+			"player/survivor/voice/replica/nicejob03.wav",  //Allright, you doin' good.
+			"player/survivor/voice/replica/nicejob04.wav",  //You're on that shit.
+			"player/survivor/voice/replica/nicejob05.wav",  //Way to go.
+			"player/survivor/voice/replica/nicejob06.wav",  //Allright now, you done good,.
+			"player/survivor/voice/replica/nicejob07.wav",  //Nice, keep goin at em like that.
+			"player/survivor/voice/replica/nicejob08.wav",  //That there was nice work.
+			"player/survivor/voice/replica/nicejob09.wav",  //Allright. You beat their ass good.
+			"player/survivor/voice/replica/nicejob10.wav",  //You done good.
+			"player/survivor/voice/replica/nicejob11.wav",  //Alright, alright. Not bad, not bad.
+			"player/survivor/voice/replica/nicejob12.wav",  //Come one now, keep it up, keep it up.
+			"player/survivor/voice/replica/nicejob13.wav",  //Alright, way to go, way to go.
+			"player/survivor/voice/replica/nicejob14.wav",  //Way to stick it to 'em.
+			"player/survivor/voice/replica/nicejob15.wav"  //Alright everybody, you are giving 110%.
+		],
+		PlayerNoReplica = [
+			"player/survivor/voice/replica/no01.wav",  //No.
+			"player/survivor/voice/replica/no02.wav",  //Oh hell no.
+			"player/survivor/voice/replica/no03.wav",  //Excuse me?
+			"player/survivor/voice/replica/no04.wav",  //enh. Oh.
+			"player/survivor/voice/replica/no05.wav",  //No thank you.
+			"player/survivor/voice/replica/no06.wav",  //Nope.
+			"player/survivor/voice/replica/no07.wav",  //Uh uh.
+			"player/survivor/voice/replica/no08.wav",  //Ain't gonna happen.
+			"player/survivor/voice/replica/no09.wav",  //hell no.
+			"player/survivor/voice/replica/no10.wav",  //Shit no.
+			"player/survivor/voice/replica/no11.wav",  //No.
+			"player/survivor/voice/replica/no12.wav"  //You crazy?
+		],
+		PlayerNoEllisReplica = [
+			"player/survivor/voice/replica/noellis01.wav"  //Ahhh hell no, boy.
+		],
+		PlayerNoFemaleReplica = [
+			"player/survivor/voice/replica/nofemale01.wav",  //Nahh, girl. Mn. Mnnn.
+			"player/survivor/voice/replica/nofemale02.wav"  //Nahh, girl.
+		],
+		PlayerAnswerLostCallReplica = [
+			"player/survivor/voice/replica/scenariojoin01.wav",  //I'm here!
+			"player/survivor/voice/replica/scenariojoin03.wav",  //I'm here!
+			"player/survivor/voice/replica/scenariojoin04.wav"  //Hey, I'm here!
+		],
+		KillStealCalledOutReplica = [
+			"player/survivor/voice/replica/reactionnegative12.wav",  //Bullshit.
+			"player/survivor/voice/replica/reactionnegative14.wav",  //Bullshit.
+			"player/survivor/voice/replica/reactionnegative20.wav"  //Bullshit.
+		],
+		PlayerSorryReplica = [
+			"player/survivor/voice/replica/sorry04.wav",  //Sorry.
+			"player/survivor/voice/replica/sorry05.wav"  //Hey, sorry.
+		],
+		PlayerSorryFFReplica = [
+			"player/survivor/voice/replica/sorry01.wav",  //Shit, my bad.
+			"player/survivor/voice/replica/sorry02.wav",  //That right there was my fault.
+			"player/survivor/voice/replica/sorry03.wav",  //My bad..
+			"player/survivor/voice/replica/sorry06.wav",  //Ha, you know what? My bad.
+			"player/survivor/voice/replica/sorry07.wav"  //Oh shit, sorry.
+		],
+		PlayerThanksReplica = [
+			"player/survivor/voice/replica/thanks01.wav",  //Thanks.
+			"player/survivor/voice/replica/thanks02.wav",  //Thanks.
+			"player/survivor/voice/replica/thanks03.wav",  //All right.
+			"player/survivor/voice/replica/thanks04.wav",  //Thanks.
+			"player/survivor/voice/replica/thanks05.wav",  //Thanks, we straight?
+			"player/survivor/voice/replica/thanks06.wav",  //Allrighht thanks.
+			"player/survivor/voice/replica/thanks07.wav",  //THANKS!
+			"player/survivor/voice/replica/thanks08.wav"  //Thanks, man.
+		],
+		PlayerYellRunReplica = [
+			"player/survivor/voice/replica/yellrun01.wav",  //Run!
+			"player/survivor/voice/replica/yellrun02.wav",  //Haul ASS!
+			"player/survivor/voice/replica/yellrun03.wav",  //Don't stop running!
+			"player/survivor/voice/replica/yellrun04.wav",  //Run! Run! Run!
+			"player/survivor/voice/replica/yellrun05.wav",  //Run! Run!
+			"player/survivor/voice/replica/yellrun06.wav"  //KEEP RUNNING!
+		],
+		PlayerYesReplica = [
+			"player/survivor/voice/replica/yes01.wav",  //Yeah.
+			"player/survivor/voice/replica/yes02.wav",  //Yeah.
+			"player/survivor/voice/replica/yes03.wav",  //Yes.
+			"player/survivor/voice/replica/yes04.wav",  //Oh Yeah.
+			"player/survivor/voice/replica/yes05.wav",  //For sure.
+			"player/survivor/voice/replica/yes06.wav",  //Know that's right.
+			"player/survivor/voice/replica/yes07.wav",  //Positively.
+			"player/survivor/voice/replica/yes08.wav",  //Yeah.
+			"player/survivor/voice/replica/yes09.wav",  //Yeah. Sho you right.
+			"player/survivor/voice/replica/yes10.wav",  //Sho sho.
+			"player/survivor/voice/replica/yes11.wav"  //That's what's up, baby.
+		],
+		PlayerYouAreWelcomeReplica = [
+			"player/survivor/voice/replica/youarewelcome01.wav",  //It ain't nothin.
+			"player/survivor/voice/replica/youarewelcome02.wav",  //We cool.
+			"player/survivor/voice/replica/youarewelcome03.wav",  //We straight.
+			"player/survivor/voice/replica/youarewelcome04.wav",  //It's all good.
+			"player/survivor/voice/replica/youarewelcome05.wav"  //You're Welcome.
+		],
+		NickC1AttitudeReplica = [
+			"player/survivor/voice/replica/youarewelcome09.wav"  //What? I said thanks!
+		],
+		YouAreWelcomeGamblerReplica = [
+			"player/survivor/voice/replica/youarewelcomegambler01.wav"  //We're all in this together, Nick.
+		],
+		YouAreWelcomeMechanicReplica = [
+			"player/survivor/voice/replica/youarewelcomemechanic01.wav"  //No problem, Ellis.
+		],
+		YouAreWelcomeProducerReplica = [
+			"player/survivor/voice/replica/youarewelcomeproducer01.wav"  //Anytime, Ro.
+		],
+		BotAttentionBattleReplica = [
+			"player/survivor/voice/replica/imwithyou01.wav",  //I've got ya.
+			"player/survivor/voice/replica/imwithyou02.wav",  //I'm right behind ya.
+			"player/survivor/voice/replica/imwithyou03.wav",  //I'm with ya.
+			"player/survivor/voice/replica/imwithyou04.wav",  //I got yer back.
+			"player/survivor/voice/replica/imwithyou05.wav",  //We tight.
+			"player/survivor/voice/replica/imwithyou06.wav",  //We tight.
+			"player/survivor/voice/replica/leadon01.wav",  //I'll follow ya.
+			"player/survivor/voice/replica/leadon02.wav"  //I'm followin ya.
+		],
+		BotNoteHumanAttentionReplica = [
+			"player/survivor/voice/replica/askready01.wav",  //You kids ready?
+			"player/survivor/voice/replica/askready02.wav",  //We ready?
+			"player/survivor/voice/replica/askready03.wav",  //We all ready?
+			"player/survivor/voice/replica/askready06.wav",  //Everyone ready for this shit?
+			"player/survivor/voice/replica/askready07.wav",  //Everybody ready?
+			"player/survivor/voice/replica/askready08.wav"  //We ready to get it on?
+		],
+		PlayerNegativeReplica = [
+			"player/survivor/voice/replica/reactionnegative01.wav",  //Shit.
+			"player/survivor/voice/replica/reactionnegative02.wav",  //What the f-
+			"player/survivor/voice/replica/reactionnegative03.wav",  //Damn!
+			"player/survivor/voice/replica/reactionnegative04.wav",  //Man this is about to get all baghdad and shit..
+			"player/survivor/voice/replica/reactionnegative05.wav",  //Oh hell, this about to get bad.
+			"player/survivor/voice/replica/reactionnegative06.wav",  //Hell no.
+			"player/survivor/voice/replica/reactionnegative07.wav",  //hhhhhhh [frustrated]
+			"player/survivor/voice/replica/reactionnegative08.wav",  //Goddamnit!
+			"player/survivor/voice/replica/reactionnegative09.wav",  //Shiiit.
+			"player/survivor/voice/replica/reactionnegative10.wav",  //Shiiit.
+			"player/survivor/voice/replica/reactionnegative11.wav",  //What the? hhhhhhh [frustrated]
+			"player/survivor/voice/replica/reactionnegative12.wav",  //Bullshit.
+			"player/survivor/voice/replica/reactionnegative13.wav",  //Well, I'll be a monkey's uncle.
+			"player/survivor/voice/replica/reactionnegative14.wav",  //Bullshit.
+			"player/survivor/voice/replica/reactionnegative15.wav",  //Goddamn!
+			"player/survivor/voice/replica/reactionnegative16.wav",  //Son of a bitch.
+			"player/survivor/voice/replica/reactionnegative17.wav",  //Son of a bitch.
+			"player/survivor/voice/replica/reactionnegative18.wav",  //Goddamn!
+			"player/survivor/voice/replica/reactionnegative19.wav",  //Well, I'll be a monkey's uncle.
+			"player/survivor/voice/replica/reactionnegative20.wav"  //Bullshit.
+		],
+		PlayerShootCarNotReplica = [
+			"player/survivor/voice/replica/reactionnegative04.wav",  //Man this is about to get all baghdad and shit..
+			"player/survivor/voice/replica/reactionnegative05.wav"  //Oh hell, this about to get bad.
+		],
+		PlayerShootCarReplica = [
+			"player/survivor/voice/replica/reactionnegative03.wav",  //Damn!
+			"player/survivor/voice/replica/reactionnegative16.wav"  //Son of a bitch.
+		],
+		PlayerHeardBoomerReplica = [
+			"player/survivor/voice/replica/heardboomer01.wav",  //I hear a Boomer.
+			"player/survivor/voice/replica/heardboomer02.wav",  //Boomer's sneakin 'round.
+			"player/survivor/voice/replica/heardboomer03.wav",  //Careful now, boomer.
+			"player/survivor/voice/replica/heardboomer04.wav"  //Step slow ya' all, boomer round.
+		],
+		PlayerHeardHunterReplica = [
+			"player/survivor/voice/replica/heardhunter01.wav",  //I hear a hunter.
+			"player/survivor/voice/replica/heardhunter02.wav",  //Punk ass hunter around.
+			"player/survivor/voice/replica/heardhunter03.wav"  //Sounds like a hunter.
+		],
+		PlayerHeardSmokerReplica = [
+			"player/survivor/voice/replica/heardsmoker01.wav",  //Sounds like a Smoker.
+			"player/survivor/voice/replica/heardsmoker02.wav",  //I hear a smoker.
+			"player/survivor/voice/replica/heardsmoker03.wav"  //Sounds like one of them smoker bitches.
+		],
+		PlayerHeardChargerReplica = [
+			"player/survivor/voice/replica/heardcharger01.wav",  //We gotta Charger round.
+			"player/survivor/voice/replica/heardcharger02.wav",  //Gotta Charger round.
+			"player/survivor/voice/replica/heardcharger03.wav",  //I hear a Charger.
+			"player/survivor/voice/replica/heardcharger04.wav"  //I hear a charger, don't get charged and shit.
+		],
+		PlayerHeardSpitterReplica = [
+			"player/survivor/voice/replica/heardspitter01.wav",  //I hear a spitter.
+			"player/survivor/voice/replica/heardspitter02.wav",  //That sounds like a spitter.
+			"player/survivor/voice/replica/heardspitter03.wav",  //Spitter's around.
+			"player/survivor/voice/replica/heardspitter04.wav",  //That fat spittin' bitch is around.
+			"player/survivor/voice/replica/heardspitter05.wav"  //I hear that fat woman.
+		],
+		PlayerHeardJockeyReplica = [
+			"player/survivor/voice/replica/heardjockey01.wav",  //I hear a jockey.
+			"player/survivor/voice/replica/heardjockey02.wav",  //One of those little jockeys is around.
+			"player/survivor/voice/replica/heardjockey03.wav",  //That sounds like a little jockey.
+			"player/survivor/voice/replica/heardjockey04.wav",  //One of those leapin' on your back bitches is around.
+			"player/survivor/voice/replica/heardjockey05.wav",  //One of those leapin' on your back bitches is around.
+			"player/survivor/voice/replica/heardjockey06.wav"  //I hear one of those jockeys.  If I see it, I'm gonna shoot the shit out of it.
+		],
+		PlayerHeardBoomerC1Replica = [
+			"player/survivor/voice/replica/heardspecialc101.wav",  //Ahh what the heck is that?!
+			"player/survivor/voice/replica/heardspecialc102.wav",  //I don't like the sound of that one bit.
+			"player/survivor/voice/replica/heardspecialc103.wav",  //Anyone know what that is?
+			"player/survivor/voice/replica/heardspecialc104.wav"  //From the sounds of it, its about to get a whole lot worse.
+		],
+		PlayerHeardJockeyC1Replica = [
+			"player/survivor/voice/replica/heardjockeyc101.wav",  //What is that noise?
+			"player/survivor/voice/replica/heardjockeyc102.wav",  //What is that noise?
+			"player/survivor/voice/replica/heardjockeyc103.wav"  //Is that one of those little things?
+		],
+		PlayerHeardTankReplica = [
+			"player/survivor/voice/replica/heardhulk01.wav",  //Oh SHIT! TANK!
+			"player/survivor/voice/replica/heardhulk02.wav",  //TANK!
+			"player/survivor/voice/replica/heardhulk03.wav",  //I'm gonna beat that tank's ass.
+			"player/survivor/voice/replica/heardhulk04.wav"  //We all gotta shoot the tank, ya hear me?
+		],
+		PlayerHeardWitchReplica = [
+			"player/survivor/voice/replica/heardwitch01.wav",  //Ya'all hear her?,Get ready to toss that bitch.
+			"player/survivor/voice/replica/heardwitch02.wav",  //Quiet everybody I hear a bitch.
+			"player/survivor/voice/replica/heardwitch03.wav",  //That there sounds like a witch.
+			"player/survivor/voice/replica/heardwitch04.wav"  //Quiet y'all, I hear a witch.
+		],
+		PlayerHurrahReplica = [
+			"player/survivor/voice/replica/hurrah01.wav",  //We cool.
+			"player/survivor/voice/replica/hurrah02.wav",  //We gonna be all right.
+			"player/survivor/voice/replica/hurrah03.wav",  //We good, this ain't shit.
+			"player/survivor/voice/replica/hurrah04.wav",  //We gonna do this.
+			"player/survivor/voice/replica/hurrah05.wav",  //We got this.
+			"player/survivor/voice/replica/hurrah06.wav",  //Those things ain't shit.
+			"player/survivor/voice/replica/hurrah07.wav",  //Oh hell yeah!
+			"player/survivor/voice/replica/hurrah08.wav",  //We're gonna be okay.
+			"player/survivor/voice/replica/hurrah09.wav",  //We got up in their shit.
+			"player/survivor/voice/replica/hurrah10.wav",  //We are kicking their ass.
+			"player/survivor/voice/replica/hurrah11.wav",  //Oh hell yeah!
+			"player/survivor/voice/replica/hurrah12.wav",  //mmm. Allright.
+			"player/survivor/voice/replica/hurrah13.wav",  //Woo! Haha! That's how we do it.
+			"player/survivor/voice/replica/hurrah14.wav",  //Alright! Way to go! Way to go!
+			"player/survivor/voice/replica/hurrah15.wav",  //Yeah! You are a great bunch.
+			"player/survivor/voice/replica/hurrah16.wav",  //That was outstanding.
+			"player/survivor/voice/replica/hurrah17.wav",  //Alright! Good effort.
+			"player/survivor/voice/replica/hurrah18.wav",  //Alright, alright! Way to put it all out there!
+			"player/survivor/voice/replica/hurrah19.wav",  //Ya boy!
+			"player/survivor/voice/replica/hurrah20.wav",  //That is how you kick some ASS, baby!
+			"player/survivor/voice/replica/hurrah21.wav",  //Baby, that is how that's DONE!
+			"player/survivor/voice/replica/hurrah22.wav",  //Ha haaa, YES! WE GOT THAT DONE!
+			"player/survivor/voice/replica/hurrah23.wav",  //We are kickin' some zombie ASS!
+			"player/survivor/voice/replica/hurrah24.wav",  //THAT is how you kick zombie ASS!
+			"player/survivor/voice/replica/hurrah25.wav",  //WE... DESTROY... ZOMBIES! THAT is what we do!
+			"player/survivor/voice/replica/hurrah26.wav"  //You made me proud out there, people...
+		],
+		PlayerWarnCarefulReplica = [
+			"player/survivor/voice/replica/warncareful01.wav",  //Careful now...
+			"player/survivor/voice/replica/warncareful02.wav",  //Shit ain't right, be careful.
+			"player/survivor/voice/replica/warncareful03.wav",  //Everybody? Keep ya shit tight.
+			"player/survivor/voice/replica/warncareful04.wav"  //Keep ya shit tight.
+		],
+		SurvivorSpottedWorldFarReplica = [
+			"player/survivor/voice/replica/look01.wav",  //Over there!
+			"player/survivor/voice/replica/look02.wav",  //Look!
+			"player/survivor/voice/replica/look03.wav"  //Look!
+		],
+		C6M3_PourFinishedReplica = [
+			"player/survivor/voice/replica/blank.wav"  //
+		],
+		GasPourDoneSCReplica = [
+			"player/survivor/voice/replica/battlecry01.wav",  //EAT THAT SHIT!
+			"player/survivor/voice/replica/battlecry02.wav",  //How you like that?
+			"player/survivor/voice/replica/battlecry03.wav",  //HOW THAT FEEL?
+			"player/survivor/voice/replica/battlecry04.wav",  //YEAH!
+			"player/survivor/voice/replica/battlecry05.wav",  //CHEW ON THAT!
+			"player/survivor/voice/replica/battlecry06.wav",  //ALLRIGHT!
+			"player/survivor/voice/replica/battlecry09.wav",  //WHOOO! YEAH BABY!
+			"player/survivor/voice/replica/hurrah10.wav",  //We are kicking their ass.
+			"player/survivor/voice/replica/taunt02.wav",  //Goddamn right!
+			"player/survivor/voice/replica/taunt08.wav"  //[Loud, evil laugh]
+		],
+		GasPourSCAloneReplica = [
+			"player/survivor/voice/replica/worldc1m4b12.wav",  //Oh, come on, baby, come on...
+			"player/survivor/voice/replica/worldc1m4b13.wav",  //Oh, come on, baby, come on...
+			"player/survivor/voice/replica/worldc1m4b14.wav",  //Please, baby, baby, please, please...
+			"player/survivor/voice/replica/worldc1m4b15.wav",  //Oh, come on, baby, come on...
+			"player/survivor/voice/replica/worldc1m4b16.wav",  //Hurry up, hurrrry upppp...
+			"player/survivor/voice/replica/worldc1m4b17.wav"  //Come onnnn, come onnnnnn...
+		],
+		GasPourSCNotAloneReplica = [
+			"player/survivor/voice/replica/dlc1_c6m3_cans02.wav",  //Pouring a can.
+			"player/survivor/voice/replica/worldc1m4b18.wav"  //Fillin' it up here!
+		],
+		GrabbingGasSCReplica = [
+			"player/survivor/voice/replica/killconfirmation01.wav",  //Got it!
+			"player/survivor/voice/replica/killconfirmation08.wav",  //I got it. [calmer]
+			"player/survivor/voice/replica/worldc1m4b19.wav",  //I got this one!
+			"player/survivor/voice/replica/worldc4m3b05.wav",  //I got one.
+			"player/survivor/voice/replica/dlc1_c6m3_cans03.wav",  //Got a can.
+			"player/survivor/voice/replica/dlc1_c6m3_cans04.wav"  //I got this can.
+		],
+		PlayerShotGasCanReplica = [
+			"player/survivor/voice/replica/reactionnegative01.wav",  //Shit.
+			"player/survivor/voice/replica/reactionnegative03.wav",  //Damn!
+			"player/survivor/voice/replica/reactionnegative08.wav",  //Goddamnit!
+			"player/survivor/voice/replica/reactionnegative09.wav",  //Shiiit.
+			"player/survivor/voice/replica/reactionnegative15.wav",  //Goddamn!
+			"player/survivor/voice/replica/reactionnegative16.wav"  //Son of a bitch.
+		],
+		ScavengeStartReplica = [
+			"player/survivor/voice/replica/moveon01.wav",  //Allright, let's go.
+			"player/survivor/voice/replica/worldc1m4b11.wav",  //Haul ass and get gas!
+			"player/survivor/voice/replica/worldc1m4b20.wav"  //Let's go! Find a gas can!
+		],
+		ScavengeStartC1M4Replica = [
+			"player/survivor/voice/replica/worldc1m4b11.wav",  //Haul ass and get gas!
+			"player/survivor/voice/replica/worldc1m4b20.wav",  //Let's go! Find a gas can!
+			"player/survivor/voice/replica/worldc1m4b21.wav"  //Let's get this car gassed up!
+		],
+		PlayerCommentJockeyMaleReplica = [
+			"player/survivor/voice/replica/grabbedbyjockeyr01.wav",  //That ain't right for a man to be ridden like that.
+			"player/survivor/voice/replica/grabbedbyjockeyr02.wav"  //Damn. That ain't right.
+		],
+		PlayerCommentJockeyGenericReplica = [
+			"player/survivor/voice/replica/grabbedbyjockeyr02.wav"  //Damn. That ain't right.
+		],
+		C4M2LockTheDoorCheckPointReplica = [
+			"player/survivor/voice/replica/worldc4m2b35.wav",  //Close the door and let's get the gas.
+			"player/survivor/voice/replica/worldc4m2b36.wav",  //Close the door and we can bust the cans outta this locker.
+			"player/survivor/voice/replica/worldc4m2b37.wav"  //Close the door and let's get the gas.
+		],
+		GoingToDieCoachCoachReplica = [
+			"player/survivor/voice/replica/goingtodie01.wav",  //This here is some serious bullshit.
+			"player/survivor/voice/replica/goingtodie02.wav",  //This ain't how i thought this would go.
+			"player/survivor/voice/replica/goingtodie03.wav",  //I can walk this shit off.
+			"player/survivor/voice/replica/goingtodie04.wav",  //Ahhhhhhh.
+			"player/survivor/voice/replica/goingtodie05.wav",  //Damn, they messed me up.
+			"player/survivor/voice/replica/goingtodie07.wav",  //Man, this shit hurts.
+			"player/survivor/voice/replica/goingtodie08.wav",  //Man said there was nothing to worry about, well buullshit.
+			"player/survivor/voice/replica/goingtodie09.wav",  //Ya'll crazy if you don't think this hurts.
+			"player/survivor/voice/replica/goingtodie10.wav",  //Shit, I'm messed up.
+			"player/survivor/voice/replica/goingtodie11.wav",  //It hurts, but ain't nothin.
+			"player/survivor/voice/replica/goingtodie12.wav",  //This shit ain't pretty.
+			"player/survivor/voice/replica/goingtodie13.wav",  //Ahh damnit. (frustrated)
+			"player/survivor/voice/replica/goingtodie14.wav",  //Man, this right here hurts somethin' fierce.
+			"player/survivor/voice/replica/goingtodie15.wav",  //This is some outrageous shit.
+			"player/survivor/voice/replica/goingtodie16.wav",  //Crazy sons of a bitches messed me up.
+			"player/survivor/voice/replica/goingtodie17.wav",  //Damn. They beat me good.
+			"player/survivor/voice/replica/goingtodie18.wav",  //They beat my ass fair and square.
+			"player/survivor/voice/replica/goingtodie19.wav",  //I shoulda learned to drive a tank or some shit.
+			"player/survivor/voice/replica/goingtodie20.wav",  //Ahh damnit now.
+			"player/survivor/voice/replica/goingtodie21.wav",  //No pain, no gain. I must be about to gain some serious shit.
+			"player/survivor/voice/replica/goingtodie22.wav",  //I ain't ready to lay down yet.
+			"player/survivor/voice/replica/goingtodie23.wav",  //Hey. Now this here is some bullshit.
+			"player/survivor/voice/replica/goingtodie24.wav",  //I can walk this off.
+			"player/survivor/voice/replica/goingtodie25.wav",  //Tryin' to walk this off.
+			"player/survivor/voice/replica/goingtodie27.wav",  //I'm gotta get right.
+			"player/survivor/voice/replica/goingtodie28.wav",  //I ain't dead yet.
+			"player/survivor/voice/replica/goingtodie32.wav"  //Man, those zombies beat my ass.
+		],
+		SurvivorVocalizeGoingToDie3Replica = [
+			"player/survivor/voice/replica/goingtodie301.wav",  //I'm just gonna admit it, I need some help.
+			"player/survivor/voice/replica/goingtodie302.wav",  //I need to get right.
+			"player/survivor/voice/replica/goingtodie303.wav"  //Sheeeeeet, I ain't gonna make it.
+		],
+		SurvivorVocalizeGoingToDie3C5M5Replica = [
+			"player/survivor/voice/replica/worldc5m5b19.wav"  //I walked through a WORLD OF SHIT to get here! I am not gonna die now! I am NOT gonna DIE NOW!
+		],
+		PlayerAlertGiveItemStopReplica = [
+			"player/survivor/voice/replica/alertgiveitemstop01.wav",  //Hold on, I got something for you.
+			"player/survivor/voice/replica/alertgiveitemstop02.wav",  //Hold up now, I got something for you.
+			"player/survivor/voice/replica/alertgiveitemstop03.wav"  //Hold up, I got something for you.
+		],
+		PlayerAlertGiveItemStopC1Replica = [
+			"player/survivor/voice/replica/alertgiveitemstopc101.wav",  //Yo! I got somethin' for ya.
+			"player/survivor/voice/replica/alertgiveitemstopc102.wav"  //Hey! Hey! Hold up.
+		],
+		PlayerEatPillsReplica = [
+			"player/survivor/voice/replica/painrelieftpills02.wav",  //Alright, that hit the spot.
+			"player/survivor/voice/replica/painrelieftpills03.wav",  //That hit the spot.
+			"player/survivor/voice/replica/painrelieftpills04.wav",  //Yeah, that'll hold me.
+			"player/survivor/voice/replica/painrelieftpills05.wav",  //Alright, that'll keep me tight.
+			"player/survivor/voice/replica/painrelieftpills06.wav"  //Woo, that'll hold me.
+		],
+		PlayerGamblerPouncedReplica = [
+			"player/survivor/voice/replica/hunternickpounced01.wav",  //Hunter's got Nick!
+			"player/survivor/voice/replica/hunternickpounced02.wav"  //Hunter's on Nick!
+		],
+		PlayerGetInsideCheckPointReplica = [
+			"player/survivor/voice/replica/staytogetherinside01.wav",  //Come on people, get you asses in here!
+			"player/survivor/voice/replica/staytogetherinside02.wav",  //Get you asses in here!
+			"player/survivor/voice/replica/staytogetherinside03.wav",  //Ain't got time for this shit, get in here.
+			"player/survivor/voice/replica/staytogetherinside04.wav",  //Come on people, come on, get in here!
+			"player/survivor/voice/replica/staytogetherinside05.wav",  //Hey! Get in here!
+			"player/survivor/voice/replica/staytogetherinside06.wav"  //Get you asses in here right now!
+		],
+		PlayerGetInsideCheckPointC2M2Replica = [
+			"player/survivor/voice/replica/worldc2m219.wav",  //Come on, get into the tunnel of love.
+			"player/survivor/voice/replica/worldc2m2b39.wav",  //Get in the tunnel of love!
+			"player/survivor/voice/replica/worldc2m2b40.wav"  //Get your ass in the tunnel of love!
+		],
+		PlayerGrabbedByJockeyReplica = [
+			"player/survivor/voice/replica/grabbedbyjockey01.wav",  //Jockey on me!
+			"player/survivor/voice/replica/grabbedbyjockey02.wav",  //JOCKEY ON MY BACK!
+			"player/survivor/voice/replica/grabbedbyjockey03.wav",  //Oh lord no, that things on me!
+			"player/survivor/voice/replica/grabbedbyjockey04.wav",  //Agh, that things on me!
+			"player/survivor/voice/replica/grabbedbyjockey05.wav",  //Kill the thing on my back!
+			"player/survivor/voice/replica/grabbedbyjockey06.wav",  //Ellis is that you? What the hell!?!?
+			"player/survivor/voice/replica/grabbedbyjockey07.wav",  //OH SHIT GET THIS THING OFF ME!
+			"player/survivor/voice/replica/grabbedbyjockey08.wav",  //Gah, get this thing off my back!
+			"player/survivor/voice/replica/hurtcritical05.wav",  //[Pain noise - loud major pain]
+			"player/survivor/voice/replica/hurtmajor05.wav",  //[Pain noise - ugh]
+			"player/survivor/voice/replica/hurtmajor08.wav",  //[Pain noise - ugh]
+			"player/survivor/voice/replica/screamwhilepounced01.wav",  //GET IT OFF! [angry]
+			"player/survivor/voice/replica/screamwhilepounced04.wav"  //GET IT OFF!
+		],
+		PlayerGrabbedByJockeyC1Replica = [
+			"player/survivor/voice/replica/grabbedbyjockey04.wav",  //Agh, that things on me!
+			"player/survivor/voice/replica/grabbedbyjockey05.wav",  //Kill the thing on my back!
+			"player/survivor/voice/replica/grabbedbyjockey08.wav"  //Gah, get this thing off my back!
+		],
+		PlayerGrenadeMolotovReplica = [
+			"player/survivor/voice/replica/grenade08.wav",  //Molotov!
+			"player/survivor/voice/replica/grenade09.wav",  //Throwin' a molotov!
+			"player/survivor/voice/replica/grenade10.wav"  //Molotov out!
+		],
+		PlayerGrenadePipeBombReplica = [
+			"player/survivor/voice/replica/grenade02.wav",  //GRENADE!
+			"player/survivor/voice/replica/grenade04.wav",  //FIRE IN THE HOLE!!
+			"player/survivor/voice/replica/grenade05.wav",  //GRENADE!
+			"player/survivor/voice/replica/grenade01.wav",  //GRENADE!
+			"player/survivor/voice/replica/grenade03.wav",  //FIRE IN THE HOLE!!
+			"player/survivor/voice/replica/grenade06.wav",  //GRENADE! Comin at ya!
+			"player/survivor/voice/replica/grenade07.wav",  //FIRE IN THE HOLE!!
+			"player/survivor/voice/replica/grenade11.wav",  //Pipe bomb out!
+			"player/survivor/voice/replica/grenade12.wav"  //Throwin' a pipe bomb!
+		],
+		PlayerGrenadeVomitJarReplica = [
+			"player/survivor/voice/replica/boomerjar09.wav",  //Heads up!
+			"player/survivor/voice/replica/boomerjar10.wav",  //Incoming!
+			"player/survivor/voice/replica/boomerjar11.wav"  //Heads up!
+		],
+		PlayerGrenadeVomitJarC1Replica = [
+			"player/survivor/voice/replica/boomerjar10.wav"  //Incoming!
+		],
+		PlayerIncapacitatedInitialReplica = [
+			"player/survivor/voice/replica/incapacitatedinitial01.wav",  //Ahh shit, I'm down!
+			"player/survivor/voice/replica/incapacitatedinitial02.wav",  //Damnit, I'm down.
+			"player/survivor/voice/replica/incapacitatedinitial03.wav"  //Shit, need some help.
+		],
+		PlayerIncapacitatedInitialC1M2Replica = [
+			"player/survivor/voice/replica/blank.wav"  //
+		],
+		PlayerKillConfirmationReplica = [
+			"player/survivor/voice/replica/killconfirmation01.wav",  //Got it!
+			"player/survivor/voice/replica/killconfirmation02.wav",  //Hit it.
+			"player/survivor/voice/replica/killconfirmation03.wav",  //I got it.
+			"player/survivor/voice/replica/killconfirmation04.wav",  //Dead!
+			"player/survivor/voice/replica/killconfirmation05.wav",  //Pow! Got it!
+			"player/survivor/voice/replica/killconfirmation06.wav",  //It's down.
+			"player/survivor/voice/replica/killconfirmation07.wav",  //Got it! [calmer]
+			"player/survivor/voice/replica/killconfirmation08.wav",  //I got it. [calmer]
+			"player/survivor/voice/replica/killconfirmation09.wav"  //That one's mine.
+		],
+		PlayerKillConfirmationC1M1Replica = [
+			"player/survivor/voice/replica/worldc1m1b40.wav",  //Man, I ain't ever killed nothin before.
+			"player/survivor/voice/replica/worldc1m1b41.wav",  //This don't feel right.
+			"player/survivor/voice/replica/worldc1m1b42.wav",  //It's them or us.
+			"player/survivor/voice/replica/worldc1m1b43.wav",  //It's them or us.
+			"player/survivor/voice/replica/worldc1m1b44.wav"  //Man, I ain't ever killed nothin' before.
+		],
+		PlayerKillJockeyConfirmationC2M4EasterEggReplica = [
+			"player/survivor/voice/replica/no01.wav"  //No.
+		],
+		KillJockeyC2M4EasterEggReplica = [
+			"player/survivor/voice/replica/no04.wav"  //Enh-oh.
+		],
+		RightfulKillerReplica = [
+			"player/survivor/voice/replica/killconfirmationellis01.wav"  //What? Ah, hell no, boy, that was me.
+		],
+		PlayerKillTankConfirmationReplica = [
+			"player/survivor/voice/replica/killconfirmation01.wav",  //Got it!
+			"player/survivor/voice/replica/killconfirmation06.wav",  //It's down.
+			"player/survivor/voice/replica/killconfirmation07.wav",  //Got it! [calmer]
+			"player/survivor/voice/replica/killconfirmation08.wav",  //I got it. [calmer]
+			"player/survivor/voice/replica/killconfirmation09.wav"  //That one's mine.
+		],
+		PlayerKillTankNotHealthyReplica = [
+			"player/survivor/voice/replica/transitionclose02.wav",  //That shit was crazy.
+			"player/survivor/voice/replica/transitionclose03.wav",  //That was some close ass shit.
+			"player/survivor/voice/replica/transitionclose04.wav",  //We just made that.
+			"player/survivor/voice/replica/transitionclose07.wav",  //Let's put it behind us, we good, we good.
+			"player/survivor/voice/replica/transitionclose13.wav",  //We almost didn't make it...
+			"player/survivor/voice/replica/transitionclose12.wav",  //That shit was too goddamn close...
+			"player/survivor/voice/replica/transitionclose14.wav"  //That was a little TOO close...
+		],
+		PlayerKillTankConfirmationC1M2Replica = [
+			"player/survivor/voice/replica/blank.wav"  //
+		],
+		PlayerLockTheDoorCheckPointReplica = [
+			"player/survivor/voice/replica/closethedoor01.wav",  //Close that door.
+			"player/survivor/voice/replica/closethedoor02.wav",  //Close the door behind us.
+			"player/survivor/voice/replica/closethedoor03.wav",  //Close that bitch.
+			"player/survivor/voice/replica/closethedoor04.wav",  //Close the door.
+			"player/survivor/voice/replica/closethedoor05.wav",  //Quit screwing around, close the door.
+			"player/survivor/voice/replica/closethedoor06.wav"  //Y'all close that door.
+		],
+		PlayerLockTheDoorCheckPointC1Replica = [
+			"player/survivor/voice/replica/closethedoorc101.wav",  //We oughta be closing doors.
+			"player/survivor/voice/replica/closethedoorc102.wav"  //Let's close that door.
+		],
+		PlayerMechanicPouncedReplica = [
+			"player/survivor/voice/replica/hunterellispounced01.wav",  //Hunter's got Ellis!
+			"player/survivor/voice/replica/hunterellispounced02.wav"  //Hunter on Ellis!
+		],
+		PlayerMechanicPouncedC1Replica = [
+			"player/survivor/voice/replica/hunterpouncedc101.wav",  //That thing's ripping him up!
+			"player/survivor/voice/replica/hunterpouncedc102.wav"  //Zombie's ripping him up!
+		],
+		PlayerProducerPouncedReplica = [
+			"player/survivor/voice/replica/hunterrochellepounced01.wav",  //Hunter's got Ro!
+			"player/survivor/voice/replica/hunterrochellepounced02.wav",  //Hunter on  Rochelle!
+			"player/survivor/voice/replica/hunterpouncedc1producer02.wav"  //Ro's getting ripped up!
+		],
+		PlayerProducerPouncedC1KnownReplica = [
+			"player/survivor/voice/replica/hunterpouncedc1producer01.wav"  //Zombie's on RO!
+		],
+		PlayerProducerPouncedC1UnknownReplica = [
+			"player/survivor/voice/replica/worldc5m4b03.wav"  //SHIT!
+		],
+		PlayerRevivedByDefibrillatorReplica = [
+			"player/survivor/voice/replica/defibrillator09.wav",  //[being shocked]
+			"player/survivor/voice/replica/defibrillator12.wav",  //[being shocked]
+			"player/survivor/voice/replica/defibrillator13.wav",  //[being shocked]
+			"player/survivor/voice/replica/defibrillator14.wav",  //[being shocked]
+			"player/survivor/voice/replica/defibrillator18.wav",  //[gasp for breath]
+			"player/survivor/voice/replica/defibrillator19.wav"  //[gasp for breath]
+		],
+		PlayerRevivedByDefibrillator2Replica = [
+			"player/survivor/voice/replica/defibrillator10.wav",  //Whoa...
+			"player/survivor/voice/replica/defibrillator11.wav",  //Agggh damn it! You're SHOCKIN' me!
+			"player/survivor/voice/replica/defibrillator16.wav",  //Aw hell, I'm back here.
+			"player/survivor/voice/replica/defibrillator17.wav"  //[spitting] You didn't do mouth to mouth on me, did you?
+		],
+		PlayerRevivedByDefibrillator2ProducerReplica = [
+			"player/survivor/voice/replica/defibrillator15.wav"  //Girl, you're electric.
+		],
+		PlayerStayTogetherSaferoomReplica = [
+			"player/survivor/voice/replica/staytogetherinside01.wav",  //Come on people, get you asses in here!
+			"player/survivor/voice/replica/staytogetherinside02.wav",  //Get you asses in here!
+			"player/survivor/voice/replica/staytogetherinside03.wav",  //Ain't got time for this shit, get in here.
+			"player/survivor/voice/replica/staytogetherinside04.wav",  //Come on people, come on, get in here!
+			"player/survivor/voice/replica/staytogetherinside05.wav",  //Hey! Get in here!
+			"player/survivor/voice/replica/staytogetherinside06.wav"  //Get you asses in here right now!
+		],
+		PlayerSuggestHealthGenericReplica = [
+			"player/survivor/voice/replica/suggesthealth01.wav",  //
+			"player/survivor/voice/replica/suggesthealth02.wav",  //
+			"player/survivor/voice/replica/suggesthealth03.wav"  //This ain't about me people, let's heal up.
+		],
+		PlayerSuggestHealthC1Replica = [
+			"player/survivor/voice/replica/suggesthealthc101.wav",  //This would be the time to heal up.
+			"player/survivor/voice/replica/suggesthealthc102.wav",  //Now's a good time to heal if you can.
+			"player/survivor/voice/replica/suggesthealthc103.wav"  //If you got a health kit you should use it.
+		],
+		PlayerSuggestHealthGamblerReplica = [
+			"player/survivor/voice/replica/suggesthealthgambler01.wav",  //Nick, don't be stupid, heal up.
+			"player/survivor/voice/replica/suggesthealthnick01.wav",  //Nicolas I think it is time for you to heal.
+			"player/survivor/voice/replica/suggesthealthnick02.wav",  //Nick, you should use that kit on your self.
+			"player/survivor/voice/replica/suggesthealthnick03.wav"  //Nick, its all right, we all gotta heal sometime.
+		],
+		PlayerSuggestHealthMechanicReplica = [
+			"player/survivor/voice/replica/suggesthealthellis01.wav",  //Ellis, time for you to heal boy.
+			"player/survivor/voice/replica/suggesthealthellis02.wav",  //Allright Ellis, come on now, get yourself right.
+			"player/survivor/voice/replica/suggesthealthellis03.wav"  //Hey Ellis, that health kit ain't gonna use itself.
+		],
+		PlayerSuggestHealthProducerReplica = [
+			"player/survivor/voice/replica/suggesthealthrochell01.wav",  //Ro, time to heal.
+			"player/survivor/voice/replica/suggesthealthrochell02.wav",  //Ro, heal up, hear me girl?
+			"player/survivor/voice/replica/suggesthealthrochell03.wav",  //Girl, time for you to heal up.
+			"player/survivor/voice/replica/suggesthealthrochell04.wav"  //Hey girl, why don't you heal up?
+		],
+		PlayerTransitionReplica = [
+			"player/survivor/voice/replica/battlecry06.wav",  //ALLRIGHT!
+			"player/survivor/voice/replica/battlecry09.wav",  //WHOOO! YEAH BABY!
+			"player/survivor/voice/replica/hurrah01.wav",  //We cool.
+			"player/survivor/voice/replica/hurrah07.wav",  //Oh hell yeah!
+			"player/survivor/voice/replica/hurrah21.wav",  //Baby, that is how that's DONE!
+			"player/survivor/voice/replica/hurrah22.wav",  //Ha haaa, YES! WE GOT THAT DONE!
+			"player/survivor/voice/replica/hurrah25.wav",  //WE... DESTROY... ZOMBIES! THAT is what we do!
+			"player/survivor/voice/replica/hurrah26.wav",  //You made me proud out there, people...
+			"player/survivor/voice/replica/positivenoise02.wav",  //Yeah!
+			"player/survivor/voice/replica/positivenoise07.wav",  //Yeah!
+			"player/survivor/voice/replica/positivenoise09.wav",  //Heh heh! All right!
+			"player/survivor/voice/replica/taunt07.wav",  //[Loud, evil laugh]
+			"player/survivor/voice/replica/laughter15.wav",  //[Loud, hearty laugh]
+			"player/survivor/voice/replica/laughter22.wav",  //[Loud, evil laugh]
+			"player/survivor/voice/replica/laughter23.wav"  //[Loud, evil laugh]
+		],
+		PlayerTransitionCloseReplica = [
+			"player/survivor/voice/replica/transitionclose01.wav",  //That shit was crazy.
+			"player/survivor/voice/replica/transitionclose06.wav",  //Man said, any fight you walk away from is a win.
+			"player/survivor/voice/replica/transitionclose08.wav",  //Touchdown!
+			"player/survivor/voice/replica/transitionclose09.wav",  //They played us tough.
+			"player/survivor/voice/replica/transitionclose10.wav",  //That was some epic shit. Right there.
+			"player/survivor/voice/replica/transitionclose13.wav",  //We almost didn't make it...
+			"player/survivor/voice/replica/transitionclose16.wav",  //We got sloppy out there.
+			"player/survivor/voice/replica/transitionclose17.wav",  //I know we can do better than THAT.
+			"player/survivor/voice/replica/transitionclose18.wav"  //Man. That got BAD.
+		],
+		PlayerTransitionSoloReplica = [
+			"player/survivor/voice/replica/transitionclose15.wav"  //Damn. I can't be all that's left...
+		],
+		PlayerTransitionC1M2Replica = [
+			"player/survivor/voice/replica/worldc1m2b17.wav"  //Damn. Where IS everybody?
+		],
+		PlayerTransitionC1M3Replica = [
+			"player/survivor/voice/replica/worldc1m3b37.wav"  //I won't lie. It don't look good.
+		],
+		PlayerTransitionC5M4Replica = [
+			"player/survivor/voice/replica/worldc1m4b25.wav"  //Almost there!
+		],
+		PlayerTransitionC6M2Replica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoom02.wav"  //Man, that bridge's gotta be close!
+		],
+		PlayerUsingDefibrillatorReplica = [
+			"player/survivor/voice/replica/defibrillator05.wav",  //Clear!
+			"player/survivor/voice/replica/defibrillator06.wav",  //Come on!
+			"player/survivor/voice/replica/defibrillator07.wav",  //Come ON!
+			"player/survivor/voice/replica/defibrillator08.wav"  //Don't you die on me...
+		],
+		PlayerWarnHeardBoomerReplica = [
+			"player/survivor/voice/replica/heardboomer01.wav",  //I hear a Boomer.
+			"player/survivor/voice/replica/heardboomer02.wav",  //Boomer's sneakin 'round.
+			"player/survivor/voice/replica/heardboomer03.wav",  //Careful now, boomer.
+			"player/survivor/voice/replica/heardboomer04.wav"  //Step slow ya' all, boomer round.
+		],
+		PlayerWarnHeardChargerReplica = [
+			"player/survivor/voice/replica/heardcharger01.wav",  //We gotta Charger round.
+			"player/survivor/voice/replica/heardcharger02.wav",  //Gotta Charger round.
+			"player/survivor/voice/replica/heardcharger03.wav",  //I hear a Charger.
+			"player/survivor/voice/replica/heardcharger04.wav"  //I hear a charger, don't get charged and shit.
+		],
+		PlayerWarnHeardHunterReplica = [
+			"player/survivor/voice/replica/heardhunter01.wav",  //I hear a hunter.
+			"player/survivor/voice/replica/heardhunter02.wav",  //Punk ass hunter around.
+			"player/survivor/voice/replica/heardhunter03.wav"  //Sounds like a hunter.
+		],
+		PlayerWarnHeardJockeyReplica = [
+			"player/survivor/voice/replica/heardjockey01.wav",  //I hear a jockey.
+			"player/survivor/voice/replica/heardjockey02.wav",  //One of those little jockeys is around.
+			"player/survivor/voice/replica/heardjockey03.wav",  //That sounds like a little jockey.
+			"player/survivor/voice/replica/heardjockey04.wav",  //One of those leapin' on your back bitches is around.
+			"player/survivor/voice/replica/heardjockey05.wav",  //One of those leapin' on your back bitches is around.
+			"player/survivor/voice/replica/heardjockey06.wav"  //I hear one of those jockeys.  If I see it, I'm gonna shoot the shit out of it.
+		],
+		PlayerWarnHeardSmokerReplica = [
+			"player/survivor/voice/replica/heardsmoker01.wav",  //Sounds like a Smoker.
+			"player/survivor/voice/replica/heardsmoker02.wav",  //I hear a smoker.
+			"player/survivor/voice/replica/heardsmoker03.wav"  //Sounds like one of them smoker bitches.
+		],
+		PlayerWarnHeardSpitterReplica = [
+			"player/survivor/voice/replica/heardspitter01.wav",  //I hear a spitter.
+			"player/survivor/voice/replica/heardspitter02.wav",  //That sounds like a spitter.
+			"player/survivor/voice/replica/heardspitter03.wav",  //Spitter's around.
+			"player/survivor/voice/replica/heardspitter04.wav",  //That fat spittin' bitch is around.
+			"player/survivor/voice/replica/heardspitter05.wav"  //I hear that fat woman.
+		],
+		PlayerWarnHeardJockeyC1Replica = [
+			"player/survivor/voice/replica/heardjockeyc101.wav",  //What is that noise?
+			"player/survivor/voice/replica/heardjockeyc102.wav",  //What is that noise?
+			"player/survivor/voice/replica/heardjockeyc103.wav"  //Is that one of those little things?
+		],
+		PlayerWarnHeardBoomerC1Replica = [
+			"player/survivor/voice/replica/heardspecialc101.wav",  //Ahh what the heck is that?!
+			"player/survivor/voice/replica/heardspecialc102.wav",  //I don't like the sound of that one bit.
+			"player/survivor/voice/replica/heardspecialc103.wav",  //Anyone know what that is?
+			"player/survivor/voice/replica/heardspecialc104.wav"  //From the sounds of it, its about to get a whole lot worse.
+		],
+		PlayerWarnHeardWitchReplica = [
+			"player/survivor/voice/replica/heardwitch01.wav",  //Ya'all hear her?,Get ready to toss that bitch.
+			"player/survivor/voice/replica/heardwitch02.wav",  //Quiet everybody I hear a bitch.
+			"player/survivor/voice/replica/heardwitch03.wav",  //That there sounds like a witch.
+			"player/survivor/voice/replica/heardwitch04.wav"  //Quiet y'all, I hear a witch.
+		],
+		PlayerWarnHeardWitchC1Replica = [
+			"player/survivor/voice/replica/heardwitchc103.wav",  //What is that crying?
+			"player/survivor/voice/replica/heardwitchc104.wav",  //What's doing that crying?
+			"player/survivor/voice/replica/heardwitchc105.wav"  //Man, that crying don't sound right.
+		],
+		PlayerWarnHeardWitchC1RochelleReplica = [
+			"player/survivor/voice/replica/heardwitchc101.wav",  //Rochelle, that ain't you is it girl?
+			"player/survivor/voice/replica/heardwitchc102.wav"  //Rochelle, that ain't you is it girl?
+		],
+		PlayerWarnMegaMobReplica = [
+			"player/survivor/voice/replica/incoming01.wav",  //Here they come!
+			"player/survivor/voice/replica/incoming03.wav",  //Ah shit, this ain't gonna be good.
+			"player/survivor/voice/replica/incoming06.wav",  //It's on.
+			"player/survivor/voice/replica/incoming07.wav"  //Game on, baby!
+		],
+		PlayerWarnWitchAngryReplica = [
+			"player/survivor/voice/replica/witchgettingangry01.wav",  //Oh shit, that bitch's pissed.
+			"player/survivor/voice/replica/witchgettingangry02.wav",  //Quit trifling with that bitch, she gonna explode.
+			"player/survivor/voice/replica/witchgettingangry03.wav",  //Watch out ya'all, someone pissed off that bitch.
+			"player/survivor/voice/replica/witchgettingangry04.wav"  //Ohh shit, that bitch's gettin' angry!
+		],
+		PlayerWorldInfectedDet2Replica = [
+			"player/survivor/voice/replica/worldsigns24.wav"  //No shit.
+		],
+		PlayerWorldIntroC513Replica = [
+			"player/survivor/voice/replica/world02.wav"  //Oh yeaah. Our goal is right next to the bridge, ON THE OTHER MOTHER F'IN SIDE OF THE RIVER!
+		],
+		PlayerWorldSignColdBeer2Replica = [
+			"player/survivor/voice/replica/positivenoise03.wav",  //[Improv non-verbal pleasure & interest sounds]
+			"player/survivor/voice/replica/yes04.wav",  //Oh Yeah.
+			"player/survivor/voice/replica/yes05.wav",  //For sure.
+			"player/survivor/voice/replica/yes07.wav"  //Positively.
+		],
+		PlayerWorldSignHurricane2Replica = [
+			"player/survivor/voice/replica/dlc1_c6m3_finalechat01.wav",  //WHAT??
+			"player/survivor/voice/replica/dlc1_c6m3_finalechat02.wav"  //WHAT??
+		],
+		SurvivorCaughtVomitReplica = [
+			"player/survivor/voice/replica/boomerreaction01.wav",  //[Reaction noise to boomer vomit - gross and bad]
+			"player/survivor/voice/replica/boomerreaction02.wav",  //[Reaction noise to boomer vomit - gross and bad]
+			"player/survivor/voice/replica/boomerreaction03.wav",  //[Reaction noise to boomer vomit - gross and bad]
+			"player/survivor/voice/replica/boomerreaction04.wav",  //[Reaction noise to boomer vomit - gross and bad]
+			"player/survivor/voice/replica/boomerreaction05.wav",  //[Reaction noise to boomer vomit - gross and bad]
+			"player/survivor/voice/replica/boomerreaction06.wav",  //[Reaction noise to boomer vomit - gross and bad]
+			"player/survivor/voice/replica/boomerreaction07.wav",  //[Reaction noise to boomer vomit - gross and bad]
+			"player/survivor/voice/replica/boomerreaction08.wav"  //[Reaction noise to boomer vomit - gross and bad]
+		],
+		SurvivorchargerpoundReplica = [
+			"player/survivor/voice/replica/grabbedbycharger01.wav",  //Charger got me!
+			"player/survivor/voice/replica/grabbedbycharger02.wav",  //Charger!  Shoot!
+			"player/survivor/voice/replica/grabbedbycharger03.wav",  //Shoot the charger!
+			"player/survivor/voice/replica/grabbedbycharger04.wav",  //Shoot this damn charger!
+			"player/survivor/voice/replica/grabbedbycharger05.wav",  //One of y'all gonna shoot this thing?
+			"player/survivor/voice/replica/grabbedbycharger06.wav",  //This thing is beatin' my ass.
+			"player/survivor/voice/replica/grabbedbycharger07.wav",  //Don't stand there, kill this thing!
+			"player/survivor/voice/replica/grabbedbycharger08.wav",  //Charger is pounding me into the ground!
+			"player/survivor/voice/replica/grabbedbycharger09.wav"  //This charger is pounding me!
+		],
+		SurvivorchargerpoundC1Replica = [
+			"player/survivor/voice/replica/grabbedbycharger05.wav",  //One of y'all gonna shoot this thing?
+			"player/survivor/voice/replica/grabbedbycharger06.wav",  //This thing is beatin' my ass.
+			"player/survivor/voice/replica/grabbedbycharger07.wav"  //Don't stand there, kill this thing!
+		],
+		SurvivorCoughingReplica = [
+			"player/survivor/voice/replica/cough01.wav",  //[Coughing from smoke]
+			"player/survivor/voice/replica/cough02.wav",  //[Coughing from smoke]
+			"player/survivor/voice/replica/cough03.wav",  //[Coughing from smoke]
+			"player/survivor/voice/replica/cough04.wav",  //[Coughing from smoke]
+			"player/survivor/voice/replica/cough05.wav",  //[Coughing from smoke]
+			"player/survivor/voice/replica/cough06.wav",  //[Coughing from smoke]
+			"player/survivor/voice/replica/cough07.wav",  //[Coughing from smoke]
+			"player/survivor/voice/replica/cough08.wav"  //[Coughing from smoke]
+		],
+		SurvivorDeathReplica = [
+			"player/survivor/voice/replica/deathscream01.wav",  //[Loud painful death scream]
+			"player/survivor/voice/replica/deathscream02.wav",  //[Loud painful death scream]
+			"player/survivor/voice/replica/deathscream03.wav",  //[Loud painful death scream]
+			"player/survivor/voice/replica/deathscream04.wav",  //[Short quick death scream]
+			"player/survivor/voice/replica/deathscream05.wav",  //[Short quick death scream]
+			"player/survivor/voice/replica/deathscream06.wav",  //[Short quick death scream]
+			"player/survivor/voice/replica/deathscream07.wav",  //[Short quick death scream]
+			"player/survivor/voice/replica/deathscream08.wav",  //[Death rattle]
+			"player/survivor/voice/replica/deathscream09.wav"  //[Death rattle]
+		],
+		SurvivorGooedBySpitterReplica = [
+			"player/survivor/voice/replica/gooedbyspitter01.wav",  //Spittttt! (disgusted)
+			"player/survivor/voice/replica/gooedbyspitter02.wav",  //Damn spitter got me.
+			"player/survivor/voice/replica/gooedbyspitter03.wav",  //Shit! That long necked bitch hit me.
+			"player/survivor/voice/replica/gooedbyspitter04.wav",  //Burning goo!
+			"player/survivor/voice/replica/gooedbyspitter05.wav",  //Get out of the goo.
+			"player/survivor/voice/replica/gooedbyspitter06.wav"  //Goddamn it, goo!
+		],
+		SurvivorGooedBySpitterC1Replica = [
+			"player/survivor/voice/replica/gooedbyspitterc101.wav",  //What's this burning stuff?
+			"player/survivor/voice/replica/gooedbyspitterc102.wav",  //That female zombie spat somethin' on me!
+			"player/survivor/voice/replica/gooedbyspitterc103.wav"  //You have got to be kidding me.
+		],
+		SurvivorGrabbedByTongueReplica = [
+			"player/survivor/voice/replica/grabbedbysmoker01.wav",  //no, No, NO, NOOOOOOO!!!!!!!!!
+			"player/survivor/voice/replica/grabbedbysmoker01a.wav",  //No...
+			"player/survivor/voice/replica/grabbedbysmoker01b.wav",  //NO...
+			"player/survivor/voice/replica/grabbedbysmoker01c.wav",  //NO...
+			"player/survivor/voice/replica/grabbedbysmoker01d.wav",  //NOOOOOOO!!!!!!!!!
+			"player/survivor/voice/replica/grabbedbysmoker02.wav",  //no, No, NO, NOOOOOOO!!!!!!!!!
+			"player/survivor/voice/replica/grabbedbysmoker02a.wav",  //Nah...
+			"player/survivor/voice/replica/grabbedbysmoker02b.wav",  //NO!
+			"player/survivor/voice/replica/grabbedbysmoker02c.wav",  //NO!
+			"player/survivor/voice/replica/grabbedbysmoker02d.wav",  //AUGH!
+			"player/survivor/voice/replica/grabbedbysmoker03.wav",  //no, No, NO, NO!!!
+			"player/survivor/voice/replica/grabbedbysmoker03a.wav",  //No!
+			"player/survivor/voice/replica/grabbedbysmoker03b.wav",  //No!
+			"player/survivor/voice/replica/grabbedbysmoker03c.wav",  //NO!!!
+			"player/survivor/voice/replica/grabbedbysmoker04.wav",  //no, No, NO, NOOOOOOO!!!!!!!!!
+			"player/survivor/voice/replica/grabbedbysmoker04a.wav",  //No!
+			"player/survivor/voice/replica/grabbedbysmoker04b.wav",  //No!
+			"player/survivor/voice/replica/grabbedbysmoker04c.wav"  //NO!
+		],
+		SurvivorGrabbedByTongueC1Replica = [
+			"player/survivor/voice/replica/grabbedbysmokerc101.wav",  //Something's got me!
+			"player/survivor/voice/replica/grabbedbysmokerc102.wav",  //What's got me?
+			"player/survivor/voice/replica/grabbedbysmokerc103.wav",  //I'm all wrapped up!
+			"player/survivor/voice/replica/grabbedbysmokerc104.wav"  //Hey! Where am I gettin' dragged to!?!
+		],
+		SurvivorNearCheckpointReplica = [
+			"player/survivor/voice/replica/safespotahead01.wav",  //Safe house up ahead!
+			"player/survivor/voice/replica/safespotahead02.wav",  //Safe house!
+			"player/survivor/voice/replica/safespotahead03.wav"  //Safe house, let's go!
+		],
+		SurvivorNearCheckpointC1M1Replica = [
+			"player/survivor/voice/replica/worldc1m1b138.wav",  //
+			"player/survivor/voice/replica/worldc1m1b140.wav"  //
+		],
+		SurvivorNearCheckpointC1M2Replica = [
+			"player/survivor/voice/replica/worldc1m2b52.wav",  //
+			"player/survivor/voice/replica/worldc1m2b53.wav"  //
+		],
+		SurvivorNearCheckpointC1M3Replica = [
+			"player/survivor/voice/replica/worldc1m3b38.wav"  //
+		],
+		SurvivorNearCheckpointC2M1Replica = [
+			"player/survivor/voice/replica/worldc2m327.wav"  //Into the trailer.
+		],
+		SurvivorNearCheckpointC2M2Replica = [
+			"player/survivor/voice/replica/worldc2m2b38.wav"  //There's the saferoom! Everybody in the tunnel of love!
+		],
+		SurvivorNearCheckpointC2M4Replica = [
+			"player/survivor/voice/replica/worldc2m4b07.wav",  //
+			"player/survivor/voice/replica/worldc2m4b08.wav"  //
+		],
+		SurvivorNearCheckpointC3M1Replica = [
+			"player/survivor/voice/replica/worldc3m130.wav"  //Into the drainage ditch.
+		],
+		SurvivorNearCheckpointC3M2Replica = [
+			"player/survivor/voice/replica/worldc3m212.wav",  //Swamp people, we comin' home!
+			"player/survivor/voice/replica/worldc3m213.wav"  //I wonder if they got dinner cookin'?
+		],
+		SurvivorNearCheckpointC3M3Replica = [
+			"player/survivor/voice/replica/worldc3m312.wav",  //Finally a safe house!
+			"player/survivor/voice/replica/worldc3m313.wav"  //I think we're at the end of the swamp.
+		],
+		SurvivorNearCheckpointC4M1Replica = [
+			"player/survivor/voice/replica/miscdirectional37.wav"  //There's a safe room up there!
+		],
+		SurvivorNearCheckpointC4M2Replica = [
+			"player/survivor/voice/replica/worldc4m2b34.wav",  //There's gas in the safe room!
+			"player/survivor/voice/replica/worldc4m209.wav",  //Get inside the gas station!
+			"player/survivor/voice/replica/worldc4m210.wav"  //Everyone in the station!
+		],
+		SurvivorNearCheckpointC4M3Replica = [
+			"player/survivor/voice/replica/worldc4m310.wav",  //Back the way we came.
+			"player/survivor/voice/replica/worldc4m311.wav"  //Back the way we came.
+		],
+		SurvivorNearCheckpointC4M4Replica = [
+			"player/survivor/voice/replica/worldc4m4b01.wav"  //The boat ain't far. One last push and we're outta here.
+		],
+		SurvivorNearCheckpointC5M2Replica = [
+			"player/survivor/voice/replica/worldc5m2b02.wav"  //Look, that freeway's headin' right to our bridge.
+		],
+		SurvivorNearCheckpointC5M4Replica = [
+			"player/survivor/voice/replica/worldc5m4b08.wav",  //There's a safe room in the bridge!
+			"player/survivor/voice/replica/worldc5m4b09.wav"  //There's a safe room in it!
+		],
+		SurvivorNearCheckpointC6M1Replica = [
+			"player/survivor/voice/replica/dlc1_c6m1_saferoomahead01.wav"  //Safe room back here!
+		],
+		SurvivorNearCheckpointC6M2Replica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoom01.wav"  //Saferoom and it's dry!
+		],
+		SurvivorNearFinaleReplica = [
+			"player/survivor/voice/replica/worldc1m4b25.wav"  //Almost there!
+		],
+		SurvivorNearFinaleC2M5Replica = [
+			"player/survivor/voice/replica/worldc2m416.wav",  //There's the stage.
+			"player/survivor/voice/replica/worldc2m5b19.wav",  //How do we start the finale?
+			"player/survivor/voice/replica/worldc2m5b20.wav"  //We have to figure out how to turn all this stuff on.
+		],
+		SurvivorNearFinaleC3M4Replica = [
+			"player/survivor/voice/replica/worldc3m403.wav"  //There's the house!
+		],
+		SurvivorPouncedByHunterReplica = [
+			"player/survivor/voice/replica/screamwhilepounced01.wav",  //GET IT OFF! [angry]
+			"player/survivor/voice/replica/screamwhilepounced02.wav",  //GET IT OFF. GET IT OFF.
+			"player/survivor/voice/replica/screamwhilepounced02a.wav",  //GET IT OFF!
+			"player/survivor/voice/replica/screamwhilepounced03.wav",  //GET IT OFF!
+			"player/survivor/voice/replica/screamwhilepounced04.wav",  //GET IT OFF!
+			"player/survivor/voice/replica/screamwhilepounced05.wav"  //GET IT OFF!
+		],
+		SurvivorTankPoundReplica = [
+			"player/survivor/voice/replica/tankpound01.wav",  //Oh shit get this thing off me!
+			"player/survivor/voice/replica/tankpound02.wav",  //Can't y'all see this thing is beatin' the shit out of me!!?!?!!?
+			"player/survivor/voice/replica/tankpound03.wav",  //Hey! in case ya'll didn't see it, I got a tank on me!
+			"player/survivor/voice/replica/tankpound04.wav",  //I got a tank on me!
+			"player/survivor/voice/replica/tankpound05.wav",  //Get it off - ah - Get it off me!
+			"player/survivor/voice/replica/tankpound06.wav"  //Get this damn thing off!
+		],
+		SurvivorTankPoundC1Replica = [
+			"player/survivor/voice/replica/tankpound01.wav",  //Oh shit get this thing off me!
+			"player/survivor/voice/replica/tankpound02.wav",  //Can't y'all see this thing is beatin' the shit out of me!!?!?!!?
+			"player/survivor/voice/replica/tankpound05.wav",  //Get it off - ah - Get it off me!
+			"player/survivor/voice/replica/tankpound06.wav"  //Get this damn thing off!
+		],
+		SurvivorVocalizeBackUpReplica = [
+			"player/survivor/voice/replica/backup01.wav",  //Oh shit, back it up!
+			"player/survivor/voice/replica/backup02.wav",  //Back it up!
+			"player/survivor/voice/replica/backup03.wav",  //BackBackBack!
+			"player/survivor/voice/replica/backup04.wav",  //Back up, back up!
+			"player/survivor/voice/replica/backup05.wav",  //Back up!
+			"player/survivor/voice/replica/backup06.wav"  //Back Back Back Back Back!
+		],
+		SurvivorVocalizeEmphaticGoReplica = [
+			"player/survivor/voice/replica/emphaticgo01.wav",  //GO!
+			"player/survivor/voice/replica/emphaticgo02.wav",  //Let's go people.
+			"player/survivor/voice/replica/emphaticgo03.wav",  //Move your ass.
+			"player/survivor/voice/replica/emphaticgo04.wav",  //Go go go!
+			"player/survivor/voice/replica/emphaticgo05.wav",  //Go go GO!
+			"player/survivor/voice/replica/emphaticgo06.wav"  //MOVE IT!
+		],
+		SurvivorVocalizeGoingToDieReplica = [
+			"player/survivor/voice/replica/goingtodie01.wav",  //This here is some serious bullshit.
+			"player/survivor/voice/replica/goingtodie02.wav",  //This ain't how i thought this would go.
+			"player/survivor/voice/replica/goingtodie03.wav",  //I can walk this shit off.
+			"player/survivor/voice/replica/goingtodie04.wav",  //Ahhhhhhh.
+			"player/survivor/voice/replica/goingtodie05.wav",  //Damn, they messed me up.
+			"player/survivor/voice/replica/goingtodie07.wav",  //Man, this shit hurts.
+			"player/survivor/voice/replica/goingtodie08.wav",  //Man said there was nothing to worry about, well buullshit.
+			"player/survivor/voice/replica/goingtodie09.wav",  //Ya'll crazy if you don't think this hurts.
+			"player/survivor/voice/replica/goingtodie10.wav",  //Shit, I'm messed up.
+			"player/survivor/voice/replica/goingtodie11.wav",  //It hurts, but ain't nothin.
+			"player/survivor/voice/replica/goingtodie12.wav",  //This shit ain't pretty.
+			"player/survivor/voice/replica/goingtodie13.wav",  //Ahh damnit. (frustrated)
+			"player/survivor/voice/replica/goingtodie14.wav",  //Man, this right here hurts somethin' fierce.
+			"player/survivor/voice/replica/goingtodie15.wav",  //This is some outrageous shit.
+			"player/survivor/voice/replica/goingtodie16.wav",  //Crazy sons of a bitches messed me up.
+			"player/survivor/voice/replica/goingtodie17.wav",  //Damn. They beat me good.
+			"player/survivor/voice/replica/goingtodie18.wav",  //They beat my ass fair and square.
+			"player/survivor/voice/replica/goingtodie19.wav",  //I shoulda learned to drive a tank or some shit.
+			"player/survivor/voice/replica/goingtodie20.wav",  //Ahh damnit now.
+			"player/survivor/voice/replica/goingtodie21.wav",  //No pain, no gain. I must be about to gain some serious shit.
+			"player/survivor/voice/replica/goingtodie22.wav",  //I ain't ready to lay down yet.
+			"player/survivor/voice/replica/goingtodie23.wav",  //Hey. Now this here is some bullshit.
+			"player/survivor/voice/replica/goingtodie23.wav",  //Hey. Now this here is some bullshit.
+			"player/survivor/voice/replica/goingtodie24.wav",  //I can walk this off.
+			"player/survivor/voice/replica/goingtodie25.wav",  //Tryin' to walk this off.
+			"player/survivor/voice/replica/goingtodie27.wav",  //I'm gotta get right.
+			"player/survivor/voice/replica/goingtodie28.wav",  //I ain't dead yet.
+			"player/survivor/voice/replica/goingtodie32.wav"  //Man, those zombies beat my ass.
+		],
+		SurvivorVocalizeLookOutReplica = [
+			"player/survivor/voice/replica/lookout01.wav",  //Look out!
+			"player/survivor/voice/replica/lookout02.wav",  //Look out!
+			"player/survivor/voice/replica/lookout03.wav",  //Oh shit, watch out!
+			"player/survivor/voice/replica/lookout04.wav"  //Watch out!
+		],
+		SurvivorVocalizeThisWayReplica = [
+			"player/survivor/voice/replica/followme01.wav",  //Come on y' all this way.
+			"player/survivor/voice/replica/followme02.wav",  //This way.
+			"player/survivor/voice/replica/followme03.wav",  //Come on, this way.
+			"player/survivor/voice/replica/followme04.wav",  //Follow me.
+			"player/survivor/voice/replica/followme05.wav",  //This way.
+			"player/survivor/voice/replica/followme06.wav"  //Y'all stay close.
+		],
+		SurvivorVocalizeWaitHereReplica = [
+			"player/survivor/voice/replica/waithere01.wav",  //Hold up.
+			"player/survivor/voice/replica/waithere02.wav",  //Rest you ass for a sec.
+			"player/survivor/voice/replica/waithere03.wav",  //Wait up.
+			"player/survivor/voice/replica/waithere04.wav",  //Stop.
+			"player/survivor/voice/replica/waithere05.wav",  //Hold up, hold up y'all.
+			"player/survivor/voice/replica/waithere06.wav"  //Slow down. Damn.
+		],
+		SurvivorWarnSpitterIncomingReplica = [
+			"player/survivor/voice/replica/warnspitterincoming01.wav",  //Spit coming!
+			"player/survivor/voice/replica/warnspitterincoming02.wav",  //Goo coming!
+			"player/survivor/voice/replica/warnspitterincoming03.wav",  //Burning shit coming!
+			"player/survivor/voice/replica/warnspitterincoming04.wav",  //Spit coming!
+			"player/survivor/voice/replica/warnspitterincoming05.wav",  //Goo coming!
+			"player/survivor/voice/replica/warnspitterincoming06.wav",  //Burning shit coming!
+			"player/survivor/voice/replica/warnspitterincoming07.wav",  //Heads up, goo!
+			"player/survivor/voice/replica/warnspitterincoming08.wav"  //Watch out, spit!
+		],
+		SurvivorWarnSpitterIncomingC1Replica = [
+			"player/survivor/voice/replica/lookout01.wav",  //Look out!
+			"player/survivor/voice/replica/lookout02.wav",  //Look out!
+			"player/survivor/voice/replica/lookout04.wav"  //Watch out!
+		],
+		PlayerLedgeHangEndReplica = [
+			"player/survivor/voice/replica/ledgehangend01.wav",  //Allright, SHIT...I'M GONNA FALL!
+			"player/survivor/voice/replica/ledgehangend02.wav",  //HEY! I CAN'T HOLD ON ANYMORE!
+			"player/survivor/voice/replica/ledgehangend03.wav"  //HELP ME UP ALREADY!
+		],
+		PlayerLedgeHangMiddleReplica = [
+			"player/survivor/voice/replica/ledgehangmiddle01.wav",  //God dammit, I knew I shoulda lost some weight.
+			"player/survivor/voice/replica/ledgehangmiddle02.wav",  //Man, shit's gettin' old, help!
+			"player/survivor/voice/replica/ledgehangmiddle03.wav",  //Look, somebody wanna pull me up?
+			"player/survivor/voice/replica/ledgehangmiddle04.wav"  //Hey! I'm still hanging here!
+		],
+		PlayerLedgeHangStartReplica = [
+			"player/survivor/voice/replica/ledgehangstart01.wav",  //Ahh shit, need a hand.
+			"player/survivor/voice/replica/ledgehangstart02.wav",  //This is screwed up ya' all, I need some help.
+			"player/survivor/voice/replica/ledgehangstart03.wav",  //Shit, I f'd this up, can you help me out?
+			"player/survivor/voice/replica/ledgehangstart04.wav"  //Hey ya'all I fell off the damn ledge.
+		],
+		SurvivorFirstDeathReplica = [
+			"player/survivor/voice/replica/doubledeathresponse01.wav",  //We can do this, man, we can do this.
+			"player/survivor/voice/replica/doubledeathresponse02.wav",  //Ooooh! We gotta pull our shit together.
+			"player/survivor/voice/replica/doubledeathresponse07.wav"  //Damn. This here is all we got.
+		],
+		DeathOneReplica = [
+			"player/survivor/voice/replica/grabbedbysmoker01d.wav",  //NOOOOOOO!!!!!!!!!
+			"player/survivor/voice/replica/goingtodie304.wav"  //Come on, pull it together man. You can make it through this shit. [to self]
+		],
+		DoubleDeathReplica = [
+			"player/survivor/voice/replica/doubledeathresponse03.wav",  //Shit! It's just you and me!  Hang tough.
+			"player/survivor/voice/replica/doubledeathresponse04.wav",  //Shit! Just us two left. Stay close!
+			"player/survivor/voice/replica/doubledeathresponse05.wav",  //Stay close, we're a party of two.
+			"player/survivor/voice/replica/doubledeathresponse06.wav",  //Ain't no one else but you and me left.
+			"player/survivor/voice/replica/doubledeathresponsequiet01.wav"  //Shit! It's just you and me!  Hang tough.
+		],
+		TeamKillReplica = [
+			"player/survivor/voice/replica/teamkillaccident03.wav",  //Man, are you wrong in the head shootin like that?
+			"player/survivor/voice/replica/teamkillaccident05.wav",  //What the f'...  don't be doin that.
+			"player/survivor/voice/replica/teamkillaccident06.wav",  //Hey! Don't be doin that.
+			"player/survivor/voice/replica/teamkillaccident07.wav",  //You try that shit on me and you'll be wishin' your momma never met ya father.
+			"player/survivor/voice/replica/teamkillaccident08.wav"  //Keep goin at em like that and you gonna be the last man on earth.
+		],
+		TeamKillFromMechanicReplica = [
+			"player/survivor/voice/replica/world03.wav"  //Boy, you ain't got any sense in that head, do you?
+		],
+		TeamKillFromProducerReplica = [
+			"player/survivor/voice/replica/warnspitterc101.wav"  //Crazy woman!
+		],
+		C6M1TakeSubMachineGunReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_intostore02.wav"  //Guns in the store.
+		],
+		SurvivorDeployUpExplosivesReplica = [
+			"player/survivor/voice/replica/explosiveammo04.wav"  //Deploying frag rounds!
+		],
+		SurvivorDeployUpIncendiaryReplica = [
+			"player/survivor/voice/replica/incendammo04.wav",  //Deploying fire bullets!
+			"player/survivor/voice/replica/incendammo05.wav"  //Everyone, grab some incendiary ammo!
+		],
+		SurvivorPickupAdrenalineReplica = [
+			"player/survivor/voice/replica/adrenaline02.wav"  //Grabbin' a shot!
+		],
+		SurvivorPickupAutoShotgunReplica = [
+			"player/survivor/voice/replica/takeautoshotgun01.wav",  //This shotgun will put the hurt on them zombies.
+			"player/survivor/voice/replica/takeautoshotgun02.wav",  //Autoshottie is mine.
+			"player/survivor/voice/replica/takeautoshotgun03.wav"  //Oh hell yeah, I'm takin an autoshotgun.
+		],
+		SurvivorPickupchainsawReplica = [
+			"player/survivor/voice/replica/meleeweapons04.wav",  //Got a chainsaw.
+			"player/survivor/voice/replica/takemelee04.wav",  //I am gonna set some zombies straight with this.
+			"player/survivor/voice/replica/positivenoise06.wav"  //[Chainsaw sound]
+		],
+		SurvivorPickupcricket_batReplica = [
+			"player/survivor/voice/replica/meleeweapons14.wav",  //Paddle bat here.
+			"player/survivor/voice/replica/meleeweapons15.wav",  //Got a paddle bat.
+			"player/survivor/voice/replica/meleeweapons16.wav",  //I am gonna paddle the SHIT outta somethin'.
+			"player/survivor/voice/replica/takemelee07.wav"  //Alright. Now I am ready.
+		],
+		SurvivorPickupCricketBatReplica = [
+			"player/survivor/voice/replica/takemelee01.wav",  //Oh yeah.
+			"player/survivor/voice/replica/takemelee02.wav",  //Alright now, mm-hm. This is gonna work.
+			"player/survivor/voice/replica/takemelee03.wav",  //I am gonna smack some shit with this.
+			"player/survivor/voice/replica/takemelee04.wav",  //I am gonna set some zombies straight with this.
+			"player/survivor/voice/replica/takemelee05.wav",  //Yeah. This is my kind of weapon.
+			"player/survivor/voice/replica/takemelee06.wav",  //Shit. I'd pay cash money for this.
+			"player/survivor/voice/replica/takemelee07.wav"  //Alright. Now I am ready.
+		],
+		SurvivorPickupKnifeReplica = [
+			"player/survivor/voice/replica/takemelee02.wav",  //Alright now, mm-hm. This is gonna work.
+			"player/survivor/voice/replica/takemelee05.wav"  //Yeah. This is my kind of weapon.
+		],
+		SurvivorPickupCrowBarReplica = [
+			"player/survivor/voice/replica/meleeweapons11.wav",  //Grabbing a crowbar.
+			"player/survivor/voice/replica/meleeweapons13.wav",  //Any crates around here?
+			"player/survivor/voice/replica/takemelee02.wav",  //Alright now, mm-hm. This is gonna work.
+			"player/survivor/voice/replica/takemelee05.wav"  //Yeah. This is my kind of weapon.
+		],
+		SurvivorPickupDefibrillatorReplica = [
+			"player/survivor/voice/replica/defibrillator03.wav",  //Got some chest paddles.
+			"player/survivor/voice/replica/defibrillator04.wav"  //Got a defib unit.
+		],
+		SurvivorPickupelectric_guitarReplica = [
+			"player/survivor/voice/replica/meleeweapons08.wav"  //Grabbing a guitar.
+		],
+		SurvivorPickupFirstAidKitReplica = [
+			"player/survivor/voice/replica/takefirstaid01.wav",  //I'm grabbin' some first aid.
+			"player/survivor/voice/replica/takefirstaid02.wav",  //Look here, this here first aid is mine.
+			"player/survivor/voice/replica/takefirstaid03.wav"  //I got the first aid.
+		],
+		SurvivorPickupFirstSMGReplica = [
+			"player/survivor/voice/replica/worldc1m1b69.wav",  //This'll help.
+			"player/survivor/voice/replica/worldc1m1b70.wav",  //Think the zombies mind if I take one of their guns?
+			"player/survivor/voice/replica/worldc1m1b72.wav",  //That's better.
+			"player/survivor/voice/replica/worldc1m1b73.wav",  //Mm. That's right.
+			"player/survivor/voice/replica/worldc1m1b74.wav",  //Now I ain't effin' around!
+			"player/survivor/voice/replica/worldc1m1b75.wav",  //Now I ain't effin' around!
+			"player/survivor/voice/replica/worldc1m1b76.wav",  //I have NEVER been so happy to see a gun.
+			"player/survivor/voice/replica/worldc1m1b77.wav",  //If they had guns, they knew this was gonna get bad.
+			"player/survivor/voice/replica/worldc1m1b78.wav",  //Look at this, they knew damn well this was gonna get bad.
+			"player/survivor/voice/replica/worldc1m1b79.wav",  //Look at this, they knew damn well this was gonna get bad.
+			"player/survivor/voice/replica/worldc1m1b80.wav",  //Now we're talking.
+			"player/survivor/voice/replica/worldc1m1b81.wav",  //This gun DOES make it easier.
+			"player/survivor/voice/replica/worldc1m1b82.wav",  //THAT levels the playin' field.
+			"player/survivor/voice/replica/worldc1m1b83.wav"  //That's more like it.
+		],
+		SurvivorPickupGolfCLubReplica = [
+			"player/survivor/voice/replica/dlc1_golfclub03.wav",  //Grabbing a club.
+			"player/survivor/voice/replica/dlc1_golfclub04.wav"  //Grabbing a driver.
+		],
+		SurvivorPickupGrenadeLauncherReplica = [
+			"player/survivor/voice/replica/takegrenadelauncher01.wav",  //Damn, this shit looks dangerous.
+			"player/survivor/voice/replica/takegrenadelauncher02.wav",  //Alright now this is gonna blow some shit up.
+			"player/survivor/voice/replica/takegrenadelauncher03.wav",  //Man, it's gonna be raining zombie parts.
+			"player/survivor/voice/replica/takegrenadelauncher04.wav",  //Alright now, let's blow some shit up.
+			"player/survivor/voice/replica/takegrenadelauncher05.wav"  //I tell ya, it's gonna be raining zombie pieces.
+		],
+		SurvivorPickupHuntingRifleReplica = [
+			"player/survivor/voice/replica/takesniper01.wav",  //Gonna scope some smoker ass with this.
+			"player/survivor/voice/replica/takesniper02.wav",  //Pow! I'm gonna snipe some bitches.
+			"player/survivor/voice/replica/takesniper03.wav"  //Hey boy. Pow! Some bitches gonna get sniped.
+		],
+		SurvivorPickupIncendiaryAmmoReplica = [
+			"player/survivor/voice/replica/incendammo03.wav",  //Let's burn some shit UP!
+			"player/survivor/voice/replica/yes03.wav"  //Yes.
+		],
+		SurvivorPickupExplosiveAmmoReplica = [
+			"player/survivor/voice/replica/yes03.wav",  //Yes.
+			"player/survivor/voice/replica/yes04.wav",  //Oh Yeah.
+			"player/survivor/voice/replica/yes05.wav"  //For sure.
+		],
+		SurvivorPickupKatanaReplica = [
+			"player/survivor/voice/replica/meleeweapons09.wav",  //Ninja sword here.
+			"player/survivor/voice/replica/meleeweapons10.wav",  //Grabbing a sword.
+			"player/survivor/voice/replica/positivenoise10.wav",  //[Improv non-verbal pleasure & interest sounds]
+			"player/survivor/voice/replica/takemelee01.wav",  //Oh yeah.
+			"player/survivor/voice/replica/takemelee06.wav"  //Shit. I'd pay cash money for this.
+		],
+		SurvivorPickupLaserSightsAlwaysReplica = [
+			"player/survivor/voice/replica/yes03.wav",  //Yes.
+			"player/survivor/voice/replica/yes04.wav",  //Oh Yeah.
+			"player/survivor/voice/replica/yes05.wav"  //For sure.
+		],
+		SurvivorPickupM60Replica = [
+			"player/survivor/voice/replica/dlc1_m6002.wav",  //Grabbing the big gun.
+			"player/survivor/voice/replica/dlc1_m6003.wav",  //Grabbing the machine gun.
+			"player/survivor/voice/replica/dlc1_m6004.wav",  //Shit, this is heavy.
+			"player/survivor/voice/replica/dlc1_m6005.wav",  //This some goddamn firepower.
+			"player/survivor/voice/replica/dlc1_m6006.wav"  //Grabbing the gun.
+		],
+		SurvivorPickupMacheteReplica = [
+			"player/survivor/voice/replica/meleeweapons02.wav",  //Got a machete.
+			"player/survivor/voice/replica/takemelee01.wav"  //Oh yeah.
+		],
+		SurvivorPickupMagnumReplica = [
+			"player/survivor/voice/replica/takeassaultrifle02.wav"  //This right here'll mess some shit up.
+		],
+		SurvivorPickupMolotovReplica = [
+			"player/survivor/voice/replica/takemolotov01.wav",  //Grabbing a Molotov. [to self]
+			"player/survivor/voice/replica/takemolotov02.wav"  //Grabbing me a Molotov. [to self]
+		],
+		SurvivorPickupPainPillsReplica = [
+			"player/survivor/voice/replica/takepills01.wav",  //Damn right. Gonna take everything I can.
+			"player/survivor/voice/replica/takepills02.wav",  //This shit'll help.
+			"player/survivor/voice/replica/takepills03.wav",  //I'm grabbing pills.
+			"player/survivor/voice/replica/takepills04.wav",  //I'm grabbing pills.
+			"player/survivor/voice/replica/takepills05.wav",  //I know one thing, I'm grabbing pills.
+			"player/survivor/voice/replica/takepills06.wav"  //I got the pills!
+		],
+		SurvivorPickupPipeBombReplica = [
+			"player/survivor/voice/replica/spotgrenades09.wav",  //Grabbin a pipe bomb.
+			"player/survivor/voice/replica/takepipebomb01.wav",  //Grabbin a pipe bomb.
+			"player/survivor/voice/replica/spotgrenades03.wav",  //Pipe bomb for me.
+			"player/survivor/voice/replica/takepipebomb02.wav",  //Ya boy!
+			"player/survivor/voice/replica/takepipebomb03.wav"  //Oh shit yeah.
+		],
+		SurvivorPickupPumpShotgunReplica = [
+			"player/survivor/voice/replica/takeshotgun01.wav",  //Grabbing a shotgun.
+			"player/survivor/voice/replica/takeshotgun02.wav",  //This shotgun 'll work.
+			"player/survivor/voice/replica/takeshotgun03.wav"  //Grabbing a shotgun.
+		],
+		SurvivorPickupRifleReplica = [
+			"player/survivor/voice/replica/takeassaultrifle01.wav",  //Shit. Shoulda taught this class.
+			"player/survivor/voice/replica/takeassaultrifle02.wav",  //This right here'll mess some shit up.
+			"player/survivor/voice/replica/takeassaultrifle03.wav",  //Ah hell. Gonna set some things right with this shit.
+			"player/survivor/voice/replica/takeassaultrifle04.wav",  //I got the assault rifle.
+			"player/survivor/voice/replica/takeassaultrifle05.wav"  //Gonna take the assault rifle.
+		],
+		SurvivorPickupSecondPistolReplica = [
+			"player/survivor/voice/replica/takepistol01.wav",  //Takin an extra pistol.
+			"player/survivor/voice/replica/takepistol02.wav",  //Gonna go all Akimbo and shit.
+			"player/survivor/voice/replica/takepistol03.wav"  //Yeah, I'm goin two for one here.
+		],
+		SurvivorPickupSMGReplica = [
+			"player/survivor/voice/replica/takesubmachinegun01.wav",  //Guess I'll take this here machine gun.
+			"player/survivor/voice/replica/takesubmachinegun02.wav",  //Grabbing a machinegun.
+			"player/survivor/voice/replica/takesubmachinegun03.wav"  //Pat at tat tat [to self]
+		],
+		SurvivorPickuptonfaReplica = [
+			"player/survivor/voice/replica/meleeweapons06.wav",  //Grabbing a nightstick.
+			"player/survivor/voice/replica/takemelee03.wav"  //I am gonna smack some shit with this.
+		],
+		SurvivorPickupUpExplosivesReplica = [
+			"player/survivor/voice/replica/explosiveammo03.wav"  //Grabbin' some frag rounds!
+		],
+		SurvivorPickupUpIncendiaryReplica = [
+			"player/survivor/voice/replica/incendammo02.wav"  //Grabbin' fire bullets!
+		],
+		SurvivorPickupVomitJarReplica = [
+			"player/survivor/voice/replica/boomerjar02.wav",  //Grabbin' puke!
+			"player/survivor/voice/replica/boomerjar03.wav",  //Grabbin' a bile jar!
+			"player/survivor/voice/replica/boomerjar06.wav",  //Grabbin' puke!
+			"player/survivor/voice/replica/boomerjar08.wav"  //Grabbin' a bile jar!
+		],
+		SurvivorPickupVomitJarAlwaysC1Replica = [
+			"player/survivor/voice/replica/boomerjar02.wav",  //Grabbin' puke!
+			"player/survivor/voice/replica/boomerjar06.wav"  //Grabbin' puke!
+		],
+		PlayerGettingRevivedReplica = [
+			"player/survivor/voice/replica/gettingrevived01.wav",  //I'm cool.
+			"player/survivor/voice/replica/gettingrevived02.wav",  //It's all good.
+			"player/survivor/voice/replica/gettingrevived03.wav",  //Hell yeah it hurts.
+			"player/survivor/voice/replica/gettingrevived04.wav",  //Yeah it hurts.
+			"player/survivor/voice/replica/gettingrevived05.wav",  //I'm good, I'm good.
+			"player/survivor/voice/replica/gettingrevived06.wav",  //What in the hell do you think?
+			"player/survivor/voice/replica/gettingrevived07.wav",  //Ohhh shit.
+			"player/survivor/voice/replica/gettingrevived08.wav",  //Hook me up.
+			"player/survivor/voice/replica/gettingrevived09.wav",  //Hurry it up.
+			"player/survivor/voice/replica/gettingrevived10.wav",  //[groan]
+			"player/survivor/voice/replica/gettingrevived11.wav",  //[groan2]
+			"player/survivor/voice/replica/gettingrevived12.wav",  //[groan2]
+			"player/survivor/voice/replica/gettingrevived13.wav",  //They better name a school after me for this shit.
+			"player/survivor/voice/replica/gettingrevived14.wav",  //Help me up and I can walk this off.
+			"player/survivor/voice/replica/gettingrevived15.wav",  //Ain't gonna be nothing left of me.
+			"player/survivor/voice/replica/gettingrevived16.wav",  //I'm just screwin with ya.
+			"player/survivor/voice/replica/gettingrevived18.wav",  //What ya tellin me man?
+			"player/survivor/voice/replica/gettingrevived19.wav",  //I've been worse.
+			"player/survivor/voice/replica/gettingrevived20.wav",  //Whata you mean?
+			"player/survivor/voice/replica/gettingrevived21.wav",  //I'm okay.
+			"player/survivor/voice/replica/gettingrevived22.wav",  //Ain't nothin'.
+			"player/survivor/voice/replica/gettingrevived23.wav",  //I can walk it off.
+			"player/survivor/voice/replica/gettingrevived24.wav",  //Okay.
+			"player/survivor/voice/replica/gettingrevived25.wav",  //Good enough.
+			"player/survivor/voice/replica/gettingrevived26.wav",  //Just get me up.
+			"player/survivor/voice/replica/gettingrevived27.wav",  //Man, been better, been better.
+			"player/survivor/voice/replica/gettingrevived28.wav",  //Can't lie, been better.
+			"player/survivor/voice/replica/gettingrevived29.wav",  //Damn, this shit hurts.
+			"player/survivor/voice/replica/gettingrevived30.wav",  //Don't like bein' on the ground.
+			"player/survivor/voice/replica/gettingrevived31.wav",  //I'm hurtin down here.
+			"player/survivor/voice/replica/gettingrevived32.wav",  //Well I ain't on my back for nothin'.
+			"player/survivor/voice/replica/gettingrevived33.wav",  //Man, how the hell you think I'm doin'?
+			"player/survivor/voice/replica/gettingrevived34.wav",  //I'm fine, but let's not waste time chit-chattin'.
+			"player/survivor/voice/replica/gettingrevived35.wav",  //I'm good.
+			"player/survivor/voice/replica/gettingrevived36.wav",  //I'll live... most likely.
+			"player/survivor/voice/replica/gettingrevived37.wav"  //Tell you what, ain't my best day.
+		],
+		PlayerHealOtherReplica = [
+			"player/survivor/voice/replica/healother01.wav",  //Stop squirmin' I'm gonna heal ya.
+			"player/survivor/voice/replica/healother02.wav",  //Hold up, I'm gonna heal your ass.
+			"player/survivor/voice/replica/healother03.wav",  //Hold up now, I'll fix ya.
+			"player/survivor/voice/replica/healother04.wav",  //Shit they beat ya good, let me heal ya'll.
+			"player/survivor/voice/replica/healother05.wav",  //Quit fussin' I'll heal ya.
+			"player/survivor/voice/replica/healother06.wav",  //Goddamit, quit fussin and let me heal ya.
+			"player/survivor/voice/replica/healother07.wav"  //Allright hang on, this might sting a bit.
+		],
+		PlayerHealOtherC1Replica = [
+			"player/survivor/voice/replica/healotherc101.wav",  //Quit squirming, or I might mess this up.
+			"player/survivor/voice/replica/healotherc102.wav",  //Stand still now, 'cause I ain't used to doin' this.
+			"player/survivor/voice/replica/healotherc103.wav"  //I hope this makes you feel better ain't sure what I'm doin'.
+		],
+		PlayerHealOtherCombatReplica = [
+			"player/survivor/voice/replica/healothercombat01.wav",  //Hold on! Hold on!
+			"player/survivor/voice/replica/healothercombat02.wav",  //Let me heal your shit.
+			"player/survivor/voice/replica/healothercombat03.wav",  //Let me heal ya now.
+			"player/survivor/voice/replica/healothercombat04.wav",  //Lemme heal ya!
+			"player/survivor/voice/replica/healothercombat05.wav",  //Hold up, I'll fix ya.
+			"player/survivor/voice/replica/healothercombat06.wav"  //Stand still, I'm healin' ya!
+		],
+		PlayerHealMechanicCombatReplica = [
+			"player/survivor/voice/replica/healothermechanic01.wav"  //Young'un, keep shootin' while I do this.
+		],
+		PlayerLedgeSaveReplica = [
+			"player/survivor/voice/replica/ledgesave01.wav",  //Oh shit, look at ya. Let me help you up.
+			"player/survivor/voice/replica/ledgesave02.wav",  //I got ya, I got ya.
+			"player/survivor/voice/replica/ledgesave03.wav",  //Damn, this shit's messed up, you gonna hurt yourself hangin there.
+			"player/survivor/voice/replica/ledgesave04.wav",  //What do you say we get your ass up off this here ledge?
+			"player/survivor/voice/replica/ledgesave05.wav"  //Easy, let me help ya up now, cause I ain't gonna go get your ass if you fall.
+		],
+		PlayerReviveFriendReplica = [
+			"player/survivor/voice/replica/revivefriend01.wav",  //Don't mean to be pickin on ya, but y'all look like shit.
+			"player/survivor/voice/replica/revivefriend02.wav",  //What we got here?  Ain't nothin'. Ya good.
+			"player/survivor/voice/replica/revivefriend03.wav",  //You ain't right, but lets get ya up and movin'.
+			"player/survivor/voice/replica/revivefriend04.wav",  //Let's get ya up and take a look at ya, yeah yeah you good.
+			"player/survivor/voice/replica/revivefriend05.wav",  //Damn, they beat ya ass good didn't they?  I get ya up though.
+			"player/survivor/voice/replica/revivefriend06.wav",  //You for real?  You gonna stay down with a little scratch like that?  Get up!
+			"player/survivor/voice/replica/revivefriend07.wav",  //Let's get ya ass up, a little nick ain't no reason to give up.
+			"player/survivor/voice/replica/revivefriend08.wav",  //Come on man, don't shit yourself over this. You gonna be okay. Let me get ya up.
+			"player/survivor/voice/replica/revivefriend09.wav",  //Down and give me 20.  Just foolin', let's get ya back up on your feet.
+			"player/survivor/voice/replica/revivefriend10.wav",  //Where that put you at?
+			"player/survivor/voice/replica/revivefriend11.wav",  //They put a hurtin on ya.
+			"player/survivor/voice/replica/revivefriend12.wav",  //What we got here?
+			"player/survivor/voice/replica/revivefriend13.wav",  //No time to be gentle.  Let's get you up on your feet.
+			"player/survivor/voice/replica/revivefriend14.wav",  //Come on now, what you goin' on about? You're gonna make it.  Let's get you up.
+			"player/survivor/voice/replica/revivefrienda01.wav",  //You dead?
+			"player/survivor/voice/replica/revivefrienda02.wav",  //You good?
+			"player/survivor/voice/replica/revivefrienda03.wav",  //Gonna lay there all day?
+			"player/survivor/voice/replica/revivefrienda04.wav",  //So what happened?
+			"player/survivor/voice/replica/revivefrienda05.wav",  //They end you?
+			"player/survivor/voice/replica/revivefrienda06.wav",  //This it for you?
+			"player/survivor/voice/replica/revivefrienda07.wav",  //You right?
+			"player/survivor/voice/replica/revivefrienda08.wav"  //You wanna stay down?
+		],
+		PlayerReviveFriendFFReplica = [
+			"player/survivor/voice/replica/revivefriendff01.wav",  //If this had anything to do with me, I do apologize. Come on. Let's get you back up.
+			"player/survivor/voice/replica/revivefriendff02.wav",  //Ah hell, I'm sorry. Ain't used to all this shootin and runnin' around.
+			"player/survivor/voice/replica/revivefriendff03.wav"  //Ah hell, I'm sorry. Ain't used to all this shootin and runnin' around. At least not the runnin' around.
+		],
+		PlayerReviveFriendBReplica = [
+			"player/survivor/voice/replica/revivefriendb01.wav",  //Allright good.
+			"player/survivor/voice/replica/revivefriendb02.wav",  //Walk it off.
+			"player/survivor/voice/replica/revivefriendb03.wav",  //You okay.
+			"player/survivor/voice/replica/revivefriendb04.wav",  //You look good.
+			"player/survivor/voice/replica/revivefriendb05.wav",  //Come on now.
+			"player/survivor/voice/replica/revivefriendb06.wav",  //Now you're back in business.
+			"player/survivor/voice/replica/revivefriendb07.wav",  //Up we go.
+			"player/survivor/voice/replica/revivefriendb08.wav",  //You good.
+			"player/survivor/voice/replica/revivefriendb09.wav",  //You're doin fine.
+			"player/survivor/voice/replica/revivefriendb10.wav",  //This don't look bad.
+			"player/survivor/voice/replica/revivefriendb11.wav",  //Can't lose you now can we?
+			"player/survivor/voice/replica/revivefriendb12.wav",  //See you're gonna make it.
+			"player/survivor/voice/replica/revivefriendb13.wav",  //Told ya. Wasn't nothing.
+			"player/survivor/voice/replica/revivefriendb14.wav",  //All right, let's finish what we started.
+			"player/survivor/voice/replica/revivefriendb15.wav"  //Alright now, we're back in business.
+		],
+		PlayerReviveFriendGamblerReplica = [
+			"player/survivor/voice/replica/revivefriendbnick01.wav"  //Back at 'em, Nick.
+		],
+		PlayerReviveFriendMechanicReplica = [
+			"player/survivor/voice/replica/revivefriendbellis01.wav"  //Let's go, Ellis.
+		],
+		PlayerReviveFriendProducerReplica = [
+			"player/survivor/voice/replica/revivefriendbrochelle01.wav"  //Can't lose my favorite girl.
+		],
+		PlayerReviveFriendCriticalReplica = [
+			"player/survivor/voice/replica/revivecriticalfriend01.wav",  //You might want to make your peace. You hurt bad. One more time and that is it for ya.
+			"player/survivor/voice/replica/revivecriticalfriend02.wav",  //They keep jumpin your shit and you keep goin' down... One more time and that's it.
+			"player/survivor/voice/replica/revivecriticalfriend03.wav",  //You gonna be okay... ah nah, nah, I can't lie to ya. Go down again and that's it for ya.
+			"player/survivor/voice/replica/revivecriticalfriend04.wav",  //You look like one of those dudes in a drivin school film, this may be it for ya.
+			"player/survivor/voice/replica/revivecriticalfriend05.wav",  //I ain't clownin' when I say this, but you better not go down again, cause that be it for ya.
+			"player/survivor/voice/replica/revivecriticalfriend06.wav",  //I gotta be straight with ya, you gonna die if you go down again, you understand?
+			"player/survivor/voice/replica/revivecriticalfriend07.wav"  //You gonna want to make peace my man, you go down again and you ain't gettin back up.
+		],
+		PlayerReviveFriendLoudReplica = [
+			"player/survivor/voice/replica/revivefriendloud01.wav",  //Come on now! Get ya ass up.
+			"player/survivor/voice/replica/revivefriendloud02.wav",  //We ain't got time for this, get up.
+			"player/survivor/voice/replica/revivefriendloud03.wav",  //Let's get you ass up.
+			"player/survivor/voice/replica/revivefriendloud04.wav",  //Oh shit, come on, get up.
+			"player/survivor/voice/replica/revivefriendloud05.wav",  //Come on now, ain't got time for this, get up.
+			"player/survivor/voice/replica/revivefriendloud06.wav",  //Get your ass up! Get up!
+			"player/survivor/voice/replica/revivefriendloud07.wav"  //Getup! Come on now. Get. Up!
+		],
+		_C1M1_ElevatorHelloReplica = [
+			"player/survivor/voice/replica/worldc1m1b100.wav",  //7.056 My name's Coach. I don't like bein' here any more than you do-but if we gotta fight, we might as well fight together.
+			"player/survivor/voice/replica/worldc1m1b101.wav",  //3.385 My name's Coach. And I KNOW how to shoot a gun.
+			"player/survivor/voice/replica/worldc1m1b102.wav",  //3.385 People call me Coach. And I LIVE here.
+			"player/survivor/voice/replica/worldc1m1b105.wav",  //0.539 And you?
+			"player/survivor/voice/replica/worldc1m1b106.wav",  //5.916 There we go. Most people call me Coach. And we're gonna be okay. Just gotta keep our heads.
+			"player/survivor/voice/replica/worldc1m1b107.wav",  //3.385 There we go. Most people call me Coach. And we're gonna be okay. Just gotta keep our heads.
+			"player/survivor/voice/replica/worldc1m1b108.wav",  //1.780 Everyone just calls me Coach.
+			"player/survivor/voice/replica/namecoachresponse01.wav",  //1.780 Everyone just calls me Coach.
+			"player/survivor/voice/replica/namecoachresponse02.wav",  //1.780 Ain't been called nothin' but Coach for a long time.
+			"player/survivor/voice/replica/worldc1m1b109.wav",  //2.634 Naw, I'm good. You?
+			"player/survivor/voice/replica/worldc1m1b110.wav",  //2.294 People call me Coach, what's your name?
+			"player/survivor/voice/replica/worldc1m1b125.wav",  //0.667 Coach'll work.
+			"player/survivor/voice/replica/worldc1m1b96.wav",  //5.262 So. Pleased to meet you. You can call me Coach. What's your name?
+			"player/survivor/voice/replica/worldc1m1b99.wav"  //0.560 Coach.
+		],
+		_C1M1_ElevatorHello01aReplica = [
+			"player/survivor/voice/replica/worldc1m1b108.wav",  //Everyone just calls me Coach.
+			"player/survivor/voice/replica/worldc1m1b98.wav",  //People just call me Coach.
+			"player/survivor/voice/replica/worldc1m1b110.wav"  //People call me Coach, what's your name?
+		],
+		_C1M1_ElevatorHello01cReplica = [
+			"player/survivor/voice/replica/worldc1m1b104.wav"  //Settle down, son. We're going to be okay. What's your name?
+		],
+		_C1M1_ElevatorHello01dReplica = [
+			"player/survivor/voice/replica/worldc1m1b103.wav"  //Coach.
+		],
+		_C1M1_ElevatorHello02bReplica = [
+			"player/survivor/voice/replica/worldc1m1b105.wav",  //And you?
+			"player/survivor/voice/replica/worldc1m1b121.wav",  //No, I'm good.
+			"player/survivor/voice/replica/worldc1m1b124.wav"  //I don't think so.
+		],
+		_C1M1_ElevatorHelloAllAliveExtra1Replica = [
+			"player/survivor/voice/replica/worldc1m1b105.wav"  //And you?
+		],
+		_C1M1_ElevatorHello03bReplica = [
+			"player/survivor/voice/replica/worldc1m1b110.wav",  //People call me Coach, what's your name?
+			"player/survivor/voice/replica/worldc1m1b97.wav"  //My friends call me Coach. I guess y'all can do the same.
+		],
+		_C1M1_ElevatorHello03cReplica = [
+			"player/survivor/voice/replica/worldc1m1b110.wav",  //People call me Coach, what's your name?
+			"player/survivor/voice/replica/worldc1m1b97.wav"  //My friends call me Coach. I guess y'all can do the same.
+		],
+		_C1M1_ElevatorHello05cReplica = [
+			"player/survivor/voice/replica/worldc1m1b111.wav"  //Let's stay together... for a little longer at least. Okay, Nick?
+		],
+		_C1M1_ElevatorHello07dReplica = [
+			"player/survivor/voice/replica/worldc1m1b102.wav"  //People call me Coach. And I LIVE here.
+		],
+		_C1M1_ElevatorHello07gReplica = [
+			"player/survivor/voice/replica/worldc1m1b125.wav"  //Coach'll work.
+		],
+		_C1M1_ElevatorHello09aReplica = [
+			"player/survivor/voice/replica/worldc1m1b101.wav"  //My name's Coach. And I KNOW how to shoot a gun.
+		],
+		_C1M1_ElevatorHello10aReplica = [
+			"player/survivor/voice/replica/worldc1m1b121.wav",  //No, I'm good.
+			"player/survivor/voice/replica/worldc1m1b124.wav"  //I don't think so.
+		],
+		_C1M1_ElevatorHello10bReplica = [
+			"player/survivor/voice/replica/worldc1m1b105.wav"  //And you?
+		],
+		_C1M1_ElevatorHello12bReplica = [
+			"player/survivor/voice/replica/worldc1m1b125.wav"  //Coach'll work.
+		],
+		_C1M1_ElevatorHello12cReplica = [
+			"player/survivor/voice/replica/worldc1m1b50.wav"  //Girl - You're in news. Can you make any sense of this?
+		],
+		_C1M1_ElevatorHello13aReplica = [
+			"player/survivor/voice/replica/worldc1m1b106.wav",  //5.916 There we go. Most people call me Coach. And we're gonna be okay. Just gotta keep our heads.
+			"player/survivor/voice/replica/worldc1m1b107.wav"  //3.385 There we go. Most people call me Coach. And we're gonna be okay. Just gotta keep our heads.
+		],
+		_C1M1_ElevatorHello13bReplica = [
+			"player/survivor/voice/replica/worldc1m1b108.wav",  //Everyone just calls me Coach.
+			"player/survivor/voice/replica/worldc1m1b98.wav"  //People just call me Coach.
+		],
+		_c1m4startelevator5aReplica = [
+			"player/survivor/voice/replica/worldc1m4b01.wav",  //Son, you got a DEAL.
+			"player/survivor/voice/replica/worldc1m4b02.wav",  //Ha HA! All the way to New Orleans! Baby, that sounds like a PLAN.
+			"player/survivor/voice/replica/worldc1m4b05.wav",  //Normally I wouldn't do this. But in these circumstances, I think Mr. Gibbs, Jr. ain't gonna mind.
+			"player/survivor/voice/replica/worldc1m4b06.wav"  //Normally I wouldn't agree to do this. But in these circumstances, I think Mr. Gibbs, Jr. ain't gonna mind.
+		],
+		_c1m4startelevatorLastReplica = [
+			"player/survivor/voice/replica/worldc1m4b08.wav",  //Soon as them doors open? You run your ass off and find some GAS.
+			"player/survivor/voice/replica/worldc1m4b09.wav",  //Soon as these doors open, get ready to MOVE
+			"player/survivor/voice/replica/worldc1m4b10.wav"  //Forgive us Jimmy, but we need your car.
+		],
+		_C2M1_Fall01Replica = [
+			"player/survivor/voice/replica/worldc2m131.wav"  //Damn, I am too old for this shit.
+		],
+		_C2M1_Fall02Replica = [
+			"player/survivor/voice/replica/worldc2m132.wav",  //Nah, hell no.
+			"player/survivor/voice/replica/worldc2m134.wav"  //You a crazy man Ellis.
+		],
+		_C2M1_Fall04Replica = [
+			"player/survivor/voice/replica/worldc2m1b11.wav"  //[laughs] It's not funny. You coulda really hurt yours[breaks into laughs again] Naw, it's funny.
+		],
+		_c2m1_searchlights01Replica = [
+			"player/survivor/voice/replica/worldc2m112.wav",  //One place is as good as the next when you're dying.
+			"player/survivor/voice/replica/worldc2m113.wav",  //One place is as good as the next when you're dead.
+			"player/survivor/voice/replica/worldc2m122.wav",  //That there's whispering oaks.
+			"player/survivor/voice/replica/worldc2m121.wav",  //That there's Whispering Oaks amusement park.
+			"player/survivor/voice/replica/worldc2m123.wav"  //Looks like people were heading towards Whispering Oaks.
+		],
+		_c2m1_searchlights02Replica = [
+			"player/survivor/voice/replica/worldc2m2b02.wav"  //There's still searchlights on. I'd say that's a good sign.
+		],
+		_c2m1_searchlights03Replica = [
+			"player/survivor/voice/replica/worldc2m2b01.wav"  //We'll head towards the searchlights. If there's an evac, it'll be there.
+		],
+		_C2M1abandoned01Replica = [
+			"player/survivor/voice/replica/worldc2m1b02.wav"  //Maybe they left 'em when they got rescued.
+		],
+		_C2M2_Bathroom01Replica = [
+			"player/survivor/voice/replica/worldc2m201.wav"  //Oh. Ahh sorry Ro.
+		],
+		_C2M2_CaroStart03Replica = [
+			"player/survivor/voice/replica/worldc2m215.wav",  //Ahh damn, the merry-go-round started!
+			"player/survivor/voice/replica/worldc2m216.wav"  //Shit. That things make it a racket!
+		],
+		_C2M2_CottonCandy01Replica = [
+			"player/survivor/voice/replica/worldc2m2b25.wav",  //Cotton Candy. The king of foods.
+			"player/survivor/voice/replica/worldc2m2b26.wav"  //Ah yeah. Cotton Candy. The wise pharaoh of food. Sittin' atop the food pyramid, passin' judgement on all lesser foods.
+		],
+		_C2M2_Kiddie01Replica = [
+			"player/survivor/voice/replica/worldc2m2b29.wav"  //Sometimes it feels like we're babysitting, doesn't it?
+		],
+		_C2M2_SeeSafehouse01Replica = [
+			"player/survivor/voice/replica/worldc2m218.wav"  //Oh yeah... tunnel of love.
+		],
+		_c2m3_coaster01Replica = [
+			"player/survivor/voice/replica/worldc2m312.wav"  //Running the screaming oak...now don't that beat all...
+		],
+		_c2m3_coaster05Replica = [
+			"player/survivor/voice/replica/worldc2m311.wav",  //No, this ain't gonna be cool. You ain't right in the head boy.
+			"player/survivor/voice/replica/worldc2m316.wav"  //This is some crazy ass world we live in now.
+		],
+		_c2m3_coaster08Replica = [
+			"player/survivor/voice/replica/worldc2m312.wav"  //Running the screaming oak...now don't that beat all...
+		],
+		_c2m3_freshair01Replica = [
+			"player/survivor/voice/replica/worldc2m308.wav"  //Hm. Shit. First time I ever couldn't wait to get out of the tunnel of love.
+		],
+		_c2m3_hole01Replica = [
+			"player/survivor/voice/replica/worldc2m306.wav"  //Alright, let's do this together.
+		],
+		_C2M4_GateOpen001Replica = [
+			"player/survivor/voice/replica/worldc5m2b09.wav",  //RUN!
+			"player/survivor/voice/replica/worldc5m2b10.wav",  //MOVE YOUR ASSES!
+			"player/survivor/voice/replica/worldc5m2b11.wav",  //GO!
+			"player/survivor/voice/replica/worldc5m2b13.wav",  //JUST RUN!
+			"player/survivor/voice/replica/worldc5m2b14.wav"  //GET THE LEAD OUT, PEOPLE!
+		],
+		_C4_BigStormHits01Replica = [
+			"player/survivor/voice/replica/miscdirectional63.wav",  //SQUALL'S STARTIN', PEOPLE!
+			"player/survivor/voice/replica/miscdirectional64.wav"  //STORM COMIN'!
+		],
+		_C4_BigStormHits02Replica = [
+			"player/survivor/voice/replica/miscdirectional65.wav"  //STICK TOGETHER!
+		],
+		_c4m1_rainresponseReplica = [
+			"player/survivor/voice/replica/worldc4m1b15.wav",  //It's startin' to rain.
+			"player/survivor/voice/replica/worldc4m1b16.wav",  //All right, let's hustle, people. Storms come up quick around here.
+			"player/survivor/voice/replica/worldc4m1b17.wav"  //Aw hell. Looks like a bad storm's comin.
+		],
+		_c4m2_caneyell01Replica = [
+			"player/survivor/voice/replica/worldc4m2b29.wav"  //KEEP MOVING!
+		],
+		_c4m2_ElevatorHere01Replica = [
+			"player/survivor/voice/replica/worldc4m2b22.wav",  //ELEVATOR'S HERE!
+			"player/survivor/voice/replica/worldc4m2b24.wav",  //EVERYBODY IN THE ELEVATOR!
+			"player/survivor/voice/replica/worldc4m2b25.wav"  //GET YOUR ASSES IN THE ELEVATOR!
+		],
+		_c4m2_gasinside01Replica = [
+			"player/survivor/voice/replica/worldc4m2b32.wav"  //Cool. Let's go get it.
+		],
+		_c4m2_seestation01Replica = [
+			"player/survivor/voice/replica/worldc4m2b19.wav"  //Through the cane field!
+		],
+		_c4m2_streetblocked01Replica = [
+			"player/survivor/voice/replica/worldc4m2b02.wav"  //We gotta head through the sugar mill.
+		],
+		_c4m2_streetblocked01bReplica = [
+			"player/survivor/voice/replica/blank.wav"  //
+		],
+		_c4m2_waterpool02Replica = [
+			"player/survivor/voice/replica/worldc4m1b20.wav",  //First the plague, now the flood. I feel like I should be buildin' an ark.
+			"player/survivor/voice/replica/worldc4m1b21.wav",  //First the plague, now the flood. I think somebody's trying to tell us something.
+			"player/survivor/voice/replica/worldc4m2b07.wav"  //We already got plague. Maybe the Lord'll let us slide on the flood.
+		],
+		_c4m2_Witchville05Replica = [
+			"player/survivor/voice/replica/worldc4m208.wav",  //Dang. Bitches must like sugar.
+			"player/survivor/voice/replica/worldc4m212.wav",  //There're bitches every ten feet in this goddamn place
+			"player/survivor/voice/replica/worldc4m2b11.wav",  //More Witches!
+			"player/survivor/voice/replica/worldc4m2b12.wav",  //Maybe the rain brings 'em out.
+			"player/survivor/voice/replica/worldc4m2b13.wav",  //All these pale-assed crazy ladies are gettin' on my last nerve.
+			"player/survivor/voice/replica/worldc4m2b14.wav"  //What the hell do THEY got to cry about? We're the ones getting attacked.
+		],
+		_C4M3_FLOODED01Replica = [
+			"player/survivor/voice/replica/miscdirectional60.wav",  //All that sugar... It's a damn shame.
+			"player/survivor/voice/replica/miscdirectional61.wav"  //All that sugar... it's a goddamn tragedy, is what it is.
+		],
+		_c4m3_rain01Replica = [
+			"player/survivor/voice/replica/worldc4m3b09.wav"  //I told ya these storms come up quick.
+		],
+		_c4m3_startsafe02Replica = [
+			"player/survivor/voice/replica/worldc4m3b04.wav",  //Yup.
+			"player/survivor/voice/replica/worldc4m3b05.wav"  //I got one.
+		],
+		_c4m3_startsafe03Replica = [
+			"player/survivor/voice/replica/worldc4m3b02.wav",  //Let's head back to the boat.
+			"player/survivor/voice/replica/worldc4m3b03.wav",  //Back to the boat, people.
+			"player/survivor/voice/replica/worldc4m3b08.wav",  //Getting' back to the boat ain't gonna be as easy as gettin' here.
+			"player/survivor/voice/replica/worldc4m3b06.wav"  //Getting' back to the boat ain't gonna be as easy as getting' here.
+		],
+		_introc1m1MovieIntroReplica = [
+			"player/survivor/voice/replica/teaserintromovie07.wav",  //They left us here to die.
+			"player/survivor/voice/replica/teaserintromovie08.wav",  //They were supposed to rescue us.
+			"player/survivor/voice/replica/teaserintromovie09.wav",  //Thought they're supposed t'be gettin' us outta this shit!
+			"player/survivor/voice/replica/teaserintromovie10.wav"  //Thought they're supposed t'be savin' our asses!
+		],
+		_introc1m1a03Replica = [
+			"player/survivor/voice/replica/worldc1m1b01.wav",  //HEYYY! COME BACK! COME-ahh, he ain't comin' back.
+			"player/survivor/voice/replica/worldc1m1b01.wav",  //HEYYY! COME BACK! COME-ahh, he ain't comin' back.
+			"player/survivor/voice/replica/worldc1m1b01.wav"  //HEYYY! COME BACK! COME-ahh, he ain't comin' back.
+		],
+		_introc1m1a03AloneReplica = [
+			"player/survivor/voice/replica/worldc1m1b01.wav"  //HEYYY! COME BACK! COME-ahh, he ain't comin' back.
+		],
+		_introc1m1a05Replica = [
+			"player/survivor/voice/replica/worldc1m1b15.wav",  //Dollars to donuts, that chopper's headin' to the mall across town.
+			"player/survivor/voice/replica/worldc1m1b02.wav",  //Okay, nobody panic. I live around here-and that chopper looks like it's headin' to the mall. It ain't far, I can take you there.
+			"player/survivor/voice/replica/worldc1m1b07.wav",  //Everybody calm down. I live around here, and that chopper looks like it's headin' to the mall. It ain't far-I'll take you there.
+			"player/survivor/voice/replica/worldc1m1b13.wav"  //Don't worry, they're heading to the mall, we can catch them there.
+		],
+		_introc1m1b01Replica = [
+			"player/survivor/voice/replica/worldc1m1b03.wav",  //Hey! There's still people on the roof! Get BACK HERE!
+			"player/survivor/voice/replica/worldc1m1b05.wav",  //Hey! There's still people on the roof! Get BACK HERE!
+			"player/survivor/voice/replica/worldc1m1b06.wav",  //Aw, heck, the rescue chopper's leavin'!
+			"player/survivor/voice/replica/worldc1m1b11.wav"  //What the heck is that chopper doing?
+		],
+		_introc1m1b04Replica = [
+			"player/survivor/voice/replica/worldc1m1b36.wav"  //
+		],
+		_introc1m1b06Replica = [
+			"player/survivor/voice/replica/worldc1m1b04.wav",  //There's a mall got turned into an evac station not too far from here. I'll bet that chopper's headin' there.
+			"player/survivor/voice/replica/worldc1m1b08.wav",  //There's a mall got turned into an evac station not too far from here. I'll bet that chopper's headin' there.
+			"player/survivor/voice/replica/worldc1m1b09.wav",  //Looks like it's headin' to the mall. Maybe they're still evacuatin' people there.
+			"player/survivor/voice/replica/worldc1m1b12.wav",  //Looked like it was headin' to the mall across town.
+			"player/survivor/voice/replica/worldc1m1b15.wav",  //Dollars to donuts, that chopper's headin' to the mall across town.
+			"player/survivor/voice/replica/worldc1m1b02.wav",  //Okay, nobody panic. I live around here-and that chopper looks like it's headin' to the mall. It ain't far, I can take you there.
+			"player/survivor/voice/replica/worldc1m1b07.wav",  //Everybody calm down. I live around here, and that chopper looks like it's headin' to the mall. It ain't far-I'll take you there.
+			"player/survivor/voice/replica/worldc1m1b13.wav"  //Don't worry, they're heading to the mall, we can catch them there.
+		],
+		_introc1m1b08Replica = [
+			"player/survivor/voice/replica/worldc1m1b04.wav",  //There's a mall got turned into an evac station not too far from here. I'll bet that chopper's headin' there.
+			"player/survivor/voice/replica/worldc1m1b08.wav",  //There's a mall got turned into an evac station not too far from here. I'll bet that chopper's headin' there.
+			"player/survivor/voice/replica/worldc1m1b09.wav",  //Looks like it's headin' to the mall. Maybe they're still evacuatin' people there.
+			"player/survivor/voice/replica/worldc1m1b12.wav",  //Looked like it was headin' to the mall across town.
+			"player/survivor/voice/replica/worldc1m1b15.wav",  //Dollars to donuts, that chopper's headin' to the mall across town.
+			"player/survivor/voice/replica/worldc1m1b15.wav",  //Dollars to donuts, that chopper's headin' to the mall across town.
+			"player/survivor/voice/replica/worldc1m1b02.wav",  //Okay, nobody panic. I live around here-and that chopper looks like it's headin' to the mall. It ain't far, I can take you there.
+			"player/survivor/voice/replica/worldc1m1b07.wav",  //Everybody calm down. I live around here, and that chopper looks like it's headin' to the mall. It ain't far-I'll take you there.
+			"player/survivor/voice/replica/worldc1m1b13.wav"  //Don't worry, they're heading to the mall, we can catch them there.
+		],
+		_introc1m1b09Replica = [
+			"player/survivor/voice/replica/worldc1m1b10.wav"  //There ARE three other people here, son.
+		],
+		_introc1m1c01Replica = [
+			"player/survivor/voice/replica/worldc1m1b35.wav"  //Don't take the Lord's name in vain.
+		],
+		_introc1m1c02Replica = [
+			"player/survivor/voice/replica/worldc1m1b37.wav"  //YEAH. I'm serious.
+		],
+		_introc1m1lastweaponsReplica = [
+			"player/survivor/voice/replica/worldc1m1b16.wav",  //Gotta agree. Let's follow them to the mall.
+			"player/survivor/voice/replica/worldc1m1b17.wav"  //Then let's do it. Everybody grab a weapon, and let's go.
+		],
+		c1m1_elevator_door_openReplica = [
+			"player/survivor/voice/replica/cough01.wav",  //[Coughing from smoke]
+			"player/survivor/voice/replica/cough02.wav",  //[Coughing from smoke]
+			"player/survivor/voice/replica/cough03.wav",  //[Coughing from smoke]
+			"player/survivor/voice/replica/cough06.wav"  //[Coughing from smoke]
+		],
+		c1m1_elevator_ready2Replica = [
+			"player/survivor/voice/replica/worldc1m1b95.wav"  //Alright, enough chat. Get ready.
+		],
+		_C1M1_ElevatorHello2AliveName1Replica = [
+			"player/survivor/voice/replica/worldc1m1b98.wav"  //People just call me Coach.
+		],
+		_C1M1_ElevatorHello2AliveName2Replica = [
+			"player/survivor/voice/replica/worldc1m1b100.wav"  //7.056 My name's Coach. I don't like bein' here any more than you do-but if we gotta fight, we might as well fight together.
+		],
+		_C1M1_ElevatorHello2AliveExtra1Replica = [
+			"player/survivor/voice/replica/goingtodie02.wav"  //This ain't how i thought this would go.
+		],
+		_C1M1_ElevatorHello2AliveExtra2Replica = [
+			"player/survivor/voice/replica/goingtodier08.wav"  //Hey. Listen to me, you are gonna make it.
+		],
+		_C1M1_ElevatorHello2AliveExtra2NReplica = [
+			"player/survivor/voice/replica/worldc1m1b111.wav"  //Let's stay together... for a little longer at least. Okay, Nick?
+		],
+		_C1M1_ElevatorHello3AliveName1RNReplica = [
+			"player/survivor/voice/replica/worldc1m1b98.wav"  //People just call me Coach.
+		],
+		_C1M1_ElevatorHello3AliveName1REReplica = [
+			"player/survivor/voice/replica/worldc1m1b98.wav"  //People just call me Coach.
+		],
+		_C1M1_ElevatorHello3AliveName1Replica = [
+			"player/survivor/voice/replica/worldc1m1b98.wav"  //People just call me Coach.
+		],
+		_C1M1_ElevatorHello3AliveName2Replica = [
+			"player/survivor/voice/replica/worldc1m1b98.wav"  //People just call me Coach.
+		],
+		_C1M1_ElevatorHello3AliveWhoIsDeadReplica = [
+			"player/survivor/voice/replica/worldc1m1b114.wav"  //Who'd we lose?
+		],
+		_C1M1_ElevatorHello3AliveNameDeadEReplica = [
+			"player/survivor/voice/replica/worldc1m1b116.wav"  //I think it was Ellis.
+		],
+		_C1M1_ElevatorHello3AliveNameDeadNReplica = [
+			"player/survivor/voice/replica/worldc1m1b117.wav"  //I think it was Nick.
+		],
+		_C1M1_ElevatorHello3AliveNameDeadRReplica = [
+			"player/survivor/voice/replica/worldc1m1b118.wav"  //I think she said it was Rochelle. Poor girl...
+		],
+		_C1M1_ElevatorHello3AliveNameDead2Replica = [
+			"player/survivor/voice/replica/worldc1m1b119.wav"  //I thought your name is Ellis...
+		],
+		C1M1CoughReplica = [
+			"player/survivor/voice/replica/cough01.wav",  //[Coughing from smoke]
+			"player/survivor/voice/replica/cough02.wav",  //[Coughing from smoke]
+			"player/survivor/voice/replica/cough03.wav",  //[Coughing from smoke]
+			"player/survivor/voice/replica/cough06.wav"  //[Coughing from smoke]
+		],
+		C1M2SafeRoomReplica = [
+			"player/survivor/voice/replica/worldc1m2b03.wav",  //There's a gun store on the way to the mall. What do you say we pay it a visit?
+			"player/survivor/voice/replica/worldc1m2b03.wav",  //There's a gun store on the way to the mall. What do you say we pay it a visit?
+			"player/survivor/voice/replica/worldc1m2b03.wav"  //There's a gun store on the way to the mall. What do you say we pay it a visit?
+		],
+		C1M3AlarmOffaReplica = [
+			"player/survivor/voice/replica/worldc1m3b33.wav"  //I can still hear it in my head, but I think the alarm is off.
+		],
+		C1M3SafeRoomReplica = [
+			"player/survivor/voice/replica/worldc1m3b01.wav",  //Keep an eye out for the evac center. Also the food court. I am STARVING.
+			"player/survivor/voice/replica/worldc1m3b02.wav"  //Everybody, gather 'round. Let's pray. Dear Lord. See us safely through our time of trial in this mall. And please Lord... let the food court be okay.
+		],
+		C1M3SafeRoom2cReplica = [
+			"player/survivor/voice/replica/worldc1m3b05.wav"  //CEDA's gotta be around here somewhere. Let's find this evac and get out of here.
+		],
+		C1M3SafeRoom2dReplica = [
+			"player/survivor/voice/replica/worldc1m3b03.wav",  //Amen
+			"player/survivor/voice/replica/worldc1m3b04.wav"  //Amen
+		],
+		C1M4NearFinale03aReplica = [
+			"player/survivor/voice/replica/worlddead02.wav",  //Yeah, true that.
+			"player/survivor/voice/replica/worldsigns26.wav"  //No shit.
+		],
+		c1m4NearFinale1Replica = [
+			"player/survivor/voice/replica/worldc1m3b40.wav"  //I hope SOMEBODY got out alright...
+		],
+		c1m4NearFinale1NickReplica = [
+			"player/survivor/voice/replica/lookhere02.wav"  //What do ya'all make of this?
+		],
+		C1M4SafeRoom2a1Replica = [
+			"player/survivor/voice/replica/worldc1m3b22.wav",  //Ohh heyyy! Jimmy Gibbs!
+			"player/survivor/voice/replica/worldc1m3b23.wav"  //I heard of Jimmy Gibbs! That man's a stock car LEGEND.
+		],
+		C1M4SafeRoom2a3Replica = [
+			"player/survivor/voice/replica/worldc1m3b24.wav",  //Well, trust me-in these parts? He's as famous as... Elvis. Or the President.
+			"player/survivor/voice/replica/worldc1m3b25.wav",  //Well, trust me-in these parts? He's as famous as... Elvis. Or the President.
+			"player/survivor/voice/replica/worldc1m3b25.wav",  //Well, trust me-in these parts? He's as famous as... Elvis. Or the President.
+			"player/survivor/voice/replica/worldc1m3b24.wav"  //Well, trust me-in these parts? He's as famous as... Elvis. Or the President.
+		],
+		C1M4SafeRoom2b5Replica = [
+			"player/survivor/voice/replica/worldc1m3b03.wav",  //Amen
+			"player/survivor/voice/replica/worldc1m3b04.wav"  //Amen
+		],
+		C1M4SafeRoomEndReplica = [
+			"player/survivor/voice/replica/moveon01.wav",  //Allright, let's go.
+			"player/survivor/voice/replica/moveon02.wav",  //Come on, people, let's get with it.
+			"player/survivor/voice/replica/moveon04.wav"  //We gonna put up tents and shit or keep movin'?
+		],
+		C2M1DoneFallingAlt1Replica = [
+			"player/survivor/voice/replica/worldc2m1b12.wav",  //[laughs] Watch that first step, baby.
+			"player/survivor/voice/replica/worldc2m2b34.wav"  //Damn, that was fun!
+		],
+		C2M1Intro002Replica = [
+			"player/survivor/voice/replica/worldc2m103.wav",  //All right, let's get back on foot.
+			"player/survivor/voice/replica/worldc2m104.wav",  //Let's get back on foot.
+			"player/survivor/voice/replica/worldc2m107.wav",  //Ain't no way to drive around this mess, let's walk it.
+			"player/survivor/voice/replica/worldc2m1b01.wav"  //Hell, it got us this far. We'll find another way to N'awlins.
+		],
+		C2M1Intro009Replica = [
+			"player/survivor/voice/replica/worldc2m101.wav"  //Yeah, Ellis, that was some good driving.
+		],
+		C2M1Intro010Replica = [
+			"player/survivor/voice/replica/worldc2m102.wav"  //But the roads blocked now.
+		],
+		C2M1Intro_400Replica = [
+			"player/survivor/voice/replica/imwithyou05.wav"  //We tight.
+		],
+		C2M4PenSmell001Replica = [
+			"player/survivor/voice/replica/nickocd04.wav"  //All I smell is ribs.
+		],
+		_C2M4_RibsReplica = [
+			"player/survivor/voice/replica/nickocd02.wav"  //Hey, Nick. You smell that? That's the smell of Coach getting mad.
+		],
+		C2M5_lipsync001Replica = [
+			"player/survivor/voice/replica/worldc2m5b22.wav",  //They have taped music? Shit. Old ass classic rock clowns.
+			"player/survivor/voice/replica/worldc2m5b23.wav",  //No, they're just saving their voices for the studio, Nick. That's SMART.
+			"player/survivor/voice/replica/worldc2m5b24.wav"  //You mock because you're jealous, Nick. These men are living legends.
+		],
+		c4m1_InBurgerTank01Replica = [
+			"player/survivor/voice/replica/worldc4m107.wav",  //I could go for a BBQ bacon burger.
+			"player/survivor/voice/replica/worldc4m108.wav",  //And a large order of fries, and...
+			"player/survivor/voice/replica/worldc4m109.wav",  //An orange soda with no ice, and a...
+			"player/survivor/voice/replica/worldc4m110.wav",  //piece of hot apple pie.
+			"player/survivor/voice/replica/worldc4m111.wav"  //Goddamn I miss Burger Tank.
+		],
+		c4m1_nogas01Replica = [
+			"player/survivor/voice/replica/worldc4m1b08.wav",  //Next gas two miles. Looks like Virgil's gonna be waitin' a bit longer than he thought.
+			"player/survivor/voice/replica/worldc4m1b09.wav",  //Next gas two miles. Hope Virgil likes waitin', 'cause it looks we're goin' for a walk.
+			"player/survivor/voice/replica/worldc4m1b11.wav",  //Let's head to this Ducatel diesel.
+			"player/survivor/voice/replica/worldc4m113.wav"  //Let's head to the sugar mill.
+		],
+		c4m1_nogas03Replica = [
+			"player/survivor/voice/replica/worldc4m1b12.wav"  //Because if they DON'T, we gonna be stuck here forever, Nick.
+		],
+		c4m1_nogas06Replica = [
+			"player/survivor/voice/replica/worldc4m1b14.wav"  //Let's just get this done and head back.
+		],
+		c4m1_nogas07Replica = [
+			"player/survivor/voice/replica/worldc4m112.wav"  //Storms come up fast, but we should make it.
+		],
+		c4m1_nogas10Replica = [
+			"player/survivor/voice/replica/worldc4m1b11.wav",  //Let's head to this Ducatel diesel.
+			"player/survivor/voice/replica/worldc4m113.wav",  //Let's head to the sugar mill.
+			"player/survivor/voice/replica/worldc4m1b13.wav"  //All right, quit whinin'. We just gotta hike to this Duke-atel diesel.
+		],
+		GasPour20MoreTalkReplica = [
+			"player/survivor/voice/replica/worldc1m4b22.wav",  //We need more gas!
+			"player/survivor/voice/replica/worldc1m4b23.wav",  //We still need more gas!
+			"player/survivor/voice/replica/worldc1m4b26.wav"  //We need twenty more!
+		],
+		GasPour10MoreTalkReplica = [
+			"player/survivor/voice/replica/worldc1m4b27.wav"  //We still need ten more!
+		],
+		GasPour1MoreReplica = [
+			"player/survivor/voice/replica/worldc1m4b31.wav"  //One more can to go!
+		],
+		GasPour2MoreReplica = [
+			"player/survivor/voice/replica/worldc1m4b30.wav"  //Just two more!
+		],
+		GasPour3MoreReplica = [
+			"player/survivor/voice/replica/worldc1m4b29.wav"  //Just three more!
+		],
+		GasPour5MoreReplica = [
+			"player/survivor/voice/replica/worldc1m4b28.wav"  //We still need five more!
+		],
+		HistoricTour02aReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_historicsign05.wav",  //Yeah, it's historic.
+			"player/survivor/voice/replica/dlc1_c6m1_historicsign06.wav"  //I don't know, goes under the river.
+		],
+		Player_CoverMeC1RCoach2Replica = [
+			"player/survivor/voice/replica/covermec1rcoach01.wav",  //I ain't never done this before.
+			"player/survivor/voice/replica/covermec1rcoach02.wav"  //Hell, no, I ain't never done this before.
+		],
+		Player_KnowHunterC1Replica = [
+			"player/survivor/voice/replica/warnhunterc1p01.wav"  //All right, Hunter.
+		],
+		Player_TakeBatRReplica = [
+			"player/survivor/voice/replica/takemeleer01.wav"  //You play ball Nick?
+		],
+		Player_TakeVomitJarC1aReplica = [
+			"player/survivor/voice/replica/boomerjar07.wav"  //I can not believe I just said that.
+		],
+		C1M2TankInfoReplica = [
+			"player/survivor/voice/replica/transitionclose10.wav",  //That was some epic shit. Right there.
+			"player/survivor/voice/replica/transitionclose07.wav"  //Let's put it behind us, we good, we good.
+		],
+		PlayerCr0wnedBrideReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_weddingwitchdead02.wav"  //Mm, now that's a shotgun wedding.
+		],
+		WeddingWitchDead01Replica = [
+			"player/survivor/voice/replica/dlc1_c6m1_weddingwitchdead01.wav"  //You got problems boy. Deep down problems.
+		],
+		WeddingWitchDead02Replica = [
+			"player/survivor/voice/replica/dlc1_c6m1_weddingwitchdead03.wav"  //Yeah, that shit was creeping me out.
+		],
+		WorldIntroC31a2Replica = [
+			"player/survivor/voice/replica/worldc3m1b01.wav"  //That's true. If I had a pick a low point in the flight, it was probably when he stopped flying the chopper and attacked us.
+		],
+		WorldIntroC31e3Replica = [
+			"player/survivor/voice/replica/worldc3m104.wav"  //Come on now, if I was having a cookout, I ain't invitin' CEDA either.
+		],
+		WorldIntroC3e1Replica = [
+			"player/survivor/voice/replica/worldc3m1b05.wav"  //Next time someone wants to shoot our pilot, can I get a little warning?
+		],
+		WorldIntroC3f1Replica = [
+			"player/survivor/voice/replica/worldc3m1b07.wav"  //Shit, that pilot just changed. One minute he was flying us to safety, the next he was... well... I am pretty damn sure he was trying to eat us.
+		],
+		WorldIntroC31g2Replica = [
+			"player/survivor/voice/replica/worldc3m103.wav"  //I don't think anyone likes the swamp.
+		],
+		PlayerCoverMeHealReplica = [
+			"player/survivor/voice/replica/coverme01.wav",  //Hold on y'all I gotta heal.
+			"player/survivor/voice/replica/coverme02.wav",  //Cover me for a sec, I gotta heal.
+			"player/survivor/voice/replica/coverme03.wav",  //Hold up, healin'.
+			"player/survivor/voice/replica/coverme04.wav",  //Hey man, hold up - healin'.
+			"player/survivor/voice/replica/coverme05.wav",  //Healing! Hold on a sec.
+			"player/survivor/voice/replica/coverme06.wav",  //Give me a minute, gotta heal.
+			"player/survivor/voice/replica/coverme07.wav",  //Shit, gotta heal my ass.
+			"player/survivor/voice/replica/coverme08.wav"  //Hold on y'all I'm healing.
+		],
+		PlayerCoverMeHealC1Replica = [
+			"player/survivor/voice/replica/covermec101.wav",  //Hold up, gotta try and heal myself.
+			"player/survivor/voice/replica/covermec102.wav",  //Wait up, gonna try and use this thing.
+			"player/survivor/voice/replica/covermec103.wav",  //Man, no idea how this thing works.
+			"player/survivor/voice/replica/covermec104.wav"  //Hold up, gotta try and heal myself.
+		],
+		Player_LostCallC6M3Replica = [
+			"player/survivor/voice/replica/blank.wav"  //
+		],
+		AutoPlayerLostCallReplica = [
+			"player/survivor/voice/replica/lostcall01.wav",  //Where you all at?
+			"player/survivor/voice/replica/lostcall02.wav",  //Hey! Anyone out there?
+			"player/survivor/voice/replica/lostcall03.wav"  //Holler back at me folks!
+		],
+		SurvivorSpottedChainsawReplica = [
+			"player/survivor/voice/replica/meleeweapons03.wav"  //Chainsaw here...
+		],
+		SurvivorSpottedcricket_batReplica = [
+			"player/survivor/voice/replica/meleeweapons14.wav",  //Paddle bat here.
+			"player/survivor/voice/replica/meleeweapons15.wav"  //Got a paddle bat.
+		],
+		SurvivorSpottedcrowbarReplica = [
+			"player/survivor/voice/replica/meleeweapons12.wav"  //Crowbar.
+		],
+		SurvivorSpottedGolfClubReplica = [
+			"player/survivor/voice/replica/dlc1_golfclub01.wav",  //Driver here.
+			"player/survivor/voice/replica/dlc1_golfclub02.wav"  //Golf club!
+		],
+		SurvivorSpottedGuitarReplica = [
+			"player/survivor/voice/replica/meleeweapons07.wav"  //Guitar here.
+		],
+		SurvivorSpottedKatanaReplica = [
+			"player/survivor/voice/replica/meleeweapons09.wav"  //Ninja sword here.
+		],
+		SurvivorSpottedLaserSightsReplica = [
+			"player/survivor/voice/replica/lasersights01.wav",  //Laser sights here.
+			"player/survivor/voice/replica/lasersights02.wav",  //Laser sights here.
+			"player/survivor/voice/replica/lasersights03.wav"  //Laser sights here.
+		],
+		SurvivorSpottedM60Replica = [
+			"player/survivor/voice/replica/dlc1_m6001.wav",  //Big gun!
+			"player/survivor/voice/replica/dlc1_m6007.wav",  //Here's a big gun!
+			"player/survivor/voice/replica/dlc1_m6008.wav"  //Big gun!
+		],
+		SurvivorSpottedMacheteReplica = [
+			"player/survivor/voice/replica/meleeweapons01.wav"  //Machete here...
+		],
+		SurvivorSpottedMagnumReplica = [
+			"player/survivor/voice/replica/dlc1_m6001.wav",  //Big gun!
+			"player/survivor/voice/replica/dlc1_m6008.wav",  //Big gun!
+			"player/survivor/voice/replica/takeassaultrifle02.wav"  //This right here'll mess some shit up.
+		],
+		SurvivorSpottedtonfaReplica = [
+			"player/survivor/voice/replica/meleeweapons05.wav"  //nightstick here...
+		],
+		SurvivorSpottedWeaponReplica = [
+			"player/survivor/voice/replica/spotweapons01.wav",  //Weapons here!
+			"player/survivor/voice/replica/spotweapons02.wav",  //Weapon's over here!
+			"player/survivor/voice/replica/spotweapons03.wav",  //Weapons!
+			"player/survivor/voice/replica/spotweapons04.wav",  //Guns!
+			"player/survivor/voice/replica/spotweapons05.wav",  //We got guns!
+			"player/survivor/voice/replica/spotweapons06.wav"  //All right, guns!
+		],
+		SurvivorSpottedMeleeWeaponReplica = [
+			"player/survivor/voice/replica/spotweapons01.wav",  //Weapons here!
+			"player/survivor/voice/replica/spotweapons02.wav",  //Weapon's over here!
+			"player/survivor/voice/replica/spotweapons03.wav"  //Weapons!
+		],
+		C2M3Chopper001Replica = [
+			"player/survivor/voice/replica/worldc2m3b15.wav"  //There's a chopper!
+		],
+		AskWhatReplica = [
+			"player/survivor/voice/replica/dlc1_c6m3_finalechat01.wav",  //WHAT??
+			"player/survivor/voice/replica/dlc1_c6m3_finalechat02.wav"  //WHAT??
+		],
+		C13M1IntroStartReplica = [
+			"player/survivor/voice/replica/worldc1m1b54.wav",  //We gotta find a way around this fire!
+			"player/survivor/voice/replica/worldc1m1b56.wav",  //[coughing] The fire's spreading!
+			"player/survivor/voice/replica/worldc1m1b59.wav"  //The fire's spreading!
+		],
+		C13M1Intro2Replica = [
+			"player/survivor/voice/replica/worldc3m1b08.wav",  //Where in the hell are we?
+			"player/survivor/voice/replica/worldc3m1b09.wav"  //Where in the hell are we?
+		],
+		C13M1Intro2EllisReplica = [
+			"player/survivor/voice/replica/worldc1m1b60.wav"  //Boy, ain't nobody gonna burn up. We can get around the fire.
+		],
+		C13M1Intro3Replica = [
+			"player/survivor/voice/replica/dlc1_community05.wav",  //I heard there's a military base just south of here. Last I heard, they were still evacuating.
+			"player/survivor/voice/replica/followme01.wav",  //Come on y' all this way.
+			"player/survivor/voice/replica/followme02.wav"  //This way.
+		],
+		C13M1IntroLastReplica = [
+			"player/survivor/voice/replica/moveon06.wav",  //Alright, let's get it on.
+			"player/survivor/voice/replica/moveon07.wav",  //All right, let's roll.
+			"player/survivor/voice/replica/moveon08.wav",  //Let's get it on.
+			"player/survivor/voice/replica/moveon09.wav",  //Alright people, let's get it on.
+			"player/survivor/voice/replica/moveon10.wav"  //All right, let's roll.
+		],
+		C13M1IntroLocationLastReplica = [
+			"player/survivor/voice/replica/moveon01.wav",  //Allright, let's go.
+			"player/survivor/voice/replica/moveon02.wav"  //Come on, people, let's get with it.
+		],
+		RemarkC13M1PreBunkerOpenReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_alarmdoor03.wav",  //Let's get ready before we open that door.
+			"player/survivor/voice/replica/dlc1_c6m2_bridge1raise04.wav"  //This looks like the only way.
+		],
+		C13M1OpeningBunkerReplica = [
+			"player/survivor/voice/replica/worldc3m2b04.wav",  //I'm opening it!
+			"player/survivor/voice/replica/worldc3m2b05.wav"  //I'm opening this door!
+		],
+		RemarkC13M2UpLadderReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_upladder01.wav",  //A ladder!
+			"player/survivor/voice/replica/dlc1_c6m2_upladder02.wav"  //Up that ladder!
+		],
+		C13M2TankApproachingReplica = [
+			"player/survivor/voice/replica/heardspecialc101.wav",  //Ahh what the heck is that?!
+			"player/survivor/voice/replica/heardspecialc102.wav",  //I don't like the sound of that one bit.
+			"player/survivor/voice/replica/heardspecialc103.wav",  //Anyone know what that is?
+			"player/survivor/voice/replica/heardspecialc104.wav"  //From the sounds of it, its about to get a whole lot worse.
+		],
+		C13M2BarrelsIgnitedReplica = [
+			"player/survivor/voice/replica/backup06.wav"  //Back Back Back Back Back!
+		],
+		C13M2Barrels1Replica = [
+			"player/survivor/voice/replica/worldc3m4b07.wav",  //Oh shit! Gate open!
+			"player/survivor/voice/replica/worldc3m4b09.wav"  //Gate's open, let's go!
+		],
+		C13M2Barrels2Replica = [
+			"player/survivor/voice/replica/hurryup07.wav",  //Haul some ass y'all.
+			"player/survivor/voice/replica/world10.wav",  //Run!
+			"player/survivor/voice/replica/world11.wav"  //Just run!
+		],
+		C13M3ApproachingTankerReplica = [
+			"player/survivor/voice/replica/worldc4m403.wav"  //Damn, I'm all turned around now.
+		],
+		C13M3Tanker1Replica = [
+			"player/survivor/voice/replica/worldc5m4b03.wav",  //SHIT!
+			"player/survivor/voice/replica/exclamation01.wav"  //Oh Shit!
+		],
+		C13M3Tanker2Replica = [
+			"player/survivor/voice/replica/lookout03.wav",  //Oh shit, watch out!
+			"player/survivor/voice/replica/backup01.wav",  //Oh shit, back it up!
+			"player/survivor/voice/replica/backup02.wav",  //Back it up!
+			"player/survivor/voice/replica/backup03.wav",  //BackBackBack!
+			"player/survivor/voice/replica/backup04.wav",  //Back up, back up!
+			"player/survivor/voice/replica/backup05.wav"  //Back up!
+		],
+		C13M3Tanker3Replica = [
+			"player/survivor/voice/replica/worldc5m4b04.wav",  //Damn! That one was close!
+			"player/survivor/voice/replica/worldc5m4b05.wav"  //Shit. Damn, that one was close!
+		],
+		C13M3AirstrikeReplica = [
+			"player/survivor/voice/replica/worldc5m3b28.wav",  //MOTHERF-
+			"player/survivor/voice/replica/worldc2m2b33.wav"  //WOOOOAH!
+		],
+		C13M4Button1Replica = [
+			"player/survivor/voice/replica/worldc3m406.wav",  //Anyone out there?
+			"player/survivor/voice/replica/worldc3m407.wav"  //Can anyone here me?
+		],
+		C13M4FinaleTriggeredReplica = [
+			"player/survivor/voice/replica/worldc5m504.wav",  //I hear ya man.  See ya soon.
+			"player/survivor/voice/replica/worldc5m506.wav",  //Wind up the chopper, because here we come.
+			"player/survivor/voice/replica/worldc5m5b14.wav"  //We're on our way.
+		],
+		C13M4FinaleStart2Replica = [
+			"player/survivor/voice/replica/worldc3m420.wav"  //Roger that.
+		],
+		C13M4DownCreekReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_bridgecollapse01.wav",  //Damn, back in water people.
+			"player/survivor/voice/replica/dlc1_c6m2_bridgecollapse02.wav",  //Let's just get this over with.
+			"player/survivor/voice/replica/dlc1_c6m2_phase2inwater11.wav"  //Come on now, let's just get through this shit.
+		],
+		C13M4NoticedHelicopterReplica = [
+			"player/survivor/voice/replica/worldc2m3b15.wav",  //There's a chopper!
+			"player/survivor/voice/replica/worldc2m3b17.wav"  //There goes the chopper!
+		],
+		C13M4AlmostThereReplica = [
+			"player/survivor/voice/replica/worldc5m5b24.wav"  //THERE'S OUR CHOPPER! COME ON!
+		],
+		C13M4SpottedVehicleReplica = [
+			"player/survivor/voice/replica/emphaticgo02.wav"  //Let's go people.
+		],
+		C13M4GetToVehicleReplica = [
+			"player/survivor/voice/replica/worldc2m5b123.wav",  //Get on the chopper!
+			"player/survivor/voice/replica/worldc2m5b125.wav",  //Everyone to the chopper!
+			"player/survivor/voice/replica/worldc2m5b126.wav",  //Get on that chopper!
+			"player/survivor/voice/replica/worldc5m5b25.wav"  //GET TO THE CHOPPER!
+		],
+		// coach_dlc1.txt ====================================================================================================
+		L4D1PlayerNiceShotReplica = [
+			"player/survivor/voice/replica/niceshot01.wav",  //Nice shot..
+			"player/survivor/voice/replica/niceshot03.wav"  //Good one!
+		],
+		L4D1PlayerNiceShotFrancisReplica = [
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1killing05.wav",  //Thanks Francis!
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1killing06.wav",  //Nice shot Francis!
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1killing07.wav"  //Nice shot Francis!
+		],
+		L4D1PlayerNiceShotLouisReplica = [
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1killing02.wav"  //Louis in the house!
+		],
+		L4D1PlayerNiceShotZoeyReplica = [
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1killing03.wav",  //Go Zoey!
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1killing04.wav",  //Keep it up Zoey!
+			"player/survivor/voice/replica/niceshotfemale01.wav"  //All right girl.
+		],
+		C6M3GasPourReplica = [
+			"player/survivor/voice/replica/dlc1_c6m3_cans01.wav",  //Filling the generator.
+			"player/survivor/voice/replica/dlc1_c6m3_cans02.wav",  //Pouring a can.
+			"player/survivor/voice/replica/dlc1_c6m3_cans03.wav",  //Got a can.
+			"player/survivor/voice/replica/dlc1_c6m3_cans04.wav"  //I got this can.
+		],
+		C6M1_IntotheparkNoHealthReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_intopark01.wav",  //Don't run off without a health kit.
+			"player/survivor/voice/replica/dlc1_c6m1_intopark02.wav",  //Grab a health kit.
+			"player/survivor/voice/replica/dlc1_c6m1_intopark03.wav",  //Everyone grab a health kit.
+			"player/survivor/voice/replica/dlc1_c6m1_intopark04.wav"  //Health kits everyone!
+		],
+		C6M1Intro_01TeenGirl04Replica = [
+			"player/survivor/voice/replica/dlc1_c6m1_initialmeeting01.wav"  //Hey, hello there! You wanna let the bridge down for us?
+		],
+		C6M1Intro_04bReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_initialmeeting02.wav"  //Y'all can't climb down there and save us a trip?
+		],
+		C6M1Intro_08aReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_initialmeeting03.wav"  //Got it. We'll holla back at you when we get there.
+		],
+		C6M1Intro_13bReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_initialmeeting04.wav"  //You been killin' zombies for the better part of 2 days boy you can talk to a girl.
+		],
+		C6M1Intro_13eReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_initialmeeting05.wav"  //Okay, the boy says thank you.
+		],
+		C6M1Intro_21aReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_initialmeeting07.wav",  //(to group) Tell me this boy ain't for real.
+			"player/survivor/voice/replica/dlc1_c6m1_initialmeeting08.wav"  //(to group) Tell me this boy ain't for real.
+		],
+		C6M1Intro_21bReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_initialmeeting06.wav"  //No. Can you lower the bridge?
+		],
+		C6M1Intro_21dReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_initialmeeting09.wav"  //Shit, okay. Yes, we are vampires? All of us are vampires?
+		],
+		C6M1Intro_21gReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_initialmeeting10.wav"  //Dear lord, why'd I ever leave Savannah.
+		],
+		C6M1TakeSubMachineGun01Replica = [
+			"player/survivor/voice/replica/dlc1_c6m1_intostore04.wav"  //Nick, you gotta pull yourself together.
+		],
+		LeavingC6M1StartReplica = [
+			"player/survivor/voice/replica/blank.wav"  //
+		],
+		WorldC6M1_HistoricTourReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_historicsign01.wav",  //Historic Under-the-River Tour! This could be pretty interesting!
+			"player/survivor/voice/replica/dlc1_c6m1_historicsign02.wav",  //Let's all try this under-the-river tour to get across.
+			"player/survivor/voice/replica/dlc1_c6m1_historicsign03.wav"  //Sign says there's an under-the-river tour, that'll get us across.
+		],
+		WorldC6M1_PostWedding01aReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_weddingpostwitch01.wav",  //No Ellis.
+			"player/survivor/voice/replica/dlc1_c6m1_weddingpostwitch02.wav"  //Got to keep your head on killin' zombies, Ellis.
+		],
+		WorldC6M1_WeddingWarn03aReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_weddingwitch01.wav"  //Come on, Nick, not the time.
+		],
+		WorldC6M1_WeddingWarn04aReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_weddingwitch02.wav"  //Man, I hope we don't see a tank in a tuxedo.
+		],
+		C6M2_OpenGate1Replica = [
+			"player/survivor/voice/replica/dlc1_c6m1_alarmdooropen01.wav",  //I opened it.
+			"player/survivor/voice/replica/dlc1_c6m1_alarmdooropen02.wav",  //Open, let's go!
+			"player/survivor/voice/replica/dlc1_c6m2_bridge1raisehitit02.wav",  //I hit it!
+			"player/survivor/voice/replica/dlc1_c6m2_bridge2up03.wav"  //Come on people, don't stand around, let's go!
+		],
+		C6M2_OpenGate2Replica = [
+			"player/survivor/voice/replica/dlc1_c6m1_alarmdooropen02.wav",  //Open, let's go!
+			"player/survivor/voice/replica/dlc1_c6m2_bridge1raiseactive03.wav"  //That is some slow ass shit.
+		],
+		C6M2SafeRoomReplica = [
+			"player/survivor/voice/replica/blank.wav"  //
+		],
+		DLC1_C6M2_SafeRoomConvo01aReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo01.wav"  //Nick. Son. I think we got bigger problems.
+		],
+		DLC1_C6M2_SafeRoomConvo05Replica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo02.wav"  //City of Rayford! They used to have a boiled peanut festival here. Good memories.
+		],
+		DLC1_C6M2_SafeRoomConvo09aReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo03.wav"  //Oh, come on, you aren't afraid of a little dirt are you?
+		],
+		DLC1_C6M2_SafeRoomConvo11Replica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo04.wav"  //I heard all about this under-the-river tour, supposed to be pretty damn good. Real educational.
+		],
+		DLC1_C6M2_SafeRoomConvo12Replica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo07.wav"  //Nick, tell me you ain't looking forward to this under-the-river tour.
+		],
+		DLC1_C6M2_SafeRoomConvo12bReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo05.wav"  //You damn right. Under a river.
+		],
+		DLC1_C6M2_SafeRoomConvo12dReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo06.wav"  //Uh, historical shit. Man, how am I supposed to know? I ain't been there yet.
+		],
+		DLC1_C6M2_SafeRoomConvo13bReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo08.wav"  //Man, Nick you got a find a way to cheer your ass up. We ain't got much to look forward to.
+		],
+		DLC1_C6M2_SafeRoomConvo13dReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo09.wav",  //There you go Nick. Stay positive.
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo10.wav"  //There you go Nick. Stay positive. Maybe you'll knock all his teeth out.
+		],
+		DLC1_C6M2_SafeRoomConvo14dReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo11.wav"  //Oh. In my heart, I'm there already.
+		],
+		DLC1_C6M2_SafeRoomConvo15bReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo12.wav"  //Man, I keep hoping we find an open burger tank.
+		],
+		DLC1_C6M2_SafeRoomConvo16a1Replica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo13.wav"  //Ellis, you do know that eventually we're gonna have to leave that car behind. Right?
+		],
+		DLC1_C6M2_SafeRoomConvo16eReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo14.wav"  //Boy, the Military ain't exactly going to strap it to the bottom of a helicopter.
+		],
+		DLC1_C6M2_SafeRoomConvo18cReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo15.wav"  //Girl! What are you doing?
+		],
+		DLC1_C6M2_SafeRoomConvo18eReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo16.wav"  //Listen, if you let your guard down for one minute� we all pay the price.
+		],
+		DLC1_C6M2_SafeRoomConvo19Replica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo17.wav",  //Man, I just realized with all this runnin', climbin' and fightin', I ain't even had time to eat.
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo20.wav"  //All this runnin' we been doing? I bet I lost, what, five pounds.
+		],
+		DLC1_C6M2_SafeRoomConvo19bReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo18.wav"  //[happily] I bet I'm losin' some serious weight! [laughs proudly] Two more days, I'll be takin' my BELT in a notch.
+		],
+		DLC1_C6M2_SafeRoomConvo19dReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoomconvo19.wav"  //Man, I forgot about that.
+		],
+		WorldC6M2_InSewer101aReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_phase2inwater01.wav"  //Nick my man, face it. We are walkin' through shit.
+		],
+		WorldC6M2_InSewer102aReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_phase2inwater02.wav",  //Hey Nick, try and keep your head above water.
+			"player/survivor/voice/replica/dlc1_c6m2_phase2inwater03.wav",  //Don't trip, Nick. [laughs]
+			"player/survivor/voice/replica/dlc1_c6m2_phase2inwater04.wav",  //Gotta keep your head above water, man.[laughs]
+			"player/survivor/voice/replica/dlc1_c6m2_phase2inwater05.wav",  //Nick, if I give you a piggy back ride, will you shut up about the sewer?
+			"player/survivor/voice/replica/dlc1_c6m2_phase2inwater06.wav"  //Nick, if I give you a piggy back ride, will you shut up about the sewer?
+		],
+		WorldC6M2_InSewer202aReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_phase2inwater07.wav"  //Oh, Jesus! Ellis!
+		],
+		WorldC6M2_InSewerLadder101aReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_phase2inwater08.wav"  //Oh, come on! Jesus! Ellis!
+		],
+		WorldC6M2_OnTourWalk101cReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_historictour02.wav"  //Yeah. It's a shithole.
+		],
+		WorldC6M2_OnTourWalk103aReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_historictour05.wav",  //Aw, shut up, Nick
+			"player/survivor/voice/replica/dlc1_c6m2_historictour06.wav"  //Aw, shut up, Nick
+		],
+		WorldC6M2_Tattoo02b_Replica = [
+			"player/survivor/voice/replica/dlc1_c6m2_tattoo02.wav",  //Shit, it's allll south of the border.
+			"player/survivor/voice/replica/dlc1_c6m2_tattoo03.wav",  //Coach's got a lot of real estate.
+			"player/survivor/voice/replica/dlc1_c6m2_tattoo04.wav"  //Hey, Coach keeps his secrets.
+		],
+		C6M3_BridgeDownReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_bridge2up01.wav",  //Bridge here, let's go!
+			"player/survivor/voice/replica/dlc1_c6m3_finalebridgerun01.wav",  //Get to the car!
+			"player/survivor/voice/replica/dlc1_c6m3_finalebridgerun01.wav",  //Get to the car!
+			"player/survivor/voice/replica/dlc1_c6m3_finalebridgerun03.wav",  //Bridge is down, let's go!
+			"player/survivor/voice/replica/dlc1_c6m3_finalebridgerun03.wav",  //Bridge is down, let's go!
+			"player/survivor/voice/replica/worldc1m4b34.wav",  //GET TO THE CAR!
+			"player/survivor/voice/replica/worldc1m4b35.wav"  //GET TO THE CAR, PEOPLE!
+		],
+		C6M3_BridgeGettoCarReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_bridge2up01.wav",  //Bridge here, let's go!
+			"player/survivor/voice/replica/dlc1_c6m3_finalebridgerun01.wav",  //Get to the car!
+			"player/survivor/voice/replica/dlc1_c6m3_finalebridgerun01.wav",  //Get to the car!
+			"player/survivor/voice/replica/dlc1_c6m3_finalebridgerun03.wav",  //Bridge is down, let's go!
+			"player/survivor/voice/replica/dlc1_c6m3_finalebridgerun03.wav",  //Bridge is down, let's go!
+			"player/survivor/voice/replica/worldc1m4b34.wav",  //GET TO THE CAR!
+			"player/survivor/voice/replica/worldc1m4b35.wav"  //GET TO THE CAR, PEOPLE!
+		],
+		C6M3_elevatorReplica = [
+			"player/survivor/voice/replica/dlc1_c6m3_elevator01.wav",  //No messin' around let's get these cans.
+			"player/survivor/voice/replica/dlc1_c6m3_elevator03.wav",  //We do this and get back to the car.
+			"player/survivor/voice/replica/dlc1_c6m3_elevator04.wav",  //Let's fill that generator and then get back to the car.
+			"player/survivor/voice/replica/dlc1_c6m3_elevator05.wav",  //Alright, look, no messin' around let's get these cans.
+			"player/survivor/voice/replica/dlc1_c6m3_elevator07.wav",  //We do this and get back to the car.
+			"player/survivor/voice/replica/dlc1_c6m3_elevator08.wav"  //Let's fill that generator and then get back to the car.
+		],
+		C6M3_elevatorZoeyReplica = [
+			"player/survivor/voice/replica/dlc1_c6m3_elevator02.wav",  //Ellis. Keep your mind on the cans not the girl.
+			"player/survivor/voice/replica/dlc1_c6m3_elevator06.wav"  //Ellis. Keep your mind on the cans not the girl.
+		],
+		C6M3_GivenItemBikerReplica = [
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1items01.wav",  //Thanks for sharing!
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1items02.wav",  //Thanks my man.
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1items03.wav",  //Man, you guys are all right.
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1items08.wav",  //Thanks my man.
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1items11.wav"  //We owe you one.
+		],
+		C6M3_GivenItemTeenGirlReplica = [
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1items04.wav",  //Hey, thanks for the supplies.
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1items05.wav",  //We owe you one.
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1items07.wav",  //Thanks for sharing!
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1items09.wav",  //You guys are all right.
+			"player/survivor/voice/replica/dlc1_c6m3_finalel4d1items10.wav"  //Thanks for the supplies.
+		],
+		C6M3SafeRoomReplica = [
+			"player/survivor/voice/replica/blank.wav"  //
+		],
+		DLC1_C6M3_SafeRoomConvo02eReplica = [
+			"player/survivor/voice/replica/dlc1_c6m3_saferoomconvo01.wav"  //Sometimes you just gotta have faith, Nick.
+		],
+		DLC1_C6M3_SafeRoomConvo03Replica = [
+			"player/survivor/voice/replica/dlc1_c6m3_saferoomconvo02.wav"  //Ellis. It's showtime, buddy.
+		],
+		DLC1_C6M3_SafeRoomConvo04Replica = [
+			"player/survivor/voice/replica/dlc1_c6m3_saferoomconvo04.wav",  //Ellis, you ready to meet that Zoey girl again?
+			"player/survivor/voice/replica/dlc1_c6m3_saferoomconvo05.wav"  //Hey, Ellis, you ready to meet that Zoey girl again? [laughs]
+		],
+		DLC1_C6M3_SafeRoomConvo08Replica = [
+			"player/survivor/voice/replica/dlc1_c6m3_saferoomconvo06.wav"  //I don't trust that biker. He's probably long gone by now.
+		],
+		DLC1_C6M3_SafeRoomConvo08bReplica = [
+			"player/survivor/voice/replica/dlc1_c6m3_saferoomconvo07.wav"  //Minute we left, bet ya he stole the Jimmy Gibbs Jr.
+		],
+		IncapBounceReplica = [
+			"player/survivor/voice/replica/blank.wav"  //
+		],
+		C6M3_CansDoneReplica = [
+			"player/survivor/voice/replica/dlc1_c6m3_finalebridgerun02.wav"  //Let's get to the car!
+		],
+		L4D1AlsoSpottedTankReplica = [
+			"player/survivor/voice/replica/dlc1_l4d1tank01.wav",  //Lead 'em back to the bridge!
+			"player/survivor/voice/replica/dlc1_l4d1tank02.wav",  //Lead the tanks back to the bridge!
+			"player/survivor/voice/replica/dlc1_l4d1tank03.wav",  //Two tanks!
+			"player/survivor/voice/replica/dlc1_l4d1tank04.wav",  //Shit! Two tanks!
+			"player/survivor/voice/replica/dlc1_l4d1tank05.wav"  //Shit! Two tanks!
+		],
+		L4D1SpottedTankReplica = [
+			"player/survivor/voice/replica/dlc1_l4d1tank01.wav",  //Lead 'em back to the bridge!
+			"player/survivor/voice/replica/dlc1_l4d1tank02.wav",  //Lead the tanks back to the bridge!
+			"player/survivor/voice/replica/dlc1_l4d1tank03.wav",  //Two tanks!
+			"player/survivor/voice/replica/dlc1_l4d1tank04.wav",  //Shit! Two tanks!
+			"player/survivor/voice/replica/dlc1_l4d1tank05.wav"  //Shit! Two tanks!
+		],
+		SurvivorSpottedFallenReplica = [
+			"player/survivor/voice/replica/dlc1_fallensurvior03.wav",  //Get that zombie!
+			"player/survivor/voice/replica/dlc1_fallensurvior04.wav",  //Kill that zombie, it's got something.
+			"player/survivor/voice/replica/dlc1_fallensurvior05.wav",  //Get that zombie!
+			"player/survivor/voice/replica/dlc1_fallensurvior06.wav"  //Take that zombie out!
+		],
+		PlayerWitchChasingC6M1Replica = [
+			"player/survivor/voice/replica/dlc1_c6m1_weddingwitchchasing01.wav",  //Bride's chasing me!
+			"player/survivor/voice/replica/dlc1_c6m1_weddingwitchchasing02.wav",  //Ugly brides chasing me! Brides chasing me!
+			"player/survivor/voice/replica/dlc1_c6m1_weddingwitchchasing03.wav"  //Kill the bride! Kill the bride!
+		],
+		PlayerRemarkremark_MidnightRidersBusReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_midnightriders01.wav",  //Man, I think I just saw... nah.
+			"player/survivor/voice/replica/dlc1_c6m2_midnightriders02.wav",  //I must be dreaming.
+			"player/survivor/voice/replica/dlc1_c6m2_midnightriders03.wav"  //I think I just saw... nah.
+		],
+		PlayerRemarkWorldC6M1_AcrossHereReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_backalley10.wav"  //Get your ass across the walk-way.
+		],
+		PlayerRemarkWorldC6M1_AlleyBelowReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_backalley02.wav",  //Down this alley.
+			"player/survivor/voice/replica/dlc1_c6m1_backalley03.wav",  //We need to get up there.
+			"player/survivor/voice/replica/dlc1_c6m1_backalley04.wav",  //We have to get into this building.
+			"player/survivor/voice/replica/dlc1_c6m1_backalley05.wav",  //Let's all get up there.
+			"player/survivor/voice/replica/dlc1_c6m1_backalley06.wav",  //Down this alley.
+			"player/survivor/voice/replica/dlc1_c6m1_backalley07.wav"  //Down here.
+		],
+		PlayerRemarkWorldC6M1_AlleyIntoBuildingReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_backalley08.wav",  //Into these apartments.
+			"player/survivor/voice/replica/dlc1_c6m1_backalley09.wav",  //Across the walk-way.
+			"player/survivor/voice/replica/dlc1_c6m1_backalley14.wav"  //Y'all get in there.
+		],
+		PlayerRemarkWorldC6M1_InAptsReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_backalley12.wav",  //In here.
+			"player/survivor/voice/replica/dlc1_c6m1_backalley13.wav",  //Get in there.
+			"player/survivor/voice/replica/dlc1_c6m1_backalley15.wav",  //Search these rooms for supplies.
+			"player/survivor/voice/replica/dlc1_c6m1_backalley16.wav"  //We're goin' this way..
+		],
+		PlayerRemarkWorldC6M1_IntoTheStoreReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_intostore01.wav",  //Through this store.
+			"player/survivor/voice/replica/dlc1_c6m1_intostore02.wav",  //Guns in the store.
+			"player/survivor/voice/replica/dlc1_c6m1_intostore03.wav"  //Let's get in the store.
+		],
+		PlayerRemarkWorldC6M1_PostWeddingReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_weddingpostwitch03.wav"  //Check those tents.
+		],
+		PlayerRemarkWorldC6M1_SafeRoomAlleyReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_backalley01.wav",  //Behind this bus.
+			"player/survivor/voice/replica/dlc1_c6m1_saferoomahead01.wav"  //Safe room back here!
+		],
+		PlayerRemarkWorldC6M1_ThroughBarReplica = [
+			"player/survivor/voice/replica/miscdirectional07.wav",  //Through here!
+			"player/survivor/voice/replica/world05.wav",  //Through here.
+			"player/survivor/voice/replica/worldc1m1b139.wav"  //Let's go through here.
+		],
+		PlayerRemarkWorldC6M1_UpHereReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_backalley11.wav",  //Back this way.
+			"player/survivor/voice/replica/world12.wav"  //Up here.
+		],
+		PlayerRemarkWorldC6M1_UpTheStairsReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_upstairs01.wav",  //Go upstairs.
+			"player/survivor/voice/replica/dlc1_c6m1_upstairs02.wav"  //Let's try upstairs.
+		],
+		PlayerRemarkWorldC6M1_UpTheStairs2Replica = [
+			"player/survivor/voice/replica/dlc1_c6m2_upstairs01.wav"  //Up the stairs.
+		],
+		PlayerRemarkWorldC6M1_WeddingWarnReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_wedding01.wav",  //Damn. This here wedding didn't end well.
+			"player/survivor/voice/replica/dlc1_c6m1_wedding02.wav",  //Look, uh, anyone see the wedding cake?
+			"player/survivor/voice/replica/dlc1_c6m1_wedding03.wav",  //Anyone see the wedding cake?
+			"player/survivor/voice/replica/dlc1_c6m1_wedding04.wav",  //Bride. Wedding. Gotta be cake around here somewhere.
+			"player/survivor/voice/replica/dlc1_c6m1_wedding05.wav",  //Bride. Wedding. Gotta be cake around here somewhere.
+			"player/survivor/voice/replica/dlc1_c6m1_wedding06.wav"  //Shhh.. does anyone see the wedding cake.
+		],
+		PlayerRemarkWorldC6M1_WeddingWarn1Replica = [
+			"player/survivor/voice/replica/dlc1_c6m1_wedding01.wav",  //Damn. This here wedding didn't end well.
+			"player/survivor/voice/replica/dlc1_c6m1_wedding02.wav",  //Look, uh, anyone see the wedding cake?
+			"player/survivor/voice/replica/dlc1_c6m1_wedding03.wav",  //Anyone see the wedding cake?
+			"player/survivor/voice/replica/dlc1_c6m1_wedding04.wav",  //Bride. Wedding. Gotta be cake around here somewhere.
+			"player/survivor/voice/replica/dlc1_c6m1_wedding05.wav",  //Bride. Wedding. Gotta be cake around here somewhere.
+			"player/survivor/voice/replica/dlc1_c6m1_wedding06.wav"  //Shhh.. does anyone see the wedding cake.
+		],
+		PlayerRemarkWorldC6M1_WeddingWarn2Replica = [
+			"player/survivor/voice/replica/dlc1_c6m1_wedding01.wav",  //Damn. This here wedding didn't end well.
+			"player/survivor/voice/replica/dlc1_c6m1_wedding02.wav",  //Look, uh, anyone see the wedding cake?
+			"player/survivor/voice/replica/dlc1_c6m1_wedding03.wav",  //Anyone see the wedding cake?
+			"player/survivor/voice/replica/dlc1_c6m1_wedding04.wav",  //Bride. Wedding. Gotta be cake around here somewhere.
+			"player/survivor/voice/replica/dlc1_c6m1_wedding05.wav",  //Bride. Wedding. Gotta be cake around here somewhere.
+			"player/survivor/voice/replica/dlc1_c6m1_wedding06.wav"  //Shhh.. does anyone see the wedding cake.
+		],
+		PlayerRemarkWorldC6M1_WeddingWarn3Replica = [
+			"player/survivor/voice/replica/dlc1_c6m1_wedding01.wav",  //Damn. This here wedding didn't end well.
+			"player/survivor/voice/replica/dlc1_c6m1_wedding02.wav",  //Look, uh, anyone see the wedding cake?
+			"player/survivor/voice/replica/dlc1_c6m1_wedding03.wav",  //Anyone see the wedding cake?
+			"player/survivor/voice/replica/dlc1_c6m1_wedding04.wav",  //Bride. Wedding. Gotta be cake around here somewhere.
+			"player/survivor/voice/replica/dlc1_c6m1_wedding05.wav",  //Bride. Wedding. Gotta be cake around here somewhere.
+			"player/survivor/voice/replica/dlc1_c6m1_wedding06.wav"  //Shhh.. does anyone see the wedding cake.
+		],
+		PlayerRemarkWorldC6M2_AcrossPlankReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_overplank01.wav",  //Over this plank.
+			"player/survivor/voice/replica/dlc1_c6m2_overplank02.wav",  //Hurry up and get your asses over this plank.
+			"player/survivor/voice/replica/dlc1_c6m2_overplank03.wav",  //Oh shit, do not look down.
+			"player/survivor/voice/replica/dlc1_c6m2_overplank04.wav"  //Easy now, don't be playin' on this board.
+		],
+		PlayerRemarkWorldC6M2_AfterGate1Replica = [
+			"player/survivor/voice/replica/dlc1_c6m2_phase2inwater10.wav",  //Don't stop people!
+			"player/survivor/voice/replica/dlc1_c6m2_phase2inwater12.wav"  //Alright, let's keep moving. Unless Nick wants to stop and take a bath
+		],
+		PlayerRemarkWorldC6M2_AfterGate2Replica = [
+			"player/survivor/voice/replica/dlc1_c6m2_inwaterfindladder01.wav",  //There's gotta be a ladder here somewhere.
+			"player/survivor/voice/replica/dlc1_c6m2_inwaterfindladder02.wav",  //Let's find ourselves a ladder.
+			"player/survivor/voice/replica/dlc1_c6m2_inwaterfindladder03.wav",  //Holla if you see a ladder.
+			"player/survivor/voice/replica/dlc1_c6m2_inwaterfindladder04.wav",  //We need to get on the catwalks.
+			"player/survivor/voice/replica/dlc1_c6m2_inwaterfindladder05.wav",  //We need to get out of this shit.
+			"player/survivor/voice/replica/dlc1_c6m2_inwaterfindladder06.wav",  //Keep running, that alarm ain't goin' off.
+			"player/survivor/voice/replica/dlc1_c6m2_inwaterfindladder07.wav"  //That alarm is gonna keep goin'!
+		],
+		PlayerRemarkWorldC6M2_DownHereReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_backalley07.wav",  //Down here.
+			"player/survivor/voice/replica/miscdirectional34.wav",  //We can get down here!
+			"player/survivor/voice/replica/world08.wav",  //Down here.
+			"player/survivor/voice/replica/worldc2m114.wav"  //Down here.
+		],
+		PlayerRemarkWorldC6M2_DownIntoBuildingReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_upthroughbuilding01.wav",  //Through this building.
+			"player/survivor/voice/replica/dlc1_c6m2_upthroughbuilding02.wav",  //In here.
+			"player/survivor/voice/replica/dlc1_c6m2_upthroughbuilding03.wav",  //Down these stairs.
+			"player/survivor/voice/replica/dlc1_c6m2_upthroughbuilding04.wav",  //Get in there.
+			"player/survivor/voice/replica/dlc1_c6m2_upthroughbuilding05.wav"  //Everyone get in there.
+		],
+		PlayerRemarkWorldC6M2_FinalLadderReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_bridge2up02.wav",  //Come on, let's get out of this sewer!
+			"player/survivor/voice/replica/dlc1_c6m2_upladder01.wav",  //A ladder!
+			"player/survivor/voice/replica/dlc1_c6m2_upladder02.wav"  //Up that ladder!
+		],
+		PlayerRemarkWorldC6M2_FinalWaterReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_finalwater01.wav",  //Back in the water.
+			"player/survivor/voice/replica/dlc1_c6m2_finalwater02.wav",  //Back in the water!
+			"player/survivor/voice/replica/dlc1_c6m2_finalwater03.wav",  //Ah hell, more water.
+			"player/survivor/voice/replica/dlc1_c6m2_finalwater04.wav"  //Ah hell, back in the water!
+		],
+		PlayerRemarkWorldC6M2_FinalWaterGoGoReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_phase2inwater10.wav",  //Don't stop people!
+			"player/survivor/voice/replica/worldc4m2b29.wav"  //KEEP MOVING!
+		],
+		PlayerRemarkWorldC6M2_InJazzClubReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_jazzclub01.wav",  //Into the Jazz Club.
+			"player/survivor/voice/replica/dlc1_c6m2_jazzclub02.wav"  //Tour's in the Jazz Club.
+		],
+		PlayerRemarkWorldC6M2_InSewer1Replica = [
+			"player/survivor/voice/replica/dlc1_c6m2_phase2inwater11.wav"  //Come on now, let's just get through this shit.
+		],
+		PlayerRemarkWorldC6M2_InSewerLadder1Replica = [
+			"player/survivor/voice/replica/dlc1_c6m2_upladder101.wav",  //Let's get out of the water.
+			"player/survivor/voice/replica/dlc1_c6m2_upladder102.wav",  //Everybody up there!
+			"player/survivor/voice/replica/dlc1_c6m2_upladder103.wav",  //All right, out of the water.
+			"player/survivor/voice/replica/dlc1_c6m2_upladder104.wav"  //Everyone up there!
+		],
+		PlayerRemarkWorldC6M2_IntoConstructionReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_constructionsite01.wav",  //Let's get down there.
+			"player/survivor/voice/replica/dlc1_c6m2_constructionsite02.wav"  //Down by the pipe.
+		],
+		PlayerRemarkWorldC6M2_IntoPoolHallReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_intopoolhall01.wav",  //Into the pool hall.
+			"player/survivor/voice/replica/dlc1_c6m2_intopoolhall02.wav",  //Get into the pool hall.
+			"player/survivor/voice/replica/dlc1_c6m2_intopoolhall03.wav"  //Go through these windows.
+		],
+		PlayerRemarkWorldC6M2_JukeBoxReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_startingjukebox01.wav",  //This jukebox is all right.
+			"player/survivor/voice/replica/dlc1_c6m2_startingjukebox02.wav"  //Oh shit, this thing is still on!
+		],
+		PlayerRemarkWorldC6M2_JumpDownReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_phase2jumpinwater01.wav",  //Together people.
+			"player/survivor/voice/replica/dlc1_c6m2_phase2jumpinwater02.wav"  //Don't get left behind.
+		],
+		PlayerRemarkWorldC6M2_OnTourWalk1Replica = [
+			"player/survivor/voice/replica/dlc1_c6m2_historictour01.wav",  //Man, this is a real...
+			"player/survivor/voice/replica/dlc1_c6m2_historictour03.wav",  //Man, LOOK at all this, uh... uh... Aw, this tour is bullshit.
+			"player/survivor/voice/replica/dlc1_c6m2_historictour04.wav",  //Man, LOOK at all this, uh... uh... Aw, man, this tour is bullshit.
+			"player/survivor/voice/replica/dlc1_c6m2_historictour09.wav"  //Shit, they must have locked up all the history to keep it safe.
+		],
+		PlayerRemarkWorldC6M2_OnTourWalk2Replica = [
+			"player/survivor/voice/replica/dlc1_c6m2_historictour07.wav",  //Keep to the walkway.
+			"player/survivor/voice/replica/dlc1_c6m2_historictour08.wav"  //Follow the walkway.
+		],
+		PlayerRemarkWorldC6M2_OpenGate1Replica = [
+			"player/survivor/voice/replica/dlc1_c6m1_alarmdoor01.wav",  //This here door is going to sound when we open it.
+			"player/survivor/voice/replica/dlc1_c6m1_alarmdoor02.wav",  //You know this shit's going to get loud.
+			"player/survivor/voice/replica/dlc1_c6m1_alarmdoor03.wav",  //Let's get ready before we open that door.
+			"player/survivor/voice/replica/dlc1_c6m2_bridge1raise03.wav",  //Shit, we gotta hit that button.
+			"player/survivor/voice/replica/dlc1_c6m2_bridge1raise04.wav"  //This looks like the only way.
+		],
+		PlayerRemarkWorldC6M2_OpenGate2Replica = [
+			"player/survivor/voice/replica/dlc1_c6m2_bridge2raise02.wav",  //Second time better be the charm.
+			"player/survivor/voice/replica/dlc1_c6m2_bridge2raise03.wav",  //Oh damn, another one of these things?
+			"player/survivor/voice/replica/dlc1_c6m2_bridge2raise04.wav"  //Ellis, don't break it this time.
+		],
+		PlayerRemarkWorldC6M2_Phase2Replica = [
+			"player/survivor/voice/replica/dlc1_c6m2_phase201.wav",  //Tour's over? Shit.
+			"player/survivor/voice/replica/dlc1_c6m2_phase202.wav",  //Tour's over? Bullshit.
+			"player/survivor/voice/replica/dlc1_c6m2_phase204.wav",  //Phase two my ass.
+			"player/survivor/voice/replica/dlc1_c6m2_phase205.wav"  //Phase two coming in 2010? Shit phase one ain't done.
+		],
+		PlayerRemarkWorldC6M2_Phase2DownReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_phase207.wav"  //Down the stairs.
+		],
+		PlayerRemarkWorldC6M2_Phase2DownIntenseReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_phase208.wav",  //Get your asses down the stairs!
+			"player/survivor/voice/replica/dlc1_c6m2_phase209.wav",  //Come on, y'all, haul ass down the stairs!
+			"player/survivor/voice/replica/dlc1_c6m2_phase210.wav",  //Haul ass down the stairs!
+			"player/survivor/voice/replica/dlc1_c6m2_phase211.wav"  //DOWN DOWN DOWN!
+		],
+		PlayerRemarkWorldC6M2_PostGate1xReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_bridgecollapse01.wav",  //Damn, back in water people.
+			"player/survivor/voice/replica/dlc1_c6m2_bridgecollapse02.wav",  //Let's just get this over with.
+			"player/survivor/voice/replica/dlc1_c6m2_bridgecollapse03.wav",  //Can't stay up here all day y'all.
+			"player/survivor/voice/replica/dlc1_c6m2_bridgecollapse04.wav"  //One more time!
+		],
+		PlayerRemarkWorldC6M2_SafeRoomReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_saferoom01.wav",  //Saferoom and it's dry!
+			"player/survivor/voice/replica/dlc1_c6m2_saferoom02.wav"  //Man, that bridge's gotta be close!
+		],
+		PlayerRemarkWorldC6M2_SuitcaseReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_suitcasepistols01.wav"  //[singing] "...a suitcase full of pistols and MON-NAY!"
+		],
+		PlayerRemarkWorldC6M2_TourEntranceReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_ticketcounter01.wav"  //Here we go, under the river.
+		],
+		PlayerRemarkWorldC6M2_UpCatWalkReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_upcatwalk01.wav",  //A ladder!
+			"player/survivor/voice/replica/dlc1_c6m2_upcatwalk02.wav",  //Ladder!
+			"player/survivor/voice/replica/dlc1_c6m2_upcatwalk03.wav"  //Thank you Jesus, a ladder!
+		],
+		PlayerRemarkWorldC6M2_UpStairsReplica = [
+			"player/survivor/voice/replica/dlc1_c6m2_upstairs01.wav",  //Up the stairs.
+			"player/survivor/voice/replica/dlc1_c6m2_upstairs02.wav"  //Let's get up to that street.
+		],
+		PlayerRemarkWorldC6M2_UpStairs2Replica = [
+			"player/survivor/voice/replica/dlc1_c6m1_upstairs01.wav",  //Go upstairs.
+			"player/survivor/voice/replica/dlc1_c6m1_upstairs02.wav"  //Let's try upstairs.
+		],
+		PlayerRemarkWorldC6M3_BridgeRunReplica = [
+			"player/survivor/voice/replica/dlc1_c6m3_finalebridgerun04.wav",  //Come on people, GET TO THE CAR! GET TO THE CAR!
+			"player/survivor/voice/replica/dlc1_c6m3_finalebridgerun05.wav"  //We gotta run, GO!
+		],
+		PlayerRemarkWorldC6M3_ByBridgeReplica = [
+			"player/survivor/voice/replica/dlc1_c6m3_finalefinalgas01.wav",  //You three keep safe.
+			"player/survivor/voice/replica/dlc1_c6m3_finalefinalgas02.wav",  //We owe you.
+			"player/survivor/voice/replica/dlc1_c6m3_finalefinalgas03.wav",  //You good? See y'all!
+			"player/survivor/voice/replica/dlc1_c6m3_finalefinalgas04.wav"  //Well alright.  We're gonna remember y'all.
+		],
+		PlayerRemarkWorldFootLockerReplica = [
+			"player/survivor/voice/replica/dlc1_footlocker03.wav",  //Open up the locker.
+			"player/survivor/voice/replica/dlc1_footlocker04.wav",  //Open the bitch up.
+			"player/survivor/voice/replica/dlc1_footlocker05.wav"  //Search the lockers.
+		],
+		C6M3_PourFinishedReplica = [
+			"player/survivor/voice/replica/blank.wav"  //
+		],
+		SurvivorNearFinaleC6M3Replica = [
+			"player/survivor/voice/replica/blank.wav"  //
+		],
+		SurvivorPickupGolfCLubReplica = [
+			"player/survivor/voice/replica/dlc1_golfclub03.wav",  //Grabbing a club.
+			"player/survivor/voice/replica/dlc1_golfclub04.wav"  //Grabbing a driver.
+		],
+		SurvivorPickupM60Replica = [
+			"player/survivor/voice/replica/dlc1_m6002.wav",  //Grabbing the big gun.
+			"player/survivor/voice/replica/dlc1_m6003.wav",  //Grabbing the machine gun.
+			"player/survivor/voice/replica/dlc1_m6004.wav",  //Shit, this is heavy.
+			"player/survivor/voice/replica/dlc1_m6005.wav",  //This some goddamn firepower.
+			"player/survivor/voice/replica/dlc1_m6006.wav"  //Grabbing the gun.
+		],
+		HistoricTour02aReplica = [
+			"player/survivor/voice/replica/dlc1_c6m1_historicsign05.wav",  //Yeah, it's historic.
+			"player/survivor/voice/replica/dlc1_c6m1_historicsign06.wav"  //I don't know, goes under the river.
+		],
+		WeddingWitchDead01Replica = [
+			"player/survivor/voice/replica/dlc1_c6m1_weddingwitchdead01.wav"  //You got problems boy. Deep down problems.
+		],
+		WeddingWitchDead02Replica = [
+			"player/survivor/voice/replica/dlc1_c6m1_weddingwitchdead03.wav"  //Yeah, that shit was creeping me out.
+		],
+		Player_LostCallC6M3Replica = [
+			"player/survivor/voice/replica/blank.wav"  //
+		],
+		SurvivorSpottedGolfClubReplica = [
+			"player/survivor/voice/replica/dlc1_golfclub01.wav",  //Driver here.
+			"player/survivor/voice/replica/dlc1_golfclub02.wav"  //Golf club!
+		],
+		SurvivorSpottedGolfClubAutoReplica = [
+			"player/survivor/voice/replica/dlc1_golfclub01.wav",  //Driver here.
+			"player/survivor/voice/replica/dlc1_golfclub02.wav"  //Golf club!
+		],
+		SurvivorSpottedM60Replica = [
+			"player/survivor/voice/replica/dlc1_m6001.wav",  //Big gun!
+			"player/survivor/voice/replica/dlc1_m6007.wav",  //Here's a big gun!
+			"player/survivor/voice/replica/dlc1_m6008.wav"  //Big gun!
+		],
+		SurvivorSpottedM60AutoReplica = [
+			"player/survivor/voice/replica/dlc1_m6001.wav",  //Big gun!
+			"player/survivor/voice/replica/dlc1_m6007.wav",  //Here's a big gun!
+			"player/survivor/voice/replica/dlc1_m6008.wav"  //Big gun!
+		],
 		// conversation.txt ====================================================================================================
-		C3M1CallFerryCliffe = [
-			"player/survivor/voice/cliffe/blank.wav"
+		C3M1CallFerryReplica = [
+			"player/survivor/voice/replica/blank.wav"
 		],
-		C3M2OpenDoorCliffe = [
-			"player/survivor/voice/cliffe/blank.wav"
+		C3M2OpenDoorReplica = [
+			"player/survivor/voice/replica/blank.wav"
 		],
-		c5m4floatstartCliffe = [
-			"player/survivor/voice/cliffe/blank.wav"
-		],
-		// gambler.txt ====================================================================================================
-		_PlayerInfoRemarkableBlankCliffe = [
-			"player/survivor/voice/cliffe/blank.wav"
-		],
-		C1M1InSmokeCliffe = [
-			"player/survivor/voice/cliffe/cough01.wav",  //[Coughing from smoke]
-			"player/survivor/voice/cliffe/cough02.wav",  //[Coughing from smoke]
-			"player/survivor/voice/cliffe/cough04.wav"  //[Coughing from smoke]
-		],
-		C1M3AlarmOffCliffe = [
-			"player/survivor/voice/cliffe/worldc1m3b23.wav",  //Got it!
-			"player/survivor/voice/cliffe/worldc1m3b24.wav"  //Alarm off!
-		],
-		C1M3AlarmActiveCliffe = [
-			"player/survivor/voice/cliffe/worldc1m3b19.wav",  //Turn off THAT ALARM!
-			"player/survivor/voice/cliffe/worldc1m3b20.wav",  //We gotta turn off this alarm!
-			"player/survivor/voice/cliffe/worldc1m3b21.wav"  //We need to turn of this alarm!
-		],
-		C4M3SaferoomCliffe = [
-			"player/survivor/voice/cliffe/worldc4m3b01.wav",  //Okay, everybody gassed up and good to go?
-			"player/survivor/voice/cliffe/worldc4m301.wav",  //We got it, let's hump it back to the boat.
-			"player/survivor/voice/cliffe/worldc4m302.wav"  //We got the diesel, let's hump it back to the boat.
-		],
-		L4D1PlayerNiceShotFrancisC6M3Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1killing01.wav",  //I owe you one, Francis!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1killing06.wav"  //Nice shot, Francis!
-		],
-		PlayerNiceShotFrancisCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1killing06.wav"  //Nice shot, Francis!
-		],
-		L4D1PlayerNiceShotLouisC6M3Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1killing02.wav",  //Thanks, Louis!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1killing08.wav",  //Louis, I am beginning to like you and your gun.
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1killing09.wav",  //Louis, you are a badass with that gun.
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1killing11.wav"  //Louis, you are a badass with that gun.
-		],
-		PlayerNiceShotLouisCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1killing08.wav",  //Louis, I am beginning to like you and your gun.
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1killing09.wav",  //Louis, you are a badass with that gun.
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1killing11.wav"  //Louis, you are a badass with that gun.
-		],
-		L4D1PlayerNiceShotLouisEllisC6M3Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1killing10.wav",  //Louis, you sure you don't want to come with us? We can leave Ellis behind.
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1killing12.wav"  //Louis, you sure you don't want to come with us? We can leave Ellis behind.
-		],
-		L4D1PlayerNiceShotZoeyC6M3Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1killing03.wav",  //Thanks, Zoey!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1killing05.wav",  //Zoey, all right!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1killing07.wav"  //Nice shot, Zoey!
-		],
-		PlayerNiceShotZoeyCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1killing05.wav",  //Zoey, all right!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1killing07.wav"  //Nice shot, Zoey!
-		],
-		PlayerNiceShotCliffe = [
-			"player/survivor/voice/cliffe/niceshot01.wav",  //Nice shot.
-			"player/survivor/voice/cliffe/niceshot02.wav",  //Nice shot.
-			"player/survivor/voice/cliffe/niceshot03.wav",  //How'dja do that?
-			"player/survivor/voice/cliffe/niceshot04.wav",  //Nice shot.
-			"player/survivor/voice/cliffe/niceshot05.wav",  //Good shooting.
-			"player/survivor/voice/cliffe/niceshot06.wav",  //Nice shooting.
-			"player/survivor/voice/cliffe/niceshot07.wav",  //Nice shot!
-			"player/survivor/voice/cliffe/niceshot08.wav",  //Nice shot Ace.
-			"player/survivor/voice/cliffe/niceshot09.wav"  //Impressive.
-		],
-		PlayerNiceShotCoachCliffe = [
-			"player/survivor/voice/cliffe/niceshotcoach01.wav",  //All right Coach.
-			"player/survivor/voice/cliffe/niceshotcoach02.wav"  //All right Coach.
-		],
-		PlayerNiceShotMechanicCliffe = [
-			"player/survivor/voice/cliffe/niceshotmechanic01.wav",  //You're getting the hang of this Ellis.
-			"player/survivor/voice/cliffe/niceshotmechanic02.wav"  //You're getting the hang of this Ellis.
-		],
-		PlayerNiceShotProducerCliffe = [
-			"player/survivor/voice/cliffe/niceshotproducer01.wav",  //Damn, Rochelle...
-			"player/survivor/voice/cliffe/niceshotproducer02.wav",  //Rochelle... damn!
-			"player/survivor/voice/cliffe/niceshotproducer03.wav"  //Damn, Rochelle. Nice.
-		],
-		SurvivorMournCoachCliffe = [
-			"player/survivor/voice/cliffe/survivormourncoach01.wav",  //Ahh Coach.
-			"player/survivor/voice/cliffe/survivormourncoach02.wav",  //Later Coach.
-			"player/survivor/voice/cliffe/survivormourncoach03.wav"  //Shit Coach, I'll miss you.
-		],
-		SurvivorMournCoachC1Cliffe = [
-			"player/survivor/voice/cliffe/survivormourncoachc101.wav",  //I am going to miss you big guy.
-			"player/survivor/voice/cliffe/survivormourncoachc102.wav",  //Goddamn it coach, what'd you leave me with?
-			"player/survivor/voice/cliffe/survivormourncoachc103.wav"  //Goddamn it coach, what'd you leave me with?
-		],
-		SurvivorMournMechanicCliffe = [
-			"player/survivor/voice/cliffe/survivormournellis01.wav",  //Ellis.
-			"player/survivor/voice/cliffe/survivormournellis02.wav",  //Ahh Ellis.
-			"player/survivor/voice/cliffe/survivormournellis03.wav"  //Ellis, I am surprised you lasted as long as you did.
-		],
-		SurvivorMournMechanicC1Cliffe = [
-			"player/survivor/voice/cliffe/survivormournmechanicc101.wav",  //He was annoying but he could shoot a gun.
-			"player/survivor/voice/cliffe/survivormournmechanicc102.wav",  //No time for mourning, let's go.
-			"player/survivor/voice/cliffe/survivormournmechanicc103.wav"  //He was annoying but he could shoot a gun.
-		],
-		SurvivorMournProducerCliffe = [
-			"player/survivor/voice/cliffe/survivormournrochelle01.wav",  //Rochelle.
-			"player/survivor/voice/cliffe/survivormournrochelle02.wav",  //Ahh shit Rochelle.
-			"player/survivor/voice/cliffe/survivormournrochelle03.wav",  //Goodnight Rochelle.
-			"player/survivor/voice/cliffe/survivormournrochelle04.wav"  //There goes repopulating the earth.
-		],
-		SurvivorMournProducerC1Cliffe = [
-			"player/survivor/voice/cliffe/survivormournproducerc101.wav",  //I can think of two other people I would have rather seen go first.
-			"player/survivor/voice/cliffe/survivormournproducerc102.wav"  //Guys, what are we going to do now?
-		],
-		_C1M1_ElevatorHelloStartAllAliveCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b47.wav",  //Name's Nick. And from the looks of you three, I'm the only one here who knows how to fire a weapon.
-			"player/survivor/voice/cliffe/worldc1m1b52.wav",  //Nick, name's Nick. You all did good. What's your names?
-			"player/survivor/voice/cliffe/worldc1m1b52.wav",  //Nick, name's Nick. You all did good. What's your names?
-			"player/survivor/voice/cliffe/worldc1m1b52.wav",  //Nick, name's Nick. You all did good. What's your names?
-			"player/survivor/voice/cliffe/worldc1m1b56.wav",  //Name's Nick.
-			"player/survivor/voice/cliffe/worldc1m1b70.wav",  //I normally go solo-but under the circumstances, I'm thinkin' we stick together. Call me Nick. You got names?
-			"player/survivor/voice/cliffe/worldc1m1b57.wav",  //Anyone get bit? Isn't that how this works?
-			"player/survivor/voice/cliffe/worldc1m1b59.wav"  //Well, I'm glad we got that out of the way. Now: did anyone get bit?
-		],
-		C1M1_ElevatorHelloStart2AliveCliffe = [
-			"player/survivor/voice/cliffe/doubledeathresponse04.wav"  //I think we just became long shots.
-		],
-		C1M1_ElevatorHelloStart3AliveCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b60.wav"  //There's blood on me, but it ain't mine.
-		],
-		Playerc1m1_enter_elevatorCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b36.wav",  //This elevator's still working!
-			"player/survivor/voice/cliffe/worldc1m1b37.wav",  //Technically... you're not supposed to use an elevator in a fire. But that might not apply during a zombie apocalypse.
-			"player/survivor/voice/cliffe/worldc1m1b38.wav"  //Everybody get in the elevator!
-		],
-		Playerc1m1_elevator_pushbuttonCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b39.wav"  //Push the button!
-		],
-		PlayerRemarkC1M2PreAlarmDoorCliffe = [
-			"player/survivor/voice/cliffe/worldc1m2b21.wav"  //Get ready, this is going to set off the alarm
-		],
-		C1M2AlarmDoor2Cliffe = [
-			"player/survivor/voice/cliffe/emphaticgo04.wav",  //Go go go!
-			"player/survivor/voice/cliffe/emphaticgo05.wav",  //Let's go. Let's go.
-			"player/survivor/voice/cliffe/worldc1m2b24.wav",  //Get the cola!
-			"player/survivor/voice/cliffe/worldc1m2b25.wav",  //Grab the cola!
-			"player/survivor/voice/cliffe/worldc1m2b26.wav"  //Somebody grab the Cola!
-		],
-		PlayerC1M2GrabbingColaCliffe = [
-			"player/survivor/voice/cliffe/worldc1m2b22.wav",  //Got the six-pack! Let's go!
-			"player/survivor/voice/cliffe/worldc1m2b23.wav",  //I got freakshow's soft drinks, let's head back!
-			"player/survivor/voice/cliffe/worldc1m2b27.wav",  //I got his Cola, let's go!
-			"player/survivor/voice/cliffe/worldc1m2b28.wav"  //We got it, let's go!
-		],
-		PlayerC1M2GrabbingCola2Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m2b29.wav"  //Got the cola!
-		],
-		PlayerC1M2FirstOutsideResponseCliffe = [
-			"player/survivor/voice/cliffe/worldc1m2b16.wav",  //So let me get this straight: we get you your shit and you'll help us get to the mall? Right? Okay. You screw us and I will kill you with your own gun.
-			"player/survivor/voice/cliffe/worldc1m2b17.wav",  //Thank you for the guns, honestly, we all appreciate it. But you better not be screwing with us.
-			"player/survivor/voice/cliffe/worldc1m2b18.wav",  //So our way is blocked and the only way to get it unblocked is to get you some cola?
-			"player/survivor/voice/cliffe/worldc1m2b20.wav"  //Sir, for the use of this gun, I am willing to go get you your cola.
-		],
-		PlayerC1M2FirstOutsideResponse3aCliffe = [
-			"player/survivor/voice/cliffe/worldc1m2b19.wav"  //Sure, why not.
-		],
-		PlayerC1M2FirstOutsideResponse8aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting17.wav"  //(to self) I don't believe this guy.
-		],
-		PlayerC1M2InsideGunShop2Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m2b14.wav",  //Candy store for adults.
-			"player/survivor/voice/cliffe/worldc1m2b15.wav"  //Let's grab some guns, we got shit to shoot.
-		],
-		PlayerC3M1CallFerry2Cliffe = [
-			"player/survivor/voice/cliffe/askready02.wav",  //We ready?
-			"player/survivor/voice/cliffe/askreadyc103.wav",  //If you aren't ready, I don't want to hear it.
-			"player/survivor/voice/cliffe/world409.wav",  //I'm hitting it, get ready!
-			"player/survivor/voice/cliffe/worldc3m1b11.wav",  //I'm calling over the ferry.
-			"player/survivor/voice/cliffe/worldc3m1b12.wav"  //Get ready, I'm calling the ferry.
-		],
-		PlayerC3M1FerryLandedIdleCliffe = [
-			"player/survivor/voice/cliffe/worldc3m101.wav",  //Get on the boat!
-			"player/survivor/voice/cliffe/worldc3m102.wav",  //Get on the boat!
-			"player/survivor/voice/cliffe/worldc3m103.wav"  //Get to the boat!
-		],
-		PlayerC3M1FerryLaunched2aCliffe = [
-			"player/survivor/voice/cliffe/blank.wav"  //Blank
-		],
-		PlayerC3M2ComingHomeCliffe = [
-			"player/survivor/voice/cliffe/lostcall01.wav",  //Helloooo?
-			"player/survivor/voice/cliffe/lostcall02.wav",  //Heyyy ooooo!
-			"player/survivor/voice/cliffe/lostcall05.wav",  //Helloooo?
-			"player/survivor/voice/cliffe/worldc3m2b18.wav",  //Hello!
-			"player/survivor/voice/cliffe/worldc3m2b19.wav",  //Hello!
-			"player/survivor/voice/cliffe/worldc3m2b21.wav",  //If they have power...
-			"player/survivor/voice/cliffe/worldc3m2b22.wav",  //HELLO!!!
-			"player/survivor/voice/cliffe/worldc3m2b23.wav",  //HELLO!!!
-			"player/survivor/voice/cliffe/worldc3m2b24.wav",  //HEY! HELLO!!!
-			"player/survivor/voice/cliffe/worldc3m2b25.wav"  //ANYBODY HOME?
-		],
-		PlayerC3M2OpenDoor2Cliffe = [
-			"player/survivor/voice/cliffe/worldc3m2b16.wav",  //I'm opening the door.
-			"player/survivor/voice/cliffe/worldc3m2b17.wav"  //Get ready, I'm opening the door
-		],
-		Playerc5m4floatendCliffe = [
-			"player/survivor/voice/cliffe/world308.wav"  //Our rides here.
-		],
-		Playerc5m4floatstart2Cliffe = [
-			"player/survivor/voice/cliffe/world409.wav",  //I'm hitting it, get ready!
-			"player/survivor/voice/cliffe/worldc2m223.wav"  //I'm hitting it.
-		],
-		PlayerRelaxedSighCliffe = [
-			"player/survivor/voice/cliffe/painrelieftfirstaid01.wav",  //Woah yeah.
-			"player/survivor/voice/cliffe/painrelieftfirstaid02.wav",  //Okay.
-			"player/survivor/voice/cliffe/painrelieftfirstaid03.wav",  //Ahhh.
-			"player/survivor/voice/cliffe/painrelieftfirstaid04.wav",  //Better.
-			"player/survivor/voice/cliffe/painrelieftfirstaid05.wav",  //That worked.
-			"player/survivor/voice/cliffe/painrelieftfirstaid06.wav",  //Alright, now I'm back.
-			"player/survivor/voice/cliffe/painrelieftfirstaid07.wav"  //Ahh, better.
-		],
-		PlayerStayTogetherInsideReponseCliffe = [
-			"player/survivor/voice/cliffe/goingtodie20.wav",  //Can you see I'm limping here?
-			"player/survivor/voice/cliffe/goingtodie22.wav"  //I'm going as fast as I can.
-		],
-		PlayerUseAdrenalineCliffe = [
-			"player/survivor/voice/cliffe/adrenaline03.wav",  //[shaking self awake]
-			"player/survivor/voice/cliffe/painrelieftpills01.wav"  //Bbbbrrrrrrr
-		],
-		PlayerWorldC3M1FerryCrossingC01Cliffe = [
-			"player/survivor/voice/cliffe/worldc3m113.wav"  //What, alive infected or alive and not zombies?
-		],
-		PlayerWorldC3M1FerryCrossingC03Cliffe = [
-			"player/survivor/voice/cliffe/worldc3m114.wav",  //100 to 1.
-			"player/survivor/voice/cliffe/worldc3m115.wav"  //100 to 1.  The blood farmers on the other hand are even money.
-		],
-		PlayerWorldC3M1FerryCrossingD03Cliffe = [
-			"player/survivor/voice/cliffe/worldc3m117.wav"  //You forgot one thing, from the way we shoot?  Each other.
-		],
-		PlayerWorldC3M1FerryCrossingE03Cliffe = [
-			"player/survivor/voice/cliffe/worldc3m116.wav"  //Jesus christ Ellis, like the goddamn zombies aren't bad enough.
-		],
-		PlayerWorldC3M1FerryCrossingG02Cliffe = [
-			"player/survivor/voice/cliffe/worldc3m110.wav",  //Wow, Coach, that was uplifting. (sarcastically)
-			"player/survivor/voice/cliffe/worldc3m111.wav",  //Well Coach, that was uplifting.  Everybody else motivated now? (sarcastically)
-			"player/survivor/voice/cliffe/worldc3m112.wav"  //Thanks, Coach, that was uplifting. (sarcastically)
-		],
-		PlayerWorldC3M1FerryCrossingG04Cliffe = [
-			"player/survivor/voice/cliffe/worldc3m107.wav"  //Yes
-		],
-		PlayerWorldC3M1FerryCrossingI01Cliffe = [
-			"player/survivor/voice/cliffe/worldc3m104.wav",  //You did?  Really?
-			"player/survivor/voice/cliffe/worldc3m105.wav",  //What you?  Really?
-			"player/survivor/voice/cliffe/worldc3m106.wav"  //Pffft.
-		],
-		RescuedSurvivorCliffe = [
-			"player/survivor/voice/cliffe/scenariojoin01.wav",  //Hello!
-			"player/survivor/voice/cliffe/scenariojoin04.wav",  //Hello!
-			"player/survivor/voice/cliffe/scenariojoin05.wav",  //Y'ello!
-			"player/survivor/voice/cliffe/scenariojoin06.wav"  //Hello!
-		],
-		PlayerGivenItemCliffe = [
-			"player/survivor/voice/cliffe/thanks01.wav",  //Thanks.
-			"player/survivor/voice/cliffe/thanks02.wav",  //Thank you.
-			"player/survivor/voice/cliffe/thanks03.wav",  //Thanks!
-			"player/survivor/voice/cliffe/thanks05.wav"  //I owe you one.
-		],
-		ItemDonorCoachCliffe = [
-			"player/survivor/voice/cliffe/thankscoach01.wav"  //Thanks bro.
-		],
-		ItemDonorMechanicCliffe = [
-			"player/survivor/voice/cliffe/thanksellis01.wav"  //Thanks killer.
-		],
-		ItemDonorProducerCliffe = [
-			"player/survivor/voice/cliffe/thanksrochelle01.wav"  //Thanks Ro.
-		],
-		ItemDonorBikerCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1items01.wav",  //Shit, thanks!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1items05.wav",  //Thanks, greaseball!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1items07.wav"  //Thanks, pal!
-		],
-		ItemDonorTeenGirlCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1killing03.wav",  //Thanks, Zoey!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1items06.wav",  //Hey thanks, babe!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1items08.wav"  //Got it, thank you!
-		],
-		ItemDonorManagerCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1items01.wav",  //Shit, thanks!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1items07.wav"  //Thanks, pal!
-		],
-		ItemDonorNamVetCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1items01.wav",  //Shit, thanks!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1items07.wav",  //Thanks, pal!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1items08.wav"  //Got it, thank you!
-		],
-		ReviveMeInterruptedMinorCliffe = [
-			"player/survivor/voice/cliffe/hurtminor01.wav",  //[pain noise - short minor pain]
-			"player/survivor/voice/cliffe/hurtminor02.wav",  //[pain noise - short minor pain]
-			"player/survivor/voice/cliffe/hurtminor03.wav",  //[pain noise - short minor pain]
-			"player/survivor/voice/cliffe/hurtminor04.wav",  //[pain noise - short minor pain]
-			"player/survivor/voice/cliffe/hurtminor05.wav",  //[pain noise - short minor pain]
-			"player/survivor/voice/cliffe/hurtminor06.wav",  //[pain noise - short minor pain]
-			"player/survivor/voice/cliffe/hurtminor07.wav",  //[pain noise - short minor pain]
-			"player/survivor/voice/cliffe/hurtminor08.wav",  //[pain noise - short minor pain]
-			"player/survivor/voice/cliffe/hurtminor09.wav"  //[pain noise - short minor pain]
-		],
-		ReviveMeInterruptedMajorCliffe = [
-			"player/survivor/voice/cliffe/hurtmajor01.wav",  //[pain noise - huh]
-			"player/survivor/voice/cliffe/hurtmajor02.wav",  //[pain noise - ahh]
-			"player/survivor/voice/cliffe/hurtmajor03.wav",  //[pain noise - oy]
-			"player/survivor/voice/cliffe/hurtmajor04.wav",  //[pain noise - ugh]
-			"player/survivor/voice/cliffe/hurtmajor05.wav",  //[pain noise - ugh]
-			"player/survivor/voice/cliffe/hurtmajor06.wav",  //[pain noise - ugh]
-			"player/survivor/voice/cliffe/hurtmajor07.wav",  //[pain noise - ugh]
-			"player/survivor/voice/cliffe/hurtmajor08.wav",  //[pain noise - ugh]
-			"player/survivor/voice/cliffe/hurtmajor09.wav",  //[pain noise - ugh]
-			"player/survivor/voice/cliffe/hurtmajor10.wav",  //[pain noise - ugh]
-			"player/survivor/voice/cliffe/hurtmajor11.wav"  //[pain noise - ugh]
-		],
-		ReviveMeInterruptedCriticalCliffe = [
-			"player/survivor/voice/cliffe/hurtcritical01.wav",  //[pain noise - loud major pain]
-			"player/survivor/voice/cliffe/hurtcritical02.wav",  //[pain noise - loud major pain]
-			"player/survivor/voice/cliffe/hurtcritical03.wav",  //[pain noise - loud major pain]
-			"player/survivor/voice/cliffe/hurtcritical04.wav",  //[pain noise - loud major pain]
-			"player/survivor/voice/cliffe/hurtcritical05.wav",  //[pain noise - loud major pain]
-			"player/survivor/voice/cliffe/hurtcritical06.wav",  //[pain noise - loud major pain]
-			"player/survivor/voice/cliffe/hurtcritical07.wav"  //[pain noise - loud major pain]
-		],
-		ReviveThanksCliffe = [
-			"player/survivor/voice/cliffe/thanks01.wav",  //Thanks.
-			"player/survivor/voice/cliffe/thanks02.wav",  //Thank you.
-			"player/survivor/voice/cliffe/thanks03.wav",  //Thanks!
-			"player/survivor/voice/cliffe/thanks05.wav"  //I owe you one.
-		],
-		ReviveThanksCoachCliffe = [
-			"player/survivor/voice/cliffe/thankscoach01.wav",  //Thanks bro.
-			"player/survivor/voice/cliffe/thanks04.wav"  //Thanks, man, I owe you.
-		],
-		ReviveThanksMechanicCliffe = [
-			"player/survivor/voice/cliffe/thanksellis01.wav",  //Thanks killer.
-			"player/survivor/voice/cliffe/thanks04.wav"  //Thanks, man, I owe you.
-		],
-		ReviveThanksProducerCliffe = [
-			"player/survivor/voice/cliffe/thanksrochelle01.wav"  //Thanks Ro.
-		],
-		ReviveThanksBikerCliffe = [
-			"player/survivor/voice/cliffe/thankscoach01.wav",  //Thanks bro.
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1items01.wav",  //Shit, thanks!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1items05.wav",  //Thanks, greaseball!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1items07.wav",  //Thanks, pal!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1killing01.wav"  //I owe you one, Francis!
-		],
-		ReviveThanksTeenGirlCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1killing03.wav",  //Thanks, Zoey!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1items06.wav"  //Hey thanks, babe!
-		],
-		ReviveThanksManagerCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1killing02.wav"  //Thanks, Louis!
-		],
-		AutoYouAreWelcomeCliffe = [
-			"player/survivor/voice/cliffe/youarewelcome01.wav",  //You're welcome.
-			"player/survivor/voice/cliffe/youarewelcome02.wav",  //You're welcome.
-			"player/survivor/voice/cliffe/youarewelcome03.wav",  //You're welcome.
-			"player/survivor/voice/cliffe/youarewelcome04.wav",  //Don't worry about it.
-			"player/survivor/voice/cliffe/youarewelcome05.wav",  //You're welcome.
-			"player/survivor/voice/cliffe/youarewelcome06.wav",  //Don't worry about it.
-			"player/survivor/voice/cliffe/youarewelcome07.wav",  //Don't worry about it.
-			"player/survivor/voice/cliffe/youarewelcome08.wav",  //That's what I'm here for.
-			"player/survivor/voice/cliffe/youarewelcome09.wav",  //That's what I'm here for.
-			"player/survivor/voice/cliffe/youarewelcome10.wav",  //That's what I'm here for.
-			"player/survivor/voice/cliffe/youarewelcome11.wav",  //Anytime.
-			"player/survivor/voice/cliffe/youarewelcome12.wav",  //Anytime.
-			"player/survivor/voice/cliffe/youarewelcome13.wav",  //Anytime.
-			"player/survivor/voice/cliffe/youarewelcome14.wav",  //Sure thing.
-			"player/survivor/voice/cliffe/youarewelcome15.wav",  //Sure thing.
-			"player/survivor/voice/cliffe/youarewelcome16.wav",  //Sure thing.
-			"player/survivor/voice/cliffe/youarewelcome17.wav"  //Sure thing.
-		],
-		AutoYouAreWelcomeC1Cliffe = [
-			"player/survivor/voice/cliffe/youarewelcomec101.wav",  //Whatever.
-			"player/survivor/voice/cliffe/youarewelcomec102.wav",  //Um yeah.
-			"player/survivor/voice/cliffe/youarewelcomec103.wav",  //Sure.
-			"player/survivor/voice/cliffe/youarewelcomec104.wav",  //Whatever.
-			"player/survivor/voice/cliffe/youarewelcomec105.wav",  //Sure.
-			"player/survivor/voice/cliffe/youarewelcomec106.wav",  //Um yeah.
-			"player/survivor/voice/cliffe/youarewelcomec107.wav",  //Sure.
-			"player/survivor/voice/cliffe/youarewelcomec108.wav",  //Whatever.
-			"player/survivor/voice/cliffe/youarewelcomec109.wav"  //Um yeah.
-		],
-		BotPlayer_YourWelcomeCliffe = [
-			"player/survivor/voice/cliffe/youarewelcome01.wav",  //You're welcome.
-			"player/survivor/voice/cliffe/youarewelcome02.wav",  //You're welcome.
-			"player/survivor/voice/cliffe/youarewelcome03.wav",  //You're welcome.
-			"player/survivor/voice/cliffe/youarewelcome04.wav",  //Don't worry about it.
-			"player/survivor/voice/cliffe/youarewelcome05.wav",  //You're welcome.
-			"player/survivor/voice/cliffe/youarewelcome06.wav",  //Don't worry about it.
-			"player/survivor/voice/cliffe/youarewelcome07.wav",  //Don't worry about it.
-			"player/survivor/voice/cliffe/youarewelcome08.wav",  //That's what I'm here for.
-			"player/survivor/voice/cliffe/youarewelcome09.wav",  //That's what I'm here for.
-			"player/survivor/voice/cliffe/youarewelcome10.wav",  //That's what I'm here for.
-			"player/survivor/voice/cliffe/youarewelcome11.wav",  //Anytime.
-			"player/survivor/voice/cliffe/youarewelcome12.wav",  //Anytime.
-			"player/survivor/voice/cliffe/youarewelcome13.wav",  //Anytime.
-			"player/survivor/voice/cliffe/youarewelcome14.wav",  //Sure thing.
-			"player/survivor/voice/cliffe/youarewelcome15.wav",  //Sure thing.
-			"player/survivor/voice/cliffe/youarewelcome16.wav",  //Sure thing.
-			"player/survivor/voice/cliffe/youarewelcome17.wav"  //Sure thing.
-		],
-		BotPlayer_YourWelcomeC1Cliffe = [
-			"player/survivor/voice/cliffe/youarewelcomec101.wav",  //Whatever.
-			"player/survivor/voice/cliffe/youarewelcomec102.wav",  //Um yeah.
-			"player/survivor/voice/cliffe/youarewelcomec103.wav",  //Sure.
-			"player/survivor/voice/cliffe/youarewelcomec104.wav",  //Whatever.
-			"player/survivor/voice/cliffe/youarewelcomec105.wav",  //Sure.
-			"player/survivor/voice/cliffe/youarewelcomec106.wav",  //Um yeah.
-			"player/survivor/voice/cliffe/youarewelcomec107.wav",  //Sure.
-			"player/survivor/voice/cliffe/youarewelcomec108.wav",  //Whatever.
-			"player/survivor/voice/cliffe/youarewelcomec109.wav"  //Um yeah.
-		],
-		BotReassureComingCliffe = [
-			"player/survivor/voice/cliffe/yes01.wav",  //Yes.
-			"player/survivor/voice/cliffe/yes02.wav",  //Yep.
-			"player/survivor/voice/cliffe/yes03.wav",  //Yeah.
-			"player/survivor/voice/cliffe/yes04.wav",  //Yeppers.
-			"player/survivor/voice/cliffe/yes05.wav",  //Yes.
-			"player/survivor/voice/cliffe/yes06.wav",  //Yes.
-			"player/survivor/voice/cliffe/yes07.wav",  //Yeah.
-			"player/survivor/voice/cliffe/yes08.wav",  //Yessss.
-			"player/survivor/voice/cliffe/yes09.wav",  //Yes.
-			"player/survivor/voice/cliffe/yes10.wav",  //Yessss.
-			"player/survivor/voice/cliffe/yes12.wav"  //Yeah, yeah, yeah, yeah.
-		],
-		BotReassureNearbyCliffe = [
-			"player/survivor/voice/cliffe/imwithyou01.wav",  //I'm here.
-			"player/survivor/voice/cliffe/imwithyou02.wav",  //Why not? I follow you.
-			"player/survivor/voice/cliffe/imwithyou03.wav",  //I'm with you.
-			"player/survivor/voice/cliffe/imwithyou04.wav",  //Sure thing, let's go.
-			"player/survivor/voice/cliffe/imwithyou05.wav"  //Sure, let's go.
-		],
-		BotYesReadyCliffe = [
-			"player/survivor/voice/cliffe/yes01.wav",  //Yes.
-			"player/survivor/voice/cliffe/yes02.wav",  //Yep.
-			"player/survivor/voice/cliffe/yes03.wav",  //Yeah.
-			"player/survivor/voice/cliffe/yes04.wav",  //Yeppers.
-			"player/survivor/voice/cliffe/yes05.wav",  //Yes.
-			"player/survivor/voice/cliffe/yes06.wav",  //Yes.
-			"player/survivor/voice/cliffe/yes07.wav",  //Yeah.
-			"player/survivor/voice/cliffe/yes08.wav",  //Yessss.
-			"player/survivor/voice/cliffe/yes09.wav",  //Yes.
-			"player/survivor/voice/cliffe/yes10.wav",  //Yessss.
-			"player/survivor/voice/cliffe/yes12.wav"  //Yeah, yeah, yeah, yeah.
-		],
-		C1M2LeavingSafeRoomCliffe = [
-			"player/survivor/voice/cliffe/moveon04.wav",  //What are we waiting for?  Let's go.
-			"player/survivor/voice/cliffe/revivefriendb14.wav"  //Let's go kill some zombies.
-		],
-		C1M2SafeRoomb1Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b103.wav",  //I guess living here's finally paying off.
-			"player/survivor/voice/cliffe/worldc1m1b102.wav",  //Jesus, are you FROM here? Ugh, look at you. That is so depressing.
-			"player/survivor/voice/cliffe/worldc1m1b104.wav"  //Get me to the mall and I'll make it worth your while.
-		],
-		C1M2SafeRoomb2Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b119.wav",  //Shouldn't you be eating?
-			"player/survivor/voice/cliffe/worldc1m1b120.wav",  //Shouldn't you be getting ready for some football?
-			"player/survivor/voice/cliffe/worldc1m1b103.wav"  //I guess living here's finally paying off.
-		],
-		C1M2SafeRoomb3Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b49.wav",  //Hm. This'd be really awkward if I gave a shit about your feelings.
-			"player/survivor/voice/cliffe/worldc1m1b121.wav",  //Call 911, I hurt his feelings.
-			"player/survivor/voice/cliffe/youarewelcomec104.wav"  //Whatever.
-		],
-		C1M2SafeRoomc2Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b102.wav"  //Jesus, are you FROM here? Ugh, look at you. That is so depressing.
-		],
-		C1M2SafeRoomd1Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b34.wav",  //Now we're talking.
-			"player/survivor/voice/cliffe/worldc1m2b01.wav",  //Sounds good to me.
-			"player/survivor/voice/cliffe/worldc1m2b02.wav"  //A gun store sounds like a fine to stop.
-		],
-		C1M2TankerAttackCliffe = [
-			"player/survivor/voice/cliffe/worldc1m2b30.wav",  //Barrier's down! Let's get out of here.
-			"player/survivor/voice/cliffe/worldc1m2b31.wav",  //There goes the tanker. Let's get out of here.
-			"player/survivor/voice/cliffe/worldc1m2b32.wav",  //That's one way to open a path.
-			"player/survivor/voice/cliffe/worldc1m2b33.wav",  //I gotta respect that!
-			"player/survivor/voice/cliffe/worldc1m2b34.wav"  //That is how you clear a path.
-		],
-		c1m4escapeCliffe = [
-			"player/survivor/voice/cliffe/worldc1m4b38.wav",  //HELL YEAH! Next stop: New Orleans...
-			"player/survivor/voice/cliffe/worldc1m4b35.wav"  //Thank YOU, Jimmy Gibbs, Jr.
-		],
-		c1m4escapeEllisCliffe = [
-			"player/survivor/voice/cliffe/blank.wav"  //
-		],
-		c1m4escapeEllisSuccessCliffe = [
-			"player/survivor/voice/cliffe/worldc1m4b44.wav"  //Hit it, Ellis!
-		],
-		C1M4GasPourCliffe = [
-			"player/survivor/voice/cliffe/worldc1m4b08.wav",  //Fill 'er up!
-			"player/survivor/voice/cliffe/worldc1m4b09.wav",  //Come onnnn, come onnnnnn...
-			"player/survivor/voice/cliffe/worldc1m4b10.wav",  //Come onnnn, come onnnnnn...
-			"player/survivor/voice/cliffe/worldc1m4b11.wav",  //Come on...
-			"player/survivor/voice/cliffe/worldc1m4b12.wav",  //Get in the tank, you stupid goddamn gas, get in the tank.
-			"player/survivor/voice/cliffe/worldc1m4b13.wav",  //Piece of shit gas, GET IN THE CAR!
-			"player/survivor/voice/cliffe/worldc1m4b14.wav",  //Got another can in the tank!
-			"player/survivor/voice/cliffe/worldc1m4b15.wav",  //One more for the gas tank!
-			"player/survivor/voice/cliffe/worldc1m4b16.wav",  //How big is the tank in this thing?
-			"player/survivor/voice/cliffe/worldc1m4b17.wav",  //Hurry up, hurrrry upppp...
-			"player/survivor/voice/cliffe/worldc1m4b18.wav",  //Come comeoncomeoncomeoncomeon. Come on!
-			"player/survivor/voice/cliffe/worldc1m4b19.wav",  //Get! In! The! Tank!
-			"player/survivor/voice/cliffe/worldc1m4b20.wav"  //Get in there!
-		],
-		C1M4PlayerGetToRescueVehicleCliffe = [
-			"player/survivor/voice/cliffe/worldc1m4b36.wav",  //Get to the car!
-			"player/survivor/voice/cliffe/worldc1m4b39.wav",  //Everyone to the car!
-			"player/survivor/voice/cliffe/worldc1m4b40.wav",  //I'm not waiting long, get to the car!
-			"player/survivor/voice/cliffe/worldc1m4b41.wav",  //Time to leave people!
-			"player/survivor/voice/cliffe/worldc1m4b42.wav",  //Time to go!
-			"player/survivor/voice/cliffe/worldc1m4b43.wav",  //Let's go people, let's go!
-			"player/survivor/voice/cliffe/worldc1m4b37.wav"  //Would you get to the goddamn car?
-		],
-		c1m4startelevatorCliffe = [
-			"player/survivor/voice/cliffe/worldc1m4b02.wav"  //CEDA's not gonna save us, any ideas?
-		],
-		C6M3GasPourCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_cans02.wav",  //I'm filling the generator.
-			"player/survivor/voice/cliffe/dlc1_c6m3_cans03.wav",  //Pouring it in!
-			"player/survivor/voice/cliffe/dlc1_c6m3_cans04.wav",  //Another one in!
-			"player/survivor/voice/cliffe/dlc1_c6m3_cans05.wav",  //Almost outta here!
-			"player/survivor/voice/cliffe/dlc1_c6m3_cans06.wav"  //Why doesn't anything have enough gas in it?
-		],
-		FinaleStartC1M4Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m4b07.wav",  //Let's get some GAS!
-			"player/survivor/voice/cliffe/worldc1m4b21.wav",  //Let's go! Find a gas can!
-			"player/survivor/voice/cliffe/worldc1m4b22.wav"  //Let's get this car gassed up!
-		],
-		GasPourDoneC1M4Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m4b34.wav"  //She's all filled up, let's go, get to the car!
-		],
-		_C2M2_Riders01Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m2b04.wav",  //Never heard of 'em. They any good?
-			"player/survivor/voice/cliffe/worldc2m2b04.wav"  //Never heard of 'em. They any good?
-		],
-		C2M2CarouselIdleCliffe = [
-			"player/survivor/voice/cliffe/worldc2m2b18.wav",  //SHIT, that's loud! Somebody shut it down!
-			"player/survivor/voice/cliffe/worldc2m2b19.wav"  //Goddamn, that's loud! Somebody shut it down!
-		],
-		C2M3RubbleNagIdleCliffe = [
-			"player/survivor/voice/cliffe/worldc2m332.wav"  //Hit the power to move this crap.
-		],
-		c2m3CoasterEndCliffe = [
-			"player/survivor/voice/cliffe/worldc2m3b22.wav"  //Alarm's off!
-		],
-		C2M3CoasterRunGoCliffe = [
-			"player/survivor/voice/cliffe/yellrun02.wav"  //Screw it, run!
-		],
-		C2M3CoasterStartCliffe = [
-			"player/survivor/voice/cliffe/miscdirectional35.wav"  //I hit it!
-		],
-		c2m3SpotIncendiaryCliffe = [
-			"player/survivor/voice/cliffe/worldc2m3b10.wav"  //Incendiary ammo of love here!
-		],
-		c2m3SeeChopperCliffe = [
-			"player/survivor/voice/cliffe/look02.wav"  //Look!
-		],
-		C2M4ButtonPressedCliffe = [
-			"player/survivor/voice/cliffe/miscdirectional35.wav"  //I hit it!
-		],
-		C2M4Gate000Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m4b01.wav"  //Let's get into the stadium!
-		],
-		C2M4GateIdleCliffe = [
-			"player/survivor/voice/cliffe/miscdirectional32.wav"  //Press the button!
-		],
-		C2M4GateOpenCalloutCliffe = [
-			"player/survivor/voice/cliffe/worldc2m478.wav"  //Gate's open!
-		],
-		c2m4SeeChopperCliffe = [
-			"player/survivor/voice/cliffe/worldc2m4b03.wav",  //We need to signal the helicopter.
-			"player/survivor/voice/cliffe/worldc2m4b04.wav"  //We need something big to signal the 'copter.
-		],
-		c2m5_intro003Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m5b04.wav",  //Unless someone has a better idea, let's rock.
-			"player/survivor/voice/cliffe/worldc2m457.wav",  //I don't think we have a choice.
-			"player/survivor/voice/cliffe/worldc2m450.wav",  //Okay, we'll set off the pyrotechnics, but I'm telling you right now.  I AM NOT GOING TO AIR GUITAR.
-			"player/survivor/voice/cliffe/worldc2m451.wav",  //Okay, fine, we'll put on the finale show.
-			"player/survivor/voice/cliffe/worldc2m459.wav",  //For once, I wish we would have just stumbled onto some cops.
-			"player/survivor/voice/cliffe/worldc2m5b03.wav"  //I've never seen the Midnight Riders, but okay. Let's try it.
-		],
-		c2m5_intro011Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m5b01.wav",  //Coach, that is about the stupidest idea I have ever agreed with.
-			"player/survivor/voice/cliffe/worldc2m5b02.wav",  //Coach, that is the stupidest idea I have ever agreed with.
-			"player/survivor/voice/cliffe/worldc2m5b03.wav"  //I've never seen the Midnight Riders, but okay. Let's try it.
-		],
-		c2m5_intro020Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m5b04.wav"  //Unless someone has a better idea, let's rock.
-		],
-		C2M5Button1Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m5b18.wav"  //Lights!
-		],
-		SurvivorReloadingC2M5Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m5b31.wav",  //More, we need more!
-			"player/survivor/voice/cliffe/worldc2m5b32.wav"  //Keep it up! Keep it up!
-		],
-		SurvivorVocalizeLookOutC2M5Cliffe = [
-			"player/survivor/voice/cliffe/hurrah01.wav",  //We are walking through the valley of the shadow of death and kicking ass.
-			"player/survivor/voice/cliffe/hurrah02.wav",  //It may not be pretty, but we're doing this.
-			"player/survivor/voice/cliffe/hurrah08.wav",  //We're makin' it look EASY!
-			"player/survivor/voice/cliffe/positivenoise03.wav"  //Goddamn right!
-		],
-		C2M5ReloadingTankCliffe = [
-			"player/survivor/voice/cliffe/worldc2m5b46.wav",  //We need to kill the Tank!
-			"player/survivor/voice/cliffe/worldc2m5b45.wav",  //He can't land until we kill the Tank!
-			"player/survivor/voice/cliffe/worldc2m5b47.wav"  //We kill this Tank and we're outta here!
-		],
-		PlayerKillTankConfirmationC2M5Cliffe = [
-			"player/survivor/voice/cliffe/hurrah10.wav",  //We're the four riders of the goddamn apocalypse!
-			"player/survivor/voice/cliffe/positivenoise03.wav",  //Goddamn right!
-			"player/survivor/voice/cliffe/positivenoise04.wav",  //Baby!
-			"player/survivor/voice/cliffe/positivenoise05.wav",  //YES!
-			"player/survivor/voice/cliffe/positivenoise06.wav",  //YES!
-			"player/survivor/voice/cliffe/positivenoise07.wav",  //Hell yeah.
-			"player/survivor/voice/cliffe/positivenoise08.wav",  //Damn right!
-			"player/survivor/voice/cliffe/positivenoise09.wav"  //Awesome!
-		],
-		C2M5_Button2YellCliffe = [
-			"player/survivor/voice/cliffe/worldc2m5b19.wav",  //Turn it up!
-			"player/survivor/voice/cliffe/worldc2m463.wav",  //You guys ready to rock?
-			"player/survivor/voice/cliffe/worldc2m5b20.wav",  //We need to turn this crap up!
-			"player/survivor/voice/cliffe/worldc2m5b33.wav",  //The copter pilot has got to see this!
-			"player/survivor/voice/cliffe/worldc2m5b21.wav"  //I'm gonna regret this, but turn it up!
-		],
-		C2M5_ChoppercomingCliffe = [
-			"player/survivor/voice/cliffe/worldc2m5b38.wav",  //There's the copter!
-			"player/survivor/voice/cliffe/worldc2m5b39.wav",  //This worked! The copter is here!
-			"player/survivor/voice/cliffe/worldc2m5b41.wav",  //He sees us!
-			"player/survivor/voice/cliffe/worldc2m5b42.wav"  //Holy shit, this worked!
-		],
-		C2M5_PlanWorkedCliffe = [
-			"player/survivor/voice/cliffe/worldc2m5b43.wav",  //Coach, you're a genius this worked!
-			"player/survivor/voice/cliffe/worldc2m5b44.wav",  //It worked! I love you Coach!
-			"player/survivor/voice/cliffe/worldc2m5b40.wav"  //I think the chopper pilot wants us to turn it down.
-		],
-		C2M5ChopperNagCliffe = [
-			"player/survivor/voice/cliffe/worldc2m5b48.wav",  //The pilot's landed, let's go!
-			"player/survivor/voice/cliffe/worldc2m5b52.wav",  //Copter's landed, let's go!
-			"player/survivor/voice/cliffe/worldc2m5b53.wav"  //Let's go, let's go to the copter!
-		],
-		C2M5InChopperNagCliffe = [
-			"player/survivor/voice/cliffe/worldc2m5b49.wav",  //Get on the helicopter!
-			"player/survivor/voice/cliffe/worldc2m5b50.wav"  //Everyone to the copter!
-		],
-		C2M5InArenaNagCliffe = [
-			"player/survivor/voice/cliffe/worldc2m461.wav",  //Hit the lights.
-			"player/survivor/voice/cliffe/worldc2m468.wav",  //Someone needs to hit the lights!
-			"player/survivor/voice/cliffe/worldc2m469.wav",  //Run up to the lights!
-			"player/survivor/voice/cliffe/worldc2m470.wav",  //We have to hit the lights!
-			"player/survivor/voice/cliffe/worldc2m5b05.wav",  //We need to start the finale.
-			"player/survivor/voice/cliffe/worldc2m5b07.wav",  //How does this finale start?
-			"player/survivor/voice/cliffe/worldc2m5b16.wav",  //Hit the lights!
-			"player/survivor/voice/cliffe/worldc2m5b26.wav"  //Turn on the lights!
-		],
-		C2M3SaferoomCliffe = [
-			"player/survivor/voice/cliffe/worldc2m2b22.wav",  //This is the most RELAXING safe room I've ever been in.
-			"player/survivor/voice/cliffe/worldc2m301.wav",  //Why couldn't I have been in Vegas when the infection hit? Or even Atlantic city? Instead I am trapped inside some hillbilly tunnel of love.
-			"player/survivor/voice/cliffe/worldc2m3b02.wav",  //You got your wish, Ellis. We're in an amusement park ride.
-			"player/survivor/voice/cliffe/worldc2m3b14.wav",  //You got your wish, Ellis. We're on a ride.
-			"player/survivor/voice/cliffe/worldc2m3b03.wav",  //Bringing back any memories, Coach? You, a cheeseburger, romance in the air...
-			"player/survivor/voice/cliffe/worldc2m3b03.wav"  //Bringing back any memories, Coach? You, a cheeseburger, romance in the air...
-		],
-		C2M3SafeIntro007Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m303.wav"  //Did you see the sign out front?  Cousins only day today.
-		],
-		C2M3SafeIntro009Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m3b06.wav"  //Not cool, Rochelle.
-		],
-		C2M3SafeIntro010Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m309.wav",  //No holding hands, please.
-			"player/survivor/voice/cliffe/worldc2m2b10.wav"  //I'm just playin' with ya, man.
-		],
-		C2M3SafeIntro012Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m3b04.wav"  //Psh! Huh. Several. Easily.
-		],
-		C2M3SafeIntro013Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m2b21.wav",  //Alright, but keep your hands to yourself.
-			"player/survivor/voice/cliffe/worldc2m3b01.wav"  //I think we should clarify what constitutes "close".
-		],
-		C3GoingToDieCliffe = [
-			"player/survivor/voice/cliffe/worldc3mgoingtodie01.wav",  //I am not dying in this swamp.
-			"player/survivor/voice/cliffe/worldc3mgoingtodie02.wav"  //I am not going to be gator food.
-		],
-		C3M1FerryEnd2Cliffe = [
-			"player/survivor/voice/cliffe/moveon02.wav",  //Let's roll!
-			"player/survivor/voice/cliffe/moveon04.wav"  //What are we waiting for?  Let's go.
-		],
-		WorldC3M1FerryCrossingM3Cliffe = [
-			"player/survivor/voice/cliffe/worldc3m107.wav",  //Yes.
-			"player/survivor/voice/cliffe/worldc3m108.wav",  //Yes, I remember, Ellis.
-			"player/survivor/voice/cliffe/worldc3m109.wav"  //Yes Ellis, I remember.
-		],
-		C3M2DisgustCliffe = [
-			"player/survivor/voice/cliffe/reactionnegative24.wav"  //Is this some kind of sick joke?
-		],
-		C3M2SafeRoomCliffe = [
-			"player/survivor/voice/cliffe/worldc3m2b03.wav",  //These swamps don't agree with me.
-			"player/survivor/voice/cliffe/worldc3m2b05.wav"  //I am not dying in this goddamn swamp.
-		],
-		C3M2SafeRoom3dCliffe = [
-			"player/survivor/voice/cliffe/worldc3m1b18.wav"  //Brains come out. Swamp water doesn't. Don't ask me how I know that.
-		],
-		C3M2SafeRoomb2Cliffe = [
-			"player/survivor/voice/cliffe/worldc3m2b01.wav",  //This swamp is just a cesspool for disease.
-			"player/survivor/voice/cliffe/worldc3m2b02.wav"  //I can feel my feet growing fungus.
-		],
-		C3M3SafeRoomCliffe = [
-			"player/survivor/voice/cliffe/worldc3m3b01.wav",  //The swamp people didn't make it.
-			"player/survivor/voice/cliffe/worldc3m3b02.wav"  //This is ugly.
-		],
-		InfoRemC3M3LowerGateaCliffe = [
-			"player/survivor/voice/cliffe/worldc3m3b08.wav",  //Lower the plank.
-			"player/survivor/voice/cliffe/worldc3m3b09.wav"  //Lower the bridge.
-		],
-		InfoRemC3M3Unsanitarya2Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m433.wav"  //What?
-		],
-		C3M4BoatNagsCliffe = [
-			"player/survivor/voice/cliffe/worldc3m4b23.wav"  //Everyone to the boat!
-		],
-		C3M4InBoatNagsCliffe = [
-			"player/survivor/voice/cliffe/worldc3m4b24.wav",  //Get to the boat!
-			"player/survivor/voice/cliffe/worldc3m4b25.wav"  //To the boat!
-		],
-		C3M4Button1ACliffe = [
-			"player/survivor/voice/cliffe/world405.wav",  //Hello!
-			"player/survivor/voice/cliffe/worldc5m5b08.wav"  //Um, hello?
-		],
-		C3M4ButtonHowManyAnswer4Cliffe = [
-			"player/survivor/voice/cliffe/worldc3m4b08.wav",  //There's four of us.
-			"player/survivor/voice/cliffe/worldc3m4b09.wav",  //Four of us. One's a woman.
-			"player/survivor/voice/cliffe/worldc3m4b10.wav",  //Four, inluding a girl.
-			"player/survivor/voice/cliffe/worldc3m4b11.wav"  //There's four of us. We have money if that helps.
-		],
-		C3M4ButtonHowManyAnswer3Cliffe = [
-			"player/survivor/voice/cliffe/worldc3m4b12.wav"  //Only three of us left.
-		],
-		C3M4ButtonHowManyAnswer2Cliffe = [
-			"player/survivor/voice/cliffe/worldc3m4b13.wav"  //There's two of us.
-		],
-		C3M4ButtonHowManyAnswer1Cliffe = [
-			"player/survivor/voice/cliffe/worldc3m4b14.wav",  //Just me.
-			"player/survivor/voice/cliffe/worldc3m4b15.wav"  //Just me.
-		],
-		C3M4Button201Cliffe = [
-			"player/survivor/voice/cliffe/worldc3m4b01.wav",  //I don't know, some plantation?
-			"player/survivor/voice/cliffe/worldc3m4b02.wav",  //We're at a big old house with gate.
-			"player/survivor/voice/cliffe/worldc3m4b03.wav",  //Oh god, we're in hell...
-			"player/survivor/voice/cliffe/worldc3m4b05.wav",  //At a plantation with a big gate.
-			"player/survivor/voice/cliffe/worldc3m4b06.wav",  //We're standing by a big gate, a big gate with a radio by it. Sound familiar?
-			"player/survivor/voice/cliffe/worldc3m4b07.wav"  //I'm standing by a big gate, in front of a big house.
-		],
-		C3M4Button203Cliffe = [
-			"player/survivor/voice/cliffe/worldc3m4b04.wav"  //Nothing, nothing, we're at a plantation.
-		],
-		C3M4Button202Cliffe = [
-			"player/survivor/voice/cliffe/worldc3m4b16.wav",  //Yeah. I guess we can do that.
-			"player/survivor/voice/cliffe/worldc3m4b17.wav",  //We can wait for you. But hurry up, will you?
-			"player/survivor/voice/cliffe/worldc3m4b18.wav",  //Sure we can wait. It's pretty quiet here.
-			"player/survivor/voice/cliffe/worldc3m4b19.wav",  //We'll be here
-			"player/survivor/voice/cliffe/worldc3m4b20.wav"  //Don't worry about us. We'll be here.
-		],
-		C3M4GateBlow01Cliffe = [
-			"player/survivor/voice/cliffe/worldc3m4b22.wav",  //Our Cajun buddy blew open the gate, let's go!
-			"player/survivor/voice/cliffe/worldc3m4b26.wav",  //Wow! I thought he'd just OPEN the gate.
-			"player/survivor/voice/cliffe/worldc3m4b27.wav"  //That's one way to open that gate.
-		],
-		C4GoingToDieCliffe = [
-			"player/survivor/voice/cliffe/worldc4mgoingtodie01.wav",  //Never get out of the boat. Never get out of the boat. Never get out of the boat.
-			"player/survivor/voice/cliffe/worldc4mgoingtodie02.wav",  //I cannot believe I am looking forward to getting back on that boat.
-			"player/survivor/voice/cliffe/worldc4mgoingtodie03.wav",  //Some milk run this turned out to be.
-			"player/survivor/voice/cliffe/worldc4mgoingtodie04.wav",  //Should have just kept floating down the damn river.
-			"player/survivor/voice/cliffe/worldc4mgoingtodie05.wav"  //What in the hell were we thinking stopping here?
-		],
-		C4StormBlindIdleCliffe = [
-			"player/survivor/voice/cliffe/worldc4m307.wav",  //Find shelter!
-			"player/survivor/voice/cliffe/worldc4m309.wav",  //Lightning!
-			"player/survivor/voice/cliffe/worldc4m410.wav",  //Thunder!
-			"player/survivor/voice/cliffe/worldc4m428.wav",  //Goddamn this rain!
-			"player/survivor/voice/cliffe/worldc4m308.wav",  //Find some place to hunker down!
-			"player/survivor/voice/cliffe/worldc4m408.wav",  //I can't see shit!
-			"player/survivor/voice/cliffe/miscdirectional66.wav",  //I can't see a damn thing!
-			"player/survivor/voice/cliffe/miscdirectional67.wav"  //Blind as a damn bat!
-		],
-		_c4m1Intro20Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m1b07.wav"  //The gas station's right across the street. Let's just get the gas and then we'll figure out how to signal Virgil.
-		],
-		_c4m1Intro23Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m1b02.wav"  //What gun bag?
-		],
-		C4M2IdleWitchville03Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m2b09.wav",  //Jesus. Welcome to witchville...
-			"player/survivor/voice/cliffe/worldc4m210.wav",  //What the hell is with all the witches?
-			"player/survivor/voice/cliffe/worldc4m209.wav",  //I have never seen so many witches.
-			"player/survivor/voice/cliffe/worldc4m2b13.wav",  //Man, that's a LOT of witches.
-			"player/survivor/voice/cliffe/worldc4m2b12.wav"  //That is a LOT of Witches.
-		],
-		C4M2PushedButtonCliffe = [
-			"player/survivor/voice/cliffe/miscdirectional35.wav"  //I hit it!
-		],
-		C4M5BoatNagsCliffe = [
-			"player/survivor/voice/cliffe/worldc4m442.wav"  //Everyone to the boat!
-		],
-		C4M5InBoatNagsCliffe = [
-			"player/survivor/voice/cliffe/worldc4m4b22.wav",  //GET TO THE BOAT!
-			"player/survivor/voice/cliffe/worldc4m4b23.wav"  //GET TO THE BOAT!
-		],
-		C5GoingToDieCliffe = [
-			"player/survivor/voice/cliffe/worldc5mgoingtodie01.wav"  //I am not going to die in this city.
-		],
-		C5M5GoingToDieCliffe = [
-			"player/survivor/voice/cliffe/worldc5mgoingtodie02.wav"  //I have not come this far to die now.
-		],
-		C5M1_intro002Cliffe = [
-			"player/survivor/voice/cliffe/worldc5m1b01.wav"  //You're all right, Virgil.
-		],
-		C5M1_intro004Cliffe = [
-			"player/survivor/voice/cliffe/world101.wav",  //Okay, so we're on the wrong side of the river.
-			"player/survivor/voice/cliffe/world102.wav",  //Things could be worse.
-			"player/survivor/voice/cliffe/world103.wav"  //All we have to do is find the freeway. It'll take us to the bridge.
-		],
-		C5M1_intro006Cliffe = [
-			"player/survivor/voice/cliffe/worldc5m1b03.wav"  //You mean that blurry line on the horizon? Let's not get ahead of ourselves here.
-		],
-		C5M1_intro007Cliffe = [
-			"player/survivor/voice/cliffe/worldc5m1b04.wav"  //Yeah, well, seeing the bridge and getting to it are two different things.
-		],
-		C5M1Flyby01Cliffe = [
-			"player/survivor/voice/cliffe/world104.wav",  //Let's head inland.
-			"player/survivor/voice/cliffe/world105.wav",  //Let's get off the dock.
-			"player/survivor/voice/cliffe/world106.wav",  //Whoa! Military's still here.
-			"player/survivor/voice/cliffe/world108.wav",  //I kind of remember the city a little different.
-			"player/survivor/voice/cliffe/world109.wav",  //I was hoping the city'd be in better shape.
-			"player/survivor/voice/cliffe/world110.wav"  //Looks like they're still holding to the city.
-		],
-		C5M1Flyby02Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m448.wav",  //I've got a bad feeling about this...
-			"player/survivor/voice/cliffe/worldc5m1b05.wav",  //I wonder if that's good news...
-			"player/survivor/voice/cliffe/worldc5m1b06.wav",  //I got a bad feeling about that...
-			"player/survivor/voice/cliffe/worldc5m1b07.wav",  //I got a bad feeling about this...
-			"player/survivor/voice/cliffe/worldc5m1b08.wav"  //You don't evacuate people in fighter jets...
-		],
-		C5M2AlarmNagCliffe = [
-			"player/survivor/voice/cliffe/worldc5m2b12.wav",  //RUN!
-			"player/survivor/voice/cliffe/worldc5m2b13.wav",  //KEEP RUNNING!
-			"player/survivor/voice/cliffe/worldc5m2b14.wav",  //GO!
-			"player/survivor/voice/cliffe/worldc5m2b15.wav",  //JUST RUN!
-			"player/survivor/voice/cliffe/worldc5m2b16.wav",  //MOVE MOVE!
-			"player/survivor/voice/cliffe/worldc5m2b17.wav"  //WE GOTTA TURN OFF THE ALARM!
-		],
-		C5M2Freeway01Cliffe = [
-			"player/survivor/voice/cliffe/worldc5m2b04.wav"  //Let's follow it.
-		],
-		C5M2Horse001Cliffe = [
-			"player/survivor/voice/cliffe/worldc5m2b02.wav"  //Nice observation, Ellis.
-		],
-		PlayerRemarkc5m2busstationCliffe = [
-			"player/survivor/voice/cliffe/worldc5m2b18.wav"  //Through this bus station!
-		],
-		PlayerRemarkc5m2freewayCliffe = [
-			"player/survivor/voice/cliffe/blank.wav"  //
-		],
-		PlayerRemarkc5m2parkCliffe = [
-			"player/survivor/voice/cliffe/world114.wav",  //Through the park.
-			"player/survivor/voice/cliffe/worldc5m2b01.wav"  //We can cut through this park!
-		],
-		PlayerRemarkWorldC502Horse2Cliffe = [
-			"player/survivor/voice/cliffe/world119.wav"  //You ever eat horse?  Tasty. (Ellis - wish we had horses. )
-		],
-		C5M3AlarmFieldNagsCliffe = [
-			"player/survivor/voice/cliffe/world215.wav",  //Do not shoot any of the cars!
-			"player/survivor/voice/cliffe/world216.wav",  //What a nightmare.
-			"player/survivor/voice/cliffe/worldc5m3b16.wav",  //Do you still smell sewer?
-			"player/survivor/voice/cliffe/worldc5m3b20.wav"  //Careful. Carefuuulll.
-		],
-		C5M3AlarmFieldNags01Cliffe = [
-			"player/survivor/voice/cliffe/worldc5m3b17.wav"  //Because I still smell it.
-		],
-		C5M3AlarmFieldNags02Cliffe = [
-			"player/survivor/voice/cliffe/world415.wav",  //Your mom's car.
-			"player/survivor/voice/cliffe/world421.wav"  //Your mom's car. (Hey nick, what kind of car did you drive?)
-		],
-		C5M3Bodies02Cliffe = [
-			"player/survivor/voice/cliffe/worldc5m2b06.wav"  //Somebody? Christ, Coach, you know who did this.
-		],
-		C5M3Bodies04Cliffe = [
-			"player/survivor/voice/cliffe/worldc5m2b09.wav"  //[contemplative, to self] Not good.
-		],
-		C5M3FirstInAlarmCliffe = [
-			"player/survivor/voice/cliffe/world214.wav",  //Ooohhhhh ho ho ho...  watch where you shoot!
-			"player/survivor/voice/cliffe/world215.wav",  //Do not shoot any of the cars!
-			"player/survivor/voice/cliffe/worldc5m3b18.wav",  //You have GOT to be kidding me.
-			"player/survivor/voice/cliffe/worldc5m3b19.wav"  //Christ, there's car alarms everywhere.
-		],
-		C5M3Freeway01Cliffe = [
-			"player/survivor/voice/cliffe/worldc5m3b02.wav"  //The bridge can't be far now.
-		],
-		C5M3GraveNagsCliffe = [
-			"player/survivor/voice/cliffe/world226.wav",  //The city of the dead (to self)
-			"player/survivor/voice/cliffe/world227.wav"  //Well thank God for small favors.
-		],
-		C5M3GraveNags01Cliffe = [
-			"player/survivor/voice/cliffe/world224.wav"  //Yes, I do know why they bury them above ground.
-		],
-		C5M3GraveNags02Cliffe = [
-			"player/survivor/voice/cliffe/world225.wav"  //Yes, Ellis, it is, okay? It is.
-		],
-		C5M3Jets2Cliffe = [
-			"player/survivor/voice/cliffe/worldc5m3b24.wav",  //OH COME ON!
-			"player/survivor/voice/cliffe/world315.wav"  //They're blowing up the bridge!
-		],
-		C5M3StopZombiesCliffe = [
-			"player/survivor/voice/cliffe/world316.wav",  //To stop the zombies from crossing.
-			"player/survivor/voice/cliffe/world317.wav"  //To stop the zombies from crossing.
-		],
-		C5M3manhole01Cliffe = [
-			"player/survivor/voice/cliffe/worldc5m3b10.wav",  //Oh Christ, not the sewer.
-			"player/survivor/voice/cliffe/worldc5m3b14.wav"  //I am NOT climbing into... Ah screw it. Let's go.
-		],
-		C5M3OnBridgeCliffe = [
-			"player/survivor/voice/cliffe/world217.wav",  //FINALLY up to the freeway.
-			"player/survivor/voice/cliffe/world218.wav",  //Get up here! Get up here!
-			"player/survivor/voice/cliffe/worldc5m3b23.wav"  //That's it! We're really here! We're on the bridge! We're here! We're here!
-		],
-		C5M3SeeGraveyard01Cliffe = [
-			"player/survivor/voice/cliffe/worldc5m3b25.wav"  //You sure we shouldn't just panic? I mean, I think panic was invented for just this sort of situation.
-		],
-		C5M3SeeGraveyard05Cliffe = [
-			"player/survivor/voice/cliffe/worldc5m3b27.wav"  //Ellis, you're carrying like 10 different guns.
-		],
-		C5M3SewerIn01Cliffe = [
-			"player/survivor/voice/cliffe/worldc5m3b11.wav"  //[to self] Tell me about it...
-		],
-		C5M3ShootCarCliffe = [
-			"player/survivor/voice/cliffe/reactionnegative04.wav",  //God damn it.
-			"player/survivor/voice/cliffe/reactionnegative05.wav",  //Bullshit!
-			"player/survivor/voice/cliffe/reactionnegative09.wav",  //Son of a bitch.
-			"player/survivor/voice/cliffe/reactionnegative10.wav"  //Son of a bitch.
-		],
-		C5M3ShootCar2Cliffe = [
-			"player/survivor/voice/cliffe/worldc5m3b21.wav"  //HOW MANY OF THESE CARS ARE YOU GONNA SHOOT?
-		],
-		C5M3ShootCar3Cliffe = [
-			"player/survivor/voice/cliffe/worldc5m3b22.wav"  //YOU WANNA START SHOOTING CARS, LET'S SHOOT CARS!
-		],
-		C5M3Sniper01Cliffe = [
-			"player/survivor/voice/cliffe/worldc5m3b06.wav",  //This is bad...
-			"player/survivor/voice/cliffe/worldc5m3b09.wav"  //Jesus, it was open season on everything out here.
-		],
-		PlayerRemarkc5m3bodiesCliffe = [
-			"player/survivor/voice/cliffe/worldc5m2b08.wav",  //Jesus. These are people! They were shooting people. I told you I had a bad feeling about this.
-			"player/survivor/voice/cliffe/world118.wav"  //They made them prove... That they were healthy enough to walk this far.
-		],
-		PlayerRemarkc5m2peopleCliffe = [
-			"player/survivor/voice/cliffe/world117.wav",  //These bodies are not infected.
-			"player/survivor/voice/cliffe/world205.wav",  //This city's a mess.
-			"player/survivor/voice/cliffe/world318.wav"  //This used to be a beautiful city.
-		],
-		PlayerRemarkc5m3busCliffe = [
-			"player/survivor/voice/cliffe/world202.wav"  //Over this bus
-		],
-		PlayerRemarkc5m3crashedheliCliffe = [
-			"player/survivor/voice/cliffe/world204.wav"  //Zombies didn't take down this helicopter.
-		],
-		PlayerRemarkc5m3freewayCliffe = [
-			"player/survivor/voice/cliffe/worldc5m3b01.wav",  //We gotta keep following the freeway.
-			"player/survivor/voice/cliffe/worldc5m3b01.wav"  //We gotta keep following the freeway.
-		],
-		PlayerRemarkc5m3insewerCliffe = [
-			"player/survivor/voice/cliffe/blank.wav"  //Blank
-		],
-		PlayerRemarkc5m3manholeCliffe = [
-			"player/survivor/voice/cliffe/worldc5m3b10.wav"  //Oh Christ, not the sewer.
-		],
-		PlayerRemarkc5m3offhighwayCliffe = [
-			"player/survivor/voice/cliffe/blank.wav"  //
-		],
-		PlayerRemarkc5m3safezoneCliffe = [
-			"player/survivor/voice/cliffe/world201.wav",  //Are we busting out or in?
-			"player/survivor/voice/cliffe/worldc5m3b04.wav",  //Looks like we're leaving the military zone.
-			"player/survivor/voice/cliffe/worldc5m3b05.wav"  //[sarcastic] If that was their idea of safety, I can't wait to see what's out here.
-		],
-		PlayerRemarkc5m3seegraveyardCliffe = [
-			"player/survivor/voice/cliffe/worldc5m3b26.wav",  //They're blowing this bridge to cover a retreat. If we wanna go with 'em, we better hurry.
-			"player/survivor/voice/cliffe/world223.wav"  //Guess it's back off the freeway.
-		],
-		PlayerRemarkc5m3sewercommentCliffe = [
-			"player/survivor/voice/cliffe/worldc5m3b12.wav"  //[reacting terrible smell] Oh my god, the stink's inside my head.
-		],
-		PlayerRemarkc5m3sniperCliffe = [
-			"player/survivor/voice/cliffe/worldc5m3b07.wav",  //What the hell was this guy doing?
-			"player/survivor/voice/cliffe/world207.wav",  //This is cozy.
-			"player/survivor/voice/cliffe/world209.wav"  //Straightforward.  This isn't so bad.
-		],
-		PlayerRemarkc5m3sniperCoachCliffe = [
-			"player/survivor/voice/cliffe/world206.wav",  //Do you think he was keeping track of zombies?
-			"player/survivor/voice/cliffe/worldc5m3b08.wav"  //Does this guy's scorecard mean what I think it means?
-		],
-		PlayerRemarkc5m3sniperRochelleCliffe = [
-			"player/survivor/voice/cliffe/worldc5m3b09.wav",  //Jesus, it was open season on everything out here.
-			"player/survivor/voice/cliffe/world208.wav"  //This is all messed up.
-		],
-		PlayerRemarkc5m3sniperEllisCliffe = [
-			"player/survivor/voice/cliffe/world210.wav",  //Well, this is bad.
-			"player/survivor/voice/cliffe/worldc5m3b06.wav"  //This is bad...
-		],
-		PlayerRemarkc5m3upladderCliffe = [
-			"player/survivor/voice/cliffe/world213.wav",  //Up the ladder!
-			"player/survivor/voice/cliffe/worldc2m422.wav"  //Climb the ladder.
-		],
-		PlayerRemarkc5m3upstepsCliffe = [
-			"player/survivor/voice/cliffe/worldc2m115.wav"  //Let's try upstairs.
-		],
-		PlayerRemarkc5m3warzoneCliffe = [
-			"player/survivor/voice/cliffe/world203.wav",  //I don't think they like the military out here.
-			"player/survivor/voice/cliffe/worldc5m3b03.wav"  //What the hell was going on here?
-		],
-		C5M4BombExtCliffe = [
-			"player/survivor/voice/cliffe/world221.wav",  //Everybody okay?
-			"player/survivor/voice/cliffe/world222.wav"  //Was that aimed at us?!
-		],
-		C5M4BombInt01Cliffe = [
-			"player/survivor/voice/cliffe/worldc5m4b06.wav",  //SHIT!
-			"player/survivor/voice/cliffe/worldc5m4b07.wav",  //SHIT!
-			"player/survivor/voice/cliffe/world219.wav"  //WHAT THE -  (reaction to bombing)
-		],
-		C5M4BombInt01ACliffe = [
-			"player/survivor/voice/cliffe/worldc5m4b01.wav",  //I guess they ran outta bridges to bomb...
-			"player/survivor/voice/cliffe/worldc5m4b02.wav",  //Well, it's official: They're trying to kill US now.
-			"player/survivor/voice/cliffe/worldc5m4b09.wav"  //Well, it's official: They're trying to kill US now.
-		],
-		C5M4BombInt02Cliffe = [
-			"player/survivor/voice/cliffe/worldc5m4b05.wav",  //Christ, those guys are such assholes.
-			"player/survivor/voice/cliffe/world301.wav"  //We have to find the bridge again.
-		],
-		C5M4BombInt03Cliffe = [
-			"player/survivor/voice/cliffe/world220.wav",  //WHAT THE HELL ARE THEY DOING?  (reaction to bombing)
-			"player/survivor/voice/cliffe/worldc5m4b03.wav"  //STOP BOMBING US!
-		],
-		C5M4JetPlanesCliffe = [
-			"player/survivor/voice/cliffe/worldc5m4b04.wav",  //Yeah thanks, Ellis.
-			"player/survivor/voice/cliffe/worldc5m3b13.wav"  //Shut up, Ellis.
-		],
-		PlayerRemarkc5m4alleyCliffe = [
-			"player/survivor/voice/cliffe/world310.wav",  //God damn maze.
-			"player/survivor/voice/cliffe/world311.wav"  //Which way?
-		],
-		PlayerRemarkc5m4inminifinaleCliffe = [
-			"player/survivor/voice/cliffe/world307.wav",  //We can use that float to get across.
-			"player/survivor/voice/cliffe/world309.wav"  //You know what? We can use that float to get across.
-		],
-		PlayerRemarkc5m4pooltableCliffe = [
-			"player/survivor/voice/cliffe/world302.wav",  //If things were different, I could really enjoy this place.
-			"player/survivor/voice/cliffe/world303.wav",  //God I love pool.
-			"player/survivor/voice/cliffe/world304.wav"  //Okay, anyone up for a game?
-		],
-		PlayerRemarkc5m4seebridgeCliffe = [
-			"player/survivor/voice/cliffe/world312.wav",  //The BRIDGE!
-			"player/survivor/voice/cliffe/worldc5m4b11.wav"  //There's the bridge!
-		],
-		PlayerRemarkc5m4tractornagCliffe = [
-			"player/survivor/voice/cliffe/world305.wav"  //Someone start the tractor.
-		],
-		PlayerRemarkc5m4tractornagEllisCliffe = [
-			"player/survivor/voice/cliffe/world306.wav"  //Look Ellis!  A tractor!
-		],
-		EllisStoryInterruptCliffe = [
-			"player/survivor/voice/cliffe/ellisinterrupt06.wav"  // Ellis... Ellis. ELLIS!
-		],
-		EllisStoryInterruptGenericCliffe = [
-			"player/survivor/voice/cliffe/ellisinterrupt12.wav",  //Ohhh, not again...
-			"player/survivor/voice/cliffe/ellisinterrupt08.wav",  //Ellis. Is now the best time?
-			"player/survivor/voice/cliffe/ellisinterrupt19.wav"  //You know what I like best about your stories? The sound they make when they stop.
-		],
-		EllisStoryInterruptC1M2Cliffe = [
-			"player/survivor/voice/cliffe/ellisinterrupt04.wav",  //Uh huh.
-			"player/survivor/voice/cliffe/ellisinterrupt05.wav",  //Uh huh.
-			"player/survivor/voice/cliffe/ellisinterrupt18.wav"  //And your point... is...
-		],
-		EllisStoryInterruptC1M3Cliffe = [
-			"player/survivor/voice/cliffe/ellisinterrupt21.wav",  //Why don't we just try quiet time for a while?
-			"player/survivor/voice/cliffe/ellisinterrupt22.wav"  //Hey, Ellis. Shut-up contest, ready? One, two, three, go!
-		],
-		EllisStoryInterruptC2M5Cliffe = [
-			"player/survivor/voice/cliffe/ellisinterrupt01.wav"  //Ellis-why don't you tell us this in the chopper?
-		],
-		EllisStoryInterruptC4M3Cliffe = [
-			"player/survivor/voice/cliffe/ellisinterrupt11.wav"  //Jesus, is there a witch around here we can piss off?
-		],
-		EllisStoryInterruptC4M4Cliffe = [
-			"player/survivor/voice/cliffe/ellisinterrupt15.wav"  //Glad you shared that, Ellis.
-		],
-		EllisStoryInterruptC5M2Cliffe = [
-			"player/survivor/voice/cliffe/ellisinterrupt09.wav"  //I don't care. NOBODY CARES!
-		],
-		EllisStoryInterruptC5M5Cliffe = [
-			"player/survivor/voice/cliffe/ellisinterrupt10.wav"  //Ellis. If I listen to this, will this be the last one?
-		],
-		C5M5_Button2Cliffe = [
-			"player/survivor/voice/cliffe/worldc5m507.wav",  //Well, let's cross the brige and finally get out of this hell.
-			"player/survivor/voice/cliffe/worldc5m509.wav"  //You heard the man.  Let's get across this goddamn bridge.
-		],
-		C5M5_GateDownCliffe = [
-			"player/survivor/voice/cliffe/leadon09.wav"  //Right behind you.
-		],
-		C5M5_saferoom001Cliffe = [
-			"player/survivor/voice/cliffe/worldc5m5b05.wav"  //Or they're gonna line us up against a wall and shoot us.
-		],
-		C5M5_saferoom003Cliffe = [
-			"player/survivor/voice/cliffe/worldc5m5b02.wav",  //Oh yeah.
-			"player/survivor/voice/cliffe/worldc5m5b03.wav",  //[chuckles] Allright, let's go.
-			"player/survivor/voice/cliffe/worldc5m5b04.wav"  //[chuckles] Okay, allright, let's go.
-		],
-		C5M5_SurvivorConv01Cliffe = [
-			"player/survivor/voice/cliffe/worldc5m5b16.wav"  //My name's Nick. There's four of us on the... on the west  end of the bridge.
-		],
-		C5M5_SurvivorConv02Cliffe = [
-			"player/survivor/voice/cliffe/worldc5m5b09.wav"  //We are NOT infected.
-		],
-		C5M5_SurvivorConv03Cliffe = [
-			"player/survivor/voice/cliffe/worldc5m5b10.wav",  //Yeah, you could say that.
-			"player/survivor/voice/cliffe/worldc5m5b11.wav"  //Yeah, you could say that.
-		],
-		C5M5_SurvivorConv04Cliffe = [
-			"player/survivor/voice/cliffe/worldc5m501.wav",  //Okay, yeah, got it.  Sure.  See you soon.
-			"player/survivor/voice/cliffe/worldc5m508.wav",  //Sure, give us a few minutes.
-			"player/survivor/voice/cliffe/worldc5m5b12.wav",  //Roger that. Here we come.
-			"player/survivor/voice/cliffe/world406.wav"  //Okay, we're heading over now.
-		],
-		C5M5_SurvivorConv05Cliffe = [
-			"player/survivor/voice/cliffe/worldc5m506.wav",  //Of course it's full of zombies.  The whole god damn world is full of zombies.  See you in a few minutes.
-			"player/survivor/voice/cliffe/worldc5m5b12.wav",  //Roger that. Here we come.
-			"player/survivor/voice/cliffe/world406.wav"  //Okay, we're heading over now.
-		],
-		C5M5_LowerTheBridgeCliffe = [
-			"player/survivor/voice/cliffe/worldc5m5b13.wav",  //
-			"player/survivor/voice/cliffe/world408.wav"  //
-		],
-		C5M5Button1BuzzardRunCliffe = [
-			"player/survivor/voice/cliffe/worldc5m502.wav",  //STOP! Don't bomb the bridge!
-			"player/survivor/voice/cliffe/worldc5m503.wav",  //HEY! You have people on the bridge!
-			"player/survivor/voice/cliffe/worldc5m504.wav",  //HEY! You have people on the bridge!
-			"player/survivor/voice/cliffe/world314.wav",  //Don't destroy the bridge!
-			"player/survivor/voice/cliffe/world402.wav"  //Whoa, we're on the bridge!
-		],
-		C5M5Button1Cliffe = [
-			"player/survivor/voice/cliffe/worldc5m5b08.wav"  //Um, hello?
-		],
-		C5M5HearSoldiersCliffe = [
-			"player/survivor/voice/cliffe/worldc5m5b06.wav"  //Hey, those are soldiers. Let's let 'em know we're here.
-		],
-		C5M5HearSoldiersNagCliffe = [
-			"player/survivor/voice/cliffe/worldc5m5b07.wav"  //Is somebody gonna pick up the radio?
-		],
-		C5M5LeaveSafeCliffe = [
-			"player/survivor/voice/cliffe/world401.wav",  //We're on the bridge!
-			"player/survivor/voice/cliffe/world403.wav",  //We're on the bridge!
-			"player/survivor/voice/cliffe/world404.wav",  //We are on the bridge!
-			"player/survivor/voice/cliffe/world407.wav"  //Safety's on the other side of this bridge.
-		],
-		C5M5RescueStartCliffe = [
-			"player/survivor/voice/cliffe/worldc5m5b14.wav",  //THERE'S THE COPTER!
-			"player/survivor/voice/cliffe/world423.wav",  //Chopper looks fixed! Let's go!
-			"player/survivor/voice/cliffe/world426.wav",  //Chopper's starting let's go!
-			"player/survivor/voice/cliffe/world427.wav"  //To the shipyard!
-		],
-		C5M5RunToHeliCliffe = [
-			"player/survivor/voice/cliffe/world424.wav",  //To the chopper!
-			"player/survivor/voice/cliffe/world425.wav",  //Get to the chopper!
-			"player/survivor/voice/cliffe/world430.wav",  //Just a little more!
-			"player/survivor/voice/cliffe/worldc5m5b15.wav"  //GET TO THE COPTER!
-		],
-		C5M5InsideHeliCliffe = [
-			"player/survivor/voice/cliffe/world428.wav",  //Get on!
-			"player/survivor/voice/cliffe/world429.wav"  //Come on, you can make it!
-		],
-		C5M5BridgeDestroyed2Cliffe = [
-			"player/survivor/voice/cliffe/worldc5m510.wav"  //Holy shit! There's the end!
-		],
-		C5M5SurvivorVocalizeLookOutCliffe = [
-			"player/survivor/voice/cliffe/world411.wav",  //Watch out for the hole.
-			"player/survivor/voice/cliffe/world412.wav",  //Watch out for Chargers on these ledges.
-			"player/survivor/voice/cliffe/world413.wav",  //Keep moving across the bridge.
-			"player/survivor/voice/cliffe/world414.wav",  //Watch out for Chargers on these ledges.
-			"player/survivor/voice/cliffe/world416.wav"  //Watch your step.
-		],
-		C5M5SpottedTankCliffe = [
-			"player/survivor/voice/cliffe/world418.wav"  //Watch out for CARS!
-		],
-		C5M5ReloadingTankCliffe = [
-			"player/survivor/voice/cliffe/world417.wav",  //Don't let the Tank punch you off the bridge!
-			"player/survivor/voice/cliffe/world419.wav"  //Don't get punched off!
-		],
-		PlayerC5M5TruckCliffe = [
-			"player/survivor/voice/cliffe/world420.wav"  //Get on top of the truck!
-		],
-		PlayerKillTankConfirmationC5M5Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m5b51.wav"  //Nice job with the Tank, let's go!
-		],
-		C5M5SafeRoomCliffe = [
-			"player/survivor/voice/cliffe/worldc5m5b01.wav",  //Before we run across this bridge right toward the people who've been dropping bombs on us, anyone wanna talk about a plan b?
-			"player/survivor/voice/cliffe/worldc5m5b01.wav"  //Before we run across this bridge right toward the people who've been dropping bombs on us, anyone wanna talk about a plan b?
-		],
-		C6M1_IntotheparkNoHealthCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_intopark03.wav",  //Grab a health kit.
-			"player/survivor/voice/cliffe/dlc1_c6m1_intopark04.wav",  //Everyone grab a health kit.
-			"player/survivor/voice/cliffe/dlc1_c6m1_intopark05.wav",  //Don't forget a health kit.
-			"player/survivor/voice/cliffe/dlc1_c6m1_intopark06.wav"  //Quick, grab a health kit.
-		],
-		C6M1Intro_01Biker05Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting07.wav"  //I'm telling you for the last goddamn time, lower the goddamn bridge you greasy vest wearing monkey.
-		],
-		C6M1Intro_07bCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting01.wav",  //That guy's no cop.
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting02.wav"  //I'll tell ya something; that guy is no cop.
-		],
-		C6M1Intro_09aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting03.wav"  //Hey! (Realization someone else is alive) HEEEYYY!!
-		],
-		C6M1Intro_09bCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting04.wav"  //Hey! (Realization someone else is alive) HEEEYYY!!
-		],
-		C6M1Intro_09dCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting05.wav",  //What the...
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting06.wav"  //What?
-		],
-		C6M1Intro_10eCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting08.wav",  //Whatever.
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting09.wav",  //Whatever.
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting10.wav",  //Whatever sweety.
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting11.wav",  //Or: I could try is being more attractive to grease ball bikers.
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting12.wav"  //Or: I could try is being more attractive to grease ball bikers.
-		],
-		C6M1Intro_11dCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting13.wav",  //All right.
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting14.wav"  //Yeah, all right.
-		],
-		C6M1Intro_14aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting15.wav"  //Okay, listen to me, jackass, lower the goddamn bridge so we can drive our goddamn car across.
-		],
-		C6M1Intro_14cCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting16.wav",  //(to his group) Do you believe this guy?
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting17.wav"  //(to self) I don't believe this guy.
-		],
-		C6M1Intro_15aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting18.wav"  //That's terrific cupcake, is there a man up there we can talk to?
-		],
-		C6M1Intro_15eCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting19.wav",  //Hey, lighten up. Man, no one can take a joke anymore.
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting20.wav"  //Wouldja  lighten up?  Man, no one can take a joke anymore.
-		],
-		C6M1Intro_16aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting21.wav"  //Well then climb down, you big ape, and help us.
-		],
-		C6M1Intro_ConfirmObjectiveCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting08.wav",  //Whatever.
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting09.wav"  //Whatever.
-		],
-		LeavingC6M1StartCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_intopark02.wav"  //Through this park.
-		],
-		RemWorldC6M1_WeddingWarn02Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_wedding06.wav",  //Coach, no time for cake.
-			"player/survivor/voice/cliffe/dlc1_c6m1_wedding07.wav",  //I'll keep an eye out for some.
-			"player/survivor/voice/cliffe/dlc1_c6m1_wedding08.wav"  //Coach, I'll keep an eye out for some. Okay buddy?
-		],
-		WorldC6M1_HistoricTourCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_historicsign01.wav",  //[reading] "Historic Rayford Under-the-River Tunnel Tour." THAT'll get us across."
-			"player/survivor/voice/cliffe/dlc1_c6m1_historicsign03.wav",  //Look, we can just go under the river. Doesn't that sound fun Ellis?
-			"player/survivor/voice/cliffe/dlc1_c6m1_historicsign04.wav",  //Look, we can just go under the river. Doesn't that sound like fun Ellis?
-			"player/survivor/voice/cliffe/dlc1_c6m1_historicsign05.wav",  //If we can go under the river, we can get to the other side of the bridge.
-			"player/survivor/voice/cliffe/dlc1_c6m1_historicsign06.wav",  //Only in the South do I have to go under a goddamn river.
-			"player/survivor/voice/cliffe/dlc1_c6m1_historicsign07.wav",  //If we can't take the bridge, let's try this under-the-river tour.
-			"player/survivor/voice/cliffe/dlc1_c6m1_historicsign08.wav"  //Okay, explain something to me; how is an under-the-river tour scenic?
-		],
-		WorldC6M1_PostWedding02aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingpostwitch02.wav"  //Marrying her is the last thing you should do.
-		],
-		WorldC6M1_WeddingWarn05aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingpostwitch03.wav",  //Yeah, look Ellis, all women are emotional wrecks who will eventually kill you.
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingpostwitch04.wav"  //Yeah, you're about to get mauled to death.
-		],
-		C6M2_OpenGate1Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_alarmdooropen02.wav",  //I opened it.
-			"player/survivor/voice/cliffe/dlc1_c6m2_bridge1raisehitit01.wav"  //I hit it!
-		],
-		C6M2_OpenGate1aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_bridgecollapse01.wav"  //Ellis, what did you just do?
-		],
-		C6M2_OpenGate2Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_alarmdooropen02.wav",  //I opened it.
-			"player/survivor/voice/cliffe/dlc1_c6m2_bridge1raisehitit03.wav",  //Ahh, Christ, you gotta be kidding me.
-			"player/survivor/voice/cliffe/dlc1_c6m2_bridge1raisehitit06.wav"  //Ahh, COME ON!
-		],
-		DLC1_C6M2_SafeRoomConvoFrancisStartCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo01.wav"  //So we find this historic section. Go under the river. And then we kick that biker dude's ass, right?
-		],
-		DLC1_C6M2_SafeRoomConvo01bCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo02.wav"  //Go to hell.
-		],
-		DLC1_C6M2_SafeRoomConvo02bCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo04.wav"  //I don't have a problem with leaving the car AND you behind. Okay, Ellis?
-		],
-		DLC1_C6M2_SafeRoomConvo06aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo05.wav",  //Boiled nuts? Christ. What is wrong with you Southerners?
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo06.wav",  //Boiled nuts? Coah, come on, what is wrong with you Southerners?
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo07.wav",  //And you want to live?
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo08.wav"  //I hate your life Coach.
-		],
-		DLC1_C6M2_SafeRoomConvo07aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo09.wav"  //I think you had a better chance with that witch.
-		],
-		DLC1_C6M2_SafeRoomConvoStartCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo17.wav",  //So this under-the-river tour, who wants to bet that is going to be filthy.
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo20.wav",  //If anybody sees any hand sanitizer let me know.
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo03.wav"  //I can't believe we're waking this far just to keep a damn car.
-		],
-		DLC1_C6M2_SafeRoomConvo08aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo10.wav",  //What's a matter Rochelle, playing hard to get?
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo11.wav"  //What's a matter sweetie, you playing hard to get?
-		],
-		DLC1_C6M2_SafeRoomConvo08cCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo12.wav",  //I saw the way you were looking at him.
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo13.wav"  //C'mon... I saw the way you were looking at him.
-		],
-		DLC1_C6M2_SafeRoomConvo08eCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo14.wav",  //I don't know... he fills out a vest pretty good.
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo15.wav",  //He could be the one.
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo16.wav"  //Look, there are probably 10 guys left on the planet Rochelle, and you're not getting any younger, sweetie.
-		],
-		DLC1_C6M2_SafeRoomConvo09bCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo18.wav",  //A germ just wiped out the whole planet, Coach. So yes.
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo19.wav"  //Coach, A germ just wiped out the whole planet. So yes.
-		],
-		DLC1_C6M2_SafeRoomConvoZoeyStartCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo23.wav"  //So Ellis, Zoey huh? What do you think?
-		],
-		DLC1_C6M2_SafeRoomConvo10bCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo21.wav"  //Yeah, hahaha a little bit more hand sanitizer and we wouldn't be in this mess.
-		],
-		DLC1_C6M2_SafeRoomConvo10dCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo22.wav"  //Under the what now?
-		],
-		DLC1_C6M2_SafeRoomConvo11bCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo24.wav"  //Yeah agreed, she is totally out of your league.
-		],
-		DLC1_C6M2_SafeRoomConvo12aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo25.wav",  //Okay, let me get this straight. It's a tunnel... under the river. Right?
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo26.wav"  //Let me get this straight, Coach. It's a tunnel... under the river. Right?
-		],
-		DLC1_C6M2_SafeRoomConvo12cCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo27.wav",  //And this is supposed to teach me about what exactly?
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo28.wav"  //And this is supposed to teach me about what exactly?
-		],
-		DLC1_C6M2_SafeRoomConvo13aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo29.wav"  //I am not looking forward to this under the river tour.
-		],
-		DLC1_C6M2_SafeRoomConvo13cCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo30.wav"  //Coach, it's a hole. Oh no, excuse me, an historic hole. Under a river.
-		],
-		DLC1_C6M2_SafeRoomConvo13cFrancisIntroCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo32.wav"  //Okay, good point. You know what? I am looking forward to punching that grease bag biker in the mouth.
-		],
-		DLC1_C6M2_SafeRoomConvo14fCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo31.wav"  //Yeah, no, I'm good, I'm good.
-		],
-		DLC1_C6M2_SafeRoomConvo15cCliffe = [
-			"player/survivor/voice/cliffe/youarewelcomec104.wav"  //Whatever.
-		],
-		WorldC6M2_AfterGate201aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_inwaterfindladder12.wav",  //Not the time, Ellis.
-			"player/survivor/voice/cliffe/dlc1_c6m2_inwaterfindladder13.wav"  //Not the time, Ellis.
-		],
-		WorldC6M2_FinalWater01aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_finalwater02.wav"  //I hate you, Ellis!
-		],
-		WorldC6M2_InSewer101cCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater01.wav"  //Ellis. I NEED this.
-		],
-		WorldC6M2_InSewer102bCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater08.wav"  //YES.
-		],
-		WorldC6M2_InSewer201aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater10.wav"  //Don't you DARE.
-		],
-		WorldC6M2_InSewer202aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater14.wav",  //Ugh, ugh
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater15.wav",  //Ugh
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater17.wav",  //Ugh
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater18.wav"  //Ugh, ugh
-		],
-		WorldC6M2_InSewerLadder101aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater19.wav"  //Bad advice. BAD advice.
-		],
-		WorldC6M2_OnTourWalk101aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_historictour06.wav"  //Shithole?
-		],
-		WorldC6M2_OnTourWalk102aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_historictour07.wav"  //Toldja.
-		],
-		WorldC6M2_Tattoo01bCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_tattoo06.wav",  //I'll just write greasy pig. We'll all know who we are talking about.
-			"player/survivor/voice/cliffe/dlc1_c6m2_tattoo08.wav",  //I'll just write greasy pig, we all...(laughs)
-			"player/survivor/voice/cliffe/dlc1_c6m2_tattoo09.wav",  //Greasy pig should be close enough, right?
-			"player/survivor/voice/cliffe/dlc1_c6m2_tattoo10.wav"  //I'll just write greasy pig. We'll all know who we are talking about.
-		],
-		WorldC6M2_Tattoo03aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_tattoo11.wav",  //That is never going to happen, Ellis.
-			"player/survivor/voice/cliffe/dlc1_c6m2_tattoo12.wav"  //I'm gonna get a tattoo that says "no".
-		],
-		C6M3_BridgeDownCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalebridgerun02.wav",  //Bridge is down, to the car!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalebridgerun02.wav"  //Bridge is down, to the car!
-		],
-		C6M3_BridgeGettoCarCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalebridgerun01.wav",  //Everyone to the car!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalebridgerun04.wav",  //GET TO THE CAR, GET TO THE CAR!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalebridgerun04.wav"  //GET TO THE CAR, GET TO THE CAR!
-		],
-		C6M3_elevatorCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_elevator03.wav",  //First we fill up Gibby's car with gas, now a generator, what next? Don't answer, Ellis.
-			"player/survivor/voice/cliffe/dlc1_c6m3_elevator04.wav",  //Let's get these cans fast.
-			"player/survivor/voice/cliffe/dlc1_c6m3_elevator05.wav"  //Let's not piss around here, alright? Gas up the generator, let's get out of here.
-		],
-		C6M3_elevatorFrancisCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_elevator02.wav",  //I guess they'll help. Right?
-			"player/survivor/voice/cliffe/dlc1_c6m3_elevator01.wav"  //The minute we get down there, I'm shooting that biker.
-		],
-		C6M3_GivenItemBikerCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1items01.wav",  //Shit, thanks!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1items03.wav",  //Sorry if I was rude before. You guys are all right!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1items05.wav",  //Thanks, greaseball!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1items07.wav"  //Thanks, pal!
-		],
-		C6M3_GivenItemTeenGirlCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1items02.wav",  //Thanks, we'll make good use of this.
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1items06.wav",  //Hey thanks, babe!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1items08.wav"  //Got it, thank you!
-		],
-		DLC1_C6M3_SafeRoomConvoFrancisStartCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_saferoomconvo01.wav"  //I don't trust that biker. He better still be here.
-		],
-		DLC1_C6M3_SafeRoomConvo02bCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_saferoomconvo02.wav",  //You know him that well?
-			"player/survivor/voice/cliffe/dlc1_c6m3_saferoomconvo04.wav"  //You know him that well?
-		],
-		DLC1_C6M3_SafeRoomConvo02dCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_saferoomconvo03.wav"  //You got a good feeling about every scumbag that lives on a bridge.
-		],
-		DLC1_C6M3_SafeRoomConvo03bCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_saferoomconvo05.wav"  //Like you've been crawling through a sewer.
-		],
-		DLC1_C6M3_SafeRoomConvo03dCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_saferoomconvo06.wav",  //I'm not even going to look.
-			"player/survivor/voice/cliffe/dlc1_c6m3_saferoomconvo07.wav"  //I'm not even going to look, Ellis.
-		],
-		DLC1_C6M3_SafeRoomConvo04cCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_saferoomconvo09.wav"  //Don't listen to her. You got five minutes to get this done, Ellis. It is do or die time, buddy.
-		],
-		DLC1_C6M3_SafeRoomConvoZoeyStartCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_saferoomconvo08.wav"  //So we're about to see that girl again, what's her name? Zoey?
-		],
-		DLC1_C6M3_SafeRoomConvo05bCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_saferoomconvo10.wav",  //What are you nervous about? You had your chance, you didn't do shit. Now you can watch Nick take care of business.
-			"player/survivor/voice/cliffe/dlc1_c6m3_saferoomconvo11.wav"  //What are you nervous about? You had your chance, you didn't do shit. Now you can watch Nick take care of business.
-		],
-		DLC1_C6M3_SafeRoomConvo05dCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_saferoomconvo12.wav",  //What? I'm a handsome man.
-			"player/survivor/voice/cliffe/dlc1_c6m3_saferoomconvo13.wav",  //What? I'm a closer.
-			"player/survivor/voice/cliffe/dlc1_c6m3_saferoomconvo14.wav",  //What? I'm a handsome man, what can I tell ya?
-			"player/survivor/voice/cliffe/dlc1_c6m3_saferoomconvo15.wav"  //A-B-C. A;ways be closing.
-		],
-		IncapBounceCliffe = [
-			"player/survivor/voice/cliffe/blank.wav"  //
-		],
-		c6m3_outroCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalecinematic02.wav",  //I hope those three are gonna be okay.
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalecinematic04.wav"  //Next stop: New Orleans!
-		],
-		c6m3_outroEllisCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalecinematic01.wav"  //Hit it, Ellis!
-		],
-		c6m3_outroZoeyOutroCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalecinematic03.wav",  //Don't worry, Ellis, plenty of fish in the sea.
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalecinematic05.wav"  //Ellis, don't worry. Plenty of fish in the sea.
-		],
-		SurvivorSpotFirstWeaponsCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b126.wav",  //Grab something, I got a feeling this isn't going to be easy.
-			"player/survivor/voice/cliffe/worldc1m1b127.wav",  //Let's stick together at least until we get downstairs.
-			"player/survivor/voice/cliffe/worldc1m1b128.wav",  //We better arm ourselves. I hope you three know how to fight. You don't look it.
-			"player/survivor/voice/cliffe/worldc1m1b129.wav",  //If the world's going to hell, I'm taking a weapon.
-			"player/survivor/voice/cliffe/worldc1m1b130.wav",  //Everybody grab a weapon. I get the feeling we're gonna need 'em.
-			"player/survivor/voice/cliffe/worldc1m1b132.wav",  //Any of you packing a gun?
-			"player/survivor/voice/cliffe/worldc1m1b133.wav"  //Any of you packing a gun?
-		],
-		SurvivorSpottedAdrenalineCliffe = [
-			"player/survivor/voice/cliffe/adrenaline01.wav"  //Adrenaline shot here!
-		],
-		SurvivorSpottedAmmoCliffe = [
-			"player/survivor/voice/cliffe/spotammo01.wav",  //Ammo here!
-			"player/survivor/voice/cliffe/spotammo02.wav",  //Ammo here!
-			"player/survivor/voice/cliffe/spotammo03.wav",  //Ammo!
-			"player/survivor/voice/cliffe/spotammo04.wav",  //Ammo here!
-			"player/survivor/voice/cliffe/spotammo05.wav"  //Ammo!
-		],
-		SurvivorSpottedAmmo2Cliffe = [
-			"player/survivor/voice/cliffe/spotammo03.wav",  //Ammo!
-			"player/survivor/voice/cliffe/spotammo05.wav"  //Ammo!
-		],
-		SurvivorSpottedCoachCloseCliffe = [
-			"player/survivor/voice/cliffe/namecoach05.wav",  //Coach.
-			"player/survivor/voice/cliffe/namecoach11.wav",  //Coach.
-			"player/survivor/voice/cliffe/namecoach12.wav"  //Coach.
-		],
-		SurvivorSpottedCoachClose2C1Cliffe = [
-			"player/survivor/voice/cliffe/namecoach02.wav",  //Coach!
-			"player/survivor/voice/cliffe/namecoach03.wav",  //Coach!
-			"player/survivor/voice/cliffe/namecoach04.wav"  //Coach.
-		],
-		SurvivorSpottedCoachFarCliffe = [
-			"player/survivor/voice/cliffe/namecoach01.wav",  //Coach!
-			"player/survivor/voice/cliffe/namecoach02.wav",  //Coach!
-			"player/survivor/voice/cliffe/namecoach06.wav"  //Coach!
-		],
-		SurvivorSpottedCoachFarC1Cliffe = [
-			"player/survivor/voice/cliffe/namecoach01.wav",  //Coach!
-			"player/survivor/voice/cliffe/namecoach06.wav",  //Coach!
-			"player/survivor/voice/cliffe/namecoach07.wav"  //Coach!
-		],
-		SurvivorSpottedDefibrillatorCliffe = [
-			"player/survivor/voice/cliffe/defibrillator01.wav",  //Chest paddles here.
-			"player/survivor/voice/cliffe/defibrillator02.wav",  //Defibrillator here.
-			"player/survivor/voice/cliffe/defibrillator04.wav"  //Defib unit here.
-		],
-		SurvivorSpottedGrenadeCliffe = [
-			"player/survivor/voice/cliffe/spotgrenades01.wav",  //There's a pipebomb here.
-			"player/survivor/voice/cliffe/spotgrenades02.wav",  //Pipe bomb.
-			"player/survivor/voice/cliffe/spotgrenades03.wav",  //Pipe bombs!
-			"player/survivor/voice/cliffe/spotgrenades05.wav"  //Pipebomb here.
-		],
-		SurvivorSpottedGrenadeLauncherCliffe = [
-			"player/survivor/voice/cliffe/grenadelauncher01.wav",  //Grenade launcher here.
-			"player/survivor/voice/cliffe/grenadelauncher04.wav"  //Got a grenade launcher.
-		],
-		SurvivorSpottedHealthCliffe = [
-			"player/survivor/voice/cliffe/spotfirstaid01.wav",  //First Aid Kit here!
-			"player/survivor/voice/cliffe/spotfirstaid02.wav",  //First Aid here!
-			"player/survivor/voice/cliffe/spotfirstaid03.wav"  //First Aid!
-		],
-		SurvivorSpottedMechanicCloseCliffe = [
-			"player/survivor/voice/cliffe/nameellis02.wav",  //Ellis.
-			"player/survivor/voice/cliffe/nameellis03.wav",  //Ellis!
-			"player/survivor/voice/cliffe/nameellis05.wav",  //Ellis.
-			"player/survivor/voice/cliffe/nameellis06.wav",  //Ellis!
-			"player/survivor/voice/cliffe/nameellis08.wav",  //Ellis.
-			"player/survivor/voice/cliffe/nameellis11.wav",  //Ellis.
-			"player/survivor/voice/cliffe/nameellis12.wav"  //Ellis.
-		],
-		SurvivorSpottedMechanicClose2Cliffe = [
-			"player/survivor/voice/cliffe/nameellis02.wav",  //Ellis.
-			"player/survivor/voice/cliffe/nameellis03.wav",  //Ellis!
-			"player/survivor/voice/cliffe/nameellis05.wav",  //Ellis.
-			"player/survivor/voice/cliffe/nameellis06.wav",  //Ellis!
-			"player/survivor/voice/cliffe/nameellis08.wav",  //Ellis.
-			"player/survivor/voice/cliffe/nameellis11.wav",  //Ellis.
-			"player/survivor/voice/cliffe/nameellis12.wav"  //Ellis.
-		],
-		SurvivorSpottedMechanicClose2C1Cliffe = [
-			"player/survivor/voice/cliffe/namemechanicc104.wav",  //Dude.
-			"player/survivor/voice/cliffe/namemechanicc106.wav",  //hey kid.
-			"player/survivor/voice/cliffe/namemechanicc107.wav",  //Kid.
-			"player/survivor/voice/cliffe/namemechanicc108.wav",  //Kid.
-			"player/survivor/voice/cliffe/namemechanicc109.wav",  //Kid.
-			"player/survivor/voice/cliffe/namemechanicc110.wav",  //Kid.
-			"player/survivor/voice/cliffe/namemechanicc111.wav",  //Kid.
-			"player/survivor/voice/cliffe/nameellis15.wav",  //Goober.
-			"player/survivor/voice/cliffe/nameellis17.wav",  //Cleetus.
-			"player/survivor/voice/cliffe/nameellis21.wav",  //Cooter.
-			"player/survivor/voice/cliffe/nameellis22.wav",  //Cooter.
-			"player/survivor/voice/cliffe/nameellis24.wav",  //Overalls.
-			"player/survivor/voice/cliffe/nameellis25.wav"  //Overalls.
-		],
-		SurvivorSpottedMechanicFarCliffe = [
-			"player/survivor/voice/cliffe/nameellis04.wav"  //Ellis!
-		],
-		SurvivorSpottedMechanicFarC1Cliffe = [
-			"player/survivor/voice/cliffe/namemechanicc101.wav",  //Dude.
-			"player/survivor/voice/cliffe/namemechanicc102.wav",  //Dude.
-			"player/survivor/voice/cliffe/namemechanicc103.wav",  //Dude.
-			"player/survivor/voice/cliffe/namemechanicc105.wav",  //Kid.
-			"player/survivor/voice/cliffe/nameellis16.wav",  //Goober.
-			"player/survivor/voice/cliffe/nameellis18.wav",  //Cleetus.
-			"player/survivor/voice/cliffe/nameellis19.wav"  //Cleetus.
-		],
-		SurvivorSpottedMolotovCliffe = [
-			"player/survivor/voice/cliffe/spotgrenades06.wav",  //Molotov!
-			"player/survivor/voice/cliffe/spotgrenades07.wav",  //Molotov here.
-			"player/survivor/voice/cliffe/spotgrenades08.wav",  //Molotovs!
-			"player/survivor/voice/cliffe/spotgrenades09.wav"  //Molotovs!
-		],
-		SurvivorSpottedPillsCliffe = [
-			"player/survivor/voice/cliffe/spotpills01.wav",  //Pills here!
-			"player/survivor/voice/cliffe/spotpills03.wav",  //Pills here!
-			"player/survivor/voice/cliffe/spotpills04.wav"  //Pills here!
-		],
-		SurvivorSpottedPillsAutoHasPillsCliffe = [
-			"player/survivor/voice/cliffe/spotpills02.wav",  //We got pills here!
-			"player/survivor/voice/cliffe/spotpills05.wav"  //We got pills here!
-		],
-		SurvivorSpottedProducerCloseCliffe = [
-			"player/survivor/voice/cliffe/namerochelle03.wav",  //Rochelle.
-			"player/survivor/voice/cliffe/namerochelle04.wav",  //Ro.
-			"player/survivor/voice/cliffe/namerochelle07.wav",  //Ro.
-			"player/survivor/voice/cliffe/namerochelle08.wav",  //Ro.
-			"player/survivor/voice/cliffe/namerochelle09.wav",  //Rochelle.
-			"player/survivor/voice/cliffe/namerochelle10.wav",  //Rochelle.
-			"player/survivor/voice/cliffe/namerochelle11.wav"  //Ro!
-		],
-		SurvivorSpottedProducerClose2C1Cliffe = [
-			"player/survivor/voice/cliffe/nameproducerc101.wav",  //Hey you.
-			"player/survivor/voice/cliffe/nameproducerc102.wav",  //Hey sweetheart.
-			"player/survivor/voice/cliffe/nameproducerc105.wav",  //Hey honey.
-			"player/survivor/voice/cliffe/nameproducerc107.wav",  //Hey sweetie.
-			"player/survivor/voice/cliffe/nameproducerc109.wav",  //Sweetheart.
-			"player/survivor/voice/cliffe/nameproducerc110.wav",  //Hey you.
-			"player/survivor/voice/cliffe/nameproducerc111.wav",  //Hey sweetie.
-			"player/survivor/voice/cliffe/nameproducerc112.wav",  //Hey you.
-			"player/survivor/voice/cliffe/nameproducerc113.wav",  //Sweetie.
-			"player/survivor/voice/cliffe/nameproducerc114.wav"  //Hey honey.
-		],
-		SurvivorSpottedProducerFarCliffe = [
-			"player/survivor/voice/cliffe/namerochelle01.wav",  //Rochelle!
-			"player/survivor/voice/cliffe/namerochelle05.wav",  //Ro!
-			"player/survivor/voice/cliffe/namerochelle12.wav"  //Rochelle!
-		],
-		SurvivorSpottedProducerFarC1Cliffe = [
-			"player/survivor/voice/cliffe/nameproducerc101.wav",  //Hey you.
-			"player/survivor/voice/cliffe/nameproducerc108.wav",  //Sweetie.
-			"player/survivor/voice/cliffe/nameproducerc111.wav"  //Hey sweetie.
-		],
-		SurvivorSpottedUpPack_ExplosiveCliffe = [
-			"player/survivor/voice/cliffe/explosiveammo01.wav",  //Explosive rounds here!
-			"player/survivor/voice/cliffe/explosiveammo02.wav"  //Frag rounds here!
-		],
-		SurvivorSpottedUpPack_IncendiaryCliffe = [
-			"player/survivor/voice/cliffe/incendammo01.wav"  //Fire bullets here!
-		],
-		SurvivorSpottedVomitJarCliffe = [
-			"player/survivor/voice/cliffe/boomerjar01.wav"  //Boomer bile here!
-		],
-		SurvivorSpottedVomitJarAutoC1Cliffe = [
-			"player/survivor/voice/cliffe/boomerjar02.wav",  //Is that a bottle of puke?
-			"player/survivor/voice/cliffe/boomerjar03.wav"  //That can't be a bottle of puke, is it?
-		],
-		SurvivorSpottedWorldCloseCliffe = [
-			"player/survivor/voice/cliffe/lookhere01.wav",  //Check it out.
-			"player/survivor/voice/cliffe/lookhere02.wav",  //Look here.
-			"player/survivor/voice/cliffe/lookhere03.wav",  //Look at this.
-			"player/survivor/voice/cliffe/lookhere04.wav",  //Check it out.
-			"player/survivor/voice/cliffe/lookhere05.wav",  //Look here.
-			"player/survivor/voice/cliffe/lookhere06.wav"  //Look at this.
-		],
-		SurvivorSpottedArmoredC5M1Cliffe = [
-			"player/survivor/voice/cliffe/seearmored01.wav",  //Those zombies are wearing armor?
-			"player/survivor/voice/cliffe/seearmored02.wav"  //Those zombies are wearing armor!
-		],
-		SurvivorSpottedArmoredCliffe = [
-			"player/survivor/voice/cliffe/seearmored03.wav"  //Shoot the armored zombies in the back!
-		],
-		SurvivorSpottedBoomerCliffe = [
-			"player/survivor/voice/cliffe/warnboomer01.wav",  //BOOMER!
-			"player/survivor/voice/cliffe/warnboomer02.wav",  //WE GOT A BOOMER!
-			"player/survivor/voice/cliffe/warnboomer03.wav",  //BOOMER!
-			"player/survivor/voice/cliffe/warnboomer04.wav",  //BOOMER!
-			"player/survivor/voice/cliffe/warnboomer05.wav",  //BOOMER!
-			"player/survivor/voice/cliffe/warnboomer06.wav"  //WE GOT A BOOMER!
-		],
-		SurvivorSpottedBoomerC1M1Cliffe = [
-			"player/survivor/voice/cliffe/warnboomerc101.wav",  //Fat guy!
-			"player/survivor/voice/cliffe/warnboomerc102.wav",  //Goiter man!
-			"player/survivor/voice/cliffe/warnboomerc103.wav",  //Aunt bee.
-			"player/survivor/voice/cliffe/warnboomerc104.wav",  //Fatty!
-			"player/survivor/voice/cliffe/warnboomerc105.wav",  //Fat guy!
-			"player/survivor/voice/cliffe/worldc1m1b71.wav",  //Watch out for the... the big fat thing!
-			"player/survivor/voice/cliffe/worldc1m1b72.wav"  //It's the fat barf-bag!
-		],
-		SurvivorSpottedBoomerC1M1CoachCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b01.wav"  //Hey, football man...this a relative of yours?
-		],
-		SurvivorSpottedBoomerC1M2Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b73.wav"  //That's what they call a boomer...
-		],
-		SurvivorSpottedCedaCliffe = [
-			"player/survivor/voice/cliffe/seehazmat01.wav",  //Hazmat guys!
-			"player/survivor/voice/cliffe/seehazmat03.wav"  //Are those guys fireproof?
-		],
-		SurvivorSpottedCedaC1M1Cliffe = [
-			"player/survivor/voice/cliffe/seehazmat02.wav"  //Guess those suits don't stop bites.
-		],
-		SurvivorSpottedChargerCliffe = [
-			"player/survivor/voice/cliffe/warncharger01.wav",  //CHARGER!
-			"player/survivor/voice/cliffe/warncharger02.wav",  //WE GOT A CHARGER!
-			"player/survivor/voice/cliffe/warncharger03.wav",  //CHARGER!
-			"player/survivor/voice/cliffe/warncharger04.wav"  //CHARGER!
-		],
-		SurvivorSpottedChargerC1M1Cliffe = [
-			"player/survivor/voice/cliffe/warnchargerc101.wav",  //One Arm!
-			"player/survivor/voice/cliffe/warnchargerc102.wav",  //Overalls!
-			"player/survivor/voice/cliffe/warnchargerc103.wav",  //Hillbilly!
-			"player/survivor/voice/cliffe/worldc1m1b76.wav"  //It's that thing that runs at ya!
-		],
-		SurvivorSpottedChargerC1M2Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b77.wav"  //I'm guessin' that's a Charger.
-		],
-		SurvivorSpottedClownC2M2Cliffe = [
-			"player/survivor/voice/cliffe/seeclowns01.wav"  //That squeaking is driving the zombies crazy!
-		],
-		SurvivorSpottedClownCliffe = [
-			"player/survivor/voice/cliffe/seeclowns02.wav",  //Kill the clown!
-			"player/survivor/voice/cliffe/seeclowns03.wav",  //Kill the clown, he's attracting more zombies!
-			"player/survivor/voice/cliffe/seeclowns04.wav",  //Kill every clown you see!
-			"player/survivor/voice/cliffe/seeclowns05.wav"  //Shoot the clown!
-		],
-		SurvivorSpottedFallenCliffe = [
-			"player/survivor/voice/cliffe/dlc1_fallensurvior01.wav",  //Kill that zombie, he's got something!
-			"player/survivor/voice/cliffe/dlc1_fallensurvior02.wav",  //That zombie's got something! Kill it!
-			"player/survivor/voice/cliffe/dlc1_fallensurvior03.wav",  //Get that zombie! He's got something!
-			"player/survivor/voice/cliffe/dlc1_fallensurvior05.wav",  //What's that zombie got?
-			"player/survivor/voice/cliffe/dlc1_fallensurvior06.wav",  //I think that zombie's got something!
-			"player/survivor/voice/cliffe/dlc1_fallensurvior07.wav",  //That zombie's got something!
-			"player/survivor/voice/cliffe/seefallen02.wav"  //Is that a survivor?
-		],
-		SurvivorSpottedHunterCliffe = [
-			"player/survivor/voice/cliffe/warnhunter01.wav",  //WE GOT A HUNTER!
-			"player/survivor/voice/cliffe/warnhunter02.wav",  //HUNTER!
-			"player/survivor/voice/cliffe/warnhunter03.wav",  //HUNTER!
-			"player/survivor/voice/cliffe/warnhunter04.wav",  //HUNTER!
-			"player/survivor/voice/cliffe/warnhunter05.wav"  //WE GOT A HUNTER!
-		],
-		SurvivorSpottedHunterC1M1Cliffe = [
-			"player/survivor/voice/cliffe/warnhunterc101.wav",  //Jumper!
-			"player/survivor/voice/cliffe/warnhunterc102.wav",  //Leaper!
-			"player/survivor/voice/cliffe/warnhunterc103.wav",  //Scrawny little bitch I'm gonna kill.
-			"player/survivor/voice/cliffe/worldc1m1b74.wav"  //It's that fast bastard that jumps at ya!
-		],
-		SurvivorSpottedHunterC1M2Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b75.wav"  //I think they call those things Hunters!
-		],
-		SurvivorSpottedInfectedCliffe = [
-			"player/survivor/voice/cliffe/incoming01.wav",  //This is why we've got guns!
-			"player/survivor/voice/cliffe/incoming02.wav",  //It's about to get serious!
-			"player/survivor/voice/cliffe/incoming03.wav",  //We got inbound!
-			"player/survivor/voice/cliffe/incoming04.wav",  //They're coming!
-			"player/survivor/voice/cliffe/incoming05.wav",  //Here they come!
-			"player/survivor/voice/cliffe/incoming06.wav",  //God damn, it's gettin' good.
-			"player/survivor/voice/cliffe/incoming07.wav",  //They're coming!
-			"player/survivor/voice/cliffe/incoming08.wav"  //Get ready!
-		],
-		SurvivorSpottedJimmyCliffe = [
-			"player/survivor/voice/cliffe/reactionnegative07.wav",  //Holy Shit!
-			"player/survivor/voice/cliffe/worldc2m1b03.wav"  //God DAMN you, Jimmy Gibbs, Jr.
-		],
-		SurvivorSpottedJockeyCliffe = [
-			"player/survivor/voice/cliffe/warnjockey01.wav",  //Jockey!
-			"player/survivor/voice/cliffe/warnjockey02.wav",  //Jockey!
-			"player/survivor/voice/cliffe/warnjockey03.wav"  //Jockey!
-		],
-		SurvivorSpottedJockeyC1M1Cliffe = [
-			"player/survivor/voice/cliffe/warnjockeyc101.wav",  //Little guy!
-			"player/survivor/voice/cliffe/warnjockeyc102.wav",  //Little freak!
-			"player/survivor/voice/cliffe/warnjockeyc103.wav"  //Little guy!
-		],
-		SurvivorSpottedJockeyC1M2Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b80.wav",  //It's that little Jockey bastard!
-			"player/survivor/voice/cliffe/worldc1m1b81.wav"  //I think they're called Jockeys!
-		],
-		SurvivorSpottedMudmenCliffe = [
-			"player/survivor/voice/cliffe/seemudmen01.wav",  //Mudders!
-			"player/survivor/voice/cliffe/seemudmen02.wav",  //Mudders!
-			"player/survivor/voice/cliffe/seemudmen03.wav",  //Watch out, Mudmen!
-			"player/survivor/voice/cliffe/seemudmen04.wav"  //Mudders!
-		],
-		SurvivorSpottedMudmen2Cliffe = [
-			"player/survivor/voice/cliffe/worldc3m201.wav"  //Screw these goddamn mud people.
-		],
-		SurvivorSpottedSmokerCliffe = [
-			"player/survivor/voice/cliffe/warnsmoker01.wav",  //WE GOT A SMOKER!
-			"player/survivor/voice/cliffe/warnsmoker02.wav",  //SMOKER!
-			"player/survivor/voice/cliffe/warnsmoker03.wav",  //SMOKER!
-			"player/survivor/voice/cliffe/warnsmoker04.wav"  //SMOKER!
-		],
-		SurvivorSpottedSmokerC1Cliffe = [
-			"player/survivor/voice/cliffe/warnsmokerc101.wav",  //TONGUE!
-			"player/survivor/voice/cliffe/warnsmokerc102.wav"  //The smoking thing!
-		],
-		SurvivorSpottedSpitterCliffe = [
-			"player/survivor/voice/cliffe/warnspitter01.wav",  //Spitter
-			"player/survivor/voice/cliffe/warnspitter02.wav",  //Spitter
-			"player/survivor/voice/cliffe/warnspitter03.wav"  //We got a spitter
-		],
-		SurvivorSpottedSpitterC1M1Cliffe = [
-			"player/survivor/voice/cliffe/warnspitterc101.wav",  //Green thing!
-			"player/survivor/voice/cliffe/warnspitterc102.wav",  //Neck!
-			"player/survivor/voice/cliffe/worldc1m1b78.wav"  //It's that bug-spitting bitch...
-		],
-		SurvivorSpottedSpitterC1M2Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b79.wav"  //They've been calling those things Spitters!
-		],
-		SurvivorSpottedTankCliffe = [
-			"player/survivor/voice/cliffe/heardhulk01.wav",  //Tank! Tank!
-			"player/survivor/voice/cliffe/heardhulk02.wav",  //Tank inbound!
-			"player/survivor/voice/cliffe/heardhulk03.wav",  //Man up!  We got a Tank!
-			"player/survivor/voice/cliffe/heardhulk04.wav",  //Get ready,  we got a TANK!
-			"player/survivor/voice/cliffe/heardhulk05.wav",  //Hold steady, TANK!
-			"player/survivor/voice/cliffe/heardhulk06.wav",  //Get ready, TANK!
-			"player/survivor/voice/cliffe/warntank01.wav",  //WE GOT A TANK!
-			"player/survivor/voice/cliffe/warntank02.wav",  //TANK!
-			"player/survivor/voice/cliffe/warntank03.wav",  //TANK!
-			"player/survivor/voice/cliffe/warntank04.wav"  //TANK!
-		],
-		SurvivorSpottedTankC1Cliffe = [
-			"player/survivor/voice/cliffe/warntankc101.wav",  //We have a problem!
-			"player/survivor/voice/cliffe/warntankc102.wav",  //HOLY SHIT! BIG FREAKING ZOMBIE!
-			"player/survivor/voice/cliffe/warntankc103.wav",  //We have a problem!
-			"player/survivor/voice/cliffe/warntankc104.wav"  //HOLY SHIT! BIG FREAKING ZOMBIE!
-		],
-		SurvivorSpottedWitchCliffe = [
-			"player/survivor/voice/cliffe/warnwitch01.wav",  //We got a witch.
-			"player/survivor/voice/cliffe/warnwitch02.wav",  //Witch.
-			"player/survivor/voice/cliffe/warnwitch03.wav",  //Witch.
-			"player/survivor/voice/cliffe/warnwitch04.wav"  //Witch.
-		],
-		SurvivorSpottedWitchC1Cliffe = [
-			"player/survivor/voice/cliffe/heardtanklc103.wav"  //Maybe if we don't move, it won't see us.
-		],
-		SurvivorSpottedWitch2C1Cliffe = [
-			"player/survivor/voice/cliffe/heardtanklc103.wav"  //Maybe if we don't move, it won't see us.
-		],
-		PlayerAlertGiveItemCliffe = [
-			"player/survivor/voice/cliffe/alertgiveitem01.wav",  //It is more blessed to give than to receive.
-			"player/survivor/voice/cliffe/alertgiveitem02.wav",  //Have this.
-			"player/survivor/voice/cliffe/alertgiveitem03.wav",  //Just take this.
-			"player/survivor/voice/cliffe/alertgiveitem04.wav",  //This is for you.
-			"player/survivor/voice/cliffe/alertgiveitem05.wav",  //Here, I don't need this.
-			"player/survivor/voice/cliffe/alertgiveitem06.wav"  //Take it, just take it.
-		],
-		PlayerAlertGiveItemC1Cliffe = [
-			"player/survivor/voice/cliffe/alertgiveitemc101.wav",  //Hey you, take this.
-			"player/survivor/voice/cliffe/alertgiveitemc102.wav"  //What's your name, here you go.
-		],
-		PlayerAlertGiveItemCombatCliffe = [
-			"player/survivor/voice/cliffe/alertgiveitemcombat01.wav",  //Take this.
-			"player/survivor/voice/cliffe/alertgiveitemcombat02.wav",  //Grab this.
-			"player/survivor/voice/cliffe/alertgiveitemcombat03.wav"  //Take it.
-		],
-		PlayerFriendlyFireCliffe = [
-			"player/survivor/voice/cliffe/friendlyfire02.wav",  //I don't want to hear any excuses, just stop shooting me.
-			"player/survivor/voice/cliffe/friendlyfire03.wav",  //STOP SHOOTING ME!
-			"player/survivor/voice/cliffe/friendlyfire04.wav",  //Can you stop shooting me?
-			"player/survivor/voice/cliffe/friendlyfire05.wav",  //You know, ot's not all right that you are SHOOTING ME!
-			"player/survivor/voice/cliffe/friendlyfire06.wav",  //DAMN! You suck at shooting.
-			"player/survivor/voice/cliffe/friendlyfire07.wav",  //Stop shooting me.
-			"player/survivor/voice/cliffe/friendlyfire08.wav",  //Well thank you for ventilating my suit.
-			"player/survivor/voice/cliffe/friendlyfire09.wav",  //You. Are. Shooting. Me.
-			"player/survivor/voice/cliffe/friendlyfire10.wav",  //You do realize you are shooting me right?
-			"player/survivor/voice/cliffe/friendlyfire11.wav",  //Shoot me again. Shoot me again, I dare you.
-			"player/survivor/voice/cliffe/friendlyfire12.wav",  //You want to watch where you're shooting?
-			"player/survivor/voice/cliffe/friendlyfire14.wav",  //Let's not mess this up by shooting each other, okay?
-			"player/survivor/voice/cliffe/friendlyfire15.wav",  //Can we not shoot each other?
-			"player/survivor/voice/cliffe/friendlyfire16.wav",  //Question: Can we not shoot each other?
-			"player/survivor/voice/cliffe/friendlyfire17.wav",  //You're shooting me again.
-			"player/survivor/voice/cliffe/friendlyfire18.wav",  //You shoot me again, and I will drop you.
-			"player/survivor/voice/cliffe/friendlyfire19.wav",  //Shoot me again, I'll drop you.
-			"player/survivor/voice/cliffe/friendlyfire20.wav",  //Are you really going to shoot a guy in a $3000 suit?  Come on!
-			"player/survivor/voice/cliffe/friendlyfire21.wav",  //Are you really going to shoot a guy in a $3000 suit?  Come on!
-			"player/survivor/voice/cliffe/friendlyfire22.wav",  //Stop shooting me.
-			"player/survivor/voice/cliffe/friendlyfire23.wav",  //Do not shoot me.
-			"player/survivor/voice/cliffe/friendlyfire24.wav",  //Stop shooting each other.
-			"player/survivor/voice/cliffe/friendlyfire25.wav",  //Can we stop shooting each other?
-			"player/survivor/voice/cliffe/friendlyfire26.wav",  //Can we stop shooting each other?
-			"player/survivor/voice/cliffe/friendlyfire27.wav",  //Don't shoot each other.
-			"player/survivor/voice/cliffe/friendlyfire28.wav",  //Can we not shoot each other?
-			"player/survivor/voice/cliffe/friendlyfire29.wav",  //Can we not shoot each other, please?
-			"player/survivor/voice/cliffe/friendlyfire30.wav",  //You are shooting - ME!
-			"player/survivor/voice/cliffe/friendlyfire31.wav"  //Unless you want to be picking your teeth up off the floor, stop shooting me!
-		],
-		PlayerFriendlyFire2Cliffe = [
-			"player/survivor/voice/cliffe/teamkillaccident01.wav",  //Don't you think we should be killing the zombies instead?
-			"player/survivor/voice/cliffe/teamkillaccident02.wav"  //What in the hell kind of strategy is that?
-		],
-		PlayerFriendlyFireC1Cliffe = [
-			"player/survivor/voice/cliffe/friendlyfirec101.wav",  //I don't know who started this shit, but lets just stop the friendly right now, 'kay?
-			"player/survivor/voice/cliffe/friendlyfirec103.wav",  //Never shoot me again.
-			"player/survivor/voice/cliffe/friendlyfirec104.wav",  //You do not want to be shooting me!
-			"player/survivor/voice/cliffe/friendlyfirec105.wav",  //Why would you think shooting me is a good idea?
-			"player/survivor/voice/cliffe/friendlyfirec106.wav",  //Let's try shooting zombies instead of people, okay?
-			"player/survivor/voice/cliffe/friendlyfire13.wav",  //Stop! Shooting me doesn't get us anywhere.
-			"player/survivor/voice/cliffe/friendlyfiremechanic02.wav"  //Y'all wanna stop shootin me?
-		],
-		PlayerFriendlyFireFromCoachCliffe = [
-			"player/survivor/voice/cliffe/friendlyfirec1coach01.wav",  //Coach! Don't shoot me.
-			"player/survivor/voice/cliffe/friendlyfirec1coach02.wav"  //Coach! Come on.
-		],
-		PlayerFriendlyFireFromCoachNBCliffe = [
-			"player/survivor/voice/cliffe/friendlyfirec1coach02.wav"  //Coach! Come on.
-		],
-		PlayerFriendlyFireFromMechanicCliffe = [
-			"player/survivor/voice/cliffe/friendlyfiremechanic01.wav"  //Ellis, come on man
-		],
-		PlayerFriendlyFireFromMechanicC1Cliffe = [
-			"player/survivor/voice/cliffe/friendlyfireellis01.wav",  //Hey sport, watch where you're shooting!
-			"player/survivor/voice/cliffe/noellis01.wav",  //Try again, champ.
-			"player/survivor/voice/cliffe/noellis02.wav"  //Try again, little man.
-		],
-		PlayerFriendlyFireFromMechanicNBC1Cliffe = [
-			"player/survivor/voice/cliffe/noellis01.wav",  //Try again, champ.
-			"player/survivor/voice/cliffe/noellis02.wav"  //Try again, little man.
-		],
-		PlayerFriendlyFireFromProducerCliffe = [
-			"player/survivor/voice/cliffe/friendlyfirec1producer01.wav",  //ROCHELLE!
-			"player/survivor/voice/cliffe/friendlyfirec1producer02.wav",  //Ro! Just... just stop okay?
-			"player/survivor/voice/cliffe/friendlyfirec1producer03.wav",  //ROCHELLE!
-			"player/survivor/voice/cliffe/friendlyfirefemale01.wav"  //Sweetheart? Don't shoot me.
-		],
-		PlayerFriendlyFireFromProducerC1Cliffe = [
-			"player/survivor/voice/cliffe/friendlyfirefemale01.wav"  //Sweetheart? Don't shoot me.
-		],
-		PlayerFriendlyFireFromProducerNBCliffe = [
-			"player/survivor/voice/cliffe/friendlyfirec1producer01.wav",  //ROCHELLE!
-			"player/survivor/voice/cliffe/friendlyfirec1producer02.wav",  //Ro! Just... just stop okay?
-			"player/survivor/voice/cliffe/friendlyfirec1producer03.wav"  //ROCHELLE!
-		],
-		PlayerFriendlyFireNoBulletCliffe = [
-			"player/survivor/voice/cliffe/friendlyfire01.wav"  //Do that again and I'll bury you alive.
-		],
-		PlayerFriendlyFireNoBulletC1Cliffe = [
-			"player/survivor/voice/cliffe/defibrillator08.wav",  //Come ON!
-			"player/survivor/voice/cliffe/reactionnegative33.wav"  //Dumbshit.
-		],
-		PlayerFriendlyFireTankCliffe = [
-			"player/survivor/voice/cliffe/friendlyfiretank01.wav",  //Not ME! Shoot the TANK!
-			"player/survivor/voice/cliffe/friendlyfiretank02.wav",  //Hey! Shoot the Tank!
-			"player/survivor/voice/cliffe/friendlyfiretank03.wav",  //Aggghh! The TANK!
-			"player/survivor/voice/cliffe/friendlyfiretank04.wav",  //The Tank, hotshot! Shoot the TANK!
-			"player/survivor/voice/cliffe/friendlyfiretank05.wav",  //It's twelve feet tall and six feet wide! How are you shooting ME?
-			"player/survivor/voice/cliffe/friendlyfiretank06.wav",  //It's the size of a truck! How are you MISSING?
-			"player/survivor/voice/cliffe/friendlyfiretank07.wav"  //Come on! Shoot the TANK, not ME.
-		],
-		PlayerFriendlyFireTankC1Cliffe = [
-			"player/survivor/voice/cliffe/friendlyfiretank05.wav",  //It's twelve feet tall and six feet wide! How are you shooting ME?
-			"player/survivor/voice/cliffe/friendlyfiretank06.wav"  //It's the size of a truck! How are you MISSING?
-		],
-		PlayerToTheRescueCliffe = [
-			"player/survivor/voice/cliffe/totherescue01.wav",  //Relax, Relax I'm coming!
-			"player/survivor/voice/cliffe/totherescue02.wav",  //I'm on my way!
-			"player/survivor/voice/cliffe/totherescue03.wav",  //Hold on, coming!
-			"player/survivor/voice/cliffe/totherescue04.wav"  //I'm on the way!
-		],
-		PlayerToTheRescueRosCliffe = [
-			"player/survivor/voice/cliffe/totherescue01.wav",  //Relax, Relax I'm coming!
-			"player/survivor/voice/cliffe/totherescue02.wav",  //I'm on my way!
-			"player/survivor/voice/cliffe/totherescue03.wav",  //Hold on, coming!
-			"player/survivor/voice/cliffe/totherescue04.wav"  //I'm on the way!
-		],
-		SurvivorTauntResponseCliffe = [
-			"player/survivor/voice/cliffe/taunt01.wav",  //Suck on that
-			"player/survivor/voice/cliffe/taunt02.wav",  //Stick that where the sun don't shine!
-			"player/survivor/voice/cliffe/taunt03.wav",  //Take that you mealy-mouthed bastards.
-			"player/survivor/voice/cliffe/taunt04.wav",  //Stick it up your ass!
-			"player/survivor/voice/cliffe/taunt05.wav",  //Stick that up your ass!
-			"player/survivor/voice/cliffe/taunt06.wav",  //We are wiping the floor with you.
-			"player/survivor/voice/cliffe/taunt07.wav",  //You don't stand a chance.
-			"player/survivor/voice/cliffe/taunt08.wav",  //Give up now!
-			"player/survivor/voice/cliffe/taunt09.wav"  //Candyasses!
-		],
-		C4M1IdleComment01Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m1b22.wav"  //Look for landmarks. It might be dark on our way back.
-		],
-		C4M2IdleCommentCane01Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m2b29.wav",  //KEEP MOVING! JUST HEAD FOR THE SIGN!
-			"player/survivor/voice/cliffe/worldc4m2b30.wav",  //HEAD FOR THE SIGN!
-			"player/survivor/voice/cliffe/worldc4m220.wav",  //Get to the station!
-			"player/survivor/voice/cliffe/worldc4m313.wav"  //Can anybody see that Witch?
-		],
-		PlayerChokeResponseCliffe = [
-			"player/survivor/voice/cliffe/choke01.wav",  //Smoker 's got me!
-			"player/survivor/voice/cliffe/choke02.wav",  //[Choking]
-			"player/survivor/voice/cliffe/choke03.wav",  //Smoker's GOT ME!!!
-			"player/survivor/voice/cliffe/choke04.wav",  //Shoot the tongue! Shoot the tongue!
-			"player/survivor/voice/cliffe/choke05.wav",  //[Choking]
-			"player/survivor/voice/cliffe/choke06.wav",  //[Choking]
-			"player/survivor/voice/cliffe/choke07.wav"  //[Choking]
-		],
-		PlayerChokeResponseC1Cliffe = [
-			"player/survivor/voice/cliffe/choke02.wav",  //[Choking]
-			"player/survivor/voice/cliffe/choke05.wav",  //[Choking]
-			"player/survivor/voice/cliffe/choke06.wav",  //[Choking]
-			"player/survivor/voice/cliffe/choke07.wav"  //[Choking]
-		],
-		PlayerReloadingC502RunCliffe = [
-			"player/survivor/voice/cliffe/world125.wav",  //Somebody's got to turn off the alarm!.
-			"player/survivor/voice/cliffe/world126.wav"  //Turn off the alarm!
-		],
-		PlayerReloadingTankCliffe = [
-			"player/survivor/voice/cliffe/battlecrytank01.wav",  //Kill the tank!
-			"player/survivor/voice/cliffe/battlecrytank02.wav",  //Shoot the tank!
-			"player/survivor/voice/cliffe/battlecrytank03.wav",  //Shoot the damn tank!
-			"player/survivor/voice/cliffe/battlecrytank04.wav",  //Shoot it! Shoot it!
-			"player/survivor/voice/cliffe/battlecrytank05.wav",  //Everyone shoot the tank!
-			"player/survivor/voice/cliffe/battlecrytank06.wav",  //You, SHOOT THE TANK!
-			"player/survivor/voice/cliffe/battlecrytank07.wav"  //KEEP SHOOTING!
-		],
-		PlayerReloadingTankC1Cliffe = [
-			"player/survivor/voice/cliffe/heardtanklc101.wav",  //I hope that's not bullet proof.
-			"player/survivor/voice/cliffe/heardtanklc102.wav",  //We are screwed.
-			"player/survivor/voice/cliffe/heardtanklc103.wav",  //Maybe if we don't move it won't see us.
-			"player/survivor/voice/cliffe/heardtanklc104.wav",  //Okay, that's reason to panic.
-			"player/survivor/voice/cliffe/heardtanklc105.wav",  //What in the hell sign of the apocalypse is that?
-			"player/survivor/voice/cliffe/heardtanklc106.wav",  //I hope that's not bullet proof.
-			"player/survivor/voice/cliffe/heardtanklc107.wav",  //What in the hell sign of the apocalypse is that?
-			"player/survivor/voice/cliffe/heardtanklc108.wav",  //Okay, that's reason to panic.
-			"player/survivor/voice/cliffe/heardtanklc109.wav",  //Maybe if we don't move it won't see us.
-			"player/survivor/voice/cliffe/heardtanklc110.wav"  //We are screwed.
-		],
-		PlayerWitchChasingCliffe = [
-			"player/survivor/voice/cliffe/witchchasing02.wav",  //This bitch is chasing me!
-			"player/survivor/voice/cliffe/witchchasing03.wav",  //Witch coming! Witch coming!
-			"player/survivor/voice/cliffe/witchchasing05.wav",  //Shoot the witch! Shoot the witch! Shoot the witch! What are you doing? Shoot her!
-			"player/survivor/voice/cliffe/fall01.wav",  //
-			"player/survivor/voice/cliffe/fall04.wav"  //
-		],
-		PlayerWitchChasingC6M1Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitchchasing01.wav"  //Here comes the bride!
-		],
-		PlayerWitchStartAttackCliffe = [
-			"player/survivor/voice/cliffe/doubledeathresponse03.wav",  //Ahhh SHIT!
-			"player/survivor/voice/cliffe/grabbedbysmoker05c.wav",  //NO!!!!!!!!
-			"player/survivor/voice/cliffe/witchchasing01.wav",  //AhhhI pissed the witch off!
-			"player/survivor/voice/cliffe/witchchasing06.wav",  //AhhhI pissed the witch off!
-			"player/survivor/voice/cliffe/witchchasing04.wav"  //Shoot the witch! Shoot the witch! Shoot the witch!
-		],
-		PlayerWitchStartAttackC6M1Cliffe = [
-			"player/survivor/voice/cliffe/ellisinterrupt12.wav"  //Ohhh, not again...
-		],
-		SurvivorCriticalHurtCliffe = [
-			"player/survivor/voice/cliffe/hurtcritical01.wav",  //[pain noise - loud major pain]
-			"player/survivor/voice/cliffe/hurtcritical02.wav",  //[pain noise - loud major pain]
-			"player/survivor/voice/cliffe/hurtcritical03.wav",  //[pain noise - loud major pain]
-			"player/survivor/voice/cliffe/hurtcritical04.wav",  //[pain noise - loud major pain]
-			"player/survivor/voice/cliffe/hurtcritical05.wav",  //[pain noise - loud major pain]
-			"player/survivor/voice/cliffe/hurtcritical06.wav",  //[pain noise - loud major pain]
-			"player/survivor/voice/cliffe/hurtcritical07.wav"  //[pain noise - loud major pain]
-		],
-		SurvivorIncapacitatedHurtCliffe = [
-			"player/survivor/voice/cliffe/incapacitatedinjury01.wav",  //AHHHHH [terrified yell]
-			"player/survivor/voice/cliffe/incapacitatedinjury02.wav",  //AHHHHH [terrified yell]
-			"player/survivor/voice/cliffe/incapacitatedinjury03.wav",  //AHHHHH [terrified yell]
-			"player/survivor/voice/cliffe/incapacitatedinjury04.wav",  //AHHHHH [terrified yell]
-			"player/survivor/voice/cliffe/incapacitatedinjury05.wav"  //AHHHHH [terrified yell]
-		],
-		SurvivorJockeyHurtMajorCliffe = [
-			"player/survivor/voice/cliffe/grabbedbyjockey01.wav",  //Jockey's got me. (disgusted)
-			"player/survivor/voice/cliffe/grabbedbyjockey02.wav",  //Shoot this thing on my back!
-			"player/survivor/voice/cliffe/grabbedbyjockey03.wav",  //Kill this jockey on me!
-			"player/survivor/voice/cliffe/grabbedbyjockey04.wav",  //Jockey on me!
-			"player/survivor/voice/cliffe/grabbedbyjockey05.wav",  //Jockey! Jockey!
-			"player/survivor/voice/cliffe/grabbedbyjockey06.wav",  //Shoot this thing off my back!
-			"player/survivor/voice/cliffe/hurtcritical07.wav",  //[pain noise - loud major pain]
-			"player/survivor/voice/cliffe/hurtmajor03.wav",  //[pain noise - oy]
-			"player/survivor/voice/cliffe/hurtmajor05.wav",  //[pain noise - ugh]
-			"player/survivor/voice/cliffe/screamwhilepounced04.wav",  //GET IT OFF!
-			"player/survivor/voice/cliffe/screamwhilepounced06.wav"  //GET IT OFF ME!
-		],
-		SurvivorJockeyHurtMajorC1Cliffe = [
-			"player/survivor/voice/cliffe/grabbedbyjockey02.wav",  //Shoot this thing on my back!
-			"player/survivor/voice/cliffe/grabbedbyjockey06.wav"  //Shoot this thing off my back!
-		],
-		SurvivorMajorHurtCliffe = [
-			"player/survivor/voice/cliffe/hurtmajor01.wav",  //[pain noise - huh]
-			"player/survivor/voice/cliffe/hurtmajor02.wav",  //[pain noise - ahh]
-			"player/survivor/voice/cliffe/hurtmajor03.wav",  //[pain noise - oy]
-			"player/survivor/voice/cliffe/hurtmajor04.wav",  //[pain noise - ugh]
-			"player/survivor/voice/cliffe/hurtmajor05.wav",  //[pain noise - ugh]
-			"player/survivor/voice/cliffe/hurtmajor06.wav",  //[pain noise - ugh]
-			"player/survivor/voice/cliffe/hurtmajor07.wav",  //[pain noise - ugh]
-			"player/survivor/voice/cliffe/hurtmajor08.wav",  //[pain noise - ugh]
-			"player/survivor/voice/cliffe/hurtmajor09.wav",  //[pain noise - ugh]
-			"player/survivor/voice/cliffe/hurtmajor10.wav",  //[pain noise - ugh]
-			"player/survivor/voice/cliffe/hurtmajor11.wav"  //[pain noise - ugh]
-		],
-		SurvivorMinorHurtCliffe = [
-			"player/survivor/voice/cliffe/hurtminor01.wav",  //[pain noise - short minor pain]
-			"player/survivor/voice/cliffe/hurtminor02.wav",  //[pain noise - short minor pain]
-			"player/survivor/voice/cliffe/hurtminor03.wav",  //[pain noise - short minor pain]
-			"player/survivor/voice/cliffe/hurtminor04.wav",  //[pain noise - short minor pain]
-			"player/survivor/voice/cliffe/hurtminor05.wav",  //[pain noise - short minor pain]
-			"player/survivor/voice/cliffe/hurtminor06.wav",  //[pain noise - short minor pain]
-			"player/survivor/voice/cliffe/hurtminor07.wav",  //[pain noise - short minor pain]
-			"player/survivor/voice/cliffe/hurtminor08.wav",  //[pain noise - short minor pain]
-			"player/survivor/voice/cliffe/hurtminor09.wav"  //[pain noise - short minor pain]
-		],
-		SurvivorReloadingCliffe = [
-			"player/survivor/voice/cliffe/reloading01.wav",  //Reloading!
-			"player/survivor/voice/cliffe/reloading02.wav",  //Reloading!
-			"player/survivor/voice/cliffe/reloading03.wav",  //Reloading!
-			"player/survivor/voice/cliffe/reloading04.wav",  //Reloading!
-			"player/survivor/voice/cliffe/reloading05.wav",  //Reloading!
-			"player/survivor/voice/cliffe/reloading06.wav",  //Reloading!
-			"player/survivor/voice/cliffe/reloading07.wav"  //Reloading!
-		],
-		SurvivorReloadingIntenseCliffe = [
-			"player/survivor/voice/cliffe/reloadintense01.wav",  //Reloading!
-			"player/survivor/voice/cliffe/reloadintense02.wav",  //Reloading here!
-			"player/survivor/voice/cliffe/reloadintense03.wav",  //Gotta reload!
-			"player/survivor/voice/cliffe/reloadintense04.wav",  //Reloading!
-			"player/survivor/voice/cliffe/reloadintense05.wav"  //Reloading!
-		],
-		SurvivorReloadingC4M2Cliffe = [
-			"player/survivor/voice/cliffe/reloadingquiet01.wav",  //Reloading...
-			"player/survivor/voice/cliffe/reloadingquiet02.wav",  //Reloading...
-			"player/survivor/voice/cliffe/reloadingquiet03.wav"  //Reloading...
-		],
-		PlayerHelpIncappedCliffe = [
-			"player/survivor/voice/cliffe/callforrescue05.wav",  //I need someone's help for just five seconds!
-			"player/survivor/voice/cliffe/callforrescue06.wav",  //Can one of you people come get me, please?
-			"player/survivor/voice/cliffe/callforrescue12.wav",  //Just this once I need some help.
-			"player/survivor/voice/cliffe/help01.wav",  //I need some help.
-			"player/survivor/voice/cliffe/help02.wav",  //I can't do this on my own, gimme some help!
-			"player/survivor/voice/cliffe/help03.wav",  //Somebody want to lend me a hand, here?
-			"player/survivor/voice/cliffe/help04.wav",  //Help!
-			"player/survivor/voice/cliffe/help05.wav",  //Hey, over here!
-			"player/survivor/voice/cliffe/ledgehangstart03.wav",  //Hey! Give me a hand.
-			"player/survivor/voice/cliffe/ledgehangstart04.wav"  //I need a hand.
-		],
-		PlayerHelpIncappedBleedingCliffe = [
-			"player/survivor/voice/cliffe/ledgehangmiddle02.wav",  //Don't even think of leaving me here!
-			"player/survivor/voice/cliffe/ledgehangmiddle03.wav",  //Could use a hand over here.
-			"player/survivor/voice/cliffe/ledgehangmiddle04.wav"  //Could use some help here .
-		],
-		PlayerHelpIncappedLethargicCliffe = [
-			"player/survivor/voice/cliffe/ledgehangend01.wav",  //Get your asses over here and HELP ME!
-			"player/survivor/voice/cliffe/ledgehangend03.wav"  //Don't be leaving me here DAMNIT!  HELP!
-		],
-		HelpResponseGamblerCliffe = [
-			"player/survivor/voice/cliffe/blank.wav"  //Blank
-		],
-		C2M1DoneFallingCliffe = [
-			"player/survivor/voice/cliffe/hurtminor05.wav",  //[pain noise - short minor pain]
-			"player/survivor/voice/cliffe/worldc5m2b07.wav"  //[pissed, to self] Christ.
-		],
-		C2M1FallingCliffe = [
-			"player/survivor/voice/cliffe/worldc2m127.wav",  //Woah shit.
-			"player/survivor/voice/cliffe/worldc2m2b12.wav"  //Woo!
-		],
-		C2M2CarouselOffCliffe = [
-			"player/survivor/voice/cliffe/worldc2m2b20.wav"  //Okay, it's off!
-		],
-		C2M2CarouselOnCliffe = [
-			"player/survivor/voice/cliffe/worldc2m220.wav",  //What hell, I'm hitting it.
-			"player/survivor/voice/cliffe/worldc2m221.wav",  //What the hell, I'm gonna hit it.
-			"player/survivor/voice/cliffe/worldc2m223.wav",  //I'm hitting it.
-			"player/survivor/voice/cliffe/worldc2m224.wav"  //Get ready to run, I'm hitting it.
-		],
-		_C2M2_CaroStart01Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m222.wav"  //So get ready.
-		],
-		C3M3BridgeButtonCliffe = [
-			"player/survivor/voice/cliffe/worldc3m3b10.wav",  //I'm lowering the bridge.
-			"player/survivor/voice/cliffe/worldc3m3b11.wav"  //Get ready! Lowering the bridge!
-		],
-		PlayerChainSawUsedCliffe = [
-			"player/survivor/voice/cliffe/battlecry01.wav",  //YEEEAAAAH!
-			"player/survivor/voice/cliffe/battlecry02.wav",  //DIE! DIE!
-			"player/survivor/voice/cliffe/battlecry03.wav",  //SUCK ON THIS!
-			"player/survivor/voice/cliffe/battlecry04.wav"  //YEAH! DIE!
-		],
-		PlayerRemarkC1M1AroundFireCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b16.wav"  //Shit! This place is burnin' up FAST.
-		],
-		PlayerRemarkC1M1OverTableCliffe = [
-			"player/survivor/voice/cliffe/followme02.wav",  //Over here.
-			"player/survivor/voice/cliffe/followme08.wav",  //Come on, this way!
-			"player/survivor/voice/cliffe/followme09.wav",  //Okay this way!
-			"player/survivor/voice/cliffe/followme11.wav",  //Over here.
-			"player/survivor/voice/cliffe/miscdirectional06.wav"  //C'mon, this way!
-		],
-		PlayerRemarkC1M1SearchRoomsCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b35.wav"  //Search these rooms. Might be something we can use.
-		],
-		PlayerRemarkC1M1ThroughThisDoorCliffe = [
-			"player/survivor/voice/cliffe/miscdirectional13.wav"  //Through this door!
-		],
-		PlayerRemarkC1M3AlarmDoorsCliffe = [
-			"player/survivor/voice/cliffe/worldc1m3b15.wav",  //I got a sinking feeling this alarm's gonna get us some attention...
-			"player/survivor/voice/cliffe/worldc1m3b16.wav"  //I got a sick feeling this alarm's gonna get us some attention...
-		],
-		PlayerRemarkC1M3CarefulWindowsCliffe = [
-			"player/survivor/voice/cliffe/warncareful02.wav",  //Let's be careful.
-			"player/survivor/voice/cliffe/worldc1m3b15.wav"  //I got a sinking feeling this alarm's gonna get us some attention...
-		],
-		PlayerRemarkC1M3CEDAGoneCliffe = [
-			"player/survivor/voice/cliffe/worldc1m3b28.wav",  //Jesus. I knew it. There's nothing here!
-			"player/survivor/voice/cliffe/worldc1m3b31.wav",  //No one's alive in here.
-			"player/survivor/voice/cliffe/worldc1m3b32.wav"  //Everyone's infected.
-		],
-		PlayerRemarkC1M3DiscoPantsCliffe = [
-			"player/survivor/voice/cliffe/worldc1m3b08.wav"  //Disco Pants and Haircuts? Man, lots of space in this mall.
-		],
-		PlayerRemarkC1M3DownHereCliffe = [
-			"player/survivor/voice/cliffe/miscdirectional05.wav",  //Down here!
-			"player/survivor/voice/cliffe/miscdirectional29.wav",  //We can get down here!
-			"player/survivor/voice/cliffe/worldmisc06.wav"  //Down here.
-		],
-		PlayerRemarkC1M3DownTheEscalatorCliffe = [
-			"player/survivor/voice/cliffe/worldc1m3b06.wav",  //Down this escalator!
-			"player/survivor/voice/cliffe/worldc1m3b07.wav"  //Down that escalator!
-		],
-		PlayerRemarkC1M3OverHereCliffe = [
-			"player/survivor/voice/cliffe/miscdirectional13.wav",  //Through this door!
-			"player/survivor/voice/cliffe/miscdirectional37.wav",  //Over this door!
-			"player/survivor/voice/cliffe/worldc1m2b06.wav"  //Through the door!
-		],
-		PlayerRemarkC1M3SearchRoomsCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b35.wav"  //Search these rooms. Might be something we can use.
-		],
-		PlayerRemarkC1M3ThisWayCliffe = [
-			"player/survivor/voice/cliffe/worldc1m3b09.wav",  //Evac's this way!
-			"player/survivor/voice/cliffe/worldc1m3b10.wav",  //Evac's that way!
-			"player/survivor/voice/cliffe/worldc1m3b11.wav"  //Evac's up ahead!
-		],
-		PlayerRemarkC1M3ThroughHereCliffe = [
-			"player/survivor/voice/cliffe/miscdirectional01.wav",  //Through here!
-			"player/survivor/voice/cliffe/miscdirectional20.wav",  //Through this gate!
-			"player/survivor/voice/cliffe/worldc1m1b85.wav",  //We can get through here!
-			"player/survivor/voice/cliffe/worldmisc02.wav",  //Through here.
-			"player/survivor/voice/cliffe/worldmisc08.wav"  //Through here.
-		],
-		PlayerRemarkC1M3TurnOffAlarm1Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m3b17.wav",  //Keep going up!
-			"player/survivor/voice/cliffe/worldc1m3b18.wav"  //Up! Up! Keep moving!
-		],
-		PlayerRemarkC1M3TurnOffAlarm2Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m3b22.wav"  //Is there some way to turn off this alarm?
-		],
-		PlayerRemarkC1M3TurnOffAlarm3Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m3b19.wav",  //Turn off THAT ALARM!
-			"player/survivor/voice/cliffe/worldc1m3b20.wav",  //We gotta turn off this alarm!
-			"player/survivor/voice/cliffe/worldc1m3b21.wav"  //We need to turn of this alarm!
-		],
-		PlayerRemarkC1M3UpEscalator1Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m3b04.wav",  //Up this escalator!
-			"player/survivor/voice/cliffe/worldc1m3b05.wav"  //Up that escalator!
-		],
-		PlayerRemarkc2m1_carwreckageCliffe = [
-			"player/survivor/voice/cliffe/worldc2m105.wav",  //This is just a mess.
-			"player/survivor/voice/cliffe/worldc2m106.wav"  //No sense grabbing a car, let's keep moving.
-		],
-		PlayerRemarkc2m1_offrampCliffe = [
-			"player/survivor/voice/cliffe/worldc2m107.wav"  //Down the off ramp.
-		],
-		PlayerRemarkc2m1_checkroomsCliffe = [
-			"player/survivor/voice/cliffe/worldc2m114.wav",  //Search the rooms.
-			"player/survivor/voice/cliffe/worldc2m1b14.wav"  //We better search these rooms.
-		],
-		PlayerRemarkc2m1_cliffCliffe = [
-			"player/survivor/voice/cliffe/worldc2m125.wav",  //Careful heading down there hill.
-			"player/survivor/voice/cliffe/worldc2m1b16.wav",  //Careful, this gully looks pretty steep.
-			"player/survivor/voice/cliffe/worldc2m128.wav",  //Careful.
-			"player/survivor/voice/cliffe/worldc2m129.wav"  //Watch it, don't fall.
-		],
-		PlayerRemarkc2m1_downstairsCliffe = [
-			"player/survivor/voice/cliffe/worldc2m320.wav"  //Down here.
-		],
-		PlayerRemarkc2m1_bridgeoutCliffe = [
-			"player/survivor/voice/cliffe/worldc2m122.wav"  //Of course the bridge is blocked.
-		],
-		PlayerRemarkc2m1_followriverCliffe = [
-			"player/survivor/voice/cliffe/worldc2m130.wav",  //Down the river.
-			"player/survivor/voice/cliffe/worldc2m126.wav"  //Let's try and cross this valley.
-		],
-		PlayerRemarkc2m1_motelsignCliffe = [
-			"player/survivor/voice/cliffe/worldc2m109.wav",  //There's a motel up there.
-			"player/survivor/voice/cliffe/worldc2m110.wav"  //There's a motel up there.
-		],
-		PlayerRemarkc2m1_parkCliffe = [
-			"player/survivor/voice/cliffe/worldc2m134.wav"  //Let's get across the parking lot!
-		],
-		PlayerRemarkc2m1_poolCliffe = [
-			"player/survivor/voice/cliffe/worldc2m1b12.wav",  //They're not kidding when they say no lifeguards on duty.
-			"player/survivor/voice/cliffe/worldc2m1b13.wav"  //[Whistles] those people SUCKED at high diving.
-		],
-		PlayerRemarkc2m1_searchlightsCliffe = [
-			"player/survivor/voice/cliffe/worldc2m1b07.wav",  //Searchlights over there. Could be a way out.
-			"player/survivor/voice/cliffe/worldc2m123.wav",  //A Ferris wheel and lights on, what isn't to love?
-			"player/survivor/voice/cliffe/worldc2m124.wav",  //A Ferris wheel and lights on, what isn't to love?
-			"player/survivor/voice/cliffe/worldc2m101.wav"  //I think our options are keep moving down the road towards those lights or die here.
-		],
-		_c2m1_searchlights01Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m104.wav",  //Great, following shiny lights in the sky, we're like freaking cats and a laser pointer.
-			"player/survivor/voice/cliffe/worldc2m1b10.wav"  //That must be the amusement park.
-		],
-		_c2m1_searchlights02Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m102.wav",  //Anyone in the die here camp?
-			"player/survivor/voice/cliffe/worldc2m103.wav"  //No? Then let's move out...
-		],
-		PlayerRemarkc2m1_throughhereCliffe = [
-			"player/survivor/voice/cliffe/worldc2m118.wav"  //In here.
-		],
-		PlayerRemarkc2m1_throughmotelCliffe = [
-			"player/survivor/voice/cliffe/worldc2m1b11.wav",  //Highway's blocked! Let's cut through this motel!
-			"player/survivor/voice/cliffe/worldc2m117.wav"  //Damn it, there's gotta be a way around this.
-		],
-		PlayerRemarkc2m1_throughwindowCliffe = [
-			"player/survivor/voice/cliffe/miscdirectional07.wav"  //Through this window!
-		],
-		PlayerRemarkc2m1_uphillCliffe = [
-			"player/survivor/voice/cliffe/worldc2m131.wav"  //We can get up the hill over here.
-		],
-		PlayerRemarkc2m1_upstairsCliffe = [
-			"player/survivor/voice/cliffe/worldc2m115.wav"  //Let's try upstairs.
-		],
-		PlayerRemarkc2m2_carouselCliffe = [
-			"player/survivor/voice/cliffe/worldc2m2b15.wav",  //Nice fencing. Looks like a federal carousel penitentiary.
-			"player/survivor/voice/cliffe/worldc2m2b16.wav"  //A fenced-in carousel? Is this where they took child prisoners on day trips?
-		],
-		PlayerRemarkc2m2_carouselbuttonCliffe = [
-			"player/survivor/voice/cliffe/worldc2m218.wav"  //We need to turn on the power to open this door.
-		],
-		PlayerRemarkc2m2_entrancesignCliffe = [
-			"player/survivor/voice/cliffe/worldc2m201.wav",  //Our only way is through the park.
-			"player/survivor/voice/cliffe/worldc2m202.wav",  //Looks abandoned.
-			"player/survivor/voice/cliffe/worldc2m203.wav",  //Well, let's get inside the park.
-			"player/survivor/voice/cliffe/worldc2m204.wav",  //Guess the infection is spreading faster than we're moving.
-			"player/survivor/voice/cliffe/worldc2m205.wav"  //As far as Evac Centers go, this is not the worst place to hole up.
-		],
-		PlayerRemarkc2m2_lilpeanutCliffe = [
-			"player/survivor/voice/cliffe/worldc2m2b06.wav",  //Anybody else find this peanut thing a little terrifying?
-			"player/survivor/voice/cliffe/worldc2m2b13.wav",  //I do not like that little peanut guy.
-			"player/survivor/voice/cliffe/worldc2m2b14.wav"  //I do not like that little peanut man.
-		],
-		PlayerRemarkc2m2_ladderCliffe = [
-			"player/survivor/voice/cliffe/worldc2m214.wav",  //We can get up to the roof.
-			"player/survivor/voice/cliffe/worldc2m215.wav"  //We might see better up on the roof.
-		],
-		PlayerRemarkc2m2_backalleyCliffe = [
-			"player/survivor/voice/cliffe/worldc2m213.wav"  //The boardwalk still smells like popcorn and this back alley still stinks like piss.
-		],
-		_C2M2_LikeTatersCliffe = [
-			"player/survivor/voice/cliffe/nameellis26.wav"  //Hey Ellis, you like taters?
-		],
-		PlayerRemarkc2m2_thistall2Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m2b09.wav"  //You gotta be this tall to get in here, Ellis. Sorry, buddy. You'll be missed.
-		],
-		_C2M2_ThisTall02Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m2b10.wav"  //I'm just playin' with ya, man.
-		],
-		PlayerRemarkc2m2_topofslideCliffe = [
-			"player/survivor/voice/cliffe/worldc2m216.wav"  //Down the slide.
-		],
-		PlayerRemarkc2m3_aroundblockCliffe = [
-			"player/survivor/voice/cliffe/worldc2m322.wav",  //Hmm... okay, we're further down the path.
-			"player/survivor/voice/cliffe/worldc2m323.wav",  //That got us around the block.
-			"player/survivor/voice/cliffe/worldc2m324.wav"  //Let's keep moving.
-		],
-		PlayerRemarkc2m3_cementriverCliffe = [
-			"player/survivor/voice/cliffe/worldc2m305.wav",  //Let's go down the tunnel."
-			"player/survivor/voice/cliffe/worldc2m306.wav",  //You could almost call this a cement river, Ellis
-			"player/survivor/voice/cliffe/worldc2m307.wav",  //You could almost call this a cement river, Ellis
-			"player/survivor/voice/cliffe/worldc2m308.wav"  //Keep going down the tunnel.
-		],
-		PlayerRemarkc2m3_coasteroffCliffe = [
-			"player/survivor/voice/cliffe/worldc2m344.wav",  //Hit the alarm to stop them!
-			"player/survivor/voice/cliffe/worldc2m345.wav",  //Shut down the coaster!
-			"player/survivor/voice/cliffe/worldc2m346.wav",  //We have to shut down the coaster!
-			"player/survivor/voice/cliffe/worldc2m3b18.wav",  //We gotta get that alarm off!
-			"player/survivor/voice/cliffe/worldc2m3b19.wav"  //Somebody turn off that alarm!
-		],
-		_c2m3_coollight02Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m304.wav"  //Bet my caps are lit up as well.
-		],
-		PlayerRemarkc2m3_screamingoakCliffe = [
-			"player/survivor/voice/cliffe/worldc2m327.wav",  //A coaster?
-			"player/survivor/voice/cliffe/worldc2m328.wav"  //A goddamn coaster.
-		],
-		PlayerRemarkc2m3_freshairCliffe = [
-			"player/survivor/voice/cliffe/worldc2m325.wav",  //I can feel a breeze, fresh air!
-			"player/survivor/voice/cliffe/worldc2m326.wav"  //Finally, outside.
-		],
-		PlayerRemarkc2m3_holeCliffe = [
-			"player/survivor/voice/cliffe/worldc2m316.wav",  //Down the hole.
-			"player/survivor/voice/cliffe/worldc2m317.wav"  //Down the hole.
-		],
-		PlayerRemarkc2m3_longesttunnelCliffe = [
-			"player/survivor/voice/cliffe/worldc2m3b13.wav"  //This is the LONGEST tunnel of love I've ever seen.
-		],
-		PlayerRemarkc2m3_overfenceCliffe = [
-			"player/survivor/voice/cliffe/miscdirectional22.wav"  //Over this fence!
-		],
-		PlayerRemarkc2m3_rubbleCliffe = [
-			"player/survivor/voice/cliffe/worldc2m3b15.wav",  //Oh, Jesus-we're gonna have to walk across this roller coaster, aren't we?
-			"player/survivor/voice/cliffe/worldc2m333.wav",  //Okay, the only way over is to get on the coaster's track.
-			"player/survivor/voice/cliffe/worldc2m334.wav"  //We're gonna have to run the coaster.
-		],
-		PlayerRemarkc2m3_swanroomCliffe = [
-			"player/survivor/voice/cliffe/worldc2m313.wav",  //Let's try the maintenance room.
-			"player/survivor/voice/cliffe/worldc2m314.wav",  //Get up on the catwalk.
-			"player/survivor/voice/cliffe/worldc2m3b08.wav"  //Into the swan maintenance room of love!
-		],
-		PlayerRemarkc2m3_tracks01Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m331.wav",  //I hate roller coasters.
-			"player/survivor/voice/cliffe/worldc2m335.wav",  //Stay on the track.
-			"player/survivor/voice/cliffe/worldc2m336.wav",  //Make sure to call out if you get pulled.
-			"player/survivor/voice/cliffe/worldc2m337.wav",  //Stay on the track people!
-			"player/survivor/voice/cliffe/worldc2m339.wav",  //Run on the track!
-			"player/survivor/voice/cliffe/worldc2m340.wav",  //Thank god this doesn't do a loop.
-			"player/survivor/voice/cliffe/worldc2m342.wav",  //We need to keep going down the track!
-			"player/survivor/voice/cliffe/worldc2m3b14.wav",  //You got your wish, Ellis. We're on a ride.
-			"player/survivor/voice/cliffe/worldc2m3b20.wav",  //Just follow the tracks, everybody!
-			"player/survivor/voice/cliffe/worldc2m3b21.wav",  //Everybody, just follow the tracks!
-			"player/survivor/voice/cliffe/worldc2m3b23.wav"  //These infected do NOT respect lines.
-		],
-		PlayerRemarkc2m3_ventCliffe = [
-			"player/survivor/voice/cliffe/worldc2m309.wav",  //No holding hands, please.
-			"player/survivor/voice/cliffe/worldc2m315.wav"  //This isn't very romantic.
-		],
-		PlayerRemarkc2m3_wayblockedCliffe = [
-			"player/survivor/voice/cliffe/worldc2m312.wav"  //This way is blocked.
-		],
-		PlayerRemarkc2m4_barnentryCliffe = [
-			"player/survivor/voice/cliffe/worldc4m205.wav"  //Through this building.
-		],
-		PlayerRemarkc2m4_bumpercarsCliffe = [
-			"player/survivor/voice/cliffe/worldc2m347.wav",  //Through the bumper cars!
-			"player/survivor/voice/cliffe/worldc2m348.wav"  //Keep going through the bumper cars.
-		],
-		PlayerRemarkc2m4_onroofCliffe = [
-			"player/survivor/voice/cliffe/worldc2m416.wav"  //Careful on these roofs.
-		],
-		PlayerRemarkc2m4_pendoorCliffe = [
-			"player/survivor/voice/cliffe/miscdirectional13.wav"  //Through this door!
-		],
-		PlayerRemarkc2m4_moustachioCliffe = [
-			"player/survivor/voice/cliffe/worldc2m206.wav"  //These are not games of chance.
-		],
-		PlayerRemarkc2m4_pensCliffe = [
-			"player/survivor/voice/cliffe/nickocd04.wav",  //Ugh. What's that SMELL?
-			"player/survivor/voice/cliffe/worldc2m408.wav",  //Looks like the H in 4H stands for hell.
-			"player/survivor/voice/cliffe/worldc2m409.wav",  //Through these pens.
-			"player/survivor/voice/cliffe/worldc2m410.wav",  //More pens.
-			"player/survivor/voice/cliffe/worldc2m411.wav"  //Cow pen, pig pen, these are all just animal shit pens.
-		],
-		_C2M4_RibsCliffe = [
-			"player/survivor/voice/cliffe/nickocd05.wav"  //Because all you think about is ribs, Coach.
-		],
-		PlayerRemarkc2m4_stadiumCliffe = [
-			"player/survivor/voice/cliffe/worldc2m401.wav",  //I can see the stadium.
-			"player/survivor/voice/cliffe/worldc2m402.wav",  //There's lights on in the stadium.
-			"player/survivor/voice/cliffe/worldc2m403.wav",  //I can hear something going on in the stadium.
-			"player/survivor/voice/cliffe/worldc2m404.wav"  //How in the hell are we gonna get in?
-		],
-		PlayerRemarkc2m4_upbarnCliffe = [
-			"player/survivor/voice/cliffe/worldc4m406.wav"  //Across the rooftops.
-		],
-		PlayerRemarkc2m4_evacCliffe = [
-			"player/survivor/voice/cliffe/worldc2m406.wav"  //Final evacuation is in the stadium.
-		],
-		PlayerRemarkc2m5_button2Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m5b09.wav",  //I think I know how to start the finale, hit the button labeled Finale.
-			"player/survivor/voice/cliffe/worldc2m5b10.wav",  //This looks all setup for the finale.
-			"player/survivor/voice/cliffe/worldc2m5b11.wav",  //When I hit this tape, it's gonna blare some old people's rock music and start the finale. Get ready.
-			"player/survivor/voice/cliffe/worldc2m5b12.wav",  //Coach, when I start this finale, you aren't gonna start dancing are you? Ahh Screw it, I'm hitting it.
-			"player/survivor/voice/cliffe/worldc2m5b13.wav",  //If you have taste, cover your ears. I'm starting the finale.
-			"player/survivor/voice/cliffe/worldc2m5b14.wav",  //Get ready, I'm gonna start the finale.
-			"player/survivor/voice/cliffe/worldc2m5b15.wav"  //Everyone ready, I'm gonna hit this and start the finale.
-		],
-		PlayerRemarkc2m5_button2CoachCliffe = [
-			"player/survivor/voice/cliffe/worldc2m5b08.wav"  //Sorry to break it to you Coach, but your heroes lip-sync. There's a tape back here labeled finale.
-		],
-		PlayerRemarkC3M2PlaneCrashCliffe = [
-			"player/survivor/voice/cliffe/worldc3m2b06.wav"  //I guess walking isn't so bad (seeing downed plane)
-		],
-		PlayerRemarkC3M2PlaneDoorNagCliffe = [
-			"player/survivor/voice/cliffe/worldc3m2b07.wav",  //We can get through this door.
-			"player/survivor/voice/cliffe/worldc3m2b08.wav",  //I think it's a safe bet to say an alarm will sound when we open this door.
-			"player/survivor/voice/cliffe/worldc3m2b11.wav",  //The emergency exit is the only way.
-			"player/survivor/voice/cliffe/worldc3m2b12.wav",  //I think it's a safe bet to say an alarm will sound when we open this door.
-			"player/survivor/voice/cliffe/worldc3m2b15.wav"  //The emergency exit is the only way.
-		],
-		PlayerRemarkC3M2PlaneDoorNagaCliffe = [
-			"player/survivor/voice/cliffe/worldc3m2b09.wav",  //We have to open this door.
-			"player/survivor/voice/cliffe/worldc3m2b10.wav",  //Someone open the door.
-			"player/survivor/voice/cliffe/worldc3m2b13.wav",  //We have to open this door.
-			"player/survivor/voice/cliffe/worldc3m2b14.wav"  //Someone open the door.
-		],
-		PlayerRemarkC3M2RoadCliffe = [
-			"player/survivor/voice/cliffe/worldc3m2b04.wav"  //Dry land up ahead.
-		],
-		PlayerRemarkC3M2SickOfSwampCliffe = [
-			"player/survivor/voice/cliffe/worldc3m203.wav"  //This mud is not doing my suit any favors.
-		],
-		PlayerRemarkC3M2Village1Cliffe = [
-			"player/survivor/voice/cliffe/worldc3m2b18.wav",  //Hello!
-			"player/survivor/voice/cliffe/worldc3m2b20.wav",  //Holy shit, maybe the swamp people made it!
-			"player/survivor/voice/cliffe/worldc3m2b25.wav"  //ANYBODY HOME?
-		],
-		PlayerRemarkC3M3BodiesCliffe = [
-			"player/survivor/voice/cliffe/worldc3m3b03.wav",  //There're a lot of bodies in this village.
-			"player/survivor/voice/cliffe/worldc3m3b04.wav"  //That's a shit ton of bodies.
-		],
-		PlayerRemarkC3M3LowerGateCliffe = [
-			"player/survivor/voice/cliffe/worldc3m3b06.wav",  //We need to lower this plank.
-			"player/survivor/voice/cliffe/worldc3m3b07.wav"  //The only way is over this plank.
-		],
-		PlayerRemarkC3M3MoreShacksCliffe = [
-			"player/survivor/voice/cliffe/worldc3m3b12.wav"  //Did people really live in these shacks?
-		],
-		PlayerRemarkC3M3ThisWayCliffe = [
-			"player/survivor/voice/cliffe/followme08.wav",  //Come on, this way!
-			"player/survivor/voice/cliffe/miscdirectional06.wav"  //C'mon, this way!
-		],
-		PlayerRemarkC3M3ThroughHereCliffe = [
-			"player/survivor/voice/cliffe/worldc2m210.wav",  //Back here.
-			"player/survivor/voice/cliffe/worldc2m217.wav",  //Through here.
-			"player/survivor/voice/cliffe/worldc3m3b05.wav",  //Looks like some of them headed to the river.
-			"player/survivor/voice/cliffe/worldc4m128.wav",  //Through this house.
-			"player/survivor/voice/cliffe/worldmisc02.wav",  //Through here.
-			"player/survivor/voice/cliffe/worldmisc08.wav"  //Through here.
-		],
-		PlayerRemarkC3M3ThroughThisHouseCliffe = [
-			"player/survivor/voice/cliffe/miscdirectional01.wav",  //Through here!
-			"player/survivor/voice/cliffe/miscdirectional11.wav",  //Let's go through here!
-			"player/survivor/voice/cliffe/worldc2m217.wav"  //Through here.
-		],
-		PlayerRemarkC3M3UnsanitaryCliffe = [
-			"player/survivor/voice/cliffe/nickocd01.wav",  //You know how many germs are on that thing?
-			"player/survivor/voice/cliffe/nickocd02.wav",  //Ugh. It's like rotten eggs here. Does nobody else SMELL that?
-			"player/survivor/voice/cliffe/worldc3m3b13.wav",  //This is just really unsanitary.
-			"player/survivor/voice/cliffe/worldc3m3b14.wav"  //Where did anyone who lived here wash their hands?
-		],
-		PlayerRemarkC3M3UpHereCliffe = [
-			"player/survivor/voice/cliffe/worldc4m314.wav",  //Up here!
-			"player/survivor/voice/cliffe/worldmisc01.wav"  //Up here.
-		],
-		PlayerRemarkc3m4downroadCliffe = [
-			"player/survivor/voice/cliffe/worldc4m132.wav",  //Down this street.
-			"player/survivor/voice/cliffe/worldc4m133.wav",  //Let's go down this street.
-			"player/survivor/voice/cliffe/worldc4m136.wav"  //Let's cut through this street.
-		],
-		PlayerRemarkc3m4scaffoldCliffe = [
-			"player/survivor/voice/cliffe/worldc2m427.wav"  //We can climb this scaffolding.
-		],
-		PlayerRemarkc4m1_boatCliffe = [
-			"player/survivor/voice/cliffe/worldc4m1b23.wav",  //What, does everybody around here have a boat?
-			"player/survivor/voice/cliffe/worldc4m1b24.wav"  //If this rain keeps up, we can sail this thing right to Virgil.
-		],
-		PlayerRemarkc4m1_carcrashCliffe = [
-			"player/survivor/voice/cliffe/worldc4m1b28.wav"  //Now THAT is a nasty wreck.
-		],
-		PlayerRemarkc4m1_garagesaleCliffe = [
-			"player/survivor/voice/cliffe/worldc4m1b27.wav",  //Let's cut through the garage sale.
-			"player/survivor/voice/cliffe/worldc4m128.wav"  //Through this house.
-		],
-		PlayerRemarkc4m1_nogasCliffe = [
-			"player/survivor/voice/cliffe/worldc4m120.wav",  //Out of gas.
-			"player/survivor/voice/cliffe/worldc4m1b12.wav"  //No gas. Terrific. This is just great.
-		],
-		PlayerRemarkc4m1_nogasMilkRunCliffe = [
-			"player/survivor/voice/cliffe/worldc4m121.wav"  //Of course they're out of gas.
-		],
-		PlayerRemarkc4m1_nogasGunBagCliffe = [
-			"player/survivor/voice/cliffe/worldc4m122.wav"  //I'm out of gas, you're out of gas, they're out of gas.
-		],
-		PlayerRemarkc4m1_nogasToldCliffe = [
-			"player/survivor/voice/cliffe/worldc4m1b13.wav"  //No gas. See? What'd I say?
-		],
-		PlayerRemarkc4m1_playgroundfarCliffe = [
-			"player/survivor/voice/cliffe/worldc4m1b26.wav"  //Through that playground!
-		],
-		PlayerRemarkc4m1_playgroundnearCliffe = [
-			"player/survivor/voice/cliffe/worldc4m1b25.wav"  //Through this playground!
-		],
-		PlayerRemarkc4m1_throughhereACliffe = [
-			"player/survivor/voice/cliffe/miscdirectional11.wav",  //Let's go through here!
-			"player/survivor/voice/cliffe/worldc4m137.wav",  //Over here.
-			"player/survivor/voice/cliffe/worldc4m138.wav"  //We can get down through here.
-		],
-		PlayerRemarkc4m2_gasinsidesignCliffe = [
-			"player/survivor/voice/cliffe/worldc4m2b33.wav",  //Looks like the gas is inside.
-			"player/survivor/voice/cliffe/worldc4m223.wav",  //Everyone inside the station!
-			"player/survivor/voice/cliffe/worldc4m2b35.wav",  //The pumps are dry. Let's check inside.
-			"player/survivor/voice/cliffe/worldc4m221.wav",  //Get in the station!
-			"player/survivor/voice/cliffe/worldc4m222.wav"  //Into the station!
-		],
-		PlayerRemarkc4m2_millentranceCliffe = [
-			"player/survivor/voice/cliffe/worldc4m137.wav",  //Over here.
-			"player/survivor/voice/cliffe/worldc4m138.wav",  //We can get down through here.
-			"player/survivor/voice/cliffe/worldc4m205.wav",  //Through this building.
-			"player/survivor/voice/cliffe/worldc4m208.wav"  //In here!
-		],
-		PlayerRemarkc4m2_millentranceexitCliffe = [
-			"player/survivor/voice/cliffe/miscdirectional03.wav",  //This way!
-			"player/survivor/voice/cliffe/miscdirectional06.wav"  //C'mon, this way!
-		],
-		PlayerRemarkc4m2_seegasstationCliffe = [
-			"player/survivor/voice/cliffe/worldc4m2b18.wav",  //There's the gas station!
-			"player/survivor/voice/cliffe/worldc4m212.wav",  //Finally! There's the gas station!
-			"player/survivor/voice/cliffe/worldc4m213.wav",  //Okay! There's the gas station!
-			"player/survivor/voice/cliffe/worldc4m214.wav"  //We need to get through this cane.
-		],
-		PlayerRemarkc4m2_streetblockedCliffe = [
-			"player/survivor/voice/cliffe/worldc4m2b01.wav",  //The road's blocked.
-			"player/survivor/voice/cliffe/worldc4m1b31.wav"  //There's the sugar mill!
-		],
-		PlayerRemarkc4m2_uprampCliffe = [
-			"player/survivor/voice/cliffe/worldc4m2b16.wav"  //Up that ramp!
-		],
-		PlayerRemarkc4m2_upthestairsCliffe = [
-			"player/survivor/voice/cliffe/worldc4m211.wav"  //Let's get up here and find our bearings.
-		],
-		PlayerRemarkc4m2_useelevatorCliffe = [
-			"player/survivor/voice/cliffe/worldc4m2b22.wav"  //We can take that elevator down to the field.
-		],
-		PlayerRemarkc4m2_waterpoolCliffe = [
-			"player/survivor/voice/cliffe/worldc4m215.wav",  //Damn, we aren't going to beat this storm.
-			"player/survivor/voice/cliffe/worldc4m218.wav",  //Shit, water's starting to pool.
-			"player/survivor/voice/cliffe/worldc4m219.wav",  //The rain's getting heavy.
-			"player/survivor/voice/cliffe/worldc4m2b05.wav",  //The water's starting to pool. Shit.
-			"player/survivor/voice/cliffe/worldc4m2b06.wav",  //Ah shit, this place is already starting to flood.
-			"player/survivor/voice/cliffe/worldc4m2b08.wav"  //It's already starting to flood.
-		],
-		PlayerRemarkc4m2_weatherCliffe = [
-			"player/survivor/voice/cliffe/worldc4m203.wav",  //Let's go a little farther.
-			"player/survivor/voice/cliffe/worldc4m204.wav",  //If we don't find the other station soon we can turn around.
-			"player/survivor/voice/cliffe/worldc4m201.wav",  //I guess the diesel isn't in the abandoned part of the sugar mill.
-			"player/survivor/voice/cliffe/worldc4m202.wav",  //We can still do this before the storm hits.
-			"player/survivor/voice/cliffe/worldc4m2b03.wav",  //This rain doesn't look like it's gonna let up.
-			"player/survivor/voice/cliffe/worldc4m2b04.wav",  //Christ, I hope this rain doesn't get any worse.
-			"player/survivor/voice/cliffe/worldc4m2b07.wav"  //The sky looks bad.
-		],
-		PlayerRemarkc4m3_caneCliffe = [
-			"player/survivor/voice/cliffe/miscdirectional45.wav",  //Back through the field!
-			"player/survivor/voice/cliffe/worldc4m303.wav"  //Back through the canefield.
-		],
-		PlayerRemarkc4m3_crosshereCliffe = [
-			"player/survivor/voice/cliffe/miscdirectional25.wav",  //We can cross here!
-			"player/survivor/voice/cliffe/miscdirectional53.wav"  //We can get across the water here!
-		],
-		PlayerRemarkc4m3_downhereCliffe = [
-			"player/survivor/voice/cliffe/miscdirectional05.wav",  //Down here!
-			"player/survivor/voice/cliffe/worldc2m321.wav",  //Down here.
-			"player/survivor/voice/cliffe/worldmisc06.wav"  //Down here.
-		],
-		PlayerRemarkc4m3_downstairsCliffe = [
-			"player/survivor/voice/cliffe/miscdirectional50.wav"  //Everyone back down the stairs!
-		],
-		PlayerRemarkc4m3_ducatelsignCliffe = [
-			"player/survivor/voice/cliffe/miscdirectional68.wav"  //There's the Ducatel sign! We're almost outta here!
-		],
-		PlayerRemarkc4m3_elevatorCliffe = [
-			"player/survivor/voice/cliffe/miscdirectional47.wav"  //We can take the elevator back up!
-		],
-		PlayerRemarkc4m3_floodedCliffe = [
-			"player/survivor/voice/cliffe/miscdirectional60.wav",  //Man, it's all flooded.
-			"player/survivor/voice/cliffe/miscdirectional61.wav"  //It's a lake down there.
-		],
-		PlayerRemarkc4m3_overtankCliffe = [
-			"player/survivor/voice/cliffe/worldc4m312.wav",  //Through the old mill!
-			"player/survivor/voice/cliffe/worldc4m323.wav",  //Back through the mill.
-			"player/survivor/voice/cliffe/miscdirectional52.wav"  //We can cross over that tank!
-		],
-		PlayerRemarkc4m3_rainCliffe = [
-			"player/survivor/voice/cliffe/worldc4m304.wav",  //Shit, it's really coming down.
-			"player/survivor/voice/cliffe/worldc4m305.wav",  //This is too much rain.
-			"player/survivor/voice/cliffe/worldc4m3b08.wav",  //Ohhh shit, the storm has arrived.
-			"player/survivor/voice/cliffe/worldc4m3b09.wav",  //It's pissing down.
-			"player/survivor/voice/cliffe/worldc4m3b10.wav"  //is it ever pissing down.
-		],
-		PlayerRemarkc4m3_uppipesCliffe = [
-			"player/survivor/voice/cliffe/miscdirectional49.wav",  //Up this pipe!
-			"player/survivor/voice/cliffe/worldc4m317.wav",  //We can take this pipe!
-			"player/survivor/voice/cliffe/worldc4m318.wav",  //Run over the pipe.
-			"player/survivor/voice/cliffe/worldc4m319.wav"  //Take the pipe to the holding tanks.
-		],
-		PlayerRemarkc4m4_floodedCliffe = [
-			"player/survivor/voice/cliffe/worldc4m401.wav",  //Towns flooded.
-			"player/survivor/voice/cliffe/worldc4m402.wav",  //Goddamn town's flooded.
-			"player/survivor/voice/cliffe/worldc4m403.wav",  //Water looks knee deep in places.
-			"player/survivor/voice/cliffe/worldc4m411.wav",  //Every goddamn thing is flooded.
-			"player/survivor/voice/cliffe/worldc4m412.wav",  //Does anybody remember the path back?
-			"player/survivor/voice/cliffe/worldc4m413.wav",  //Everything's different when it's under a foot of water.
-			"player/survivor/voice/cliffe/worldc4m414.wav"  //Goddamn we are moving too slow.
-		],
-		PlayerRemarkc4m4_garagesaleCliffe = [
-			"player/survivor/voice/cliffe/worldc4m4b07.wav"  //The yard sale! We're going the right way!
-		],
-		PlayerRemarkc4m4_playgroundCliffe = [
-			"player/survivor/voice/cliffe/worldc4m4b08.wav"  //The playground! We're almost there!
-		],
-		PlayerRemarkc4m4_porchlightCliffe = [
-			"player/survivor/voice/cliffe/worldc4m4b05.wav"  //I remember that porch light.
-		],
-		PlayerRemarkc4m4_truckwreckCliffe = [
-			"player/survivor/voice/cliffe/worldc4m4b06.wav"  //There's the wreck!
-		],
-		PlayerRemarkc4m4_useroofsCliffe = [
-			"player/survivor/voice/cliffe/miscdirectional62.wav",  //Get to higher ground!
-			"player/survivor/voice/cliffe/worldc4m405.wav",  //We can use the rooftops.
-			"player/survivor/voice/cliffe/worldc4m404.wav",  //Stay on the high ground.
-			"player/survivor/voice/cliffe/worldc4m4b02.wav",  //Keep to high ground!
-			"player/survivor/voice/cliffe/worldc4m4b04.wav"  //We can get across the roofs.
-		],
-		PlayerRemarkpathc2m1_abandonedcarsCliffe = [
-			"player/survivor/voice/cliffe/worldc2m1b04.wav"  //These abandoned cars go on for MILES.
-		],
-		PlayerRemarkpathc2m1_billboardCliffe = [
-			"player/survivor/voice/cliffe/lookhere04.wav"  //Check it out.
-		],
-		PlayerRemarkremark_caralarmCliffe = [
-			"player/survivor/voice/cliffe/world112.wav"  //Don't shoot that car!
-		],
-		PlayerRemarkremark_MidnightRidersBusCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_midnightriders01.wav",  //Did you guys see that?
-			"player/survivor/voice/cliffe/dlc1_c6m2_midnightriders02.wav",  //Did you guys see that?
-			"player/survivor/voice/cliffe/dlc1_c6m2_midnightriders03.wav",  //What in the hell was that?
-			"player/survivor/voice/cliffe/dlc1_c6m2_midnightriders04.wav"  //I must be dreaming.
-		],
-		PlayerRemarkWorldC1M1CedaMapsCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b143.wav",  //If that map's right, New Orleans might be the last place in America that can get us out alive.
-			"player/survivor/voice/cliffe/worldc1m1b144.wav",  //So that's why I'm feeling so goddamn lucky.
-			"player/survivor/voice/cliffe/worldc1m1b145.wav",  //Dunno about you guys, but I'm going to New Orleans.
-			"player/survivor/voice/cliffe/worldc1m1b146.wav",  //According to this map, the only place left standing is New Orleans.
-			"player/survivor/voice/cliffe/worldc1m1b147.wav",  //Jesus, the whole country has fallen.
-			"player/survivor/voice/cliffe/worldc1m1b148.wav",  //This map is not good news.
-			"player/survivor/voice/cliffe/worldc1m1b149.wav"  //According to this map, there aren't a whole lot of options.
-		],
-		PlayerRemarkWorldC1M1KnowBoomerCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b02.wav",  //What's this thing in a cage?
-			"player/survivor/voice/cliffe/worldc1m1b03.wav",  //How'd they have this in a cage already?
-			"player/survivor/voice/cliffe/worldc1m1b04.wav"  //Did they know this was coming?
-		],
-		PlayerRemarkWorldC1M1DownHereCliffe = [
-			"player/survivor/voice/cliffe/miscdirectional05.wav",  //Down here!
-			"player/survivor/voice/cliffe/worldc1m1b85.wav",  //We can get through here!
-			"player/survivor/voice/cliffe/worldmisc08.wav"  //Through here.
-		],
-		PlayerRemarkWorldC1M1ElevatorBrokenCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b17.wav"  //Damn it! Elevator's out.
-		],
-		C1M1CrumbsCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b30.wav"  //Crumbs? Really, Coach? That's how you swear?
-		],
-		PlayerRemarkWorldC1M1FireRoomCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b137.wav"  //Well, this is unexpected.
-		],
-		PlayerRemarkWorldC1M1FireSpreadingCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b14.wav",  //Alright, I'm not walking through THAT. Let's find another way.
-			"player/survivor/voice/cliffe/worldc1m1b15.wav",  //Let's find another way. This suit's flammable.
-			"player/survivor/voice/cliffe/worldc1m1b16.wav"  //Shit! This place is burnin' up FAST.
-		],
-		PlayerRemarkWorldC1M1FirstCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b135.wav",  //Jesus! They're attacking now.
-			"player/survivor/voice/cliffe/worldc1m1b134.wav",  //Holy shit, it's zombies.
-			"player/survivor/voice/cliffe/worldc1m1b138.wav",  //These... don't look like people.
-			"player/survivor/voice/cliffe/worldc1m1b139.wav",  //Jesus Christ! What are these things?
-			"player/survivor/voice/cliffe/worldc1m1b140.wav"  //I don't know about you, but I'm killing these things.
-		],
-		PlayerRemarkWorldC1M1LedgeCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b21.wav",  //Get out to the ledge!
-			"player/survivor/voice/cliffe/worldc1m1b22.wav",  //Out here! Let's try the ledge!
-			"player/survivor/voice/cliffe/worldc1m1b23.wav"  //We can use this ledge to get around the fire.
-		],
-		PlayerRemarkWorldC1M2CloseCliffe = [
-			"player/survivor/voice/cliffe/worldc1m2b03.wav"  //Mall must be close...
-		],
-		PlayerRemarkWorldC1M2DownStairsCliffe = [
-			"player/survivor/voice/cliffe/worldc2m320.wav",  //Down here.
-			"player/survivor/voice/cliffe/worldmisc06.wav"  //Down here.
-		],
-		PlayerRemarkWorldC1M2AbandonedCliffe = [
-			"player/survivor/voice/cliffe/worldc1m2b10.wav",  //Jesus. This place is a ghost town.
-			"player/survivor/voice/cliffe/worldc1m2b11.wav"  //And I thought this place was a shithole when there were PEOPLE in it.
-		],
-		_C1M2AbandonedCliffe = [
-			"player/survivor/voice/cliffe/worldc1m2b12.wav"  //It's STARTING to creep you out?
-		],
-		PlayerRemarkWorldC1M2DumpsterCliffe = [
-			"player/survivor/voice/cliffe/worldc1m2b08.wav"  //Over this dumpster!
-		],
-		PlayerRemarkWorldC1M2InHereCliffe = [
-			"player/survivor/voice/cliffe/worldc1m2b05.wav",  //We gotta get over that bridge!
-			"player/survivor/voice/cliffe/worldc1m2b06.wav"  //Through the door!
-		],
-		PlayerRemarkWorldC1M2JumpTruckCliffe = [
-			"player/survivor/voice/cliffe/worldc1m2b07.wav"  //Jump onto the truck!
-		],
-		PlayerRemarkWorldC1M2MadeItCliffe = [
-			"player/survivor/voice/cliffe/blank.wav"  //
-		],
-		PlayerRemarkWorldC1M2UpStairsCliffe = [
-			"player/survivor/voice/cliffe/miscdirectional06.wav",  //C'mon, this way!
-			"player/survivor/voice/cliffe/worldc2m115.wav"  //Let's try upstairs.
-		],
-		PlayerRemarkWorldC3M1FeedGatorCliffe = [
-			"player/survivor/voice/cliffe/worldc3m1b17.wav"  //Shit. This swamp is going to ruin my white suit.
-		],
-		PlayerRemarkWorldC3M1FerryNagCliffe = [
-			"player/survivor/voice/cliffe/worldc3m1b09.wav",  //We gotta get that boat over here.
-			"player/survivor/voice/cliffe/worldc3m1b10.wav"  //We need to call that boat over here.
-		],
-		PlayerRemarkWorldC502AlarmButtonCliffe = [
-			"player/survivor/voice/cliffe/world121.wav",  //Annnd... Let's go! Let's go!
-			"player/survivor/voice/cliffe/world122.wav",  //Annnd... Let's go! Let's go! Let's go!
-			"player/survivor/voice/cliffe/world123.wav",  //To the tower.
-			"player/survivor/voice/cliffe/world124.wav"  //Run to the tower.
-		],
-		PlayerRemarkWorldC502AlarmStoppedCliffe = [
-			"player/survivor/voice/cliffe/world129.wav",  //Alarm is off!
-			"player/survivor/voice/cliffe/world130.wav",  //Off!
-			"player/survivor/voice/cliffe/world131.wav"  //I got it!
-		],
-		PlayerRemarkWorldC502AlleyCliffe = [
-			"player/survivor/voice/cliffe/world133.wav",  //There's the freeway.
-			"player/survivor/voice/cliffe/world134.wav",  //Anybody see an onramp?
-			"player/survivor/voice/cliffe/world135.wav",  //We can get to it through here.
-			"player/survivor/voice/cliffe/world136.wav"  //Freeway!
-		],
-		PlayerRemarkWorldC502BusStory2Cliffe = [
-			"player/survivor/voice/cliffe/world132.wav"  //Ellis! ELLIS!  We don't have time for that right now! (ellis telling story about riding on buses)
-		],
-		PlayerRemarkWorldC502NotZombies3Cliffe = [
-			"player/survivor/voice/cliffe/world107.wav"  //Looks like the Military took over.
-		],
-		PlayerRemarkWorldC502SmellCliffe = [
-			"player/survivor/voice/cliffe/world113.wav"  //From the looks of this park. I'm glad we didn't arrive early.
-		],
-		PlayerRemarkWorldC502SmellBathCliffe = [
-			"player/survivor/voice/cliffe/worldmisc09.wav",  //It reeks like piss.
-			"player/survivor/voice/cliffe/worldmisc11.wav"  //It reeks like piss.
-		],
-		PlayerRemarkWorldC502SmellBath3Cliffe = [
-			"player/survivor/voice/cliffe/worldmisc10.wav",  //God damn you are messed up.
-			"player/survivor/voice/cliffe/worldmisc12.wav"  //You are messed up.
-		],
-		PlayerRemarkWorldC6M1_AcrossHereCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_backalley07.wav"  //Across the walk-way.
-		],
-		PlayerRemarkWorldC6M1_AlleyBelowCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_backalley01.wav",  //We've got to get up across these walk-ways.
-			"player/survivor/voice/cliffe/dlc1_c6m1_backalley02.wav",  //We've got to get into this building.
-			"player/survivor/voice/cliffe/dlc1_c6m1_backalley03.wav",  //We need to get up there.
-			"player/survivor/voice/cliffe/dlc1_c6m1_backalley04.wav",  //Down this alley.
-			"player/survivor/voice/cliffe/dlc1_c6m1_backalley05.wav",  //Down here.
-			"player/survivor/voice/cliffe/dlc1_c6m1_backalley16.wav"  //Down this alley.
-		],
-		PlayerRemarkWorldC6M1_AlleyIntoBuildingCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_backalley06.wav"  //Into the apartments.
-		],
-		PlayerRemarkWorldC6M1_InAptsCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_backalley10.wav",  //Into here.
-			"player/survivor/voice/cliffe/dlc1_c6m1_backalley11.wav",  //In here.
-			"player/survivor/voice/cliffe/dlc1_c6m1_backalley13.wav",  //Over here.
-			"player/survivor/voice/cliffe/dlc1_c6m1_backalley14.wav"  //Let's search these rooms for supplies.
-		],
-		PlayerRemarkWorldC6M1_IntoTheStoreCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_intostore01.wav",  //Through this store.
-			"player/survivor/voice/cliffe/dlc1_c6m1_intostore02.wav",  //Let's go through this store.
-			"player/survivor/voice/cliffe/dlc1_c6m1_intostore03.wav"  //We can get around through this store.
-		],
-		PlayerRemarkWorldC6M1_SafeRoomAlleyCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_backalley17.wav"  //Behind this bus.
-		],
-		PlayerRemarkWorldC6M1_ThroughBarCliffe = [
-			"player/survivor/voice/cliffe/worldmisc02.wav",  //Through here.
-			"player/survivor/voice/cliffe/worldmisc08.wav"  //Through here.
-		],
-		PlayerRemarkWorldC6M1_UpHereCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_backalley08.wav",  //Back this way.
-			"player/survivor/voice/cliffe/dlc1_c6m1_backalley09.wav",  //Back this way.
-			"player/survivor/voice/cliffe/dlc1_c6m1_backalley15.wav",  //Guess we go this way.
-			"player/survivor/voice/cliffe/worldmisc01.wav"  //Up here.
-		],
-		PlayerRemarkWorldC6M1_UpTheStairsCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_upstairs01.wav",  //Up these stairs.
-			"player/survivor/voice/cliffe/worldc2m115.wav"  //Let's try upstairs.
-		],
-		PlayerRemarkWorldC6M1_UpTheStairs2Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_upstairs02.wav",  //Up the stairs!
-			"player/survivor/voice/cliffe/worldc2m116.wav"  //We have to get up stairs.
-		],
-		PlayerRemarkWorldC6M1_WeddingWarnCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_wedding01.wav",  //Guess we're crashing this wedding.
-			"player/survivor/voice/cliffe/dlc1_c6m1_wedding02.wav",  //Oh shit a wedding.
-			"player/survivor/voice/cliffe/dlc1_c6m1_wedding03.wav",  //Oh Christ, this is more depressing than the zombies.
-			"player/survivor/voice/cliffe/dlc1_c6m1_wedding04.wav",  //I hate going to weddings.
-			"player/survivor/voice/cliffe/dlc1_c6m1_wedding05.wav",  //Think we are a little late for the wedding.
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitch01.wav",  //Careful! I've seen a bride just like this before.
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitch02.wav",  //Careful! I've seen a bride just like this before.
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitch03.wav",  //Wedding dress... Crying... This brings back some bad memories.
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitch04.wav",  //That dress. The crying. This is bringing back some bad memories.
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitch06.wav"  //This is bringing back some bad memories.
-		],
-		PlayerRemarkWorldC6M1_WeddingWarnAngelCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitch09.wav",  //(whispered in Ellis accent) Ellis look, it's another angel.
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitch10.wav",  //(whispered in Ellis accent) Hey, Ellis look, it's another angel.
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitch05.wav",  //Ellis, maybe you should grab that dress for your new girlfriend.
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitch07.wav",  //Ellis, maybe you should grab that dress for your new girlfriend, huh?
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitch08.wav"  //Ellis, go give the bride a kiss it'll be good luck. Trust me.
-		],
-		PlayerRemarkWorldC6M2_AcrossPlankCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_overplank01.wav",  //Over this plank.
-			"player/survivor/voice/cliffe/dlc1_c6m2_overplank02.wav",  //Watch out for smokers.
-			"player/survivor/voice/cliffe/dlc1_c6m2_overplank03.wav",  //Watch out for chargers.
-			"player/survivor/voice/cliffe/dlc1_c6m2_overplank04.wav",  //Okay, let's cross this plank quick.
-			"player/survivor/voice/cliffe/dlc1_c6m2_overplank05.wav",  //Don't look down.
-			"player/survivor/voice/cliffe/dlc1_c6m2_overplank06.wav",  //Watch yourself on this thing.
-			"player/survivor/voice/cliffe/dlc1_c6m2_overplank07.wav",  //Watch out for chargers.
-			"player/survivor/voice/cliffe/dlc1_c6m2_overplank08.wav"  //Cross quick before a smoker grabs you.
-		],
-		PlayerRemarkWorldC6M2_AfterGate1Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater20.wav",  //Keep moving!
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater21.wav",  //Don't stop in the sewer!
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater23.wav"  //We gotta keep moving, people.
-		],
-		PlayerRemarkWorldC6M2_AfterGate2Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_inwaterfindladder01.wav",  //Ehhh.
-			"player/survivor/voice/cliffe/dlc1_c6m2_inwaterfindladder02.wav",  //Ahhh.
-			"player/survivor/voice/cliffe/dlc1_c6m2_inwaterfindladder03.wav",  //Ahhh.
-			"player/survivor/voice/cliffe/dlc1_c6m2_inwaterfindladder04.wav",  //Ehhh.
-			"player/survivor/voice/cliffe/dlc1_c6m2_inwaterfindladder09.wav",  //I am walking through a toilet. Thank you, Jimmy Gibbs.
-			"player/survivor/voice/cliffe/dlc1_c6m2_inwaterfindladder11.wav",  //[to self] "Hey, Nick, what's new?" "Oh, not much. I couldn't drive Jimmy Gibby's stock car over a bridge, so I'm crawling through a shit-filled sewer so I can lower it. You?"
-			"player/survivor/voice/cliffe/dlc1_c6m2_inwaterfindladder14.wav",  //Gotta get up on the cat walks.
-			"player/survivor/voice/cliffe/dlc1_c6m2_inwaterfindladder15.wav",  //We need to find a ladder.
-			"player/survivor/voice/cliffe/dlc1_c6m2_inwaterfindladder16.wav"  //Gotta get back up on the cat walk.
-		],
-		PlayerRemarkWorldC6M2_DownHereCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_backalley05.wav",  //Down here.
-			"player/survivor/voice/cliffe/miscdirectional05.wav",  //Down here!
-			"player/survivor/voice/cliffe/worldc2m320.wav",  //Down here.
-			"player/survivor/voice/cliffe/worldc2m321.wav",  //Down here.
-			"player/survivor/voice/cliffe/worldmisc06.wav"  //Down here.
-		],
-		PlayerRemarkWorldC6M2_DownIntoBuildingCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_upthroughbuilding01.wav",  //Through this building.
-			"player/survivor/voice/cliffe/dlc1_c6m2_upthroughbuilding02.wav",  //In here.
-			"player/survivor/voice/cliffe/dlc1_c6m2_upthroughbuilding03.wav",  //Down these stairs.
-			"player/survivor/voice/cliffe/dlc1_c6m2_upthroughbuilding04.wav"  //Get in there.
-		],
-		PlayerRemarkWorldC6M2_FinalLadderCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_upladder01.wav",  //Ladder!
-			"player/survivor/voice/cliffe/dlc1_c6m2_upladder02.wav"  //Up the ladder!
-		],
-		PlayerRemarkWorldC6M2_FinalWaterCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_finalwater01.wav"  //Back in the water.
-		],
-		PlayerRemarkWorldC6M2_FinalWaterGoGoCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater20.wav",  //Keep moving!
-			"player/survivor/voice/cliffe/worldc2m471.wav"  //Keep moving!
-		],
-		PlayerRemarkWorldC6M2_InJazzClubCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_jazzclub01.wav",  //Into the Jazz Club.
-			"player/survivor/voice/cliffe/dlc1_c6m2_jazzclub02.wav",  //Looks like the tour is in the Jazz Club.
-			"player/survivor/voice/cliffe/dlc1_c6m2_jazzclub03.wav",  //The tunnel's in the Club.
-			"player/survivor/voice/cliffe/dlc1_c6m2_jazzclub04.wav"  //The tour's through this Jazz Club.
-		],
-		PlayerRemarkWorldC6M2_InSewer1Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater03.wav",  //A sewer filled with bodies. [Sarcastic] This is sanitary.
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater07.wav",  //A sewer filled with bodies. [Sarcastic] This is sanitary.
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater02.wav",  //(to self) It's just a storm sewer, it is just a STORM sewer
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater22.wav"  //Oh, this is some gross shit.
-		],
-		PlayerRemarkWorldC6M2_InSewer2Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater05.wav",  //Here's a pleasant thought: Any one of us gets pounced, we are going to be fully submerged in shit water.
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater06.wav",  //Seriously, is nobody else freaked out right now? We are walking through a SEWER.
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater04.wav",  //I am breathing shit air into my lungs, it is being absorbed into my bloodstream. I am literally full of shit.
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater09.wav"  //Seriously, look, I will pay any one of you a thousand dollars right now to give me a piggyback ride.
-		],
-		PlayerRemarkWorldC6M2_InSewerLadder1Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_upladder102.wav"  //Everyone out of the pool.
-		],
-		PlayerRemarkWorldC6M2_IntoConstructionCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_constructionsite01.wav",  //Drop down here.
-			"player/survivor/voice/cliffe/dlc1_c6m2_constructionsite02.wav"  //Into the construction site.
-		],
-		PlayerRemarkWorldC6M2_IntoPoolHallCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_intopoolhall01.wav",  //Get into the pool hall!
-			"player/survivor/voice/cliffe/dlc1_c6m2_intopoolhall02.wav",  //Jump in through the window.
-			"player/survivor/voice/cliffe/dlc1_c6m2_intopoolhall03.wav"  //Go in the window.
-		],
-		PlayerRemarkWorldC6M2_JukeBoxCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_intopoolhall04.wav",  //Hit the jukebox.
-			"player/survivor/voice/cliffe/dlc1_c6m2_startingjukebox01.wav",  //Let's hear some music.
-			"player/survivor/voice/cliffe/dlc1_c6m2_startingjukebox02.wav",  //Music to kill by.
-			"player/survivor/voice/cliffe/dlc1_c6m2_startingjukebox03.wav"  //Ah, some music to kill by.
-		],
-		PlayerRemarkWorldC6M2_JumpDownCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2jumpinwater01.wav",  //Let's do this together.
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2jumpinwater02.wav"  //Who wants to jump first?
-		],
-		C6M2FallingCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater11.wav",  //Ugh
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater16.wav",  //Ugh
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater12.wav",  //Ugh
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater13.wav"  //Augh
-		],
-		PlayerRemarkWorldC6M2_OnTourWalk1Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_historictour01.wav",  //Stay on the walkway.
-			"player/survivor/voice/cliffe/dlc1_c6m2_historictour02.wav",  //Follow the walkway.
-			"player/survivor/voice/cliffe/dlc1_c6m2_historictour03.wav",  //Jesus, this place sucks.
-			"player/survivor/voice/cliffe/dlc1_c6m2_historictour08.wav"  //[sarcastic] Yeah. Tunnels. You're right, Coach, you're so right. History is coming alive.
-		],
-		PlayerRemarkWorldC6M2_OnTourWalk2Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_historictour09.wav",  //So... it's an antique basement, then. Fanntastic.
-			"player/survivor/voice/cliffe/dlc1_c6m2_historictour10.wav"  //Why is everything "historic" always so goddamn filthy?
-		],
-		PlayerRemarkWorldC6M2_OnTourWalk3Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_historictour04.wav",  //From one con man to another: five bucks for this? I tip my hat to you, Rayford.
-			"player/survivor/voice/cliffe/dlc1_c6m2_historictour05.wav"  //Five goddamn dollars for an under-the-river tour? Well played, Rayford. Well played.
-		],
-		PlayerRemarkWorldC6M2_OpenGate1Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_alarmdoor01.wav",  //Goddamn alarm door.
-			"player/survivor/voice/cliffe/dlc1_c6m1_alarmdoor02.wav",  //When we open this door its gonna alert the zombies.
-			"player/survivor/voice/cliffe/dlc1_c6m1_alarmdoor03.wav",  //Shit, alarm door.
-			"player/survivor/voice/cliffe/dlc1_c6m1_alarmdoor06.wav",  //Let's get ready!
-			"player/survivor/voice/cliffe/dlc1_c6m1_alarmdoor07.wav",  //This is gonna get noisy.
-			"player/survivor/voice/cliffe/dlc1_c6m2_bridge1raise04.wav"  //Get ready to run.
-		],
-		PlayerRemarkWorldC6M2_OpenGate2Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_bridge2raise02.wav",  //Hope this one works.
-			"player/survivor/voice/cliffe/dlc1_c6m2_bridge2raise03.wav"  //This one better work.
-		],
-		PlayerRemarkWorldC6M2_OpenGate2EllisCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_bridge2up01.wav",  //Hey Ellis... you test it.
-			"player/survivor/voice/cliffe/dlc1_c6m2_bridge2up03.wav"  //Ellis... you test it.
-		],
-		PlayerRemarkWorldC6M2_Phase2Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase201.wav",  //Tour ends, time to head down.
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase202.wav",  //Tour's over.
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase203.wav",  //Should we wait until they finish?
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase204.wav",  //Jesus Christ, what did we just pay five bucks for?
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase206.wav"  //Phase Two? Does this even go through?
-		],
-		PlayerRemarkWorldC6M2_Phase2DownCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase207.wav"  //Let's get off these stairs.
-		],
-		PlayerRemarkWorldC6M2_Phase2DownIntenseCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase211.wav",  //DOWN THE STAIRS, DOWN THE STAIRS!
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase208.wav",  //Don't stop on the stairs, GO!!!
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase209.wav",  //GO DOWN!
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase210.wav",  //DOWN DOWN DOWN!
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase212.wav"  //DOWN, LET'S GO!
-		],
-		PlayerRemarkWorldC6M2_PostGate1xCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_bridgecollapse02.wav",  //Goddamnit. Back in the shit water.
-			"player/survivor/voice/cliffe/dlc1_c6m2_bridgecollapse03.wav",  //Goddamnit. We're back in the toilet.
-			"player/survivor/voice/cliffe/dlc1_c6m2_bridgecollapse04.wav",  //THIS was going to be their goddamn tour?
-			"player/survivor/voice/cliffe/dlc1_c6m2_bridgecollapse05.wav"  //Great, back to the goddamn history of sewage.
-		],
-		PlayerRemarkWorldC6M2_SuitcaseCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_suitcasepistols01.wav",  //I like the way this guy packs.
-			"player/survivor/voice/cliffe/dlc1_c6m2_suitcasepistols02.wav"  //Don't mind if I do.
-		],
-		PlayerRemarkWorldC6M2_TattooCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_tattoo01.wav",  //Who wants a tattoo?
-			"player/survivor/voice/cliffe/dlc1_c6m2_tattoo13.wav"  //I've never done a colored tattoo.
-		],
-		PlayerRemarkWorldC6M2_TattooZoeyCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_tattoo02.wav",  //Ellis, did you get that girl's name? 'Cause I can tattoo it on your ass. She'll like that.
-			"player/survivor/voice/cliffe/dlc1_c6m2_tattoo03.wav",  //Hey Ellis, did you get that girl's name? Because you know what? I can tattoo it on your ass. She'll love it.
-			"player/survivor/voice/cliffe/dlc1_c6m2_tattoo04.wav"  //Ellis, did you get that girl's name? 'Cause I can tattoo it on your ass. She'll like that.
-		],
-		PlayerRemarkWorldC6M2_TourEntranceCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_ticketcounter01.wav"  //This'll take us under the river.
-		],
-		PlayerRemarkWorldC6M2_UpCatWalkCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_upcatwalk01.wav",  //Thank GOD!
-			"player/survivor/voice/cliffe/dlc1_c6m2_upcatwalk02.wav"  //A ladder!
-		],
-		PlayerRemarkWorldC6M2_UpStairsCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_upstairs01.wav",  //Up these stairs.
-			"player/survivor/voice/cliffe/dlc1_c6m2_upstairs02.wav",  //Up the stairs!
-			"player/survivor/voice/cliffe/dlc1_c6m2_upstairs03.wav",  //Let's get up to the street.
-			"player/survivor/voice/cliffe/dlc1_c6m2_upstairs04.wav",  //Let's get to the street.
-			"player/survivor/voice/cliffe/dlc1_c6m2_upstairs05.wav"  //Let's get to street level.
-		],
-		PlayerRemarkWorldC6M2_UpStairs2Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_upstairs01.wav",  //Up these stairs.
-			"player/survivor/voice/cliffe/dlc1_c6m2_upstairs02.wav"  //Up the stairs!
-		],
-		PlayerRemarkWorldC6M3_BridgeRunCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalebridgerun05.wav",  //THANKS, YOU THREE!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalebridgerun06.wav"  //GOOD LUCK! THANKS!
-		],
-		PlayerRemarkWorldC6M3_ByBridgeCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalebridgerun03.wav",  //Thanks! We gotta run!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalefinalgas01.wav",  //Thanks, guys. You good?
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalefinalgas02.wav",  //Thank you. Good luck out there, huh?
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalefinalgas03.wav",  //You three take care of yourselves. And thanks.
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalefinalgas04.wav",  //We won't forget this.
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalefinalgas05.wav"  //Be safe, you three.
-		],
-		PlayerRemarkWorldC6M3_ByBridgeLossCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_loss07.wav",  //You guys wanna come with us?
-			"player/survivor/voice/cliffe/dlc1_c6m3_loss08.wav",  //Should we join forces?
-			"player/survivor/voice/cliffe/dlc1_c6m3_loss09.wav",  //Wanna make this a... seven-some?
-			"player/survivor/voice/cliffe/dlc1_c6m3_loss10.wav",  //Are you gonna come with us?
-			"player/survivor/voice/cliffe/dlc1_c6m3_loss12.wav",  //I think we're gonna stick together.
-			"player/survivor/voice/cliffe/dlc1_c6m3_loss13.wav"  //I think we're gonna stick together.
-		],
-		PlayerRemarkWorldC6M3_BillCliffe = [
-			"player/survivor/voice/cliffe/blank.wav"  //
-		],
-		WorldC6M3LossCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_loss01.wav",  //Sorry for your loss.
-			"player/survivor/voice/cliffe/dlc1_c6m3_loss02.wav",  //Sorry for your loss.
-			"player/survivor/voice/cliffe/dlc1_c6m3_loss06.wav"  //Hey, sorry for your loss.
-		],
-		WorldC6M3Loss2Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_loss03.wav",  //All shit aside, sorry to hear it.
-			"player/survivor/voice/cliffe/blank.wav"  //
-		],
-		WorldC6M3Loss3Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_loss11.wav",  //I'm starting to get that feeling myself.
-			"player/survivor/voice/cliffe/dlc1_c6m3_loss14.wav",  //
-			"player/survivor/voice/cliffe/dlc1_c6m3_loss15.wav"  //
-		],
-		PlayerRemarkWorldFootLockerCliffe = [
-			"player/survivor/voice/cliffe/dlc1_footlocker03.wav",  //Let's see what's in here.
-			"player/survivor/voice/cliffe/dlc1_footlocker04.wav",  //Let's open this up.
-			"player/survivor/voice/cliffe/dlc1_footlocker06.wav"  //Open it up.
-		],
-		PlayerWorldSignHurricane2Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting06.wav",  //What?
-			"player/survivor/voice/cliffe/worldc2m433.wav"  //What?
-		],
-		PlayerRemarkWorldSignRestricted2Cliffe = [
-			"player/survivor/voice/cliffe/worldsigns01.wav"  //Restricted area my ass (restricted area)
-		],
-		PlayerWorldSignC5AlarmWillSoundCliffe = [
-			"player/survivor/voice/cliffe/world116.wav",  //As soon as that door opens, get ready to run for the tower.
-			"player/survivor/voice/cliffe/worldc5m2b11.wav",  //Get ready to run.
-			"player/survivor/voice/cliffe/worldc5m2b10.wav"  //As soon as we open the door, the alarm's gonna sound.
-		],
-		PlayerWorldSignC5AlarmWillSound3bCliffe = [
-			"player/survivor/voice/cliffe/world115.wav"  //We run to the tower and turn off the alarm. (exasperated to Ellis)
-		],
-		PlayerWorldSignC5AlarmWillSound3cCliffe = [
-			"player/survivor/voice/cliffe/world120.wav"  //Yeah and of course, stay together (Ellis - but we should stick together right?)
-		],
-		RespondAffirmativeCliffe = [
-			"player/survivor/voice/cliffe/yes01.wav",  //Yes.
-			"player/survivor/voice/cliffe/yes04.wav",  //Yeppers.
-			"player/survivor/voice/cliffe/yes05.wav",  //Yes.
-			"player/survivor/voice/cliffe/yes08.wav",  //Yessss.
-			"player/survivor/voice/cliffe/yes09.wav"  //Yes.
-		],
-		PlayerFollowMeCliffe = [
-			"player/survivor/voice/cliffe/followme01.wav",  //This way!
-			"player/survivor/voice/cliffe/followme02.wav",  //Over here.
-			"player/survivor/voice/cliffe/followme03.wav",  //Follow me.
-			"player/survivor/voice/cliffe/followme04.wav",  //Follow me.
-			"player/survivor/voice/cliffe/followme05.wav",  //Come on, this way!
-			"player/survivor/voice/cliffe/followme06.wav",  //Keep up.
-			"player/survivor/voice/cliffe/followme07.wav",  //Keep up.
-			"player/survivor/voice/cliffe/followme08.wav",  //Come on, this way!
-			"player/survivor/voice/cliffe/followme09.wav",  //Okay this way!
-			"player/survivor/voice/cliffe/followme10.wav",  //This way!
-			"player/survivor/voice/cliffe/followme11.wav",  //Over here.
-			"player/survivor/voice/cliffe/followme12.wav",  //Follow me.
-			"player/survivor/voice/cliffe/followme13.wav"  //Keep up.
-		],
-		PlayerHelpCliffe = [
-			"player/survivor/voice/cliffe/help01.wav",  //I need some help.
-			"player/survivor/voice/cliffe/help02.wav",  //I can't do this on my own, gimme some help!
-			"player/survivor/voice/cliffe/help03.wav",  //Somebody want to lend me a hand, here?
-			"player/survivor/voice/cliffe/help04.wav",  //Help!
-			"player/survivor/voice/cliffe/help05.wav"  //Hey, over here!
-		],
-		PlayerHurryUpCliffe = [
-			"player/survivor/voice/cliffe/hurryup01.wav",  //Come on I'm in a hurry
-			"player/survivor/voice/cliffe/hurryup02.wav",  //Come on I'm in a hurry
-			"player/survivor/voice/cliffe/hurryup03.wav",  //Hurry it up.
-			"player/survivor/voice/cliffe/hurryup04.wav",  //Lets go, Lets go!
-			"player/survivor/voice/cliffe/hurryup05.wav"  //Move, move, move.
-		],
-		PlayerHurryUpC4M2Cliffe = [
-			"player/survivor/voice/cliffe/emphaticgoquiet01.wav",  //Everybody keep moving.
-			"player/survivor/voice/cliffe/emphaticgoquiet02.wav",  //Just go.
-			"player/survivor/voice/cliffe/emphaticgoquiet03.wav",  //Just go. Go.
-			"player/survivor/voice/cliffe/emphaticgoquiet04.wav",  //Don't stop, don't stop.
-			"player/survivor/voice/cliffe/emphaticgoquiet05.wav"  //Keep moving.
-		],
-		PlayerKillThatLightCliffe = [
-			"player/survivor/voice/cliffe/killthatlight01.wav",  //Lights off.
-			"player/survivor/voice/cliffe/killthatlight02.wav",  //Everybody, lights off.
-			"player/survivor/voice/cliffe/killthatlight03.wav"  //Kill your light.
-		],
-		PlayerLeadOnCliffe = [
-			"player/survivor/voice/cliffe/leadon01.wav",  //Lead on.
-			"player/survivor/voice/cliffe/leadon02.wav",  //Lead on, McDuff.
-			"player/survivor/voice/cliffe/leadon03.wav",  //Lead on, smart guy.
-			"player/survivor/voice/cliffe/leadon04.wav",  //Lead on.
-			"player/survivor/voice/cliffe/leadon05.wav",  //I'm right behind you.
-			"player/survivor/voice/cliffe/leadon06.wav",  //Right behind you.
-			"player/survivor/voice/cliffe/leadon07.wav",  //Yeah, you go first.
-			"player/survivor/voice/cliffe/leadon08.wav",  //Lead on.
-			"player/survivor/voice/cliffe/leadon09.wav"  //Right behind you.
-		],
-		PlayerMoveOnCliffe = [
-			"player/survivor/voice/cliffe/moveon01.wav",  //Look at ya. What are we waiting for?  Let's go.
-			"player/survivor/voice/cliffe/moveon02.wav",  //Let's roll!
-			"player/survivor/voice/cliffe/moveon03.wav",  //Time to move.
-			"player/survivor/voice/cliffe/moveon04.wav",  //What are we waiting for?  Let's go.
-			"player/survivor/voice/cliffe/moveon05.wav"  //Let's go.
-		],
-		PlayerStayTogetherCliffe = [
-			"player/survivor/voice/cliffe/staytogether01.wav",  //Stay close!
-			"player/survivor/voice/cliffe/staytogether02.wav",  //Stay together people.
-			"player/survivor/voice/cliffe/staytogether03.wav"  //Keep close.
-		],
-		PlayerWatchOutBehindCliffe = [
-			"player/survivor/voice/cliffe/watchoutbehind01.wav",  //They're behind us!
-			"player/survivor/voice/cliffe/watchoutbehind02.wav",  //Behind us!
-			"player/survivor/voice/cliffe/watchoutbehind03.wav",  //Behind!
-			"player/survivor/voice/cliffe/watchoutbehind04.wav"  //Behind us!
-		],
-		PlayerAskReadyCliffe = [
-			"player/survivor/voice/cliffe/askready01.wav",  //Okay, we ready?
-			"player/survivor/voice/cliffe/askready02.wav",  //We ready?
-			"player/survivor/voice/cliffe/askready03.wav",  //Ready?
-			"player/survivor/voice/cliffe/askready04.wav",  //Everyone ready?
-			"player/survivor/voice/cliffe/askready05.wav",  //We ready?
-			"player/survivor/voice/cliffe/askready06.wav",  //We ready?
-			"player/survivor/voice/cliffe/askready07.wav",  //We ready?
-			"player/survivor/voice/cliffe/askready08.wav",  //Ready?
-			"player/survivor/voice/cliffe/askready09.wav",  //Everyone ready?
-			"player/survivor/voice/cliffe/askready10.wav"  //We ready?
-		],
-		PlayerAskReadyC1Cliffe = [
-			"player/survivor/voice/cliffe/askreadyc101.wav",  //Are you guys ready?
-			"player/survivor/voice/cliffe/askreadyc102.wav",  //Do you think you can handle this?
-			"player/survivor/voice/cliffe/askreadyc103.wav"  //If you aren't ready, I don't want to hear it.
-		],
-		PlayerImWithYouCliffe = [
-			"player/survivor/voice/cliffe/imwithyou01.wav",  //I'm here.
-			"player/survivor/voice/cliffe/imwithyou02.wav",  //Why not? I follow you.
-			"player/survivor/voice/cliffe/imwithyou03.wav",  //I'm with you.
-			"player/survivor/voice/cliffe/imwithyou04.wav",  //Sure thing, let's go.
-			"player/survivor/voice/cliffe/imwithyou05.wav"  //Sure, let's go.
-		],
-		PlayerLaughCliffe = [
-			"player/survivor/voice/cliffe/laughter01.wav",  //<Hearty Laugh>
-			"player/survivor/voice/cliffe/laughter02.wav",  //
-			"player/survivor/voice/cliffe/laughter03.wav",  //<Hearty Laugh>
-			"player/survivor/voice/cliffe/laughter04.wav",  //
-			"player/survivor/voice/cliffe/laughter05.wav",  //
-			"player/survivor/voice/cliffe/laughter06.wav",  //<Short laugh>
-			"player/survivor/voice/cliffe/laughter07.wav",  //
-			"player/survivor/voice/cliffe/laughter08.wav",  //
-			"player/survivor/voice/cliffe/laughter09.wav",  //
-			"player/survivor/voice/cliffe/laughter10.wav",  //
-			"player/survivor/voice/cliffe/laughter11.wav",  //
-			"player/survivor/voice/cliffe/laughter12.wav",  //
-			"player/survivor/voice/cliffe/laughter13.wav",  //
-			"player/survivor/voice/cliffe/laughter14.wav",  //
-			"player/survivor/voice/cliffe/laughter15.wav",  //<Short laugh>
-			"player/survivor/voice/cliffe/laughter16.wav",  //<Short laugh>
-			"player/survivor/voice/cliffe/laughter17.wav"  //<Short laugh>
-		],
-		PlayerLostCallCliffe = [
-			"player/survivor/voice/cliffe/lostcall01.wav",  //Helloooo?
-			"player/survivor/voice/cliffe/lostcall02.wav",  //Heyyy ooooo!
-			"player/survivor/voice/cliffe/lostcall03.wav",  //Anybody hear me?
-			"player/survivor/voice/cliffe/lostcall04.wav",  //Can you guys hear me?
-			"player/survivor/voice/cliffe/lostcall05.wav"  //Helloooo?
-		],
-		PlayerNiceJobResponseCliffe = [
-			"player/survivor/voice/cliffe/nicejob01.wav",  //Well all right!
-			"player/survivor/voice/cliffe/nicejob02.wav",  //Well all right!
-			"player/survivor/voice/cliffe/nicejob03.wav",  //Nice job!
-			"player/survivor/voice/cliffe/nicejob04.wav",  //Nice job!
-			"player/survivor/voice/cliffe/nicejob05.wav",  //That was surprisingly good.
-			"player/survivor/voice/cliffe/nicejob06.wav",  //Nice.
-			"player/survivor/voice/cliffe/nicejob07.wav",  //Nice.
-			"player/survivor/voice/cliffe/nicejob08.wav",  //Nice.
-			"player/survivor/voice/cliffe/nicejob09.wav",  //That's what I like to see.
-			"player/survivor/voice/cliffe/nicejob10.wav"  //Wow.  Nice.
-		],
-		PlayerNoCliffe = [
-			"player/survivor/voice/cliffe/no01.wav",  //No.
-			"player/survivor/voice/cliffe/no02.wav",  //Nope.
-			"player/survivor/voice/cliffe/no03.wav",  //No.
-			"player/survivor/voice/cliffe/no04.wav",  //No sir-ee Bob.
-			"player/survivor/voice/cliffe/no05.wav",  //Nope.
-			"player/survivor/voice/cliffe/no06.wav",  //Uh uh.
-			"player/survivor/voice/cliffe/no07.wav",  //No.
-			"player/survivor/voice/cliffe/no08.wav",  //Nope.
-			"player/survivor/voice/cliffe/no09.wav",  //Yeah, no.
-			"player/survivor/voice/cliffe/no10.wav",  //NO!
-			"player/survivor/voice/cliffe/no11.wav",  //NO!
-			"player/survivor/voice/cliffe/no12.wav"  //NO!
-		],
-		PlayerNoFemaleCliffe = [
-			"player/survivor/voice/cliffe/nofemale01.wav",  //No, sweety.
-			"player/survivor/voice/cliffe/nofemale02.wav"  //No way, sweety.
-		],
-		PlayerNoEllisCliffe = [
-			"player/survivor/voice/cliffe/noellis01.wav",  //Try again, champ.
-			"player/survivor/voice/cliffe/noellis02.wav"  //Try again, little man.
-		],
-		PlayerAnswerLostCallCliffe = [
-			"player/survivor/voice/cliffe/scenariojoin02.wav",  //I'm here.
-			"player/survivor/voice/cliffe/scenariojoin03.wav"  //Okay, I'm here.
-		],
-		KillStealCalledOutCliffe = [
-			"player/survivor/voice/cliffe/reactionnegative05.wav",  //Bullshit!
-			"player/survivor/voice/cliffe/reactionnegative11.wav",  //Oh bullshit!
-			"player/survivor/voice/cliffe/reactionnegative17.wav",  //Bullshit!
-			"player/survivor/voice/cliffe/reactionnegative22.wav"  //Oh bullshit!
-		],
-		PlayerSorryCliffe = [
-			"player/survivor/voice/cliffe/sorry04.wav",  //Well sorry.
-			"player/survivor/voice/cliffe/sorry06.wav"  //I'm sorry, okay?
-		],
-		PlayerSorryFFCliffe = [
-			"player/survivor/voice/cliffe/sorry01.wav",  //Excuse me.
-			"player/survivor/voice/cliffe/sorry02.wav",  //Excuse me.
-			"player/survivor/voice/cliffe/sorry03.wav",  //Forgive me, okay?.
-			"player/survivor/voice/cliffe/sorry05.wav",  //I'm sorry, is that what you want me to say?
-			"player/survivor/voice/cliffe/sorry07.wav",  //Can you forgive me?
-			"player/survivor/voice/cliffe/sorry08.wav"  //Don't look at me like that.
-		],
-		PlayerThanksCliffe = [
-			"player/survivor/voice/cliffe/thanks01.wav",  //Thanks.
-			"player/survivor/voice/cliffe/thanks02.wav",  //Thank you.
-			"player/survivor/voice/cliffe/thanks03.wav",  //Thanks!
-			"player/survivor/voice/cliffe/thanks05.wav"  //I owe you one.
-		],
-		PlayerYellRunCliffe = [
-			"player/survivor/voice/cliffe/yellrun01.wav",  //Run
-			"player/survivor/voice/cliffe/yellrun02.wav",  //Screw it, run!
-			"player/survivor/voice/cliffe/yellrun03.wav",  //Run! Just run!
-			"player/survivor/voice/cliffe/yellrun04.wav"  //Go! Run! GO!
-		],
-		PlayerYesCliffe = [
-			"player/survivor/voice/cliffe/yes01.wav",  //Yes.
-			"player/survivor/voice/cliffe/yes02.wav",  //Yep.
-			"player/survivor/voice/cliffe/yes03.wav",  //Yeah.
-			"player/survivor/voice/cliffe/yes04.wav",  //Yeppers.
-			"player/survivor/voice/cliffe/yes05.wav",  //Yes.
-			"player/survivor/voice/cliffe/yes06.wav",  //Yes.
-			"player/survivor/voice/cliffe/yes07.wav",  //Yeah.
-			"player/survivor/voice/cliffe/yes08.wav",  //Yessss.
-			"player/survivor/voice/cliffe/yes09.wav",  //Yes.
-			"player/survivor/voice/cliffe/yes10.wav",  //Yessss.
-			"player/survivor/voice/cliffe/yes12.wav"  //Yeah, yeah, yeah, yeah.
-		],
-		PlayerYouAreWelcomeCliffe = [
-			"player/survivor/voice/cliffe/youarewelcome01.wav",  //You're welcome.
-			"player/survivor/voice/cliffe/youarewelcome02.wav",  //You're welcome.
-			"player/survivor/voice/cliffe/youarewelcome03.wav",  //You're welcome.
-			"player/survivor/voice/cliffe/youarewelcome04.wav",  //Don't worry about it.
-			"player/survivor/voice/cliffe/youarewelcome05.wav",  //You're welcome.
-			"player/survivor/voice/cliffe/youarewelcome06.wav",  //Don't worry about it.
-			"player/survivor/voice/cliffe/youarewelcome07.wav",  //Don't worry about it.
-			"player/survivor/voice/cliffe/youarewelcome08.wav",  //That's what I'm here for.
-			"player/survivor/voice/cliffe/youarewelcome09.wav",  //That's what I'm here for.
-			"player/survivor/voice/cliffe/youarewelcome10.wav",  //That's what I'm here for.
-			"player/survivor/voice/cliffe/youarewelcome11.wav",  //Anytime.
-			"player/survivor/voice/cliffe/youarewelcome12.wav",  //Anytime.
-			"player/survivor/voice/cliffe/youarewelcome13.wav",  //Anytime.
-			"player/survivor/voice/cliffe/youarewelcome14.wav",  //Sure thing.
-			"player/survivor/voice/cliffe/youarewelcome15.wav",  //Sure thing.
-			"player/survivor/voice/cliffe/youarewelcome16.wav",  //Sure thing.
-			"player/survivor/voice/cliffe/youarewelcome17.wav"  //Sure thing.
-		],
-		PlayerYouAreWelcomeC1Cliffe = [
-			"player/survivor/voice/cliffe/youarewelcomec101.wav",  //Whatever.
-			"player/survivor/voice/cliffe/youarewelcomec102.wav",  //Um yeah.
-			"player/survivor/voice/cliffe/youarewelcomec103.wav",  //Sure.
-			"player/survivor/voice/cliffe/youarewelcomec104.wav",  //Whatever.
-			"player/survivor/voice/cliffe/youarewelcomec105.wav",  //Sure.
-			"player/survivor/voice/cliffe/youarewelcomec106.wav",  //Um yeah.
-			"player/survivor/voice/cliffe/youarewelcomec107.wav",  //Sure.
-			"player/survivor/voice/cliffe/youarewelcomec108.wav",  //Whatever.
-			"player/survivor/voice/cliffe/youarewelcomec109.wav"  //Um yeah.
-		],
-		YouAreWelcomeCoachCliffe = [
-			"player/survivor/voice/cliffe/youarewelcomecoach01.wav",  //No problem, Coach.
-			"player/survivor/voice/cliffe/youarewelcomecoach02.wav"  //No problem, Coach.
-		],
-		YouAreWelcomeMechanicCliffe = [
-			"player/survivor/voice/cliffe/youarewelcomemechanic01.wav",  //You owe me, Ellis.
-			"player/survivor/voice/cliffe/youarewelcomemechanic02.wav"  //You owe me, Ellis.
-		],
-		YouAreWelcomeProducerCliffe = [
-			"player/survivor/voice/cliffe/youarewelcomeproducer01.wav",  //Sure thing, Ro.
-			"player/survivor/voice/cliffe/youarewelcomeproducer02.wav"  //Sure thing, Ro.
-		],
-		BotAttentionBattleCliffe = [
-			"player/survivor/voice/cliffe/leadon01.wav",  //Lead on.
-			"player/survivor/voice/cliffe/leadon02.wav",  //Lead on, McDuff.
-			"player/survivor/voice/cliffe/leadon03.wav",  //Lead on, smart guy.
-			"player/survivor/voice/cliffe/leadon04.wav",  //Lead on.
-			"player/survivor/voice/cliffe/leadon05.wav",  //I'm right behind you.
-			"player/survivor/voice/cliffe/leadon06.wav",  //Right behind you.
-			"player/survivor/voice/cliffe/leadon08.wav",  //Lead on.
-			"player/survivor/voice/cliffe/leadon09.wav",  //Right behind you.
-			"player/survivor/voice/cliffe/moveon01.wav",  //Look at ya. What are we waiting for?  Let's go.
-			"player/survivor/voice/cliffe/moveon02.wav",  //Let's roll!
-			"player/survivor/voice/cliffe/moveon03.wav",  //Time to move.
-			"player/survivor/voice/cliffe/moveon04.wav",  //What are we waiting for?  Let's go.
-			"player/survivor/voice/cliffe/moveon05.wav",  //Let's go.
-			"player/survivor/voice/cliffe/imwithyou01.wav",  //I'm here.
-			"player/survivor/voice/cliffe/imwithyou03.wav"  //I'm with you.
-		],
-		BotNoteHumanAttentionCliffe = [
-			"player/survivor/voice/cliffe/askready01.wav",  //Okay, we ready?
-			"player/survivor/voice/cliffe/askready02.wav",  //We ready?
-			"player/survivor/voice/cliffe/askready03.wav",  //Ready?
-			"player/survivor/voice/cliffe/askready04.wav",  //Everyone ready?
-			"player/survivor/voice/cliffe/askready05.wav",  //We ready?
-			"player/survivor/voice/cliffe/askready06.wav",  //We ready?
-			"player/survivor/voice/cliffe/askready07.wav",  //We ready?
-			"player/survivor/voice/cliffe/askready08.wav",  //Ready?
-			"player/survivor/voice/cliffe/askready09.wav",  //Everyone ready?
-			"player/survivor/voice/cliffe/askready10.wav"  //We ready?
-		],
-		PlayerNegativeCliffe = [
-			"player/survivor/voice/cliffe/reactionnegative01.wav",  //This is all going to hell!
-			"player/survivor/voice/cliffe/reactionnegative02.wav",  //Damn...
-			"player/survivor/voice/cliffe/reactionnegative03.wav",  //Shit!
-			"player/survivor/voice/cliffe/reactionnegative04.wav",  //God damn it.
-			"player/survivor/voice/cliffe/reactionnegative05.wav",  //Bullshit!
-			"player/survivor/voice/cliffe/reactionnegative06.wav",  //Bastards!
-			"player/survivor/voice/cliffe/reactionnegative07.wav",  //Holy Shit!
-			"player/survivor/voice/cliffe/reactionnegative08.wav",  //Ah, tits!
-			"player/survivor/voice/cliffe/reactionnegative09.wav",  //Son of a bitch.
-			"player/survivor/voice/cliffe/reactionnegative10.wav",  //Son of a bitch.
-			"player/survivor/voice/cliffe/reactionnegative11.wav",  //Oh bullshit!
-			"player/survivor/voice/cliffe/reactionnegative12.wav",  //My ass.
-			"player/survivor/voice/cliffe/reactionnegative13.wav",  //This is all going to hell!
-			"player/survivor/voice/cliffe/reactionnegative14.wav",  //Damn...
-			"player/survivor/voice/cliffe/reactionnegative15.wav",  //Shit!
-			"player/survivor/voice/cliffe/reactionnegative16.wav",  //God damn it.
-			"player/survivor/voice/cliffe/reactionnegative17.wav",  //Bullshit!
-			"player/survivor/voice/cliffe/reactionnegative18.wav",  //Bastards!
-			"player/survivor/voice/cliffe/reactionnegative19.wav",  //Shit!
-			"player/survivor/voice/cliffe/reactionnegative20.wav",  //Tits!
-			"player/survivor/voice/cliffe/reactionnegative21.wav",  //Son of a bitch.
-			"player/survivor/voice/cliffe/reactionnegative22.wav",  //Oh bullshit!
-			"player/survivor/voice/cliffe/reactionnegative23.wav",  //My ass.
-			"player/survivor/voice/cliffe/reactionnegative24.wav",  //Is this some kind of sick joke?
-			"player/survivor/voice/cliffe/reactionnegative25.wav",  //Is this some kind of sick joke?
-			"player/survivor/voice/cliffe/reactionnegative26.wav",  //I call foul.
-			"player/survivor/voice/cliffe/reactionnegative27.wav",  //Kiss my ass.
-			"player/survivor/voice/cliffe/reactionnegative28.wav",  //Ass.
-			"player/survivor/voice/cliffe/reactionnegative29.wav",  //Asshat.
-			"player/survivor/voice/cliffe/reactionnegative30.wav",  //Bitch.
-			"player/survivor/voice/cliffe/reactionnegative31.wav",  //Asshole.
-			"player/survivor/voice/cliffe/reactionnegative32.wav",  //Assclown.
-			"player/survivor/voice/cliffe/reactionnegative33.wav",  //Dumbshit.
-			"player/survivor/voice/cliffe/reactionnegative34.wav",  //Screw this.
-			"player/survivor/voice/cliffe/reactionnegative35.wav",  //Kiss my ass.
-			"player/survivor/voice/cliffe/reactionnegative36.wav",  //Kiss my ass.
-			"player/survivor/voice/cliffe/reactionnegative37.wav",  //What an assclown.
-			"player/survivor/voice/cliffe/reactionnegative38.wav"  //Dumbshit.
-		],
-		PlayerShootCarNotCliffe = [
-			"player/survivor/voice/cliffe/reactionnegative01.wav",  //This is all going to hell!
-			"player/survivor/voice/cliffe/reactionnegative05.wav",  //Bullshit!
-			"player/survivor/voice/cliffe/reactionnegative11.wav",  //Oh bullshit!
-			"player/survivor/voice/cliffe/reactionnegative12.wav",  //My ass.
-			"player/survivor/voice/cliffe/reactionnegative25.wav",  //Is this some kind of sick joke?
-			"player/survivor/voice/cliffe/reactionnegative28.wav",  //Ass.
-			"player/survivor/voice/cliffe/reactionnegative29.wav",  //Asshat.
-			"player/survivor/voice/cliffe/reactionnegative31.wav",  //Asshole.
-			"player/survivor/voice/cliffe/reactionnegative32.wav",  //Assclown.
-			"player/survivor/voice/cliffe/reactionnegative33.wav"  //Dumbshit.
-		],
-		PlayerShootCarCliffe = [
-			"player/survivor/voice/cliffe/reactionnegative03.wav",  //Shit!
-			"player/survivor/voice/cliffe/reactionnegative04.wav",  //God damn it.
-			"player/survivor/voice/cliffe/reactionnegative10.wav"  //Son of a bitch.
-		],
-		PlayerHeardBoomerCliffe = [
-			"player/survivor/voice/cliffe/heardboomer01.wav",  //Keep a lookout. I hear a boomer.
-			"player/survivor/voice/cliffe/heardboomer02.wav",  //I hear a boomer.
-			"player/survivor/voice/cliffe/heardboomer03.wav",  //You hear that boomer?
-			"player/survivor/voice/cliffe/heardboomer04.wav",  //You hear that boomer?
-			"player/survivor/voice/cliffe/heardboomer05.wav",  //You hear that boomer? Don't let him spew on you.
-			"player/survivor/voice/cliffe/heardboomer06.wav"  //Boomer around.  Don't shoot him if he's near me! OKAY?
-		],
-		PlayerHeardHunterCliffe = [
-			"player/survivor/voice/cliffe/heardhunter01.wav",  //You hear that hunter?
-			"player/survivor/voice/cliffe/heardhunter02.wav",  //Pay attention, hunter's around.
-			"player/survivor/voice/cliffe/heardhunter03.wav"  //I hear a hunter.
-		],
-		PlayerHeardSmokerCliffe = [
-			"player/survivor/voice/cliffe/heardsmoker01.wav",  //There's a Smoker around here.
-			"player/survivor/voice/cliffe/heardsmoker02.wav",  //Smoker's around.
-			"player/survivor/voice/cliffe/heardsmoker03.wav",  //I hear a smoker.
-			"player/survivor/voice/cliffe/heardsmoker04.wav"  //There's a Smoker around here.
-		],
-		PlayerHeardChargerCliffe = [
-			"player/survivor/voice/cliffe/heardcharger01.wav",  //Keep your eyes peeled, I hear a charger.
-			"player/survivor/voice/cliffe/heardcharger02.wav",  //I hear a charger.
-			"player/survivor/voice/cliffe/heardcharger03.wav",  //Charger around, get ready.
-			"player/survivor/voice/cliffe/heardcharger04.wav",  //Charger around, get ready.
-			"player/survivor/voice/cliffe/heardcharger05.wav",  //Do you hear that charger?
-			"player/survivor/voice/cliffe/heardcharger06.wav",  //I hear a charger.
-			"player/survivor/voice/cliffe/heardcharger07.wav"  //You hear that charger?
-		],
-		PlayerHeardSpitterCliffe = [
-			"player/survivor/voice/cliffe/heardspitter01.wav",  //Spitter around.
-			"player/survivor/voice/cliffe/heardspitter02.wav",  //I hear a spitter.
-			"player/survivor/voice/cliffe/heardspitter03.wav",  //There's a spitter around.
-			"player/survivor/voice/cliffe/heardspitter04.wav",  //There's a spitter around.
-			"player/survivor/voice/cliffe/heardspitter05.wav",  //I hear a spitter.
-			"player/survivor/voice/cliffe/heardspitter06.wav"  //There's a spitter around.
-		],
-		PlayerHeardJockeyCliffe = [
-			"player/survivor/voice/cliffe/heardjockey01.wav",  //I can hear a jockey.
-			"player/survivor/voice/cliffe/heardjockey02.wav",  //Jockey's around.
-			"player/survivor/voice/cliffe/heardjockey03.wav",  //One of those little jockey bastards is around.
-			"player/survivor/voice/cliffe/heardjockey04.wav",  //I can hear a jockey.
-			"player/survivor/voice/cliffe/heardjockey05.wav",  //Jockey's around.
-			"player/survivor/voice/cliffe/heardjockey06.wav"  //One of those little jockey bastards is around.
-		],
-		PlayerHeardBoomerC1Cliffe = [
-			"player/survivor/voice/cliffe/heardspecialc101.wav",  //Is someone beating a horse?
-			"player/survivor/voice/cliffe/heardspecialc102.wav",  //What is that? Is somebody beating a horse or what?
-			"player/survivor/voice/cliffe/heardspecialc103.wav",  //What in the hell is that noise?
-			"player/survivor/voice/cliffe/heardspecialc104.wav",  //You hear that? I guess zombies weren't bad enough.
-			"player/survivor/voice/cliffe/heardspecialc105.wav",  //You hear that?
-			"player/survivor/voice/cliffe/heardspecialc106.wav",  //Can you hear that?
-			"player/survivor/voice/cliffe/heardspecialc107.wav",  //What is that noise?
-			"player/survivor/voice/cliffe/heardspecialc108.wav",  //I have no idea what that noise is.
-			"player/survivor/voice/cliffe/heardspecialc109.wav"  //Something we're gonna have to kill.
-		],
-		PlayerHeardJockeyC1Cliffe = [
-			"player/survivor/voice/cliffe/heardspecialc103.wav",  //What in the hell is that noise?
-			"player/survivor/voice/cliffe/heardspecialc104.wav",  //You hear that? I guess zombies weren't bad enough.
-			"player/survivor/voice/cliffe/heardspecialc105.wav",  //You hear that?
-			"player/survivor/voice/cliffe/heardspecialc106.wav",  //Can you hear that?
-			"player/survivor/voice/cliffe/heardspecialc107.wav",  //What is that noise?
-			"player/survivor/voice/cliffe/heardspecialc108.wav",  //I have no idea what that noise is.
-			"player/survivor/voice/cliffe/heardspecialc109.wav"  //Something we're gonna have to kill.
-		],
-		PlayerHeardTankCliffe = [
-			"player/survivor/voice/cliffe/heardhulk01.wav",  //Tank! Tank!
-			"player/survivor/voice/cliffe/heardhulk02.wav",  //Tank inbound!
-			"player/survivor/voice/cliffe/heardhulk03.wav",  //Man up!  We got a Tank!
-			"player/survivor/voice/cliffe/heardhulk04.wav",  //Get ready,  we got a TANK!
-			"player/survivor/voice/cliffe/heardhulk05.wav",  //Hold steady, TANK!
-			"player/survivor/voice/cliffe/heardhulk06.wav"  //Get ready, TANK!
-		],
-		PlayerHeardWitchCliffe = [
-			"player/survivor/voice/cliffe/heardwitch01.wav",  //Sounds like a witch.
-			"player/survivor/voice/cliffe/heardwitch02.wav",  //Sounds like a witch.
-			"player/survivor/voice/cliffe/heardwitch03.wav",  //I think I hear my ex-wife...
-			"player/survivor/voice/cliffe/heardwitch04.wav",  //Everybody hear that witch?
-			"player/survivor/voice/cliffe/heardwitch05.wav"  //I hear a witch.
-		],
-		PlayerHurrahCliffe = [
-			"player/survivor/voice/cliffe/hurrah01.wav",  //We are walking through the valley of the shadow of death and kicking ass.
-			"player/survivor/voice/cliffe/hurrah02.wav",  //It may not be pretty, but we're doing this.
-			"player/survivor/voice/cliffe/hurrah03.wav",  //You guys aren't so damn bad.
-			"player/survivor/voice/cliffe/hurrah04.wav",  //What do ya know, we're going to make it.
-			"player/survivor/voice/cliffe/hurrah05.wav",  //You guys are pretty good.
-			"player/survivor/voice/cliffe/hurrah06.wav",  //Aces!
-			"player/survivor/voice/cliffe/hurrah07.wav",  //I'm starting to like you guys.
-			"player/survivor/voice/cliffe/hurrah08.wav",  //We're makin' it look EASY!
-			"player/survivor/voice/cliffe/hurrah09.wav",  //And THAT is how you do that!
-			"player/survivor/voice/cliffe/hurrah10.wav",  //We're the four riders of the goddamn apocalypse!
-			"player/survivor/voice/cliffe/hurrah11.wav"  //And THAT is how you do it!
-		],
-		PlayerWarnCarefulCliffe = [
-			"player/survivor/voice/cliffe/warncareful01.wav",  //Everybody be careful.
-			"player/survivor/voice/cliffe/warncareful02.wav",  //Let's be careful.
-			"player/survivor/voice/cliffe/warncareful03.wav"  //Try and be careful.
-		],
-		SurvivorSpottedWorldFarCliffe = [
-			"player/survivor/voice/cliffe/look01.wav",  //Over there!
-			"player/survivor/voice/cliffe/look02.wav",  //Look!
-			"player/survivor/voice/cliffe/look03.wav",  //Over there!
-			"player/survivor/voice/cliffe/look04.wav",  //Look!
-			"player/survivor/voice/cliffe/look05.wav",  //Over there!
-			"player/survivor/voice/cliffe/look06.wav",  //Look!
-			"player/survivor/voice/cliffe/look07.wav"  //Look!
-		],
-		C6M3_PourFinishedCliffe = [
-			"player/survivor/voice/cliffe/blank.wav"  //
-		],
-		GasPourDoneSCCliffe = [
-			"player/survivor/voice/cliffe/battlecry03.wav",  //SUCK ON THIS!
-			"player/survivor/voice/cliffe/hurrah08.wav",  //We're makin' it look EASY!
-			"player/survivor/voice/cliffe/taunt01.wav",  //Suck on that
-			"player/survivor/voice/cliffe/taunt02.wav",  //Stick that where the sun don't shine!
-			"player/survivor/voice/cliffe/taunt05.wav"  //Stick that up your ass!
-		],
-		GasPourSCCliffe = [
-			"player/survivor/voice/cliffe/worldc1m4b08.wav",  //Fill 'er up!
-			"player/survivor/voice/cliffe/worldc1m4b14.wav",  //Got another can in the tank!
-			"player/survivor/voice/cliffe/worldc1m4b15.wav"  //One more for the gas tank!
-		],
-		GasPourSCSoloCliffe = [
-			"player/survivor/voice/cliffe/worldc1m4b09.wav",  //Come onnnn, come onnnnnn...
-			"player/survivor/voice/cliffe/worldc1m4b10.wav",  //Come onnnn, come onnnnnn...
-			"player/survivor/voice/cliffe/worldc1m4b11.wav",  //Come on...
-			"player/survivor/voice/cliffe/worldc1m4b12.wav",  //Get in the tank, you stupid goddamn gas, get in the tank.
-			"player/survivor/voice/cliffe/worldc1m4b17.wav",  //Hurry up, hurrrry upppp...
-			"player/survivor/voice/cliffe/worldc1m4b18.wav",  //Come comeoncomeoncomeoncomeon. Come on!
-			"player/survivor/voice/cliffe/worldc1m4b19.wav"  //Get! In! The! Tank!
-		],
-		GrabbingGasSCCliffe = [
-			"player/survivor/voice/cliffe/killconfirmation03.wav",  //Got it!
-			"player/survivor/voice/cliffe/world131.wav",  //I got it!
-			"player/survivor/voice/cliffe/dlc1_c6m3_cans01.wav"  //I got a can.
-		],
-		PlayerShotGasCanCliffe = [
-			"player/survivor/voice/cliffe/reactionnegative02.wav",  //Damn...
-			"player/survivor/voice/cliffe/reactionnegative03.wav",  //Shit!
-			"player/survivor/voice/cliffe/reactionnegative08.wav",  //Ah, tits!
-			"player/survivor/voice/cliffe/reactionnegative11.wav"  //Oh bullshit!
-		],
-		ScavengeStartCliffe = [
-			"player/survivor/voice/cliffe/worldc1m4b07.wav"  //Let's get some GAS!
-		],
-		PlayerCommentJockeyCliffe = [
-			"player/survivor/voice/cliffe/grabbedbyjockeyr02.wav"  //Ten bucks says he takes him to the right.
-		],
-		PlayerCommentJockey2Cliffe = [
-			"player/survivor/voice/cliffe/grabbedbyjockeyr01.wav"  //No, it doesn't.
-		],
-		C4M2LockTheDoorCheckPointCliffe = [
-			"player/survivor/voice/cliffe/worldc4m2b37.wav",  //Close the door and let's get this gas.
-			"player/survivor/voice/cliffe/worldc4m2b34.wav",  //Let's get the gas and get the hell out of here.
-			"player/survivor/voice/cliffe/worldc4m2b38.wav"  //Close the door and let's get this gas.
-		],
-		GoingToDieCoachCoachCliffe = [
-			"player/survivor/voice/cliffe/goingtodie01.wav",  //I really screwed the pooch back there.
-			"player/survivor/voice/cliffe/goingtodie02.wav",  //I gotta take better care of myself.
-			"player/survivor/voice/cliffe/goingtodie03.wav",  //Not dead yet, but not exactly healthy.
-			"player/survivor/voice/cliffe/goingtodie04.wav",  //God damn it! God damn it.  God damn it.
-			"player/survivor/voice/cliffe/goingtodie05.wav",  //If I go, you guys gonna miss me.
-			"player/survivor/voice/cliffe/goingtodie06.wav",  //I have seriously felt better.
-			"player/survivor/voice/cliffe/goingtodie07.wav",  //Pull yourself together man, you're falling apart.
-			"player/survivor/voice/cliffe/goingtodie08.wav",  //Don't worry about me, I'll be okay.
-			"player/survivor/voice/cliffe/goingtodie09.wav",  //This is not how it's going to end.
-			"player/survivor/voice/cliffe/goingtodie10.wav",  //I'm not dead yet!
-			"player/survivor/voice/cliffe/goingtodie11.wav",  //You're going to have to do better than that to kill me!
-			"player/survivor/voice/cliffe/goingtodie12.wav",  //Quit being a baby, you've felt worse after a night of drinking.
-			"player/survivor/voice/cliffe/goingtodie13.wav",  //Ain't this a bitch.
-			"player/survivor/voice/cliffe/goingtodie14.wav",  //God damn it I can't believe this.
-			"player/survivor/voice/cliffe/goingtodie15.wav",  //Well at least I didn't catch the flu.
-			"player/survivor/voice/cliffe/goingtodie16.wav",  //This is some crap
-			"player/survivor/voice/cliffe/goingtodie17.wav",  //Don't worry.  I'm not done yet.
-			"player/survivor/voice/cliffe/goingtodie18.wav",  //I am sick and tired of being sick and tired.
-			"player/survivor/voice/cliffe/goingtodie23.wav",  //What was I thinking coming down here?
-			"player/survivor/voice/cliffe/goingtodie24.wav",  //Okay, all right, I can do this. I can do this.
-			"player/survivor/voice/cliffe/goingtodie25.wav",  //I'm not going to die down here.
-			"player/survivor/voice/cliffe/goingtodie26.wav"  //I am not dying in the middle of nowhere.
-		],
-		PlayerAlertGiveItemStopCliffe = [
-			"player/survivor/voice/cliffe/alertgiveitemstop01.wav",  //Stop, I have something for you.
-			"player/survivor/voice/cliffe/alertgiveitemstop02.wav",  //Hang on, you need this more than me.
-			"player/survivor/voice/cliffe/alertgiveitemstop03.wav",  //Hold up, you can have this.
-			"player/survivor/voice/cliffe/alertgiveitemstop04.wav",  //Hold up, you can have this.
-			"player/survivor/voice/cliffe/alertgiveitemstop05.wav",  //Hang on, you need this more than me.
-			"player/survivor/voice/cliffe/alertgiveitemstop06.wav"  //Stop, I have something for you.
-		],
-		PlayerCoachPouncedCliffe = [
-			"player/survivor/voice/cliffe/huntercoachpounced01.wav",  //Hunter's got Coach!
-			"player/survivor/voice/cliffe/huntercoachpounced02.wav"  //Hunter on  Coach!
-		],
-		PlayerCoachPouncedC1Cliffe = [
-			"player/survivor/voice/cliffe/hunterpouncedc101.wav",  //Zombie's got him!
-			"player/survivor/voice/cliffe/hunterpouncedc102.wav",  //Zombie's got him!
-			"player/survivor/voice/cliffe/hunterpouncedc103.wav"  //Zombie on him!
-		],
-		PlayerEatPillsCliffe = [
-			"player/survivor/voice/cliffe/painrelieftpills02.wav",  //Okay, that's gonna last for a bit.
-			"player/survivor/voice/cliffe/painrelieftpills03.wav",  //Ah, a little pick me up.
-			"player/survivor/voice/cliffe/painrelieftpills04.wav",  //A little pick me up. That's good.
-			"player/survivor/voice/cliffe/painrelieftpills05.wav"  //Okay, gotta find some real first aid.
-		],
-		PlayerGetInsideCheckPointCliffe = [
-			"player/survivor/voice/cliffe/staytogetherinside01.wav",  //Get inside!
-			"player/survivor/voice/cliffe/staytogetherinside02.wav",  //Everybody INSIDE!
-			"player/survivor/voice/cliffe/staytogetherinside03.wav",  //Inside NOW!
-			"player/survivor/voice/cliffe/staytogetherinside04.wav",  //Quit screwing around, get inside!
-			"player/survivor/voice/cliffe/staytogetherinside05.wav",  //Don't make me come out there for you!
-			"player/survivor/voice/cliffe/staytogetherinside06.wav",  //Quit screwing around, get inside!
-			"player/survivor/voice/cliffe/staytogetherinside07.wav"  //Get inside!
-		],
-		PlayerStayTogetherSaferoomCliffe = [
-			"player/survivor/voice/cliffe/staytogetherinside01.wav",  //Get inside!
-			"player/survivor/voice/cliffe/staytogetherinside02.wav",  //Everybody INSIDE!
-			"player/survivor/voice/cliffe/staytogetherinside03.wav",  //Inside NOW!
-			"player/survivor/voice/cliffe/staytogetherinside04.wav",  //Quit screwing around, get inside!
-			"player/survivor/voice/cliffe/staytogetherinside05.wav",  //Don't make me come out there for you!
-			"player/survivor/voice/cliffe/staytogetherinside06.wav",  //Quit screwing around, get inside!
-			"player/survivor/voice/cliffe/staytogetherinside07.wav"  //Get inside!
-		],
-		PlayerGetInsideCheckPointC2M2Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m225.wav",  //Keep running, keep running.
-			"player/survivor/voice/cliffe/worldc2m226.wav",  //Run into the tunnel of love!
-			"player/survivor/voice/cliffe/worldc2m228.wav"  //Go go go.  Cut in line.
-		],
-		PlayerGetInsideCheckPointC4M3Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m325.wav"  //Get back inside.
-		],
-		PlayerGrabbedByJockeyCliffe = [
-			"player/survivor/voice/cliffe/grabbedbyjockey01.wav",  //Jockey's got me. (disgusted)
-			"player/survivor/voice/cliffe/grabbedbyjockey02.wav",  //Shoot this thing on my back!
-			"player/survivor/voice/cliffe/grabbedbyjockey03.wav",  //Kill this jockey on me!
-			"player/survivor/voice/cliffe/grabbedbyjockey04.wav",  //Jockey on me!
-			"player/survivor/voice/cliffe/grabbedbyjockey05.wav",  //Jockey! Jockey!
-			"player/survivor/voice/cliffe/grabbedbyjockey06.wav",  //Shoot this thing off my back!
-			"player/survivor/voice/cliffe/hurtcritical07.wav",  //[pain noise - loud major pain]
-			"player/survivor/voice/cliffe/hurtmajor03.wav",  //[pain noise - oy]
-			"player/survivor/voice/cliffe/hurtmajor05.wav",  //[pain noise - ugh]
-			"player/survivor/voice/cliffe/screamwhilepounced04.wav",  //GET IT OFF!
-			"player/survivor/voice/cliffe/screamwhilepounced06.wav"  //GET IT OFF ME!
-		],
-		PlayerGrabbedByJockeyC1Cliffe = [
-			"player/survivor/voice/cliffe/grabbedbyjockey02.wav",  //Shoot this thing on my back!
-			"player/survivor/voice/cliffe/grabbedbyjockey06.wav"  //Shoot this thing off my back!
-		],
-		PlayerGrenadeMolotovCliffe = [
-			"player/survivor/voice/cliffe/grenade03.wav",  //Throwing a Molotov.
-			"player/survivor/voice/cliffe/grenade04.wav",  //Fire coming.
-			"player/survivor/voice/cliffe/grenade06.wav",  //Molotov!
-			"player/survivor/voice/cliffe/grenade08.wav",  //Throwing a Molotov.
-			"player/survivor/voice/cliffe/grenade10.wav",  //Lighting it up!
-			"player/survivor/voice/cliffe/grenade12.wav"  //Lighting it up!
-		],
-		PlayerGrenadePipeBombCliffe = [
-			"player/survivor/voice/cliffe/grenade01.wav",  //GRENADE!
-			"player/survivor/voice/cliffe/grenade02.wav",  //Throwing a pipe bomb.
-			"player/survivor/voice/cliffe/grenade05.wav",  //Pipe Bomb!
-			"player/survivor/voice/cliffe/grenade07.wav",  //Throwing a pipe bomb.
-			"player/survivor/voice/cliffe/grenade09.wav",  //Chase this you zombie bastards!
-			"player/survivor/voice/cliffe/grenade11.wav",  //Pipe bomb out!
-			"player/survivor/voice/cliffe/grenade13.wav"  //Pipe bomb out!
-		],
-		PlayerGrenadeVomitJarCliffe = [
-			"player/survivor/voice/cliffe/boomerjar08.wav",  //Puke in the hole!
-			"player/survivor/voice/cliffe/boomerjar09.wav",  //Incoming!
-			"player/survivor/voice/cliffe/boomerjar10.wav"  //Fight amongst yourselves!
-		],
-		PlayerGrenadeVomitJarC1Cliffe = [
-			"player/survivor/voice/cliffe/boomerjar08.wav"  //Puke in the hole!
-		],
-		PlayerIncapacitatedInitialCliffe = [
-			"player/survivor/voice/cliffe/incapacitatedinitial01.wav",  //I'm down!
-			"player/survivor/voice/cliffe/incapacitatedinitial02.wav",  //I'M DOWN!
-			"player/survivor/voice/cliffe/incapacitatedinitial03.wav",  //DOWN!
-			"player/survivor/voice/cliffe/incapacitatedinitial04.wav"  //I'm down!
-		],
-		PlayerIncapacitatedInitialC1M2Cliffe = [
-			"player/survivor/voice/cliffe/blank.wav"  //
-		],
-		PlayerKillConfirmationCliffe = [
-			"player/survivor/voice/cliffe/killconfirmation01.wav",  //Got it!
-			"player/survivor/voice/cliffe/killconfirmation02.wav",  //It's dead!
-			"player/survivor/voice/cliffe/killconfirmation03.wav",  //Got it!
-			"player/survivor/voice/cliffe/killconfirmation04.wav",  //Dead.
-			"player/survivor/voice/cliffe/killconfirmation05.wav",  //Got 'em.
-			"player/survivor/voice/cliffe/killconfirmation06.wav",  //Got 'em.
-			"player/survivor/voice/cliffe/killconfirmation07.wav",  //Done like dinner!
-			"player/survivor/voice/cliffe/killconfirmation08.wav",  //Bull's-eye.
-			"player/survivor/voice/cliffe/killconfirmation09.wav",  //That's a hiit.
-			"player/survivor/voice/cliffe/killconfirmation10.wav",  //Dead.
-			"player/survivor/voice/cliffe/killconfirmation11.wav",  //Hiit.
-			"player/survivor/voice/cliffe/killconfirmation12.wav",  //Bull's-eye.
-			"player/survivor/voice/cliffe/killconfirmation13.wav"  //Got it!
-		],
-		PlayerKillConfirmationC1M1Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b141.wav"  //Well, they DIE like anything else...
-		],
-		PlayerKillConfirmationC1M1MeleeCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b142.wav"  //Ugh. They smell worse dead!
-		],
-		RightfulKillerCliffe = [
-			"player/survivor/voice/cliffe/killconfirmationellis01.wav"  //I don't think so Ellis.
-		],
-		PlayerKillTankConfirmationCliffe = [
-			"player/survivor/voice/cliffe/killconfirmation01.wav",  //Got it!
-			"player/survivor/voice/cliffe/killconfirmation02.wav",  //It's dead!
-			"player/survivor/voice/cliffe/killconfirmation03.wav",  //Got it!
-			"player/survivor/voice/cliffe/killconfirmation04.wav",  //Dead.
-			"player/survivor/voice/cliffe/killconfirmation05.wav",  //Got 'em.
-			"player/survivor/voice/cliffe/killconfirmation06.wav",  //Got 'em.
-			"player/survivor/voice/cliffe/killconfirmation07.wav",  //Done like dinner!
-			"player/survivor/voice/cliffe/killconfirmation10.wav",  //Dead.
-			"player/survivor/voice/cliffe/killconfirmation13.wav"  //Got it!
-		],
-		PlayerKillTankNotHealthyCliffe = [
-			"player/survivor/voice/cliffe/transitionclose02.wav",  //That was way, WAY too close!
-			"player/survivor/voice/cliffe/transitionclose03.wav",  //Man, we got lucky!
-			"player/survivor/voice/cliffe/transitionclose06.wav",  //We got lucky!
-			"player/survivor/voice/cliffe/transitionclose07.wav",  //God DAMN, that was close!
-			"player/survivor/voice/cliffe/transitionclose10.wav",  //Well, that was unpleasant.
-			"player/survivor/voice/cliffe/transitionclose11.wav"  //We made that by the skin of our teeth.
-		],
-		PlayerKillTankConfirmationC1M2Cliffe = [
-			"player/survivor/voice/cliffe/blank.wav"  //
-		],
-		PlayerLockTheDoorCheckPointCliffe = [
-			"player/survivor/voice/cliffe/closethedoor01.wav",  //Close the door.
-			"player/survivor/voice/cliffe/closethedoor02.wav",  //Close the door.
-			"player/survivor/voice/cliffe/closethedoor03.wav",  //Don't forget to the close the door.
-			"player/survivor/voice/cliffe/closethedoor04.wav",  //Somebody got the door?
-			"player/survivor/voice/cliffe/closethedoor05.wav",  //Close the door.
-			"player/survivor/voice/cliffe/closethedoor06.wav",  //Don't forget to the close the door.
-			"player/survivor/voice/cliffe/closethedoor07.wav",  //Somebody got the door?
-			"player/survivor/voice/cliffe/closethedoor08.wav",  //Close that door.
-			"player/survivor/voice/cliffe/closethedoor09.wav"  //Close that door.
-		],
-		PlayerLockTheDoorCheckPointC1Cliffe = [
-			"player/survivor/voice/cliffe/closethedoorc101.wav",  //I think we should be closing doors
-			"player/survivor/voice/cliffe/closethedoorc102.wav"  //Let's try closing doors behind us.
-		],
-		PlayerMechanicPouncedCliffe = [
-			"player/survivor/voice/cliffe/hunterellispounced01.wav",  //Hunter's got Ellis!
-			"player/survivor/voice/cliffe/hunterellispounced02.wav",  //Hunter on  Ellis!
-			"player/survivor/voice/cliffe/hunterellispounced03.wav",  //Hunter on  Ellis!
-			"player/survivor/voice/cliffe/hunterellispounced04.wav"  //Hunter's got Ellis!
-		],
-		PlayerProducerPouncedCliffe = [
-			"player/survivor/voice/cliffe/hunterrochellepounced01.wav",  //Hunter's got Rochelle!
-			"player/survivor/voice/cliffe/hunterrochellepounced02.wav"  //Hunter on Rochelle!
-		],
-		PlayerProducerPouncedC1Cliffe = [
-			"player/survivor/voice/cliffe/hunterpouncedc1producer01.wav",  //Zombie on her!
-			"player/survivor/voice/cliffe/hunterpouncedc1producer02.wav"  //Get that zombie on her!
-		],
-		PlayerRevivedByDefibrillatorCliffe = [
-			"player/survivor/voice/cliffe/defibrillator10.wav",  //[gasp for breath]
-			"player/survivor/voice/cliffe/defibrillator11.wav",  //[gasp for breath]
-			"player/survivor/voice/cliffe/defibrillator12.wav",  //[being shocked]
-			"player/survivor/voice/cliffe/defibrillator13.wav",  //[being shocked]
-			"player/survivor/voice/cliffe/defibrillator14.wav"  //[gasp for breath]
-		],
-		PlayerRevivedByDefibrillator2Cliffe = [
-			"player/survivor/voice/cliffe/defibrillator15.wav",  //Agggh stop shocking me!
-			"player/survivor/voice/cliffe/defibrillator16.wav",  //Alright. That was some serious shit.
-			"player/survivor/voice/cliffe/defibrillator17.wav"  //Whoa...
-		],
-		PlayerSuggestHealthGenericCliffe = [
-			"player/survivor/voice/cliffe/suggesthealth01.wav",  //Heal up!
-			"player/survivor/voice/cliffe/suggesthealth02.wav",  //Heal up!
-			"player/survivor/voice/cliffe/suggesthealth03.wav",  //Good time to heal.
-			"player/survivor/voice/cliffe/suggesthealth04.wav",  //This would be a good time to heal.
-			"player/survivor/voice/cliffe/suggesthealth05.wav",  //Maybe you could heal up now.
-			"player/survivor/voice/cliffe/suggesthealth06.wav"  //Heal if you need to.
-		],
-		PlayerSuggestHealthC1Cliffe = [
-			"player/survivor/voice/cliffe/suggesthealthc101.wav",  //This might be a good time to heal.
-			"player/survivor/voice/cliffe/suggesthealthc102.wav",  //Time for people to heal.
-			"player/survivor/voice/cliffe/suggesthealthc103.wav",  //Don't forget you can heal yourself.
-			"player/survivor/voice/cliffe/suggesthealthc104.wav",  //This is a good time to heal.
-			"player/survivor/voice/cliffe/suggesthealthc105.wav"  //Time for people to heal.
-		],
-		PlayerSuggestHealthCoachCliffe = [
-			"player/survivor/voice/cliffe/suggesthealthcoach01.wav",  //Coach, you should heal.
-			"player/survivor/voice/cliffe/suggesthealthcoach02.wav",  //Coach, don't forget about that health kit.
-			"player/survivor/voice/cliffe/suggesthealthcoach03.wav",  //Hey Coach, heal.
-			"player/survivor/voice/cliffe/suggesthealthcoach04.wav",  //Hey Coach, heal.
-			"player/survivor/voice/cliffe/suggesthealthcoach05.wav",  //Coach, you should maybe heal.
-			"player/survivor/voice/cliffe/suggesthealthcoach06.wav"  //Coach, you should heal.
-		],
-		PlayerSuggestHealthMechanicCliffe = [
-			"player/survivor/voice/cliffe/suggesthealthellis01.wav",  //Ellis, heal up.
-			"player/survivor/voice/cliffe/suggesthealthellis02.wav",  //Time to heal Ellis.
-			"player/survivor/voice/cliffe/suggesthealthellis03.wav",  //Come on Ellis, don't be a hero.  Use your health kit.
-			"player/survivor/voice/cliffe/suggesthealthellis04.wav"  //Come on Ellis, don't be a hero.  Use your health kit.
-		],
-		PlayerSuggestHealthProducerCliffe = [
-			"player/survivor/voice/cliffe/suggesthealthrochell01.wav",  //Rochelle, you don't look so good.
-			"player/survivor/voice/cliffe/suggesthealthrochell02.wav",  //Rochelle, we need you, heal up.
-			"player/survivor/voice/cliffe/suggesthealthrochell03.wav",  //Hey Ro, don't forget that health kit.
-			"player/survivor/voice/cliffe/suggesthealthrochell04.wav",  //Hey Ro, don't forget that health kit.
-			"player/survivor/voice/cliffe/suggesthealthrochell05.wav",  //Rochelle, you don't look so good.
-			"player/survivor/voice/cliffe/suggesthealthrochell06.wav"  //Rochelle, we need you, heal up.
-		],
-		PlayerTransitionCliffe = [
-			"player/survivor/voice/cliffe/hurrah03.wav",  //You guys aren't so damn bad.
-			"player/survivor/voice/cliffe/hurrah04.wav",  //What do ya know, we're going to make it.
-			"player/survivor/voice/cliffe/hurrah07.wav",  //I'm starting to like you guys.
-			"player/survivor/voice/cliffe/hurrah08.wav",  //We're makin' it look EASY!
-			"player/survivor/voice/cliffe/hurrah11.wav",  //And THAT is how you do it!
-			"player/survivor/voice/cliffe/positivenoise04.wav",  //Baby!
-			"player/survivor/voice/cliffe/positivenoise06.wav",  //YES!
-			"player/survivor/voice/cliffe/positivenoise07.wav",  //Hell yeah.
-			"player/survivor/voice/cliffe/positivenoise09.wav",  //Awesome!
-			"player/survivor/voice/cliffe/positivenoise11.wav",  //Straight!
-			"player/survivor/voice/cliffe/taunt03.wav",  //Take that you mealy-mouthed bastards.
-			"player/survivor/voice/cliffe/taunt04.wav"  //Stick it up your ass!
-		],
-		PlayerTransitionCloseCliffe = [
-			"player/survivor/voice/cliffe/transitionclose01.wav",  //That was WAY too close!
-			"player/survivor/voice/cliffe/transitionclose02.wav",  //That was way, WAY too close!
-			"player/survivor/voice/cliffe/transitionclose03.wav",  //Man, we got lucky!
-			"player/survivor/voice/cliffe/transitionclose04.wav",  //That my friends, is how you do it!
-			"player/survivor/voice/cliffe/transitionclose05.wav",  //Happy New Year!
-			"player/survivor/voice/cliffe/transitionclose06.wav",  //We got lucky!
-			"player/survivor/voice/cliffe/transitionclose07.wav",  //God DAMN, that was close!
-			"player/survivor/voice/cliffe/transitionclose08.wav",  //That was a close one.
-			"player/survivor/voice/cliffe/transitionclose10.wav",  //Well, that was unpleasant.
-			"player/survivor/voice/cliffe/transitionclose11.wav",  //We made that by the skin of our teeth.
-			"player/survivor/voice/cliffe/transitionclose12.wav"  //That was a little too close.
-		],
-		PlayerTransitionSoloCliffe = [
-			"player/survivor/voice/cliffe/transitionclose09.wav"  //At least I made it.
-		],
-		PlayerTransitionC1M2Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m2b35.wav",  //I'll be damned-we actually made it to the mall.
-			"player/survivor/voice/cliffe/worldc1m2b36.wav",  //Well, we made it. Let's hope there's still somebody here.
-			"player/survivor/voice/cliffe/worldc1m2b37.wav"  //Okay we made it. Let's hope there's still somebody here.
-		],
-		PlayerTransitionCloseC1M2Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m2b38.wav"  //Okay, we made it to the mall. BARELY.
-		],
-		PlayerTransitionC1M3Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m3b30.wav",  //CEDA leaving me twice in one day, lesson learned.
-			"player/survivor/voice/cliffe/worldc1m3b33.wav",  //We aren't getting saved.
-			"player/survivor/voice/cliffe/worldc1m3b34.wav"  //We are going to have to save ourselves, people.
-		],
-		PlayerTransitionC2M1Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m1b17.wav"  //Whispering Oaks! We made it.
-		],
-		PlayerTransitionC2M4Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m430.wav"  //We're inside.
-		],
-		PlayerTransitionC4M2Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m474.wav"  //We got it!
-		],
-		PlayerTransitionC4M3Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m3b11.wav"  //If this rain keeps up, the boat can come to US.
-		],
-		PlayerTransitionC5M4Cliffe = [
-			"player/survivor/voice/cliffe/worldc5m4b08.wav",  //Holy shit, I think we actually made it.
-			"player/survivor/voice/cliffe/worldc5m4b10.wav"  //Holy shit, I think we actually made it.
-		],
-		PlayerTransitionCloseC6M1Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_inwaterfindladder05.wav",  //Goddamn you Jimmy Gibbs, Jr.!
-			"player/survivor/voice/cliffe/dlc1_c6m2_inwaterfindladder06.wav",  //Jimmy Goddamn Gibbs!
-			"player/survivor/voice/cliffe/dlc1_c6m2_inwaterfindladder07.wav",  //Goddamn you Jimmy Gibbs, Jr.!
-			"player/survivor/voice/cliffe/dlc1_c6m2_inwaterfindladder08.wav",  //Jimmy Goddamn Gibbs!
-			"player/survivor/voice/cliffe/dlc1_c6m2_inwaterfindladder10.wav"  //Curse you, Jimmy Gibbs!
-		],
-		PlayerUsingDefibrillatorCliffe = [
-			"player/survivor/voice/cliffe/defibrillator06.wav",  //Clear!
-			"player/survivor/voice/cliffe/defibrillator07.wav",  //Come on!
-			"player/survivor/voice/cliffe/defibrillator08.wav",  //Come ON!
-			"player/survivor/voice/cliffe/defibrillator09.wav",  //Work, damn it...
-			"player/survivor/voice/cliffe/defibrillator18.wav"  //Work, damn it...
-		],
-		PlayerWarnHeardBoomerCliffe = [
-			"player/survivor/voice/cliffe/heardboomer01.wav",  //Keep a lookout. I hear a boomer.
-			"player/survivor/voice/cliffe/heardboomer02.wav",  //I hear a boomer.
-			"player/survivor/voice/cliffe/heardboomer03.wav",  //You hear that boomer?
-			"player/survivor/voice/cliffe/heardboomer04.wav",  //You hear that boomer?
-			"player/survivor/voice/cliffe/heardboomer05.wav",  //You hear that boomer? Don't let him spew on you.
-			"player/survivor/voice/cliffe/heardboomer06.wav"  //Boomer around.  Don't shoot him if he's near me! OKAY?
-		],
-		PlayerWarnHeardJockeyC1Cliffe = [
-			"player/survivor/voice/cliffe/heardspecialc103.wav",  //What in the hell is that noise?
-			"player/survivor/voice/cliffe/heardspecialc104.wav",  //You hear that? I guess zombies weren't bad enough.
-			"player/survivor/voice/cliffe/heardspecialc105.wav",  //You hear that?
-			"player/survivor/voice/cliffe/heardspecialc106.wav",  //Can you hear that?
-			"player/survivor/voice/cliffe/heardspecialc107.wav",  //What is that noise?
-			"player/survivor/voice/cliffe/heardspecialc108.wav",  //I have no idea what that noise is.
-			"player/survivor/voice/cliffe/heardspecialc109.wav"  //Something we're gonna have to kill.
-		],
-		PlayerWarnHeardBoomerC1Cliffe = [
-			"player/survivor/voice/cliffe/heardspecialc101.wav",  //Is someone beating a horse?
-			"player/survivor/voice/cliffe/heardspecialc102.wav",  //What is that? Is somebody beating a horse or what?
-			"player/survivor/voice/cliffe/heardspecialc103.wav",  //What in the hell is that noise?
-			"player/survivor/voice/cliffe/heardspecialc104.wav",  //You hear that? I guess zombies weren't bad enough.
-			"player/survivor/voice/cliffe/heardspecialc105.wav",  //You hear that?
-			"player/survivor/voice/cliffe/heardspecialc106.wav",  //Can you hear that?
-			"player/survivor/voice/cliffe/heardspecialc107.wav",  //What is that noise?
-			"player/survivor/voice/cliffe/heardspecialc108.wav",  //I have no idea what that noise is.
-			"player/survivor/voice/cliffe/heardspecialc109.wav"  //Something we're gonna have to kill.
-		],
-		PlayerWarnHeardChargerCliffe = [
-			"player/survivor/voice/cliffe/heardcharger01.wav",  //Keep your eyes peeled, I hear a charger.
-			"player/survivor/voice/cliffe/heardcharger02.wav",  //I hear a charger.
-			"player/survivor/voice/cliffe/heardcharger03.wav",  //Charger around, get ready.
-			"player/survivor/voice/cliffe/heardcharger04.wav",  //Charger around, get ready.
-			"player/survivor/voice/cliffe/heardcharger05.wav",  //Do you hear that charger?
-			"player/survivor/voice/cliffe/heardcharger06.wav",  //I hear a charger.
-			"player/survivor/voice/cliffe/heardcharger07.wav"  //You hear that charger?
-		],
-		PlayerWarnHeardHunterCliffe = [
-			"player/survivor/voice/cliffe/heardhunter01.wav",  //You hear that hunter?
-			"player/survivor/voice/cliffe/heardhunter02.wav",  //Pay attention, hunter's around.
-			"player/survivor/voice/cliffe/heardhunter03.wav"  //I hear a hunter.
-		],
-		PlayerWarnHeardJockeyCliffe = [
-			"player/survivor/voice/cliffe/heardjockey01.wav",  //I can hear a jockey.
-			"player/survivor/voice/cliffe/heardjockey02.wav",  //Jockey's around.
-			"player/survivor/voice/cliffe/heardjockey03.wav",  //One of those little jockey bastards is around.
-			"player/survivor/voice/cliffe/heardjockey04.wav",  //I can hear a jockey.
-			"player/survivor/voice/cliffe/heardjockey05.wav",  //Jockey's around.
-			"player/survivor/voice/cliffe/heardjockey06.wav"  //One of those little jockey bastards is around.
-		],
-		PlayerWarnHeardSmokerCliffe = [
-			"player/survivor/voice/cliffe/heardsmoker01.wav",  //There's a Smoker around here.
-			"player/survivor/voice/cliffe/heardsmoker02.wav",  //Smoker's around.
-			"player/survivor/voice/cliffe/heardsmoker03.wav",  //I hear a smoker.
-			"player/survivor/voice/cliffe/heardsmoker04.wav"  //There's a Smoker around here.
-		],
-		PlayerWarnHeardSpitterCliffe = [
-			"player/survivor/voice/cliffe/heardspitter01.wav",  //Spitter around.
-			"player/survivor/voice/cliffe/heardspitter02.wav",  //I hear a spitter.
-			"player/survivor/voice/cliffe/heardspitter03.wav",  //There's a spitter around.
-			"player/survivor/voice/cliffe/heardspitter04.wav",  //There's a spitter around.
-			"player/survivor/voice/cliffe/heardspitter05.wav",  //I hear a spitter.
-			"player/survivor/voice/cliffe/heardspitter06.wav"  //There's a spitter around.
-		],
-		PlayerWarnHeardWitchCliffe = [
-			"player/survivor/voice/cliffe/heardwitch01.wav",  //Sounds like a witch.
-			"player/survivor/voice/cliffe/heardwitch02.wav",  //Sounds like a witch.
-			"player/survivor/voice/cliffe/heardwitch03.wav",  //I think I hear my ex-wife...
-			"player/survivor/voice/cliffe/heardwitch04.wav",  //Everybody hear that witch?
-			"player/survivor/voice/cliffe/heardwitch05.wav"  //I hear a witch.
-		],
-		PlayerWarnHeardWitchC1Cliffe = [
-			"player/survivor/voice/cliffe/heardwitchc101.wav",  //Oh there's a sound that's familiar.
-			"player/survivor/voice/cliffe/heardwitchc102.wav",  //That sound is familiar.
-			"player/survivor/voice/cliffe/heardwitchc103.wav",  //I don't like the sound of this crying.
-			"player/survivor/voice/cliffe/heardwitchc104.wav",  //I don't like the sound of this crying.
-			"player/survivor/voice/cliffe/heardwitchc105.wav",  //A crying woman, what do you think she's sad the mall's closed?
-			"player/survivor/voice/cliffe/heardwitchc106.wav"  //A crying woman, you think she's sad the mall's closed?
-		],
-		PlayerWarnHeardWitchC4M3Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m313.wav"  //Can anybody see that Witch?
-		],
-		PlayerWarnMegaMobCliffe = [
-			"player/survivor/voice/cliffe/incoming01.wav",  //This is why we've got guns!
-			"player/survivor/voice/cliffe/incoming02.wav",  //It's about to get serious!
-			"player/survivor/voice/cliffe/incoming03.wav",  //We got inbound!
-			"player/survivor/voice/cliffe/incoming04.wav",  //They're coming!
-			"player/survivor/voice/cliffe/incoming05.wav",  //Here they come!
-			"player/survivor/voice/cliffe/incoming06.wav",  //God damn, it's gettin' good.
-			"player/survivor/voice/cliffe/incoming07.wav",  //They're coming!
-			"player/survivor/voice/cliffe/incoming08.wav"  //Get ready!
-		],
-		PlayerWarnWitchAngryCliffe = [
-			"player/survivor/voice/cliffe/witchgettingangry01.wav",  //Leave the witch alone.
-			"player/survivor/voice/cliffe/witchgettingangry02.wav",  //Can we leave that witch alone?
-			"player/survivor/voice/cliffe/witchgettingangry03.wav",  //Watch out, that witch is getting angry.
-			"player/survivor/voice/cliffe/witchgettingangry04.wav"  //Stay away from the witch.
-		],
-		PlayerWorldInfectedDet2Cliffe = [
-			"player/survivor/voice/cliffe/worldsigns02.wav"  //Really, I haven't seen any.  (Infected detected in this area.)
-		],
-		SurvivorCaughtVomitCliffe = [
-			"player/survivor/voice/cliffe/boomerreaction01.wav",  //Ohh god damn it!
-			"player/survivor/voice/cliffe/boomerreaction02.wav",  //Ahhh this is some nasty shit.
-			"player/survivor/voice/cliffe/boomerreaction03.wav",  //God damn it! I am covered in vomit again.
-			"player/survivor/voice/cliffe/boomerreaction04.wav"  //I'm blind.
-		],
-		SurvivorchargerpoundCliffe = [
-			"player/survivor/voice/cliffe/grabbedbycharger01.wav",  //Charger's got me!
-			"player/survivor/voice/cliffe/grabbedbycharger02.wav",  //Kill the charger!
-			"player/survivor/voice/cliffe/grabbedbycharger03.wav",  //Shoot the charger!
-			"player/survivor/voice/cliffe/grabbedbycharger04.wav",  //Can someone shoot this goddamn thing?!?
-			"player/survivor/voice/cliffe/grabbedbycharger05.wav",  //Shoot the big guy pounding me into the ground!
-			"player/survivor/voice/cliffe/grabbedbycharger06.wav",  //Shoot him! Shoot him!
-			"player/survivor/voice/cliffe/grabbedbycharger07.wav",  //Kill this goddamn thing!
-			"player/survivor/voice/cliffe/grabbedbycharger08.wav"  //This thing is beating my ass!
-		],
-		SurvivorchargerpoundC1Cliffe = [
-			"player/survivor/voice/cliffe/grabbedbycharger04.wav",  //Can someone shoot this goddamn thing?!?
-			"player/survivor/voice/cliffe/grabbedbycharger05.wav",  //Shoot the big guy pounding me into the ground!
-			"player/survivor/voice/cliffe/grabbedbycharger06.wav",  //Shoot him! Shoot him!
-			"player/survivor/voice/cliffe/grabbedbycharger07.wav",  //Kill this goddamn thing!
-			"player/survivor/voice/cliffe/grabbedbycharger08.wav"  //This thing is beating my ass!
-		],
-		SurvivorchargerpoundC6M3Cliffe = [
-			"player/survivor/voice/cliffe/blank.wav"  //
-		],
-		SurvivorCoughingCliffe = [
-			"player/survivor/voice/cliffe/cough01.wav",  //[Coughing from smoke]
-			"player/survivor/voice/cliffe/cough02.wav",  //[Coughing from smoke]
-			"player/survivor/voice/cliffe/cough03.wav",  //[Coughing from smoke]
-			"player/survivor/voice/cliffe/cough04.wav"  //[Coughing from smoke]
-		],
-		SurvivorDeathCliffe = [
-			"player/survivor/voice/cliffe/deathscream01.wav",  //
-			"player/survivor/voice/cliffe/deathscream02.wav",  //
-			"player/survivor/voice/cliffe/deathscream03.wav",  //
-			"player/survivor/voice/cliffe/deathscream04.wav",  //
-			"player/survivor/voice/cliffe/deathscream05.wav",  //
-			"player/survivor/voice/cliffe/deathscream06.wav",  //
-			"player/survivor/voice/cliffe/deathscream07.wav"  //
-		],
-		SurvivorGooedBySpitterCliffe = [
-			"player/survivor/voice/cliffe/gooedbyspitter01.wav",  //I got hit by the burning goo shit.
-			"player/survivor/voice/cliffe/gooedbyspitter02.wav",  //I got hit by the burning goo shit.
-			"player/survivor/voice/cliffe/gooedbyspitter03.wav",  //Goddamn it, I'm covered in goo.
-			"player/survivor/voice/cliffe/gooedbyspitter04.wav",  //I got hit by the burning goo shit.
-			"player/survivor/voice/cliffe/gooedbyspitter05.wav",  //Let's get out of the goo!
-			"player/survivor/voice/cliffe/gooedbyspitter06.wav"  //Get out of the goo!
-		],
-		SurvivorGooedBySpitterC1Cliffe = [
-			"player/survivor/voice/cliffe/gooedbyspitterc101.wav",  //Ugh, what in the hell did that thing just do?
-			"player/survivor/voice/cliffe/gooedbyspitterc102.wav",  //What is this shit on me?
-			"player/survivor/voice/cliffe/gooedbyspitterc103.wav"  //What am I covered in?
-		],
-		SurvivorGrabbedByTongueCliffe = [
-			"player/survivor/voice/cliffe/grabbedbysmoker01.wav",  //no, No, No, NO, NOOOOOOO!!!!!!!!!
-			"player/survivor/voice/cliffe/grabbedbysmoker01a.wav",  //No, No!
-			"player/survivor/voice/cliffe/grabbedbysmoker01b.wav",  //NOOOOOOO!!!!!!!!!
-			"player/survivor/voice/cliffe/grabbedbysmoker02.wav",  //SMOKER'S GOT ME!!
-			"player/survivor/voice/cliffe/grabbedbysmoker02a.wav",  //...GOT ME!!
-			"player/survivor/voice/cliffe/grabbedbysmoker03.wav",  //SMOKER'S GOT ME!!
-			"player/survivor/voice/cliffe/grabbedbysmoker04.wav",  //no, No,  No, NO, NO!!!!!!!!
-			"player/survivor/voice/cliffe/grabbedbysmoker04a.wav",  //NO, NO, NO!!
-			"player/survivor/voice/cliffe/grabbedbysmoker05.wav",  //no, No,  No, NO!!!!!!!!
-			"player/survivor/voice/cliffe/grabbedbysmoker05a.wav",  //NO!
-			"player/survivor/voice/cliffe/grabbedbysmoker05b.wav",  //NO, NO!
-			"player/survivor/voice/cliffe/grabbedbysmoker05c.wav"  //NO!!!!!!!!
-		],
-		SurvivorGrabbedByTongueC1Cliffe = [
-			"player/survivor/voice/cliffe/grabbedbysmokerc101.wav",  //What the hell?
-			"player/survivor/voice/cliffe/grabbedbysmokerc102.wav",  //Something's got me?!?!
-			"player/survivor/voice/cliffe/grabbedbysmokerc103.wav",  //What's this shit?
-			"player/survivor/voice/cliffe/grabbedbysmokerc104.wav",  //What the? Ahh gross shit.
-			"player/survivor/voice/cliffe/grabbedbysmokerc105.wav"  //Freaking tongue!?!?
-		],
-		SurvivorNearCheckpointCliffe = [
-			"player/survivor/voice/cliffe/safespotahead01.wav",  //Safe house!
-			"player/survivor/voice/cliffe/safespotahead02.wav",  //We got a safe house!
-			"player/survivor/voice/cliffe/safespotahead03.wav",  //Safe house ahead!
-			"player/survivor/voice/cliffe/safespotahead04.wav"  //There's the safe house!
-		],
-		SurvivorNearCheckpointC1M1Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b85.wav"  //We can get through here!
-		],
-		SurvivorNearCheckpointC1M3Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m3b35.wav",  //Looks like people headed this way!
-			"player/survivor/voice/cliffe/worldc1m3b36.wav"  //There's a saferoom up ahead!
-		],
-		SurvivorNearCheckpointC2M1Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m135.wav"  //Safe house in the trailer.
-		],
-		SurvivorNearCheckpointC2M2Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m226.wav"  //Run into the tunnel of love!
-		],
-		SurvivorNearCheckpointC2M4Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m4b01.wav",  //Let's get into the stadium!
-			"player/survivor/voice/cliffe/worldc2m4b02.wav"  //We can get into the stadium through here!
-		],
-		SurvivorNearCheckpointC3M2Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m133.wav"  //Lights are on, where's the people?
-		],
-		SurvivorNearCheckpointC4M1Cliffe = [
-			"player/survivor/voice/cliffe/miscdirectional44.wav",  //There's a safe room up there!
-			"player/survivor/voice/cliffe/worldc4m129.wav",  //We can get in through here.
-			"player/survivor/voice/cliffe/worldc4m130.wav",  //I'm guessing that smokestack is the sugar mill.
-			"player/survivor/voice/cliffe/worldc4m131.wav",  //Let's head towards that smokestack.
-			"player/survivor/voice/cliffe/worldc4m141.wav"  //Get to that building!
-		],
-		SurvivorNearCheckpointC4M2Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m2b36.wav",  //There's gas in the safe room!
-			"player/survivor/voice/cliffe/worldc4m2b32.wav"  //Hallelujah. There's the gas.
-		],
-		SurvivorNearCheckpointC4M3Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m324.wav",  //We have to go back through here!
-			"player/survivor/voice/cliffe/worldc4m326.wav"  //We gotta to go back through here!
-		],
-		SurvivorNearCheckpointC4M4Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m4b01.wav"  //The boat isn't much farther.
-		],
-		SurvivorNearCheckpointC5M2Cliffe = [
-			"player/survivor/voice/cliffe/worldc5m2b03.wav"  //That freeway looks like it heads to the bridge.
-		],
-		SurvivorNearCheckpointC5M4Cliffe = [
-			"player/survivor/voice/cliffe/worldc5m4b12.wav",  //There's a safe room in the bridge!
-			"player/survivor/voice/cliffe/worldc5m4b13.wav",  //There's a safe room in it!
-			"player/survivor/voice/cliffe/world313.wav"  //There's a safe room in it!
-		],
-		SurvivorNearCheckpointC6M1Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_saferoomahead01.wav",  //Safe house in this building!
-			"player/survivor/voice/cliffe/dlc1_c6m1_saferoomahead02.wav"  //Safe house back here!
-		],
-		SurvivorNearCheckpointC6M2Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoom01.wav"  //Saferoom!
-		],
-		SurvivorNearFinaleCliffe = [
-			"player/survivor/voice/cliffe/worldc1m4b26.wav"  //Almost there!
-		],
-		SurvivorNearFinaleC2M5Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m5b06.wav"  //Any ideas on how to start the finale?
-		],
-		SurvivorNearFinaleC3M4Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m113.wav"  //Great, no one here.
-		],
-		SurvivorNearFinaleC4M5Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m415.wav",  //Into the Burger Tank!
-			"player/survivor/voice/cliffe/worldc4m416.wav"  //Get to the Burger Tank!
-		],
-		SurvivorPouncedByHunterCliffe = [
-			"player/survivor/voice/cliffe/screamwhilepounced01.wav",  //GET IT GET IT GET IT OFF ME!
-			"player/survivor/voice/cliffe/screamwhilepounced01a.wav",  //GET IT OFF ME!
-			"player/survivor/voice/cliffe/screamwhilepounced02.wav",  //GET IT GET IT GET IT OFF ME!
-			"player/survivor/voice/cliffe/screamwhilepounced02a.wav",  //GET IT OFF ME!
-			"player/survivor/voice/cliffe/screamwhilepounced03.wav",  //GET IT OFF! GET IT OFF!
-			"player/survivor/voice/cliffe/screamwhilepounced03a.wav",  //GET IT OFF!
-			"player/survivor/voice/cliffe/screamwhilepounced04.wav",  //GET IT OFF! GET IT OFF! GET IT OFF!
-			"player/survivor/voice/cliffe/screamwhilepounced04a.wav",  //GET IT OFF!
-			"player/survivor/voice/cliffe/screamwhilepounced04b.wav",  //GET IT OFF!
-			"player/survivor/voice/cliffe/screamwhilepounced05.wav",  //GET IT OFF ME! GET IT OFF ME!
-			"player/survivor/voice/cliffe/screamwhilepounced05a.wav",  //GET IT OFF ME!
-			"player/survivor/voice/cliffe/screamwhilepounced06.wav"  //GET IT OFF ME!
-		],
-		SurvivorTankPoundCliffe = [
-			"player/survivor/voice/cliffe/tankpound01.wav",  //Freaking tank is killing me!
-			"player/survivor/voice/cliffe/tankpound02.wav",  //Freaking tank is killing me!
-			"player/survivor/voice/cliffe/tankpound03.wav",  //Do you see this big giant thing on me?!?!
-			"player/survivor/voice/cliffe/tankpound04.wav",  //Do you see this big giant thing on me?!?!
-			"player/survivor/voice/cliffe/tankpound05.wav",  //Mother of Mercy! This thing is killing me!
-			"player/survivor/voice/cliffe/tankpound06.wav"  //Mother of Mercy! This thing is killing me!
-		],
-		SurvivorTankPoundC1Cliffe = [
-			"player/survivor/voice/cliffe/tankpound03.wav",  //Do you see this big giant thing on me?!?!
-			"player/survivor/voice/cliffe/tankpound04.wav",  //Do you see this big giant thing on me?!?!
-			"player/survivor/voice/cliffe/tankpound05.wav",  //Mother of Mercy! This thing is killing me!
-			"player/survivor/voice/cliffe/tankpound06.wav"  //Mother of Mercy! This thing is killing me!
-		],
-		SurvivorVocalizeBackUpCliffe = [
-			"player/survivor/voice/cliffe/backup01.wav",  //Back it up!
-			"player/survivor/voice/cliffe/backup02.wav",  //Back, back, back!
-			"player/survivor/voice/cliffe/backup03.wav",  //Come on back.
-			"player/survivor/voice/cliffe/backup04.wav"  //Back it up!
-		],
-		SurvivorVocalizeEmphaticGoCliffe = [
-			"player/survivor/voice/cliffe/emphaticgo01.wav",  //Go!
-			"player/survivor/voice/cliffe/emphaticgo02.wav",  //GO!
-			"player/survivor/voice/cliffe/emphaticgo03.wav",  //GOOO!
-			"player/survivor/voice/cliffe/emphaticgo04.wav",  //Go go go!
-			"player/survivor/voice/cliffe/emphaticgo05.wav",  //Let's go. Let's go.
-			"player/survivor/voice/cliffe/emphaticgo06.wav",  //GO!
-			"player/survivor/voice/cliffe/emphaticgo07.wav"  //Let's go.
-		],
-		SurvivorVocalizeGoingToDieCliffe = [
-			"player/survivor/voice/cliffe/goingtodie01.wav",  //I really screwed the pooch back there.
-			"player/survivor/voice/cliffe/goingtodie02.wav",  //I gotta take better care of myself.
-			"player/survivor/voice/cliffe/goingtodie03.wav",  //Not dead yet, but not exactly healthy.
-			"player/survivor/voice/cliffe/goingtodie04.wav",  //God damn it! God damn it.  God damn it.
-			"player/survivor/voice/cliffe/goingtodie05.wav",  //If I go, you guys gonna miss me.
-			"player/survivor/voice/cliffe/goingtodie06.wav",  //I have seriously felt better.
-			"player/survivor/voice/cliffe/goingtodie07.wav",  //Pull yourself together man, you're falling apart.
-			"player/survivor/voice/cliffe/goingtodie08.wav",  //Don't worry about me, I'll be okay.
-			"player/survivor/voice/cliffe/goingtodie09.wav",  //This is not how it's going to end.
-			"player/survivor/voice/cliffe/goingtodie10.wav",  //I'm not dead yet!
-			"player/survivor/voice/cliffe/goingtodie11.wav",  //You're going to have to do better than that to kill me!
-			"player/survivor/voice/cliffe/goingtodie12.wav",  //Quit being a baby, you've felt worse after a night of drinking.
-			"player/survivor/voice/cliffe/goingtodie13.wav",  //Ain't this a bitch.
-			"player/survivor/voice/cliffe/goingtodie14.wav",  //God damn it I can't believe this.
-			"player/survivor/voice/cliffe/goingtodie15.wav",  //Well at least I didn't catch the flu.
-			"player/survivor/voice/cliffe/goingtodie16.wav",  //This is some crap
-			"player/survivor/voice/cliffe/goingtodie17.wav",  //Don't worry.  I'm not done yet.
-			"player/survivor/voice/cliffe/goingtodie18.wav",  //I am sick and tired of being sick and tired.
-			"player/survivor/voice/cliffe/goingtodie23.wav",  //What was I thinking coming down here?
-			"player/survivor/voice/cliffe/goingtodie24.wav",  //Okay, all right, I can do this. I can do this.
-			"player/survivor/voice/cliffe/goingtodie25.wav",  //I'm not going to die down here.
-			"player/survivor/voice/cliffe/goingtodie26.wav"  //I am not dying in the middle of nowhere.
-		],
-		SurvivorVocalizeGoingToDie3Cliffe = [
-			"player/survivor/voice/cliffe/goingtodie301.wav",  //I am not going to make it much longer my friends, I am seriously screwed up.
-			"player/survivor/voice/cliffe/goingtodie302.wav",  //All right, I gotta call uncle here.   I need some help.
-			"player/survivor/voice/cliffe/goingtodie303.wav",  //Well boys, this looks like its for me.
-			"player/survivor/voice/cliffe/goingtodie304.wav",  //Doesn't this beat all.  I am about to die.
-			"player/survivor/voice/cliffe/goingtodie305.wav"  //Man, man... It has been a long time since I have felt this bad.
-		],
-		SurvivorVocalizeLookOutCliffe = [
-			"player/survivor/voice/cliffe/lookout01.wav",  //Look out!
-			"player/survivor/voice/cliffe/lookout02.wav",  //Watch out!
-			"player/survivor/voice/cliffe/lookout03.wav"  //Heads up!
-		],
-		SurvivorVocalizeThisWayCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_backalley13.wav",  //Over here.
-			"player/survivor/voice/cliffe/followme01.wav",  //This way!
-			"player/survivor/voice/cliffe/followme02.wav",  //Over here.
-			"player/survivor/voice/cliffe/followme05.wav",  //Come on, this way!
-			"player/survivor/voice/cliffe/followme06.wav",  //Keep up.
-			"player/survivor/voice/cliffe/followme07.wav",  //Keep up.
-			"player/survivor/voice/cliffe/followme08.wav",  //Come on, this way!
-			"player/survivor/voice/cliffe/followme09.wav",  //Okay this way!
-			"player/survivor/voice/cliffe/followme10.wav",  //This way!
-			"player/survivor/voice/cliffe/followme11.wav",  //Over here.
-			"player/survivor/voice/cliffe/followme13.wav",  //Keep up.
-			"player/survivor/voice/cliffe/miscdirectional03.wav",  //This way!
-			"player/survivor/voice/cliffe/miscdirectional06.wav",  //C'mon, this way!
-			"player/survivor/voice/cliffe/worldc1m3b35.wav",  //Looks like people headed this way!
-			"player/survivor/voice/cliffe/worldc4m137.wav"  //Over here.
-		],
-		SurvivorVocalizeWaitHereCliffe = [
-			"player/survivor/voice/cliffe/waithere01.wav",  //Wait.
-			"player/survivor/voice/cliffe/waithere02.wav",  //Don't move from this spot.
-			"player/survivor/voice/cliffe/waithere03.wav",  //Stay here.
-			"player/survivor/voice/cliffe/waithere04.wav",  //Just stay here.
-			"player/survivor/voice/cliffe/waithere05.wav"  //Wait here.
-		],
-		SurvivorWarnSpitterIncomingCliffe = [
-			"player/survivor/voice/cliffe/warnspitterincoming01.wav",  //We got goo!!
-			"player/survivor/voice/cliffe/warnspitterincoming02.wav",  //Goo incoming!
-			"player/survivor/voice/cliffe/warnspitterincoming03.wav",  //Hot stuff coming!
-			"player/survivor/voice/cliffe/warnspitterincoming04.wav",  //Fire spit coming!
-			"player/survivor/voice/cliffe/warnspitterincoming05.wav",  //Fire spit coming!
-			"player/survivor/voice/cliffe/warnspitterincoming06.wav",  //We got goo!!
-			"player/survivor/voice/cliffe/warnspitterincoming07.wav"  //We got goo coming!!
-		],
-		SurvivorWarnSpitterIncomingC1Cliffe = [
-			"player/survivor/voice/cliffe/lookout01.wav",  //Look out!
-			"player/survivor/voice/cliffe/lookout02.wav",  //Watch out!
-			"player/survivor/voice/cliffe/lookout03.wav"  //Heads up!
-		],
-		PlayerLedgeHangEndCliffe = [
-			"player/survivor/voice/cliffe/ledgehangend01.wav",  //Get your asses over here and HELP ME!
-			"player/survivor/voice/cliffe/ledgehangend02.wav",  //SOMEBODY NEEDS TO HELP ME UP!
-			"player/survivor/voice/cliffe/ledgehangend03.wav"  //Don't be leaving me here DAMNIT!  HELP!
-		],
-		PlayerLedgeHangMiddleCliffe = [
-			"player/survivor/voice/cliffe/ledgehangmiddle01.wav",  //I am hanging over here!
-			"player/survivor/voice/cliffe/ledgehangmiddle02.wav",  //Don't even think of leaving me here!
-			"player/survivor/voice/cliffe/ledgehangmiddle03.wav",  //Could use a hand over here.
-			"player/survivor/voice/cliffe/ledgehangmiddle04.wav"  //Could use some help here .
-		],
-		PlayerLedgeHangStartCliffe = [
-			"player/survivor/voice/cliffe/ledgehangstart01.wav",  //Guys, I seem to have slipped!
-			"player/survivor/voice/cliffe/ledgehangstart02.wav",  //I'm hanging here.
-			"player/survivor/voice/cliffe/ledgehangstart03.wav",  //Hey! Give me a hand.
-			"player/survivor/voice/cliffe/ledgehangstart04.wav"  //I need a hand.
-		],
-		SurvivorFirstDeathCliffe = [
-			"player/survivor/voice/cliffe/doubledeathresponse04.wav",  //I think we just became long shots.
-			"player/survivor/voice/cliffe/doubledeathresponse05.wav",  //We just screwed our odds.
-			"player/survivor/voice/cliffe/heardtanklc102.wav"  //We are screwed.
-		],
-		DeathOneCliffe = [
-			"player/survivor/voice/cliffe/doubledeathresponse03.wav",  //Ahhh SHIT!
-			"player/survivor/voice/cliffe/grabbedbysmoker05c.wav"  //NO!!!!!!!!
-		],
-		DoubleDeath2Cliffe = [
-			"player/survivor/voice/cliffe/doubledeathresponse01.wav",  //Well shit. We're a twosome from here on out.
-			"player/survivor/voice/cliffe/doubledeathresponse02.wav"  //Looks like it's just you and me.
-		],
-		DoubleDeath2MechanicCliffe = [
-			"player/survivor/voice/cliffe/doubledeathresponsemechanic01.wav",  //Hey Ellis, don't let me down.
-			"player/survivor/voice/cliffe/doubledeathresponsemechanic02.wav"  //Hey, Ellis, you know all that shit I was saying? I was just joking.
-		],
-		TeamKillCliffe = [
-			"player/survivor/voice/cliffe/teamkillaccident03.wav"  //What?!!?  This is hard enough without you helping the freaks!
-		],
-		TeamKillFromMechanicCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_bridgecollapse01.wav",  //Ellis, what did you just do?
-			"player/survivor/voice/cliffe/dlc1_c6m2_finalwater02.wav"  //I hate you, Ellis!
-		],
-		TeamKillFromProducerCliffe = [
-			"player/survivor/voice/cliffe/reactionnegative30.wav"  //Bitch.
-		],
-		C6M1TakeSubMachineGunCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_intostore05.wav",  //(picking up gun) Hold on a sec, I'm gonna go back and shoot that jackass.
-			"player/survivor/voice/cliffe/dlc1_c6m1_intostore06.wav",  //(picking up gun) Hold on, I'm gonna go back and shoot that tattoo disaster.
-			"player/survivor/voice/cliffe/dlc1_c6m1_intostore07.wav"  //(picking up gun - to self) I would love to go back and shoot that vest wearing jackass.
-		],
-		C6M1TakeSubMachineGunZoeyIntroCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_intostore04.wav"  //Guns in this store!
-		],
-		SurvivorDeployUpExplosivesCliffe = [
-			"player/survivor/voice/cliffe/explosiveammo04.wav"  //Deploying frag rounds!
-		],
-		SurvivorDeployUpIncendiaryCliffe = [
-			"player/survivor/voice/cliffe/incendammo04.wav",  //Deploying fire bullets!
-			"player/survivor/voice/cliffe/incendammo05.wav"  //Everybody grab some incendiary ammo!
-		],
-		SurvivorPickupAdrenalineCliffe = [
-			"player/survivor/voice/cliffe/adrenaline02.wav"  //Grabbin' a shot!
-		],
-		SurvivorPickupAutoShotgunCliffe = [
-			"player/survivor/voice/cliffe/takeautoshotgun01.wav",  //I got the shotgun.
-			"player/survivor/voice/cliffe/takeautoshotgun02.wav",  //Shotgun for me.
-			"player/survivor/voice/cliffe/takeautoshotgun03.wav",  //Taking the shotgun
-			"player/survivor/voice/cliffe/takeautoshotgun04.wav"  //Shotgun.
-		],
-		SurvivorPickupbaseball_batCliffe = [
-			"player/survivor/voice/cliffe/meleeweapons17.wav",  //I'm gonna whack the shit outta somethin' with this.
-			"player/survivor/voice/cliffe/takebat01.wav",  //This brings back some good memories.
-			"player/survivor/voice/cliffe/takebat02.wav",  //This is nice, I'm gonna crack some heads with it.
-			"player/survivor/voice/cliffe/takebat03.wav"  //I'm gonna crack some heads with this.
-		],
-		SurvivorPickupbaseShovelCliffe = [
-			"player/survivor/voice/cliffe/meleeweapons17.wav",  //I'm gonna whack the shit outta somethin' with this.
-			"player/survivor/voice/cliffe/takebat02.wav",  //This is nice, I'm gonna crack some heads with it.
-			"player/survivor/voice/cliffe/takebat03.wav"  //I'm gonna crack some heads with this.
-		],
-		SurvivorPickupchainsawCliffe = [
-			"player/survivor/voice/cliffe/meleeweapons04.wav"  //Got a chainsaw.
-		],
-		SurvivorPickupcricket_batCliffe = [
-			"player/survivor/voice/cliffe/meleeweapons16.wav",  //Gonna whack the shit outta somethin' with this.
-			"player/survivor/voice/cliffe/meleeweapons18.wav",  //Niiiiice.
-			"player/survivor/voice/cliffe/takemelee03.wav",  //This could be fun.
-			"player/survivor/voice/cliffe/takemelee05.wav"  //That'll come in handy.
-		],
-		SurvivorPickupCricketBatCliffe = [
-			"player/survivor/voice/cliffe/takemelee01.wav",  //Hell yeah.
-			"player/survivor/voice/cliffe/takemelee02.wav",  //This feels good.
-			"player/survivor/voice/cliffe/takemelee03.wav",  //This could be fun.
-			"player/survivor/voice/cliffe/takemelee04.wav",  //Can save some bullets with this one.
-			"player/survivor/voice/cliffe/takemelee05.wav",  //That'll come in handy.
-			"player/survivor/voice/cliffe/takemelee06.wav"  //I am going to beat the shit out of something with this.
-		],
-		SurvivorPickupKnifeCliffe = [
-			"player/survivor/voice/cliffe/takemelee01.wav",  //Hell yeah.
-			"player/survivor/voice/cliffe/takemelee02.wav",  //This feels good.
-			"player/survivor/voice/cliffe/takemelee03.wav",  //This could be fun.
-			"player/survivor/voice/cliffe/takemelee04.wav",  //Can save some bullets with this one.
-			"player/survivor/voice/cliffe/takemelee05.wav"  //That'll come in handy.
-		],
-		SurvivorPickupCrowBarCliffe = [
-			"player/survivor/voice/cliffe/meleeweapons11.wav",  //Grabbing a crowbar.
-			"player/survivor/voice/cliffe/meleeweapons13.wav",  //I cannot WAIT to find a crate.
-			"player/survivor/voice/cliffe/takemelee02.wav",  //This feels good.
-			"player/survivor/voice/cliffe/takemelee05.wav"  //That'll come in handy.
-		],
-		SurvivorPickupDefibrillatorCliffe = [
-			"player/survivor/voice/cliffe/defibrillator03.wav",  //Got some chest paddles.
-			"player/survivor/voice/cliffe/defibrillator05.wav"  //Got a defib unit.
-		],
-		SurvivorPickupelectric_guitarCliffe = [
-			"player/survivor/voice/cliffe/meleeweapons08.wav"  //Grabbing a guitar.
-		],
-		SurvivorPickupFireAxeCliffe = [
-			"player/survivor/voice/cliffe/takefryingaxe01.wav",  //A Freaking Axe (to self laughing)
-			"player/survivor/voice/cliffe/takefryingaxe02.wav"  //Axe!
-		],
-		SurvivorPickupFirstAidKitCliffe = [
-			"player/survivor/voice/cliffe/takefirstaid01.wav",  //I need this.
-			"player/survivor/voice/cliffe/takefirstaid02.wav",  //I need this.
-			"player/survivor/voice/cliffe/takefirstaid03.wav",  //Grabbing the first aid.
-			"player/survivor/voice/cliffe/takefirstaid04.wav",  //I'll hold on to the first aid kit.
-			"player/survivor/voice/cliffe/takefirstaid05.wav"  //First Aid Kit.
-		],
-		SurvivorPickupFirstSMGCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b24.wav",  //Ha-ha! Now let's see who's the monster.
-			"player/survivor/voice/cliffe/worldc1m1b26.wav",  //Finally, a godamn gun
-			"player/survivor/voice/cliffe/worldc1m1b27.wav",  //This shit'll even up the score.
-			"player/survivor/voice/cliffe/worldc1m1b28.wav",  //Whacking things in the head was fun, but...
-			"player/survivor/voice/cliffe/worldc1m1b33.wav",  //Ha! That's more like it!
-			"player/survivor/voice/cliffe/worldc1m1b34.wav"  //Now we're talking.
-		],
-		SurvivorPickupFirstSMG2AliveCliffe = [
-			"player/survivor/voice/cliffe/staytogether01.wav"  //Stay close!
-		],
-		SurvivorPickupFirstShotgunCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b25.wav"  //Shotgun, you complete me
-		],
-		SurvivorPickupFirstPistolCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b31.wav",  //I used to steal these from cops back in high-school
-			"player/survivor/voice/cliffe/worldc1m1b32.wav"  //If my friends ever saw me using a cop's gun..
-		],
-		SurvivorPickupFryingPanCliffe = [
-			"player/survivor/voice/cliffe/takefryingpan01.wav",  //Gonna bonk some heads with this!
-			"player/survivor/voice/cliffe/takefryingpan02.wav",  //Frying pan!
-			"player/survivor/voice/cliffe/takefryingpan03.wav",  //A skillet!
-			"player/survivor/voice/cliffe/takefryingpan04.wav"  //This'll work.
-		],
-		SurvivorPickupGolfCLubCliffe = [
-			"player/survivor/voice/cliffe/dlc1_golfclub02.wav",  //Grabbing a golf club.
-			"player/survivor/voice/cliffe/dlc1_golfclub04.wav"  //Grabbing the driver.
-		],
-		SurvivorPickupGrenadeLauncherCliffe = [
-			"player/survivor/voice/cliffe/grenadelauncher02.wav",  //Hell yeah. Grenade launcher.
-			"player/survivor/voice/cliffe/grenadelauncher03.wav"  //[chuckles] Time to make some zombie soup.
-		],
-		SurvivorPickupGunC1M2Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m2b13.wav"  //I'm not legally allowed to own a gun, hope everybody's okay with that.
-		],
-		SurvivorPickupHuntingRifleCliffe = [
-			"player/survivor/voice/cliffe/takesniper01.wav",  //Sniper for me.
-			"player/survivor/voice/cliffe/takesniper02.wav",  //I'll snipe.
-			"player/survivor/voice/cliffe/takesniper03.wav",  //Sniper for me.
-			"player/survivor/voice/cliffe/takesniper04.wav"  //I'll snipe.
-		],
-		SurvivorPickupIncendiaryAmmoCliffe = [
-			"player/survivor/voice/cliffe/incendammo03.wav",  //Let's start some fires, people!
-			"player/survivor/voice/cliffe/nicejob01.wav",  //Well all right!
-			"player/survivor/voice/cliffe/yes10.wav"  //Yessss.
-		],
-		SurvivorPickupKatanaCliffe = [
-			"player/survivor/voice/cliffe/meleeweapons09.wav",  //Ninja sword here.
-			"player/survivor/voice/cliffe/meleeweapons10.wav",  //Grabbing a sword.
-			"player/survivor/voice/cliffe/positivenoise14.wav",  //Hell yeah.
-			"player/survivor/voice/cliffe/takemelee03.wav"  //This could be fun.
-		],
-		SurvivorPickupPitchforkCliffe = [
-			"player/survivor/voice/cliffe/takemelee01.wav",  //Hell yeah.
-			"player/survivor/voice/cliffe/takemelee02.wav",  //This feels good.
-			"player/survivor/voice/cliffe/takemelee03.wav",  //This could be fun.
-			"player/survivor/voice/cliffe/takemelee04.wav",  //Can save some bullets with this one.
-			"player/survivor/voice/cliffe/takemelee05.wav"  //That'll come in handy.
-		],
-		SurvivorPickupLaserSightsAlwaysCliffe = [
-			"player/survivor/voice/cliffe/yes08.wav"  //Yessss.
-		],
-		SurvivorPickupM60Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_m6004.wav",  //I'm grabbing the big gun.
-			"player/survivor/voice/cliffe/dlc1_m6005.wav",  //Grabbing the chain gun.
-			"player/survivor/voice/cliffe/dlc1_m6006.wav"  //Shit, this is heavy.
-		],
-		SurvivorPickupMacheteCliffe = [
-			"player/survivor/voice/cliffe/meleeweapons02.wav",  //Got a machete.
-			"player/survivor/voice/cliffe/takemelee04.wav"  //Can save some bullets with this one.
-		],
-		SurvivorPickupMagnumCliffe = [
-			"player/survivor/voice/cliffe/meleeweapons18.wav",  //Niiiiice.
-			"player/survivor/voice/cliffe/takemelee01.wav"  //Hell yeah.
-		],
-		SurvivorPickupMolotovCliffe = [
-			"player/survivor/voice/cliffe/takemolotov01.wav",  //Grabbing a Molotov.
-			"player/survivor/voice/cliffe/takemolotov02.wav"  //Molotov!
-		],
-		SurvivorPickupPainPillsCliffe = [
-			"player/survivor/voice/cliffe/takepills01.wav",  //Pills.
-			"player/survivor/voice/cliffe/takepills02.wav",  //I got pills.
-			"player/survivor/voice/cliffe/takepills03.wav",  //I can always use these.
-			"player/survivor/voice/cliffe/takepills04.wav"  //I'll hold onto these pills.
-		],
-		SurvivorPickupPipeBombCliffe = [
-			"player/survivor/voice/cliffe/takepipebomb01.wav",  //Grabbing a pipe bomb.
-			"player/survivor/voice/cliffe/takepipebomb02.wav"  //Pipe bomb!
-		],
-		SurvivorPickupPumpShotgunCliffe = [
-			"player/survivor/voice/cliffe/takeshotgun01.wav",  //Going with the shotgun.
-			"player/survivor/voice/cliffe/takeshotgun02.wav",  //Shotgun.
-			"player/survivor/voice/cliffe/takeshotgun03.wav"  //Taking the shotgun.
-		],
-		SurvivorPickupRifleCliffe = [
-			"player/survivor/voice/cliffe/takeassaultrifle01.wav",  //Taking the rifle.
-			"player/survivor/voice/cliffe/takeassaultrifle02.wav",  //Grabbing the assault rifle.
-			"player/survivor/voice/cliffe/takeassaultrifle03.wav",  //Grabbing the assault rifle.
-			"player/survivor/voice/cliffe/takeassaultrifle05.wav"  //Taking the rifle.
-		],
-		SurvivorPickupSecondPistolCliffe = [
-			"player/survivor/voice/cliffe/takepistol01.wav",  //Grabbing the pistol!
-			"player/survivor/voice/cliffe/takepistol03.wav"  //Second pistol.
-		],
-		SurvivorPickupSMGCliffe = [
-			"player/survivor/voice/cliffe/takesubmachinegun01.wav",  //Taking the machinegun.
-			"player/survivor/voice/cliffe/takesubmachinegun02.wav"  //Going with the machinegun.
-		],
-		SurvivorPickuptonfaCliffe = [
-			"player/survivor/voice/cliffe/meleeweapons06.wav",  //Grabbing a nightstick.
-			"player/survivor/voice/cliffe/meleeweapons17.wav",  //I'm gonna whack the shit outta somethin' with this.
-			"player/survivor/voice/cliffe/takemelee02.wav"  //This feels good.
-		],
-		SurvivorPickupUpExplosiveAmmoCliffe = [
-			"player/survivor/voice/cliffe/yes08.wav"  //Yessss.
-		],
-		SurvivorPickupUpExplosivesCliffe = [
-			"player/survivor/voice/cliffe/explosiveammo03.wav"  //Grabbin' some frag rounds!
-		],
-		SurvivorPickupUpIncendiaryCliffe = [
-			"player/survivor/voice/cliffe/incendammo02.wav"  //Grabbin' fire bullets!
-		],
-		SurvivorPickupVomitJarCliffe = [
-			"player/survivor/voice/cliffe/boomerjar04.wav",  //Grabbin' puke!
-			"player/survivor/voice/cliffe/boomerjar07.wav"  //Grabbin' a bile jar!
-		],
-		SurvivorPickupVomitJarAlwaysC1Cliffe = [
-			"player/survivor/voice/cliffe/boomerjar04.wav"  //Grabbin' puke!
-		],
-		Player_TakeVomitJarCliffe = [
-			"player/survivor/voice/cliffe/boomerjar05.wav",  //..For some reason.
-			"player/survivor/voice/cliffe/boomerjar06.wav"  //I can't believe I just said that
-		],
-		PlayerGettingRevivedCliffe = [
-			"player/survivor/voice/cliffe/gettingrevived01.wav",  //Well, what do I look like?
-			"player/survivor/voice/cliffe/gettingrevived02.wav",  //I'm fine.
-			"player/survivor/voice/cliffe/gettingrevived03.wav",  //You tell me.
-			"player/survivor/voice/cliffe/gettingrevived04.wav",  //Same as always.
-			"player/survivor/voice/cliffe/gettingrevived05.wav",  //Not exactly great.
-			"player/survivor/voice/cliffe/gettingrevived06.wav",  //I'm cool, I'm cool.
-			"player/survivor/voice/cliffe/gettingrevived07.wav",  //I'm good, I'm good. Get me up.
-			"player/survivor/voice/cliffe/gettingrevived08.wav",  //Don't worry about me.
-			"player/survivor/voice/cliffe/gettingrevived09.wav",  //Good enough.
-			"player/survivor/voice/cliffe/gettingrevived10.wav",  //Fine, I'm fine, fine.
-			"player/survivor/voice/cliffe/gettingrevived11.wav",  //Oh I'm super. (sarcastic)
-			"player/survivor/voice/cliffe/gettingrevived12.wav",  //I been better.
-			"player/survivor/voice/cliffe/gettingrevived13.wav",  //Just get me up.
-			"player/survivor/voice/cliffe/gettingrevived14.wav",  //I'll be fine.
-			"player/survivor/voice/cliffe/gettingrevived15.wav",  //Oh I'm great, (sarcastic)
-			"player/survivor/voice/cliffe/gettingrevived16.wav",  //Fan-freaking-tastic, that's how I am. (sarcastic)
-			"player/survivor/voice/cliffe/gettingrevived17.wav",  //I'll live. Let's go.
-			"player/survivor/voice/cliffe/gettingrevived18.wav",  //Been better.
-			"player/survivor/voice/cliffe/gettingrevived19.wav",  //I've been better.
-			"player/survivor/voice/cliffe/gettingrevived20.wav"  //Don't worry, just get me up.
-		],
-		PlayerHealOtherCliffe = [
-			"player/survivor/voice/cliffe/healother01.wav",  //I should probably save this for me, but - what the hell.
-			"player/survivor/voice/cliffe/healother02.wav",  //Let doctor Nick fix you up.
-			"player/survivor/voice/cliffe/healother03.wav",  //Just hang on, let me heal you.
-			"player/survivor/voice/cliffe/healother04.wav",  //You're a mess, stand still.
-			"player/survivor/voice/cliffe/healother05.wav"  //Now, don't waste this by getting pounced or something.
-		],
-		PlayerHealOtherC1Cliffe = [
-			"player/survivor/voice/cliffe/healotherc101.wav",  //Hold still, I've done this before.
-			"player/survivor/voice/cliffe/healotherc102.wav",  //Quit moving around.  I've seen worse.
-			"player/survivor/voice/cliffe/healotherc103.wav",  //Man up for a minute. I'm going to fix you up.
-			"player/survivor/voice/cliffe/healotherc104.wav",  //Hold still.  Probably going to regret this, but let me use this on you.
-			"player/survivor/voice/cliffe/healotherc105.wav"  //Alright, don't let the other ones know I am doing this. I'm only doing it for you. (whispered)
-		],
-		PlayerHealOtherCombatCliffe = [
-			"player/survivor/voice/cliffe/healothercombat01.wav",  //Hold on! HOLD. ON.
-			"player/survivor/voice/cliffe/healothercombat02.wav",  //We don't have time, stop moving.
-			"player/survivor/voice/cliffe/healothercombat03.wav",  //Cover us while I heal you.
-			"player/survivor/voice/cliffe/healothercombat04.wav",  //I'm gonna heal you. Keep shooting.
-			"player/survivor/voice/cliffe/healothercombat05.wav"  //Keep 'em off us while I heal you.
-		],
-		PlayerLedgeSaveCliffe = [
-			"player/survivor/voice/cliffe/ledgesave01.wav",  //Easy there fireball.  Let me get you up.
-			"player/survivor/voice/cliffe/ledgesave02.wav",  //Don't worry.  I'll bail your ass out of this mess.
-			"player/survivor/voice/cliffe/ledgesave03.wav",  //Did you miss me?  Come on, let's get you up.
-			"player/survivor/voice/cliffe/ledgesave04.wav"  //I got you, just relax.  Let's get you up.
-		],
-		PlayerReviveFriendCliffe = [
-			"player/survivor/voice/cliffe/revivefriend01.wav",  //We can't afford to lose you, yet.  So let's get you up.
-			"player/survivor/voice/cliffe/revivefriend02.wav",  //You have to learn to take care of yourself or you'll keep ending up down here.
-			"player/survivor/voice/cliffe/revivefriend03.wav",  //Come on get up. You're not dead yet.
-			"player/survivor/voice/cliffe/revivefriend04.wav",  //Come on pull yourself together. We gotta get you up.
-			"player/survivor/voice/cliffe/revivefriend05.wav",  //You have to take better care of yourself!  Now let's get you up.
-			"player/survivor/voice/cliffe/revivefriend06.wav",  //Look at you laying there. Time to get up.
-			"player/survivor/voice/cliffe/revivefriend07.wav",  //Come on get up. Get up, you're not dead yet.
-			"player/survivor/voice/cliffe/revivefriend08.wav",  //We, I... need you for a little longer. So let's get you back up on your feet.
-			"player/survivor/voice/cliffe/revivefriend09.wav",  //If I get you up, you promise not to shoot me anymore?
-			"player/survivor/voice/cliffe/revivefriend10.wav",  //Come on, I've seen worse.  Let's get your butt up.
-			"player/survivor/voice/cliffe/revivefriend11.wav",  //It seems like every time I turn around you are down on the ground.  Now let's get you up.
-			"player/survivor/voice/cliffe/revivefriend12.wav",  //It's a miracle you lasted this long,  Let's get you on your feet.
-			"player/survivor/voice/cliffe/revivefriend13.wav",  //Settle down, Settle down.  Everything is going to be okay.
-			"player/survivor/voice/cliffe/revivefriend14.wav",  //This is nothing.  You'll be as good as new once I get you up.
-			"player/survivor/voice/cliffe/revivefriend15.wav",  //I'm not going to leave you behind.  Let's get you up.
-			"player/survivor/voice/cliffe/revivefriend16.wav",  //You're tougher than you look.  Let's get you back on your feet.
-			"player/survivor/voice/cliffe/revivefriend17.wav",  //Relax.  You're going to be okay.  I have seen worse.
-			"player/survivor/voice/cliffe/revivefriend18.wav",  //Don't worry.  Don't worry.   I can get you back up.
-			"player/survivor/voice/cliffe/revivefriend19.wav",  //Don't worry.  Don't worry.   I can get you back up.
-			"player/survivor/voice/cliffe/revivefriend20.wav",  //This is nothing.  You'll be as good as new once I get you up.
-			"player/survivor/voice/cliffe/revivefrienda01.wav",  //Let me look at you..
-			"player/survivor/voice/cliffe/revivefrienda02.wav",  //You going to be okay?
-			"player/survivor/voice/cliffe/revivefrienda03.wav",  //Are you going to be okay?
-			"player/survivor/voice/cliffe/revivefrienda04.wav",  //How you holding up?
-			"player/survivor/voice/cliffe/revivefrienda05.wav",  //Easy there fireball, easy.
-			"player/survivor/voice/cliffe/revivefrienda06.wav",  //Easy there fireball.
-			"player/survivor/voice/cliffe/revivefrienda07.wav",  //You hurt?
-			"player/survivor/voice/cliffe/revivefrienda08.wav",  //Everything working?
-			"player/survivor/voice/cliffe/revivefrienda09.wav",  //You in one piece?
-			"player/survivor/voice/cliffe/revivefrienda10.wav",  //You're not gonna die on me, are ya?
-			"player/survivor/voice/cliffe/revivefrienda11.wav"  //Are you going to die?
-		],
-		PlayerReviveFriendBCliffe = [
-			"player/survivor/voice/cliffe/revivefriendb01.wav",  //Come on,  still lots to be done.
-			"player/survivor/voice/cliffe/revivefriendb02.wav",  //Rise and shine!
-			"player/survivor/voice/cliffe/revivefriendb03.wav",  //Let's hit the road.
-			"player/survivor/voice/cliffe/revivefriendb04.wav",  //Here we go.
-			"player/survivor/voice/cliffe/revivefriendb05.wav",  //Up and at 'em.
-			"player/survivor/voice/cliffe/revivefriendb06.wav",  //Let's roll.
-			"player/survivor/voice/cliffe/revivefriendb07.wav",  //You owe me one.
-			"player/survivor/voice/cliffe/revivefriendb08.wav",  //Let's have a look at you.
-			"player/survivor/voice/cliffe/revivefriendb09.wav",  //Time to get some revenge.
-			"player/survivor/voice/cliffe/revivefriendb10.wav",  //It's time to get some revenge.
-			"player/survivor/voice/cliffe/revivefriendb11.wav",  //Let's go.
-			"player/survivor/voice/cliffe/revivefriendb12.wav",  //See - all good.
-			"player/survivor/voice/cliffe/revivefriendb13.wav",  //Good as new.
-			"player/survivor/voice/cliffe/revivefriendb14.wav"  //Let's go kill some zombies.
-		],
-		PlayerReviveFriendBCoachCliffe = [
-			"player/survivor/voice/cliffe/revivefriendbcoach01.wav",  //Get up. You aren't leaving me with those two.
-			"player/survivor/voice/cliffe/revivefriendbcoach02.wav"  //Get up, please? You aren't leaving me with those two.
-		],
-		PlayerReviveFriendBEllisCliffe = [
-			"player/survivor/voice/cliffe/revivefriendbellis01.wav",  //Come on,  still lots to be done.
-			"player/survivor/voice/cliffe/revivefriendbellis02.wav"  //Rise and shine!
-		],
-		PlayerReviveFriendCriticalCliffe = [
-			"player/survivor/voice/cliffe/revivecriticalfriend01.wav",  //I can't lie to you.  You are messed up.  If you don't get yourself healed up, that;s it.
-			"player/survivor/voice/cliffe/revivecriticalfriend02.wav",  //You seriously cannot go down again.  If you do... you aren't going to make it.
-			"player/survivor/voice/cliffe/revivecriticalfriend03.wav"  //You're starting to worry me.  I can get you up, but you go down again and that's it.
-		],
-		PlayerReviveFriendLoudCliffe = [
-			"player/survivor/voice/cliffe/revivefriendloud01.wav",  //Ah shit, come on, come on. Come on.
-			"player/survivor/voice/cliffe/revivefriendloud02.wav",  //GET UP, GET UP, GET UP!
-			"player/survivor/voice/cliffe/revivefriendloud03.wav",  //TIME TO MOVE, LET'S GO!
-			"player/survivor/voice/cliffe/revivefriendloud04.wav",  //We don't have time for this, GET UP!
-			"player/survivor/voice/cliffe/revivefriendloud05.wav",  //Let's go, ON YOUR FEET! Let's GO!
-			"player/survivor/voice/cliffe/revivefriendloud06.wav"  //Ah shit, come on, come on. Come on.
-		],
-		PlayerReviveFriendFFCliffe = [
-			"player/survivor/voice/cliffe/revivefriendff01.wav",  //Let me say. Look, if I did this, I ... I apologize.
-			"player/survivor/voice/cliffe/revivefriendff02.wav"  //I'll just say.  If I did this, I'm sorry.
-		],
-		_C1M1_ElevatorHelloCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b45.wav",  //Nick. That's all you need to know.
-			"player/survivor/voice/cliffe/worldc1m1b46.wav",  //Nick.
-			"player/survivor/voice/cliffe/worldc1m1b50.wav",  //Hey, what's your name?
-			"player/survivor/voice/cliffe/worldc1m1b53.wav",  //Okay, let's keep this up.
-			"player/survivor/voice/cliffe/worldc1m1b54.wav",  //Nick.
-			"player/survivor/voice/cliffe/worldc1m1b55.wav",  //Nice work out there.
-			"player/survivor/voice/cliffe/worldc1m1b58.wav",  //Nick.
-			"player/survivor/voice/cliffe/worldc1m1b60.wav",  //There's blood on me, but it ain't mine.
-			"player/survivor/voice/cliffe/worldc1m1b62.wav",  //No, I'm good.
-			"player/survivor/voice/cliffe/worldc1m1b65.wav"  //Nick. Not that it matters, 'cause I think we should split up when this things opens.
-		],
-		_C1M1_ElevatorHelloAllAliveExtra1Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b60.wav"  //There's blood on me, but it ain't mine.
-		],
-		_C1M1_ElevatorHelloAllAliveExtra2Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b56.wav"  //Name's Nick.
-		],
-		_C1M1_ElevatorHello01bCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b43.wav"  // So. You guys got names or what?
-		],
-		_C1M1_ElevatorHello10cCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b60.wav"  //There's blood on me, but it ain't mine.
-		],
-		_C1M1_ElevatorHello04cCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b44.wav",  //Name's Nick. But don't worry about learning it, 'cause I ain't sticking around long.
-			"player/survivor/voice/cliffe/worldc1m1b48.wav",  //Name's Nick.  I'm gonna get outta this piece of shit city if it kills me.
-			"player/survivor/voice/cliffe/worldc1m1b45.wav",  //Nick. That's all you need to know.
-			"player/survivor/voice/cliffe/worldc1m1b65.wav",  //Nick. Not that it matters, 'cause I think we should split up when this things opens.
-			"player/survivor/voice/cliffe/worldc1m1b54.wav"  //Nick.
-		],
-		_C1M1_ElevatorHello04eCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b51.wav",  //You did good out there, Rochelle.
-			"player/survivor/voice/cliffe/worldc1m1b55.wav"  //Nice work out there.
-		],
-		_C1M1_ElevatorHello04dCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b59.wav"  //Well, I'm glad we got that out of the way. Now: did anyone get bit?
-		],
-		_C1M1_ElevatorHello13dCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b45.wav"  //Nick. That's all you need to know.
-		],
-		_c1m4startelevator5aCliffe = [
-			"player/survivor/voice/cliffe/worldc1m4b03.wav",  //I'll agree to the idea, but I'm driving.
-			"player/survivor/voice/cliffe/worldc1m4b05.wav"  //Well, it beats my idea: staying here and dying in the mall.
-		],
-		_c1m4startelevator6a1Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m4b04.wav"  //What a fun road trip this will be.
-		],
-		_c1m4startelevatorLastCliffe = [
-			"player/survivor/voice/cliffe/worldc1m4b01.wav",  //I think the little guy's onto something. Let's give it a shot.
-			"player/survivor/voice/cliffe/worldc1m4b06.wav"  //Okay. Let's gas up the car and get the hell out of this mall.
-		],
-		_C2M1_Fall03Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m136.wav",  //Breaking my neck is not a fun time.
-			"player/survivor/voice/cliffe/worldc2m137.wav"  //Breaking my neck is not a fun time, Ellis.
-		],
-		_C2M1_Fall05Cliffe = [
-			"player/survivor/voice/cliffe/reactionnegative03.wav"  //Shit!
-		],
-		_c2m1_searchlights03Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m2b01.wav",  //Let's do it.
-			"player/survivor/voice/cliffe/worldc2m2b02.wav",  //We'll head towards the searchlights. If there's an evac, it'll be there.
-			"player/survivor/voice/cliffe/worldc2m2b03.wav"  //Or maybe a corpse fell on the searchlight button. Still, worth checking out.
-		],
-		_C2M1abandoned02Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m1b05.wav"  //That's... one theory.
-		],
-		_C2M1Billboard01Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m1b06.wav"  //Oh good. Now we can die there as adults.
-		],
-		_C2M2_Bathroom01Cliffe = [
-			"player/survivor/voice/cliffe/sorry01.wav",  //Excuse me.
-			"player/survivor/voice/cliffe/sorry08.wav"  //Don't look at me like that.
-		],
-		_C2M2_CaroButton01Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m219.wav"  //You know what? Somehow I think it will activate everything else around here.
-		],
-		_C2M2_Kiddie01Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m2b08.wav"  //He's like a five year old. With guns. And a comprehensive grasp of every swear word in the English language.
-		],
-		_C2M2_Kiddie04Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m2b05.wav"  //Now *I* want to ride one.
-		],
-		_C2M2_SeeSafehouse01Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m227.wav"  //Tunnel of love?  Jesus Christ.
-		],
-		_C2M2_Steak01Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m2b07.wav"  //Buddy, if you can me out of this alive? I will deep-fry you an entire goddamn cow.
-		],
-		_C2M2_ThisTall01Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m2b11.wav"  //Nope. Just lots and lots of tanks.
-		],
-		_c2m3_coaster02Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m334.wav"  //We're gonna have to run the coaster.
-		],
-		_c2m3_coaster05Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m329.wav",  //No it's not, this is going to be horrible. Make sure to stay together.
-			"player/survivor/voice/cliffe/worldc2m330.wav"  //No it's not, this is going to be horrible. Make sure to stay together.
-		],
-		_c2m3_hole01Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m318.wav",  //Let's all do this together.
-			"player/survivor/voice/cliffe/worldc2m319.wav"  //Everyone at the same time.
-		],
-		_c2m3_water01Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m3b07.wav"  //Yeah. Don't drink it.
-		],
-		_C2M4_GateOpen001Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m485.wav"  //Let's go!
-		],
-		_C4_BigStormHits01Cliffe = [
-			"player/survivor/voice/cliffe/miscdirectional63.wav",  //HERE COMES THE RAIN!
-			"player/survivor/voice/cliffe/miscdirectional64.wav",  //STORM COMING!
-			"player/survivor/voice/cliffe/worldc4m429.wav"  //Storm's hitting!
-		],
-		_C4_BigStormHits02Cliffe = [
-			"player/survivor/voice/cliffe/miscdirectional65.wav",  //STAY CLOSE!
-			"player/survivor/voice/cliffe/worldc4m409.wav"  //Stay close!
-		],
-		_c4m1_rainresponseCliffe = [
-			"player/survivor/voice/cliffe/worldc4m1b18.wav",  //The rain's getting worse.
-			"player/survivor/voice/cliffe/worldc4m1b19.wav",  //It's really starting to come down.
-			"player/survivor/voice/cliffe/worldc4m1b20.wav",  //Shit. It looks like it's really gonna storm.
-			"player/survivor/voice/cliffe/worldc4m1b21.wav",  //We need to move faster. I don't wanna get trapped out here in a storm.
-			"player/survivor/voice/cliffe/worldc4m142.wav",  //It's starting to rain.
-			"player/survivor/voice/cliffe/worldc4m143.wav"  //Shit, it's starting to rain.
-		],
-		_c4m1Intro03Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m1b01.wav",  //What are we supposed to signal him with?
-			"player/survivor/voice/cliffe/worldc4m113.wav",  //Do we trust that guy to come back?
-			"player/survivor/voice/cliffe/worldc4m110.wav",  //We'll signal you when you should return.
-			"player/survivor/voice/cliffe/worldc4m111.wav",  //Stay away from the shore until we signal you.
-			"player/survivor/voice/cliffe/worldc4m112.wav",  //Stay offshore until we signal you.
-			"player/survivor/voice/cliffe/worldc4m101.wav"  //This, my friends, is a milk run.
-		],
-		_c4m1Intro04Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m113.wav",  //Do we trust that guy to come back?
-			"player/survivor/voice/cliffe/worldc4m1b01.wav"  //What are we supposed to signal him with?
-		],
-		_c4m1Intro05Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m1b02.wav",  //What gun bag?
-			"player/survivor/voice/cliffe/worldc4m1b02.wav",  //What gun bag?
-			"player/survivor/voice/cliffe/worldc4m1b06.wav",  //You didn't grab the guns?
-			"player/survivor/voice/cliffe/worldc4m1b06.wav",  //You didn't grab the guns?
-			"player/survivor/voice/cliffe/worldc4m1b06.wav"  //You didn't grab the guns?
-		],
-		_c4m1Intro07Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m1b03.wav"  //ME? Who died and made me gun monitor?
-		],
-		_c4m1Intro08Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m114.wav",  //Fair enough, but you're the first three people in the world I have ever trusted.
-			"player/survivor/voice/cliffe/worldc4m115.wav",  //Shit. I don't even trust myself.
-			"player/survivor/voice/cliffe/worldc4m116.wav"  //In that case I don't think we can trust your judgment in this matter.
-		],
-		_c4m1Intro09Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m1b04.wav",  //Great. We are screw-
-			"player/survivor/voice/cliffe/worldc4m1b07.wav"  //The gas station's right across the street. Let's just get the gas and then we'll figure out how to signal Virgil.
-		],
-		_c4m1Intro11Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m1b09.wav"  //You wanna hear a prediction?
-		],
-		_c4m1Intro13Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m1b10.wav"  //There's not gonna be any gas. Watch.
-		],
-		_c4m1Intro02Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m102.wav",  //A cakewalk.
-			"player/survivor/voice/cliffe/worldc4m103.wav",  //A walk in the park.
-			"player/survivor/voice/cliffe/worldc4m104.wav",  //A walk in the sun.
-			"player/survivor/voice/cliffe/worldc4m105.wav",  //A piece of cake.
-			"player/survivor/voice/cliffe/worldc4m106.wav"  //All we gotta do is get some diesel and get back on the boat.
-		],
-		_c4m2_caneyell01Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m2b31.wav"  //KEEP MOVING!
-		],
-		_c4m2_ElevatorHere01Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m2b24.wav",  //ELEVATOR'S HERE!
-			"player/survivor/voice/cliffe/worldc4m2b25.wav",  //GET IN!
-			"player/survivor/voice/cliffe/worldc4m2b26.wav"  //EVERYBODY IN THE ELEVATOR!
-		],
-		_c4m2_seestation01Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m216.wav",  //Through the cane field.
-			"player/survivor/voice/cliffe/worldc4m2b19.wav",  //Through the cane field!
-			"player/survivor/voice/cliffe/worldc4m2b20.wav"  //Through the wheat farm!
-		],
-		_c4m2_seestation03Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m2b21.wav"  //Whaatever you say, Farmer Joe.
-		],
-		_c4m2_streetblocked01Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m2b02.wav"  //I think we gotta cut through the sugar mill.
-		],
-		_c4m2_streetblocked01bCliffe = [
-			"player/survivor/voice/cliffe/blank.wav"  //
-		],
-		_c4m2_Witchville01Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m2b11.wav"  //Tell me about it.
-		],
-		_c4m2_Witchville05Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m2b10.wav",  //Witches must really love sugar.
-			"player/survivor/voice/cliffe/worldc4m2b14.wav"  //The last time I saw this many crying women was at my wedding.
-		],
-		_c4m3_rain01Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m306.wav",  //Goddamn town is going to be flooded!
-			"player/survivor/voice/cliffe/worldc4m3b07.wav"  //Well, at least this shithole'll get CLEANER...
-		],
-		_c4m3_startsafe02Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m3b03.wav",  //Yup.
-			"player/survivor/voice/cliffe/worldc4m3b04.wav"  //I got mine.
-		],
-		_c4m3_startsafe04Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m3b02.wav"  //Let's hit it.
-		],
-		_C4M5_BoatComing01Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m438.wav",  //Boat's here!
-			"player/survivor/voice/cliffe/worldc4m439.wav",  //Let's go! Our ride is here!
-			"player/survivor/voice/cliffe/worldc4m440.wav",  //Boat's here!
-			"player/survivor/voice/cliffe/worldc4m441.wav",  //He came back for us!
-			"player/survivor/voice/cliffe/worldc4m4b19.wav",  //YOU SEE THAT? VIRGIL SEES US!
-			"player/survivor/voice/cliffe/worldc4m4b20.wav",  //THERE'S VIRGIL!
-			"player/survivor/voice/cliffe/worldc4m431.wav",  //There's his signal!
-			"player/survivor/voice/cliffe/worldc4m432.wav"  //He's heading back in!
-		],
-		_C4M5_FinaleStart01Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m4b15.wav"  //Come on, Virgil...
-		],
-		_C4M5_Intro02Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m1b01.wav",  //What are we supposed to signal him with?
-			"player/survivor/voice/cliffe/worldc4m418.wav",  //We can signal the boat with the Burger Tank sign.
-			"player/survivor/voice/cliffe/worldc4m4b11.wav"  //If we turn the sign on, Virgil might see it.
-		],
-		_C4M5_Intro04Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m4b12.wav"  //It's worth a shot.
-		],
-		PlayerRemarkc4m5_BurgerTankCliffe = [
-			"player/survivor/voice/cliffe/worldc4m4b13.wav",  //
-			"player/survivor/voice/cliffe/worldc4m420.wav",  //
-			"player/survivor/voice/cliffe/worldc4m417.wav",  //Light up the sign!
-			"player/survivor/voice/cliffe/worldc4m419.wav",  //Let's signal the boat!
-			"player/survivor/voice/cliffe/worldc4m424.wav",  //Get on the roof of the Burger Tank!
-			"player/survivor/voice/cliffe/worldc4m425.wav",  //Get on the roof!
-			"player/survivor/voice/cliffe/worldc4m426.wav",  //We can turn on the sign from the roof.
-			"player/survivor/voice/cliffe/worldc4m427.wav"  //Get up here!
-		],
-		_introc1m1Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b87.wav",  //God DAMN it! We just missed it!
-			"player/survivor/voice/cliffe/worldc1m1b88.wav",  //God DAMN it! We just missed it!
-			"player/survivor/voice/cliffe/worldc1m1b87.wav",  //God DAMN it! We just missed it!
-			"player/survivor/voice/cliffe/worldc1m1b88.wav",  //God DAMN it! We just missed it!
-			"player/survivor/voice/cliffe/worldc1m1b89.wav",  //Where the hell's the copter going? We're right here!
-			"player/survivor/voice/cliffe/worldc1m1b98.wav",  //Where the hell's the copter going? We're right here!
-			"player/survivor/voice/cliffe/worldc1m1b93.wav",  //Where the hell's the copter going? We're right here!
-			"player/survivor/voice/cliffe/worldc1m1b105.wav"  //Hey, come back! I'm HERE! There's still someone DOWN here!
-		],
-		_introc1m1AloneCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b105.wav"  //Hey, come back! I'm HERE! There's still someone DOWN here!
-		],
-		_introc1m1a01Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b101.wav",  //Hey! Get back here!
-			"player/survivor/voice/cliffe/worldc1m1b96.wav",  //Hey! Come back!
-			"player/survivor/voice/cliffe/worldc1m1b99.wav"  //Hey! Get back here!
-		],
-		_introc1m1a04Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b113.wav",  //Okay, helicopters don't come back when you yell at 'em. Valuable lesson. You three tuck that away for later; now grab a weapon and follow me; this goddamn building's on fire.
-			"player/survivor/voice/cliffe/worldc1m1b90.wav",  //Okay. Helicopters don't come back when you yell at them. Now we know that.
-			"player/survivor/voice/cliffe/worldc1m1b94.wav",  //Okay. Helicopters don't come back when you yell at them. Now we know that.
-			"player/survivor/voice/cliffe/worldc1m1b125.wav",  //So much for the rescue, any ideas?
-			"player/survivor/voice/cliffe/worldc1m1b112.wav",  //Okay, we all had a turn yelling at the helicopter. Good. Moving on: I think the building's on fire.
-			"player/survivor/voice/cliffe/worldc1m1b111.wav"  //HEY! Loud girl, hay seed, tons of fun, this building is on fire! Grab a weapon, and let's get the hell out of here.
-		],
-		_introc1m1b03Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b123.wav",  //They saw us all right, and they're not coming back.
-			"player/survivor/voice/cliffe/worldc1m1b123.wav",  //They saw us all right, and they're not coming back.
-			"player/survivor/voice/cliffe/worldc1m1b124.wav",  //Not to burst your bubble, sport, but this building is burning down. They're not coming back.
-			"player/survivor/voice/cliffe/worldc1m1b107.wav",  //You could have yelled if you wanted.
-			"player/survivor/voice/cliffe/worldc1m1b107.wav"  //You could have yelled if you wanted.
-		],
-		_introc1m1b04Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b108.wav"  //It's leaving us. Also, say hell.
-		],
-		_introc1m1helileftCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b109.wav",  //It's flying away from the burning building we're standing on. Let's follow its lead and get the hell out of here.
-			"player/survivor/voice/cliffe/worldc1m1b110.wav"  //It's flying the hell away from the burning building we're standing the hell on. Let's follow its lead and get the hell out of here.
-		],
-		_introc1m1b05Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b114.wav",  //Okay, one, stop calling it a whirlybird. It's a HELICOPTER. Two, I don't like being in buildings that are on fire.
-			"player/survivor/voice/cliffe/worldc1m1b116.wav"  //HELICOPTER. It is a HELICOPTER. You call that thing a whirlybird one more time, I'll beat you SO hard, your sister's gonna wish she never gave birth to you.
-		],
-		_introc1m1b06Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b116.wav"  //HELICOPTER. It is a HELICOPTER. You call that thing a whirlybird one more time, I'll beat you SO hard, your sister's gonna wish she never gave birth to you.
-		],
-		_introc1m1b08donutsCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b122.wav"  //I trust you. You look like a man who knows his donuts.
-		],
-		_introc1m1b09Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b100.wav"  //Good, that's decided. Moving on: I think this building's on fire. Sooo... I'd like to leave it.
-		],
-		_introc1m1b10Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b95.wav"  //Then so am I. Grab a weapon and let's go. I think this goddamn building's on fire.
-		],
-		_introc1m1lastCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b115.wav"  //Good enough for me. Grab a weapon and let's go.
-		],
-		_introc1m1b11Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b106.wav",  //Oh, good. You can count. I bet they'll come back now.
-			"player/survivor/voice/cliffe/worldc1m1b106.wav"  //Oh, good. You can count. I bet they'll come back now.
-		],
-		_introc1m1MovieIntroCliffe = [
-			"player/survivor/voice/cliffe/teaserintromovie04.wav",  //I guess there's been a change of plans.
-			"player/survivor/voice/cliffe/teaserintromovie05.wav",  //I guess there's been a change of plans.
-			"player/survivor/voice/cliffe/teaserintromovie07.wav",  //Looks like there's been a change of plans.
-			"player/survivor/voice/cliffe/teaserintromovie08.wav",  //Looks like their plans have changed.
-			"player/survivor/voice/cliffe/teaserintromovie09.wav",  //There's been a change of plans.
-			"player/survivor/voice/cliffe/teaserintromovie10.wav",  //Looks like there's been a change of plans.
-			"player/survivor/voice/cliffe/teaserintromovie11.wav",  //There's been a change of plans.
-			"player/survivor/voice/cliffe/teaserintromovie12.wav",  //Looks like their plans have changed.
-			"player/survivor/voice/cliffe/teaserintromovie13.wav"  //Looks like we're not part of their new plan.
-		],
-		_introc1m1c02Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b136.wav"  //You're serious, aren't you?
-		],
-		c1m1_elevator_door_openCliffe = [
-			"player/survivor/voice/cliffe/cough01.wav",  //[Coughing from smoke]
-			"player/survivor/voice/cliffe/cough02.wav",  //[Coughing from smoke]
-			"player/survivor/voice/cliffe/cough04.wav"  //[Coughing from smoke]
-		],
-		c1m1_elevator_ready2Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b41.wav",  //I bet there'll be something waiting for us out there. So let's get ready...
-			"player/survivor/voice/cliffe/worldc1m1b42.wav",  //Alright, we're all friends now. Get ready...
-			"player/survivor/voice/cliffe/worldc1m1b40.wav"  //Get ready...
-		],
-		_C1M1_ElevatorHello2AliveNickIntro1Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b56.wav"  //Name's Nick.
-		],
-		_C1M1_ElevatorHello2AliveExtra1Cliffe = [
-			"player/survivor/voice/cliffe/transitionclose06.wav",  //We got lucky!
-			"player/survivor/voice/cliffe/worldc1m1b66.wav"  //We're pretty screwed.
-		],
-		_C1M1_ElevatorHello2AliveExtra2Cliffe = [
-			"player/survivor/voice/cliffe/reactionnegative13.wav"  //This is all going to hell!
-		],
-		_C1M1_ElevatorHello3AliveExtra1Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b64.wav"  //And then there were three.
-		],
-		_C1M1_ElevatorHello3AliveNickIntro1Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b56.wav"  //Name's Nick.
-		],
-		_C1M1_ElevatorHello3AliveNickIntro2Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b50.wav"  //Hey, what's your name?
-		],
-		_C1M1_ElevatorHello3AliveName1Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b56.wav"  //Name's Nick.
-		],
-		_C1M1_ElevatorHello3AliveName2RCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b56.wav"  //Name's Nick.
-		],
-		_C1M1_ElevatorHello3AliveName2Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b56.wav"  //Name's Nick.
-		],
-		_C1M1_ElevatorHello3AliveNameDeadRCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b69.wav"  //I think she just said it was Rochelle.
-		],
-		_C1M1_ElevatorHello3AliveNameDeadECliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b67.wav"  //Was it Ellis? Well, doesn't matter now.
-		],
-		_C1M1_ElevatorHello3AliveNameDeadCCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b68.wav"  //I think it was Coach. Don't matter now.
-		],
-		C1M1CoughCliffe = [
-			"player/survivor/voice/cliffe/cough01.wav",  //[Coughing from smoke]
-			"player/survivor/voice/cliffe/cough02.wav",  //[Coughing from smoke]
-			"player/survivor/voice/cliffe/cough04.wav"  //[Coughing from smoke]
-		],
-		C1M3AlarmOffaCliffe = [
-			"player/survivor/voice/cliffe/worldc1m3b25.wav",  //Thanks for turning off that alarm!
-			"player/survivor/voice/cliffe/worldc1m3b26.wav",  //Man, that was driving me crazy.
-			"player/survivor/voice/cliffe/worldc1m3b27.wav"  //You know what? I could take the zombies, but not that goddam noise.
-		],
-		C1M3SafeRoomCliffe = [
-			"player/survivor/voice/cliffe/worldc1m3b02.wav"  //Let's go find this evacuation center. I'm already sick of this place.
-		],
-		C1M3SafeRoom2aCliffe = [
-			"player/survivor/voice/cliffe/worldc1m3b01.wav"  //If anyone sees a men's store let me know. I got blood on this suit.
-		],
-		C1M3SafeRoom2bCliffe = [
-			"player/survivor/voice/cliffe/worldc1m3b03.wav"  //Ugh. GOD, I hate malls.
-		],
-		C1M4NearFinale02aCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b66.wav"  //We're pretty screwed.
-		],
-		C1M4NearFinale02cCliffe = [
-			"player/survivor/voice/cliffe/no02.wav",  //Nope.
-			"player/survivor/voice/cliffe/no04.wav"  //No sir-ee Bob.
-		],
-		C1M4NearFinale02eCliffe = [
-			"player/survivor/voice/cliffe/blank.wav"
-		],
-		c1m4NearFinale1Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m3b29.wav"  //Okay, so the evac station's abandoned, annnnd we're at the center of a zombie-filled building. But on the bright side? We're all probably gonna die.
-		],
-		C1M4SafeRoomCliffe = [
-			"player/survivor/voice/cliffe/worldc1m3b12.wav"  //Who the hell is Jimmy Gibbs, Jr.?
-		],
-		C1M4SafeRoom2a2Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m3b13.wav"  //I'm getting sick of looking at this guy's face.
-		],
-		C1M4SafeRoom2a4Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m3b14.wav"  //Really? 'Cause he looks like an asshole.
-		],
-		C1M4SafeRoomEndCliffe = [
-			"player/survivor/voice/cliffe/moveon02.wav",  //Let's roll!
-			"player/survivor/voice/cliffe/moveon04.wav"  //What are we waiting for?  Let's go.
-		],
-		C2M1IntroStartCliffe = [
-			"player/survivor/voice/cliffe/worldc2m1b01.wav"  //I hate to be the bearer of bad news, guys-but unless Ellis knows how to build a monster truck, we AIN'T drivin' through this.
-		],
-		C2M1Intro002Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m1b02.wav",  //Don't sweat it, Ellis. At least you got us out of that mall.
-			"player/survivor/voice/cliffe/worldc2m1b03.wav"  //God DAMN you, Jimmy Gibbs, Jr.
-		],
-		C2M1Intro_400Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting08.wav",  //Whatever.
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting09.wav"  //Whatever.
-		],
-		c4m1_InBurgerTank01Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m134.wav",  //Right, except for all the zombies.
-			"player/survivor/voice/cliffe/worldc4m135.wav"  //Not so hard after you see all the zombies.
-		],
-		C4FinaleStartCliffe = [
-			"player/survivor/voice/cliffe/worldc4m421.wav",  //Get ready! I am hitting the power for the sign.
-			"player/survivor/voice/cliffe/worldc4m422.wav",  //Come on burger tank, save us!
-			"player/survivor/voice/cliffe/worldc4m423.wav",  //Fast food is going to save us.
-			"player/survivor/voice/cliffe/worldc4m4b14.wav",  //Sign's on!
-			"player/survivor/voice/cliffe/worldc4m433.wav",  //We just need to hold out!
-			"player/survivor/voice/cliffe/worldc4m434.wav",  //We just need to last until the boat comes.
-			"player/survivor/voice/cliffe/worldc4m435.wav"  //Let's stay up here until the boat comes.
-		],
-		PlayerRemarkc4m1_InBurgerTankCliffe = [
-			"player/survivor/voice/cliffe/worldc4m117.wav",  //This is the best goddamn Burger Tank I have ever visited.
-			"player/survivor/voice/cliffe/worldc4m118.wav",  //I hope no one minds us taking these guns.
-			"player/survivor/voice/cliffe/worldc4m119.wav"  //Gas station is across the street.
-		],
-		c4m1_nogas01Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m1b11.wav",  //Looks like our milk run just turned into a marathon.
-			"player/survivor/voice/cliffe/worldc4m123.wav",  //There goes the milk run.
-			"player/survivor/voice/cliffe/worldc4m124.wav",  //They've got diesel at the sugar mill?
-			"player/survivor/voice/cliffe/worldc4m126.wav"  //If we're going, let's hurry.
-		],
-		c4m1_nogas02Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m1b14.wav",  //What makes you think they have gas?
-			"player/survivor/voice/cliffe/worldc4m1b15.wav",  //Two miles? Shit. It's starting to rain, too.
-			"player/survivor/voice/cliffe/worldc4m1b16.wav"  //Three miles? Shit. It's starting to rain, too.
-		],
-		c4m1_nogas04Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m107.wav",  //Let's do this quick and get back on the damn boat.
-			"player/survivor/voice/cliffe/worldc4m108.wav",  //Let's hurry up and do this before the storm hits.
-			"player/survivor/voice/cliffe/worldc4m109.wav",  //Good idea, storm's coming.
-			"player/survivor/voice/cliffe/worldc4m125.wav",  //Screw it, we need the diesel and we've got guns. Let's go get it.
-			"player/survivor/voice/cliffe/worldc4m1b17.wav"  //Let's just get this done and get back.
-		],
-		c4m1_nogas05Cliffe = [
-			"player/survivor/voice/cliffe/worldc4m127.wav"  //Want to beat out this storm.
-		],
-		GasPour20MoreCliffe = [
-			"player/survivor/voice/cliffe/worldc1m4b24.wav",  //We still need more gas!
-			"player/survivor/voice/cliffe/worldc1m4b23.wav",  //We still need more gas!
-			"player/survivor/voice/cliffe/worldc1m4b27.wav"  //We still need 20 more.
-		],
-		GasPour10MoreTalkCliffe = [
-			"player/survivor/voice/cliffe/worldc1m4b28.wav"  //We still need ten more!
-		],
-		GasPour1MoreCliffe = [
-			"player/survivor/voice/cliffe/worldc1m4b32.wav",  //One more and we can go!
-			"player/survivor/voice/cliffe/worldc1m4b33.wav",  //One more can to go!
-			"player/survivor/voice/cliffe/worldc2m473.wav"  //Last one!
-		],
-		GasPour2MoreCliffe = [
-			"player/survivor/voice/cliffe/worldc1m4b31.wav"  //Just two more!
-		],
-		GasPour3MoreCliffe = [
-			"player/survivor/voice/cliffe/worldc1m4b30.wav"  //Just three more!
-		],
-		GasPour5MoreCliffe = [
-			"player/survivor/voice/cliffe/worldc1m4b29.wav"  //We still need five more!
-		],
-		HistoricTour01aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_historicsign02.wav"  //Trust me, that won't be the case.
-		],
-		Player_SeeMudmen2aCliffe = [
-			"player/survivor/voice/cliffe/worldc3m202.wav"  //I'm with Ellis, I hate these mud people.
-		],
-		Player_TakeBatR2Cliffe = [
-			"player/survivor/voice/cliffe/takebatr01.wav"  //Nope. Bouncer at a club.
-		],
-		Player_KnowHunterC1Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b11.wav"  //So that's a Hunter, huh? What's he gonna do? Go for a jog at me?
-		],
-		Player_KnowBoomerC1Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b10.wav"  //So that's a Boomer, huh? You know, it's sad to see an eating disorder get out of control like that.
-		],
-		Player_KnowChargerC1Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b06.wav",  //So that's a Charger, huh? I think he worked out that arm plenty. He should move on to back and legs.
-			"player/survivor/voice/cliffe/worldc1m1b07.wav"  //So that's a Charger, huh? Huh, you know what they say about zombies with one big arm.
-		],
-		Player_KnowJockeyC1Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b08.wav"  //So that's a Jockey, huh? Cute little guy.
-		],
-		Player_KnowSmokerC1Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b12.wav"  //So that's a Smoker, huh? Bet he's popular with the lady zombies.
-		],
-		Player_KnowSpitterC1Cliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b09.wav"  //So that's a Spitter, huh? Think she's single?
-		],
-		Player_NotPackingHeatCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b131.wav"  //Great, I run into the three people in Georgia not carrying a gun.
-		],
-		Player_NotPackingHeat2Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting08.wav",  //Whatever.
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting09.wav",  //Whatever.
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting10.wav"  //Whatever sweety.
-		],
-		Player_WhinyNickCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b118.wav"  //Yeah, sure. All for one, one for all.
-		],
-		C1M2TankInfoCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b13.wav"  //So that's a Tank, huh? Jesus, that thing's huge.
-		],
-		PlayerCr0wnedBrideCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitchdead11.wav",  //Honeymoon's over, bitch.
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitchdead12.wav",  //Now that is a shotgun wedding.
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitchdead13.wav"  //Now that is a shotgun wedding.
-		],
-		PlayerCr0wnedBrideCoachCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitchdead01.wav"  //That has been a fantasy of mine for a long long time.
-		],
-		PlayerCr0wnedBrideProducerCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitchdead01.wav"  //That has been a fantasy of mine for a long long time.
-		],
-		WeddingWitchDead02Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitchdead04.wav"  //Even for us, that was just too weird.
-		],
-		WeddingWitchDead03Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitchdead05.wav",  //That's a good one Coach.
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitchdead06.wav",  //Coach! That's a good one.
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitchdead07.wav",  //Spectacular, Coach.
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitchdead08.wav",  //Very true.
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitchdead09.wav",  //Well put.
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitchdead10.wav"  //Wow, true.
-		],
-		WeddingWitchDead04Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitchdead02.wav",  //He ain't coming back, honey.
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitchdead03.wav"  //Honey, he ain't coming back.
-		],
-		WorldIntroC31a1Cliffe = [
-			"player/survivor/voice/cliffe/worldc3m1b02.wav"  //Well, he wasn't doing a very good job once he became a zombie now was he?
-		],
-		WorldIntroC31a3Cliffe = [
-			"player/survivor/voice/cliffe/worldc3m1b03.wav"  //I shot a zombie. He was a zombie Ellis. He must have gotten bitten before he picked us up.
-		],
-		WorldIntroC31b1Cliffe = [
-			"player/survivor/voice/cliffe/worldc3m1b06.wav",  //This looks like a friendly place.
-			"player/survivor/voice/cliffe/worldc3m1b07.wav",  //I don't think zombies can read.
-			"player/survivor/voice/cliffe/worldc3m1b08.wav",  //They probably should have added no zombies to that sign.
-			"player/survivor/voice/cliffe/worldc3m1b05.wav"  //Great, we crash land in front of a village that hates everyone.
-		],
-		WorldIntroC31c2Cliffe = [
-			"player/survivor/voice/cliffe/worldc3m1b01.wav"  //I can't believe none of you were going to shoot him.
-		],
-		WorldIntroC31c4Cliffe = [
-			"player/survivor/voice/cliffe/youarewelcomec104.wav"  //Whatever.
-		],
-		WorldIntroC31d1Cliffe = [
-			"player/survivor/voice/cliffe/worldc3m1b04.wav"  //No problem big guy, sorry about the landing.
-		],
-		WorldIntroC31e3aCliffe = [
-			"player/survivor/voice/cliffe/worldc3m1b05.wav"  //Great, we crash land in front of a village that hates everyone.
-		],
-		WorldIntroC3f2Cliffe = [
-			"player/survivor/voice/cliffe/worldc3m1b01.wav"  //I can't believe none of you were going to shoot him.
-		],
-		PlayerCoverMeHealCliffe = [
-			"player/survivor/voice/cliffe/coverme01.wav",  //Hold up, going to heal.
-			"player/survivor/voice/cliffe/coverme02.wav",  //Healing.
-			"player/survivor/voice/cliffe/coverme03.wav",  //I'm gonna heal.
-			"player/survivor/voice/cliffe/coverme04.wav",  //I gotta heal.
-			"player/survivor/voice/cliffe/coverme05.wav",  //Healing!
-			"player/survivor/voice/cliffe/coverme06.wav",  //Gonna heal.
-			"player/survivor/voice/cliffe/coverme07.wav",  //Healing.
-			"player/survivor/voice/cliffe/coverme08.wav",  //Hold up, going to heal.
-			"player/survivor/voice/cliffe/coverme09.wav"  //Healing!
-		],
-		PlayerCoverMeHealC1Cliffe = [
-			"player/survivor/voice/cliffe/covermec101.wav",  //I'm gonna patch myself up.
-			"player/survivor/voice/cliffe/covermec102.wav",  //Wait up, gonna fix myself up.
-			"player/survivor/voice/cliffe/covermec103.wav",  //Wait! Healing!
-			"player/survivor/voice/cliffe/covermec104.wav",  //Hang on, I'm gonna fix myself up.
-			"player/survivor/voice/cliffe/covermec105.wav"  //Just wait a sec! Healing!
-		],
-		Player_LostCallC6M3Cliffe = [
-			"player/survivor/voice/cliffe/blank.wav"  //
-		],
-		AutoPlayerLostCallCliffe = [
-			"player/survivor/voice/cliffe/lostcall01.wav",  //Helloooo?
-			"player/survivor/voice/cliffe/lostcall02.wav",  //Heyyy ooooo!
-			"player/survivor/voice/cliffe/lostcall03.wav",  //Anybody hear me?
-			"player/survivor/voice/cliffe/lostcall04.wav",  //Can you guys hear me?
-			"player/survivor/voice/cliffe/lostcall05.wav"  //Helloooo?
-		],
-		SurvivorSpottedChainsawCliffe = [
-			"player/survivor/voice/cliffe/meleeweapons03.wav"  //Chainsaw here...
-		],
-		SurvivorSpottedcricket_batCliffe = [
-			"player/survivor/voice/cliffe/meleeweapons14.wav"  //Cricket bat here.
-		],
-		SurvivorSpottedcrowbarCliffe = [
-			"player/survivor/voice/cliffe/meleeweapons12.wav"  //Crowbar.
-		],
-		SurvivorSpottedGolfClubCliffe = [
-			"player/survivor/voice/cliffe/dlc1_golfclub06.wav",  //Club here!
-			"player/survivor/voice/cliffe/dlc1_golfclub07.wav",  //Club here!
-			"player/survivor/voice/cliffe/dlc1_golfclub08.wav"  //Driver here!
-		],
-		SurvivorSpottedGuitarCliffe = [
-			"player/survivor/voice/cliffe/meleeweapons07.wav"  //Guitar here.
-		],
-		SurvivorSpottedKatanaCliffe = [
-			"player/survivor/voice/cliffe/meleeweapons09.wav"  //Ninja sword here.
-		],
-		SurvivorSpottedLaserSightsCliffe = [
-			"player/survivor/voice/cliffe/lasersights01.wav",  //Laser sights here.
-			"player/survivor/voice/cliffe/lasersights02.wav",  //Laser sights here.
-			"player/survivor/voice/cliffe/lasersights03.wav"  //We got some laser sights.
-		],
-		SurvivorSpottedM60Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_m6001.wav",  //Now this is a gun.
-			"player/survivor/voice/cliffe/dlc1_m6002.wav",  //Shit, this is a gun.
-			"player/survivor/voice/cliffe/dlc1_m6003.wav"  //Big gun.
-		],
-		SurvivorSpottedMacheteCliffe = [
-			"player/survivor/voice/cliffe/meleeweapons01.wav"  //Machete here...
-		],
-		SurvivorSpottedMagnumCliffe = [
-			"player/survivor/voice/cliffe/lookhere02.wav",  //Look here.
-			"player/survivor/voice/cliffe/meleeweapons18.wav"  //Niiiiice.
-		],
-		SurvivorSpottedtonfaCliffe = [
-			"player/survivor/voice/cliffe/meleeweapons05.wav"  //nightstick here...
-		],
-		SurvivorSpottedShotgunCliffe = [
-			"player/survivor/voice/cliffe/takeautoshotgun04.wav",  //Shotgun.
-			"player/survivor/voice/cliffe/takeshotgun02.wav",  //Shotgun.
-			"player/survivor/voice/cliffe/spotweapons02.wav",  //Everyone grab a weapon!
-			"player/survivor/voice/cliffe/spotweapons03.wav"  //Guns here!
-		],
-		SurvivorSpottedARCliffe = [
-			"player/survivor/voice/cliffe/takeassaultrifle04.wav",  //Assault rifle.
-			"player/survivor/voice/cliffe/spotweapons02.wav",  //Everyone grab a weapon!
-			"player/survivor/voice/cliffe/spotweapons03.wav"  //Guns here!
-		],
-		SurvivorSpottedSecondPistolCliffe = [
-			"player/survivor/voice/cliffe/takepistol03.wav",  //Second pistol.
-			"player/survivor/voice/cliffe/takepistol02.wav",  //Pistol!
-			"player/survivor/voice/cliffe/spotweapons02.wav",  //Everyone grab a weapon!
-			"player/survivor/voice/cliffe/spotweapons03.wav"  //Guns here!
-		],
-		SurvivorSpottedWeaponCliffe = [
-			"player/survivor/voice/cliffe/spotweapons01.wav",  //Weapons over here!
-			"player/survivor/voice/cliffe/spotweapons02.wav",  //Everyone grab a weapon!
-			"player/survivor/voice/cliffe/spotweapons03.wav"  //Guns here!
-		],
-		SurvivorSpottedMeleeWeaponCliffe = [
-			"player/survivor/voice/cliffe/spotweapons01.wav",  //Weapons over here!
-			"player/survivor/voice/cliffe/spotweapons02.wav"  //Everyone grab a weapon!
-		],
-		SurvivorSpottedPistolCliffe = [
-			"player/survivor/voice/cliffe/takepistol02.wav"  //Pistol!
-		],
-		AskWhatCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting06.wav",  //What?
-			"player/survivor/voice/cliffe/worldc2m433.wav"  //What?
-		],
-		C13M1IntroStartCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b16.wav"  //Shit! This place is burnin' up FAST.
-		],
-		C13M1Intro2Cliffe = [
-			"player/survivor/voice/cliffe/world311.wav"  //Which way?
-		],
-		C13M1Intro3Cliffe = [
-			"player/survivor/voice/cliffe/followme08.wav",  //Come on, this way!
-			"player/survivor/voice/cliffe/miscdirectional06.wav",  //C'mon, this way!
-			"player/survivor/voice/cliffe/worldc4m1b04.wav",  //Great. We are screwed.
-			"player/survivor/voice/cliffe/worldc1m1b66.wav"  //We're pretty screwed.
-		],
-		C13M1IntroLastCliffe = [
-			"player/survivor/voice/cliffe/moveon01.wav",  //Look at ya. What are we waiting for?  Let's go.
-			"player/survivor/voice/cliffe/moveon02.wav",  //Let's roll!
-			"player/survivor/voice/cliffe/moveon03.wav",  //Time to move.
-			"player/survivor/voice/cliffe/moveon04.wav"  //What are we waiting for?  Let's go.
-		],
-		C13M1IntroLocationLastCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b115.wav"  //Good enough for me. Grab a weapon and let's go.
-		],
-		RemarkC13M1ThroughHereCliffe = [
-			"player/survivor/voice/cliffe/worldc2m210.wav",  //Back here.
-			"player/survivor/voice/cliffe/worldc2m217.wav",  //Through here.
-			"player/survivor/voice/cliffe/worldmisc02.wav",  //Through here.
-			"player/survivor/voice/cliffe/worldmisc08.wav"  //Through here.
-		],
-		RemarkC13M1PreBunkerOpenCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_alarmdoor02.wav",  //When we open this door its gonna alert the zombies.
-			"player/survivor/voice/cliffe/dlc1_c6m1_alarmdoor06.wav",  //Let's get ready!
-			"player/survivor/voice/cliffe/dlc1_c6m1_alarmdoor07.wav"  //This is gonna get noisy.
-		],
-		RemarkC13M2UpHillCliffe = [
-			"player/survivor/voice/cliffe/followme08.wav",  //Come on, this way!
-			"player/survivor/voice/cliffe/miscdirectional06.wav"  //C'mon, this way!
-		],
-		C13M2TankApproachingCliffe = [
-			"player/survivor/voice/cliffe/heardspecialc103.wav",  //What in the hell is that noise?
-			"player/survivor/voice/cliffe/heardspecialc104.wav",  //You hear that? I guess zombies weren't bad enough.
-			"player/survivor/voice/cliffe/heardspecialc105.wav",  //You hear that?
-			"player/survivor/voice/cliffe/heardspecialc106.wav",  //Can you hear that?
-			"player/survivor/voice/cliffe/heardspecialc107.wav"  //What is that noise?
-		],
-		C13M2BarrelsIgnitedCliffe = [
-			"player/survivor/voice/cliffe/backup01.wav",  //Back it up!
-			"player/survivor/voice/cliffe/backup02.wav",  //Back, back, back!
-			"player/survivor/voice/cliffe/backup03.wav",  //Come on back.
-			"player/survivor/voice/cliffe/backup04.wav"  //Back it up!
-		],
-		C13M2Barrels1Cliffe = [
-			"player/survivor/voice/cliffe/worldc2m127.wav"  //Woah shit.
-		],
-		C13M2Barrels2Cliffe = [
-			"player/survivor/voice/cliffe/yellrun01.wav",  //Run
-			"player/survivor/voice/cliffe/yellrun02.wav",  //Screw it, run!
-			"player/survivor/voice/cliffe/yellrun03.wav",  //Run! Just run!
-			"player/survivor/voice/cliffe/yellrun04.wav"  //Go! Run! GO!
-		],
-		C13M3ApproachingTankerCliffe = [
-			"player/survivor/voice/cliffe/worldc1m1b14.wav",  //Alright, I'm not walking through THAT. Let's find another way.
-			"player/survivor/voice/cliffe/worldc1m1b15.wav"  //Let's find another way. This suit's flammable.
-		],
-		C13M3Tanker1Cliffe = [
-			"player/survivor/voice/cliffe/worldc5m4b06.wav",  //SHIT!
-			"player/survivor/voice/cliffe/worldc5m4b07.wav"  //SHIT!
-		],
-		C13M3Tanker2Cliffe = [
-			"player/survivor/voice/cliffe/backup01.wav",  //Back it up!
-			"player/survivor/voice/cliffe/backup02.wav",  //Back, back, back!
-			"player/survivor/voice/cliffe/backup03.wav",  //Come on back.
-			"player/survivor/voice/cliffe/backup04.wav"  //Back it up!
-		],
-		C13M3Tanker3Cliffe = [
-			"player/survivor/voice/cliffe/transitionclose07.wav",  //God DAMN, that was close!
-			"player/survivor/voice/cliffe/transitionclose08.wav"  //That was a close one.
-		],
-		C13M3OnScaffoldCliffe = [
-			"player/survivor/voice/cliffe/miscdirectional29.wav"  //We can get down here!
-		],
-		C13M3AirstrikeCliffe = [
-			"player/survivor/voice/cliffe/worldc5m4b06.wav",  //SHIT!
-			"player/survivor/voice/cliffe/worldc5m4b07.wav",  //SHIT!
-			"player/survivor/voice/cliffe/world219.wav"  //WHAT THE -  (reaction to bombing)
-		],
-		C13M3Airstrike2Cliffe = [
-			"player/survivor/voice/cliffe/worldc5m4b05.wav",  //Christ, those guys are such assholes.
-			"player/survivor/voice/cliffe/world220.wav",  //WHAT THE HELL ARE THEY DOING?  (reaction to bombing)
-			"player/survivor/voice/cliffe/worldc5m4b02.wav",  //Well, it's official: They're trying to kill US now.
-			"player/survivor/voice/cliffe/worldc5m4b09.wav"  //Well, it's official: They're trying to kill US now.
-		],
-		C13M4Button1Cliffe = [
-			"player/survivor/voice/cliffe/worldc5m5b08.wav"  //Um, hello?
-		],
-		C13M4FinaleTriggeredCliffe = [
-			"player/survivor/voice/cliffe/worldc5m501.wav",  //Okay, yeah, got it.  Sure.  See you soon.
-			"player/survivor/voice/cliffe/world406.wav"  //Okay, we're heading over now.
-		],
-		C13M4FinaleStart2Cliffe = [
-			"player/survivor/voice/cliffe/worldc5m5b12.wav"  //Roger that. Here we come.
-		],
-		C13M4NoticedHelicopterCliffe = [
-			"player/survivor/voice/cliffe/look01.wav",  //Over there!
-			"player/survivor/voice/cliffe/look03.wav",  //Over there!
-			"player/survivor/voice/cliffe/look05.wav"  //Over there!
-		],
-		C13M4AlmostThereCliffe = [
-			"player/survivor/voice/cliffe/worldc5m5b14.wav",  //THERE'S THE COPTER!
-			"player/survivor/voice/cliffe/worldc2m5b38.wav"  //There's the copter!
-		],
-		C13M4SpottedVehicleCliffe = [
-			"player/survivor/voice/cliffe/worldc1m4b43.wav"  //Let's go people, let's go!
-		],
-		C13M4GetToVehicleCliffe = [
-			"player/survivor/voice/cliffe/world424.wav",  //To the chopper!
-			"player/survivor/voice/cliffe/world425.wav",  //Get to the chopper!
-			"player/survivor/voice/cliffe/worldc5m5b15.wav",  //GET TO THE COPTER!
-			"player/survivor/voice/cliffe/worldc2m5b49.wav",  //Get on the helicopter!
-			"player/survivor/voice/cliffe/worldc2m5b50.wav",  //Everyone to the copter!
-			"player/survivor/voice/cliffe/worldc2m5b53.wav"  //Let's go, let's go to the copter!
-		],
-		// gambler_dlc1.txt ====================================================================================================
-		L4D1PlayerNiceShotCliffe = [
-			"player/survivor/voice/cliffe/niceshot06.wav",  //Nice shooting.
-			"player/survivor/voice/cliffe/niceshot07.wav",  //Nice shot!
-			"player/survivor/voice/cliffe/niceshot08.wav"  //Nice shot Ace.
-		],
-		L4D1PlayerNiceShotFrancisCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1killing01.wav",  //I owe you one, Francis!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1killing06.wav"  //Nice shot, Francis!
-		],
-		L4D1PlayerNiceShotLouisCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1killing02.wav",  //Thanks, Louis!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1killing08.wav",  //Louis, I am beginning to like you and your gun.
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1killing09.wav",  //Louis, you are a badass with that gun.
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1killing10.wav",  //Louis, you sure you don't want to come with us? We can leave Ellis behind.
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1killing11.wav",  //Louis, you are a badass with that gun.
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1killing12.wav"  //Louis, you sure you don't want to come with us? We can leave Ellis behind.
-		],
-		L4D1PlayerNiceShotZoeyCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1killing03.wav",  //Thanks, Zoey!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1killing05.wav",  //Zoey, all right!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1killing07.wav"  //Nice shot, Zoey!
-		],
-		C6M3GasPourCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_cans02.wav",  //I'm filling the generator.
-			"player/survivor/voice/cliffe/dlc1_c6m3_cans03.wav",  //Pouring it in!
-			"player/survivor/voice/cliffe/dlc1_c6m3_cans04.wav",  //Another one in!
-			"player/survivor/voice/cliffe/dlc1_c6m3_cans05.wav",  //Almost outta here!
-			"player/survivor/voice/cliffe/dlc1_c6m3_cans06.wav"  //Why doesn't anything have enough gas in it?
-		],
-		C6M1_IntotheparkNoHealthCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_intopark03.wav",  //Grab a health kit.
-			"player/survivor/voice/cliffe/dlc1_c6m1_intopark04.wav",  //Everyone grab a health kit.
-			"player/survivor/voice/cliffe/dlc1_c6m1_intopark05.wav",  //Don't forget a health kit.
-			"player/survivor/voice/cliffe/dlc1_c6m1_intopark06.wav"  //Quick, grab a health kit.
-		],
-		C6M1Intro_01Biker05Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting07.wav"  //I'm telling you for the last goddamn time, lower the goddamn bridge you greasy vest wearing monkey.
-		],
-		C6M1Intro_07bCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting01.wav",  //That guy's no cop.
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting02.wav"  //I'll tell ya something; that guy is no cop.
-		],
-		C6M1Intro_09aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting03.wav"  //Hey! (Realization someone else is alive) HEEEYYY!!
-		],
-		C6M1Intro_09bCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting04.wav"  //Hey! (Realization someone else is alive) HEEEYYY!!
-		],
-		C6M1Intro_09dCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting05.wav",  //What the...
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting06.wav"  //What?
-		],
-		C6M1Intro_10eCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting08.wav",  //Whatever.
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting09.wav",  //Whatever.
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting10.wav",  //Whatever sweety.
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting11.wav",  //Or: I could try is being more attractive to grease ball bikers.
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting12.wav"  //Or: I could try is being more attractive to grease ball bikers.
-		],
-		C6M1Intro_11dCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting13.wav",  //All right.
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting14.wav"  //Yeah, all right.
-		],
-		C6M1Intro_14aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting15.wav"  //Okay, listen to me, jackass, lower the goddamn bridge so we can drive our goddamn car across.
-		],
-		C6M1Intro_14cCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting16.wav",  //(to his group) Do you believe this guy?
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting17.wav"  //(to self) I don't believe this guy.
-		],
-		C6M1Intro_15aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting18.wav"  //That's terrific cupcake, is there a man up there we can talk to?
-		],
-		C6M1Intro_15eCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting19.wav",  //Hey, lighten up. Man, no one can take a joke anymore.
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting20.wav"  //Wouldja  lighten up?  Man, no one can take a joke anymore.
-		],
-		C6M1Intro_16aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_initialmeeting21.wav"  //Well then climb down, you big ape, and help us.
-		],
-		LeavingC6M1StartCliffe = [
-			"player/survivor/voice/cliffe/blank.wav"  //
-		],
-		RemWorldC6M1_WeddingWarn02Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_wedding06.wav",  //Coach, no time for cake.
-			"player/survivor/voice/cliffe/dlc1_c6m1_wedding07.wav",  //I'll keep an eye out for some.
-			"player/survivor/voice/cliffe/dlc1_c6m1_wedding08.wav"  //Coach, I'll keep an eye out for some. Okay buddy?
-		],
-		WorldC6M1_HistoricTourCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_historicsign01.wav",  //[reading] "Historic Rayford Under-the-River Tunnel Tour." THAT'll get us across."
-			"player/survivor/voice/cliffe/dlc1_c6m1_historicsign03.wav",  //Look, we can just go under the river. Doesn't that sound fun Ellis?
-			"player/survivor/voice/cliffe/dlc1_c6m1_historicsign04.wav",  //Look, we can just go under the river. Doesn't that sound like fun Ellis?
-			"player/survivor/voice/cliffe/dlc1_c6m1_historicsign05.wav",  //If we can go under the river, we can get to the other side of the bridge.
-			"player/survivor/voice/cliffe/dlc1_c6m1_historicsign06.wav",  //Only in the South do I have to go under a goddamn river.
-			"player/survivor/voice/cliffe/dlc1_c6m1_historicsign07.wav",  //If we can't take the bridge, let's try this under-the-river tour.
-			"player/survivor/voice/cliffe/dlc1_c6m1_historicsign08.wav"  //Okay, explain something to me; how is an under-the-river tour scenic?
-		],
-		WorldC6M1_PostWedding02aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingpostwitch02.wav"  //Marrying her is the last thing you should do.
-		],
-		WorldC6M1_WeddingWarn05aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingpostwitch03.wav",  //Yeah, look Ellis, all women are emotional wrecks who will eventually kill you.
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingpostwitch04.wav"  //Yeah, you're about to get mauled to death.
-		],
-		C6M2_OpenGate1Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_alarmdooropen02.wav",  //I opened it.
-			"player/survivor/voice/cliffe/dlc1_c6m2_bridge1raisehitit01.wav"  //I hit it!
-		],
-		C6M2_OpenGate1aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_bridgecollapse01.wav"  //Ellis, what did you just do?
-		],
-		C6M2_OpenGate2Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_alarmdooropen02.wav",  //I opened it.
-			"player/survivor/voice/cliffe/dlc1_c6m2_bridge1raisehitit03.wav",  //Ahh, Christ, you gotta be kidding me.
-			"player/survivor/voice/cliffe/dlc1_c6m2_bridge1raisehitit06.wav"  //Ahh, COME ON!
-		],
-		C6M2SafeRoomCliffe = [
-			"player/survivor/voice/cliffe/blank.wav"  //
-		],
-		DLC1_C6M2_SafeRoomConvo01Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo01.wav"  //So we find this historic section. Go under the river. And then we kick that biker dude's ass, right?
-		],
-		DLC1_C6M2_SafeRoomConvo01bCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo02.wav"  //Go to hell.
-		],
-		DLC1_C6M2_SafeRoomConvo02Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo03.wav"  //I can't believe we're waking this far just to keep a damn car.
-		],
-		DLC1_C6M2_SafeRoomConvo02bCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo04.wav"  //I don't have a problem with leaving the car AND you behind. Okay, Ellis?
-		],
-		DLC1_C6M2_SafeRoomConvo06aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo05.wav",  //Boiled nuts? Christ. What is wrong with you Southerners?
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo06.wav",  //Boiled nuts? Coah, come on, what is wrong with you Southerners?
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo07.wav",  //And you want to live?
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo08.wav"  //I hate your life Coach.
-		],
-		DLC1_C6M2_SafeRoomConvo07aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo09.wav"  //I think you had a better chance with that witch.
-		],
-		DLC1_C6M2_SafeRoomConvo08Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo17.wav",  //So this under-the-river tour, who wants to bet that is going to be filthy.
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo20.wav"  //If anybody sees any hand sanitizer let me know.
-		],
-		DLC1_C6M2_SafeRoomConvo08aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo10.wav",  //What's a matter Rochelle, playing hard to get?
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo11.wav"  //What's a matter sweetie, you playing hard to get?
-		],
-		DLC1_C6M2_SafeRoomConvo08cCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo12.wav",  //I saw the way you were looking at him.
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo13.wav"  //C'mon... I saw the way you were looking at him.
-		],
-		DLC1_C6M2_SafeRoomConvo08eCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo14.wav",  //I don't know... he fills out a vest pretty good.
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo15.wav",  //He could be the one.
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo16.wav"  //Look, there are probably 10 guys left on the planet Rochelle, and you're not getting any younger, sweetie.
-		],
-		DLC1_C6M2_SafeRoomConvo09bCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo19.wav"  //Coach, A germ just wiped out the whole planet. So yes.
-		],
-		DLC1_C6M2_SafeRoomConvo10Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo23.wav"  //So Ellis, Zoey huh? What do you think?
-		],
-		DLC1_C6M2_SafeRoomConvo10bCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo21.wav"  //Yeah, hahaha a little bit more hand sanitizer and we wouldn't be in this mess.
-		],
-		DLC1_C6M2_SafeRoomConvo10dCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo22.wav"  //Under the what now?
-		],
-		DLC1_C6M2_SafeRoomConvo11bCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo24.wav"  //Yeah agreed, she is totally out of your league.
-		],
-		DLC1_C6M2_SafeRoomConvo12aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo25.wav",  //Okay, let me get this straight. It's a tunnel... under the river. Right?
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo26.wav"  //Let me get this straight, Coach. It's a tunnel... under the river. Right?
-		],
-		DLC1_C6M2_SafeRoomConvo12cCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo27.wav",  //And this is supposed to teach me about what exactly?
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo28.wav"  //And this is supposed to teach me about what exactly?
-		],
-		DLC1_C6M2_SafeRoomConvo13aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo29.wav"  //I am not looking forward to this under the river tour.
-		],
-		DLC1_C6M2_SafeRoomConvo13cCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo30.wav",  //Coach, it's a hole. Oh no, excuse me, an historic hole. Under a river.
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo32.wav"  //Okay, good point. You know what? I am looking forward to punching that grease bag biker in the mouth.
-		],
-		DLC1_C6M2_SafeRoomConvo14fCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoomconvo31.wav"  //Yeah, no, I'm good, I'm good.
-		],
-		DLC1_C6M2_SafeRoomConvo15cCliffe = [
-			"player/survivor/voice/cliffe/youarewelcomec104.wav"  //Whatever.
-		],
-		WorldC6M2_AfterGate201aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_inwaterfindladder12.wav",  //Not the time, Ellis.
-			"player/survivor/voice/cliffe/dlc1_c6m2_inwaterfindladder13.wav"  //Not the time, Ellis.
-		],
-		WorldC6M2_FinalWater01aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_finalwater02.wav"  //I hate you, Ellis!
-		],
-		WorldC6M2_InSewer101cCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater01.wav"  //Ellis. I NEED this.
-		],
-		WorldC6M2_InSewer102bCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater08.wav"  //YES.
-		],
-		WorldC6M2_InSewer201aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater10.wav"  //Don't you DARE.
-		],
-		WorldC6M2_InSewer202aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater11.wav",  //Ugh
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater16.wav"  //Ugh
-		],
-		WorldC6M2_InSewerLadder101aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater12.wav",  //Ugh
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater13.wav",  //Augh
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater14.wav",  //Ugh, ugh
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater15.wav",  //Ugh
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater17.wav",  //Ugh
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater18.wav",  //Ugh, ugh
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater19.wav"  //Bad advice. BAD advice.
-		],
-		WorldC6M2_OnTourWalk101aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_historictour06.wav"  //Shithole?
-		],
-		WorldC6M2_OnTourWalk102aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_historictour07.wav"  //Toldja.
-		],
-		WorldC6M2_Tattoo01b_Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_tattoo06.wav",  //I'll just write greasy pig. We'll all know who we are talking about.
-			"player/survivor/voice/cliffe/dlc1_c6m2_tattoo08.wav",  //I'll just write greasy pig, we all...(laughs)
-			"player/survivor/voice/cliffe/dlc1_c6m2_tattoo09.wav",  //Greasy pig should be close enough, right?
-			"player/survivor/voice/cliffe/dlc1_c6m2_tattoo10.wav"  //I'll just write greasy pig. We'll all know who we are talking about.
-		],
-		WorldC6M2_Tattoo03a_Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_tattoo11.wav",  //That is never going to happen, Ellis.
-			"player/survivor/voice/cliffe/dlc1_c6m2_tattoo12.wav"  //I'm gonna get a tattoo that says "no".
-		],
-		C6M3_BridgeDownCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalebridgerun02.wav",  //Bridge is down, to the car!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalebridgerun02.wav",  //Bridge is down, to the car!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalebridgerun04.wav",  //GET TO THE CAR, GET TO THE CAR!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalebridgerun04.wav",  //GET TO THE CAR, GET TO THE CAR!
-			"player/survivor/voice/cliffe/worldc1m4b35.wav",  //Thank YOU, Jimmy Gibbs, Jr.
-			"player/survivor/voice/cliffe/worldc1m4b36.wav",  //Get to the car!
-			"player/survivor/voice/cliffe/worldc1m4b37.wav",  //Would you get to the goddamn car?
-			"player/survivor/voice/cliffe/worldc1m4b39.wav",  //Everyone to the car!
-			"player/survivor/voice/cliffe/worldc1m4b40.wav",  //I'm not waiting long, get to the car!
-			"player/survivor/voice/cliffe/worldc1m4b41.wav",  //Time to leave people!
-			"player/survivor/voice/cliffe/worldc1m4b43.wav"  //Let's go people, let's go!
-		],
-		C6M3_BridgeGettoCarCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalebridgerun02.wav",  //Bridge is down, to the car!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalebridgerun02.wav",  //Bridge is down, to the car!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalebridgerun04.wav",  //GET TO THE CAR, GET TO THE CAR!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalebridgerun04.wav",  //GET TO THE CAR, GET TO THE CAR!
-			"player/survivor/voice/cliffe/worldc1m4b35.wav",  //Thank YOU, Jimmy Gibbs, Jr.
-			"player/survivor/voice/cliffe/worldc1m4b36.wav",  //Get to the car!
-			"player/survivor/voice/cliffe/worldc1m4b37.wav",  //Would you get to the goddamn car?
-			"player/survivor/voice/cliffe/worldc1m4b39.wav",  //Everyone to the car!
-			"player/survivor/voice/cliffe/worldc1m4b40.wav",  //I'm not waiting long, get to the car!
-			"player/survivor/voice/cliffe/worldc1m4b41.wav",  //Time to leave people!
-			"player/survivor/voice/cliffe/worldc1m4b43.wav"  //Let's go people, let's go!
-		],
-		C6M3_elevatorCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_elevator02.wav",  //I guess they'll help. Right?
-			"player/survivor/voice/cliffe/dlc1_c6m3_elevator03.wav",  //First we fill up Gibby's car with gas, now a generator, what next? Don't answer, Ellis.
-			"player/survivor/voice/cliffe/dlc1_c6m3_elevator04.wav",  //Let's get these cans fast.
-			"player/survivor/voice/cliffe/dlc1_c6m3_elevator05.wav"  //Let's not piss around here, alright? Gas up the generator, let's get out of here.
-		],
-		C6M3_elevatorFrancisCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_elevator01.wav"  //The minute we get down there, I'm shooting that biker.
-		],
-		C6M3_GivenItemBikerCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1items01.wav",  //Shit, thanks!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1items03.wav",  //Sorry if I was rude before. You guys are all right!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1items05.wav",  //Thanks, greaseball!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1items07.wav"  //Thanks, pal!
-		],
-		C6M3_GivenItemTeenGirlCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1items02.wav",  //Thanks, we'll make good use of this.
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1items06.wav",  //Hey thanks, babe!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalel4d1items08.wav"  //Got it, thank you!
-		],
-		C6M3SafeRoomCliffe = [
-			"player/survivor/voice/cliffe/blank.wav"  //
-		],
-		DLC1_C6M3_SafeRoomConvo02Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_saferoomconvo01.wav"  //I don't trust that biker. He better still be here.
-		],
-		DLC1_C6M3_SafeRoomConvo02bCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_saferoomconvo04.wav"  //You know him that well?
-		],
-		DLC1_C6M3_SafeRoomConvo02dCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_saferoomconvo03.wav"  //You got a good feeling about every scumbag that lives on a bridge.
-		],
-		DLC1_C6M3_SafeRoomConvo03bCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_saferoomconvo05.wav"  //Like you've been crawling through a sewer.
-		],
-		DLC1_C6M3_SafeRoomConvo03dCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_saferoomconvo06.wav",  //I'm not even going to look.
-			"player/survivor/voice/cliffe/dlc1_c6m3_saferoomconvo07.wav"  //I'm not even going to look, Ellis.
-		],
-		DLC1_C6M3_SafeRoomConvo04cCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_saferoomconvo09.wav"  //Don't listen to her. You got five minutes to get this done, Ellis. It is do or die time, buddy.
-		],
-		DLC1_C6M3_SafeRoomConvo05Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_saferoomconvo08.wav"  //So we're about to see that girl again, what's her name? Zoey?
-		],
-		DLC1_C6M3_SafeRoomConvo05bCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_saferoomconvo11.wav"  //What are you nervous about? You had your chance, you didn't do shit. Now you can watch Nick take care of business.
-		],
-		DLC1_C6M3_SafeRoomConvo05dCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_saferoomconvo12.wav",  //What? I'm a handsome man.
-			"player/survivor/voice/cliffe/dlc1_c6m3_saferoomconvo13.wav",  //What? I'm a closer.
-			"player/survivor/voice/cliffe/dlc1_c6m3_saferoomconvo14.wav",  //What? I'm a handsome man, what can I tell ya?
-			"player/survivor/voice/cliffe/dlc1_c6m3_saferoomconvo15.wav"  //A-B-C. A;ways be closing.
-		],
-		IncapBounceCliffe = [
-			"player/survivor/voice/cliffe/blank.wav"  //
-		],
-		C6M3_CansDoneCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalebridgerun01.wav",  //Everyone to the car!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalebridgerun03.wav"  //Thanks! We gotta run!
-		],
-		SurvivorSpottedFallenCliffe = [
-			"player/survivor/voice/cliffe/dlc1_fallensurvior01.wav",  //Kill that zombie, he's got something!
-			"player/survivor/voice/cliffe/dlc1_fallensurvior02.wav",  //That zombie's got something! Kill it!
-			"player/survivor/voice/cliffe/dlc1_fallensurvior03.wav",  //Get that zombie! He's got something!
-			"player/survivor/voice/cliffe/dlc1_fallensurvior05.wav",  //What's that zombie got?
-			"player/survivor/voice/cliffe/dlc1_fallensurvior06.wav",  //I think that zombie's got something!
-			"player/survivor/voice/cliffe/dlc1_fallensurvior07.wav",  //That zombie's got something!
-			"player/survivor/voice/cliffe/seefallen02.wav"  //Is that a survivor?
-		],
-		PlayerWitchChasingC6M1Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitchchasing01.wav"  //Here comes the bride!
-		],
-		PlayerRemarkremark_MidnightRidersBusCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_midnightriders01.wav",  //Did you guys see that?
-			"player/survivor/voice/cliffe/dlc1_c6m2_midnightriders02.wav",  //Did you guys see that?
-			"player/survivor/voice/cliffe/dlc1_c6m2_midnightriders03.wav",  //What in the hell was that?
-			"player/survivor/voice/cliffe/dlc1_c6m2_midnightriders04.wav"  //I must be dreaming.
-		],
-		PlayerRemarkWorldC6M1_AcrossHereCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_backalley07.wav"  //Across the walk-way.
-		],
-		PlayerRemarkWorldC6M1_AlleyBelowCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_backalley01.wav",  //We've got to get up across these walk-ways.
-			"player/survivor/voice/cliffe/dlc1_c6m1_backalley02.wav",  //We've got to get into this building.
-			"player/survivor/voice/cliffe/dlc1_c6m1_backalley03.wav",  //We need to get up there.
-			"player/survivor/voice/cliffe/dlc1_c6m1_backalley04.wav",  //Down this alley.
-			"player/survivor/voice/cliffe/dlc1_c6m1_backalley05.wav",  //Down here.
-			"player/survivor/voice/cliffe/dlc1_c6m1_backalley16.wav"  //Down this alley.
-		],
-		PlayerRemarkWorldC6M1_AlleyIntoBuildingCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_backalley06.wav"  //Into the apartments.
-		],
-		PlayerRemarkWorldC6M1_InAptsCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_backalley10.wav",  //Into here.
-			"player/survivor/voice/cliffe/dlc1_c6m1_backalley11.wav",  //In here.
-			"player/survivor/voice/cliffe/dlc1_c6m1_backalley13.wav",  //Over here.
-			"player/survivor/voice/cliffe/dlc1_c6m1_backalley14.wav"  //Let's search these rooms for supplies.
-		],
-		PlayerRemarkWorldC6M1_IntotheparkCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_intopark01.wav",  //Let's go through this park.
-			"player/survivor/voice/cliffe/dlc1_c6m1_intopark02.wav"  //Through this park.
-		],
-		PlayerRemarkWorldC6M1_IntoThePark2Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_intopark01.wav"  //Let's go through this park.
-		],
-		PlayerRemarkWorldC6M1_IntoTheStoreCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_intostore01.wav",  //Through this store.
-			"player/survivor/voice/cliffe/dlc1_c6m1_intostore02.wav",  //Let's go through this store.
-			"player/survivor/voice/cliffe/dlc1_c6m1_intostore03.wav",  //We can get around through this store.
-			"player/survivor/voice/cliffe/dlc1_c6m1_intostore04.wav"  //Guns in this store!
-		],
-		PlayerRemarkWorldC6M1_SafeRoomAlleyCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_backalley17.wav",  //Behind this bus.
-			"player/survivor/voice/cliffe/dlc1_c6m1_saferoomahead01.wav",  //Safe house in this building!
-			"player/survivor/voice/cliffe/dlc1_c6m1_saferoomahead02.wav"  //Safe house back here!
-		],
-		PlayerRemarkWorldC6M1_ThroughBarCliffe = [
-			"player/survivor/voice/cliffe/worldmisc02.wav",  //Through here.
-			"player/survivor/voice/cliffe/worldmisc08.wav"  //Through here.
-		],
-		PlayerRemarkWorldC6M1_UpHereCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_backalley08.wav",  //Back this way.
-			"player/survivor/voice/cliffe/dlc1_c6m1_backalley09.wav",  //Back this way.
-			"player/survivor/voice/cliffe/dlc1_c6m1_backalley15.wav",  //Guess we go this way.
-			"player/survivor/voice/cliffe/worldmisc01.wav"  //Up here.
-		],
-		PlayerRemarkWorldC6M1_UpTheStairsCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_upstairs01.wav",  //Up these stairs.
-			"player/survivor/voice/cliffe/worldc2m115.wav"  //Let's try upstairs.
-		],
-		PlayerRemarkWorldC6M1_UpTheStairs2Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_upstairs02.wav",  //Up the stairs!
-			"player/survivor/voice/cliffe/worldc2m116.wav"  //We have to get up stairs.
-		],
-		PlayerRemarkWorldC6M1_WeddingWarnCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_wedding01.wav",  //Guess we're crashing this wedding.
-			"player/survivor/voice/cliffe/dlc1_c6m1_wedding02.wav",  //Oh shit a wedding.
-			"player/survivor/voice/cliffe/dlc1_c6m1_wedding03.wav",  //Oh Christ, this is more depressing than the zombies.
-			"player/survivor/voice/cliffe/dlc1_c6m1_wedding04.wav",  //I hate going to weddings.
-			"player/survivor/voice/cliffe/dlc1_c6m1_wedding05.wav",  //Think we are a little late for the wedding.
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitch01.wav",  //Careful! I've seen a bride just like this before.
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitch04.wav",  //That dress. The crying. This is bringing back some bad memories.
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitch06.wav"  //This is bringing back some bad memories.
-		],
-		PlayerRemarkWorldC6M1_WeddingWarn1Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_wedding01.wav",  //Guess we're crashing this wedding.
-			"player/survivor/voice/cliffe/dlc1_c6m1_wedding02.wav",  //Oh shit a wedding.
-			"player/survivor/voice/cliffe/dlc1_c6m1_wedding03.wav",  //Oh Christ, this is more depressing than the zombies.
-			"player/survivor/voice/cliffe/dlc1_c6m1_wedding04.wav",  //I hate going to weddings.
-			"player/survivor/voice/cliffe/dlc1_c6m1_wedding05.wav",  //Think we are a little late for the wedding.
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitch01.wav",  //Careful! I've seen a bride just like this before.
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitch04.wav",  //That dress. The crying. This is bringing back some bad memories.
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitch06.wav"  //This is bringing back some bad memories.
-		],
-		PlayerRemarkWorldC6M1_WeddingWarn2Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_wedding01.wav",  //Guess we're crashing this wedding.
-			"player/survivor/voice/cliffe/dlc1_c6m1_wedding02.wav",  //Oh shit a wedding.
-			"player/survivor/voice/cliffe/dlc1_c6m1_wedding03.wav",  //Oh Christ, this is more depressing than the zombies.
-			"player/survivor/voice/cliffe/dlc1_c6m1_wedding04.wav",  //I hate going to weddings.
-			"player/survivor/voice/cliffe/dlc1_c6m1_wedding05.wav",  //Think we are a little late for the wedding.
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitch01.wav",  //Careful! I've seen a bride just like this before.
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitch04.wav",  //That dress. The crying. This is bringing back some bad memories.
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitch06.wav"  //This is bringing back some bad memories.
-		],
-		PlayerRemarkWorldC6M1_WeddingWarn3Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_wedding01.wav",  //Guess we're crashing this wedding.
-			"player/survivor/voice/cliffe/dlc1_c6m1_wedding02.wav",  //Oh shit a wedding.
-			"player/survivor/voice/cliffe/dlc1_c6m1_wedding03.wav",  //Oh Christ, this is more depressing than the zombies.
-			"player/survivor/voice/cliffe/dlc1_c6m1_wedding04.wav",  //I hate going to weddings.
-			"player/survivor/voice/cliffe/dlc1_c6m1_wedding05.wav",  //Think we are a little late for the wedding.
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitch01.wav",  //Careful! I've seen a bride just like this before.
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitch04.wav",  //That dress. The crying. This is bringing back some bad memories.
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitch06.wav"  //This is bringing back some bad memories.
-		],
-		PlayerRemarkWorldC6M1_WeddingWarnAngelCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitch09.wav"  //(whispered in Ellis accent) Ellis look, it's another angel.
-		],
-		PlayerRemarkWorldC6M1_WeddingWarnEllisCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitch05.wav",  //Ellis, maybe you should grab that dress for your new girlfriend.
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitch08.wav"  //Ellis, go give the bride a kiss it'll be good luck. Trust me.
-		],
-		PlayerRemarkWorldC6M2_AcrossPlankCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_overplank01.wav",  //Over this plank.
-			"player/survivor/voice/cliffe/dlc1_c6m2_overplank02.wav",  //Watch out for smokers.
-			"player/survivor/voice/cliffe/dlc1_c6m2_overplank03.wav",  //Watch out for chargers.
-			"player/survivor/voice/cliffe/dlc1_c6m2_overplank04.wav",  //Okay, let's cross this plank quick.
-			"player/survivor/voice/cliffe/dlc1_c6m2_overplank05.wav",  //Don't look down.
-			"player/survivor/voice/cliffe/dlc1_c6m2_overplank06.wav",  //Watch yourself on this thing.
-			"player/survivor/voice/cliffe/dlc1_c6m2_overplank07.wav",  //Watch out for chargers.
-			"player/survivor/voice/cliffe/dlc1_c6m2_overplank08.wav"  //Cross quick before a smoker grabs you.
-		],
-		PlayerRemarkWorldC6M2_AfterGate1Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater20.wav",  //Keep moving!
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater21.wav",  //Don't stop in the sewer!
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater23.wav"  //We gotta keep moving, people.
-		],
-		PlayerRemarkWorldC6M2_AfterGate2Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_inwaterfindladder01.wav",  //Ehhh.
-			"player/survivor/voice/cliffe/dlc1_c6m2_inwaterfindladder02.wav",  //Ahhh.
-			"player/survivor/voice/cliffe/dlc1_c6m2_inwaterfindladder03.wav",  //Ahhh.
-			"player/survivor/voice/cliffe/dlc1_c6m2_inwaterfindladder04.wav",  //Ehhh.
-			"player/survivor/voice/cliffe/dlc1_c6m2_inwaterfindladder09.wav",  //I am walking through a toilet. Thank you, Jimmy Gibbs.
-			"player/survivor/voice/cliffe/dlc1_c6m2_inwaterfindladder11.wav",  //[to self] "Hey, Nick, what's new?" "Oh, not much. I couldn't drive Jimmy Gibby's stock car over a bridge, so I'm crawling through a shit-filled sewer so I can lower it. You?"
-			"player/survivor/voice/cliffe/dlc1_c6m2_inwaterfindladder14.wav",  //Gotta get up on the cat walks.
-			"player/survivor/voice/cliffe/dlc1_c6m2_inwaterfindladder15.wav",  //We need to find a ladder.
-			"player/survivor/voice/cliffe/dlc1_c6m2_inwaterfindladder16.wav"  //Gotta get back up on the cat walk.
-		],
-		PlayerRemarkWorldC6M2_DownHereCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_backalley05.wav",  //Down here.
-			"player/survivor/voice/cliffe/miscdirectional05.wav",  //Down here!
-			"player/survivor/voice/cliffe/worldc2m320.wav",  //Down here.
-			"player/survivor/voice/cliffe/worldc2m321.wav",  //Down here.
-			"player/survivor/voice/cliffe/worldmisc06.wav"  //Down here.
-		],
-		PlayerRemarkWorldC6M2_DownIntoBuildingCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_upthroughbuilding01.wav",  //Through this building.
-			"player/survivor/voice/cliffe/dlc1_c6m2_upthroughbuilding02.wav",  //In here.
-			"player/survivor/voice/cliffe/dlc1_c6m2_upthroughbuilding03.wav",  //Down these stairs.
-			"player/survivor/voice/cliffe/dlc1_c6m2_upthroughbuilding04.wav"  //Get in there.
-		],
-		PlayerRemarkWorldC6M2_FinalLadderCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_upladder01.wav",  //Ladder!
-			"player/survivor/voice/cliffe/dlc1_c6m2_upladder02.wav"  //Up the ladder!
-		],
-		PlayerRemarkWorldC6M2_FinalWaterCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_finalwater01.wav"  //Back in the water.
-		],
-		PlayerRemarkWorldC6M2_FinalWaterGoGoCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater20.wav",  //Keep moving!
-			"player/survivor/voice/cliffe/worldc2m471.wav"  //Keep moving!
-		],
-		PlayerRemarkWorldC6M2_InJazzClubCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_jazzclub01.wav",  //Into the Jazz Club.
-			"player/survivor/voice/cliffe/dlc1_c6m2_jazzclub02.wav",  //Looks like the tour is in the Jazz Club.
-			"player/survivor/voice/cliffe/dlc1_c6m2_jazzclub03.wav",  //The tunnel's in the Club.
-			"player/survivor/voice/cliffe/dlc1_c6m2_jazzclub04.wav"  //The tour's through this Jazz Club.
-		],
-		PlayerRemarkWorldC6M2_InSewer1Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater02.wav",  //(to self) It's just a storm sewer, it is just a STORM sewer�
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater03.wav",  //A sewer filled with bodies. [Sarcastic] This is sanitary.
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater05.wav",  //Here's a pleasant thought: Any one of us gets pounced, we are going to be fully submerged in shit water.
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater06.wav",  //Seriously, is nobody else freaked out right now? We are walking through a SEWER.
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater07.wav",  //A sewer filled with bodies. [Sarcastic] This is sanitary.
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater22.wav"  //Oh, this is some gross shit.
-		],
-		PlayerRemarkWorldC6M2_InSewer2Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater04.wav",  //I am breathing shit air into my lungs, it is being absorbed into my bloodstream. I am literally full of shit.
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2inwater09.wav"  //Seriously, look, I will pay any one of you a thousand dollars right now to give me a piggyback ride.
-		],
-		PlayerRemarkWorldC6M2_InSewerLadder1Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_upladder102.wav"  //Everyone out of the pool.
-		],
-		PlayerRemarkWorldC6M2_IntoConstructionCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_constructionsite01.wav",  //Drop down here.
-			"player/survivor/voice/cliffe/dlc1_c6m2_constructionsite02.wav"  //Into the construction site.
-		],
-		PlayerRemarkWorldC6M2_IntoPoolHallCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_intopoolhall01.wav",  //Get into the pool hall!
-			"player/survivor/voice/cliffe/dlc1_c6m2_intopoolhall02.wav",  //Jump in through the window.
-			"player/survivor/voice/cliffe/dlc1_c6m2_intopoolhall03.wav"  //Go in the window.
-		],
-		PlayerRemarkWorldC6M2_JukeBoxCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_intopoolhall04.wav",  //Hit the jukebox.
-			"player/survivor/voice/cliffe/dlc1_c6m2_startingjukebox01.wav"  //Let's hear some music.
-		],
-		PlayerRemarkWorldC6M2_JumpDownCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2jumpinwater01.wav",  //Let's do this together.
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase2jumpinwater02.wav"  //Who wants to jump first?
-		],
-		PlayerRemarkWorldC6M2_OnTourWalk1Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_historictour01.wav",  //Stay on the walkway.
-			"player/survivor/voice/cliffe/dlc1_c6m2_historictour02.wav",  //Follow the walkway.
-			"player/survivor/voice/cliffe/dlc1_c6m2_historictour03.wav",  //Jesus, this place sucks.
-			"player/survivor/voice/cliffe/dlc1_c6m2_historictour08.wav"  //[sarcastic] Yeah. Tunnels. You're right, Coach, you're so right. History is coming alive.
-		],
-		PlayerRemarkWorldC6M2_OnTourWalk2Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_historictour09.wav",  //So... it's an antique basement, then. Fanntastic.
-			"player/survivor/voice/cliffe/dlc1_c6m2_historictour10.wav"  //Why is everything "historic" always so goddamn filthy?
-		],
-		PlayerRemarkWorldC6M2_OnTourWalk3Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_historictour04.wav",  //From one con man to another: five bucks for this? I tip my hat to you, Rayford.
-			"player/survivor/voice/cliffe/dlc1_c6m2_historictour05.wav"  //Five goddamn dollars for an under-the-river tour? Well played, Rayford. Well played.
-		],
-		PlayerRemarkWorldC6M2_OpenGate1Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_alarmdoor01.wav",  //Goddamn alarm door.
-			"player/survivor/voice/cliffe/dlc1_c6m1_alarmdoor02.wav",  //When we open this door its gonna alert the zombies.
-			"player/survivor/voice/cliffe/dlc1_c6m1_alarmdoor03.wav",  //Shit, alarm door.
-			"player/survivor/voice/cliffe/dlc1_c6m1_alarmdoor06.wav",  //Let's get ready!
-			"player/survivor/voice/cliffe/dlc1_c6m1_alarmdoor07.wav",  //This is gonna get noisy.
-			"player/survivor/voice/cliffe/dlc1_c6m2_bridge1raise04.wav"  //Get ready to run.
-		],
-		PlayerRemarkWorldC6M2_OpenGate2Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_bridge2raise02.wav",  //Hope this one works.
-			"player/survivor/voice/cliffe/dlc1_c6m2_bridge2raise03.wav"  //This one better work.
-		],
-		PlayerRemarkWorldC6M2_Phase2Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase201.wav",  //Tour ends, time to head down.
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase202.wav",  //Tour's over.
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase203.wav",  //Should we wait until they finish?
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase204.wav",  //Jesus Christ, what did we just pay five bucks for?
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase206.wav"  //Phase Two? Does this even go through?
-		],
-		PlayerRemarkWorldC6M2_Phase2DownCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase207.wav",  //Let's get off these stairs.
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase211.wav"  //DOWN THE STAIRS, DOWN THE STAIRS!
-		],
-		PlayerRemarkWorldC6M2_Phase2DownIntenseCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase208.wav",  //Don't stop on the stairs, GO!!!
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase209.wav",  //GO DOWN!
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase210.wav",  //DOWN DOWN DOWN!
-			"player/survivor/voice/cliffe/dlc1_c6m2_phase212.wav"  //DOWN, LET'S GO!
-		],
-		PlayerRemarkWorldC6M2_PostGate1xCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_bridgecollapse02.wav",  //Goddamnit. Back in the shit water.
-			"player/survivor/voice/cliffe/dlc1_c6m2_bridgecollapse03.wav",  //Goddamnit. We're back in the toilet.
-			"player/survivor/voice/cliffe/dlc1_c6m2_bridgecollapse04.wav",  //THIS was going to be their goddamn tour?
-			"player/survivor/voice/cliffe/dlc1_c6m2_bridgecollapse05.wav"  //Great, back to the goddamn history of sewage.
-		],
-		PlayerRemarkWorldC6M2_SafeRoomCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_saferoom01.wav"  //Saferoom!
-		],
-		PlayerRemarkWorldC6M2_SuitcaseCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_suitcasepistols01.wav",  //I like the way this guy packs.
-			"player/survivor/voice/cliffe/dlc1_c6m2_suitcasepistols02.wav"  //Don't mind if I do.
-		],
-		PlayerRemarkWorldC6M2_TattooCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_tattoo01.wav",  //Who wants a tattoo?
-			"player/survivor/voice/cliffe/dlc1_c6m2_tattoo13.wav"  //I've never done a colored tattoo.
-		],
-		PlayerRemarkWorldC6M2_TattooZoeyCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_tattoo02.wav",  //Ellis, did you get that girl's name? 'Cause I can tattoo it on your ass. She'll like that.
-			"player/survivor/voice/cliffe/dlc1_c6m2_tattoo03.wav",  //Hey Ellis, did you get that girl's name? Because you know what? I can tattoo it on your ass. She'll love it.
-			"player/survivor/voice/cliffe/dlc1_c6m2_tattoo04.wav"  //Ellis, did you get that girl's name? 'Cause I can tattoo it on your ass. She'll like that.
-		],
-		PlayerRemarkWorldC6M2_TattooZoey2Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_tattoo02.wav",  //Ellis, did you get that girl's name? 'Cause I can tattoo it on your ass. She'll like that.
-			"player/survivor/voice/cliffe/dlc1_c6m2_tattoo03.wav",  //Hey Ellis, did you get that girl's name? Because you know what? I can tattoo it on your ass. She'll love it.
-			"player/survivor/voice/cliffe/dlc1_c6m2_tattoo04.wav"  //Ellis, did you get that girl's name? 'Cause I can tattoo it on your ass. She'll like that.
-		],
-		PlayerRemarkWorldC6M2_TourEntranceCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_ticketcounter01.wav"  //This'll take us under the river.
-		],
-		PlayerRemarkWorldC6M2_UpCatWalkCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_upcatwalk01.wav",  //Thank GOD!
-			"player/survivor/voice/cliffe/dlc1_c6m2_upcatwalk02.wav"  //A ladder!
-		],
-		PlayerRemarkWorldC6M2_UpStairsCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_upstairs01.wav",  //Up these stairs.
-			"player/survivor/voice/cliffe/dlc1_c6m2_upstairs02.wav",  //Up the stairs!
-			"player/survivor/voice/cliffe/dlc1_c6m2_upstairs03.wav",  //Let's get up to the street.
-			"player/survivor/voice/cliffe/dlc1_c6m2_upstairs04.wav",  //Let's get to the street.
-			"player/survivor/voice/cliffe/dlc1_c6m2_upstairs05.wav"  //Let's get to street level.
-		],
-		PlayerRemarkWorldC6M2_UpStairs2Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m2_upstairs01.wav",  //Up these stairs.
-			"player/survivor/voice/cliffe/dlc1_c6m2_upstairs02.wav"  //Up the stairs!
-		],
-		PlayerRemarkWorldC6M3_BridgeRunCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalebridgerun05.wav",  //THANKS, YOU THREE!
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalebridgerun06.wav"  //GOOD LUCK! THANKS!
-		],
-		PlayerRemarkWorldC6M3_ByBridgeCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalefinalgas01.wav",  //Thanks, guys. You good?
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalefinalgas02.wav",  //Thank you. Good luck out there, huh?
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalefinalgas03.wav",  //You three take care of yourselves. And thanks.
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalefinalgas04.wav",  //We won't forget this.
-			"player/survivor/voice/cliffe/dlc1_c6m3_finalefinalgas05.wav"  //Be safe, you three.
-		],
-		PlayerRemarkWorldFootLockerCliffe = [
-			"player/survivor/voice/cliffe/dlc1_footlocker03.wav",  //Let's see what's in here.
-			"player/survivor/voice/cliffe/dlc1_footlocker04.wav",  //Let's open this up.
-			"player/survivor/voice/cliffe/dlc1_footlocker06.wav"  //Open it up.
-		],
-		C6M3_PourFinishedCliffe = [
-			"player/survivor/voice/cliffe/blank.wav"  //
-		],
-		SurvivorNearFinaleC6M3Cliffe = [
-			"player/survivor/voice/cliffe/blank.wav"  //
-		],
-		C6M1TakeSubMachineGunCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_intostore05.wav",  //(picking up gun) Hold on a sec, I'm gonna go back and shoot that jackass.
-			"player/survivor/voice/cliffe/dlc1_c6m1_intostore06.wav",  //(picking up gun) Hold on, I'm gonna go back and shoot that tattoo disaster.
-			"player/survivor/voice/cliffe/dlc1_c6m1_intostore07.wav"  //(picking up gun - to self) I would love to go back and shoot that vest wearing jackass.
-		],
-		SurvivorPickupGolfCLubCliffe = [
-			"player/survivor/voice/cliffe/dlc1_golfclub02.wav",  //Grabbing a golf club.
-			"player/survivor/voice/cliffe/dlc1_golfclub04.wav"  //Grabbing the driver.
-		],
-		SurvivorPickupM60Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_m6004.wav",  //I'm grabbing the big gun.
-			"player/survivor/voice/cliffe/dlc1_m6005.wav",  //Grabbing the chain gun.
-			"player/survivor/voice/cliffe/dlc1_m6006.wav"  //Shit, this is heavy.
-		],
-		HistoricTour01aCliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_historicsign02.wav"  //Trust me, that won't be the case.
-		],
-		WeddingWitchDead03Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitchdead05.wav",  //That's a good one Coach.
-			"player/survivor/voice/cliffe/dlc1_c6m1_weddingwitchdead06.wav"  //Coach! That's a good one.
-		],
-		Player_LostCallC6M3Cliffe = [
-			"player/survivor/voice/cliffe/blank.wav"  //
-		],
-		SurvivorSpottedGolfClubCliffe = [
-			"player/survivor/voice/cliffe/dlc1_golfclub06.wav",  //Club here!
-			"player/survivor/voice/cliffe/dlc1_golfclub07.wav",  //Club here!
-			"player/survivor/voice/cliffe/dlc1_golfclub08.wav"  //Driver here!
-		],
-		SurvivorSpottedGolfClubAutoCliffe = [
-			"player/survivor/voice/cliffe/dlc1_golfclub06.wav",  //Club here!
-			"player/survivor/voice/cliffe/dlc1_golfclub07.wav",  //Club here!
-			"player/survivor/voice/cliffe/dlc1_golfclub08.wav"  //Driver here!
-		],
-		SurvivorSpottedM60Cliffe = [
-			"player/survivor/voice/cliffe/dlc1_m6001.wav",  //Now this is a gun.
-			"player/survivor/voice/cliffe/dlc1_m6002.wav",  //Shit, this is a gun.
-			"player/survivor/voice/cliffe/dlc1_m6003.wav"  //Big gun.
-		],
-		SurvivorSpottedM60AutoCliffe = [
-			"player/survivor/voice/cliffe/dlc1_m6001.wav",  //Now this is a gun.
-			"player/survivor/voice/cliffe/dlc1_m6002.wav",  //Shit, this is a gun.
-			"player/survivor/voice/cliffe/dlc1_m6003.wav"  //Big gun.
+		c5m4floatstartReplica = [
+			"player/survivor/voice/replica/blank.wav"
 		],
 		// orator.txt ====================================================================================================
-		C1M2InsideGunShopCliffe = [
-			"player/survivor/voice/cliffe/blank.wav"  //Blank
+		C1M2InsideGunShopReplica = [
+			"player/survivor/voice/replica/blank.wav"  //Blank
 		],
-		C1M3AlarmOffOratorCliffe = [
-			"player/survivor/voice/cliffe/blank.wav"  //
+		C1M3AlarmOffOratorReplica = [
+			"player/survivor/voice/replica/blank.wav"  //
 		],
-		C1M3BrokeWindowOratorCliffe = [
-			"player/survivor/voice/cliffe/blank.wav"  //
+		C1M3BrokeWindowOratorReplica = [
+			"player/survivor/voice/replica/blank.wav"  //
 		],
 		// terror_player.txt ====================================================================================================
-		HitCraneButtonCliffe = [
-			"player/survivor/voice/cliffe/blank.wav"  // [BLANK]
+		HitCraneButtonReplica = [
+			"player/survivor/voice/replica/blank.wav"  // [BLANK]
 		],
-		Airport03FireStartedCliffe = [
-			"player/survivor/voice/cliffe/blank.wav"  // [BLANK]
+		Airport03FireStartedReplica = [
+			"player/survivor/voice/replica/blank.wav"  // [BLANK]
 		],
 		// terror_player_dlc1.txt ====================================================================================================
-		FinaleSceneTriggerFrancisCliffe = [
-			"player/survivor/voice/cliffe/blank.wav"
+		FinaleSceneTriggerZoeyReplica = [
+			"player/survivor/voice/replica/blank.wav"
+		],
+		FinaleSceneTriggerFrancisReplica = [
+			"player/survivor/voice/replica/blank.wav"
 		]
 	},
 
 	sounds_order = [
+		// coach.txt ====================================================================================================
+		"_PlayerInfoRemarkableBlankReplica",
+		"C1M1InSmokeReplica",
+		"C1M3AlarmOffReplica",
+		"C1M3AlarmActiveReplica",
+		"C4M3SaferoomReplica",
+		"L4D1PlayerNiceShotFrancisReplica",
+		"L4D1PlayerNiceShotFrancisC6M3Replica",
+		"L4D1PlayerNiceShotLouisReplica",
+		"L4D1PlayerNiceShotLouisC6M3Replica",
+		"L4D1PlayerNiceShotZoeyReplica",
+		"PlayerNiceShotReplica",
+		"PlayerNiceShotGamblerReplica",
+		"PlayerNiceShotMechanicReplica",
+		"PlayerNiceShotProducerReplica",
+		"SurvivorMournGamblerReplica",
+		"SurvivorMournGamblerC1Replica",
+		"SurvivorMournMechanicReplica",
+		"SurvivorMournMechanicC1Replica",
+		"SurvivorMournProducerReplica",
+		"SurvivorMournProducerC1Replica",
+		"_C1M1_ElevatorHelloStartAllAliveReplica",
+		"C1M1_ElevatorHelloStart3AliveReplica",
+		"C1M1_ElevatorHelloStart3AliveEReplica",
+		"C1M1_ElevatorHelloStart2AliveReplica",
+		"C1M1_ElevatorHelloStart2AliveRReplica",
+		"C3M1FerryInTransitReplica",
+		"Playerc1m1_enter_elevatorReplica",
+		"Playerc1m1_elevator_pushbuttonReplica",
+		"C1M1ElevatorRulesReplica",
+		"PlayerRemarkC1M2PreAlarmDoorReplica",
+		"C1M2AlarmDoor2Replica",
+		"PlayerC1M2GrabbingColaReplica",
+		"PlayerC1M2GrabbingCola2Replica",
+		"PlayerC1M2FirstOutsideResponseReplica",
+		"C1M2FirstOutsideResponse8aReplica",
+		"C1M2FirstOutsideResponse8bReplica",
+		"PlayerC1M2InsideGunShop2Replica",
+		"PlayerC3M1CallFerry2Replica",
+		"PlayerC3M1FerryLandedIdleReplica",
+		"PlayerC3M1FerryLaunched2aReplica",
+		"PlayerC3M2ComingHomeReplica",
+		"PlayerC3M2OpenDoor2Replica",
+		"Playerc5m4floatstart2Replica",
+		"PlayercoachcoachesReplica",
+		"PlayercoachcoachesGamblerReplica",
+		"PlayercoachcoachesMechanicReplica",
+		"PlayercoachcoachesProducerReplica",
+		"PlayerRelaxedSighReplica",
+		"PlayerStayTogetherInsideReponseReplica",
+		"PlayerUseAdrenalineReplica",
+		"PlayerWorldC3M1FerryCrossingA01Replica",
+		"PlayerWorldC3M1FerryCrossingD01Replica",
+		"PlayerWorldC3M1FerryCrossingD02Replica",
+		"_C3M1CrazyMilitantsReplica",
+		"PlayerWorldC3M1FerryCrossingG01Replica",
+		"PlayerWorldC3M1FerryCrossingG03Replica",
+		"PlayerWorldC3M1FerryCrossingI03Replica",
+		"PlayerWorldC3M1FerryCrossingM5Replica",
+		"PlayerWorldC3M1Walkways2Replica",
+		"PlayerWorldIntroC31Replica",
+		"RescuedSurvivorReplica",
+		"PlayerGivenItemReplica",
+		"ItemDonorProducerReplica",
+		"ItemDonorMechanicReplica",
+		"ItemDonorGamblerReplica",
+		"ItemDonorBikerReplica",
+		"ItemDonorTeenGirlReplica",
+		"ItemDonorManagerReplica",
+		"ItemDonorNamVetReplica",
+		"ReviveMeInterruptedReplica",
+		"ReviveMeInterruptedMajorReplica",
+		"ReviveMeInterruptedCriticalReplica",
+		"ReviveThanksReplica",
+		"ReviveThanksGamblerReplica",
+		"ReviveThanksMechanicReplica",
+		"ReviveThanksProducerReplica",
+		"ReviveThanksBikerReplica",
+		"AutoYouAreWelcomeReplica",
+		"BotPlayer_YourWelcomeReplica",
+		"BotReassureComingReplica",
+		"BotReassureNearbyReplica",
+		"BotYesReadyReplica",
+		"C1M2LeavingSafeRoomReplica",
+		"C1M2SafeRoomb2Replica",
+		"C1M2TankerAttackReplica",
+		"c1m4escapeReplica",
+		"c1m4escapeEllisReplica",
+		"c1m4escapeEllisSuccessReplica",
+		"C1M4GasPourReplica",
+		"C1M4PlayerGetToRescueVehicleReplica",
+		"c1m4startelevatorReplica",
+		"C6M3GasPourReplica",
+		"GasPourReplica",
+		"FinaleStartC1M4Replica",
+		"GasPourDoneC1M4Replica",
+		"_C2M2EntranceReplica",
+		"C2M2CarouselIdleReplica",
+		"C2M3RubbleNagIdleReplica",
+		"C2M2SafeRoomReplica",
+		"_C2M2_Riders04Replica",
+		"_C2M2_Riders05Replica",
+		"_C2M2_Riders07Replica",
+		"_C2M2_Slide01Replica",
+		"c2m3CoasterEndReplica",
+		"C2M3CoasterRunGoReplica",
+		"C2M3CoasterStartReplica",
+		"c2m3SeeChopperReplica",
+		"C2M4ButtonPressedReplica",
+		"C2M4Gate000Replica",
+		"C2M4GateIdleReplica",
+		"C2M4GateOpenCalloutReplica",
+		"c2m4SeeChopperReplica",
+		"C2M4Gate001Replica",
+		"C2M4Gate002Replica",
+		"C2M4Gate003Replica",
+		"C2M4Gate003EllisReplica",
+		"C2M5_Button2YellReplica",
+		"C2M5_ChoppercomingReplica",
+		"C2M5_PlanWorkedReplica",
+		"C2M5_PlanWorkedMadReplica",
+		"C2M5ChopperNagReplica",
+		"C2M5InChopperNagReplica",
+		"C2M5ChopperNagNickCheckReplica",
+		"C2M5Button1Replica",
+		"C2M5InArenaNagReplica",
+		"C2M5SingingReplica",
+		"SurvivorReloadingC2M5Replica",
+		"SurvivorVocalizeLookOutC2M5Replica",
+		"PlayerKillTankConfirmationC2M5Replica",
+		"C2M5ReloadingTankReplica",
+		"C2M5ConcertTankResponseReplica",
+		"C2M5SaferoomReplica",
+		"c2m5_intro001Replica",
+		"c2m5_intro002Replica",
+		"c2m5_intro003Replica",
+		"c2m5_intro006Replica",
+		"c2m5_intro007Replica",
+		"c2m5_intro008Replica",
+		"c2m5_intro010Replica",
+		"c2m5_intro012Replica",
+		"c2m5_intro014Replica",
+		"c2m5_intro016Replica",
+		"c2m5_intro017Replica",
+		"C2M5ChopperOCDReplica",
+		"C2M3SaferoomReplica",
+		"C2M3SafeIntro010Replica",
+		"C2M3SafeIntro011Replica",
+		"C3M1FerryEnd2Replica",
+		"C3M2DisgustReplica",
+		"InfoRemc3m2_parachutist2Replica",
+		"C3M3SafeRoom2b2Replica",
+		"C3M3SafeRoom2c2Replica",
+		"C3M3SafeRoom2c3Replica",
+		"InfoRemC3M3LowerGateaReplica",
+		"C3M4BoatNagsReplica",
+		"C3M4InBoatNagsReplica",
+		"C3M4Button1AReplica",
+		"C3M4Button1BReplica",
+		"C3M4ButtonHowManyAnswer4Replica",
+		"C3M4ButtonHowManyAnswer3Replica",
+		"C3M4ButtonHowManyAnswer2Replica",
+		"C3M4ButtonHowManyAnswer1Replica",
+		"C3M4ButtonAnswerEllisReplica",
+		"C3M4Button201Replica",
+		"C3M4Button202Replica",
+		"C3M4GateBlow01Replica",
+		"C4GoingToDieCoachReplica",
+		"C4StormBlindIdleReplica",
+		"_c4m1Intro03Replica",
+		"_c4m1Intro04Replica",
+		"_c4m1Intro05Replica",
+		"_c4m1Intro06Replica",
+		"_c4m1Intro07Replica",
+		"_c4m1Intro09Replica",
+		"_c4m1Intro14Replica",
+		"_c4m1Intro16Replica",
+		"C4M2IdleWitchville01Replica",
+		"C4M2PushedButtonReplica",
+		"C4M5BoatNagsReplica",
+		"_C4M5_BoatComing01Replica",
+		"C4FinaleStartReplica",
+		"_C4M5_FinaleStart01Replica",
+		"C4M5SafeRoomReplica",
+		"_C4M5_Intro03Replica",
+		"_C4M5_Intro04Replica",
+		"PlayerRemarkc4m5_BurgerTankReplica",
+		"C5M1_intro002Replica",
+		"C5M1_intro004Replica",
+		"C5M1_intro008Replica",
+		"C5M1Flyby01Replica",
+		"C5M1Flyby03Replica",
+		"C5M2_signcontagious01Replica",
+		"C5M2AlarmNagReplica",
+		"C5M2Freeway01Replica",
+		"PlayerRemarkc5m2busstationReplica",
+		"PlayerRemarkc5m2parkReplica",
+		"C5M3AlarmFieldNagsReplica",
+		"C5M3Bodies01Replica",
+		"C5M3Bodies03Replica",
+		"C5M3FirstInAlarmReplica",
+		"C5M3Freeway01Replica",
+		"C5M3GraveNagsReplica",
+		"C5M3Jets2Replica",
+		"C5M3OnBridgeReplica",
+		"C5M3SeeGraveyard02Replica",
+		"C5M3SeeGraveyard03Replica",
+		"C5M3ShootCarReplica",
+		"C5M3ShootCar2Replica",
+		"C5M3ShootCar3Replica",
+		"C5M3ShootCar3EllisReplica",
+		"C5M3Sniper01Replica",
+		"PlayerRemarkc5m3bodiesReplica",
+		"PlayerRemarkc5m3crashedheliReplica",
+		"PlayerRemarkc5m3freewayReplica",
+		"PlayerRemarkc5m3insewerReplica",
+		"PlayerRemarkc5m3manholeReplica",
+		"PlayerRemarkc5m3manhole2Replica",
+		"PlayerRemarkc5m3offhighwayReplica",
+		"PlayerRemarkc5m3seegraveyardReplica",
+		"PlayerRemarkc5m3sewercommentReplica",
+		"PlayerRemarkc5m3sniperReplica",
+		"PlayerRemarkc5m3upladderReplica",
+		"PlayerRemarkc5m3upstepsReplica",
+		"PlayerRemarkc5m3warzoneReplica",
+		"C5M4BombExtReplica",
+		"C5M4BombInt01Replica",
+		"C5M4BombInt01AReplica",
+		"C5M4BombInt03Replica",
+		"PlayerRemarkc5m4inminifinaleReplica",
+		"PlayerRemarkc5m4seebridgeReplica",
+		"EllisStoryInterruptReplica",
+		"EllisStoryInterruptGenericReplica",
+		"EllisStoryInterruptC1M2Replica",
+		"EllisStoryInterruptC3M2Replica",
+		"EllisStoryReac01Replica",
+		"C5M5_Button2Replica",
+		"C5M5_GateDownReplica",
+		"C5M5_SurvivorConv01Replica",
+		"C5M5_SurvivorConv02Replica",
+		"C5M5_SurvivorConv03Replica",
+		"C5M5_SurvivorConv04Replica",
+		"C5M5_SurvivorConv05Replica",
+		"C5M5_LowerTheBridgeReplica",
+		"C5M5Button1Replica",
+		"C5M5Button1BuzzardRunReplica",
+		"C5M5HearSoldiersReplica",
+		"C5M5HearSoldiersNagReplica",
+		"C5M5RescueStartReplica",
+		"C5M5RunToHeliReplica",
+		"C5M5RunToHeliRareReplica",
+		"C5M5SurvivorSpottedTankEscapeReplica",
+		"C5M5BridgeDestroyed2Replica",
+		"C5M5SafeRoomReplica",
+		"C5M5_saferoom002Replica",
+		"C5M5_saferoom004Replica",
+		"C5M5_saferoom005Replica",
+		"PlayerReviveParishReplica",
+		"PlayerReviveParishProducerReplica",
+		"PlayerKillTankConfirmationC5M5Replica",
+		"C6M1_IntotheparkNoHealthReplica",
+		"C6M1Intro_01TeenGirl04Replica",
+		"C6M1Intro_04bReplica",
+		"C6M1Intro_08aReplica",
+		"C6M1Intro_13bReplica",
+		"C6M1Intro_13eReplica",
+		"C6M1Intro_20aReplica",
+		"C6M1Intro_20bReplica",
+		"C6M1Intro_20dReplica",
+		"C6M1Intro_20gReplica",
+		"C6M1Intro_ConfirmObjectiveReplica",
+		"C6M1TakeSubMachineGun01Replica",
+		"WorldC6M1_HistoricTourReplica",
+		"WorldC6M1_PostWedding01aReplica",
+		"WorldC6M1_WeddingWarn03aReplica",
+		"WorldC6M1_WeddingWarn04aReplica",
+		"C6M2_OpenGate1Replica",
+		"C6M2_OpenGate2Replica",
+		"DLC1_C6M2_SafeRoomConvo01aReplica",
+		"DLC1_C6M2_SafeRoomConvo09aReplica",
+		"DLC1_C6M2_SafeRoomConvoGamblerStartReplica",
+		"DLC1_C6M2_SafeRoomConvo12bReplica",
+		"DLC1_C6M2_SafeRoomConvo12dReplica",
+		"DLC1_C6M2_SafeRoomConvo13bReplica",
+		"DLC1_C6M2_SafeRoomConvo13dReplica",
+		"DLC1_C6M2_SafeRoomConvo14dReplica",
+		"DLC1_C6M2_SafeRoomConvo15bReplica",
+		"DLC1_C6M2_SafeRoomConvo16aReplica",
+		"DLC1_C6M2_SafeRoomConvo16cReplica",
+		"DLC1_C6M2_SafeRoomConvo18cReplica",
+		"DLC1_C6M2_SafeRoomConvo18eReplica",
+		"DLC1_C6M2_SafeRoomConvoStartReplica",
+		"DLC1_C6M2_SafeRoomConvo19bReplica",
+		"DLC1_C6M2_SafeRoomConvo19dReplica",
+		"WorldC6M2_InSewer101aReplica",
+		"WorldC6M2_InSewer102aReplica",
+		"WorldC6M2_InSewer202aReplica",
+		"WorldC6M2_InSewerLadder101aReplica",
+		"WorldC6M2_OnTourWalk101cReplica",
+		"WorldC6M2_OnTourWalk103aReplica",
+		"WorldC6M2_Tattoo02bReplica",
+		"C6M3_BridgeDownReplica",
+		"C6M3_BridgeGettoCarReplica",
+		"C6M3_elevatorReplica",
+		"C6M3_elevatorZoeyReplica",
+		"C6M3_GivenItemBikerReplica",
+		"C6M3_GivenItemTeenGirlReplica",
+		"DLC1_C6M3_SafeRoomConvo02eReplica",
+		"DLC1_C6M3_SafeRoomConvoZoeyStartReplica",
+		"DLC1_C6M3_SafeRoomConvoFrancisStartReplica",
+		"DLC1_C6M3_SafeRoomConvo08bReplica",
+		"IncapBounceReplica",
+		"c6m3_outroReplica",
+		"SurvivorSpotFirstWeaponsReplica",
+		"SurvivorSpottedAdrenalineReplica",
+		"SurvivorSpottedAmmoReplica",
+		"SurvivorSpottedAmmo2Replica",
+		"SurvivorSpottedDefibrillatorReplica",
+		"SurvivorSpottedGamblerCloseReplica",
+		"SurvivorSpottedGamblerClose2C1Replica",
+		"SurvivorSpottedGamblerFarReplica",
+		"SurvivorSpottedGamblerFarC1Replica",
+		"SurvivorSpottedGrenadeReplica",
+		"SurvivorSpottedGrenadeLauncherReplica",
+		"SurvivorSpottedHealthReplica",
+		"SurvivorSpottedMechanicCloseReplica",
+		"SurvivorSpottedMechanicClose2C1Replica",
+		"SurvivorSpottedMechanicFarReplica",
+		"SurvivorSpottedMechanicFarC1Replica",
+		"SurvivorSpottedMolotovReplica",
+		"SurvivorSpottedPillsReplica",
+		"SurvivorSpottedPillsAutoHasPillsReplica",
+		"SurvivorSpottedProducerCloseReplica",
+		"SurvivorSpottedProducerClose2C1Replica",
+		"SurvivorSpottedProducerFarReplica",
+		"SurvivorSpottedProducerFarC1Replica",
+		"SurvivorSpottedUpPack_ExplosiveReplica",
+		"SurvivorSpottedUpPack_IncendiaryReplica",
+		"SurvivorSpottedVomitJarReplica",
+		"SurvivorSpottedVomitJarAutoC1Replica",
+		"SurvivorSpottedWorldCloseReplica",
+		"SurvivorSpottedArmoredReplica",
+		"SurvivorSpottedArmoredC5M1Replica",
+		"SurvivorSpottedBoomerReplica",
+		"SurvivorSpottedBoomerC1M1Replica",
+		"SurvivorSpottedBoomerC1M2Replica",
+		"SurvivorSpottedCedaReplica",
+		"SurvivorSpottedChargerReplica",
+		"SurvivorSpottedChargerC1M1Replica",
+		"SurvivorSpottedChargerC1M2Replica",
+		"SurvivorSpottedClownReplica",
+		"SurvivorSpottedFallenReplica",
+		"SurvivorSpottedFirstClownReplica",
+		"SurvivorSpottedHunterReplica",
+		"SurvivorSpottedHunterC1M1Replica",
+		"SurvivorSpottedHunterC1M2Replica",
+		"SurvivorSpottedInfectedReplica",
+		"SurvivorSpottedJimmyReplica",
+		"SurvivorSpottedJockeyReplica",
+		"SurvivorSpottedJockeyC1M1Replica",
+		"SurvivorSpottedJockeyC1M2Replica",
+		"SurvivorSpottedMudmenReplica",
+		"SurvivorSpottedMudmenC3M2Replica",
+		"SurvivorSpottedSmokerReplica",
+		"SurvivorSpottedSmokerC1Replica",
+		"SurvivorSpottedSpitterReplica",
+		"SurvivorSpottedSpitterC1M1Replica",
+		"SurvivorSpottedSpitterC1M2Replica",
+		"SurvivorSpottedTankReplica",
+		"SurvivorSpottedTankC1Replica",
+		"L4D1SpottedTankReplica",
+		"SurvivorSpottedWitchReplica",
+		"SurvivorSpottedWitchC1M2Replica",
+		"PlayerAlertGiveItemReplica",
+		"PlayerAlertGiveItemC1Replica",
+		"PlayerAlertGiveItemCombatReplica",
+		"PlayerFriendlyFireReplica",
+		"PlayerFriendlyFireC1Replica",
+		"PlayerFriendlyFire2Replica",
+		"PlayerFriendlyFireFromGamblerReplica",
+		"PlayerFriendlyFireFromMechanicReplica",
+		"PlayerFriendlyFireFromMechanicC1Replica",
+		"PlayerFriendlyFireFromProducerReplica",
+		"PlayerFriendlyFireFromProducerC1Replica",
+		"PlayerFriendlyFireNoBulletReplica",
+		"PlayerFriendlyFireNoBulletC1Replica",
+		"PlayerFriendlyFireTankReplica",
+		"PlayerFriendlyFireTankC1Replica",
+		"PlayerFriendlyFireTankGamblerReplica",
+		"PlayerFriendlyFireTankMechanicReplica",
+		"PlayerFriendlyFireTankProducerReplica",
+		"PlayerToTheRescueReplica",
+		"PlayerToTheRescueRosReplica",
+		"SurvivorTauntResponseReplica",
+		"C4M1IdleComment01Replica",
+		"C4M2IdleCommentCane01Replica",
+		"PlayerChokeResponseReplica",
+		"PlayerReloadingC502RunReplica",
+		"PlayerReloadingTankReplica",
+		"PlayerReloadingTankC1Replica",
+		"PlayerWitchChasingReplica",
+		"PlayerWitchChasingC6M1Replica",
+		"PlayerWitchStartAttackReplica",
+		"PlayerWitchStartAttackC6M1Replica",
+		"SurvivorCriticalHurtReplica",
+		"SurvivorIncapacitatedHurtReplica",
+		"SurvivorJockeyHurtMajorReplica",
+		"SurvivorJockeyHurtMajorC1Replica",
+		"SurvivorMajorHurtReplica",
+		"SurvivorMinorHurtReplica",
+		"SurvivorReloadingReplica",
+		"SurvivorReloadingIntenseReplica",
+		"SurvivorReloadingC4M2Replica",
+		"PlayerHelpIncappedReplica",
+		"PlayerHelpIncappedBleedingReplica",
+		"PlayerHelpIncappedLethargicReplica",
+		"HelpResponseCoachReplica",
+		"C2M1FallingReplica",
+		"C2M2CarouselOffReplica",
+		"C2M2CarouselOnReplica",
+		"C3M3BridgeButtonReplica",
+		"PlayerChainSawUsedReplica",
+		"PlayerRemarkC1M1OverTableReplica",
+		"PlayerRemarkC1M1SearchRoomsReplica",
+		"PlayerRemarkC1M1ThroughThisDoorReplica",
+		"PlayerRemarkC1M2SpotGunStoreReplica",
+		"PlayerRemarkC1M3AlarmDoorsReplica",
+		"PlayerRemarkC1M3CarefulWindowsReplica",
+		"PlayerRemarkC1M3CEDAGoneReplica",
+		"PlayerRemarkC1M3DiscoPantsReplica",
+		"PlayerRemarkC1M3DownHereReplica",
+		"PlayerRemarkC1M3DownTheEscalatorReplica",
+		"PlayerRemarkC1M3FoodCourtNotOkayReplica",
+		"PlayerRemarkC1M3FoodCourtOkayReplica",
+		"PlayerRemarkC1M3OverHereReplica",
+		"PlayerRemarkC1M3SearchRoomsReplica",
+		"PlayerRemarkC1M3ThisWayReplica",
+		"PlayerRemarkC1M3ThroughHereReplica",
+		"PlayerRemarkC1M3TurnOffAlarm1Replica",
+		"PlayerRemarkC1M3TurnOffAlarm2Replica",
+		"PlayerRemarkC1M3TurnOffAlarm3Replica",
+		"PlayerRemarkC1M3UpEscalator1Replica",
+		"PlayerRemarkc2m1_campsiteReplica",
+		"PlayerRemarkc2m1_checkroomsReplica",
+		"PlayerRemarkc2m1_cliffReplica",
+		"PlayerRemarkc2m1_downstairsReplica",
+		"PlayerRemarkc2m1_bridgeoutReplica",
+		"PlayerRemarkc2m1_followriverReplica",
+		"PlayerRemarkc2m1_motelsignReplica",
+		"PlayerRemarkc2m1_offrampReplica",
+		"PlayerRemarkc2m1_parkReplica",
+		"PlayerRemarkc2m1_searchlightsReplica",
+		"PlayerRemarkc2m1_searchlightsNickReplica",
+		"PlayerRemarkc2m1_throughhereReplica",
+		"PlayerRemarkc2m1_throughmotelReplica",
+		"PlayerRemarkc2m1_throughwindowReplica",
+		"PlayerRemarkc2m1_uphillReplica",
+		"PlayerRemarkc2m1_upstairsReplica",
+		"PlayerRemarkc2m2_burgersReplica",
+		"PlayerRemarkc2m2_candymachineReplica",
+		"PlayerRemarkc2m2_carouselbuttonReplica",
+		"PlayerRemarkc2m2_cobblerReplica",
+		"PlayerRemarkc2m2_cottoncandyReplica",
+		"PlayerRemarkc2m2_entrancesignReplica",
+		"PlayerRemarkc2m2_lilpeanutReplica",
+		"PlayerRemarkc2m2_ladderReplica",
+		"PlayerRemarkc2m2_favoriterideReplica",
+		"PlayerRemarkc2m2_kettlekornReplica",
+		"PlayerRemarkc2m2_miscfoodReplica",
+		"_C2M2_OkraReplica",
+		"PlayerRemarkc2m2_steakeReplica",
+		"PlayerRemarkc2m2_thistallReplica",
+		"PlayerRemarkc2m2_thistall2Replica",
+		"PlayerRemarkc2m2_topofslideReplica",
+		"PlayerRemarkc2m3_coasteroffReplica",
+		"PlayerRemarkc2m3_coollightReplica",
+		"PlayerRemarkc2m3_freshairReplica",
+		"PlayerRemarkc2m3_holeReplica",
+		"PlayerRemarkc2m3_longesttunnelReplica",
+		"PlayerRemarkc2m3_overfenceReplica",
+		"PlayerRemarkc2m3_rubbleReplica",
+		"PlayerRemarkc2m3_swanroomReplica",
+		"PlayerRemarkc2m3_tracks01Replica",
+		"PlayerRemarkc2m3_waterReplica",
+		"PlayerRemarkc2m3_wayblockedReplica",
+		"PlayerRemarkc2m4_barnentryReplica",
+		"PlayerRemarkc2m4_bumpercarsReplica",
+		"PlayerRemarkc2m4_pendoorReplica",
+		"PlayerRemarkc2m4_stadiumReplica",
+		"PlayerRemarkc2m4_upbarnReplica",
+		"PlayerRemarkc2m5_button2Replica",
+		"PlayerRemarkC3M3BridgeDownReplica",
+		"PlayerRemarkC3M2PlaneCrashReplica",
+		"PlayerRemarkC3M2PlaneCrashNickReplica",
+		"_C3M2PirogueReplica",
+		"PlayerRemarkC3M2PlaneDoorNagReplica",
+		"PlayerRemarkC3M2PlaneDoorNagaReplica",
+		"PlayerRemarkC3M2SickOfSwampReplica",
+		"PlayerRemarkC3M2Village1Replica",
+		"PlayerRemarkC3M2WhereAreWeReplica",
+		"PlayerRemarkC3M3LowerGateReplica",
+		"PlayerRemarkC3M3SearchHousesReplica",
+		"PlayerRemarkC3M3StayUpHereReplica",
+		"PlayerRemarkC3M3ThisWayReplica",
+		"PlayerRemarkC3M3ThroughHereReplica",
+		"PlayerRemarkC3M3ThroughThisHouseReplica",
+		"PlayerRemarkC3M3UpHereReplica",
+		"PlayerRemarkc3m4downroadReplica",
+		"PlayerRemarkc3m4radioReplica",
+		"PlayerRemarkc3m4scaffoldReplica",
+		"PlayerRemarkc3m4shacksReplica",
+		"PlayerRemarkc4m1_carcrashReplica",
+		"PlayerRemarkc4m1_garagesaleReplica",
+		"PlayerRemarkc4m1_InBurgerTankReplica",
+		"PlayerRemarkc4m1_nogasReplica",
+		"PlayerRemarkc4m1_playgroundfarReplica",
+		"PlayerRemarkc4m1_throughhereAReplica",
+		"PlayerRemarkc4m2_gasinsidesignReplica",
+		"PlayerRemarkc4m2_millentranceReplica",
+		"PlayerRemarkc4m2_millentranceexitReplica",
+		"PlayerRemarkc4m2_seegasstationReplica",
+		"PlayerRemarkc4m2_streetblockedReplica",
+		"PlayerRemarkc4m2_uprampReplica",
+		"PlayerRemarkc4m2_upthestairsReplica",
+		"PlayerRemarkc4m2_useelevatorReplica",
+		"PlayerRemarkc4m2_waterpoolReplica",
+		"PlayerRemarkc4m2_weatherReplica",
+		"PlayerRemarkc4m3_caneReplica",
+		"PlayerRemarkc4m3_crosshereReplica",
+		"PlayerRemarkc4m3_downhereReplica",
+		"PlayerRemarkc4m3_downstairsReplica",
+		"PlayerRemarkc4m3_ducatelsignReplica",
+		"PlayerRemarkc4m3_elevatorReplica",
+		"PlayerRemarkc4m3_floodedReplica",
+		"PlayerRemarkc4m3_flooded2Replica",
+		"PlayerRemarkc4m3_overtankReplica",
+		"PlayerRemarkc4m3_rainReplica",
+		"PlayerRemarkc4m3_uppipesReplica",
+		"PlayerRemarkc4m4_floodedReplica",
+		"PlayerRemarkc4m4_garagesaleReplica",
+		"PlayerRemarkc4m4_playgroundReplica",
+		"PlayerRemarkc4m4_porchlightReplica",
+		"PlayerRemarkc4m4_truckwreckReplica",
+		"PlayerRemarkc4m4_useroofsReplica",
+		"PlayerRemarkc5m2peopleReplica",
+		"PlayerRemarkpathc2m1_billboardReplica",
+		"PlayerRemarkremark_MidnightRidersBusReplica",
+		"PlayerRemarkWorldC1M1CedaMapsReplica",
+		"PlayerRemarkWorldC1M1KnowBoomerReplica",
+		"PlayerRemarkWorldC1M1DownHereReplica",
+		"PlayerRemarkWorldC1M1DownStairsReplica",
+		"PlayerRemarkWorldC1M1ElevatorBrokenReplica",
+		"PlayerRemarkWorldC1M1FireRoomReplica",
+		"PlayerRemarkWorldC1M1FireSpreadingReplica",
+		"PlayerRemarkWorldC1M1FirstReplica",
+		"PlayerRemarkWorldC1M1LedgeReplica",
+		"PlayerRemarkWorldC1M1StairsSignReplica",
+		"PlayerRemarkWorldC1M2CloseReplica",
+		"PlayerRemarkWorldC1M2DownStairsReplica",
+		"PlayerRemarkWorldC1M2AbandonedReplica",
+		"PlayerRemarkWorldC1M2DumpsterReplica",
+		"PlayerRemarkWorldC1M2GunStoreCloseReplica",
+		"PlayerRemarkWorldC1M2InHereReplica",
+		"PlayerRemarkWorldC1M2JumpTruckReplica",
+		"PlayerRemarkWorldC1M2MallSignHereReplica",
+		"PlayerRemarkWorldC1M2MallThisWayReplica",
+		"PlayerRemarkWorldC1M2UpStairsReplica",
+		"PlayerRemarkWorldC3M1FerryCrossingReplica",
+		"PlayerRemarkWorldC3M1FeedGatorReplica",
+		"PlayerRemarkWorldC3M1FerryNagReplica",
+		"PlayerRemarkWorldC3M1FerryNagaReplica",
+		"PlayerRemarkWorldC3M1Path01Replica",
+		"PlayerRemarkWorldC3M1StayOnReplica",
+		"PlayerRemarkWorldC502AlarmButtonReplica",
+		"PlayerRemarkWorldC502AlarmStoppedReplica",
+		"PlayerRemarkWorldC502AlleyReplica",
+		"PlayerRemarkWorldC502NotZombies2Replica",
+		"PlayerRemarkWorldC502NotZombies3bReplica",
+		"PlayerRemarkWorldC502Smell2Replica",
+		"PlayerRemarkWorldC6M1_AcrossHereReplica",
+		"PlayerRemarkWorldC6M1_AlleyBelowReplica",
+		"PlayerRemarkWorldC6M1_AlleyIntoBuildingReplica",
+		"PlayerRemarkWorldC6M1_InAptsReplica",
+		"PlayerRemarkWorldC6M1_IntoTheStoreReplica",
+		"PlayerRemarkWorldC6M1_PostWeddingReplica",
+		"PlayerRemarkWorldC6M1_PostWeddingCakeReplica",
+		"PlayerRemarkWorldC6M1_SafeRoomAlleyReplica",
+		"PlayerRemarkWorldC6M1_ThroughBarReplica",
+		"PlayerRemarkWorldC6M1_UpHereReplica",
+		"PlayerRemarkWorldC6M1_UpTheStairsReplica",
+		"PlayerRemarkWorldC6M1_UpTheStairs2Replica",
+		"PlayerRemarkWorldC6M1_WeddingWarnReplica",
+		"PlayerRemarkWorldC6M2_AcrossPlankReplica",
+		"PlayerRemarkWorldC6M2_AfterGate1Replica",
+		"PlayerRemarkWorldC6M2_AfterGate2Replica",
+		"PlayerRemarkWorldC6M2_DownHereReplica",
+		"PlayerRemarkWorldC6M2_DownIntoBuildingReplica",
+		"PlayerRemarkWorldC6M2_FinalLadderReplica",
+		"PlayerRemarkWorldC6M2_FinalWaterReplica",
+		"PlayerRemarkWorldC6M2_FinalWaterGoGoReplica",
+		"PlayerRemarkWorldC6M2_InJazzClubReplica",
+		"PlayerRemarkWorldC6M2_InSewer1Replica",
+		"PlayerRemarkWorldC6M2_InSewer1GamblerReplica",
+		"PlayerRemarkWorldC6M2_InSewerLadder1Replica",
+		"PlayerRemarkWorldC6M2_IntoConstructionReplica",
+		"PlayerRemarkWorldC6M2_IntoPoolHallReplica",
+		"PlayerRemarkWorldC6M2_JukeBoxReplica",
+		"PlayerRemarkWorldC6M2_JumpDownReplica",
+		"PlayerRemarkWorldC6M2_OnTourWalk1Replica",
+		"PlayerRemarkWorldC6M2_OnTourWalk2Replica",
+		"PlayerRemarkWorldC6M2_OpenGate1Replica",
+		"PlayerRemarkWorldC6M2_OpenGate2Replica",
+		"PlayerRemarkWorldC6M2_OpenGate2EllisReplica",
+		"PlayerRemarkWorldC6M2_Phase2Replica",
+		"PlayerRemarkWorldC6M2_Phase2DownReplica",
+		"PlayerRemarkWorldC6M2_Phase2DownIntenseReplica",
+		"PlayerRemarkWorldC6M2_PostGate1xReplica",
+		"PlayerRemarkWorldC6M2_SuitcaseReplica",
+		"PlayerRemarkWorldC6M2_TourEntranceReplica",
+		"PlayerRemarkWorldC6M2_UpCatWalkReplica",
+		"PlayerRemarkWorldC6M2_UpStairsReplica",
+		"PlayerRemarkWorldC6M2_UpStairs2Replica",
+		"PlayerRemarkWorldC6M3_BridgeRunReplica",
+		"PlayerRemarkWorldC6M3_ByBridgeReplica",
+		"PlayerRemarkWorldFootLockerReplica",
+		"PlayerRemarkWorldC6M3_BillReplica",
+		"WorldC6M3LossReplica",
+		"WorldC6M3Loss2Replica",
+		"WorldC6M3Loss3Replica",
+		"PlayerRemarkWorldSignContagiousReplica",
+		"PlayerRemarkWorldSignContagiousRochelleReplica",
+		"PlayerRemarkWorldSignContagiousEllisReplica",
+		"PlayerRemarkWorldSignDeadlyForceReplica",
+		"PlayerRemarkWorldSignDeadlyForce2Replica",
+		"PlayerRemarkWorldSignOfficialInstructionsReplica",
+		"PlayerRemarkWorldSignBarricadeHomesReplica",
+		"PlayerRemarkWorldSignFormLineReplica",
+		"PlayerRemarkWorldSignPhotographyReplica",
+		"PlayerRemarkWorldSignReportSickReplica",
+		"PlayerRemarkWorldSignReportUnusReplica",
+		"PlayerRemarkWorldSignRestrictedAreaReplica",
+		"PlayerRemarkWorldSignsInfectedDetReplica",
+		"PlayerRemarkWorldSignStayInGroupReplica",
+		"PlayerRemarkWorldSignStayInGroup2Replica",
+		"PlayerRemarkWorldSignWhereIsCEDAReplica",
+		"PlayerRemarkWorldSignWhereIsCEDARochelleReplica",
+		"PlayerRemarkWorldSignWhereIsCEDAEllisReplica",
+		"PlayerRemarkWorldSignWhereIsCEDA2Replica",
+		"PlayerWorldSignC5AlarmWillSoundReplica",
+		"PlayerWorldSignC5AlarmWillSound3Replica",
+		"RespondAffirmativeReplica",
+		"PlayerFollowMeReplica",
+		"PlayerHelpReplica",
+		"PlayerHurryUpReplica",
+		"PlayerHurryUpC4M2Replica",
+		"PlayerKillThatLightReplica",
+		"PlayerLeadOnReplica",
+		"PlayerMoveOnReplica",
+		"PlayerStayTogetherReplica",
+		"PlayerWatchOutBehindReplica",
+		"PlayerAskReadyReplica",
+		"PlayerImWithYouReplica",
+		"PlayerLaughReplica",
+		"PlayerLostCallReplica",
+		"PlayerNiceJobResponseReplica",
+		"PlayerNoReplica",
+		"PlayerNoEllisReplica",
+		"PlayerNoFemaleReplica",
+		"PlayerAnswerLostCallReplica",
+		"KillStealCalledOutReplica",
+		"PlayerSorryReplica",
+		"PlayerSorryFFReplica",
+		"PlayerThanksReplica",
+		"PlayerYellRunReplica",
+		"PlayerYesReplica",
+		"PlayerYouAreWelcomeReplica",
+		"NickC1AttitudeReplica",
+		"YouAreWelcomeGamblerReplica",
+		"YouAreWelcomeMechanicReplica",
+		"YouAreWelcomeProducerReplica",
+		"BotAttentionBattleReplica",
+		"BotNoteHumanAttentionReplica",
+		"PlayerNegativeReplica",
+		"PlayerShootCarNotReplica",
+		"PlayerShootCarReplica",
+		"PlayerHeardBoomerReplica",
+		"PlayerHeardHunterReplica",
+		"PlayerHeardSmokerReplica",
+		"PlayerHeardChargerReplica",
+		"PlayerHeardSpitterReplica",
+		"PlayerHeardJockeyReplica",
+		"PlayerHeardBoomerC1Replica",
+		"PlayerHeardJockeyC1Replica",
+		"PlayerHeardTankReplica",
+		"PlayerHeardWitchReplica",
+		"PlayerHurrahReplica",
+		"PlayerWarnCarefulReplica",
+		"SurvivorSpottedWorldFarReplica",
+		"C6M3_PourFinishedReplica",
+		"GasPourDoneSCReplica",
+		"GasPourSCAloneReplica",
+		"GasPourSCNotAloneReplica",
+		"GrabbingGasSCReplica",
+		"PlayerShotGasCanReplica",
+		"ScavengeStartReplica",
+		"ScavengeStartC1M4Replica",
+		"PlayerCommentJockeyMaleReplica",
+		"PlayerCommentJockeyGenericReplica",
+		"C4M2LockTheDoorCheckPointReplica",
+		"GoingToDieCoachCoachReplica",
+		"SurvivorVocalizeGoingToDie3Replica",
+		"SurvivorVocalizeGoingToDie3C5M5Replica",
+		"PlayerAlertGiveItemStopReplica",
+		"PlayerAlertGiveItemStopC1Replica",
+		"PlayerEatPillsReplica",
+		"PlayerGamblerPouncedReplica",
+		"PlayerGetInsideCheckPointReplica",
+		"PlayerGetInsideCheckPointC2M2Replica",
+		"PlayerGrabbedByJockeyReplica",
+		"PlayerGrabbedByJockeyC1Replica",
+		"PlayerGrenadeMolotovReplica",
+		"PlayerGrenadePipeBombReplica",
+		"PlayerGrenadeVomitJarReplica",
+		"PlayerGrenadeVomitJarC1Replica",
+		"PlayerIncapacitatedInitialReplica",
+		"PlayerIncapacitatedInitialC1M2Replica",
+		"PlayerKillConfirmationReplica",
+		"PlayerKillConfirmationC1M1Replica",
+		"PlayerKillJockeyConfirmationC2M4EasterEggReplica",
+		"KillJockeyC2M4EasterEggReplica",
+		"RightfulKillerReplica",
+		"PlayerKillTankConfirmationReplica",
+		"PlayerKillTankNotHealthyReplica",
+		"PlayerKillTankConfirmationC1M2Replica",
+		"PlayerLockTheDoorCheckPointReplica",
+		"PlayerLockTheDoorCheckPointC1Replica",
+		"PlayerMechanicPouncedReplica",
+		"PlayerMechanicPouncedC1Replica",
+		"PlayerProducerPouncedReplica",
+		"PlayerProducerPouncedC1KnownReplica",
+		"PlayerProducerPouncedC1UnknownReplica",
+		"PlayerRevivedByDefibrillatorReplica",
+		"PlayerRevivedByDefibrillator2Replica",
+		"PlayerRevivedByDefibrillator2ProducerReplica",
+		"PlayerStayTogetherSaferoomReplica",
+		"PlayerSuggestHealthGenericReplica",
+		"PlayerSuggestHealthC1Replica",
+		"PlayerSuggestHealthGamblerReplica",
+		"PlayerSuggestHealthMechanicReplica",
+		"PlayerSuggestHealthProducerReplica",
+		"PlayerTransitionReplica",
+		"PlayerTransitionCloseReplica",
+		"PlayerTransitionSoloReplica",
+		"PlayerTransitionC1M2Replica",
+		"PlayerTransitionC1M3Replica",
+		"PlayerTransitionC5M4Replica",
+		"PlayerTransitionC6M2Replica",
+		"PlayerUsingDefibrillatorReplica",
+		"PlayerWarnHeardBoomerReplica",
+		"PlayerWarnHeardChargerReplica",
+		"PlayerWarnHeardHunterReplica",
+		"PlayerWarnHeardJockeyReplica",
+		"PlayerWarnHeardSmokerReplica",
+		"PlayerWarnHeardSpitterReplica",
+		"PlayerWarnHeardJockeyC1Replica",
+		"PlayerWarnHeardBoomerC1Replica",
+		"PlayerWarnHeardWitchReplica",
+		"PlayerWarnHeardWitchC1Replica",
+		"PlayerWarnHeardWitchC1RochelleReplica",
+		"PlayerWarnMegaMobReplica",
+		"PlayerWarnWitchAngryReplica",
+		"PlayerWorldInfectedDet2Replica",
+		"PlayerWorldIntroC513Replica",
+		"PlayerWorldSignColdBeer2Replica",
+		"PlayerWorldSignHurricane2Replica",
+		"SurvivorCaughtVomitReplica",
+		"SurvivorchargerpoundReplica",
+		"SurvivorchargerpoundC1Replica",
+		"SurvivorCoughingReplica",
+		"SurvivorDeathReplica",
+		"SurvivorGooedBySpitterReplica",
+		"SurvivorGooedBySpitterC1Replica",
+		"SurvivorGrabbedByTongueReplica",
+		"SurvivorGrabbedByTongueC1Replica",
+		"SurvivorNearCheckpointReplica",
+		"SurvivorNearCheckpointC1M1Replica",
+		"SurvivorNearCheckpointC1M2Replica",
+		"SurvivorNearCheckpointC1M3Replica",
+		"SurvivorNearCheckpointC2M1Replica",
+		"SurvivorNearCheckpointC2M2Replica",
+		"SurvivorNearCheckpointC2M4Replica",
+		"SurvivorNearCheckpointC3M1Replica",
+		"SurvivorNearCheckpointC3M2Replica",
+		"SurvivorNearCheckpointC3M3Replica",
+		"SurvivorNearCheckpointC4M1Replica",
+		"SurvivorNearCheckpointC4M2Replica",
+		"SurvivorNearCheckpointC4M3Replica",
+		"SurvivorNearCheckpointC4M4Replica",
+		"SurvivorNearCheckpointC5M2Replica",
+		"SurvivorNearCheckpointC5M4Replica",
+		"SurvivorNearCheckpointC6M1Replica",
+		"SurvivorNearCheckpointC6M2Replica",
+		"SurvivorNearFinaleReplica",
+		"SurvivorNearFinaleC2M5Replica",
+		"SurvivorNearFinaleC3M4Replica",
+		"SurvivorPouncedByHunterReplica",
+		"SurvivorTankPoundReplica",
+		"SurvivorTankPoundC1Replica",
+		"SurvivorVocalizeBackUpReplica",
+		"SurvivorVocalizeEmphaticGoReplica",
+		"SurvivorVocalizeGoingToDieReplica",
+		"SurvivorVocalizeLookOutReplica",
+		"SurvivorVocalizeThisWayReplica",
+		"SurvivorVocalizeWaitHereReplica",
+		"SurvivorWarnSpitterIncomingReplica",
+		"SurvivorWarnSpitterIncomingC1Replica",
+		"PlayerLedgeHangEndReplica",
+		"PlayerLedgeHangMiddleReplica",
+		"PlayerLedgeHangStartReplica",
+		"SurvivorFirstDeathReplica",
+		"DeathOneReplica",
+		"DoubleDeathReplica",
+		"TeamKillReplica",
+		"TeamKillFromMechanicReplica",
+		"TeamKillFromProducerReplica",
+		"C6M1TakeSubMachineGunReplica",
+		"SurvivorDeployUpExplosivesReplica",
+		"SurvivorDeployUpIncendiaryReplica",
+		"SurvivorPickupAdrenalineReplica",
+		"SurvivorPickupAutoShotgunReplica",
+		"SurvivorPickupchainsawReplica",
+		"SurvivorPickupcricket_batReplica",
+		"SurvivorPickupCricketBatReplica",
+		"SurvivorPickupKnifeReplica",
+		"SurvivorPickupCrowBarReplica",
+		"SurvivorPickupDefibrillatorReplica",
+		"SurvivorPickupelectric_guitarReplica",
+		"SurvivorPickupFirstAidKitReplica",
+		"SurvivorPickupFirstSMGReplica",
+		"SurvivorPickupGolfCLubReplica",
+		"SurvivorPickupGrenadeLauncherReplica",
+		"SurvivorPickupHuntingRifleReplica",
+		"SurvivorPickupIncendiaryAmmoReplica",
+		"SurvivorPickupExplosiveAmmoReplica",
+		"SurvivorPickupKatanaReplica",
+		"SurvivorPickupLaserSightsAlwaysReplica",
+		"SurvivorPickupM60Replica",
+		"SurvivorPickupMacheteReplica",
+		"SurvivorPickupMagnumReplica",
+		"SurvivorPickupMolotovReplica",
+		"SurvivorPickupPainPillsReplica",
+		"SurvivorPickupPipeBombReplica",
+		"SurvivorPickupPumpShotgunReplica",
+		"SurvivorPickupRifleReplica",
+		"SurvivorPickupSecondPistolReplica",
+		"SurvivorPickupSMGReplica",
+		"SurvivorPickuptonfaReplica",
+		"SurvivorPickupUpExplosivesReplica",
+		"SurvivorPickupUpIncendiaryReplica",
+		"SurvivorPickupVomitJarReplica",
+		"SurvivorPickupVomitJarAlwaysC1Replica",
+		"PlayerGettingRevivedReplica",
+		"PlayerHealOtherReplica",
+		"PlayerHealOtherC1Replica",
+		"PlayerHealOtherCombatReplica",
+		"PlayerHealMechanicCombatReplica",
+		"PlayerLedgeSaveReplica",
+		"PlayerReviveFriendReplica",
+		"PlayerReviveFriendFFReplica",
+		"PlayerReviveFriendBReplica",
+		"PlayerReviveFriendGamblerReplica",
+		"PlayerReviveFriendMechanicReplica",
+		"PlayerReviveFriendProducerReplica",
+		"PlayerReviveFriendCriticalReplica",
+		"PlayerReviveFriendLoudReplica",
+		"_C1M1_ElevatorHelloReplica",
+		"_C1M1_ElevatorHello01aReplica",
+		"_C1M1_ElevatorHello01cReplica",
+		"_C1M1_ElevatorHello01dReplica",
+		"_C1M1_ElevatorHello02bReplica",
+		"_C1M1_ElevatorHelloAllAliveExtra1Replica",
+		"_C1M1_ElevatorHello03bReplica",
+		"_C1M1_ElevatorHello03cReplica",
+		"_C1M1_ElevatorHello05cReplica",
+		"_C1M1_ElevatorHello07dReplica",
+		"_C1M1_ElevatorHello07gReplica",
+		"_C1M1_ElevatorHello09aReplica",
+		"_C1M1_ElevatorHello10aReplica",
+		"_C1M1_ElevatorHello10bReplica",
+		"_C1M1_ElevatorHello12bReplica",
+		"_C1M1_ElevatorHello12cReplica",
+		"_C1M1_ElevatorHello13aReplica",
+		"_C1M1_ElevatorHello13bReplica",
+		"_c1m4startelevator5aReplica",
+		"_c1m4startelevatorLastReplica",
+		"_C2M1_Fall01Replica",
+		"_C2M1_Fall02Replica",
+		"_C2M1_Fall04Replica",
+		"_c2m1_searchlights01Replica",
+		"_c2m1_searchlights02Replica",
+		"_c2m1_searchlights03Replica",
+		"_C2M1abandoned01Replica",
+		"_C2M2_Bathroom01Replica",
+		"_C2M2_CaroStart03Replica",
+		"_C2M2_CottonCandy01Replica",
+		"_C2M2_Kiddie01Replica",
+		"_C2M2_SeeSafehouse01Replica",
+		"_c2m3_coaster01Replica",
+		"_c2m3_coaster05Replica",
+		"_c2m3_coaster08Replica",
+		"_c2m3_freshair01Replica",
+		"_c2m3_hole01Replica",
+		"_C2M4_GateOpen001Replica",
+		"_C4_BigStormHits01Replica",
+		"_C4_BigStormHits02Replica",
+		"_c4m1_rainresponseReplica",
+		"_c4m2_caneyell01Replica",
+		"_c4m2_ElevatorHere01Replica",
+		"_c4m2_gasinside01Replica",
+		"_c4m2_seestation01Replica",
+		"_c4m2_streetblocked01Replica",
+		"_c4m2_streetblocked01bReplica",
+		"_c4m2_waterpool02Replica",
+		"_c4m2_Witchville05Replica",
+		"_C4M3_FLOODED01Replica",
+		"_c4m3_rain01Replica",
+		"_c4m3_startsafe02Replica",
+		"_c4m3_startsafe03Replica",
+		"_introc1m1MovieIntroReplica",
+		"_introc1m1a03Replica",
+		"_introc1m1a03AloneReplica",
+		"_introc1m1a05Replica",
+		"_introc1m1b01Replica",
+		"_introc1m1b04Replica",
+		"_introc1m1b06Replica",
+		"_introc1m1b08Replica",
+		"_introc1m1b09Replica",
+		"_introc1m1c01Replica",
+		"_introc1m1c02Replica",
+		"_introc1m1lastweaponsReplica",
+		"c1m1_elevator_door_openReplica",
+		"c1m1_elevator_ready2Replica",
+		"_C1M1_ElevatorHello2AliveName1Replica",
+		"_C1M1_ElevatorHello2AliveName2Replica",
+		"_C1M1_ElevatorHello2AliveExtra1Replica",
+		"_C1M1_ElevatorHello2AliveExtra2Replica",
+		"_C1M1_ElevatorHello2AliveExtra2NReplica",
+		"_C1M1_ElevatorHello3AliveName1RNReplica",
+		"_C1M1_ElevatorHello3AliveName1REReplica",
+		"_C1M1_ElevatorHello3AliveName1Replica",
+		"_C1M1_ElevatorHello3AliveName2Replica",
+		"_C1M1_ElevatorHello3AliveWhoIsDeadReplica",
+		"_C1M1_ElevatorHello3AliveNameDeadEReplica",
+		"_C1M1_ElevatorHello3AliveNameDeadNReplica",
+		"_C1M1_ElevatorHello3AliveNameDeadRReplica",
+		"_C1M1_ElevatorHello3AliveNameDead2Replica",
+		"C1M1CoughReplica",
+		"C1M2SafeRoomReplica",
+		"C1M3AlarmOffaReplica",
+		"C1M3SafeRoomReplica",
+		"C1M3SafeRoom2cReplica",
+		"C1M3SafeRoom2dReplica",
+		"C1M4NearFinale03aReplica",
+		"c1m4NearFinale1Replica",
+		"c1m4NearFinale1NickReplica",
+		"C1M4SafeRoom2a1Replica",
+		"C1M4SafeRoom2a3Replica",
+		"C1M4SafeRoom2b5Replica",
+		"C1M4SafeRoomEndReplica",
+		"C2M1DoneFallingAlt1Replica",
+		"C2M1Intro002Replica",
+		"C2M1Intro009Replica",
+		"C2M1Intro010Replica",
+		"C2M1Intro_400Replica",
+		"C2M4PenSmell001Replica",
+		"_C2M4_RibsReplica",
+		"C2M5_lipsync001Replica",
+		"c4m1_InBurgerTank01Replica",
+		"c4m1_nogas01Replica",
+		"c4m1_nogas03Replica",
+		"c4m1_nogas06Replica",
+		"c4m1_nogas07Replica",
+		"c4m1_nogas10Replica",
+		"GasPour20MoreTalkReplica",
+		"GasPour10MoreTalkReplica",
+		"GasPour1MoreReplica",
+		"GasPour2MoreReplica",
+		"GasPour3MoreReplica",
+		"GasPour5MoreReplica",
+		"HistoricTour02aReplica",
+		"Player_CoverMeC1RCoach2Replica",
+		"Player_KnowHunterC1Replica",
+		"Player_TakeBatRReplica",
+		"Player_TakeVomitJarC1aReplica",
+		"C1M2TankInfoReplica",
+		"PlayerCr0wnedBrideReplica",
+		"WeddingWitchDead01Replica",
+		"WeddingWitchDead02Replica",
+		"WorldIntroC31a2Replica",
+		"WorldIntroC31e3Replica",
+		"WorldIntroC3e1Replica",
+		"WorldIntroC3f1Replica",
+		"WorldIntroC31g2Replica",
+		"PlayerCoverMeHealReplica",
+		"PlayerCoverMeHealC1Replica",
+		"Player_LostCallC6M3Replica",
+		"AutoPlayerLostCallReplica",
+		"SurvivorSpottedChainsawReplica",
+		"SurvivorSpottedcricket_batReplica",
+		"SurvivorSpottedcrowbarReplica",
+		"SurvivorSpottedGolfClubReplica",
+		"SurvivorSpottedGuitarReplica",
+		"SurvivorSpottedKatanaReplica",
+		"SurvivorSpottedLaserSightsReplica",
+		"SurvivorSpottedM60Replica",
+		"SurvivorSpottedMacheteReplica",
+		"SurvivorSpottedMagnumReplica",
+		"SurvivorSpottedtonfaReplica",
+		"SurvivorSpottedWeaponReplica",
+		"SurvivorSpottedMeleeWeaponReplica",
+		"C2M3Chopper001Replica",
+		"AskWhatReplica",
+		"C13M1IntroStartReplica",
+		"C13M1Intro2Replica",
+		"C13M1Intro2EllisReplica",
+		"C13M1Intro3Replica",
+		"C13M1IntroLastReplica",
+		"C13M1IntroLocationLastReplica",
+		"RemarkC13M1PreBunkerOpenReplica",
+		"C13M1OpeningBunkerReplica",
+		"RemarkC13M2UpLadderReplica",
+		"C13M2TankApproachingReplica",
+		"C13M2BarrelsIgnitedReplica",
+		"C13M2Barrels1Replica",
+		"C13M2Barrels2Replica",
+		"C13M3ApproachingTankerReplica",
+		"C13M3Tanker1Replica",
+		"C13M3Tanker2Replica",
+		"C13M3Tanker3Replica",
+		"C13M3AirstrikeReplica",
+		"C13M4Button1Replica",
+		"C13M4FinaleTriggeredReplica",
+		"C13M4FinaleStart2Replica",
+		"C13M4DownCreekReplica",
+		"C13M4NoticedHelicopterReplica",
+		"C13M4AlmostThereReplica",
+		"C13M4SpottedVehicleReplica",
+		"C13M4GetToVehicleReplica",
+		// coach_dlc1.txt ====================================================================================================
+		"L4D1PlayerNiceShotReplica",
+		"L4D1PlayerNiceShotFrancisReplica",
+		"L4D1PlayerNiceShotLouisReplica",
+		"L4D1PlayerNiceShotZoeyReplica",
+		"C6M3GasPourReplica",
+		"C6M1_IntotheparkNoHealthReplica",
+		"C6M1Intro_01TeenGirl04Replica",
+		"C6M1Intro_04bReplica",
+		"C6M1Intro_08aReplica",
+		"C6M1Intro_13bReplica",
+		"C6M1Intro_13eReplica",
+		"C6M1Intro_21aReplica",
+		"C6M1Intro_21bReplica",
+		"C6M1Intro_21dReplica",
+		"C6M1Intro_21gReplica",
+		"C6M1TakeSubMachineGun01Replica",
+		"LeavingC6M1StartReplica",
+		"WorldC6M1_HistoricTourReplica",
+		"WorldC6M1_PostWedding01aReplica",
+		"WorldC6M1_WeddingWarn03aReplica",
+		"WorldC6M1_WeddingWarn04aReplica",
+		"C6M2_OpenGate1Replica",
+		"C6M2_OpenGate2Replica",
+		"C6M2SafeRoomReplica",
+		"DLC1_C6M2_SafeRoomConvo01aReplica",
+		"DLC1_C6M2_SafeRoomConvo05Replica",
+		"DLC1_C6M2_SafeRoomConvo09aReplica",
+		"DLC1_C6M2_SafeRoomConvo11Replica",
+		"DLC1_C6M2_SafeRoomConvo12Replica",
+		"DLC1_C6M2_SafeRoomConvo12bReplica",
+		"DLC1_C6M2_SafeRoomConvo12dReplica",
+		"DLC1_C6M2_SafeRoomConvo13bReplica",
+		"DLC1_C6M2_SafeRoomConvo13dReplica",
+		"DLC1_C6M2_SafeRoomConvo14dReplica",
+		"DLC1_C6M2_SafeRoomConvo15bReplica",
+		"DLC1_C6M2_SafeRoomConvo16a1Replica",
+		"DLC1_C6M2_SafeRoomConvo16eReplica",
+		"DLC1_C6M2_SafeRoomConvo18cReplica",
+		"DLC1_C6M2_SafeRoomConvo18eReplica",
+		"DLC1_C6M2_SafeRoomConvo19Replica",
+		"DLC1_C6M2_SafeRoomConvo19bReplica",
+		"DLC1_C6M2_SafeRoomConvo19dReplica",
+		"WorldC6M2_InSewer101aReplica",
+		"WorldC6M2_InSewer102aReplica",
+		"WorldC6M2_InSewer202aReplica",
+		"WorldC6M2_InSewerLadder101aReplica",
+		"WorldC6M2_OnTourWalk101cReplica",
+		"WorldC6M2_OnTourWalk103aReplica",
+		"WorldC6M2_Tattoo02b_Replica",
+		"C6M3_BridgeDownReplica",
+		"C6M3_BridgeGettoCarReplica",
+		"C6M3_elevatorReplica",
+		"C6M3_elevatorZoeyReplica",
+		"C6M3_GivenItemBikerReplica",
+		"C6M3_GivenItemTeenGirlReplica",
+		"C6M3SafeRoomReplica",
+		"DLC1_C6M3_SafeRoomConvo02eReplica",
+		"DLC1_C6M3_SafeRoomConvo03Replica",
+		"DLC1_C6M3_SafeRoomConvo04Replica",
+		"DLC1_C6M3_SafeRoomConvo08Replica",
+		"DLC1_C6M3_SafeRoomConvo08bReplica",
+		"IncapBounceReplica",
+		"C6M3_CansDoneReplica",
+		"L4D1AlsoSpottedTankReplica",
+		"L4D1SpottedTankReplica",
+		"SurvivorSpottedFallenReplica",
+		"PlayerWitchChasingC6M1Replica",
+		"PlayerRemarkremark_MidnightRidersBusReplica",
+		"PlayerRemarkWorldC6M1_AcrossHereReplica",
+		"PlayerRemarkWorldC6M1_AlleyBelowReplica",
+		"PlayerRemarkWorldC6M1_AlleyIntoBuildingReplica",
+		"PlayerRemarkWorldC6M1_InAptsReplica",
+		"PlayerRemarkWorldC6M1_IntoTheStoreReplica",
+		"PlayerRemarkWorldC6M1_PostWeddingReplica",
+		"PlayerRemarkWorldC6M1_SafeRoomAlleyReplica",
+		"PlayerRemarkWorldC6M1_ThroughBarReplica",
+		"PlayerRemarkWorldC6M1_UpHereReplica",
+		"PlayerRemarkWorldC6M1_UpTheStairsReplica",
+		"PlayerRemarkWorldC6M1_UpTheStairs2Replica",
+		"PlayerRemarkWorldC6M1_WeddingWarnReplica",
+		"PlayerRemarkWorldC6M1_WeddingWarn1Replica",
+		"PlayerRemarkWorldC6M1_WeddingWarn2Replica",
+		"PlayerRemarkWorldC6M1_WeddingWarn3Replica",
+		"PlayerRemarkWorldC6M2_AcrossPlankReplica",
+		"PlayerRemarkWorldC6M2_AfterGate1Replica",
+		"PlayerRemarkWorldC6M2_AfterGate2Replica",
+		"PlayerRemarkWorldC6M2_DownHereReplica",
+		"PlayerRemarkWorldC6M2_DownIntoBuildingReplica",
+		"PlayerRemarkWorldC6M2_FinalLadderReplica",
+		"PlayerRemarkWorldC6M2_FinalWaterReplica",
+		"PlayerRemarkWorldC6M2_FinalWaterGoGoReplica",
+		"PlayerRemarkWorldC6M2_InJazzClubReplica",
+		"PlayerRemarkWorldC6M2_InSewer1Replica",
+		"PlayerRemarkWorldC6M2_InSewerLadder1Replica",
+		"PlayerRemarkWorldC6M2_IntoConstructionReplica",
+		"PlayerRemarkWorldC6M2_IntoPoolHallReplica",
+		"PlayerRemarkWorldC6M2_JukeBoxReplica",
+		"PlayerRemarkWorldC6M2_JumpDownReplica",
+		"PlayerRemarkWorldC6M2_OnTourWalk1Replica",
+		"PlayerRemarkWorldC6M2_OnTourWalk2Replica",
+		"PlayerRemarkWorldC6M2_OpenGate1Replica",
+		"PlayerRemarkWorldC6M2_OpenGate2Replica",
+		"PlayerRemarkWorldC6M2_Phase2Replica",
+		"PlayerRemarkWorldC6M2_Phase2DownReplica",
+		"PlayerRemarkWorldC6M2_Phase2DownIntenseReplica",
+		"PlayerRemarkWorldC6M2_PostGate1xReplica",
+		"PlayerRemarkWorldC6M2_SafeRoomReplica",
+		"PlayerRemarkWorldC6M2_SuitcaseReplica",
+		"PlayerRemarkWorldC6M2_TourEntranceReplica",
+		"PlayerRemarkWorldC6M2_UpCatWalkReplica",
+		"PlayerRemarkWorldC6M2_UpStairsReplica",
+		"PlayerRemarkWorldC6M2_UpStairs2Replica",
+		"PlayerRemarkWorldC6M3_BridgeRunReplica",
+		"PlayerRemarkWorldC6M3_ByBridgeReplica",
+		"PlayerRemarkWorldFootLockerReplica",
+		"C6M3_PourFinishedReplica",
+		"SurvivorNearFinaleC6M3Replica",
+		"SurvivorPickupGolfCLubReplica",
+		"SurvivorPickupM60Replica",
+		"HistoricTour02aReplica",
+		"WeddingWitchDead01Replica",
+		"WeddingWitchDead02Replica",
+		"Player_LostCallC6M3Replica",
+		"SurvivorSpottedGolfClubReplica",
+		"SurvivorSpottedGolfClubAutoReplica",
+		"SurvivorSpottedM60Replica",
+		"SurvivorSpottedM60AutoReplica",
 		// conversation.txt ====================================================================================================
-		"C3M1CallFerryCliffe",
-		"C3M2OpenDoorCliffe",
-		"c5m4floatstartCliffe",
-		// gambler.txt ====================================================================================================
-		"_PlayerInfoRemarkableBlankCliffe",
-		"C1M1InSmokeCliffe",
-		"C1M3AlarmOffCliffe",
-		"C1M3AlarmActiveCliffe",
-		"C4M3SaferoomCliffe",
-		"L4D1PlayerNiceShotFrancisC6M3Cliffe",
-		"PlayerNiceShotFrancisCliffe",
-		"L4D1PlayerNiceShotLouisC6M3Cliffe",
-		"PlayerNiceShotLouisCliffe",
-		"L4D1PlayerNiceShotLouisEllisC6M3Cliffe",
-		"L4D1PlayerNiceShotZoeyC6M3Cliffe",
-		"PlayerNiceShotZoeyCliffe",
-		"PlayerNiceShotCliffe",
-		"PlayerNiceShotCoachCliffe",
-		"PlayerNiceShotMechanicCliffe",
-		"PlayerNiceShotProducerCliffe",
-		"SurvivorMournCoachCliffe",
-		"SurvivorMournCoachC1Cliffe",
-		"SurvivorMournMechanicCliffe",
-		"SurvivorMournMechanicC1Cliffe",
-		"SurvivorMournProducerCliffe",
-		"SurvivorMournProducerC1Cliffe",
-		"_C1M1_ElevatorHelloStartAllAliveCliffe",
-		"C1M1_ElevatorHelloStart2AliveCliffe",
-		"C1M1_ElevatorHelloStart3AliveCliffe",
-		"Playerc1m1_enter_elevatorCliffe",
-		"Playerc1m1_elevator_pushbuttonCliffe",
-		"PlayerRemarkC1M2PreAlarmDoorCliffe",
-		"C1M2AlarmDoor2Cliffe",
-		"PlayerC1M2GrabbingColaCliffe",
-		"PlayerC1M2GrabbingCola2Cliffe",
-		"PlayerC1M2FirstOutsideResponseCliffe",
-		"PlayerC1M2FirstOutsideResponse3aCliffe",
-		"PlayerC1M2FirstOutsideResponse8aCliffe",
-		"PlayerC1M2InsideGunShop2Cliffe",
-		"PlayerC3M1CallFerry2Cliffe",
-		"PlayerC3M1FerryLandedIdleCliffe",
-		"PlayerC3M1FerryLaunched2aCliffe",
-		"PlayerC3M2ComingHomeCliffe",
-		"PlayerC3M2OpenDoor2Cliffe",
-		"Playerc5m4floatendCliffe",
-		"Playerc5m4floatstart2Cliffe",
-		"PlayerRelaxedSighCliffe",
-		"PlayerStayTogetherInsideReponseCliffe",
-		"PlayerUseAdrenalineCliffe",
-		"PlayerWorldC3M1FerryCrossingC01Cliffe",
-		"PlayerWorldC3M1FerryCrossingC03Cliffe",
-		"PlayerWorldC3M1FerryCrossingD03Cliffe",
-		"PlayerWorldC3M1FerryCrossingE03Cliffe",
-		"PlayerWorldC3M1FerryCrossingG02Cliffe",
-		"PlayerWorldC3M1FerryCrossingG04Cliffe",
-		"PlayerWorldC3M1FerryCrossingI01Cliffe",
-		"RescuedSurvivorCliffe",
-		"PlayerGivenItemCliffe",
-		"ItemDonorCoachCliffe",
-		"ItemDonorMechanicCliffe",
-		"ItemDonorProducerCliffe",
-		"ItemDonorBikerCliffe",
-		"ItemDonorTeenGirlCliffe",
-		"ItemDonorManagerCliffe",
-		"ItemDonorNamVetCliffe",
-		"ReviveMeInterruptedMinorCliffe",
-		"ReviveMeInterruptedMajorCliffe",
-		"ReviveMeInterruptedCriticalCliffe",
-		"ReviveThanksCliffe",
-		"ReviveThanksCoachCliffe",
-		"ReviveThanksMechanicCliffe",
-		"ReviveThanksProducerCliffe",
-		"ReviveThanksBikerCliffe",
-		"ReviveThanksTeenGirlCliffe",
-		"ReviveThanksManagerCliffe",
-		"AutoYouAreWelcomeCliffe",
-		"AutoYouAreWelcomeC1Cliffe",
-		"BotPlayer_YourWelcomeCliffe",
-		"BotPlayer_YourWelcomeC1Cliffe",
-		"BotReassureComingCliffe",
-		"BotReassureNearbyCliffe",
-		"BotYesReadyCliffe",
-		"C1M2LeavingSafeRoomCliffe",
-		"C1M2SafeRoomb1Cliffe",
-		"C1M2SafeRoomb2Cliffe",
-		"C1M2SafeRoomb3Cliffe",
-		"C1M2SafeRoomc2Cliffe",
-		"C1M2SafeRoomd1Cliffe",
-		"C1M2TankerAttackCliffe",
-		"c1m4escapeCliffe",
-		"c1m4escapeEllisCliffe",
-		"c1m4escapeEllisSuccessCliffe",
-		"C1M4GasPourCliffe",
-		"C1M4PlayerGetToRescueVehicleCliffe",
-		"c1m4startelevatorCliffe",
-		"C6M3GasPourCliffe",
-		"FinaleStartC1M4Cliffe",
-		"GasPourDoneC1M4Cliffe",
-		"_C2M2_Riders01Cliffe",
-		"C2M2CarouselIdleCliffe",
-		"C2M3RubbleNagIdleCliffe",
-		"c2m3CoasterEndCliffe",
-		"C2M3CoasterRunGoCliffe",
-		"C2M3CoasterStartCliffe",
-		"c2m3SpotIncendiaryCliffe",
-		"c2m3SeeChopperCliffe",
-		"C2M4ButtonPressedCliffe",
-		"C2M4Gate000Cliffe",
-		"C2M4GateIdleCliffe",
-		"C2M4GateOpenCalloutCliffe",
-		"c2m4SeeChopperCliffe",
-		"c2m5_intro003Cliffe",
-		"c2m5_intro011Cliffe",
-		"c2m5_intro020Cliffe",
-		"C2M5Button1Cliffe",
-		"SurvivorReloadingC2M5Cliffe",
-		"SurvivorVocalizeLookOutC2M5Cliffe",
-		"C2M5ReloadingTankCliffe",
-		"PlayerKillTankConfirmationC2M5Cliffe",
-		"C2M5_Button2YellCliffe",
-		"C2M5_ChoppercomingCliffe",
-		"C2M5_PlanWorkedCliffe",
-		"C2M5ChopperNagCliffe",
-		"C2M5InChopperNagCliffe",
-		"C2M5InArenaNagCliffe",
-		"C2M3SaferoomCliffe",
-		"C2M3SafeIntro007Cliffe",
-		"C2M3SafeIntro009Cliffe",
-		"C2M3SafeIntro010Cliffe",
-		"C2M3SafeIntro012Cliffe",
-		"C2M3SafeIntro013Cliffe",
-		"C3GoingToDieCliffe",
-		"C3M1FerryEnd2Cliffe",
-		"WorldC3M1FerryCrossingM3Cliffe",
-		"C3M2DisgustCliffe",
-		"C3M2SafeRoomCliffe",
-		"C3M2SafeRoom3dCliffe",
-		"C3M2SafeRoomb2Cliffe",
-		"C3M3SafeRoomCliffe",
-		"InfoRemC3M3LowerGateaCliffe",
-		"InfoRemC3M3Unsanitarya2Cliffe",
-		"C3M4BoatNagsCliffe",
-		"C3M4InBoatNagsCliffe",
-		"C3M4Button1ACliffe",
-		"C3M4ButtonHowManyAnswer4Cliffe",
-		"C3M4ButtonHowManyAnswer3Cliffe",
-		"C3M4ButtonHowManyAnswer2Cliffe",
-		"C3M4ButtonHowManyAnswer1Cliffe",
-		"C3M4Button201Cliffe",
-		"C3M4Button203Cliffe",
-		"C3M4Button202Cliffe",
-		"C3M4GateBlow01Cliffe",
-		"C4GoingToDieCliffe",
-		"C4StormBlindIdleCliffe",
-		"_c4m1Intro20Cliffe",
-		"_c4m1Intro23Cliffe",
-		"C4M2IdleWitchville03Cliffe",
-		"C4M2PushedButtonCliffe",
-		"C4M5BoatNagsCliffe",
-		"C4M5InBoatNagsCliffe",
-		"C5GoingToDieCliffe",
-		"C5M5GoingToDieCliffe",
-		"C5M1_intro002Cliffe",
-		"C5M1_intro004Cliffe",
-		"C5M1_intro006Cliffe",
-		"C5M1_intro007Cliffe",
-		"C5M1Flyby01Cliffe",
-		"C5M1Flyby02Cliffe",
-		"C5M2AlarmNagCliffe",
-		"C5M2Freeway01Cliffe",
-		"C5M2Horse001Cliffe",
-		"PlayerRemarkc5m2busstationCliffe",
-		"PlayerRemarkc5m2freewayCliffe",
-		"PlayerRemarkc5m2parkCliffe",
-		"PlayerRemarkWorldC502Horse2Cliffe",
-		"C5M3AlarmFieldNagsCliffe",
-		"C5M3AlarmFieldNags01Cliffe",
-		"C5M3AlarmFieldNags02Cliffe",
-		"C5M3Bodies02Cliffe",
-		"C5M3Bodies04Cliffe",
-		"C5M3FirstInAlarmCliffe",
-		"C5M3Freeway01Cliffe",
-		"C5M3GraveNagsCliffe",
-		"C5M3GraveNags01Cliffe",
-		"C5M3GraveNags02Cliffe",
-		"C5M3Jets2Cliffe",
-		"C5M3StopZombiesCliffe",
-		"C5M3manhole01Cliffe",
-		"C5M3OnBridgeCliffe",
-		"C5M3SeeGraveyard01Cliffe",
-		"C5M3SeeGraveyard05Cliffe",
-		"C5M3SewerIn01Cliffe",
-		"C5M3ShootCarCliffe",
-		"C5M3ShootCar2Cliffe",
-		"C5M3ShootCar3Cliffe",
-		"C5M3Sniper01Cliffe",
-		"PlayerRemarkc5m3bodiesCliffe",
-		"PlayerRemarkc5m2peopleCliffe",
-		"PlayerRemarkc5m3busCliffe",
-		"PlayerRemarkc5m3crashedheliCliffe",
-		"PlayerRemarkc5m3freewayCliffe",
-		"PlayerRemarkc5m3insewerCliffe",
-		"PlayerRemarkc5m3manholeCliffe",
-		"PlayerRemarkc5m3offhighwayCliffe",
-		"PlayerRemarkc5m3safezoneCliffe",
-		"PlayerRemarkc5m3seegraveyardCliffe",
-		"PlayerRemarkc5m3sewercommentCliffe",
-		"PlayerRemarkc5m3sniperCliffe",
-		"PlayerRemarkc5m3sniperCoachCliffe",
-		"PlayerRemarkc5m3sniperRochelleCliffe",
-		"PlayerRemarkc5m3sniperEllisCliffe",
-		"PlayerRemarkc5m3upladderCliffe",
-		"PlayerRemarkc5m3upstepsCliffe",
-		"PlayerRemarkc5m3warzoneCliffe",
-		"C5M4BombExtCliffe",
-		"C5M4BombInt01Cliffe",
-		"C5M4BombInt01ACliffe",
-		"C5M4BombInt02Cliffe",
-		"C5M4BombInt03Cliffe",
-		"C5M4JetPlanesCliffe",
-		"PlayerRemarkc5m4alleyCliffe",
-		"PlayerRemarkc5m4inminifinaleCliffe",
-		"PlayerRemarkc5m4pooltableCliffe",
-		"PlayerRemarkc5m4seebridgeCliffe",
-		"PlayerRemarkc5m4tractornagCliffe",
-		"PlayerRemarkc5m4tractornagEllisCliffe",
-		"EllisStoryInterruptCliffe",
-		"EllisStoryInterruptGenericCliffe",
-		"EllisStoryInterruptC1M2Cliffe",
-		"EllisStoryInterruptC1M3Cliffe",
-		"EllisStoryInterruptC2M5Cliffe",
-		"EllisStoryInterruptC4M3Cliffe",
-		"EllisStoryInterruptC4M4Cliffe",
-		"EllisStoryInterruptC5M2Cliffe",
-		"EllisStoryInterruptC5M5Cliffe",
-		"C5M5_Button2Cliffe",
-		"C5M5_GateDownCliffe",
-		"C5M5_saferoom001Cliffe",
-		"C5M5_saferoom003Cliffe",
-		"C5M5_SurvivorConv01Cliffe",
-		"C5M5_SurvivorConv02Cliffe",
-		"C5M5_SurvivorConv03Cliffe",
-		"C5M5_SurvivorConv04Cliffe",
-		"C5M5_SurvivorConv05Cliffe",
-		"C5M5_LowerTheBridgeCliffe",
-		"C5M5Button1BuzzardRunCliffe",
-		"C5M5Button1Cliffe",
-		"C5M5HearSoldiersCliffe",
-		"C5M5HearSoldiersNagCliffe",
-		"C5M5LeaveSafeCliffe",
-		"C5M5RescueStartCliffe",
-		"C5M5RunToHeliCliffe",
-		"C5M5InsideHeliCliffe",
-		"C5M5BridgeDestroyed2Cliffe",
-		"C5M5SurvivorVocalizeLookOutCliffe",
-		"C5M5SpottedTankCliffe",
-		"C5M5ReloadingTankCliffe",
-		"PlayerC5M5TruckCliffe",
-		"PlayerKillTankConfirmationC5M5Cliffe",
-		"C5M5SafeRoomCliffe",
-		"C6M1_IntotheparkNoHealthCliffe",
-		"C6M1Intro_01Biker05Cliffe",
-		"C6M1Intro_07bCliffe",
-		"C6M1Intro_09aCliffe",
-		"C6M1Intro_09bCliffe",
-		"C6M1Intro_09dCliffe",
-		"C6M1Intro_10eCliffe",
-		"C6M1Intro_11dCliffe",
-		"C6M1Intro_14aCliffe",
-		"C6M1Intro_14cCliffe",
-		"C6M1Intro_15aCliffe",
-		"C6M1Intro_15eCliffe",
-		"C6M1Intro_16aCliffe",
-		"C6M1Intro_ConfirmObjectiveCliffe",
-		"LeavingC6M1StartCliffe",
-		"RemWorldC6M1_WeddingWarn02Cliffe",
-		"WorldC6M1_HistoricTourCliffe",
-		"WorldC6M1_PostWedding02aCliffe",
-		"WorldC6M1_WeddingWarn05aCliffe",
-		"C6M2_OpenGate1Cliffe",
-		"C6M2_OpenGate1aCliffe",
-		"C6M2_OpenGate2Cliffe",
-		"DLC1_C6M2_SafeRoomConvoFrancisStartCliffe",
-		"DLC1_C6M2_SafeRoomConvo01bCliffe",
-		"DLC1_C6M2_SafeRoomConvo02bCliffe",
-		"DLC1_C6M2_SafeRoomConvo06aCliffe",
-		"DLC1_C6M2_SafeRoomConvo07aCliffe",
-		"DLC1_C6M2_SafeRoomConvoStartCliffe",
-		"DLC1_C6M2_SafeRoomConvo08aCliffe",
-		"DLC1_C6M2_SafeRoomConvo08cCliffe",
-		"DLC1_C6M2_SafeRoomConvo08eCliffe",
-		"DLC1_C6M2_SafeRoomConvo09bCliffe",
-		"DLC1_C6M2_SafeRoomConvoZoeyStartCliffe",
-		"DLC1_C6M2_SafeRoomConvo10bCliffe",
-		"DLC1_C6M2_SafeRoomConvo10dCliffe",
-		"DLC1_C6M2_SafeRoomConvo11bCliffe",
-		"DLC1_C6M2_SafeRoomConvo12aCliffe",
-		"DLC1_C6M2_SafeRoomConvo12cCliffe",
-		"DLC1_C6M2_SafeRoomConvo13aCliffe",
-		"DLC1_C6M2_SafeRoomConvo13cCliffe",
-		"DLC1_C6M2_SafeRoomConvo13cFrancisIntroCliffe",
-		"DLC1_C6M2_SafeRoomConvo14fCliffe",
-		"DLC1_C6M2_SafeRoomConvo15cCliffe",
-		"WorldC6M2_AfterGate201aCliffe",
-		"WorldC6M2_FinalWater01aCliffe",
-		"WorldC6M2_InSewer101cCliffe",
-		"WorldC6M2_InSewer102bCliffe",
-		"WorldC6M2_InSewer201aCliffe",
-		"WorldC6M2_InSewer202aCliffe",
-		"WorldC6M2_InSewerLadder101aCliffe",
-		"WorldC6M2_OnTourWalk101aCliffe",
-		"WorldC6M2_OnTourWalk102aCliffe",
-		"WorldC6M2_Tattoo01bCliffe",
-		"WorldC6M2_Tattoo03aCliffe",
-		"C6M3_BridgeDownCliffe",
-		"C6M3_BridgeGettoCarCliffe",
-		"C6M3_elevatorCliffe",
-		"C6M3_elevatorFrancisCliffe",
-		"C6M3_GivenItemBikerCliffe",
-		"C6M3_GivenItemTeenGirlCliffe",
-		"DLC1_C6M3_SafeRoomConvoFrancisStartCliffe",
-		"DLC1_C6M3_SafeRoomConvo02bCliffe",
-		"DLC1_C6M3_SafeRoomConvo02dCliffe",
-		"DLC1_C6M3_SafeRoomConvo03bCliffe",
-		"DLC1_C6M3_SafeRoomConvo03dCliffe",
-		"DLC1_C6M3_SafeRoomConvo04cCliffe",
-		"DLC1_C6M3_SafeRoomConvoZoeyStartCliffe",
-		"DLC1_C6M3_SafeRoomConvo05bCliffe",
-		"DLC1_C6M3_SafeRoomConvo05dCliffe",
-		"IncapBounceCliffe",
-		"c6m3_outroCliffe",
-		"c6m3_outroEllisCliffe",
-		"c6m3_outroZoeyOutroCliffe",
-		"SurvivorSpotFirstWeaponsCliffe",
-		"SurvivorSpottedAdrenalineCliffe",
-		"SurvivorSpottedAmmoCliffe",
-		"SurvivorSpottedAmmo2Cliffe",
-		"SurvivorSpottedCoachCloseCliffe",
-		"SurvivorSpottedCoachClose2C1Cliffe",
-		"SurvivorSpottedCoachFarCliffe",
-		"SurvivorSpottedCoachFarC1Cliffe",
-		"SurvivorSpottedDefibrillatorCliffe",
-		"SurvivorSpottedGrenadeCliffe",
-		"SurvivorSpottedGrenadeLauncherCliffe",
-		"SurvivorSpottedHealthCliffe",
-		"SurvivorSpottedMechanicCloseCliffe",
-		"SurvivorSpottedMechanicClose2Cliffe",
-		"SurvivorSpottedMechanicClose2C1Cliffe",
-		"SurvivorSpottedMechanicFarCliffe",
-		"SurvivorSpottedMechanicFarC1Cliffe",
-		"SurvivorSpottedMolotovCliffe",
-		"SurvivorSpottedPillsCliffe",
-		"SurvivorSpottedPillsAutoHasPillsCliffe",
-		"SurvivorSpottedProducerCloseCliffe",
-		"SurvivorSpottedProducerClose2C1Cliffe",
-		"SurvivorSpottedProducerFarCliffe",
-		"SurvivorSpottedProducerFarC1Cliffe",
-		"SurvivorSpottedUpPack_ExplosiveCliffe",
-		"SurvivorSpottedUpPack_IncendiaryCliffe",
-		"SurvivorSpottedVomitJarCliffe",
-		"SurvivorSpottedVomitJarAutoC1Cliffe",
-		"SurvivorSpottedWorldCloseCliffe",
-		"SurvivorSpottedArmoredC5M1Cliffe",
-		"SurvivorSpottedArmoredCliffe",
-		"SurvivorSpottedBoomerCliffe",
-		"SurvivorSpottedBoomerC1M1Cliffe",
-		"SurvivorSpottedBoomerC1M1CoachCliffe",
-		"SurvivorSpottedBoomerC1M2Cliffe",
-		"SurvivorSpottedCedaCliffe",
-		"SurvivorSpottedCedaC1M1Cliffe",
-		"SurvivorSpottedChargerCliffe",
-		"SurvivorSpottedChargerC1M1Cliffe",
-		"SurvivorSpottedChargerC1M2Cliffe",
-		"SurvivorSpottedClownC2M2Cliffe",
-		"SurvivorSpottedClownCliffe",
-		"SurvivorSpottedFallenCliffe",
-		"SurvivorSpottedHunterCliffe",
-		"SurvivorSpottedHunterC1M1Cliffe",
-		"SurvivorSpottedHunterC1M2Cliffe",
-		"SurvivorSpottedInfectedCliffe",
-		"SurvivorSpottedJimmyCliffe",
-		"SurvivorSpottedJockeyCliffe",
-		"SurvivorSpottedJockeyC1M1Cliffe",
-		"SurvivorSpottedJockeyC1M2Cliffe",
-		"SurvivorSpottedMudmenCliffe",
-		"SurvivorSpottedMudmen2Cliffe",
-		"SurvivorSpottedSmokerCliffe",
-		"SurvivorSpottedSmokerC1Cliffe",
-		"SurvivorSpottedSpitterCliffe",
-		"SurvivorSpottedSpitterC1M1Cliffe",
-		"SurvivorSpottedSpitterC1M2Cliffe",
-		"SurvivorSpottedTankCliffe",
-		"SurvivorSpottedTankC1Cliffe",
-		"SurvivorSpottedWitchCliffe",
-		"SurvivorSpottedWitchC1Cliffe",
-		"SurvivorSpottedWitch2C1Cliffe",
-		"PlayerAlertGiveItemCliffe",
-		"PlayerAlertGiveItemC1Cliffe",
-		"PlayerAlertGiveItemCombatCliffe",
-		"PlayerFriendlyFireCliffe",
-		"PlayerFriendlyFire2Cliffe",
-		"PlayerFriendlyFireC1Cliffe",
-		"PlayerFriendlyFireFromCoachCliffe",
-		"PlayerFriendlyFireFromCoachNBCliffe",
-		"PlayerFriendlyFireFromMechanicCliffe",
-		"PlayerFriendlyFireFromMechanicC1Cliffe",
-		"PlayerFriendlyFireFromMechanicNBC1Cliffe",
-		"PlayerFriendlyFireFromProducerCliffe",
-		"PlayerFriendlyFireFromProducerC1Cliffe",
-		"PlayerFriendlyFireFromProducerNBCliffe",
-		"PlayerFriendlyFireNoBulletCliffe",
-		"PlayerFriendlyFireNoBulletC1Cliffe",
-		"PlayerFriendlyFireTankCliffe",
-		"PlayerFriendlyFireTankC1Cliffe",
-		"PlayerToTheRescueCliffe",
-		"PlayerToTheRescueRosCliffe",
-		"SurvivorTauntResponseCliffe",
-		"C4M1IdleComment01Cliffe",
-		"C4M2IdleCommentCane01Cliffe",
-		"PlayerChokeResponseCliffe",
-		"PlayerChokeResponseC1Cliffe",
-		"PlayerReloadingC502RunCliffe",
-		"PlayerReloadingTankCliffe",
-		"PlayerReloadingTankC1Cliffe",
-		"PlayerWitchChasingCliffe",
-		"PlayerWitchChasingC6M1Cliffe",
-		"PlayerWitchStartAttackCliffe",
-		"PlayerWitchStartAttackC6M1Cliffe",
-		"SurvivorCriticalHurtCliffe",
-		"SurvivorIncapacitatedHurtCliffe",
-		"SurvivorJockeyHurtMajorCliffe",
-		"SurvivorJockeyHurtMajorC1Cliffe",
-		"SurvivorMajorHurtCliffe",
-		"SurvivorMinorHurtCliffe",
-		"SurvivorReloadingCliffe",
-		"SurvivorReloadingIntenseCliffe",
-		"SurvivorReloadingC4M2Cliffe",
-		"PlayerHelpIncappedCliffe",
-		"PlayerHelpIncappedBleedingCliffe",
-		"PlayerHelpIncappedLethargicCliffe",
-		"HelpResponseGamblerCliffe",
-		"C2M1DoneFallingCliffe",
-		"C2M1FallingCliffe",
-		"C2M2CarouselOffCliffe",
-		"C2M2CarouselOnCliffe",
-		"_C2M2_CaroStart01Cliffe",
-		"C3M3BridgeButtonCliffe",
-		"PlayerChainSawUsedCliffe",
-		"PlayerRemarkC1M1AroundFireCliffe",
-		"PlayerRemarkC1M1OverTableCliffe",
-		"PlayerRemarkC1M1SearchRoomsCliffe",
-		"PlayerRemarkC1M1ThroughThisDoorCliffe",
-		"PlayerRemarkC1M3AlarmDoorsCliffe",
-		"PlayerRemarkC1M3CarefulWindowsCliffe",
-		"PlayerRemarkC1M3CEDAGoneCliffe",
-		"PlayerRemarkC1M3DiscoPantsCliffe",
-		"PlayerRemarkC1M3DownHereCliffe",
-		"PlayerRemarkC1M3DownTheEscalatorCliffe",
-		"PlayerRemarkC1M3OverHereCliffe",
-		"PlayerRemarkC1M3SearchRoomsCliffe",
-		"PlayerRemarkC1M3ThisWayCliffe",
-		"PlayerRemarkC1M3ThroughHereCliffe",
-		"PlayerRemarkC1M3TurnOffAlarm1Cliffe",
-		"PlayerRemarkC1M3TurnOffAlarm2Cliffe",
-		"PlayerRemarkC1M3TurnOffAlarm3Cliffe",
-		"PlayerRemarkC1M3UpEscalator1Cliffe",
-		"PlayerRemarkc2m1_carwreckageCliffe",
-		"PlayerRemarkc2m1_offrampCliffe",
-		"PlayerRemarkc2m1_checkroomsCliffe",
-		"PlayerRemarkc2m1_cliffCliffe",
-		"PlayerRemarkc2m1_downstairsCliffe",
-		"PlayerRemarkc2m1_bridgeoutCliffe",
-		"PlayerRemarkc2m1_followriverCliffe",
-		"PlayerRemarkc2m1_motelsignCliffe",
-		"PlayerRemarkc2m1_parkCliffe",
-		"PlayerRemarkc2m1_poolCliffe",
-		"PlayerRemarkc2m1_searchlightsCliffe",
-		"_c2m1_searchlights01Cliffe",
-		"_c2m1_searchlights02Cliffe",
-		"PlayerRemarkc2m1_throughhereCliffe",
-		"PlayerRemarkc2m1_throughmotelCliffe",
-		"PlayerRemarkc2m1_throughwindowCliffe",
-		"PlayerRemarkc2m1_uphillCliffe",
-		"PlayerRemarkc2m1_upstairsCliffe",
-		"PlayerRemarkc2m2_carouselCliffe",
-		"PlayerRemarkc2m2_carouselbuttonCliffe",
-		"PlayerRemarkc2m2_entrancesignCliffe",
-		"PlayerRemarkc2m2_lilpeanutCliffe",
-		"PlayerRemarkc2m2_ladderCliffe",
-		"PlayerRemarkc2m2_backalleyCliffe",
-		"_C2M2_LikeTatersCliffe",
-		"PlayerRemarkc2m2_thistall2Cliffe",
-		"_C2M2_ThisTall02Cliffe",
-		"PlayerRemarkc2m2_topofslideCliffe",
-		"PlayerRemarkc2m3_aroundblockCliffe",
-		"PlayerRemarkc2m3_cementriverCliffe",
-		"PlayerRemarkc2m3_coasteroffCliffe",
-		"_c2m3_coollight02Cliffe",
-		"PlayerRemarkc2m3_screamingoakCliffe",
-		"PlayerRemarkc2m3_freshairCliffe",
-		"PlayerRemarkc2m3_holeCliffe",
-		"PlayerRemarkc2m3_longesttunnelCliffe",
-		"PlayerRemarkc2m3_overfenceCliffe",
-		"PlayerRemarkc2m3_rubbleCliffe",
-		"PlayerRemarkc2m3_swanroomCliffe",
-		"PlayerRemarkc2m3_tracks01Cliffe",
-		"PlayerRemarkc2m3_ventCliffe",
-		"PlayerRemarkc2m3_wayblockedCliffe",
-		"PlayerRemarkc2m4_barnentryCliffe",
-		"PlayerRemarkc2m4_bumpercarsCliffe",
-		"PlayerRemarkc2m4_onroofCliffe",
-		"PlayerRemarkc2m4_pendoorCliffe",
-		"PlayerRemarkc2m4_moustachioCliffe",
-		"PlayerRemarkc2m4_pensCliffe",
-		"_C2M4_RibsCliffe",
-		"PlayerRemarkc2m4_stadiumCliffe",
-		"PlayerRemarkc2m4_upbarnCliffe",
-		"PlayerRemarkc2m4_evacCliffe",
-		"PlayerRemarkc2m5_button2Cliffe",
-		"PlayerRemarkc2m5_button2CoachCliffe",
-		"PlayerRemarkC3M2PlaneCrashCliffe",
-		"PlayerRemarkC3M2PlaneDoorNagCliffe",
-		"PlayerRemarkC3M2PlaneDoorNagaCliffe",
-		"PlayerRemarkC3M2RoadCliffe",
-		"PlayerRemarkC3M2SickOfSwampCliffe",
-		"PlayerRemarkC3M2Village1Cliffe",
-		"PlayerRemarkC3M3BodiesCliffe",
-		"PlayerRemarkC3M3LowerGateCliffe",
-		"PlayerRemarkC3M3MoreShacksCliffe",
-		"PlayerRemarkC3M3ThisWayCliffe",
-		"PlayerRemarkC3M3ThroughHereCliffe",
-		"PlayerRemarkC3M3ThroughThisHouseCliffe",
-		"PlayerRemarkC3M3UnsanitaryCliffe",
-		"PlayerRemarkC3M3UpHereCliffe",
-		"PlayerRemarkc3m4downroadCliffe",
-		"PlayerRemarkc3m4scaffoldCliffe",
-		"PlayerRemarkc4m1_boatCliffe",
-		"PlayerRemarkc4m1_carcrashCliffe",
-		"PlayerRemarkc4m1_garagesaleCliffe",
-		"PlayerRemarkc4m1_nogasCliffe",
-		"PlayerRemarkc4m1_nogasMilkRunCliffe",
-		"PlayerRemarkc4m1_nogasGunBagCliffe",
-		"PlayerRemarkc4m1_nogasToldCliffe",
-		"PlayerRemarkc4m1_playgroundfarCliffe",
-		"PlayerRemarkc4m1_playgroundnearCliffe",
-		"PlayerRemarkc4m1_throughhereACliffe",
-		"PlayerRemarkc4m2_gasinsidesignCliffe",
-		"PlayerRemarkc4m2_millentranceCliffe",
-		"PlayerRemarkc4m2_millentranceexitCliffe",
-		"PlayerRemarkc4m2_seegasstationCliffe",
-		"PlayerRemarkc4m2_streetblockedCliffe",
-		"PlayerRemarkc4m2_uprampCliffe",
-		"PlayerRemarkc4m2_upthestairsCliffe",
-		"PlayerRemarkc4m2_useelevatorCliffe",
-		"PlayerRemarkc4m2_waterpoolCliffe",
-		"PlayerRemarkc4m2_weatherCliffe",
-		"PlayerRemarkc4m3_caneCliffe",
-		"PlayerRemarkc4m3_crosshereCliffe",
-		"PlayerRemarkc4m3_downhereCliffe",
-		"PlayerRemarkc4m3_downstairsCliffe",
-		"PlayerRemarkc4m3_ducatelsignCliffe",
-		"PlayerRemarkc4m3_elevatorCliffe",
-		"PlayerRemarkc4m3_floodedCliffe",
-		"PlayerRemarkc4m3_overtankCliffe",
-		"PlayerRemarkc4m3_rainCliffe",
-		"PlayerRemarkc4m3_uppipesCliffe",
-		"PlayerRemarkc4m4_floodedCliffe",
-		"PlayerRemarkc4m4_garagesaleCliffe",
-		"PlayerRemarkc4m4_playgroundCliffe",
-		"PlayerRemarkc4m4_porchlightCliffe",
-		"PlayerRemarkc4m4_truckwreckCliffe",
-		"PlayerRemarkc4m4_useroofsCliffe",
-		"PlayerRemarkpathc2m1_abandonedcarsCliffe",
-		"PlayerRemarkpathc2m1_billboardCliffe",
-		"PlayerRemarkremark_caralarmCliffe",
-		"PlayerRemarkremark_MidnightRidersBusCliffe",
-		"PlayerRemarkWorldC1M1CedaMapsCliffe",
-		"PlayerRemarkWorldC1M1KnowBoomerCliffe",
-		"PlayerRemarkWorldC1M1DownHereCliffe",
-		"PlayerRemarkWorldC1M1ElevatorBrokenCliffe",
-		"C1M1CrumbsCliffe",
-		"PlayerRemarkWorldC1M1FireRoomCliffe",
-		"PlayerRemarkWorldC1M1FireSpreadingCliffe",
-		"PlayerRemarkWorldC1M1FirstCliffe",
-		"PlayerRemarkWorldC1M1LedgeCliffe",
-		"PlayerRemarkWorldC1M2CloseCliffe",
-		"PlayerRemarkWorldC1M2DownStairsCliffe",
-		"PlayerRemarkWorldC1M2AbandonedCliffe",
-		"_C1M2AbandonedCliffe",
-		"PlayerRemarkWorldC1M2DumpsterCliffe",
-		"PlayerRemarkWorldC1M2InHereCliffe",
-		"PlayerRemarkWorldC1M2JumpTruckCliffe",
-		"PlayerRemarkWorldC1M2MadeItCliffe",
-		"PlayerRemarkWorldC1M2UpStairsCliffe",
-		"PlayerRemarkWorldC3M1FeedGatorCliffe",
-		"PlayerRemarkWorldC3M1FerryNagCliffe",
-		"PlayerRemarkWorldC502AlarmButtonCliffe",
-		"PlayerRemarkWorldC502AlarmStoppedCliffe",
-		"PlayerRemarkWorldC502AlleyCliffe",
-		"PlayerRemarkWorldC502BusStory2Cliffe",
-		"PlayerRemarkWorldC502NotZombies3Cliffe",
-		"PlayerRemarkWorldC502SmellCliffe",
-		"PlayerRemarkWorldC502SmellBathCliffe",
-		"PlayerRemarkWorldC502SmellBath3Cliffe",
-		"PlayerRemarkWorldC6M1_AcrossHereCliffe",
-		"PlayerRemarkWorldC6M1_AlleyBelowCliffe",
-		"PlayerRemarkWorldC6M1_AlleyIntoBuildingCliffe",
-		"PlayerRemarkWorldC6M1_InAptsCliffe",
-		"PlayerRemarkWorldC6M1_IntoTheStoreCliffe",
-		"PlayerRemarkWorldC6M1_SafeRoomAlleyCliffe",
-		"PlayerRemarkWorldC6M1_ThroughBarCliffe",
-		"PlayerRemarkWorldC6M1_UpHereCliffe",
-		"PlayerRemarkWorldC6M1_UpTheStairsCliffe",
-		"PlayerRemarkWorldC6M1_UpTheStairs2Cliffe",
-		"PlayerRemarkWorldC6M1_WeddingWarnCliffe",
-		"PlayerRemarkWorldC6M1_WeddingWarnAngelCliffe",
-		"PlayerRemarkWorldC6M2_AcrossPlankCliffe",
-		"PlayerRemarkWorldC6M2_AfterGate1Cliffe",
-		"PlayerRemarkWorldC6M2_AfterGate2Cliffe",
-		"PlayerRemarkWorldC6M2_DownHereCliffe",
-		"PlayerRemarkWorldC6M2_DownIntoBuildingCliffe",
-		"PlayerRemarkWorldC6M2_FinalLadderCliffe",
-		"PlayerRemarkWorldC6M2_FinalWaterCliffe",
-		"PlayerRemarkWorldC6M2_FinalWaterGoGoCliffe",
-		"PlayerRemarkWorldC6M2_InJazzClubCliffe",
-		"PlayerRemarkWorldC6M2_InSewer1Cliffe",
-		"PlayerRemarkWorldC6M2_InSewer2Cliffe",
-		"PlayerRemarkWorldC6M2_InSewerLadder1Cliffe",
-		"PlayerRemarkWorldC6M2_IntoConstructionCliffe",
-		"PlayerRemarkWorldC6M2_IntoPoolHallCliffe",
-		"PlayerRemarkWorldC6M2_JukeBoxCliffe",
-		"PlayerRemarkWorldC6M2_JumpDownCliffe",
-		"C6M2FallingCliffe",
-		"PlayerRemarkWorldC6M2_OnTourWalk1Cliffe",
-		"PlayerRemarkWorldC6M2_OnTourWalk2Cliffe",
-		"PlayerRemarkWorldC6M2_OnTourWalk3Cliffe",
-		"PlayerRemarkWorldC6M2_OpenGate1Cliffe",
-		"PlayerRemarkWorldC6M2_OpenGate2Cliffe",
-		"PlayerRemarkWorldC6M2_OpenGate2EllisCliffe",
-		"PlayerRemarkWorldC6M2_Phase2Cliffe",
-		"PlayerRemarkWorldC6M2_Phase2DownCliffe",
-		"PlayerRemarkWorldC6M2_Phase2DownIntenseCliffe",
-		"PlayerRemarkWorldC6M2_PostGate1xCliffe",
-		"PlayerRemarkWorldC6M2_SuitcaseCliffe",
-		"PlayerRemarkWorldC6M2_TattooCliffe",
-		"PlayerRemarkWorldC6M2_TattooZoeyCliffe",
-		"PlayerRemarkWorldC6M2_TourEntranceCliffe",
-		"PlayerRemarkWorldC6M2_UpCatWalkCliffe",
-		"PlayerRemarkWorldC6M2_UpStairsCliffe",
-		"PlayerRemarkWorldC6M2_UpStairs2Cliffe",
-		"PlayerRemarkWorldC6M3_BridgeRunCliffe",
-		"PlayerRemarkWorldC6M3_ByBridgeCliffe",
-		"PlayerRemarkWorldC6M3_ByBridgeLossCliffe",
-		"PlayerRemarkWorldC6M3_BillCliffe",
-		"WorldC6M3LossCliffe",
-		"WorldC6M3Loss2Cliffe",
-		"WorldC6M3Loss3Cliffe",
-		"PlayerRemarkWorldFootLockerCliffe",
-		"PlayerWorldSignHurricane2Cliffe",
-		"PlayerRemarkWorldSignRestricted2Cliffe",
-		"PlayerWorldSignC5AlarmWillSoundCliffe",
-		"PlayerWorldSignC5AlarmWillSound3bCliffe",
-		"PlayerWorldSignC5AlarmWillSound3cCliffe",
-		"RespondAffirmativeCliffe",
-		"PlayerFollowMeCliffe",
-		"PlayerHelpCliffe",
-		"PlayerHurryUpCliffe",
-		"PlayerHurryUpC4M2Cliffe",
-		"PlayerKillThatLightCliffe",
-		"PlayerLeadOnCliffe",
-		"PlayerMoveOnCliffe",
-		"PlayerStayTogetherCliffe",
-		"PlayerWatchOutBehindCliffe",
-		"PlayerAskReadyCliffe",
-		"PlayerAskReadyC1Cliffe",
-		"PlayerImWithYouCliffe",
-		"PlayerLaughCliffe",
-		"PlayerLostCallCliffe",
-		"PlayerNiceJobResponseCliffe",
-		"PlayerNoCliffe",
-		"PlayerNoFemaleCliffe",
-		"PlayerNoEllisCliffe",
-		"PlayerAnswerLostCallCliffe",
-		"KillStealCalledOutCliffe",
-		"PlayerSorryCliffe",
-		"PlayerSorryFFCliffe",
-		"PlayerThanksCliffe",
-		"PlayerYellRunCliffe",
-		"PlayerYesCliffe",
-		"PlayerYouAreWelcomeCliffe",
-		"PlayerYouAreWelcomeC1Cliffe",
-		"YouAreWelcomeCoachCliffe",
-		"YouAreWelcomeMechanicCliffe",
-		"YouAreWelcomeProducerCliffe",
-		"BotAttentionBattleCliffe",
-		"BotNoteHumanAttentionCliffe",
-		"PlayerNegativeCliffe",
-		"PlayerShootCarNotCliffe",
-		"PlayerShootCarCliffe",
-		"PlayerHeardBoomerCliffe",
-		"PlayerHeardHunterCliffe",
-		"PlayerHeardSmokerCliffe",
-		"PlayerHeardChargerCliffe",
-		"PlayerHeardSpitterCliffe",
-		"PlayerHeardJockeyCliffe",
-		"PlayerHeardBoomerC1Cliffe",
-		"PlayerHeardJockeyC1Cliffe",
-		"PlayerHeardTankCliffe",
-		"PlayerHeardWitchCliffe",
-		"PlayerHurrahCliffe",
-		"PlayerWarnCarefulCliffe",
-		"SurvivorSpottedWorldFarCliffe",
-		"C6M3_PourFinishedCliffe",
-		"GasPourDoneSCCliffe",
-		"GasPourSCCliffe",
-		"GasPourSCSoloCliffe",
-		"GrabbingGasSCCliffe",
-		"PlayerShotGasCanCliffe",
-		"ScavengeStartCliffe",
-		"PlayerCommentJockeyCliffe",
-		"PlayerCommentJockey2Cliffe",
-		"C4M2LockTheDoorCheckPointCliffe",
-		"GoingToDieCoachCoachCliffe",
-		"PlayerAlertGiveItemStopCliffe",
-		"PlayerCoachPouncedCliffe",
-		"PlayerCoachPouncedC1Cliffe",
-		"PlayerEatPillsCliffe",
-		"PlayerGetInsideCheckPointCliffe",
-		"PlayerStayTogetherSaferoomCliffe",
-		"PlayerGetInsideCheckPointC2M2Cliffe",
-		"PlayerGetInsideCheckPointC4M3Cliffe",
-		"PlayerGrabbedByJockeyCliffe",
-		"PlayerGrabbedByJockeyC1Cliffe",
-		"PlayerGrenadeMolotovCliffe",
-		"PlayerGrenadePipeBombCliffe",
-		"PlayerGrenadeVomitJarCliffe",
-		"PlayerGrenadeVomitJarC1Cliffe",
-		"PlayerIncapacitatedInitialCliffe",
-		"PlayerIncapacitatedInitialC1M2Cliffe",
-		"PlayerKillConfirmationCliffe",
-		"PlayerKillConfirmationC1M1Cliffe",
-		"PlayerKillConfirmationC1M1MeleeCliffe",
-		"RightfulKillerCliffe",
-		"PlayerKillTankConfirmationCliffe",
-		"PlayerKillTankNotHealthyCliffe",
-		"PlayerKillTankConfirmationC1M2Cliffe",
-		"PlayerLockTheDoorCheckPointCliffe",
-		"PlayerLockTheDoorCheckPointC1Cliffe",
-		"PlayerMechanicPouncedCliffe",
-		"PlayerProducerPouncedCliffe",
-		"PlayerProducerPouncedC1Cliffe",
-		"PlayerRevivedByDefibrillatorCliffe",
-		"PlayerRevivedByDefibrillator2Cliffe",
-		"PlayerSuggestHealthGenericCliffe",
-		"PlayerSuggestHealthC1Cliffe",
-		"PlayerSuggestHealthCoachCliffe",
-		"PlayerSuggestHealthMechanicCliffe",
-		"PlayerSuggestHealthProducerCliffe",
-		"PlayerTransitionCliffe",
-		"PlayerTransitionCloseCliffe",
-		"PlayerTransitionSoloCliffe",
-		"PlayerTransitionC1M2Cliffe",
-		"PlayerTransitionCloseC1M2Cliffe",
-		"PlayerTransitionC1M3Cliffe",
-		"PlayerTransitionC2M1Cliffe",
-		"PlayerTransitionC2M4Cliffe",
-		"PlayerTransitionC4M2Cliffe",
-		"PlayerTransitionC4M3Cliffe",
-		"PlayerTransitionC5M4Cliffe",
-		"PlayerTransitionCloseC6M1Cliffe",
-		"PlayerUsingDefibrillatorCliffe",
-		"PlayerWarnHeardBoomerCliffe",
-		"PlayerWarnHeardJockeyC1Cliffe",
-		"PlayerWarnHeardBoomerC1Cliffe",
-		"PlayerWarnHeardChargerCliffe",
-		"PlayerWarnHeardHunterCliffe",
-		"PlayerWarnHeardJockeyCliffe",
-		"PlayerWarnHeardSmokerCliffe",
-		"PlayerWarnHeardSpitterCliffe",
-		"PlayerWarnHeardWitchCliffe",
-		"PlayerWarnHeardWitchC1Cliffe",
-		"PlayerWarnHeardWitchC4M3Cliffe",
-		"PlayerWarnMegaMobCliffe",
-		"PlayerWarnWitchAngryCliffe",
-		"PlayerWorldInfectedDet2Cliffe",
-		"SurvivorCaughtVomitCliffe",
-		"SurvivorchargerpoundCliffe",
-		"SurvivorchargerpoundC1Cliffe",
-		"SurvivorchargerpoundC6M3Cliffe",
-		"SurvivorCoughingCliffe",
-		"SurvivorDeathCliffe",
-		"SurvivorGooedBySpitterCliffe",
-		"SurvivorGooedBySpitterC1Cliffe",
-		"SurvivorGrabbedByTongueCliffe",
-		"SurvivorGrabbedByTongueC1Cliffe",
-		"SurvivorNearCheckpointCliffe",
-		"SurvivorNearCheckpointC1M1Cliffe",
-		"SurvivorNearCheckpointC1M3Cliffe",
-		"SurvivorNearCheckpointC2M1Cliffe",
-		"SurvivorNearCheckpointC2M2Cliffe",
-		"SurvivorNearCheckpointC2M4Cliffe",
-		"SurvivorNearCheckpointC3M2Cliffe",
-		"SurvivorNearCheckpointC4M1Cliffe",
-		"SurvivorNearCheckpointC4M2Cliffe",
-		"SurvivorNearCheckpointC4M3Cliffe",
-		"SurvivorNearCheckpointC4M4Cliffe",
-		"SurvivorNearCheckpointC5M2Cliffe",
-		"SurvivorNearCheckpointC5M4Cliffe",
-		"SurvivorNearCheckpointC6M1Cliffe",
-		"SurvivorNearCheckpointC6M2Cliffe",
-		"SurvivorNearFinaleCliffe",
-		"SurvivorNearFinaleC2M5Cliffe",
-		"SurvivorNearFinaleC3M4Cliffe",
-		"SurvivorNearFinaleC4M5Cliffe",
-		"SurvivorPouncedByHunterCliffe",
-		"SurvivorTankPoundCliffe",
-		"SurvivorTankPoundC1Cliffe",
-		"SurvivorVocalizeBackUpCliffe",
-		"SurvivorVocalizeEmphaticGoCliffe",
-		"SurvivorVocalizeGoingToDieCliffe",
-		"SurvivorVocalizeGoingToDie3Cliffe",
-		"SurvivorVocalizeLookOutCliffe",
-		"SurvivorVocalizeThisWayCliffe",
-		"SurvivorVocalizeWaitHereCliffe",
-		"SurvivorWarnSpitterIncomingCliffe",
-		"SurvivorWarnSpitterIncomingC1Cliffe",
-		"PlayerLedgeHangEndCliffe",
-		"PlayerLedgeHangMiddleCliffe",
-		"PlayerLedgeHangStartCliffe",
-		"SurvivorFirstDeathCliffe",
-		"DeathOneCliffe",
-		"DoubleDeath2Cliffe",
-		"DoubleDeath2MechanicCliffe",
-		"TeamKillCliffe",
-		"TeamKillFromMechanicCliffe",
-		"TeamKillFromProducerCliffe",
-		"C6M1TakeSubMachineGunCliffe",
-		"C6M1TakeSubMachineGunZoeyIntroCliffe",
-		"SurvivorDeployUpExplosivesCliffe",
-		"SurvivorDeployUpIncendiaryCliffe",
-		"SurvivorPickupAdrenalineCliffe",
-		"SurvivorPickupAutoShotgunCliffe",
-		"SurvivorPickupbaseball_batCliffe",
-		"SurvivorPickupbaseShovelCliffe",
-		"SurvivorPickupchainsawCliffe",
-		"SurvivorPickupcricket_batCliffe",
-		"SurvivorPickupCricketBatCliffe",
-		"SurvivorPickupKnifeCliffe",
-		"SurvivorPickupCrowBarCliffe",
-		"SurvivorPickupDefibrillatorCliffe",
-		"SurvivorPickupelectric_guitarCliffe",
-		"SurvivorPickupFireAxeCliffe",
-		"SurvivorPickupFirstAidKitCliffe",
-		"SurvivorPickupFirstSMGCliffe",
-		"SurvivorPickupFirstSMG2AliveCliffe",
-		"SurvivorPickupFirstShotgunCliffe",
-		"SurvivorPickupFirstPistolCliffe",
-		"SurvivorPickupFryingPanCliffe",
-		"SurvivorPickupGolfCLubCliffe",
-		"SurvivorPickupGrenadeLauncherCliffe",
-		"SurvivorPickupGunC1M2Cliffe",
-		"SurvivorPickupHuntingRifleCliffe",
-		"SurvivorPickupIncendiaryAmmoCliffe",
-		"SurvivorPickupKatanaCliffe",
-		"SurvivorPickupPitchforkCliffe",
-		"SurvivorPickupLaserSightsAlwaysCliffe",
-		"SurvivorPickupM60Cliffe",
-		"SurvivorPickupMacheteCliffe",
-		"SurvivorPickupMagnumCliffe",
-		"SurvivorPickupMolotovCliffe",
-		"SurvivorPickupPainPillsCliffe",
-		"SurvivorPickupPipeBombCliffe",
-		"SurvivorPickupPumpShotgunCliffe",
-		"SurvivorPickupRifleCliffe",
-		"SurvivorPickupSecondPistolCliffe",
-		"SurvivorPickupSMGCliffe",
-		"SurvivorPickuptonfaCliffe",
-		"SurvivorPickupUpExplosiveAmmoCliffe",
-		"SurvivorPickupUpExplosivesCliffe",
-		"SurvivorPickupUpIncendiaryCliffe",
-		"SurvivorPickupVomitJarCliffe",
-		"SurvivorPickupVomitJarAlwaysC1Cliffe",
-		"Player_TakeVomitJarCliffe",
-		"PlayerGettingRevivedCliffe",
-		"PlayerHealOtherCliffe",
-		"PlayerHealOtherC1Cliffe",
-		"PlayerHealOtherCombatCliffe",
-		"PlayerLedgeSaveCliffe",
-		"PlayerReviveFriendCliffe",
-		"PlayerReviveFriendBCliffe",
-		"PlayerReviveFriendBCoachCliffe",
-		"PlayerReviveFriendBEllisCliffe",
-		"PlayerReviveFriendCriticalCliffe",
-		"PlayerReviveFriendLoudCliffe",
-		"PlayerReviveFriendFFCliffe",
-		"_C1M1_ElevatorHelloCliffe",
-		"_C1M1_ElevatorHelloAllAliveExtra1Cliffe",
-		"_C1M1_ElevatorHelloAllAliveExtra2Cliffe",
-		"_C1M1_ElevatorHello01bCliffe",
-		"_C1M1_ElevatorHello10cCliffe",
-		"_C1M1_ElevatorHello04cCliffe",
-		"_C1M1_ElevatorHello04eCliffe",
-		"_C1M1_ElevatorHello04dCliffe",
-		"_C1M1_ElevatorHello13dCliffe",
-		"_c1m4startelevator5aCliffe",
-		"_c1m4startelevator6a1Cliffe",
-		"_c1m4startelevatorLastCliffe",
-		"_C2M1_Fall03Cliffe",
-		"_C2M1_Fall05Cliffe",
-		"_c2m1_searchlights03Cliffe",
-		"_C2M1abandoned02Cliffe",
-		"_C2M1Billboard01Cliffe",
-		"_C2M2_Bathroom01Cliffe",
-		"_C2M2_CaroButton01Cliffe",
-		"_C2M2_Kiddie01Cliffe",
-		"_C2M2_Kiddie04Cliffe",
-		"_C2M2_SeeSafehouse01Cliffe",
-		"_C2M2_Steak01Cliffe",
-		"_C2M2_ThisTall01Cliffe",
-		"_c2m3_coaster02Cliffe",
-		"_c2m3_coaster05Cliffe",
-		"_c2m3_hole01Cliffe",
-		"_c2m3_water01Cliffe",
-		"_C2M4_GateOpen001Cliffe",
-		"_C4_BigStormHits01Cliffe",
-		"_C4_BigStormHits02Cliffe",
-		"_c4m1_rainresponseCliffe",
-		"_c4m1Intro03Cliffe",
-		"_c4m1Intro04Cliffe",
-		"_c4m1Intro05Cliffe",
-		"_c4m1Intro07Cliffe",
-		"_c4m1Intro08Cliffe",
-		"_c4m1Intro09Cliffe",
-		"_c4m1Intro11Cliffe",
-		"_c4m1Intro13Cliffe",
-		"_c4m1Intro02Cliffe",
-		"_c4m2_caneyell01Cliffe",
-		"_c4m2_ElevatorHere01Cliffe",
-		"_c4m2_seestation01Cliffe",
-		"_c4m2_seestation03Cliffe",
-		"_c4m2_streetblocked01Cliffe",
-		"_c4m2_streetblocked01bCliffe",
-		"_c4m2_Witchville01Cliffe",
-		"_c4m2_Witchville05Cliffe",
-		"_c4m3_rain01Cliffe",
-		"_c4m3_startsafe02Cliffe",
-		"_c4m3_startsafe04Cliffe",
-		"_C4M5_BoatComing01Cliffe",
-		"_C4M5_FinaleStart01Cliffe",
-		"_C4M5_Intro02Cliffe",
-		"_C4M5_Intro04Cliffe",
-		"PlayerRemarkc4m5_BurgerTankCliffe",
-		"_introc1m1Cliffe",
-		"_introc1m1AloneCliffe",
-		"_introc1m1a01Cliffe",
-		"_introc1m1a04Cliffe",
-		"_introc1m1b03Cliffe",
-		"_introc1m1b04Cliffe",
-		"_introc1m1helileftCliffe",
-		"_introc1m1b05Cliffe",
-		"_introc1m1b06Cliffe",
-		"_introc1m1b08donutsCliffe",
-		"_introc1m1b09Cliffe",
-		"_introc1m1b10Cliffe",
-		"_introc1m1lastCliffe",
-		"_introc1m1b11Cliffe",
-		"_introc1m1MovieIntroCliffe",
-		"_introc1m1c02Cliffe",
-		"c1m1_elevator_door_openCliffe",
-		"c1m1_elevator_ready2Cliffe",
-		"_C1M1_ElevatorHello2AliveNickIntro1Cliffe",
-		"_C1M1_ElevatorHello2AliveExtra1Cliffe",
-		"_C1M1_ElevatorHello2AliveExtra2Cliffe",
-		"_C1M1_ElevatorHello3AliveExtra1Cliffe",
-		"_C1M1_ElevatorHello3AliveNickIntro1Cliffe",
-		"_C1M1_ElevatorHello3AliveNickIntro2Cliffe",
-		"_C1M1_ElevatorHello3AliveName1Cliffe",
-		"_C1M1_ElevatorHello3AliveName2RCliffe",
-		"_C1M1_ElevatorHello3AliveName2Cliffe",
-		"_C1M1_ElevatorHello3AliveNameDeadRCliffe",
-		"_C1M1_ElevatorHello3AliveNameDeadECliffe",
-		"_C1M1_ElevatorHello3AliveNameDeadCCliffe",
-		"C1M1CoughCliffe",
-		"C1M3AlarmOffaCliffe",
-		"C1M3SafeRoomCliffe",
-		"C1M3SafeRoom2aCliffe",
-		"C1M3SafeRoom2bCliffe",
-		"C1M4NearFinale02aCliffe",
-		"C1M4NearFinale02cCliffe",
-		"C1M4NearFinale02eCliffe",
-		"c1m4NearFinale1Cliffe",
-		"C1M4SafeRoomCliffe",
-		"C1M4SafeRoom2a2Cliffe",
-		"C1M4SafeRoom2a4Cliffe",
-		"C1M4SafeRoomEndCliffe",
-		"C2M1IntroStartCliffe",
-		"C2M1Intro002Cliffe",
-		"C2M1Intro_400Cliffe",
-		"c4m1_InBurgerTank01Cliffe",
-		"C4FinaleStartCliffe",
-		"PlayerRemarkc4m1_InBurgerTankCliffe",
-		"c4m1_nogas01Cliffe",
-		"c4m1_nogas02Cliffe",
-		"c4m1_nogas04Cliffe",
-		"c4m1_nogas05Cliffe",
-		"GasPour20MoreCliffe",
-		"GasPour10MoreTalkCliffe",
-		"GasPour1MoreCliffe",
-		"GasPour2MoreCliffe",
-		"GasPour3MoreCliffe",
-		"GasPour5MoreCliffe",
-		"HistoricTour01aCliffe",
-		"Player_SeeMudmen2aCliffe",
-		"Player_TakeBatR2Cliffe",
-		"Player_KnowHunterC1Cliffe",
-		"Player_KnowBoomerC1Cliffe",
-		"Player_KnowChargerC1Cliffe",
-		"Player_KnowJockeyC1Cliffe",
-		"Player_KnowSmokerC1Cliffe",
-		"Player_KnowSpitterC1Cliffe",
-		"Player_NotPackingHeatCliffe",
-		"Player_NotPackingHeat2Cliffe",
-		"Player_WhinyNickCliffe",
-		"C1M2TankInfoCliffe",
-		"PlayerCr0wnedBrideCliffe",
-		"PlayerCr0wnedBrideCoachCliffe",
-		"PlayerCr0wnedBrideProducerCliffe",
-		"WeddingWitchDead02Cliffe",
-		"WeddingWitchDead03Cliffe",
-		"WeddingWitchDead04Cliffe",
-		"WorldIntroC31a1Cliffe",
-		"WorldIntroC31a3Cliffe",
-		"WorldIntroC31b1Cliffe",
-		"WorldIntroC31c2Cliffe",
-		"WorldIntroC31c4Cliffe",
-		"WorldIntroC31d1Cliffe",
-		"WorldIntroC31e3aCliffe",
-		"WorldIntroC3f2Cliffe",
-		"PlayerCoverMeHealCliffe",
-		"PlayerCoverMeHealC1Cliffe",
-		"Player_LostCallC6M3Cliffe",
-		"AutoPlayerLostCallCliffe",
-		"SurvivorSpottedChainsawCliffe",
-		"SurvivorSpottedcricket_batCliffe",
-		"SurvivorSpottedcrowbarCliffe",
-		"SurvivorSpottedGolfClubCliffe",
-		"SurvivorSpottedGuitarCliffe",
-		"SurvivorSpottedKatanaCliffe",
-		"SurvivorSpottedLaserSightsCliffe",
-		"SurvivorSpottedM60Cliffe",
-		"SurvivorSpottedMacheteCliffe",
-		"SurvivorSpottedMagnumCliffe",
-		"SurvivorSpottedtonfaCliffe",
-		"SurvivorSpottedShotgunCliffe",
-		"SurvivorSpottedARCliffe",
-		"SurvivorSpottedSecondPistolCliffe",
-		"SurvivorSpottedWeaponCliffe",
-		"SurvivorSpottedMeleeWeaponCliffe",
-		"SurvivorSpottedPistolCliffe",
-		"AskWhatCliffe",
-		"C13M1IntroStartCliffe",
-		"C13M1Intro2Cliffe",
-		"C13M1Intro3Cliffe",
-		"C13M1IntroLastCliffe",
-		"C13M1IntroLocationLastCliffe",
-		"RemarkC13M1ThroughHereCliffe",
-		"RemarkC13M1PreBunkerOpenCliffe",
-		"RemarkC13M2UpHillCliffe",
-		"C13M2TankApproachingCliffe",
-		"C13M2BarrelsIgnitedCliffe",
-		"C13M2Barrels1Cliffe",
-		"C13M2Barrels2Cliffe",
-		"C13M3ApproachingTankerCliffe",
-		"C13M3Tanker1Cliffe",
-		"C13M3Tanker2Cliffe",
-		"C13M3Tanker3Cliffe",
-		"C13M3OnScaffoldCliffe",
-		"C13M3AirstrikeCliffe",
-		"C13M3Airstrike2Cliffe",
-		"C13M4Button1Cliffe",
-		"C13M4FinaleTriggeredCliffe",
-		"C13M4FinaleStart2Cliffe",
-		"C13M4NoticedHelicopterCliffe",
-		"C13M4AlmostThereCliffe",
-		"C13M4SpottedVehicleCliffe",
-		"C13M4GetToVehicleCliffe",
-		// gambler_dlc1.txt ====================================================================================================
-		"L4D1PlayerNiceShotCliffe",
-		"L4D1PlayerNiceShotFrancisCliffe",
-		"L4D1PlayerNiceShotLouisCliffe",
-		"L4D1PlayerNiceShotZoeyCliffe",
-		"C6M3GasPourCliffe",
-		"C6M1_IntotheparkNoHealthCliffe",
-		"C6M1Intro_01Biker05Cliffe",
-		"C6M1Intro_07bCliffe",
-		"C6M1Intro_09aCliffe",
-		"C6M1Intro_09bCliffe",
-		"C6M1Intro_09dCliffe",
-		"C6M1Intro_10eCliffe",
-		"C6M1Intro_11dCliffe",
-		"C6M1Intro_14aCliffe",
-		"C6M1Intro_14cCliffe",
-		"C6M1Intro_15aCliffe",
-		"C6M1Intro_15eCliffe",
-		"C6M1Intro_16aCliffe",
-		"LeavingC6M1StartCliffe",
-		"RemWorldC6M1_WeddingWarn02Cliffe",
-		"WorldC6M1_HistoricTourCliffe",
-		"WorldC6M1_PostWedding02aCliffe",
-		"WorldC6M1_WeddingWarn05aCliffe",
-		"C6M2_OpenGate1Cliffe",
-		"C6M2_OpenGate1aCliffe",
-		"C6M2_OpenGate2Cliffe",
-		"C6M2SafeRoomCliffe",
-		"DLC1_C6M2_SafeRoomConvo01Cliffe",
-		"DLC1_C6M2_SafeRoomConvo01bCliffe",
-		"DLC1_C6M2_SafeRoomConvo02Cliffe",
-		"DLC1_C6M2_SafeRoomConvo02bCliffe",
-		"DLC1_C6M2_SafeRoomConvo06aCliffe",
-		"DLC1_C6M2_SafeRoomConvo07aCliffe",
-		"DLC1_C6M2_SafeRoomConvo08Cliffe",
-		"DLC1_C6M2_SafeRoomConvo08aCliffe",
-		"DLC1_C6M2_SafeRoomConvo08cCliffe",
-		"DLC1_C6M2_SafeRoomConvo08eCliffe",
-		"DLC1_C6M2_SafeRoomConvo09bCliffe",
-		"DLC1_C6M2_SafeRoomConvo10Cliffe",
-		"DLC1_C6M2_SafeRoomConvo10bCliffe",
-		"DLC1_C6M2_SafeRoomConvo10dCliffe",
-		"DLC1_C6M2_SafeRoomConvo11bCliffe",
-		"DLC1_C6M2_SafeRoomConvo12aCliffe",
-		"DLC1_C6M2_SafeRoomConvo12cCliffe",
-		"DLC1_C6M2_SafeRoomConvo13aCliffe",
-		"DLC1_C6M2_SafeRoomConvo13cCliffe",
-		"DLC1_C6M2_SafeRoomConvo14fCliffe",
-		"DLC1_C6M2_SafeRoomConvo15cCliffe",
-		"WorldC6M2_AfterGate201aCliffe",
-		"WorldC6M2_FinalWater01aCliffe",
-		"WorldC6M2_InSewer101cCliffe",
-		"WorldC6M2_InSewer102bCliffe",
-		"WorldC6M2_InSewer201aCliffe",
-		"WorldC6M2_InSewer202aCliffe",
-		"WorldC6M2_InSewerLadder101aCliffe",
-		"WorldC6M2_OnTourWalk101aCliffe",
-		"WorldC6M2_OnTourWalk102aCliffe",
-		"WorldC6M2_Tattoo01b_Cliffe",
-		"WorldC6M2_Tattoo03a_Cliffe",
-		"C6M3_BridgeDownCliffe",
-		"C6M3_BridgeGettoCarCliffe",
-		"C6M3_elevatorCliffe",
-		"C6M3_elevatorFrancisCliffe",
-		"C6M3_GivenItemBikerCliffe",
-		"C6M3_GivenItemTeenGirlCliffe",
-		"C6M3SafeRoomCliffe",
-		"DLC1_C6M3_SafeRoomConvo02Cliffe",
-		"DLC1_C6M3_SafeRoomConvo02bCliffe",
-		"DLC1_C6M3_SafeRoomConvo02dCliffe",
-		"DLC1_C6M3_SafeRoomConvo03bCliffe",
-		"DLC1_C6M3_SafeRoomConvo03dCliffe",
-		"DLC1_C6M3_SafeRoomConvo04cCliffe",
-		"DLC1_C6M3_SafeRoomConvo05Cliffe",
-		"DLC1_C6M3_SafeRoomConvo05bCliffe",
-		"DLC1_C6M3_SafeRoomConvo05dCliffe",
-		"IncapBounceCliffe",
-		"C6M3_CansDoneCliffe",
-		"SurvivorSpottedFallenCliffe",
-		"PlayerWitchChasingC6M1Cliffe",
-		"PlayerRemarkremark_MidnightRidersBusCliffe",
-		"PlayerRemarkWorldC6M1_AcrossHereCliffe",
-		"PlayerRemarkWorldC6M1_AlleyBelowCliffe",
-		"PlayerRemarkWorldC6M1_AlleyIntoBuildingCliffe",
-		"PlayerRemarkWorldC6M1_InAptsCliffe",
-		"PlayerRemarkWorldC6M1_IntotheparkCliffe",
-		"PlayerRemarkWorldC6M1_IntoThePark2Cliffe",
-		"PlayerRemarkWorldC6M1_IntoTheStoreCliffe",
-		"PlayerRemarkWorldC6M1_SafeRoomAlleyCliffe",
-		"PlayerRemarkWorldC6M1_ThroughBarCliffe",
-		"PlayerRemarkWorldC6M1_UpHereCliffe",
-		"PlayerRemarkWorldC6M1_UpTheStairsCliffe",
-		"PlayerRemarkWorldC6M1_UpTheStairs2Cliffe",
-		"PlayerRemarkWorldC6M1_WeddingWarnCliffe",
-		"PlayerRemarkWorldC6M1_WeddingWarn1Cliffe",
-		"PlayerRemarkWorldC6M1_WeddingWarn2Cliffe",
-		"PlayerRemarkWorldC6M1_WeddingWarn3Cliffe",
-		"PlayerRemarkWorldC6M1_WeddingWarnAngelCliffe",
-		"PlayerRemarkWorldC6M1_WeddingWarnEllisCliffe",
-		"PlayerRemarkWorldC6M2_AcrossPlankCliffe",
-		"PlayerRemarkWorldC6M2_AfterGate1Cliffe",
-		"PlayerRemarkWorldC6M2_AfterGate2Cliffe",
-		"PlayerRemarkWorldC6M2_DownHereCliffe",
-		"PlayerRemarkWorldC6M2_DownIntoBuildingCliffe",
-		"PlayerRemarkWorldC6M2_FinalLadderCliffe",
-		"PlayerRemarkWorldC6M2_FinalWaterCliffe",
-		"PlayerRemarkWorldC6M2_FinalWaterGoGoCliffe",
-		"PlayerRemarkWorldC6M2_InJazzClubCliffe",
-		"PlayerRemarkWorldC6M2_InSewer1Cliffe",
-		"PlayerRemarkWorldC6M2_InSewer2Cliffe",
-		"PlayerRemarkWorldC6M2_InSewerLadder1Cliffe",
-		"PlayerRemarkWorldC6M2_IntoConstructionCliffe",
-		"PlayerRemarkWorldC6M2_IntoPoolHallCliffe",
-		"PlayerRemarkWorldC6M2_JukeBoxCliffe",
-		"PlayerRemarkWorldC6M2_JumpDownCliffe",
-		"PlayerRemarkWorldC6M2_OnTourWalk1Cliffe",
-		"PlayerRemarkWorldC6M2_OnTourWalk2Cliffe",
-		"PlayerRemarkWorldC6M2_OnTourWalk3Cliffe",
-		"PlayerRemarkWorldC6M2_OpenGate1Cliffe",
-		"PlayerRemarkWorldC6M2_OpenGate2Cliffe",
-		"PlayerRemarkWorldC6M2_Phase2Cliffe",
-		"PlayerRemarkWorldC6M2_Phase2DownCliffe",
-		"PlayerRemarkWorldC6M2_Phase2DownIntenseCliffe",
-		"PlayerRemarkWorldC6M2_PostGate1xCliffe",
-		"PlayerRemarkWorldC6M2_SafeRoomCliffe",
-		"PlayerRemarkWorldC6M2_SuitcaseCliffe",
-		"PlayerRemarkWorldC6M2_TattooCliffe",
-		"PlayerRemarkWorldC6M2_TattooZoeyCliffe",
-		"PlayerRemarkWorldC6M2_TattooZoey2Cliffe",
-		"PlayerRemarkWorldC6M2_TourEntranceCliffe",
-		"PlayerRemarkWorldC6M2_UpCatWalkCliffe",
-		"PlayerRemarkWorldC6M2_UpStairsCliffe",
-		"PlayerRemarkWorldC6M2_UpStairs2Cliffe",
-		"PlayerRemarkWorldC6M3_BridgeRunCliffe",
-		"PlayerRemarkWorldC6M3_ByBridgeCliffe",
-		"PlayerRemarkWorldFootLockerCliffe",
-		"C6M3_PourFinishedCliffe",
-		"SurvivorNearFinaleC6M3Cliffe",
-		"C6M1TakeSubMachineGunCliffe",
-		"SurvivorPickupGolfCLubCliffe",
-		"SurvivorPickupM60Cliffe",
-		"HistoricTour01aCliffe",
-		"WeddingWitchDead03Cliffe",
-		"Player_LostCallC6M3Cliffe",
-		"SurvivorSpottedGolfClubCliffe",
-		"SurvivorSpottedGolfClubAutoCliffe",
-		"SurvivorSpottedM60Cliffe",
-		"SurvivorSpottedM60AutoCliffe",
+		"C3M1CallFerryReplica",
+		"C3M2OpenDoorReplica",
+		"c5m4floatstartReplica",
 		// orator.txt ====================================================================================================
-		"C1M2InsideGunShopCliffe",
-		"C1M3AlarmOffOratorCliffe",
-		"C1M3BrokeWindowOratorCliffe",
+		"C1M2InsideGunShopReplica",
+		"C1M3AlarmOffOratorReplica",
+		"C1M3BrokeWindowOratorReplica",
 		// terror_player.txt ====================================================================================================
-		"HitCraneButtonCliffe",
-		"Airport03FireStartedCliffe",
+		"HitCraneButtonReplica",
+		"Airport03FireStartedReplica",
 		// terror_player_dlc1.txt ====================================================================================================
-		"FinaleSceneTriggerFrancisCliffe"
+		"FinaleSceneTriggerZoeyReplica",
+		"FinaleSceneTriggerFrancisReplica"
 	],

@@ -1765,11 +1765,11 @@ Rule PlayerRemarkWorldC6M2_UpStairs2Mechanic
 
 Response PlayerRemarkWorldC6M3_BridgeRunMechanic
 {
-	scene "scenes/Mechanic/DLC1_C6M3_FinaleBridgeRun02.vcd"  then  WorldC6M3_ByBridge01 foo:0 -1.803 //I'm coming baby!
-	scene "scenes/Mechanic/DLC1_C6M3_FinaleBridgeRun04.vcd"  then  WorldC6M3_ByBridge01Ellis foo:0 -2.772 //This is the longest run of my life!
-	scene "scenes/Mechanic/DLC1_C6M3_FinaleBridgeRun05.vcd"  then  WorldC6M3_ByBridge01Ellis foo:0 -2.578 //Oh man, this is the longest run of my life!
-	scene "scenes/Mechanic/DLC1_C6M3_FinaleBridgeRun06.vcd"  then  WorldC6M3_ByBridge01 foo:0 -2.297 //I'm coming baby! I'm comin'!
-	scene "scenes/Mechanic/DLC1_C6M3_FinaleBridgeRun07.vcd"  then  WorldC6M3_ByBridge01 foo:0 -4.828 //I'm comin'! I'm sorry I left you!
+	scene "scenes/Mechanic/DLC1_C6M3_FinaleBridgeRun02.vcd"  then any WorldC6M3_ByBridge01 foo:0 -1.803 //I'm coming baby!
+	scene "scenes/Mechanic/DLC1_C6M3_FinaleBridgeRun04.vcd"  then any WorldC6M3_ByBridge01Ellis foo:0 -2.772 //This is the longest run of my life!
+	scene "scenes/Mechanic/DLC1_C6M3_FinaleBridgeRun05.vcd"  then any WorldC6M3_ByBridge01Ellis foo:0 -2.578 //Oh man, this is the longest run of my life!
+	scene "scenes/Mechanic/DLC1_C6M3_FinaleBridgeRun06.vcd"  then any WorldC6M3_ByBridge01 foo:0 -2.297 //I'm coming baby! I'm comin'!
+	scene "scenes/Mechanic/DLC1_C6M3_FinaleBridgeRun07.vcd"  then any WorldC6M3_ByBridge01 foo:0 -4.828 //I'm comin'! I'm sorry I left you!
 }
 Rule PlayerRemarkWorldC6M3_BridgeRunMechanic
 {

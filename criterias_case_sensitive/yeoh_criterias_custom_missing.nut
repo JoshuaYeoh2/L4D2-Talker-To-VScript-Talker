@@ -1,4 +1,5 @@
 // arcade ============================================================================================================================
+
 function isYusuke(query) { return query.who == "Yusuke"; }
 function isSara(query) { return query.who == "Sara"; }
 function isHaruka(query) { return query.who == "Haruka"; }
@@ -20,6 +21,7 @@ function HarukaNotPickedUpItem(query) { return query.pickedupitem != 1; }
 function BlakeNotPickedUpItem(query) { return query.pickedupitem != 1; }
 
 // mike ============================================================================================================================
+
 function isMike(query) { return query.who == "Mike"; }
 function IsSmalltownBarricadeMike(query) { return query.worldsmalltownbarricademike != 1; }
 function ConceptC7M2CrowsFlySpeakMike(query) { return query.concept == "C7M2CrowsFlySpeak"; }
@@ -28,6 +30,7 @@ function ConceptC7M3GeneratorSpeakMike(query) { return query.concept == "C7M3Gen
 function Conceptc7m1opentankdoorspeakMike(query) { return query.concept == "C7M1OpenTankDoorSpeak"; }
 
 // cliffe ============================================================================================================================
+
 function isCliffe(query) { return query.who == "Cliffe"; }
 function IsNotSaidCliffeWitchChasing(query) { return query.saidwitchchasing != 1; }
 function IsSaidCliffeWitchAttacking(query) { return query.saidwitchattacking == 1; }
@@ -35,6 +38,10 @@ function CliffeNotPickedUpItem(query) { return query.pickedupitem != 1; }
 
 // replica ============================================================================================================================
 
+function IsNotSaidReplicaWitchChasing(query) { return query.saidwitchchasing != 1; }
+function IsSaidReplicaWitchAttacking(query) { return query.saidwitchattacking == 1; }
+function ReplicaNotPickedUpItem(query) { return query.pickedupitem != 1; }
+function isReplica(query) { return query.who == "Replica"; }
 
 
 // ============================================================================================================================

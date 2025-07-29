@@ -42,7 +42,7 @@ def scan_nut_folder(folder_path):
 
 
 # === Run it ===
-folder = r"G:\Program Files IV\Steam\steamapps\common\Left 4 Dead 2\left4dead2\addons\_my mods\scripts\custom talkers\[custom talker] cliffe"
+folder = "..\..\[custom talker] replica soldier"
 missing_funcs = scan_nut_folder(folder)
 
 if missing_funcs:

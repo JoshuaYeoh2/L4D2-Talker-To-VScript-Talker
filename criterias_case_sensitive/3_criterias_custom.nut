@@ -1,4 +1,5 @@
 // arcade ============================================================================================================================
+
 function IsShotMannHaruka(query) { return query.worldshotmannharuka > 3; }
 function IsShotMannSara(query) { return query.worldshotmannsara > 3; }
 function IsShotMannYusuke(query) { return query.worldshotmannyusuke > 3; }
@@ -247,6 +248,7 @@ function IsEndBlakeBridgeStoryStart(query) { return query.worldendblakebridgesto
 // function paniceventds(query) { return DirectorScript.PanicEventHaruka(query) || DirectorScript.PanicEventYusuke(query) || DirectorScript.PanicEventBlake(query) || DirectorScript.PanicEventSara(query) || DirectorScript.PanicEventBiker(query) || DirectorScript.PanicEventNamVet(query) || DirectorScript.PanicEventManager(query) || DirectorScript.PanicEventTeenGirl(query); }
 
 // mike ============================================================================================================================
+
 function ConceptBlockChurchGuyMikeNo1(query) { return query.concept == "ConceptBlockChurchGuyMikeNo1"; }
 // function ConceptBlock959(query) { return query.concept == "MikeWhoAreYou"; }
 function MikeNotPickedUpItem(query) { return query.mikepickedupitem != 1; }
@@ -323,6 +325,7 @@ function IsTriggeredByMike(query) { return query.triggeredby == "Mike"; }
 function IsNotSaidMikePounced(query) { return query.worldsaidmikepounced != 1; }
 
 // cliffe ============================================================================================================================
+
 function IsShotMannCliffe(query) { return query.worldshotmanncliffe > 3; }
 function IsNotSaidShotMannequinCliffe2(query) { return query.worldsaidshotmannequincliffe2 != 1; }
 function IsCliffeActor(query) { return query.cliffeactor == 1; }
@@ -386,6 +389,73 @@ function IsNotDonorCliffe(query) { return query.itemdonor != "Cliffe"; }
 
 // replica ============================================================================================================================
 
+function IsShotMannReplica(query) { return query.worldshotmannreplica > 3; }
+function IsNotSaidShotMannequinReplica2(query) { return query.worldsaidshotmannequinreplica2 != 1; }
+function IsReplicaActor(query) { return query.replicaactor == 1; }
+function IsNotSaidreplicareplicaes(query) { return query.worldsaidreplicareplicaes != 1; }
+function Conceptreplicareplicaes(query) { return query.concept == "replicareplicaes"; }
+function IsNotReplicaIntroduced(query) { return query.worldreplicaintroduced != 1; }
+function IsReplicaIntroduced(query) { return query.worldreplicaintroduced == 1; }
+function _auto_NotC4ReplicaInCover(query) { return query.world_auto_c4replicaincover < 1; }
+function _auto_NotCaneExitedReplica(query) { return query.world_auto_caneexitedreplica < 1; }
+function _auto_NotReplicaAngry(query) { return query.world_auto_replicaangry < 1; }
+function _auto_NotReplicaFoodBreak(query) { return query.world_auto_replicafoodbreak < 1; }
+function _auto_NotReplicaHappy(query) { return query.world_auto_replicahappy < 1; }
+function _auto_IsReplicaInCane(query) { return query.world_auto_replicaincane == 1; }
+function _auto_NotReplicaInCane(query) { return query.world_auto_replicaincane < 1; }
+function _auto_IsReplicaWavWindow(query) { return query.world_auto_replicawavwindow == 1; }
+function _auto_NotLastSurvivorTalkedReplica(query) { return query.world_auto_lastsurvivortalkedreplica < 1; }
+function _auto_IsReplicaInWitchville(query) { return query.world_auto_replicainwitchville == 1; }
+function _auto_NotReplicaInWitchville(query) { return query.world_auto_replicainwitchville < 1; }
+function _auto_ReplicaIsPressing(query) { return query.world_auto_replicapressing == 1; }
+function _auto_IsTalkingReplica(query) { return query.world_auto_talkingreplica == 1; }
+function _auto_NotTimerLockReplica(query) { return query.world_auto_timerlockreplica < 1; }
+function _auto_ReplicaSawC6M3Bill(query) { return query.world_auto_replicac6m3bill == 1; }
+function IsNotTalkReplica(query) { return query.talkreplica == 1; }
+function IsTalkReplica(query) { return query.talkreplica != 1; }
+function IsWorldTalkReplica(query) { return query.worldtalkreplica != 1; }
+function IsReplicaNotAlive(query) { return query.isreplicaalive != 1; }
+function IsReplicaAlive(query) { return query.isreplicaalive == 1; }
+function IsReplicaNear125(query) { return query.disttoreplica < 125; }
+function IsReplicaNear200(query) { return query.disttoreplica < 200; }
+function IsReplicaNear400(query) { return query.disttoreplica < 400; }
+function IsReplicaNear800(query) { return query.disttoreplica < 800; }
+function IsReplicaFar400(query) { return query.disttoreplica >= 400; }
+function IsReplicaFar1000(query) { return query.disttoreplica > 600; }
+function IsNotSaidFaultFriendlyFireReplica(query) { return query.worldsaidfaultfriendlyfirereplica != 1; }
+function IsSaidFaultFriendlyFireReplica(query) { return query.worldsaidfaultfriendlyfirereplica == 1; }
+function IsShotTeammateReplica(query) { return query.worldshotteammatereplica == 1; }
+function IsNotShotTeammateReplica(query) { return query.worldshotteammatereplica != 1; }
+function WhoPutColaReplica(query) { return query.worldwhoputcola == "Replica"; }
+function PanicEventReplica(query) { return query.whodidit == "Replica"; }
+function IsReplica(query) { return query.who == "Replica"; }
+function IsTriggeredByReplica(query) { return query.triggeredby == "Replica"; }
+function IsDeadReplica(query) { return query.deadcharacter == "Replica"; }
+function IsNotDeadReplica(query) { return query.deadcharacter != "Replica"; }
+function SubjectIsReplica(query) { return query.subject == "Replica"; }
+function SubjectIsNotReplica(query) { return query.subject != "Replica"; }
+function FromIsReplica(query) { return query.from == "Replica"; }
+function FromIsNotReplica(query) { return query.from != "Replica"; }
+function Iswitch_aggro_onReplica(query) { return query.witch_aggro_on == "Replica"; }
+function IsNotSaidBeenJockeyedReplica(query) { return query.worldsaidbeenjockeyedreplica != 1; }
+function IsSaidBeenJockeyedReplica(query) { return query.worldsaidbeenjockeyedreplica == 1; }
+function IsNotSaidReplicaPounced(query) { return query.worldsaidreplicapounced != 1; }
+function IsNotNickInsultedReplicaC1(query) { return query.worldnickinsultedreplica != 1; }
+function IsSaidC1M3ReplicaFoodCourt(query) { return query.worldsaidc1m3replicafoodcourt == 1; }
+function ConceptReplicaSuggestsCrane(query) { return query.concept == "ReplicaSuggestsCrane"; }
+function ConceptLaughReplica(query) { return query.concept == "LaughReplica"; }
+function NotReplicaMadAtRiders(query) { return query.worldreplicamadatriders < 1; }
+function ReplicaMadAtRiders(query) { return query.worldreplicamadatriders == 1; }
+function Concept_C2M2_ReplicaApocolypse(query) { return query.concept == "_C2M2_ReplicaApocolypse"; }
+function ConceptPlayer_CoverMeC1RReplica1(query) { return query.concept == "Player.CoverMeC1RReplica1"; }
+function ConceptPlayer_CoverMeC1RReplica2(query) { return query.concept == "Player.CoverMeC1RReplica2"; }
+// function FromSet1(query) { return DirectorScript.FromIsReplica(query) || DirectorScript.FromIsAnOrator(query); }
+function ReplicaCake(query) { return query.worldreplicacake == 1; }
+function IsDonorReplica(query) { return query.itemdonor == "Replica"; }
+function IsNotDonorReplica(query) { return query.itemdonor != "Replica"; }
+// function HasDonor(query) { return DirectorScript.IsDonorBiker(query) || DirectorScript.IsDonorTeenGirl(query) || DirectorScript.IsDonorNamVet(query) || DirectorScript.IsDonorManager(query) || DirectorScript.IsDonorReplica(query) || DirectorScript.IsDonorGambler(query) || DirectorScript.IsDonorMechanic(query) || DirectorScript.IsDonorProducer(query) || DirectorScript.IsDonorUnknown(query); }
+function IsReplicaAVampire(query) { return query.worldc6m1_replicaisavampire == 1; }
+// function PanicEventDS(query) { return DirectorScript.PanicEventReplica(query) || DirectorScript.PanicEventGambler(query) || DirectorScript.PanicEventMechanic(query) || DirectorScript.PanicEventProducer(query) || DirectorScript.PanicEventBiker(query) || DirectorScript.PanicEventNamVet(query) || DirectorScript.PanicEventManager(query) || DirectorScript.PanicEventTeenGirl(query); }
 
 
 

@@ -15178,7 +15178,7 @@ Response PlayerShotGasCanCoach
 Rule PlayerShotGasCanCoach
 {
 	criteria ConceptPlayerShotGasCan IsCoach IsNotSaidPlayerShotGasCan IsScavenge
-	ApplyContext "SaidPlayerShotGasCan1:10"
+	ApplyContext "SaidPlayerShotGasCan:1:10"
 	applycontexttoworld
 	Response PlayerShotGasCanCoach
 }

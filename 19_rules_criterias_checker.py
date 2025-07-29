@@ -51,9 +51,9 @@ def scan_for_used_criteria(folder_path):
 
 # === Run it ===
 # where you use the criteria
-check_folder = r"G:\Program Files IV\Steam\steamapps\common\Left 4 Dead 2\left4dead2\addons\_my mods\scripts\custom talkers\[custom talker] cliffe"
+check_folder = "..\..\[custom talker] replica soldier"
 # where the actual functions are defined
-criterias_folder = r"G:\Program Files IV\Steam\steamapps\common\Left 4 Dead 2\left4dead2\addons\_my mods\scripts\custom talkers\[custom talker ] base"
+criterias_folder = "..\..\[custom talker ] base"
 
 
 

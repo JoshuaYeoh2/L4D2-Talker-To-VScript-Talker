@@ -1276,7 +1276,7 @@ Response PlayerShotGasCanBiker
 Rule PlayerShotGasCanBiker
 {
 	criteria ConceptPlayerShotGasCan IsBiker IsNotSaidPlayerShotGasCan IsScavenge
-	ApplyContext "SaidPlayerShotGasCan1:10"
+	ApplyContext "SaidPlayerShotGasCan:1:10"
 	applycontexttoworld
 	Response PlayerShotGasCanBiker
 }

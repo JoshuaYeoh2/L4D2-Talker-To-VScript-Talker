@@ -171,13 +171,15 @@ process_vcd_folder_combined(
     output_path="5_responses_wavs.nut",
     suffix_map= {
         
-        "Gambler": "Cliffe",
+        "Coach": "Replica",
+
+        # "Gambler": "Cliffe",
 
         # "Namvet": "Mike",
         # "NamVet": "Mike",
 
         # Add more here...
     },
-    speaker_folder="cliffe",
+    speaker_folder="replica",
     # just_one_file="gambler.txt"
 )

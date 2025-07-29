@@ -5,6 +5,19 @@ comment out forceweights in the rules
 
 // ====================================================================================================
 
+before optimizing criterias,
+do the scripts in criterias_case_sensitive folder
+
+manually add custom missing criterias and make them case sensitive
+examples:
+function isMike(query) { return query.who == "Mike"; }
+function ConceptC7M2CrowsFlySpeakMike(query) { return query.concept == "C7M2CrowsFlySpeak"; }
+function ConceptC7M3BridgeLeapSpeakMike(query) { return query.concept == "C7M3BridgeLeapSpeak"; }
+function ConceptC7M3GeneratorSpeakMike(query) { return query.concept == "C7M3GeneratorSpeak"; }
+function Conceptc7m1opentankdoorspeakMike(query) { return query.concept == "C7M1OpenTankDoorSpeak"; }
+
+// ====================================================================================================
+
 fix criteria function warnings in the rules:
 
 criteria = 
@@ -35,6 +48,17 @@ Custom_Talker_Blake.BotNoteHumanAttentionBlake <- function(speaker, query) {
 
 // ====================================================================================================
 
-binary search the rules if minorhurt wont play
+before testing, unsubscribe base custom talker
+
+use the one that you have added your custom criterias to
+(pack up to vpk)
+
+// ====================================================================================================
+
+if doesnt work, try minor hurt only
+
+if minor hurt works, binary search the rules to see which one is causing the whole thing to not work
+
+if minor hurt doesnt even work, something is wrong in previous steps
 
 // ====================================================================================================

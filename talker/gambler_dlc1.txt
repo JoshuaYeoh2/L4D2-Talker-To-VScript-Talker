@@ -1763,8 +1763,8 @@ Rule PlayerRemarkWorldC6M2_UpStairs2Gambler
 
 Response PlayerRemarkWorldC6M3_BridgeRunGambler
 {
-	scene "scenes/Gambler/DLC1_C6M3_FinaleBridgeRun05.vcd"  then  WorldC6M3_ByBridge01 foo:0 -1.130 //THANKS, YOU THREE!
-	scene "scenes/Gambler/DLC1_C6M3_FinaleBridgeRun06.vcd"  then  WorldC6M3_ByBridge01 foo:0 -1.378 //GOOD LUCK! THANKS!
+	scene "scenes/Gambler/DLC1_C6M3_FinaleBridgeRun05.vcd"  then any WorldC6M3_ByBridge01 foo:0 -1.130 //THANKS, YOU THREE!
+	scene "scenes/Gambler/DLC1_C6M3_FinaleBridgeRun06.vcd"  then any WorldC6M3_ByBridge01 foo:0 -1.378 //GOOD LUCK! THANKS!
 }
 Rule PlayerRemarkWorldC6M3_BridgeRunGambler
 {
