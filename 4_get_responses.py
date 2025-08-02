@@ -114,13 +114,13 @@ if __name__ == "__main__":
             # "Gambler": "Gambler",
             # "Producer": "Producer",
             # "Coach": "Coach",
-            "Mechanic": "Mechanic",
+            # "Mechanic": "Mechanic",
 
             # "Namvet": "Namvet",
             # "NamVet": "NamVet",
             # "TeenGirl": "TeenGirl",
             # "Manager": "Manager",
-            # "Biker": "Biker",
+            "Biker": "Biker",
 
         },
         # just_one_file="gambler.txt"

@@ -15,7 +15,7 @@ def wrap_rules(input_path, output_path, rules_name):
             if line.strip().endswith("}"):
                 output.append("\t{\n")
                 output.extend("\t\t" + l for l in block)
-                output.append("\t},\n")
+                output.append("\t},\n\n")
                 collecting = False
 
     output.append("];\n\n")
@@ -26,4 +26,4 @@ def wrap_rules(input_path, output_path, rules_name):
 
 # usage
 if __name__ == "__main__":
-    wrap_rules("8-5_rules_rearrange.txt", "9_rules_wrapped.nut", "csgo_sas_rules")
+    wrap_rules("8-5_rules_rearrange.txt", "9_rules_wrapped.nut", "sheva_alomar_rules")

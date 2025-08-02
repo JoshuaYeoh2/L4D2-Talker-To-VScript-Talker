@@ -118,6 +118,6 @@ def convert_responses_all(folder_path, output_path, prefix="", just_one_file=Non
 convert_responses_all(
     folder_path="",
     output_path="4_responses.nut",
-    prefix="Custom_Talker_CSGO_SAS.",
+    prefix="talker_base.",
     just_one_file="4_responses.txt",
 )

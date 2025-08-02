@@ -121,12 +121,16 @@ if __name__ == "__main__":
         output_path="6_rules.txt",
         suffix_find_replace={
             
-            # "Gambler": "Cliffe",
-            # "Coach": "Replica",
-            "Mechanic": "_CSGO_SAS",
+            # "Gambler": "Leon",
+            "Producer": "Sheva",
+            # "Coach": "Chris",
+            # "Mechanic": "Holly",
             
-            # "Namvet": "Mike",
-            # "NamVet": "Mike",
+            # "Namvet": "Hunk",
+            # "NamVet": "Hunk",
+            # "TeenGirl": "Rebecca",
+            # "Manager": "Lee",
+            # "Biker": "Kenny",
         },
         # just_one_file="gambler.txt"
     )

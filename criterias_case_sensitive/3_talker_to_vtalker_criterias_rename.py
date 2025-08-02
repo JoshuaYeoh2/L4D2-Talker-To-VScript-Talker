@@ -95,18 +95,27 @@ if __name__ == "__main__":
         output_path="3_criterias_custom_temp.nut",
         replacements={
 
-            # "namvet": "mike",
-            # "bill": "mike",
+            # "gambler": "leon",
+            # "nick": "leon",
+
+            # "producer": "sheva",
+            # "rochelle": "sheva",
+
+            # "coach": "chris",
+
+            # "mechanic": "holly",
+            # "ellis": "holly",
+
+            "namvet": "joel",
+            "bill": "joel",
             
-            # "gambler": "yusuke",
-            # "nick": "yusuke",
-
-            # "producer": "sara",
-            # "rochelle": "sara",
-
-            # "coach": "replica",
-
-            "mechanic": "csgo_sas",
-            "ellis": "csgo_sas",
+            # "teengirl": "rebecca",
+            # "zoey": "rebecca",
+            
+            # "manager": "lee",
+            # "louis": "lee",
+            
+            # "biker": "kenny",
+            # "francis": "kenny",
         }
     )

@@ -44,18 +44,27 @@ if __name__ == "__main__":
         output="8_rules_name_replace.txt",
         criteria_find_replace={
             
-            # "namvet": "mike",
-            # "bill": "mike",
+            # "gambler": "leon",
+            # "nick": "leon",
 
-            # "gambler": "cliffe",
-            # "nick": "cliffe",
+            "producer": "sheva",
+            "rochelle": "sheva",
 
-            # "producer": "sara",
-            # "rochelle": "sara",
+            # "coach": "barry",
 
-            # "coach": "replica",
+            # "mechanic": "chris",
+            # "ellis": "chris",
 
-            "mechanic": "csgo_sas",
-            "ellis": "csgo_sas"
+            # "namvet": "excella",
+            # "bill": "excella",
+            
+            # "teengirl": "rebecca",
+            # "zoey": "rebecca",
+            
+            # "manager": "josh",
+            # "louis": "josh",
+            
+            # "biker": "barry",
+            # "francis": "barry",
         },
     )

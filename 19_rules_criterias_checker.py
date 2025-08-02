@@ -27,39 +27,47 @@ def extract_used_criteria(lines):
 
     return used
 
-def scan_for_defined_criteria(folder_path):
+def scan_for_defined_criteria(path):
     defined = set()
-    for root, _, files in os.walk(folder_path):
-        for file in files:
-            if file.endswith('.nut'):
-                with open(os.path.join(root, file), 'r', encoding='utf-8', errors='ignore') as f:
-                    lines = f.readlines()
-                    defined |= extract_defined_criteria_functions(lines)
+    if os.path.isfile(path):
+        with open(path, 'r', encoding='utf-8', errors='ignore') as f:
+            lines = f.readlines()
+            defined |= extract_defined_criteria_functions(lines)
+
+    elif os.path.isdir(path):
+        for root, _, files in os.walk(path):
+            for file in files:
+                if file.endswith('.nut'):
+                    with open(os.path.join(root, file), 'r', encoding='utf-8', errors='ignore') as f:
+                        lines = f.readlines()
+                        defined |= extract_defined_criteria_functions(lines)
     return defined
 
-def scan_for_used_criteria(folder_path):
+def scan_for_used_criteria(path):
     used = set()
-    for root, _, files in os.walk(folder_path):
-        for file in files:
-            if file.endswith('.nut'):
-                with open(os.path.join(root, file), 'r', encoding='utf-8', errors='ignore') as f:
-                    lines = f.readlines()
-                    used |= extract_used_criteria(lines)
-    return used
+    if os.path.isfile(path):
+        with open(path, 'r', encoding='utf-8', errors='ignore') as f:
+            lines = f.readlines()
+            used |= extract_used_criteria(lines)
 
+    elif os.path.isdir(path):
+        for root, _, files in os.walk(path):
+            for file in files:
+                if file.endswith('.nut'):
+                    with open(os.path.join(root, file), 'r', encoding='utf-8', errors='ignore') as f:
+                        lines = f.readlines()
+                        used |= extract_used_criteria(lines)
+    return used
 
 
 # === Run it ===
 # where you use the criteria
-check_folder = "..\..\[custom talker] csgo sas"
+check_path = "16_rules_format_applycontext.nut"
 # where the actual functions are defined
-criterias_folder = "..\..\[custom talker ] base"
+criterias_path = "..\..\[custom talker ] base"
 
-
-
-
-used = scan_for_used_criteria(check_folder)
-defined = scan_for_defined_criteria(criterias_folder)
+used = scan_for_used_criteria(check_path)
+defined = scan_for_defined_criteria(criterias_path)
 
 missing = used - defined
 

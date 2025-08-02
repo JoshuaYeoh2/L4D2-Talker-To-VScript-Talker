@@ -55,9 +55,6 @@ function ConceptIntroSmalltownEasterEgg3(query) { return query.concept == "intro
 function IsMapc7m1_docks(query) { return query.map == "c7m1_docks"; }
 function IsMapc7m2_barge(query) { return query.map == "c7m2_barge"; }
 function IsMapc7m3_port(query) { return query.map == "c7m3_port"; }
-function IsNotBiker(query) { return query.subject != "Biker"; }
-function IsNotManager(query) { return query.subject != "Manager"; }
-function IsNotTeenGirl(query) { return query.subject != "TeenGirl"; }
 function IsNotSaidFarm05_Path09(query) { return query.worldsaidfarm05_path09 != 1; }
 function IsPickedUpChainSaw(query) { return query.itempickedup == "chainsaw"; }
 function Ismapc7m3_port(query) { return query.map == "c7m3_port"; }
@@ -69,13 +66,42 @@ function ConceptPlayerAlsoWarnHunter(query) { return query.concept == "PlayerWar
 function ConceptPlayerAlsoWarnSmoker(query) { return query.concept == "PlayerWarnSmoker"; }
 function ConceptPlayerAlsoWarnWitch(query) { return query.concept == "PlayerWarnWitch"; }
 function isrunway(query) { return query.map == "c11m5_runway"; }
+function ConceptIncapBounce2(query) { return query.concept == "InCapBounce2"; }
+function ConceptIntroSmalltown(query) { return query.concept == "introSmallTown"; }
+function ConceptIntroSmalltown2(query) { return query.concept == "introSmallTown2"; }
+function ConceptintroLighthouse(query) { return query.concept == "introLighthouse"; }
+function IsEveryoneAliveWeight0(query) { return query.numberofteamalive >= 4; }
+function IsNamvetAlive(query) { return query.isnamvetalive == 1; }
+function IsVomitjar(query) { return query.weaponname == "VomitJar"; }
+function IsManagerNotAlive(query) { return query.ismanageralive == 0; }
+function IsNotSaidManagerPounced(query) { return query.worldsaidlouispounced != 1; }
+function ConceptSmallTown02_path01b(query) { return query.concept == "smalltown02_path01b"; }
+function ConceptSmalltown04_Path07A(query) { return query.concept == "smalltown04_path07a"; }
+function IsCrowbar(query) { return query.weaponname == "crowbar"; }
+function IsTonfa(query) { return query.weaponname == "tonfa"; }
+function IsNotBiker(query) { return query.who != "biker"; }
+function IsNotManager(query) { return query.who != "manager"; }
+function IsNotTeenGirl(query) { return query.who != "teengirl"; }
+function IsNotNamVet(query) { return query.who != "namvet"; }
+function AutoISNotSurvival(query) { return query.gamemode != "survival"; }
+function ConceptFarmVampiresc(query) { return query.concept == "FarmVampiresC"; }
+function ConceptIntroSmalltownEasterEgg2(query) { return query.concept == "introSmallTownEasterEgg2"; }
+function ConceptSmallTown02_path01a(query) { return query.concept == "smalltown02_path01a"; }
+function ConceptSmallTown02_path01c(query) { return query.concept == "smalltown02_path01c"; }
+function ConceptSmalltown05_path03a(query) { return query.concept == "smalltown05_path03a"; }
+function ConceptSmalltown04_path05a(query) { return query.concept == "smalltown04_path05a"; }
+function IsNotSaidInCapBounce2(query) { return query.worldsaidincapbounce != 1; }
+
+// made up
+function ConceptHowitzerBurnEnd02(query) { return query.concept == "HowitzerBurnEnd02"; }
+function ConceptC6M2SafeRoom2(query) { return query.concept == "C6M2SafeRoom2"; }
+function ConceptC6M3SafeRoom2(query) { return query.concept == "C6M3SafeRoom2"; }
+function ConceptL4D1PlayerNiceShot(query) { return query.concept == "L4D1PlayerNiceShot"; }
+function ConceptWorldC6M1_HistoricTour(query) { return query.concept == "WorldC6M1_HistoricTour"; }
+function Isc6m3_portHeavy(query) { return query.map == "c6m3_portheavy"; }
+function IsNotSaidc6m3_outro(query) { return query.worldsaidc6m3_outro != 1; }
 
 // actually missing?
-function ConceptC6M2SafeRoom2(query) { return false; }
-function ConceptC6M3SafeRoom2(query) { return false; }
-function ConceptL4D1PlayerNiceShot(query) { return false; }
-function ConceptWorldC6M1_HistoricTour(query) { return false; }
-function Isc6m3_portHeavy(query) { return false; }
 function IsNotLeftC6M1Start(query) { return false; }
 function IsNotSaidC6M2SafeRoom(query) { return false; }
 function IsNotSaidC6M2SafeRoom2(query) { return false; }
@@ -117,3 +143,4 @@ function IsNotSaidFinalVehicleSpotted(query) { return false; }
 function IsNotSaidRadioTriggered(query) { return false; }
 function IsNotSaidStartScavenge(query) { return false; }
 function _auto_NotNoSpotting(query) { return false; }
+function IsNotSaidc6m3_outro3(query) { return false; }
