@@ -95,19 +95,19 @@ if __name__ == "__main__":
         output_path="3_criterias_custom.nut",
         replacements={
 
-            # "gambler": "leon",
-            # "nick": "leon",
+            # "gambler": "deputy",
+            # "nick": "deputy",
 
-            # "producer": "sheva",
-            # "rochelle": "sheva",
+            # "producer": "mia",
+            # "rochelle": "mia",
 
-            # "coach": "chris",
+            # "coach": "david",
 
-            # "mechanic": "holly",
-            # "ellis": "holly",
+            "mechanic": "trevor",
+            "ellis": "trevor",
 
-            "namvet": "joel",
-            "bill": "joel",
+            # "namvet": "robin",
+            # "bill": "robin",
             
             # "teengirl": "rebecca",
             # "zoey": "rebecca",

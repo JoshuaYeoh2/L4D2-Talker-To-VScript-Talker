@@ -1838,4 +1838,426 @@ function IsNotDonorSheva(query) { return query.itemdonor != "Sheva"; }
 function IsShevaAVampire(query) { return query.worldc6m1_shevaisavampire == 1; }
 // function PanicEventDS(query) { return DirectorScript.PanicEventCoach(query) || DirectorScript.PanicEventGambler(query) || DirectorScript.PanicEventMechanic(query) || DirectorScript.PanicEventSheva(query) || DirectorScript.PanicEventBiker(query) || DirectorScript.PanicEventNamVet(query) || DirectorScript.PanicEventManager(query) || DirectorScript.PanicEventTeenGirl(query); }
 
+// ethan ============================================================================================================================
+
+function IsShotMannEthan(query) { return query.worldshotmannethan > 3; }
+function IsNotSaidShotMannequinEthan2(query) { return query.worldsaidshotmannequinethan2 != 1; }
+function Conceptc1m4escapeEthanCheck(query) { return query.concept == "c1m4escapeEthanCheck"; }
+function Conceptc1m4escapeEthanCheckFail(query) { return query.concept == "c1m4escapeEthanCheckFail"; }
+function Conceptc1m4escapeEthanCheckSuccess(query) { return query.concept == "c1m4escapeEthanCheckSuccess"; }
+function IsEthanActor(query) { return query.ethanactor == 1; }
+function IsNotEthanIntroduced(query) { return query.worldethanintroduced != 1; }
+function _auto_NotC4EthanInCover(query) { return query.world_auto_c4ethanincover < 1; }
+function _auto_NotCaneExitedEthan(query) { return query.world_auto_caneexitedethan < 1; }
+function _auto_NotLastSurvivorTalkedEthan(query) { return query.world_auto_lastsurvivortalkedethan < 1; }
+function _auto_IsEthanInCane(query) { return query.world_auto_ethanincane == 1; }
+function _auto_NotEthanInCane(query) { return query.world_auto_ethanincane < 1; }
+function _auto_IsEthanWavWindow(query) { return query.world_auto_ethanwavwindow == 1; }
+function _auto_IsEthanInWitchville(query) { return query.world_auto_ethaninwitchville == 1; }
+function _auto_NotEthanInWitchville(query) { return query.world_auto_ethaninwitchville < 1; }
+function _auto_EthanIsPressing(query) { return query.world_auto_ethanpressing == 1; }
+function _auto_C5M3EthanReacted(query) { return query.world_auto_c5m3ethanreacted == 1; }
+function _auto_IsTalkingEthan(query) { return query.world_auto_talkingethan == 1; }
+function _auto_NotTimerLockEthan(query) { return query.world_auto_timerlockethan < 1; }
+function _auto_EthanSawC6M3Bill(query) { return query.world_auto_ethanc6m3bill == 1; }
+function IsNotTalkEthan(query) { return query.talkethan == 1; }
+function IsTalkEthan(query) { return query.talkethan != 1; }
+function IsWorldTalkEthan(query) { return query.worldtalkethan != 1; }
+function IsEthanNotAlive(query) { return query.isethanalive != 1; }
+function IsEthanAlive(query) { return query.isethanalive == 1; }
+function IsSmallTownBarricadeEthan(query) { return query.worldsmalltownbarricadeethan != 1; }
+function IsEthanNear200(query) { return query.disttoethan < 200; }
+function IsEthanNear300(query) { return query.disttoethan < 300; }
+function IsEthanNear400(query) { return query.disttoethan < 400; }
+function IsEthanNear400Weight0(query) { return query.disttoethan < 400; }
+function IsEthanNear800(query) { return query.disttoethan < 800; }
+function IsEthanFar400(query) { return query.disttoethan >= 400; }
+function IsEthanFar1000(query) { return query.disttoethan > 600; }
+function IsNotSaidFaultFriendlyFireEthan(query) { return query.worldsaidfaultfriendlyfireethan != 1; }
+function IsSaidFaultFriendlyFireEthan(query) { return query.worldsaidfaultfriendlyfireethan == 1; }
+function IsShotTeammateEthan(query) { return query.worldshotteammateethan == 1; }
+function IsNotShotTeammateEthan(query) { return query.worldshotteammateethan != 1; }
+function IsEthanCrybaby(query) { return query.worldethancrying == 1; }
+function WhoPutColaEthan(query) { return query.worldwhoputcola == "Ethan"; }
+function PanicEventEthan(query) { return query.whodidit == "Ethan"; }
+function IsEthan(query) { return query.who == "Ethan"; }
+function IsTriggeredByEthan(query) { return query.triggeredby == "Ethan"; }
+function IsDeadEthan(query) { return query.deadcharacter == "Ethan"; }
+function IsNotDeadEthan(query) { return query.deadcharacter != "Ethan"; }
+function SubjectIsEthan(query) { return query.subject == "Ethan"; }
+function SubjectIsNotEthan(query) { return query.subject != "Ethan"; }
+function FromIsEthan(query) { return query.from == "Ethan"; }
+function FromIsNotEthan(query) { return query.from != "Ethan"; }
+function Iswitch_aggro_onEthan(query) { return query.witch_aggro_on == "Ethan"; }
+function IsNotSaidBeenJockeyedEthan(query) { return query.worldsaidbeenjockeyedethan != 1; }
+function IsSaidBeenJockeyedEthan(query) { return query.worldsaidbeenjockeyedethan == 1; }
+function IsNotSaidEthanPounced(query) { return query.worldsaidethanpounced != 1; }
+function IsEthanAlsoWarn(query) { return query.worldethanalsowarn == 1; }
+function ConceptEthanInterrupt(query) { return query.concept == "EthanInterrupt"; }
+function EthanNotTall(query) { return query.worldethantalljoke == 1; }
+function ConceptC13M1Intro2Ethan(query) { return query.concept == "C13M1Intro2Ethan"; }
+function C13M1EthanNotPanicking(query) { return query.worldc13m1ethanpanicking < 1; }
+function IsNotSrcGrp_ETHANSTORYINIT(query) { return query.worldsrcgrp_ethanstoryinit < 1; }
+function IsNotSrcGrp_ETHANSTORY(query) { return query.worldsrcgrp_ethanstory < 1; }
+function ConceptC3M4ButtonAnswerEthan(query) { return query.concept == "C3M4ButtonAnswerEthan"; }
+function ConceptEthanStoryReac01(query) { return query.concept == "EthanStoryReac01"; }
+function ConceptC3M4Button104Ethan(query) { return query.concept == "C3M4Button104Ethan"; }
+function ConceptC6M2EthanStoryStart1(query) { return query.concept == "C6M2EthanStoryStart1"; }
+function ConceptC6M3EthanBridgeStory1(query) { return query.concept == "C6M3EthanBridgeStory1"; }
+function ConceptC6M3EthanBridgeStory1a(query) { return query.concept == "C6M3EthanBridgeStory1a"; }
+function ConceptWorldC6M3_ByBridge01Ethan(query) { return query.concept == "WorldC6M3_ByBridge01Ethan"; }
+function IsEthanInLoveC6M1(query) { return query.worldethaninlovec6m1 == 1; }
+function IsDonorEthan(query) { return query.itemdonor == "Ethan"; }
+function IsNotDonorEthan(query) { return query.itemdonor != "Ethan"; }
+// function HasDonor(query) { return DirectorScript.IsDonorBiker(query) || DirectorScript.IsDonorTeenGirl(query) || DirectorScript.IsDonorNamVet(query) || DirectorScript.IsDonorManager(query) || DirectorScript.IsDonorCoach(query) || DirectorScript.IsDonorGambler(query) || DirectorScript.IsDonorEthan(query) || DirectorScript.IsDonorProducer(query) || DirectorScript.IsDonorUnknown(query); }
+function IsSaidOpenedGate1BlameEthan(query) { return query.worldsaidopenedgate1blameethan == 1; }
+function IsNotSaidEthanBridgeStoryStart(query) { return query.worldsaidethanbridgestorystart != 1; }
+function IsEndEthanBridgeStoryStart(query) { return query.worldendethanbridgestorystart == 1; }
+// function PanicEventDS(query) { return DirectorScript.PanicEventCoach(query) || DirectorScript.PanicEventGambler(query) || DirectorScript.PanicEventEthan(query) || DirectorScript.PanicEventProducer(query) || DirectorScript.PanicEventBiker(query) || DirectorScript.PanicEventNamVet(query) || DirectorScript.PanicEventManager(query) || DirectorScript.PanicEventTeenGirl(query); }
+
+// mia ============================================================================================================================
+
+function IsShotMannMia(query) { return query.worldshotmannmia > 3; }
+function IsNotSaidShotMannequinMia2(query) { return query.worldsaidshotmannequinmia != 1; }
+function IsMiaActor(query) { return query.miaactor == 1; }
+function IsMiaElevatorIntro(query) { return query.worldmiaelevatorintro == 1; }
+function IsNotMiaIntroduced(query) { return query.worldmiaintroduced != 1; }
+function _auto_NotC4MiaInCover(query) { return query.world_auto_c4miaincover < 1; }
+function _auto_NotCaneExitedMia(query) { return query.world_auto_caneexitedmia < 1; }
+function _auto_NotLastSurvivorTalkedMia(query) { return query.world_auto_lastsurvivortalkedmia < 1; }
+function _auto_IsMiaInCane(query) { return query.world_auto_miaincane == 1; }
+function _auto_NotMiaInCane(query) { return query.world_auto_miaincane < 1; }
+function _auto_IsMiaWavWindow(query) { return query.world_auto_miawavwindow == 1; }
+function _auto_IsMiaInWitchville(query) { return query.world_auto_miainwitchville == 1; }
+function _auto_NotMiaInWitchville(query) { return query.world_auto_miainwitchville < 1; }
+function _auto_MiaIsPressing(query) { return query.world_auto_miapressing == 1; }
+function _auto_IsTalkingMia(query) { return query.world_auto_talkingmia == 1; }
+function _auto_NotTimerLockMia(query) { return query.world_auto_timerlockmia < 1; }
+function IsNotTalkMia(query) { return query.talkmia == 1; }
+function IsTalkMia(query) { return query.talkmia != 1; }
+function IsWorldTalkMia(query) { return query.worldtalkmia != 1; }
+function IsMiaNotAlive(query) { return query.ismiaalive != 1; }
+function IsMiaAlive(query) { return query.ismiaalive == 1; }
+function IsSmallTownBarricadeMia(query) { return query.worldsmalltownbarricademia != 1; }
+function IsMiaNear200(query) { return query.disttomia < 200; }
+function IsMiaNear400(query) { return query.disttomia < 400; }
+function IsMiaNear800(query) { return query.disttomia < 800; }
+function IsMiaFar400(query) { return query.disttomia >= 400; }
+function IsMiaFar1000(query) { return query.disttomia > 600; }
+function IsNotSaidFaultFriendlyFireMia(query) { return query.worldsaidfaultfriendlyfiremia != 1; }
+function IsSaidFaultFriendlyFireMia(query) { return query.worldsaidfaultfriendlyfiremia == 1; }
+function IsShotTeammateMia(query) { return query.worldshotteammatemia == 1; }
+function IsNotShotTeammateMia(query) { return query.worldshotteammatemia != 1; }
+function WhoPutColaMia(query) { return query.worldwhoputcola == "Mia"; }
+function PanicEventMia(query) { return query.whodidit == "Mia"; }
+function IsMia(query) { return query.who == "Mia"; }
+function IsTriggeredByMia(query) { return query.triggeredby == "Mia"; }
+function IsDeadMia(query) { return query.deadcharacter == "Mia"; }
+function IsNotDeadMia(query) { return query.deadcharacter != "Mia"; }
+function SubjectIsMia(query) { return query.subject == "Mia"; }
+function SubjectIsNotMia(query) { return query.subject != "Mia"; }
+function FromIsMia(query) { return query.from == "Mia"; }
+function FromIsNotMia(query) { return query.from != "Mia"; }
+function Iswitch_aggro_onMia(query) { return query.witch_aggro_on == "Mia"; }
+function IsNotSaidBeenJockeyedMia(query) { return query.worldsaidbeenjockeyedmia != 1; }
+function IsSaidBeenJockeyedMia(query) { return query.worldsaidbeenjockeyedmia == 1; }
+function IsNotSaidMiaPounced(query) { return query.worldsaidmiapounced != 1; }
+function ConceptMiaSuggestsCrane(query) { return query.concept == "MiaSuggestsCrane"; }
+function ConceptLaughMia(query) { return query.concept == "LaughMia"; }
+function Concept_C1M1_ElevatorHello3AliveMiaIntro(query) { return query.concept == "_C1M1_ElevatorHello3AliveMiaIntro"; }
+function IsDonorMia(query) { return query.itemdonor == "Mia"; }
+function IsNotDonorMia(query) { return query.itemdonor != "Mia"; }
+// function HasDonor(query) { return DirectorScript.IsDonorBiker(query) || DirectorScript.IsDonorTeenGirl(query) || DirectorScript.IsDonorNamVet(query) || DirectorScript.IsDonorManager(query) || DirectorScript.IsDonorCoach(query) || DirectorScript.IsDonorGambler(query) || DirectorScript.IsDonorMechanic(query) || DirectorScript.IsDonorMia(query) || DirectorScript.IsDonorUnknown(query); }
+function IsMiaAVampire(query) { return query.worldc6m1_miaisavampire == 1; }
+// function PanicEventDS(query) { return DirectorScript.PanicEventCoach(query) || DirectorScript.PanicEventGambler(query) || DirectorScript.PanicEventMechanic(query) || DirectorScript.PanicEventMia(query) || DirectorScript.PanicEventBiker(query) || DirectorScript.PanicEventNamVet(query) || DirectorScript.PanicEventManager(query) || DirectorScript.PanicEventTeenGirl(query); }
+
+// david ============================================================================================================================
+
+function IsShotMannDavid(query) { return query.worldshotmanndavid > 3; }
+function IsNotSaidShotMannequinDavid2(query) { return query.worldsaidshotmannequindavid2 != 1; }
+function IsDavidActor(query) { return query.davidactor == 1; }
+function IsNotSaiddaviddavides(query) { return query.worldsaiddaviddavides != 1; }
+function Conceptdaviddavides(query) { return query.concept == "daviddavides"; }
+function IsNotDavidIntroduced(query) { return query.worlddavidintroduced != 1; }
+function IsDavidIntroduced(query) { return query.worlddavidintroduced == 1; }
+function _auto_NotC4DavidInCover(query) { return query.world_auto_c4davidincover < 1; }
+function _auto_NotCaneExitedDavid(query) { return query.world_auto_caneexiteddavid < 1; }
+function _auto_NotDavidAngry(query) { return query.world_auto_davidangry < 1; }
+function _auto_NotDavidFoodBreak(query) { return query.world_auto_davidfoodbreak < 1; }
+function _auto_NotDavidHappy(query) { return query.world_auto_davidhappy < 1; }
+function _auto_IsDavidInCane(query) { return query.world_auto_davidincane == 1; }
+function _auto_NotDavidInCane(query) { return query.world_auto_davidincane < 1; }
+function _auto_IsDavidWavWindow(query) { return query.world_auto_davidwavwindow == 1; }
+function _auto_NotLastSurvivorTalkedDavid(query) { return query.world_auto_lastsurvivortalkeddavid < 1; }
+function _auto_IsDavidInWitchville(query) { return query.world_auto_davidinwitchville == 1; }
+function _auto_NotDavidInWitchville(query) { return query.world_auto_davidinwitchville < 1; }
+function _auto_DavidIsPressing(query) { return query.world_auto_davidpressing == 1; }
+function _auto_IsTalkingDavid(query) { return query.world_auto_talkingdavid == 1; }
+function _auto_NotTimerLockDavid(query) { return query.world_auto_timerlockdavid < 1; }
+function _auto_DavidSawC6M3Bill(query) { return query.world_auto_davidc6m3bill == 1; }
+function IsNotTalkDavid(query) { return query.talkdavid == 1; }
+function IsTalkDavid(query) { return query.talkdavid != 1; }
+function IsWorldTalkDavid(query) { return query.worldtalkdavid != 1; }
+function IsDavidNotAlive(query) { return query.isdavidalive != 1; }
+function IsDavidAlive(query) { return query.isdavidalive == 1; }
+function IsDavidNear125(query) { return query.disttodavid < 125; }
+function IsDavidNear200(query) { return query.disttodavid < 200; }
+function IsDavidNear400(query) { return query.disttodavid < 400; }
+function IsDavidNear800(query) { return query.disttodavid < 800; }
+function IsDavidFar400(query) { return query.disttodavid >= 400; }
+function IsDavidFar1000(query) { return query.disttodavid > 600; }
+function IsNotSaidFaultFriendlyFireDavid(query) { return query.worldsaidfaultfriendlyfiredavid != 1; }
+function IsSaidFaultFriendlyFireDavid(query) { return query.worldsaidfaultfriendlyfiredavid == 1; }
+function IsShotTeammateDavid(query) { return query.worldshotteammatedavid == 1; }
+function IsNotShotTeammateDavid(query) { return query.worldshotteammatedavid != 1; }
+function WhoPutColaDavid(query) { return query.worldwhoputcola == "David"; }
+function PanicEventDavid(query) { return query.whodidit == "David"; }
+function IsDavid(query) { return query.who == "David"; }
+function IsTriggeredByDavid(query) { return query.triggeredby == "David"; }
+function IsDeadDavid(query) { return query.deadcharacter == "David"; }
+function IsNotDeadDavid(query) { return query.deadcharacter != "David"; }
+function SubjectIsDavid(query) { return query.subject == "David"; }
+function SubjectIsNotDavid(query) { return query.subject != "David"; }
+function FromIsDavid(query) { return query.from == "David"; }
+function FromIsNotDavid(query) { return query.from != "David"; }
+function Iswitch_aggro_onDavid(query) { return query.witch_aggro_on == "David"; }
+function IsNotSaidBeenJockeyedDavid(query) { return query.worldsaidbeenjockeyeddavid != 1; }
+function IsSaidBeenJockeyedDavid(query) { return query.worldsaidbeenjockeyeddavid == 1; }
+function IsNotSaidDavidPounced(query) { return query.worldsaiddavidpounced != 1; }
+function IsNotNickInsultedDavidC1(query) { return query.worldnickinsulteddavid != 1; }
+function IsSaidC1M3DavidFoodCourt(query) { return query.worldsaidc1m3davidfoodcourt == 1; }
+function ConceptDavidSuggestsCrane(query) { return query.concept == "DavidSuggestsCrane"; }
+function ConceptLaughDavid(query) { return query.concept == "LaughDavid"; }
+function NotDavidMadAtRiders(query) { return query.worlddavidmadatriders < 1; }
+function DavidMadAtRiders(query) { return query.worlddavidmadatriders == 1; }
+function Concept_C2M2_DavidApocolypse(query) { return query.concept == "_C2M2_DavidApocolypse"; }
+function ConceptPlayer_CoverMeC1RDavid1(query) { return query.concept == "Player.CoverMeC1RDavid1"; }
+function ConceptPlayer_CoverMeC1RDavid2(query) { return query.concept == "Player.CoverMeC1RDavid2"; }
+// function FromSet1(query) { return DirectorScript.FromIsDavid(query) || DirectorScript.FromIsAnOrator(query); }
+function DavidCake(query) { return query.worlddavidcake == 1; }
+function IsDonorDavid(query) { return query.itemdonor == "David"; }
+function IsNotDonorDavid(query) { return query.itemdonor != "David"; }
+// function HasDonor(query) { return DirectorScript.IsDonorBiker(query) || DirectorScript.IsDonorTeenGirl(query) || DirectorScript.IsDonorNamVet(query) || DirectorScript.IsDonorManager(query) || DirectorScript.IsDonorDavid(query) || DirectorScript.IsDonorGambler(query) || DirectorScript.IsDonorMechanic(query) || DirectorScript.IsDonorProducer(query) || DirectorScript.IsDonorUnknown(query); }
+function IsDavidAVampire(query) { return query.worldc6m1_davidisavampire == 1; }
+// function PanicEventDS(query) { return DirectorScript.PanicEventDavid(query) || DirectorScript.PanicEventGambler(query) || DirectorScript.PanicEventMechanic(query) || DirectorScript.PanicEventProducer(query) || DirectorScript.PanicEventBiker(query) || DirectorScript.PanicEventNamVet(query) || DirectorScript.PanicEventManager(query) || DirectorScript.PanicEventTeenGirl(query); }
+
+// deputy ============================================================================================================================
+
+function IsShotMannDeputy(query) { return query.worldshotmanndeputy > 3; }
+function IsNotSaidShotMannequinDeputy2(query) { return query.worldsaidshotmannequindeputy2 != 1; }
+function IsDeputyActor(query) { return query.deputyactor == 1; }
+function IsNotDeputyIntroduced(query) { return query.worlddeputyintroduced != 1; }
+function _auto_NotC4DeputyInCover(query) { return query.world_auto_c4deputyincover < 1; }
+function _auto_NotCaneExitedDeputy(query) { return query.world_auto_caneexiteddeputy < 1; }
+function _auto_IsDeputyInCane(query) { return query.world_auto_deputyincane == 1; }
+function _auto_NotDeputyInCane(query) { return query.world_auto_deputyincane < 1; }
+function _auto_IsDeputyWavWindow(query) { return query.world_auto_deputywavwindow == 1; }
+function _auto_NotLastSurvivorTalkedDeputy(query) { return query.world_auto_lastsurvivortalkeddeputy < 1; }
+function _auto_IsDeputyInWitchville(query) { return query.world_auto_deputyinwitchville == 1; }
+function _auto_NotDeputyInWitchville(query) { return query.world_auto_deputyinwitchville < 1; }
+function _auto_DeputyIsPressing(query) { return query.world_auto_deputypressing == 1; }
+function _auto_IsTalkingDeputy(query) { return query.world_auto_talkingdeputy == 1; }
+function _auto_NotTimerLockDeputy(query) { return query.world_auto_timerlockdeputy < 1; }
+function _auto_DeputySawC6M3Bill(query) { return query.world_auto_deputyc6m3bill == 1; }
+function IsNotTalkDeputy(query) { return query.talkdeputy == 1; }
+function IsTalkDeputy(query) { return query.talkdeputy != 1; }
+function IsWorldTalkDeputy(query) { return query.worldtalkdeputy != 1; }
+function IsDeputyNotAlive(query) { return query.isdeputyalive != 1; }
+function IsDeputyAlive(query) { return query.isdeputyalive == 1; }
+function IsSmallTownBarricadeDeputy(query) { return query.worldsmalltownbarricadedeputy != 1; }
+function IsDeputyNear200(query) { return query.disttodeputy < 200; }
+function IsDeputyNear400(query) { return query.disttodeputy < 400; }
+function IsDeputyNear800(query) { return query.disttodeputy < 800; }
+function IsDeputyFar400(query) { return query.disttodeputy >= 400; }
+function IsDeputyFar1000(query) { return query.disttodeputy > 600; }
+function IsNotSaidFaultFriendlyFireDeputy(query) { return query.worldsaidfaultfriendlyfiredeputy != 1; }
+function IsSaidFaultFriendlyFireDeputy(query) { return query.worldsaidfaultfriendlyfiredeputy == 1; }
+function IsShotTeammateDeputy(query) { return query.worldshotteammatedeputy == 1; }
+function IsNotShotTeammateDeputy(query) { return query.worldshotteammatedeputy != 1; }
+function WhoPutColaDeputy(query) { return query.worldwhoputcola == "Deputy"; }
+function PanicEventDeputy(query) { return query.whodidit == "Deputy"; }
+function IsDeputy(query) { return query.who == "Deputy"; }
+function IsTriggeredByDeputy(query) { return query.triggeredby == "Deputy"; }
+function IsDeadDeputy(query) { return query.deadcharacter == "Deputy"; }
+function IsNotDeadDeputy(query) { return query.deadcharacter != "Deputy"; }
+function SubjectIsDeputy(query) { return query.subject == "Deputy"; }
+function SubjectIsNotDeputy(query) { return query.subject != "Deputy"; }
+function FromIsDeputy(query) { return query.from == "Deputy"; }
+function FromIsNotDeputy(query) { return query.from != "Deputy"; }
+function Iswitch_aggro_onDeputy(query) { return query.witch_aggro_on == "Deputy"; }
+function IsNotSaidBeenJockeyedDeputy(query) { return query.worldsaidbeenjockeyeddeputy != 1; }
+function IsSaidBeenJockeyedDeputy(query) { return query.worldsaidbeenjockeyeddeputy == 1; }
+function IsNotSaidDeputyPounced(query) { return query.worldsaiddeputypounced != 1; }
+function IsNotDeputyInsultedCoachC1(query) { return query.worlddeputyinsultedcoach != 1; }
+function ConceptDeputyC1Attitude(query) { return query.concept == "DeputyC1Attitude"; }
+function DeputyOCD(query) { return query.worlddeputyocd != 1; }
+function C13M1EllisNotPadeputying(query) { return query.worldc13m1ellispadeputying < 1; }
+function Concept_C1M1_ElevatorHello3AliveDeputyIntro1(query) { return query.concept == "_C1M1_ElevatorHello3AliveDeputyIntro1"; }
+function Concept_C1M1_ElevatorHello3AliveDeputyIntro2(query) { return query.concept == "_C1M1_ElevatorHello3AliveDeputyIntro2"; }
+function Concept_C1M1_ElevatorHello2AliveDeputyIntro1(query) { return query.concept == "_C1M1_ElevatorHello2AliveDeputyIntro1"; }
+function Concept_C1M1_ElevatorHello2AliveDeputyIntro2(query) { return query.concept == "_C1M1_ElevatorHello2AliveDeputyIntro2"; }
+function ConceptPlayer_DeputyGunOwnership(query) { return query.concept == "Player.DeputyGunOwnership"; }
+function ConceptPlayer_WhinyDeputy(query) { return query.concept == "Player.WhinyDeputy"; }
+function ConceptChargerBeatsDeputy(query) { return query.concept == "ChargerBeatsDeputy"; }
+function IsDonorDeputy(query) { return query.itemdonor == "Deputy"; }
+function IsNotDonorDeputy(query) { return query.itemdonor != "Deputy"; }
+// function HasDonor(query) { return DirectorScript.IsDonorBiker(query) || DirectorScript.IsDonorTeenGirl(query) || DirectorScript.IsDonorNamVet(query) || DirectorScript.IsDonorManager(query) || DirectorScript.IsDonorCoach(query) || DirectorScript.IsDonorDeputy(query) || DirectorScript.IsDonorMechanic(query) || DirectorScript.IsDonorProducer(query) || DirectorScript.IsDonorUnknown(query); }
+// function PanicEventDS(query) { return DirectorScript.PanicEventCoach(query) || DirectorScript.PanicEventDeputy(query) || DirectorScript.PanicEventMechanic(query) || DirectorScript.PanicEventProducer(query) || DirectorScript.PanicEventBiker(query) || DirectorScript.PanicEventNamVet(query) || DirectorScript.PanicEventManager(query) || DirectorScript.PanicEventTeenGirl(query); }
+
+// robin ============================================================================================================================
+
+function ConceptBlockChurchGuyRobinNo1(query) { return query.concept == "ConceptBlockChurchGuyRobinNo1"; }
+// function ConceptBlock959(query) { return query.concept == "RobinWhoAreYou"; }
+function RobinNotPickedUpItem(query) { return query.robinpickedupitem != 1; }
+function IsRobinFriendlyFire(query) { return query.worldrobinfriendlyfire == 1; }
+function IsNotRobinFriendlyFire(query) { return query.worldrobinfriendlyfire != 1; }
+function IsNotRobinFriendlyFireFrancis(query) { return query.worldrobinfriendlyfirefrancis != 1; }
+function IsNotAskedForCoverRobin(query) { return query.robinaskforcover != 1; }
+function IsNotSaidBattleStationsRobin(query) { return query.worldsaidbattlestationsrobin != 1; }
+function IsNotSaidBeenJockeyedRobin(query) { return query.saidbeenjockeyedrobin != 1; }
+function RobinNotSaidGrabbingCan(query) { return query.saidgrabbingcan != 1; }
+function _auto_NotC4RobinInCover(query) { return query.world_auto_c4robinincover < 1; }
+function _auto_NotLastSurvivorTalkedRobin(query) { return query.world_auto_lastsurvivortalkedrobin < 1; }
+function _auto_IsRobinInCane(query) { return query.world_auto_robinincane == 1; }
+function _auto_NotRobinInCane(query) { return query.world_auto_robinincane < 1; }
+function _auto_IsRobinWavWindow(query) { return query.world_auto_robinwavwindow == 1; }
+function _auto_RobinIsPressing(query) { return query.world_auto_robinpressing == 1; }
+function _auto_IsTalkingRobin(query) { return query.world_auto_talkingrobin == 1; }
+function _auto_NotTimerLockRobin(query) { return query.world_auto_timerlockrobin < 1; }
+function _auto_NotC6M3Robin(query) { return query.world_auto_c6m3robin < 1; }
+function _auto_SawC6M3Robin(query) { return query.world_auto_c6m3robin == 1; }
+function _auto_SaidC6M3Robin(query) { return query.world_auto_c6m3robin == 2; }
+function _auto_GamblerSawC6M3Robin(query) { return query.world_auto_gamblerc6m3robin == 1; }
+function _auto_CoachSawC6M3Robin(query) { return query.world_auto_coachc6m3robin == 1; }
+function _auto_MechanicSawC6M3Robin(query) { return query.world_auto_mechanicc6m3robin == 1; }
+function _auto_NotC7M3PressingRobin(query) { return query.world_auto_c7m3pressingrobin < 1; }
+function _auto_NotC7M3ToBridgeRobin(query) { return query.world_auto_c7m3tobridgerobin < 1; }
+function IsNotSaidFaultFriendlyFireRobin(query) { return query.worldsaidfaultfriendlyfirerobin != 1; }
+function IsSaidFaultFriendlyFireRobin(query) { return query.worldsaidfaultfriendlyfirerobin == 1; }
+function IsShotTeammateRobin(query) { return query.worldshotteammaterobin == 1; }
+function IsNotShotTeammateRobin(query) { return query.worldshotteammaterobin != 1; }
+// function IsNotSaidpathc2m1_robinboard(query) { return query.worldsaidpathc2m1_robinboard != 1; }
+// function Ispathc2m1_robinboard(query) { return query.subject == "pathc2m1_robinboard"; }
+// function Concept_C2M1Robinboard(query) { return query.concept == "_C2M1Robinboard"; }
+// function Concept_C2M1Robinboard01(query) { return query.concept == "_C2M1Robinboard01"; }
+function IsCrashFinalePressingRobin(query) { return query.worldcrashfinalepressingrobin == 1; }
+function NotNagCrashRobin(query) { return query.worldnagcrashrobin < 1; }
+function ConceptC7M3FinalSpeakRobin(query) { return query.concept == "C7M3FinalSpeakRobin"; }
+function NotSacrificedRobin(query) { return query.worldsacrificed != "Robin"; }
+function SacrificedRobin(query) { return query.worldsacrificed == "Robin"; }
+function IsNotTalkRobin(query) { return query.talkrobin == 1; }
+function IsTalkRobin(query) { return query.talkrobin != 1; }
+function IsWorldTalkRobin(query) { return query.worldtalkrobin != 1; }
+function IsRobinAlive(query) { return query.isrobinalive == 1; }
+// function IsL4D1Alive(query) { return DirectorScript.IsTeenGirlAlive(query) || DirectorScript.IsManagerAlive(query) || DirectorScript.IsBikerAlive(query) || DirectorScript.IsRobinAlive(query); }
+function NotRobinAlive(query) { return query.isrobinalive == 0; }
+function IsRobinNear200(query) { return query.disttorobin < 200; }
+function IsRobinNear400(query) { return query.disttorobin < 400; }
+function IsRobinNear500(query) { return query.disttorobin < 500; }
+function IsRobinNear800(query) { return query.disttorobin < 800; }
+function IsRobinFar400(query) { return query.disttorobin >= 400; }
+function IsRobinFar1000(query) { return query.disttorobin > 600; }
+function IsRobin(query) { return query.who == "Robin"; }
+function IsDeadRobin(query) { return query.deadcharacter == "Robin"; }
+function IsTeam4Robin(query) { return query.name == "silver_robin"; }
+function SubjectIsRobin(query) { return query.subject == "Robin"; }
+function SubjectIsNotRobin(query) { return query.subject != "Robin"; }
+function FromIsRobin(query) { return query.from == "Robin"; }
+function FromIsNotRobin(query) { return query.from != "Robin"; }
+function Iswitch_aggro_onRobin(query) { return query.witch_aggro_on == "Robin"; }
+function IsNotSaidBeenJockeyedRobin(query) { return query.worldsaidbeenjockeyedrobin != 1; }
+function IsDonorRobin(query) { return query.itemdonor == "Robin"; }
+function IsNotDonorRobin(query) { return query.itemdonor != "Robin"; }
+// function HasDonor(query) { return DirectorScript.IsDonorBiker(query) || DirectorScript.IsDonorTeenGirl(query) || DirectorScript.IsDonorRobin(query) || DirectorScript.IsDonorManager(query) || DirectorScript.IsDonorCoach(query) || DirectorScript.IsDonorGambler(query) || DirectorScript.IsDonorMechanic(query) || DirectorScript.IsDonorProducer(query) || DirectorScript.IsDonorUnknown(query); }
+function IsWorldC6M3_Robin(query) { return query.subject == "WorldC6M3_Robin"; }
+function ConceptPlayerSuggestHealthRobin(query) { return query.concept == "PlayerSuggestHealthRobin"; }
+function IsSmallTownBarricadeRobin(query) { return query.worldsmalltownbarricaderobin != 1; }
+function PanicEventRobin(query) { return query.whodidit == "Robin"; }
+function IsTriggeredByRobin(query) { return query.triggeredby == "Robin"; }
+function IsNotSaidRobinPounced(query) { return query.worldsaidrobinpounced != 1; }
+function IsSmallTownBarricadeRobin(query) { return query.worldsmalltownbarricaderobin != 1; }
+function PanicEventRobin(query) { return query.whodidit == "Robin"; }
+// function PanicEventDS(query) { return DirectorScript.PanicEventCoach(query) || DirectorScript.PanicEventGambler(query) || DirectorScript.PanicEventMechanic(query) || DirectorScript.PanicEventProducer(query) || DirectorScript.PanicEventBiker(query) || DirectorScript.PanicEventRobin(query) || DirectorScript.PanicEventManager(query) || DirectorScript.PanicEventTeenGirl(query); }
+function IsTriggeredByRobin(query) { return query.triggeredby == "Robin"; }
+function IsNotSaidRobinPounced(query) { return query.worldsaidrobinpounced != 1; }
+
+// trevor ============================================================================================================================
+
+function IsShotMannTrevor(query) { return query.worldshotmanntrevor > 3; }
+function IsNotSaidShotMannequinTrevor2(query) { return query.worldsaidshotmannequintrevor2 != 1; }
+function Conceptc1m4escapeTrevorCheck(query) { return query.concept == "c1m4escapeTrevorCheck"; }
+function Conceptc1m4escapeTrevorCheckFail(query) { return query.concept == "c1m4escapeTrevorCheckFail"; }
+function Conceptc1m4escapeTrevorCheckSuccess(query) { return query.concept == "c1m4escapeTrevorCheckSuccess"; }
+function IsTrevorActor(query) { return query.trevoractor == 1; }
+function IsNotTrevorIntroduced(query) { return query.worldtrevorintroduced != 1; }
+function _auto_NotC4TrevorInCover(query) { return query.world_auto_c4trevorincover < 1; }
+function _auto_NotCaneExitedTrevor(query) { return query.world_auto_caneexitedtrevor < 1; }
+function _auto_NotLastSurvivorTalkedTrevor(query) { return query.world_auto_lastsurvivortalkedtrevor < 1; }
+function _auto_IsTrevorInCane(query) { return query.world_auto_trevorincane == 1; }
+function _auto_NotTrevorInCane(query) { return query.world_auto_trevorincane < 1; }
+function _auto_IsTrevorWavWindow(query) { return query.world_auto_trevorwavwindow == 1; }
+function _auto_IsTrevorInWitchville(query) { return query.world_auto_trevorinwitchville == 1; }
+function _auto_NotTrevorInWitchville(query) { return query.world_auto_trevorinwitchville < 1; }
+function _auto_TrevorIsPressing(query) { return query.world_auto_trevorpressing == 1; }
+function _auto_C5M3TrevorReacted(query) { return query.world_auto_c5m3trevorreacted == 1; }
+function _auto_IsTalkingTrevor(query) { return query.world_auto_talkingtrevor == 1; }
+function _auto_NotTimerLockTrevor(query) { return query.world_auto_timerlocktrevor < 1; }
+function _auto_TrevorSawC6M3Bill(query) { return query.world_auto_trevorc6m3bill == 1; }
+function IsNotTalkTrevor(query) { return query.talktrevor == 1; }
+function IsTalkTrevor(query) { return query.talktrevor != 1; }
+function IsWorldTalkTrevor(query) { return query.worldtalktrevor != 1; }
+function IsTrevorNotAlive(query) { return query.istrevoralive != 1; }
+function IsTrevorAlive(query) { return query.istrevoralive == 1; }
+function IsSmallTownBarricadeTrevor(query) { return query.worldsmalltownbarricadetrevor != 1; }
+function IsTrevorNear200(query) { return query.disttotrevor < 200; }
+function IsTrevorNear300(query) { return query.disttotrevor < 300; }
+function IsTrevorNear400(query) { return query.disttotrevor < 400; }
+function IsTrevorNear400Weight0(query) { return query.disttotrevor < 400; }
+function IsTrevorNear800(query) { return query.disttotrevor < 800; }
+function IsTrevorFar400(query) { return query.disttotrevor >= 400; }
+function IsTrevorFar1000(query) { return query.disttotrevor > 600; }
+function IsNotSaidFaultFriendlyFireTrevor(query) { return query.worldsaidfaultfriendlyfiretrevor != 1; }
+function IsSaidFaultFriendlyFireTrevor(query) { return query.worldsaidfaultfriendlyfiretrevor == 1; }
+function IsShotTeammateTrevor(query) { return query.worldshotteammatetrevor == 1; }
+function IsNotShotTeammateTrevor(query) { return query.worldshotteammatetrevor != 1; }
+function IsTrevorCrybaby(query) { return query.worldtrevorcrying == 1; }
+function WhoPutColaTrevor(query) { return query.worldwhoputcola == "Trevor"; }
+function PanicEventTrevor(query) { return query.whodidit == "Trevor"; }
+function IsTrevor(query) { return query.who == "Trevor"; }
+function IsTriggeredByTrevor(query) { return query.triggeredby == "Trevor"; }
+function IsDeadTrevor(query) { return query.deadcharacter == "Trevor"; }
+function IsNotDeadTrevor(query) { return query.deadcharacter != "Trevor"; }
+function SubjectIsTrevor(query) { return query.subject == "Trevor"; }
+function SubjectIsNotTrevor(query) { return query.subject != "Trevor"; }
+function FromIsTrevor(query) { return query.from == "Trevor"; }
+function FromIsNotTrevor(query) { return query.from != "Trevor"; }
+function Iswitch_aggro_onTrevor(query) { return query.witch_aggro_on == "Trevor"; }
+function IsNotSaidBeenJockeyedTrevor(query) { return query.worldsaidbeenjockeyedtrevor != 1; }
+function IsSaidBeenJockeyedTrevor(query) { return query.worldsaidbeenjockeyedtrevor == 1; }
+function IsNotSaidTrevorPounced(query) { return query.worldsaidtrevorpounced != 1; }
+function IsTrevorAlsoWarn(query) { return query.worldtrevoralsowarn == 1; }
+function ConceptTrevorInterrupt(query) { return query.concept == "TrevorInterrupt"; }
+function TrevorNotTall(query) { return query.worldtrevortalljoke == 1; }
+function ConceptC13M1Intro2Trevor(query) { return query.concept == "C13M1Intro2Trevor"; }
+function C13M1TrevorNotPanicking(query) { return query.worldc13m1trevorpanicking < 1; }
+function IsNotSrcGrp_TREVORSTORYINIT(query) { return query.worldsrcgrp_trevorstoryinit < 1; }
+function IsNotSrcGrp_TREVORSTORY(query) { return query.worldsrcgrp_trevorstory < 1; }
+function ConceptC3M4ButtonAnswerTrevor(query) { return query.concept == "C3M4ButtonAnswerTrevor"; }
+function ConceptTrevorStoryReac01(query) { return query.concept == "TrevorStoryReac01"; }
+function ConceptC3M4Button104Trevor(query) { return query.concept == "C3M4Button104Trevor"; }
+function ConceptC6M2TrevorStoryStart1(query) { return query.concept == "C6M2TrevorStoryStart1"; }
+function ConceptC6M3TrevorBridgeStory1(query) { return query.concept == "C6M3TrevorBridgeStory1"; }
+function ConceptC6M3TrevorBridgeStory1a(query) { return query.concept == "C6M3TrevorBridgeStory1a"; }
+function ConceptWorldC6M3_ByBridge01Trevor(query) { return query.concept == "WorldC6M3_ByBridge01Trevor"; }
+function IsTrevorInLoveC6M1(query) { return query.worldtrevorinlovec6m1 == 1; }
+function IsDonorTrevor(query) { return query.itemdonor == "Trevor"; }
+function IsNotDonorTrevor(query) { return query.itemdonor != "Trevor"; }
+// function HasDonor(query) { return DirectorScript.IsDonorBiker(query) || DirectorScript.IsDonorTeenGirl(query) || DirectorScript.IsDonorNamVet(query) || DirectorScript.IsDonorManager(query) || DirectorScript.IsDonorCoach(query) || DirectorScript.IsDonorGambler(query) || DirectorScript.IsDonorTrevor(query) || DirectorScript.IsDonorProducer(query) || DirectorScript.IsDonorUnknown(query); }
+function IsSaidOpenedGate1BlameTrevor(query) { return query.worldsaidopenedgate1blametrevor == 1; }
+function IsNotSaidTrevorBridgeStoryStart(query) { return query.worldsaidtrevorbridgestorystart != 1; }
+function IsEndTrevorBridgeStoryStart(query) { return query.worldendtrevorbridgestorystart == 1; }
+// function PanicEventDS(query) { return DirectorScript.PanicEventCoach(query) || DirectorScript.PanicEventGambler(query) || DirectorScript.PanicEventTrevor(query) || DirectorScript.PanicEventProducer(query) || DirectorScript.PanicEventBiker(query) || DirectorScript.PanicEventNamVet(query) || DirectorScript.PanicEventManager(query) || DirectorScript.PanicEventTeenGirl(query); }
+
 // ============================================================================================================================
+
+

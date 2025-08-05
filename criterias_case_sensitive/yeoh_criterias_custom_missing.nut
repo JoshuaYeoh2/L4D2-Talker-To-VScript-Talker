@@ -309,6 +309,29 @@ function ShevaNotPickedUpItem(query) { return query.pickedupitem != 1; }
 function IsNotSaidShevaWitchChasing(query) { return query.saidwitchchasing != 1; }
 function IsSaidShevaWitchAttacking(query) { return query.saidwitchattacking == 1; }
 
+// ethan ============================================================================================================================
+
+function isEthan(query) { return query.who == "Ethan"; }
+function EthanNotPickedUpItem(query) { return query.pickedupitem != 1; }
+function IsNotSaidEthanWitchChasing(query) { return query.saidwitchchasing != 1; }
+function IsSaidEthanWitchAttacking(query) { return query.saidwitchattacking == 1; }
+
+// robin ============================================================================================================================
+
+function isRobin(query) { return query.who == "Robin"; }
+function IsSmalltownBarricadeRobin(query) { return query.worldsmalltownbarricaderobin != 1; }
+function ConceptC7M2CrowsFlySpeakRobin(query) { return query.concept == "C7M2CrowsFlySpeak"; }
+function ConceptC7M3BridgeLeapSpeakRobin(query) { return query.concept == "C7M3BridgeLeapSpeak"; }
+function ConceptC7M3GeneratorSpeakRobin(query) { return query.concept == "C7M3GeneratorSpeak"; }
+function Conceptc7m1opentankdoorspeakRobin(query) { return query.concept == "C7M1OpenTankDoorSpeak"; }
+
+// trevor ============================================================================================================================
+
+function isTrevor(query) { return query.who == "Trevor"; }
+function TrevorNotPickedUpItem(query) { return query.pickedupitem != 1; }
+function IsNotSaidTrevorWitchChasing(query) { return query.saidwitchchasing != 1; }
+function IsSaidTrevorWitchAttacking(query) { return query.saidwitchattacking == 1; }
+
 // ============================================================================================================================
 
 

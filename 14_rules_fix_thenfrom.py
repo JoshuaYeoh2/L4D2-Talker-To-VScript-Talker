@@ -27,5 +27,5 @@ if __name__ == "__main__":
     format_thenfrom(
         input="13_rules_format_responses.nut",
         output="14_rules_fix_thenfrom.nut",
-        from_who="Sheva",
+        from_who="Trevor",
     )

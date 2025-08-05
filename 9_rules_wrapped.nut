@@ -1,100 +1,69 @@
-local sheva_alomar_rules = 
+local trevor_philips_rules = 
 [
 	{
-		Rule C3M1CallFerrySheva
+		Rule C3M1CallFerryTrevor
 		{
-		    criteria ConceptC3M1CallFerry PanicEventSheva IsNotSaidC3M1CallFerry2
-		    Response C3M1CallFerryProducer
-		    then any C3M1CallFerry2 ShevaActor:1 0
+		    criteria ConceptC3M1CallFerry PanicEventTrevor IsNotSaidC3M1CallFerry2
+		    Response C3M1CallFerryMechanic
+		    then any C3M1CallFerry2 TrevorActor:1 0
 		    ApplyContext "SaidC3M1CallFerry2:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C3M2OpenDoorSheva
+		Rule C3M2OpenDoorTrevor
 		{
-		    criteria ConceptC3M2OpenDoor PanicEventSheva
-		    Response C3M2OpenDoorProducer
-		    then Sheva C3M2OpenDoor2 ShevaActor:1 0
-		    ApplyContext "SaidC3M2OpenDoor:1:0,Talk:1:2.406,WarnMegaMob:1:300,SaidSpecialWarn:1:30"
+		    criteria ConceptC3M2OpenDoor PanicEventTrevor
+		    Response C3M2OpenDoorMechanic
+		    then Trevor C3M2OpenDoor2 TrevorActor:1 0
+		    ApplyContext "SaidC3M2OpenDoor:1:0,Talk:1:2.157,WarnMegaMob:1:300,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule c5m4floatstartSheva
+		Rule c5m4floatstartTrevor
 		{
-		    criteria Conceptc5m4floatstart PanicEventSheva
-		    Response c5m4floatstartProducer
-		    then sheva c5m4floatstart2 foo:0 0
+		    criteria Conceptc5m4floatstart PanicEventTrevor
+		    Response c5m4floatstartMechanic
+		    then trevor c5m4floatstart2 foo:0 0
 		    ApplyContext "Saidc5m4floatstart:1:0,_auto_TractorStarted:1:0,_auto_InMiniFinale:1:0,WarnMegaMob:1:300,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C1M2InsideGunShopSheva
+		Rule C1M1InSmokeTrevor
 		{
-		    criteria ConceptC1M2InsideGunShop PanicEventSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C1M2InsideGunShopProducer
-		    then sheva C1M2InsideGunShop2 foo:0 0
+		    criteria ConceptTalkIdle IsTrevor IsSaidC1M1InSmoke ismap_c1m1_hotel AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response C1M1InSmokeMechanic
+		    then any C1M1Cough foo:0 -1.399
 		}
 	},
 
 	{
-		Rule C1M3AlarmOffOratorSheva
+		Rule C1M3AlarmOffTrevor
 		{
-		    criteria ConceptC1M3AlarmOff PanicEventSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C1M3AlarmOffOratorProducer
-		    then sheva C1M3AlarmOff2 foo:0 0
-		    ApplyContext "_auto_Alarm:2:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule C1M3BrokeWindowOratorSheva
-		{
-		    criteria ConceptC1M3BrokeWindow PanicEventSheva AutoIsNotScavenge AutoIsNotSurvival _auto_NotAlarm
-		    Response C1M3BrokeWindowOratorProducer
-		    then sheva C1M3AlarmActive foo:0 0
-		    ApplyContext "_auto_Alarm:1:0,WarnMegaMob:1:300,SaidSpecialWarn:1:30"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule C1M1InSmokeSheva
-		{
-		    criteria ConceptTalkIdle IsSheva IsSaidC1M1InSmoke ismap_c1m1_hotel AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response C1M1InSmokeProducer
-		    then any C1M1Cough foo:0 -2.638
-		}
-	},
-
-	{
-		Rule C1M3AlarmOffSheva
-		{
-		    criteria ConceptC1M3AlarmOff2 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C1M3AlarmOffProducer
+		    criteria ConceptC1M3AlarmOff2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C1M3AlarmOffMechanic
 		    then any C1M3AlarmOffa foo:0 .5
 		}
 	},
 
 	{
-		Rule C1M3AlarmActiveSheva
+		Rule C1M3AlarmActiveTrevor
 		{
-		    criteria ConceptC1M3AlarmActive IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C1M3AlarmActiveProducer
+		    criteria ConceptC1M3AlarmActive IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C1M3AlarmActiveMechanic
 		}
 	},
 
 	{
-		Rule C4M3SaferoomSheva
+		Rule C4M3SaferoomTrevor
 		{
-		    criteria ConceptTalkIdle IsSheva NotInCombat IsInStartArea IsNotAlone IsNotSaidLeavingSafeArea isc4m3 AutoIsNotScavenge AutoIsNotSurvival _auto_NotSafeRoomQuiet _auto_IsSafeRoomStart IsNotSpeakingWeight0
-		    Response C4M3SaferoomProducer
+		    criteria ConceptTalkIdle IsTrevor NotInCombat IsInStartArea IsNotAlone IsNotSaidLeavingSafeArea isc4m3 AutoIsNotScavenge AutoIsNotSurvival _auto_NotSafeRoomQuiet _auto_IsSafeRoomStart IsNotSpeakingWeight0
+		    Response C4M3SaferoomMechanic
 		    then any _c4m3_startsafe02 foo:0 0.01
 		    ApplyContext "_auto_SafeRoomStart:2:0"
 		    applycontexttoworld
@@ -102,180 +71,230 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule L4D1PlayerNiceShotFrancisC6M3Sheva
+		Rule L4D1PlayerNiceShotFrancisC6M3Trevor
 		{
-		    criteria ConceptPlayerNiceShot IsNotCoughing IsSheva IssuerNotSoClose IsTalk IsTalkSheva IsC6M3_Port IsWorldTalkSheva SubjectIsBiker ChanceToFire70Percent IsNotSpeaking
-		    Response L4D1PlayerNiceShotFrancisC6M3Producer
+		    criteria ConceptPlayerNiceShot IsNotCoughing IsTrevor IssuerNotSoClose IsC6M3_Port IsTalk IsTalkTrevor IsWorldTalkTrevor SubjectIsBiker ChanceToFire70Percent IsNotSpeaking
+		    Response L4D1PlayerNiceShotFrancisC6M3Mechanic
 		}
 	},
 
 	{
-		Rule PlayerNiceShotFrancisSheva
+		Rule PlayerNiceShotFrancisTrevor
 		{
-		    criteria ConceptPlayerNiceShot IsNotCoughing IsSheva IssuerClose IsTalk IsTalkSheva IsWorldTalkSheva SubjectIsBiker ChanceToFire10Percent IsNotSpeaking
-		    Response PlayerNiceShotFrancisProducer
+		    criteria ConceptPlayerNiceShot IsNotCoughing IsTrevor IssuerClose IsTalk IsTalkTrevor IsWorldTalkTrevor SubjectIsBiker ChanceToFire30Percent IsNotSpeaking
+		    Response PlayerNiceShotFrancisMechanic
 		}
 	},
 
 	{
-		Rule L4D1PlayerNiceShotLouisC6M3Sheva
+		Rule L4D1PlayerNiceShotLouisC6M3Trevor
 		{
-		    criteria ConceptPlayerNiceShot IsNotCoughing IsSheva IssuerNotSoClose IsTalk IsTalkSheva IsC6M3_Port IsWorldTalkSheva SubjectIsManager ChanceToFire70Percent IsNotSpeaking
-		    Response L4D1PlayerNiceShotLouisC6M3Producer
+		    criteria ConceptPlayerNiceShot IsNotCoughing IsTrevor IssuerNotSoClose IsC6M3_Port IsTalk IsTalkTrevor IsWorldTalkTrevor SubjectIsManager ChanceToFire70Percent IsNotSpeaking
+		    Response L4D1PlayerNiceShotLouisC6M3Mechanic
 		}
 	},
 
 	{
-		Rule PlayerNiceShotLouisSheva
+		Rule PlayerNiceShotLouisTrevor
 		{
-		    criteria ConceptPlayerNiceShot IsNotCoughing IsSheva IssuerClose IsTalk IsTalkSheva IsWorldTalkSheva SubjectIsManager ChanceToFire10Percent IsNotSpeaking
-		    Response L4D1PlayerNiceShotLouisC6M3Producer
+		    criteria ConceptPlayerNiceShot IsNotCoughing IsTrevor IssuerClose IsTalk IsTalkTrevor IsWorldTalkTrevor SubjectIsManager ChanceToFire10Percent IsNotSpeaking
+		    Response PlayerNiceShotLouisMechanic
 		}
 	},
 
 	{
-		Rule L4D1PlayerNiceShotZoeyC6M3Sheva
+		Rule L4D1PlayerNiceShotZoeyC6M3Trevor
 		{
-		    criteria ConceptPlayerNiceShot IsNotCoughing IsSheva IssuerNotSoClose IsTalk IsTalkSheva IsC6M3_Port IsWorldTalkSheva SubjectIsTeenGirl ChanceToFire70Percent IsNotSpeaking
-		    Response L4D1PlayerNiceShotZoeyC6M3Producer
+		    criteria ConceptPlayerNiceShot IsNotCoughing IsTrevor IssuerNotSoClose IsC6M3_Port IsTalk IsTalkTrevor IsWorldTalkTrevor SubjectIsTeenGirl ChanceToFire70Percent IsFrancisIntroActor IsNotSpeaking
+		    Response L4D1PlayerNiceShotZoeyC6M3Mechanic
 		}
 	},
 
 	{
-		Rule PlayerNiceShotZoeySheva
+		Rule L4D1PlayerNiceShotZoeyC6M3IntroTrevor
 		{
-		    criteria ConceptPlayerNiceShot IsNotCoughing IsSheva IssuerClose IsTalk IsTalkSheva IsWorldTalkSheva SubjectIsTeenGirl ChanceToFire10Percent IsNotSpeaking
-		    Response PlayerNiceShotZoeyProducer
+		    criteria ConceptPlayerNiceShot IsNotCoughing IsTrevor IssuerNotSoClose IsC6M3_Port IsTalk IsTalkTrevor IsWorldTalkTrevor SubjectIsTeenGirl ChanceToFire70Percent IsZoeyIntroActor IsNotSpeaking
+		    Response L4D1PlayerNiceShotZoeyC6M3IntroMechanic
 		}
 	},
 
 	{
-		Rule PlayerNiceShotSheva
+		Rule PlayerNiceShotZoeyTrevor
 		{
-		    criteria ConceptPlayerNiceShot IsNotCoughing IsSheva IssuerClose IsTalk IsTalkSheva ChanceToFire30Percent IsWorldTalkSheva
-		    Response PlayerNiceShotProducer
+		    criteria ConceptPlayerNiceShot IsNotCoughing IsTrevor IssuerClose IsTalk IsTalkTrevor IsWorldTalkTrevor SubjectIsTeenGirl ChanceToFire10Percent IsNotSpeaking
+		    Response L4D1PlayerNiceShotZoeyC6M3Mechanic
 		}
 	},
 
 	{
-		Rule L4D1PlayerNiceShotSheva
+		Rule PlayerNiceShotTrevor
 		{
-		    criteria ConceptPlayerNiceShot IsNotCoughing IsSheva IssuerNotSoClose IsC6M3_Port SubjectIsNotGambler SubjectIsNotMechanic SubjectIsNotCoach IsTalk IsTalkSheva ChanceToFire30Percent IsWorldTalkSheva
-		    Response PlayerNiceShotProducer
+		    criteria ConceptPlayerNiceShot IsNotCoughing IsTrevor IssuerClose IsTalk IsTalkTrevor ChanceToFire30Percent IsWorldTalkTrevor
+		    Response PlayerNiceShotMechanic
 		}
 	},
 
 	{
-		Rule PlayerNiceShotCoachSheva
+		Rule L4D1PlayerNiceShotTrevor
 		{
-		    criteria ConceptPlayerNiceShot IsNotCoughing IsSheva IssuerClose IsTalk IsTalkSheva ChanceToFire10Percent IsWorldTalkSheva SubjectIsCoach
-		    Response PlayerNiceShotCoachProducer
+		    criteria ConceptPlayerNiceShot IsNotCoughing IsTrevor IssuerNotSoClose IsC6M3_Port SubjectIsNotProducer SubjectIsNotGambler SubjectIsNotCoach IsTalk IsTalkTrevor ChanceToFire30Percent IsWorldTalkTrevor
+		    Response PlayerNiceShotMechanic
 		}
 	},
 
 	{
-		Rule PlayerNiceShotMechanicSheva
+		Rule PlayerNiceShotCoachTrevor
 		{
-		    criteria ConceptPlayerNiceShot IsNotCoughing IsSheva IssuerClose IsTalk IsTalkSheva ChanceToFire10Percent SubjectIsMechanic IsWorldTalkSheva
-		    Response PlayerNiceShotMechanicProducer
-		    ApplyContext "TalkSheva:1:3"
+		    criteria ConceptPlayerNiceShot IsNotCoughing IsTrevor IssuerClose IsTalk IsTalkTrevor ChanceToFire10Percent IsWorldTalkTrevor SubjectIsCoach
+		    Response PlayerNiceShotCoachMechanic
 		}
 	},
 
 	{
-		Rule SurvivorMournCoachSheva
+		Rule PlayerNiceShotGamblerTrevor
 		{
-		    criteria ConceptPlayerSeeDeadPlayer IsNotCoughing IsSheva IsDeadCoach IsNotSaidSomeoneDied IsTalk IsTalkSheva IsNotIncapacitated HasNotDefibrillator IsWorldTalkSheva
-		    Response SurvivorMournCoachProducer
+		    criteria ConceptPlayerNiceShot IsNotCoughing IsTrevor IssuerClose IsTalk IsTalkTrevor ChanceToFire10Percent IsWorldTalkTrevor SubjectIsGambler
+		    Response PlayerNiceShotGamblerMechanic
 		}
 	},
 
 	{
-		Rule SurvivorMournGamblerSheva
+		Rule PlayerNiceShotProducerTrevor
 		{
-		    criteria ConceptPlayerSeeDeadPlayer IsNotCoughing IsSheva IsDeadGambler IsNotSaidSomeoneDied IsTalk IsTalkSheva IsNotIncapacitated HasNotDefibrillator IsWorldTalkSheva
-		    Response SurvivorMournGamblerProducer
+		    criteria ConceptPlayerNiceShot IsNotCoughing IsTrevor IssuerClose IsTalk IsTalkTrevor ChanceToFire10Percent IsWorldTalkTrevor SubjectIsProducer
+		    Response PlayerNiceShotProducerMechanic
 		}
 	},
 
 	{
-		Rule SurvivorMournGamblerC1Sheva
+		Rule SurvivorMournCoachTrevor
 		{
-		    criteria ConceptPlayerSeeDeadPlayer IsNotCoughing IsSheva IsDeadGambler IsNotSaidSomeoneDied IsTalk IsTalkSheva IsNotIncapacitated HasNotDefibrillator IsWorldTalkSheva NoKnowNames ismap_c1m1_hotel
-		    Response SurvivorMournGamblerC1Producer
+		    criteria ConceptPlayerSeeDeadPlayer IsNotCoughing IsTrevor IsDeadCoach IsNotSaidSomeoneDied IsTalk IsTalkTrevor IsNotIncapacitated HasNotDefibrillator IsWorldTalkTrevor
+		    Response SurvivorMournCoachMechanic
 		}
 	},
 
 	{
-		Rule SurvivorMournMechanicSheva
+		Rule SurvivorMournCoachC1Trevor
 		{
-		    criteria ConceptPlayerSeeDeadPlayer IsNotCoughing IsSheva IsDeadMechanic IsNotSaidSomeoneDied IsTalk IsTalkSheva IsNotIncapacitated HasNotDefibrillator IsWorldTalkSheva
-		    Response SurvivorMournMechanicProducer
+		    criteria ConceptPlayerSeeDeadPlayer IsNotCoughing IsTrevor IsDeadCoach IsNotSaidSomeoneDied IsTalk IsTalkTrevor IsNotIncapacitated HasNotDefibrillator IsWorldTalkTrevor NoKnowNames ismap_c1m1_hotel
+		    Response SurvivorMournCoachC1Mechanic
 		}
 	},
 
 	{
-		Rule SurvivorMournMechanicC1Sheva
+		Rule SurvivorMournGamblerTrevor
 		{
-		    criteria ConceptPlayerSeeDeadPlayer IsNotCoughing IsSheva IsDeadMechanic IsNotSaidSomeoneDied IsTalk IsTalkSheva IsNotIncapacitated HasNotDefibrillator IsWorldTalkSheva NoKnowNames ismap_c1m1_hotel
-		    Response SurvivorMournMechanicC1Producer
+		    criteria ConceptPlayerSeeDeadPlayer IsNotCoughing IsTrevor IsDeadGambler IsNotSaidSomeoneDied IsTalk IsTalkTrevor IsNotIncapacitated HasNotDefibrillator IsWorldTalkTrevor
+		    Response SurvivorMournGamblerMechanic
 		}
 	},
 
 	{
-		Rule C3M1FerryInTransitSheva
+		Rule SurvivorMournGamblerC1Trevor
 		{
-		    criteria ConceptC3M1FerryInTransit IsSheva IsTalk IsTalkSheva IsNotSaidC3M1FerryInTransit IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C3M1FerryInTransitProducer
+		    criteria ConceptPlayerSeeDeadPlayer IsNotCoughing IsTrevor IsDeadGambler IsNotSaidSomeoneDied IsTalk IsTalkTrevor IsNotIncapacitated HasNotDefibrillator IsWorldTalkTrevor NoKnowNames ismap_c1m1_hotel
+		    Response SurvivorMournGamblerC1Mechanic
+		}
+	},
+
+	{
+		Rule SurvivorMournProducerTrevor
+		{
+		    criteria ConceptPlayerSeeDeadPlayer IsNotCoughing IsTrevor IsDeadProducer IsNotSaidSomeoneDied IsTalk IsTalkTrevor IsNotIncapacitated HasNotDefibrillator IsWorldTalkTrevor
+		    Response SurvivorMournProducerMechanic
+		}
+	},
+
+	{
+		Rule SurvivorMournProducerC1Trevor
+		{
+		    criteria ConceptPlayerSeeDeadPlayer IsNotCoughing IsTrevor IsDeadProducer IsNotSaidSomeoneDied IsTalk IsTalkTrevor IsNotIncapacitated HasNotDefibrillator IsWorldTalkTrevor NoKnowNames ismap_c1m1_hotel
+		    Response SurvivorMournProducerC1Mechanic
+		}
+	},
+
+	{
+		Rule _C1M1_ElevatorHelloStartAllAliveTrevor
+		{
+		    criteria Concept_C1M1_ElevatorHelloStart IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsEveryoneAlive
+		    Response _C1M1_ElevatorHelloStartAllAliveMechanic
+		    then any _C1M1_ElevatorHello01c foo:0 -8.677
+		}
+	},
+
+	{
+		Rule _C1M1_ElevatorHelloStart3AliveTrevor
+		{
+		    criteria Concept_C1M1_ElevatorHelloStart IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsWithOnlyThree
+		    Response _C1M1_ElevatorHelloStart3AliveMechanic
+		    then any _C1M1_ElevatorHello3AliveExtra1 foo:0 -3.112
+		}
+	},
+
+	{
+		Rule _C1M1_ElevatorHelloStart2AliveTrevor
+		{
+		    criteria Concept_C1M1_ElevatorHelloStart IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsWithTwo
+		    Response _C1M1_ElevatorHelloStart2AliveMechanic
+		    then any _C1M1_ElevatorHello2AliveName2 foo:0 -2.926
+		}
+	},
+
+	{
+		Rule C3M1FerryInTransitTrevor
+		{
+		    criteria ConceptC3M1FerryInTransit IsTrevor IsTalk IsTalkTrevor IsNotSaidC3M1FerryInTransit IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C3M1FerryInTransitMechanic
 		    ApplyContext "SaidC3M1FerryInTransit:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule Playerc1m1_enter_elevatorSheva
+		Rule Playerc1m1_enter_elevatorTrevor
 		{
-		    criteria Conceptc1m1_enter_elevator IsSheva IsTalk IsTalkSheva IsNotSaidc1m1_enter_elevator AutoIsNotScavenge AutoIsNotSurvival IsWorldTalkSheva
-		    Response Playerc1m1_enter_elevatorProducer
+		    criteria Conceptc1m1_enter_elevator IsTrevor IsTalk IsTalkTrevor IsNotSaidc1m1_enter_elevator AutoIsNotScavenge AutoIsNotSurvival IsWorldTalkTrevor
+		    Response Playerc1m1_enter_elevatorMechanic
 		    ApplyContext "Saidc1m1_enter_elevator:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule Playerc1m1_elevator_pushbuttonSheva
+		Rule Playerc1m1_elevator_pushbuttonTrevor
 		{
-		    criteria Conceptc1m1_elevator_pushbutton IsSheva IsTalk IsTalkSheva IsNotSaidc1m1_elevator_pushbutton AutoIsNotScavenge AutoIsNotSurvival IsWorldTalkSheva
-		    Response Playerc1m1_elevator_pushbuttonProducer
+		    criteria Conceptc1m1_elevator_pushbutton IsTrevor IsTalk IsTalkTrevor IsNotSaidc1m1_elevator_pushbutton AutoIsNotScavenge AutoIsNotSurvival IsWorldTalkTrevor
+		    Response Playerc1m1_elevator_pushbuttonMechanic
 		    ApplyContext "Saidc1m1_elevator_pushbutton:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC1M2PreAlarmDoorSheva
+		Rule PlayerRemarkC1M2PreAlarmDoorTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC1M2PreStoreAlarm IsNotSaidWorldC1M2PreStoreAlarm IsNotSaidC1M2AlarmSetoff IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC1M2PreAlarmDoorProducer
+		    criteria ConceptRemark IsTrevor IsWorldC1M2PreStoreAlarm IsNotSaidWorldC1M2PreStoreAlarm IsNotSaidC1M2AlarmSetoff IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerRemarkC1M2PreAlarmDoorMechanic
 		    ApplyContext "SaidWorldC1M2PreStoreAlarm:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C1M2AlarmDoor2Sheva
+		Rule C1M2AlarmDoor2Trevor
 		{
-		    criteria ConceptC1M2AlarmDoor2 IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotAlone AutoIsNotScavenge AutoIsNotSurvival
-		    Response C1M2AlarmDoor2Producer
+		    criteria ConceptC1M2AlarmDoor2 IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotAlone AutoIsNotScavenge AutoIsNotSurvival
+		    Response C1M2AlarmDoor2Mechanic
 		    then orator C1M2StoreAlarm foo:0 0.3
 		}
 	},
 
 	{
-		Rule PlayerRemarkC1M2PostAlarmDoorSheva
+		Rule PlayerRemarkC1M2PostAlarmDoorTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC1M2StoreAlarm IsSaidC1M2AlarmSetoff IsSubjectNear300 HasWhitakerCola AutoIsNotScavenge AutoIsNotSurvival _auto_SaidC1M2GrabbedCola
-		    Response PlayerRemarkC1M2PostAlarmDoorProducer
+		    criteria ConceptRemark IsTrevor IsWorldC1M2StoreAlarm IsSaidC1M2AlarmSetoff IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_SaidC1M2GrabbedCola
+		    Response PlayerRemarkC1M2PostAlarmDoorMechanic
 		    then orator C1M2WhitakerErrandInProgress foo:0 1
 		    ApplyContext "C1M2AlarmSetOff:2:0"
 		    applycontexttoworld
@@ -283,149 +302,162 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule PlayerC1M2GrabbingColaSheva
+		Rule PlayerC1M2GrabbingColaTrevor
 		{
-		    criteria ConceptPlayerPickup IsSheva IsTalk IsTalkSheva IsNotSaidC1M2GrabbingCola2 IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival IsPickedUpColaBottles ismap_c1m2_streets _auto_NotSaidC1M2GrabbedCola
-		    Response PlayerC1M2GrabbingColaProducer
-		    ApplyContext "SaidC1M2GrabbingCola2:1:5,_auto_SaidC1M2GrabbedCola:1:0,Talk:1:2.279"
+		    criteria ConceptPlayerPickup IsTrevor IsTalk IsTalkTrevor IsNotSaidC1M2GrabbingCola2 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsPickedUpColaBottles ismap_c1m2_streets _auto_NotSaidC1M2GrabbedCola
+		    Response PlayerC1M2GrabbingColaMechanic
+		    ApplyContext "SaidC1M2GrabbingCola2:1:5,_auto_SaidC1M2GrabbedCola:1:0,Talk:1:3.092"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerC1M2GrabbingCola2Sheva
+		Rule PlayerC1M2GrabbingCola2Trevor
 		{
-		    criteria ConceptPlayerPickup IsSheva IsTalk IsTalkSheva IsNotSaidC1M2GrabbingCola2 IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival IsPickedUpColaBottles ismap_c1m2_streets _auto_SaidC1M2GrabbedCola
-		    Response PlayerC1M2GrabbingCola2Producer
-		    ApplyContext "SaidC1M2GrabbingCola2:1:5,_auto_SaidC1M2GrabbedCola:1:0,Talk:1:2.279"
+		    criteria ConceptPlayerPickup IsTrevor IsTalk IsTalkTrevor IsNotSaidC1M2GrabbingCola2 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsPickedUpColaBottles ismap_c1m2_streets _auto_SaidC1M2GrabbedCola
+		    Response PlayerC1M2GrabbingCola2Mechanic
+		    ApplyContext "SaidC1M2GrabbingCola2:1:5,Talk:1:3.092"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerC1M2FirstOutsideResponseSheva
+		Rule PlayerC1M2FirstOutsideResponseTrevor
 		{
-		    criteria ConceptC1M2FirstOutsideResponse IsSheva FromIsAnOrator IsNotSaidC1M2AlarmSetoff AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerC1M2FirstOutsideResponseProducer
-		    then orator C1M2FirstOutsideResponse5 foo:0 -5.962
+		    criteria ConceptC1M2FirstOutsideResponse IsTrevor FromIsAnOrator IsNotSaidC1M2AlarmSetoff AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerC1M2FirstOutsideResponseMechanic
+		    then orator Whitaker.Nags foo:0 10
 		}
 	},
 
 	{
-		Rule PlayerC1M2FirstOutsideResponse8aSheva
+		Rule C1M2GunRoomDoorResponseGratitudeTrevor
 		{
-		    criteria ConceptC1M2FirstOutsideResponse8a IsSheva FromIsAnOrator IsNotSaidC1M2AlarmSetoff AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerC1M2FirstOutsideResponse8aProducer
-		    then orator C1M2FirstOutsideResponse8d foo:0 0
+		    criteria ConceptC1M2GunRoomDoorResponseGratitude IsTrevor ChanceToFire50Percent AutoIsNotScavenge AutoIsNotSurvival
+		    Response C1M2GunRoomDoorResponseGratitudeMechanic
 		}
 	},
 
 	{
-		Rule C1M2GunRoomDoorResponseGodSheva
+		Rule PlayerC1M2InsideGunShop2Trevor
 		{
-		    criteria ConceptC1M2GunRoomDoorResponseGod IsSheva ChanceToFire50Percent AutoIsNotScavenge AutoIsNotSurvival
-		    Response C1M2GunRoomDoorResponseGodProducer
-		}
-	},
-
-	{
-		Rule C1M2GunRoomDoorResponseGratitudeSheva
-		{
-		    criteria ConceptC1M2GunRoomDoorResponseGratitude IsSheva ChanceToFire50Percent AutoIsNotScavenge AutoIsNotSurvival
-		    Response C1M2GunRoomDoorResponseGratitudeProducer
-		}
-	},
-
-	{
-		Rule PlayerC1M2InsideGunShop2Sheva
-		{
-		    criteria ConceptC1M2InsideGunShop2 IsSheva IsTalk IsTalkSheva IsNotSaidC1M2InsideGunShop IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerC1M2InsideGunShop2Producer
+		    criteria ConceptC1M2InsideGunShop2 IsTrevor IsTalk IsTalkTrevor IsNotSaidC1M2InsideGunShop IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerC1M2InsideGunShop2Mechanic
 		    ApplyContext "Talk:1:2,SaidC1M2InsideGunShop:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerC1M2InsideGunShop2EllisSheva
+		Rule PlayerC1M2InsideGunShop3Trevor
 		{
-		    criteria ConceptC1M2InsideGunShop2 IsSheva IsTalk IsTalkSheva IsMechanicAlive IsMechanicNear800 ChanceToFire20Percent IsNotSaidC1M2InsideGunShop IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerC1M2InsideGunShop2EllisProducer
-		    then Mechanic C1M2InsideGunShop3 foo:0 0.1
-		    ApplyContext "Talk:1:4,SaidC1M2InsideGunShop:1:0"
+		    criteria ConceptC1M2InsideGunShop3 IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerC1M2InsideGunShop3Mechanic
+		    ApplyContext "Talk:1:3"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerC3M1CallFerry2Sheva
+		Rule PlayerC1M2InsideGunShopPickupResponseTrevor
 		{
-		    criteria ConceptC3M1CallFerry2 IsSheva IsTalk IsTalkSheva IsShevaActor IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerC3M1CallFerry2Producer
+		    criteria ConceptC1M2InsideGunShopPickupResponse IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerC1M2InsideGunShopPickupResponseMechanic
+		}
+	},
+
+	{
+		Rule PlayerC1M2InsideGunShopPickupResponse2Trevor
+		{
+		    criteria ConceptC1M2InsideGunShopPickupResponse2 IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival ChanceToFire30Percent
+		    Response PlayerC1M2InsideGunShopPickupResponse2Mechanic
+		}
+	},
+
+	{
+		Rule PlayerC1M2GunShopKillTrevor
+		{
+		    criteria ConceptC1M2Gunshopkill IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IssuerClose AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerC1M2GunShopKillMechanic
+		    ApplyContext "Talk:1:7"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerC3M1CallFerry2Trevor
+		{
+		    criteria ConceptC3M1CallFerry2 IsTrevor IsTalk IsTalkTrevor IsTrevorActor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerC3M1CallFerry2Mechanic
 		    then any C3M1FerryInTransit foo:0 25
 		}
 	},
 
 	{
-		Rule PlayerC3M1FerryLandedIdleSheva
+		Rule PlayerC3M1FerryLandedIdleTrevor
 		{
-		    criteria ConceptTalkIdle IsSheva IsTalk IsTalkSheva C3M1Ferry IsNotIncapacitated NotInCombat IsNotAlone IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerC3M1FerryLandedIdleProducer
+		    criteria ConceptTalkIdle IsTrevor IsTalk IsTalkTrevor C3M1Ferry IsNotIncapacitated NotInCombat IsNotAlone IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerC3M1FerryLandedIdleMechanic
 		    ApplyContext "Talk:1:4"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerC3M1FerryLaunched2aSheva
+		Rule PlayerC3M1FerryLaunched2aTrevor
 		{
-		    criteria ConceptC3M1FerryLaunched2 IsSheva IsTalk IsTalkSheva IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerC3M1FerryLaunched2aProducer
+		    criteria ConceptC3M1FerryLaunched2 IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerC3M1FerryLaunched2aMechanic
 		}
 	},
 
 	{
-		Rule PlayerC3M2ComingHomeSheva
+		Rule PlayerC3M2ComingHomeTrevor
 		{
-		    criteria ConceptTalkIdle IsSheva IsTalk IsTalkSheva IsNotSaidSafeSpotAhead IsSaidC3M2Village1 IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerC3M2ComingHomeProducer
+		    criteria ConceptTalkIdle IsTrevor IsTalk IsTalkTrevor IsNotSaidSafeSpotAhead IsSaidC3M2Village1 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerC3M2ComingHomeMechanic
 		    ApplyContext "Talk:1:1"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerC3M2ComingHomeEllisSheva
+		Rule _C3M2BloodFarmersTrevor
 		{
-		    criteria ConceptTalkIdle IsSheva IsTalk IsTalkSheva IsNotSaidSafeSpotAhead IsSaidC3M2Village1 IsWorldTalkSheva IsMechanicAlive IsMechanicNear400 ChanceToFire10Percent AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerC3M2ComingHomeEllisProducer
-		    then Mechanic _C3M2BloodFarmers foo:0 0.1
-		    ApplyContext "Talk:1:5.894"
-		    applycontexttoworld
+		    criteria Concept_C3M2BloodFarmers IsTrevor IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C3M2BloodFarmersMechanic
 		}
 	},
 
 	{
-		Rule PlayerC3M2OpenDoor2Sheva
+		Rule PlayerC3M2OpenDoor2Trevor
 		{
-		    criteria ConceptC3M2OpenDoor2 IsSheva IsTalkSheva IsShevaActor IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerC3M2OpenDoor2Producer
+		    criteria ConceptC3M2OpenDoor2 IsTrevor IsTalkTrevor IsTrevorActor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerC3M2OpenDoor2Mechanic
 		}
 	},
 
 	{
-		Rule Playerc5m4floatstart2Sheva
+		Rule Playerc5m4floatendTrevor
 		{
-		    criteria Conceptc5m4floatstart2 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response Playerc5m4floatstart2Producer
+		    criteria Conceptc5m4floatend2 IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response Playerc5m4floatendMechanic
 		}
 	},
 
 	{
-		Rule PlayerintroC1M1Sheva
+		Rule Playerc5m4floatstart2Trevor
 		{
-		    criteria ConceptintroC1M1 IsSheva IsNotAlone IsNotSaidCXM1Intro AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerintroC1M1Producer
+		    criteria Conceptc5m4floatstart2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response Playerc5m4floatstart2Mechanic
+		}
+	},
+
+	{
+		Rule PlayerintroC1M1Trevor
+		{
+		    criteria ConceptintroC1M1 IsTrevor IsNotAlone IsNotSaidCXM1Intro AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerintroC1M1Mechanic
 		    then any _introc1m1 foo:0 4
 		    ApplyContext "CXM1Intro:1:0"
 		    applycontexttoworld
@@ -433,21 +465,21 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule PlayerintroC1M1AloneSheva
+		Rule PlayerintroC1M1AloneTrevor
 		{
-		    criteria ConceptintroC1M1 IsSheva IsAlone IsNotSaidCXM1Intro AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerintroC1M1AloneProducer
-		    then self _introc1m1a02 foo:0 4
+		    criteria ConceptintroC1M1 IsTrevor IsAlone IsNotSaidCXM1Intro AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerintroC1M1AloneMechanic
+		    then self _introc1m1 foo:0 4
 		    ApplyContext "CXM1Intro:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule WhitakerC1M2DeliverColaSheva
+		Rule WhitakerC1M2DeliverColaTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC1M2DeliverCola IsC1M2WhitakerErrand IsSubjectNear300 HasWhitakerCola AutoIsNotScavenge AutoIsNotSurvival _auto_SaidC1M2GrabbedCola
-		    Response WhitakerC1M2DeliverColaProducer
+		    criteria ConceptRemark IsTrevor IsWorldC1M2DeliverCola IsC1M2WhitakerErrand IsSubjectNear300 HasWhitakerCola AutoIsNotScavenge AutoIsNotSurvival _auto_SaidC1M2GrabbedCola
+		    Response WhitakerC1M2DeliverColaMechanic
 		    then orator whitakerputcola foo:0 0
 		    ApplyContext "C1M2AlarmSetOff:3:0"
 		    applycontexttoworld
@@ -455,1140 +487,1443 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule PlayerPlayerUsingColaBottlesSheva
+		Rule PlayerPlayerUsingColaBottlesTrevor
 		{
-		    criteria ConceptPlayerUsingColaBottles IsSheva IsNotSaidPlayerUsingColaBottles
+		    criteria ConceptPlayerUsingColaBottles IsTrevor IsNotSaidPlayerUsingColaBottles
 		    Response NoResponse
-		    ApplyContext "SaidPlayerUsingColaBottles:1:20,WhoPutCola:Sheva:35"
+		    ApplyContext "SaidPlayerUsingColaBottles:1:20,WhoPutCola:Trevor:35"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRelaxedSighSheva
+		Rule PlayerRelaxedSighTrevor
 		{
-		    criteria ConceptRelaxedSigh IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerRelaxedSighProducer
+		    criteria ConceptRelaxedSigh IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerRelaxedSighMechanic
 		}
 	},
 
 	{
-		Rule PlayerStayTogetherInsideReponseSheva
+		Rule PlayerStayTogetherInsideReponseTrevor
 		{
-		    criteria ConceptStayTogetherInsideReponse IsSheva IsTalk IsTalkSheva IsNotSaidStayTogetherInsideReponse IsNotHealthySlow IsNotInSafeSpot IsWorldTalkSheva
-		    Response PlayerStayTogetherInsideReponseProducer
+		    criteria ConceptStayTogetherInsideReponse IsTrevor IsTalk IsTalkTrevor IsNotSaidStayTogetherInsideReponse IsNotHealthySlow IsNotInSafeSpot IsWorldTalkTrevor
+		    Response PlayerStayTogetherInsideReponseMechanic
 		    ApplyContext "SaidStayTogetherInsideReponse:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerUseAdrenalineSheva
+		Rule PlayerUseAdrenalineTrevor
 		{
-		    criteria ConceptUseAdrenaline IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerUseAdrenalineProducer
+		    criteria ConceptUseAdrenaline IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerUseAdrenalineMechanic
 		}
 	},
 
 	{
-		Rule PlayerWorldC3M1FerryCrossingB02Sheva
+		Rule PlayerWorldC3M1FeedGator2Trevor
 		{
-		    criteria ConceptWorldC3M1FerryCrossingB02 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerWorldC3M1FerryCrossingB02Producer
+		    criteria ConceptWorldC3M1FeedGator2 IsTrevor IsTalk IsTalkTrevor IssuerClose ChanceToFire30Percent IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerWorldC3M1FeedGator2Mechanic
 		}
 	},
 
 	{
-		Rule PlayerWorldC3M1FerryCrossingC02Sheva
+		Rule PlayerWorldC3M1FerryCrossingA01Trevor
 		{
-		    criteria ConceptWorldC3M1FerryCrossingC02 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerWorldC3M1FerryCrossingC02Producer
-		    then gambler WorldC3M1FerryCrossingC03 foo:0 -0.883
+		    criteria ConceptWorldC3M1FerryCrossingA01 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerWorldC3M1FerryCrossingA01Mechanic
 		}
 	},
 
 	{
-		Rule PlayerWorldC3M1FerryCrossingC04Sheva
+		Rule PlayerWorldC3M1FerryCrossingB01Trevor
 		{
-		    criteria ConceptWorldC3M1FerryCrossingC04 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerWorldC3M1FerryCrossingC04Producer
+		    criteria ConceptWorldC3M1FerryCrossingB01 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerWorldC3M1FerryCrossingB01Mechanic
+		    then producer WorldC3M1FerryCrossingB02 foo:0 -3.058
 		}
 	},
 
 	{
-		Rule PlayerWorldC3M1FerryCrossingD04Sheva
+		Rule PlayerWorldC3M1FerryCrossingD03Trevor
 		{
-		    criteria ConceptWorldC3M1FerryCrossingD04 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerWorldC3M1FerryCrossingD04Producer
+		    criteria ConceptWorldC3M1FerryCrossingD03 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerWorldC3M1FerryCrossingD03Mechanic
+		    then producer WorldC3M1FerryCrossingD04 foo:0 -1.705
 		}
 	},
 
 	{
-		Rule PlayerWorldC3M1FerryCrossingE01Sheva
+		Rule PlayerWorldC3M1FerryCrossingE02Trevor
 		{
-		    criteria ConceptWorldC3M1FerryCrossingE01 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerWorldC3M1FerryCrossingE01Producer
-		    then mechanic WorldC3M1FerryCrossingE02 foo:0 -4.768
+		    criteria ConceptWorldC3M1FerryCrossingE02 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerWorldC3M1FerryCrossingE02Mechanic
+		    then any WorldC3M1FerryCrossingE03 foo:0 -5.643
 		}
 	},
 
 	{
-		Rule PlayerWorldC3M1FerryCrossingE03Sheva
+		Rule PlayerWorldC3M1FerryCrossingE04Trevor
 		{
-		    criteria ConceptWorldC3M1FerryCrossingE03 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerWorldC3M1FerryCrossingE03Producer
-		    then mechanic WorldC3M1FerryCrossingE04 foo:0 -1.747
+		    criteria ConceptWorldC3M1FerryCrossingE04 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerWorldC3M1FerryCrossingE04Mechanic
 		}
 	},
 
 	{
-		Rule PlayerWorldC3M1FerryCrossingN2Sheva
+		Rule PlayerWorldC3M1FerryCrossingG02Trevor
 		{
-		    criteria ConceptWorldC3M1FerryCrossingN2 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerWorldC3M1FerryCrossingN2Producer
-		    then mechanic _C3M1CrazyMilitants foo:0 0.1
+		    criteria ConceptWorldC3M1FerryCrossingG02 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerWorldC3M1FerryCrossingG02Mechanic
 		}
 	},
 
 	{
-		Rule ThanksGotItemSheva
+		Rule PlayerWorldC3M1FerryCrossingI02Trevor
 		{
-		    criteria IsAwardConcept IsSharingSubject IsNotCoughing SubjectIsSheva IsTalk IsTalkSheva IsWorldTalkSheva
+		    criteria ConceptWorldC3M1FerryCrossingI02 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerWorldC3M1FerryCrossingI02Mechanic
+		    then coach WorldC3M1FerryCrossingI03 foo:0 -3.258
+		}
+	},
+
+	{
+		Rule WorldC3M1FerryCrossingM2Trevor
+		{
+		    criteria ConceptWorldC3M1FerryCrossingM2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response WorldC3M1FerryCrossingM2Mechanic
+		    then gambler WorldC3M1FerryCrossingM3 foo:0 0.1
+		}
+	},
+
+	{
+		Rule WorldC3M1FerryCrossingM4Trevor
+		{
+		    criteria ConceptWorldC3M1FerryCrossingM4 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response WorldC3M1FerryCrossingM4Mechanic
+		    then coach WorldC3M1FerryCrossingM5 foo:0 0.1
+		}
+	},
+
+	{
+		Rule PlayerWorldIntroC31Trevor
+		{
+		    criteria ConceptWorldIntroC31 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerWorldIntroC31Mechanic
+		    then gambler WorldIntroC31a1 foo:0 -1.960
+		}
+	},
+
+	{
+		Rule ThanksGotItemTrevor
+		{
+		    criteria IsAwardConcept IsSharingSubject IsNotCoughing SubjectIsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
 		    Response NoResponse
 		}
 	},
 
 	{
-		Rule PlayerGivenItemSheva
+		Rule RescuedSurvivorTrevor
 		{
-		    criteria ConceptPlayerGivenItem IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerGivenItemProducer
+		    criteria IsAwardConcept IsRescuer IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response RescuedSurvivorMechanic
 		}
 	},
 
 	{
-		Rule RescuedSurvivorSheva
+		Rule PlayerGivenItemTrevor
 		{
-		    criteria IsAwardConcept IsRescuer IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response RescuedSurvivorProducer
+		    criteria ConceptPlayerGivenItem IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerGivenItemMechanic
 		}
 	},
 
 	{
-		Rule ItemDonorCoachSheva
+		Rule ItemDonorProducerTrevor
 		{
-		    criteria ConceptPlayerPickup IsSheva IsDonorCoach ChanceToFire30Percent isNotmap_c1m1_hotel IsPickedUpValidHealingItem
-		    Response ItemDonorCoachProducer
-		    then coach YouAreWelcome foo:0 0
-		    ApplyContext "TalkSheva:1:3"
+		    criteria ConceptPlayerPickup IsTrevor IsDonorProducer ChanceToFire30Percent isNotmap_c1m1_hotel IsPickedUpValidHealingItem
+		    Response ItemDonorProducerMechanic
+		    then producer YouAreWelcome foo:0 0
+		    ApplyContext "TalkTrevor:1:3"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule ItemDonorMechanicSheva
+		Rule ItemDonorCoachTrevor
 		{
-		    criteria ConceptPlayerPickup IsSheva IsDonorMechanic ChanceToFire30Percent isNotmap_c1m1_hotel IsPickedUpValidHealingItem
-		    Response ItemDonorMechanicProducer
-		    then mechanic YouAreWelcome foo:0 0
-		    ApplyContext "TalkSheva:1:3"
+		    criteria ConceptPlayerPickup IsTrevor IsDonorCoach ChanceToFire30Percent isNotmap_c1m1_hotel IsPickedUpValidHealingItem
+		    Response ItemDonorCoachMechanic
+		    then Coach YouAreWelcome foo:0 0
+		    ApplyContext "TalkTrevor:1:3"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule ItemDonorBikerSheva
+		Rule ItemDonorGamblerTrevor
 		{
-		    criteria ConceptPlayerPickup IsSheva IsDonorBiker ChanceToFire30Percent IsPickedUpValidHealingItem
-		    Response ItemDonorBikerProducer
-		    then biker YouAreWelcome foo:0 0
-		    ApplyContext "TalkSheva:1:3"
+		    criteria ConceptPlayerPickup IsTrevor IsDonorGambler ChanceToFire30Percent isNotmap_c1m1_hotel IsPickedUpValidHealingItem
+		    Response ItemDonorGamblerMechanic
+		    then gambler YouAreWelcome foo:0 0
+		    ApplyContext "TalkTrevor:1:3"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule ItemDonorTeenGirlSheva
+		Rule ItemDonorBikerTrevor
 		{
-		    criteria ConceptPlayerPickup IsSheva IsDonorTeenGirl ChanceToFire30Percent IsPickedUpValidHealingItem
-		    Response ItemDonorTeenGirlProducer
+		    criteria ConceptPlayerPickup IsTrevor IsDonorBiker ChanceToFire30Percent IsPickedUpValidHealingItem
+		    Response ItemDonorBikerMechanic
+		    then gambler YouAreWelcome foo:0 0
+		    ApplyContext "TalkTrevor:1:3"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule ItemDonorTeenGirlTrevor
+		{
+		    criteria ConceptPlayerPickup IsTrevor IsDonorTeenGirl ChanceToFire30Percent IsPickedUpValidHealingItem
+		    Response ItemDonorTeenGirlMechanic
 		    then teengirl YouAreWelcome foo:0 0
-		    ApplyContext "TalkSheva:1:3"
+		    ApplyContext "TalkTrevor:1:3"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule ItemDonorManagerSheva
+		Rule ItemDonorManagerTrevor
 		{
-		    criteria ConceptPlayerPickup IsSheva IsDonorManager ChanceToFire30Percent IsPickedUpValidHealingItem
-		    Response ItemDonorManagerProducer
+		    criteria ConceptPlayerPickup IsTrevor IsDonorManager ChanceToFire30Percent IsPickedUpValidHealingItem
+		    Response ItemDonorManagerMechanic
 		    then manager YouAreWelcome foo:0 0
-		    ApplyContext "TalkSheva:1:3"
+		    ApplyContext "TalkTrevor:1:3"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule ItemDonorNamVetSheva
+		Rule ItemDonorNamVetTrevor
 		{
-		    criteria ConceptPlayerPickup IsSheva IsDonorNamVet ChanceToFire30Percent IsPickedUpValidHealingItem
-		    Response ItemDonorNamVetProducer
+		    criteria ConceptPlayerPickup IsTrevor IsDonorNamVet ChanceToFire30Percent IsPickedUpValidHealingItem
+		    Response ItemDonorNamVetMechanic
 		    then namvet YouAreWelcome foo:0 0
-		    ApplyContext "TalkSheva:1:3"
+		    ApplyContext "TalkTrevor:1:3"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule ReviveMeInterruptedMinorSheva
+		Rule ReviveMeInterruptedMinorTrevor
 		{
-		    criteria ConceptReviveMeInterrupted IsSheva IsIncappedStarted IsIncappedStarted2
-		    Response ReviveMeInterruptedMinorProducer
+		    criteria ConceptReviveMeInterrupted IsTrevor IsIncappedStarted IsIncappedStarted2
+		    Response ReviveMeInterruptedMinorMechanic
 		    ApplyContext "ReviveInterrupt:1:2"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule ReviveMeInterruptedMajorSheva
+		Rule ReviveMeInterruptedMajorTrevor
 		{
-		    criteria ConceptReviveMeInterrupted IsSheva IsIncappedBleeding1 IsIncappedBleeding2
-		    Response ReviveMeInterruptedMajorProducer
+		    criteria ConceptReviveMeInterrupted IsTrevor IsIncappedBleeding1 IsIncappedBleeding2
+		    Response ReviveMeInterruptedMajorMechanic
 		    ApplyContext "ReviveInterrupt:1:2"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule ReviveMeInterruptedCriticalSheva
+		Rule ReviveMeInterruptedCriticalTrevor
 		{
-		    criteria ConceptReviveMeInterrupted IsSheva IsIncappedLethargic
-		    Response ReviveMeInterruptedCriticalProducer
+		    criteria ConceptReviveMeInterrupted IsTrevor IsIncappedLethargic
+		    Response ReviveMeInterruptedCriticalMechanic
 		    ApplyContext "ReviveInterrupt:1:2"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule ReviveThanksSheva
+		Rule ReviveThanksTrevor
 		{
-		    criteria ConceptRevivedByFriend IsNotCoughing IsSheva
-		    Response ReviveThanksProducer
+		    criteria ConceptRevivedByFriend IsNotCoughing IsTrevor
+		    Response ReviveThanksMechanic
 		    then subject YouAreWelcome foo:0 0
-		    ApplyContext "TalkSheva:1:2"
+		    ApplyContext "TalkTrevor:1:2"
 		}
 	},
 
 	{
-		Rule ReviveThanksCoachSheva
+		Rule ReviveThanksCoachTrevor
 		{
-		    criteria ConceptRevivedByFriend IsNotCoughing IsSheva SubjectIsCoach ChanceToFire30Percent
-		    Response ReviveThanksCoachProducer
+		    criteria ConceptRevivedByFriend IsNotCoughing IsTrevor SubjectIsCoach ChanceToFire30Percent
+		    Response ReviveThanksCoachMechanic
+		    then Subject YouAreWelcome foo:0 0
+		    ApplyContext "TalkTrevor:1:2"
+		}
+	},
+
+	{
+		Rule ReviveThanksCoachC1Trevor
+		{
+		    criteria ConceptRevivedByFriend IsNotCoughing IsTrevor SubjectIsCoach ChanceToFire30Percent ismap_c1m1_hotel NoKnowNames
+		    Response ReviveThanksCoachC1Mechanic
 		    then subject YouAreWelcome foo:0 0
-		    ApplyContext "TalkSheva:1:2"
+		    ApplyContext "TalkTrevor:1:2"
 		}
 	},
 
 	{
-		Rule ReviveThanksCoachC1Sheva
+		Rule ReviveThanksGamblerTrevor
 		{
-		    criteria ConceptRevivedByFriend IsNotCoughing IsSheva SubjectIsCoach ChanceToFire30Percent ismap_c1m1_hotel NoKnowNames
-		    Response ReviveThanksCoachC1Producer
+		    criteria ConceptRevivedByFriend IsNotCoughing IsTrevor SubjectIsGambler ChanceToFire30Percent
+		    Response ReviveThanksGamblerMechanic
+		    then Subject YouAreWelcome foo:0 0
+		    ApplyContext "TalkTrevor:1:2"
+		}
+	},
+
+	{
+		Rule ReviveThanksGamblerC1Trevor
+		{
+		    criteria ConceptRevivedByFriend IsNotCoughing IsTrevor SubjectIsGambler ChanceToFire30Percent ismap_c1m1_hotel NoKnowNames
+		    Response ReviveThanksMechanic
 		    then subject YouAreWelcome foo:0 0
-		    ApplyContext "TalkSheva:1:2"
+		    ApplyContext "TalkTrevor:1:2"
 		}
 	},
 
 	{
-		Rule ReviveThanksGamblerSheva
+		Rule ReviveThanksProducerTrevor
 		{
-		    criteria ConceptRevivedByFriend IsNotCoughing IsSheva SubjectIsGambler ChanceToFire5Percent isNotmap_c1m1_hotel
-		    Response ReviveThanksGamblerProducer
-		    ApplyContext "TalkSheva:1:2"
-		}
-	},
-
-	{
-		Rule ReviveThanksNickC1KnownSheva
-		{
-		    criteria ConceptRevivedByFriend IsNotCoughing IsSheva SubjectIsGambler ChanceToFire5Percent ismap_c1m1_hotel YesKnowNames
-		    Response ReviveThanksGamblerProducer
-		    ApplyContext "TalkSheva:1:2"
-		}
-	},
-
-	{
-		Rule ReviveThanksMechanicSheva
-		{
-		    criteria ConceptRevivedByFriend IsNotCoughing IsSheva SubjectIsMechanic ChanceToFire30Percent isNotmap_c1m1_hotel
-		    Response ReviveThanksMechanicProducer
+		    criteria ConceptRevivedByFriend IsNotCoughing IsTrevor SubjectIsProducer ChanceToFire30Percent
+		    Response ReviveThanksProducerMechanic
 		    then subject YouAreWelcome foo:0 0
-		    ApplyContext "TalkSheva:1:2"
+		    ApplyContext "TalkTrevor:1:2"
 		}
 	},
 
 	{
-		Rule ReviveThanksMechanicC1KnownSheva
+		Rule ReviveThanksBikerTrevor
 		{
-		    criteria ConceptRevivedByFriend IsNotCoughing IsSheva SubjectIsCoach ChanceToFire30Percent ismap_c1m1_hotel YesKnowNames
-		    Response ReviveThanksMechanicProducer
+		    criteria ConceptRevivedByFriend IsNotCoughing IsTrevor SubjectIsBiker ChanceToFire30Percent
+		    Response ReviveThanksBikerMechanic
 		    then subject YouAreWelcome foo:0 0
-		    ApplyContext "TalkSheva:1:2"
+		    ApplyContext "TalkTrevor:1:2"
 		}
 	},
 
 	{
-		Rule ReviveThanksBikerSheva
+		Rule ReviveThanksManagerTrevor
 		{
-		    criteria ConceptRevivedByFriend IsNotCoughing IsSheva SubjectIsBiker ChanceToFire30Percent
-		    Response ReviveThanksBikerProducer
+		    criteria ConceptRevivedByFriend IsNotCoughing IsTrevor SubjectIsManager ChanceToFire30Percent
+		    Response ReviveThanksManagerMechanic
 		    then subject YouAreWelcome foo:0 0
-		    ApplyContext "TalkSheva:1:2"
+		    ApplyContext "TalkTrevor:1:2"
 		}
 	},
 
 	{
-		Rule ReviveThanksTeenGirlSheva
+		Rule ReviveThanksNamVetTrevor
 		{
-		    criteria ConceptRevivedByFriend IsNotCoughing IsSheva SubjectIsTeenGirl ChanceToFire30Percent
-		    Response ReviveThanksTeenGirlProducer
+		    criteria ConceptRevivedByFriend IsNotCoughing IsTrevor SubjectIsNamVet ChanceToFire30Percent
+		    Response ReviveThanksManagerMechanic
 		    then subject YouAreWelcome foo:0 0
-		    ApplyContext "TalkSheva:1:2"
+		    ApplyContext "TalkTrevor:1:2"
 		}
 	},
 
 	{
-		Rule BotPlayer_YourWelcomeSheva
+		Rule ReviveThanksTeenGirlTrevor
 		{
-		    criteria ConceptSurvivorBotYouAreWelcome IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response BotPlayer_YourWelcomeProducer
+		    criteria ConceptRevivedByFriend IsNotCoughing IsTrevor SubjectIsTeenGirl ChanceToFire30Percent
+		    Response ReviveThanksTeenGirlMechanic
+		    then subject YouAreWelcome foo:0 0
+		    ApplyContext "TalkTrevor:1:2"
 		}
 	},
 
 	{
-		Rule BotReassureComingSheva
+		Rule BotPlayer_YourWelcomeTrevor
 		{
-		    criteria ConceptSurvivorBotReassureComing IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotSpeaking
-		    Response BotReassureComingProducer
+		    criteria ConceptSurvivorBotYouAreWelcome IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response BotPlayer_YourWelcomeMechanic
 		}
 	},
 
 	{
-		Rule BotYesReadySheva
+		Rule BotReassureComingTrevor
 		{
-		    criteria ConceptSurvivorBotYesReady IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotSpeaking
-		    Response BotReassureComingProducer
+		    criteria ConceptSurvivorBotReassureComing IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotSpeaking
+		    Response BotReassureComingMechanic
 		}
 	},
 
 	{
-		Rule BotReassureNearbySheva
+		Rule BotYesReadyTrevor
 		{
-		    criteria ConceptSurvivorBotReassureNearby IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotSpeaking
-		    Response BotReassureNearbyProducer
+		    criteria ConceptSurvivorBotYesReady IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotSpeaking
+		    Response BotReassureComingMechanic
 		}
 	},
 
 	{
-		Rule C1M2LeavingSafeRoomSheva
+		Rule BotReassureNearbyTrevor
 		{
-		    criteria ConceptSurvivorLeavingInitialCheckpoint IsSheva IsNotSaidLeavingSafeArea ismap_c1m2_streets _auto_NotTellingStory
-		    Response C1M2LeavingSafeRoomProducer
-		    ApplyContext "SaidLeavingSafeArea:1:0,Talk:1:3.298"
+		    criteria ConceptSurvivorBotReassureNearby IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotSpeaking
+		    Response BotReassureNearbyMechanic
+		}
+	},
+
+	{
+		Rule C1M2LeavingSafeRoomTrevor
+		{
+		    criteria ConceptSurvivorLeavingInitialCheckpoint IsTrevor IsNotSaidLeavingSafeArea ismap_c1m2_streets _auto_NotTellingStory
+		    Response C1M2LeavingSafeRoomMechanic
+		    ApplyContext "SaidLeavingSafeArea:1:0,Talk:1:1.547"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C1M2SafeRooma1Sheva
+		Rule C1M2SafeRooma2Trevor
 		{
-		    criteria ConceptC1M2SafeRooma1 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C1M2SafeRooma1Producer
-		    then mechanic C1M2SafeRooma2 foo:0 -2.843
-		}
-	},
-
-	{
-		Rule C1M2SafeRooma2Sheva
-		{
-		    criteria ConceptC1M2SafeRooma2 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C1M2SafeRooma2Producer
-		    then mechanic C1M2SafeRooma3 foo:0 0.1
-		}
-	},
-
-	{
-		Rule C1M2SafeRooma3Sheva
-		{
-		    criteria ConceptC1M2SafeRooma3 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C1M2SafeRooma3Producer
-		    then mechanic C1M2SafeRooma2 foo:0 0.1
-		}
-	},
-
-	{
-		Rule C1M2SafeRooma4Sheva
-		{
-		    criteria ConceptC1M2SafeRooma4 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C1M2SafeRooma4Producer
-		    then mechanic C1M2SafeRooma2 foo:0 0.1
-		}
-	},
-
-	{
-		Rule C1M2SafeRoomb3Sheva
-		{
-		    criteria ConceptC1M2SafeRoomb3 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C1M2SafeRoomb3Producer
+		    criteria ConceptC1M2SafeRooma2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C1M2SafeRooma2Mechanic
 		    then self IntroEnd foo:0 0.1
 		}
 	},
 
 	{
-		Rule C1M2SafeRoomd2Sheva
+		Rule C1M2SafeRoomc1Trevor
 		{
-		    criteria ConceptC1M2SafeRoomd2 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C1M2SafeRoomd2Producer
-		    then self IntroEnd foo:0 0.1
+		    criteria ConceptC1M2SafeRoomc1 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C1M2SafeRoomc1Mechanic
+		    then gambler C1M2SafeRoomc2 foo:0 -3.765
 		}
 	},
 
 	{
-		Rule C1M2SafeRoomd2aSheva
+		Rule C1M2TankerAttackTrevor
 		{
-		    criteria ConceptC1M2SafeRoomd2a IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C1M2SafeRoomd2aProducer
-		    then self IntroEnd foo:0 0.1
-		}
-	},
-
-	{
-		Rule C1M2TankerAttackSheva
-		{
-		    criteria ConceptC1M2TankerAttack2 IsSheva WhoPutColaSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C1M2TankerAttackProducer
+		    criteria ConceptC1M2TankerAttack2 IsTrevor WhoPutColaTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C1M2TankerAttackMechanic
 		    then orator C1M2GoodLuckGettingToTheMall foo:0 3
 		}
 	},
 
 	{
-		Rule c1m4escapeSheva
+		Rule c1m4escapeTrevor
 		{
-		    criteria Conceptc1m4escape IsSheva NotSaidOutro AutoIsNotScavenge AutoIsNotSurvival
-		    Response c1m4escapeProducer
+		    criteria Conceptc1m4escape IsTrevor NotSaidOutro AutoIsNotScavenge AutoIsNotSurvival
+		    Response c1m4escapeMechanic
 		    ApplyContext "Talk:1:0,SaidOutro:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule c1m4escapeEllisSheva
+		Rule c1m4escapeCheckSuccessTrevor
 		{
-		    criteria Conceptc1m4escape IsSheva IsMechanicAlive ChanceToFire50Percent NotSaidOutro AutoIsNotScavenge AutoIsNotSurvival
-		    Response c1m4escapeEllisProducer
-		    then mechanic c1m4escapeEllisCheck foo:0 0
-		    ApplyContext "Talk:1:0,SaidOutro:1:0"
+		    criteria Conceptc1m4escapeTrevorCheck IsTrevor IsNotIncapacitated AutoIsNotScavenge AutoIsNotSurvival
+		    Response c1m4escapeCheckSuccessMechanic
+		    then from c1m4escapeTrevorCheckSuccess foo:0 0
+		}
+	},
+
+	{
+		Rule c1m4escapeCheckFailTrevor
+		{
+		    criteria Conceptc1m4escapeTrevorCheck IsTrevor IsIncapacitated AutoIsNotScavenge AutoIsNotSurvival
+		    Response c1m4escapeCheckFailMechanic
+		    then from c1m4escapeTrevorCheckFail foo:0 0
+		}
+	},
+
+	{
+		Rule C1M4GasPourTrevor
+		{
+		    criteria ConceptPlayerPourStarted IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotScavenge ismap_c1m4_atrium _auto_NotNoGasPourLine
+		    Response C1M4GasPourMechanic
+		    ApplyContext "TalkTrevor:1:2"
+		}
+	},
+
+	{
+		Rule C1M4PlayerGetToRescueVehicleTrevor
+		{
+		    criteria ConceptGetToVehicle IsTrevor ismap_c1m4_atrium IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockTrevor IsNotSpeakingWeight0
+		    Response C1M4PlayerGetToRescueVehicleMechanic
+		    ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockTrevor:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule c1m4escapeEllisSuccessSheva
+		Rule c1m4startelevatorTrevor
 		{
-		    criteria Conceptc1m4escapeEllisCheckSuccess IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response c1m4escapeEllisSuccessProducer
-		}
-	},
-
-	{
-		Rule c1m4escapeEllisFailSheva
-		{
-		    criteria Conceptc1m4escapeEllisCheckFail IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response c1m4escapeProducer
-		}
-	},
-
-	{
-		Rule C1M4GasPourSheva
-		{
-		    criteria ConceptPlayerPourStarted IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotScavenge ismap_c1m4_atrium _auto_NotNoGasPourLine
-		    Response C1M4GasPourProducer
-		    ApplyContext "TalkSheva:1:2"
-		}
-	},
-
-	{
-		Rule C1M4PlayerGetToRescueVehicleSheva
-		{
-		    criteria ConceptGetToVehicle IsSheva ismap_c1m4_atrium IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockSheva IsNotSpeakingWeight0
-		    Response C1M4PlayerGetToRescueVehicleProducer
-		    ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockSheva:1:30"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule c1m4startelevatorSheva
-		{
-		    criteria Conceptc1m4startelevator IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response c1m4startelevatorProducer
-		    then mechanic _c1m4startelevator2c foo:0 -2.333
+		    criteria Conceptc1m4startelevator IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response c1m4startelevatorMechanic
+		    then trevor _c1m4startelevator2 foo:0 -4.816
 		    ApplyContext "Talk:1:0,ElevatorTimer:1:25"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C6M3GasPourSheva
+		Rule C6M3GasPourTrevor
 		{
-		    criteria ConceptPlayerPourStarted IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotScavenge isC6M3_Port ChanceToFire70Percent
-		    Response C6M3GasPourProducer
-		    ApplyContext "TalkSheva:1:2"
+		    criteria ConceptPlayerPourStarted IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotScavenge isC6M3_Port ChanceToFire70Percent
+		    Response C6M3GasPourMechanic
+		    ApplyContext "TalkTrevor:1:2"
 		}
 	},
 
 	{
-		Rule FinaleStartC1M4Sheva
+		Rule FinaleStartC1M4Trevor
 		{
-		    criteria ConceptFinaleTriggered IsSheva IsTalkSheva IsWorldTalkSheva ismap_c1m4_atrium IsNotScavenge _auto_NotFinaleStarted
-		    Response FinaleStartC1M4Producer
+		    criteria ConceptFinaleTriggered IsTrevor IsTalkTrevor IsWorldTalkTrevor ismap_c1m4_atrium IsNotScavenge _auto_NotFinaleStarted
+		    Response FinaleStartC1M4Mechanic
 		    ApplyContext "Talk:1:3,_auto_Finale:1:0,_auto_NoLostCall:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule GasPourDoneC1M4Sheva
+		Rule GasPourDoneC1M4Trevor
 		{
-		    criteria ConceptPlayerPourFinished IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotScavenge ismap_c1m4_atrium ScoreDoneSC
-		    Response GasPourDoneC1M4Producer
+		    criteria ConceptPlayerPourFinished IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotScavenge ismap_c1m4_atrium ScoreDoneSC
+		    Response GasPourDoneC1M4Mechanic
 		    ApplyContext "_auto_TimerLockA:1:5"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule _C2M2_Riders03Sheva
+		Rule C2M2CarouselIdleTrevor
 		{
-		    criteria Concept_C2M2_Riders03 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C2M2_Riders03Producer
-		    then self IntroEnd foo:0 0.1
-		}
-	},
-
-	{
-		Rule _C2M2_Riders06Sheva
-		{
-		    criteria Concept_C2M2_Riders06 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C2M2_Riders06Producer
-		    then self IntroEnd foo:0 0.1
-		}
-	},
-
-	{
-		Rule _C2M2_Riders07Sheva
-		{
-		    criteria Concept_C2M2_Riders07 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C2M2_Riders07Producer
-		    then self IntroEnd foo:0 0.1
-		}
-	},
-
-	{
-		Rule C2M2CarouselIdleSheva
-		{
-		    criteria ConceptTalkIdle IsSheva ChanceToFire30Percent IsNotIncapacitated ismap_c2m2 IsNotInSafeSpot IsNotSaidSafeSpotAhead AutoIsNotScavenge AutoIsNotSurvival _auto_IsAlarm _auto_NotTimerLockA _auto_NotTimerLockSheva IsNotSpeakingWeight0
-		    Response C2M2CarouselIdleProducer
-		    ApplyContext "_auto_TimerLockA:1:13,_auto_TimerLockSheva:1:30"
+		    criteria ConceptTalkIdle IsTrevor ChanceToFire30Percent IsNotIncapacitated ismap_c2m2 IsNotInSafeSpot IsNotSaidSafeSpotAhead AutoIsNotScavenge AutoIsNotSurvival _auto_IsAlarm _auto_NotTimerLockA _auto_NotTimerLockTrevor IsNotSpeakingWeight0
+		    Response C2M2CarouselIdleMechanic
+		    ApplyContext "_auto_TimerLockA:1:13,_auto_TimerLockTrevor:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule c2m3_DownHoleSheva
+		Rule C2M3RubbleNagIdleTrevor
 		{
-		    criteria Conceptc2m3downhole IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response c2m3_DownHoleProducer
-		    ApplyContext "_auto_DownHole:1:0"
+		    criteria ConceptTalkIdle IsTrevor ChanceToFire50Percent IsNotIncapacitated ismap_c2m3 AutoIsNotScavenge AutoIsNotSurvival _auto_IsTeamNearCoaster _auto_NotAlarm _auto_NotTimerLockA _auto_NotTimerLockTrevor _auto_IsCoasterExpo IsNotSpeakingWeight0
+		    Response C2M3RubbleNagIdleMechanic
+		    ApplyContext "Talk:1:0.903,_auto_TimerLockA:1:10,_auto_TimerLockTrevor:1:13"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule c2m3CoasterEndSheva
+		Rule C2M2SaferoomTrevor
 		{
-		    criteria Conceptc2m3CoasterEnd IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response c2m3CoasterEndProducer
-		    ApplyContext "_auto_Alarm:2:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule C2M3CoasterRunGoSheva
-		{
-		    criteria ConceptC2M3CoasterRunGo IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C2M3CoasterRunGoProducer
-		}
-	},
-
-	{
-		Rule C2M3CoasterStartSheva
-		{
-		    criteria Conceptc2m3CoasterStart IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C2M3CoasterStartProducer
-		    then mechanic _c2m3_howcool foo:0 1.0
-		    ApplyContext "WarnMegaMob:1:30,_auto_Alarm:1:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule c2m3SeeChopperSheva
-		{
-		    criteria Conceptc2m3SeeChopper IsSheva IsTalk IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		    Response c2m3SeeChopperProducer
-		    ApplyContext "_auto_OutOfTunnel:1:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule C2M4ButtonPressedSheva
-		{
-		    criteria ConceptC2M4ButtonPressed IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C2M4ButtonPressedProducer
-		    ApplyContext "_auto_ButtonPressed:1:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule C2M4Gate000Sheva
-		{
-		    criteria ConceptC2M4Gate000 IsSheva IsNotIncapacitated ismap_c2m4 NotInCombat TimeSinceGroupInCombat02 AutoIsNotScavenge AutoIsNotSurvival _auto_IsNearGate _auto_NotNearGateNag _auto_NotTimerLockA _auto_NotTimerLockSheva _auto_NotButtonPressed IsNotSpeakingWeight0
-		    Response C2M4Gate000Producer
-		    ApplyContext "Talk:1:1.726,_auto_TimerLockA:1:20,_auto_TimerLockSheva:1:23,_auto_NearGateNag:1:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule C2M4GateIdleSheva
-		{
-		    criteria ConceptTalkIdle IsSheva IsNotIncapacitated ismap_c2m4 NotInCombat TimeSinceGroupInCombat02 AutoIsNotScavenge AutoIsNotSurvival _auto_IsNearGateNag _auto_IsNearGate _auto_NotTimerLockA _auto_NotTimerLockSheva _auto_NotButtonPressed IsNotSpeakingWeight0
-		    Response C2M4GateIdleProducer
-		    ApplyContext "Talk:1:0.854,_auto_TimerLockA:1:20,_auto_TimerLockSheva:1:23"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule C2M4GateOpenCalloutSheva
-		{
-		    criteria ConceptC2M4GateOpenCallout IsSheva IsNotIncapacitated AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response C2M4GateOpenCalloutProducer
-		    then any _C2M4_GateOpen001 foo:0 0.01
-		    ApplyContext "Talk:1:0.878"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule c2m4SeeChopperSheva
-		{
-		    criteria Conceptc2m4SeeChopper IsSheva IsTalk NotInCombat IsNotCoughing AutoIsNotScavenge AutoIsNotSurvival
-		    Response c2m4SeeChopperProducer
-		}
-	},
-
-	{
-		Rule C2M5_ChoppercomingSheva
-		{
-		    criteria ConceptC2M5_Choppercoming IsSheva IsNotIncapacitated AutoIsNotScavenge AutoIsNotSurvival
-		    Response C2M5_ChoppercomingProducer
-		    then any C2M5_PlanWorked foo:0 0.01
-		}
-	},
-
-	{
-		Rule c2m5_intro003Sheva
-		{
-		    criteria Conceptc2m5_intro003 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response c2m5_intro003Producer
-		    then gambler c2m5_intro004 foo:0 0.1
-		}
-	},
-
-	{
-		Rule c2m5_intro019Sheva
-		{
-		    criteria Conceptc2m5_intro019 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response c2m5_intro019Producer
-		    then self IntroEnd foo:0 0.1
-		}
-	},
-
-	{
-		Rule SurvivorReloadingC2M5Sheva
-		{
-		    criteria ConceptPlayerReloading IsSurvivor IsRocking IsNotZombiePresentTank Ismap_c2m5 IsNotSpeaking IsSheva IsNotIncapacitated IsTalk IsTalkSheva RecentGroupInCombat10 HasNotgrenadelauncher IsWorldTalkSheva _auto_ConcertIsLive _auto_NotRockingOut
-		    Response SurvivorReloadingC2M5Producer
-		    ApplyContext "_auto_RockingOut:1:20"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule SurvivorReloadingC2M5RockedOutSheva
-		{
-		    criteria ConceptPlayerReloading IsSurvivor IsRocking IsNotZombiePresentTank Ismap_c2m5 IsNotSpeaking IsSheva IsNotIncapacitated IsTalk IsTalkSheva RecentGroupInCombat10 HasNotgrenadelauncher IsWorldTalkSheva _auto_ConcertIsLive _auto_IsRockingOut
-		    Response NoResponse
-		}
-	},
-
-	{
-		Rule SurvivorVocalizeLookOutC2M5Sheva
-		{
-		    criteria ConceptPlayerLookOut IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva Ismap_c2m5 _auto_ConcertIsLive _auto_NotRockingOut
-		    Response SurvivorVocalizeLookOutC2M5Producer
-		    ApplyContext "_auto_RockingOut:1:20"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule SurvivorVocalizeLookOutC2M5RockedOutSheva
-		{
-		    criteria ConceptPlayerLookOut IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva Ismap_c2m5 _auto_ConcertIsLive _auto_IsRockingOut
-		    Response NoResponse
-		}
-	},
-
-	{
-		Rule C2M5ReloadingTankSheva
-		{
-		    criteria ConceptPlayerReloading IsSurvivor IsNotSpeaking IsSheva IsNotIncapacitated IsTalk IsTalkSheva IsNotSaidReloadingTank IsZombiePresentTank IsSaidTankWarn2 IsWorldTalkSheva Ismap_c2m5 _auto_ConcertIsLive
-		    Response C2M5ReloadingTankProducer
-		    ApplyContext "SaidReloadingTank:1:10,SaidTankWarn2:1:20"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule PlayerKillTankConfirmationC2M5Sheva
-		{
-		    criteria ConceptKilledZombie IsNotCoughing IsSheva IsTalk IsTalkSheva SubjectIsTank IsNotSaidTankDead IsNotAlone IsNotIncapacitated IsWorldTalkSheva Ismap_c2m5 _auto_ConcertIsLive
-		    Response PlayerKillTankConfirmationC2M5Producer
-		    ApplyContext "SaidTankDead:1:60,TalkSheva:1:5"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule C2M5_PlanWorkedSheva
-		{
-		    criteria ConceptC2M5_PlanWorked IsSheva NotCoachMadAtRiders IsNotIncapacitated NotInCombat AutoIsNotScavenge AutoIsNotSurvival
-		    Response C2M5_PlanWorkedProducer
-		}
-	},
-
-	{
-		Rule C2M5_PlanWorkedCoachMadSheva
-		{
-		    criteria ConceptC2M5_PlanWorked IsSheva CoachMadAtRiders IsNotIncapacitated NotInCombat AutoIsNotScavenge AutoIsNotSurvival
-		    Response C2M5_PlanWorkedProducer
-		}
-	},
-
-	{
-		Rule C2M5_PlanWorkedbSheva
-		{
-		    criteria ConceptC2M5_PlanWorked IsSheva IsCoachAlive ChanceToFire20Percent IsNotIncapacitated NotInCombat AutoIsNotScavenge AutoIsNotSurvival
-		    // 	forceweight 20
-		    Response C2M5_PlanWorkedbProducer
-		}
-	},
-
-	{
-		Rule C2M5Button1Sheva
-		{
-		    criteria ConceptC2M5Button1 IsSheva AutoIsNotScavenge AutoIsNotSurvival _auto_NotButton1
-		    Response C2M5Button1Producer
-		    ApplyContext "_auto_Button1:1:0,_auto_NoLostCall:1:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule C2M5ChopperNagSheva
-		{
-		    criteria ConceptGetToVehicle IsSheva Ismap_c2m5 IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsNotInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockSheva IsNotSpeakingWeight0
-		    Response C2M5ChopperNagProducer
-		    ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockSheva:1:30"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule C2M5InChopperNagSheva
-		{
-		    criteria ConceptGetToVehicle IsSheva Ismap_c2m5 IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockSheva IsNotSpeakingWeight0
-		    Response C2M5InChopperNagProducer
-		    ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockSheva:1:30"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule C2M5InArenaNagSheva
-		{
-		    criteria ConceptTalkIdle IsSheva NotInCombat Ismap_c2m5 IsTalk IsTalkSheva IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival _auto_NotButton1 _auto_NotTimerLockA _auto_NotTimerLockSheva _auto_IsC2M5InArena IsNotSpeakingWeight0
-		    Response C2M5InArenaNagProducer
-		    ApplyContext "_auto_TimerLockA:1:30,_auto_TimerLockSheva:1:34"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule C2M5_Button2YellSheva
-		{
-		    criteria ConceptC2M5_Button2Yell IsSheva NotCoachMadAtRiders IsNotSpeaking AutoIsNotScavenge AutoIsNotSurvival
-		    Response C2M5_Button2YellProducer
-		}
-	},
-
-	{
-		Rule C2M5_Button2YellCoachMadSheva
-		{
-		    criteria ConceptC2M5_Button2Yell IsSheva CoachMadAtRiders IsNotSpeaking AutoIsNotScavenge AutoIsNotSurvival
-		    Response C2M5_Button2YellProducer
-		}
-	},
-
-	{
-		Rule C2M5_ChoppercomingSheva
-		{
-		    criteria ConceptC2M5_Choppercoming IsSheva IsNotIncapacitated AutoIsNotScavenge AutoIsNotSurvival
-		    Response C2M5_ChoppercomingProducer
-		    then any C2M5_PlanWorked foo:0 0.01
-		    ApplyContext "_auto_ConcertLive:0:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule C2M3SaferoomSheva
-		{
-		    criteria ConceptTalkIdle IsSheva NotInCombat IsInStartArea IsNotAlone IsNotSaidLeavingSafeArea Ismap_c2m3 AutoIsNotScavenge AutoIsNotSurvival _auto_IsSafeRoomStart _auto_NotSafeRoomQuiet IsNotSpeakingWeight0
-		    Response C2M3SaferoomProducer
-		    then self IntroEnd foo:0 0.1
+		    criteria ConceptTalkIdle IsTrevor NotInCombat IsInStartArea IsNotAlone IsNotSaidLeavingSafeArea Ismap_c2m2 AutoIsNotScavenge AutoIsNotSurvival _auto_NotSafeRoomQuiet _auto_IsSafeRoomStart IsNotSpeakingWeight0
+		    Response C2M2SaferoomMechanic
+		    then any _C2M2_Riders01 foo:0 0.1
 		    ApplyContext "_auto_SafeRoomStart:2:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C2M3SafeIntro005Sheva
+		Rule _C2M2_Riders02Trevor
 		{
-		    criteria ConceptC2M3SafeIntro005 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C2M3SafeIntro005Producer
-		    then gambler C2M3SafeIntro009 foo:0 0.3
-		}
-	},
-
-	{
-		Rule C2M3SafeIntro006Sheva
-		{
-		    criteria ConceptC2M3SafeIntro006 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C2M3SafeIntro006Producer
-		    then gambler C2M3SafeIntro009 foo:0 0.3
-		}
-	},
-
-	{
-		Rule C2M3SafeIntro009Sheva
-		{
-		    criteria ConceptC2M3SafeIntro009 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C2M3SafeIntro009Producer
+		    criteria Concept_C2M2_Riders02 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C2M2_Riders02Mechanic
 		    then self IntroEnd foo:0 0.1
 		}
 	},
 
 	{
-		Rule C2M3SafeIntro010Sheva
+		Rule _C2M2_Riders03Trevor
 		{
-		    criteria ConceptC2M3SafeIntro010 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C2M3SafeIntro010Producer
-		    then mechanic C2M3SafeIntro010 foo:0 0.3
+		    criteria Concept_C2M2_Riders03 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C2M2_Riders03Mechanic
+		    then self IntroEnd foo:0 0.1
 		}
 	},
 
 	{
-		Rule C3M1FerryEnd2Sheva
+		Rule _C2M2_Riders04Trevor
 		{
-		    criteria ConceptC3M1FerryEnd2 IsSheva IsNotSaidC3M1FerryEnd AutoIsNotScavenge AutoIsNotSurvival
-		    Response C3M1FerryEnd2Producer
-		    ApplyContext "SaidC3M1FerryEnd:1:0"
+		    criteria Concept_C2M2_Riders04 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C2M2_Riders04Mechanic
+		    then coach _C2M2_Riders04 foo:0 0.1
+		}
+	},
+
+	{
+		Rule _C2M2_Riders06Trevor
+		{
+		    criteria Concept_C2M2_Riders06 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C2M2_Riders06Mechanic
+		    then self IntroEnd foo:0 0.1
+		}
+	},
+
+	{
+		Rule _C2M2_Riders07Trevor
+		{
+		    criteria Concept_C2M2_Riders07 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C2M2_Riders07Mechanic
+		    then self IntroEnd foo:0 0.1
+		}
+	},
+
+	{
+		Rule C2M1Intro_400Trevor
+		{
+		    criteria ConceptC2M1Intro_400 IsTrevor IsSaidLeavingSafeArea IsInStartArea AutoIsNotScavenge AutoIsNotSurvival
+		    Response C2M1Intro_400Mechanic
+		    then trevor C2M1Intro_405 foo:0 0.1
+		    ApplyContext "Talk:1:5.363"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule WorldC3M1FerryCrossingJ2Sheva
+		Rule C2M1Intro_401Trevor
 		{
-		    criteria ConceptWorldC3M1FerryCrossingJ2 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response WorldC3M1FerryCrossingJ2Producer
-		    then mechanic WorldC3M1FerryCrossingJ3 foo:0 -1.986
+		    criteria ConceptC2M1Intro_401 IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsInStartArea
+		    Response C2M1Intro_401Mechanic
+		    then trevor C2M1Intro_402 foo:0 0.3
+		    ApplyContext "Talk:1:3.772"
+		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule WorldC3M1FerryCrossingk2Sheva
+		Rule C2M1Intro_402Trevor
 		{
-		    criteria ConceptWorldC3M1FerryCrossingk2 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response WorldC3M1FerryCrossingk2Producer
-		    then mechanic WorldC3M1FerryCrossingk3 foo:0 -1.703
+		    criteria ConceptC2M1Intro_402 IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsInStartArea
+		    Response C2M1Intro_402Mechanic
+		    ApplyContext "Talk:1:0.790"
+		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule WorldC3M1FerryCrossingL2Sheva
+		Rule C2M1Intro_403Trevor
 		{
-		    criteria ConceptWorldC3M1FerryCrossingL2 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response WorldC3M1FerryCrossingL2Producer
-		    then mechanic WorldC3M1FerryCrossingL3 foo:0 0.1
+		    criteria ConceptC2M1Intro_403 IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsInStartArea
+		    Response C2M1Intro_403Mechanic
+		    then trevor C2M1Intro_404 foo:0 0.1
+		    ApplyContext "Talk:1:1.198"
+		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C3M2DisgustSheva
+		Rule C2M1Intro_404Trevor
 		{
-		    criteria Conceptc3m2disgust IsSheva NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C3M2DisgustProducer
+		    criteria ConceptC2M1Intro_404 IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsInStartArea
+		    Response C2M1Intro_404Mechanic
+		    ApplyContext "Talk:1:1.506"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C2M1Intro_405Trevor
+		{
+		    criteria ConceptC2M1Intro_405 IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsInStartArea
+		    Response C2M1Intro_405Mechanic
+		    then trevor C2M1Intro_406 foo:0 0.1
+		    ApplyContext "Talk:1:1.411"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C2M1Intro_406Trevor
+		{
+		    criteria ConceptC2M1Intro_406 IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsInStartArea
+		    Response C2M1Intro_406Mechanic
+		    ApplyContext "Talk:1:1.506"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C2M1Intro_407Trevor
+		{
+		    criteria ConceptC2M1Intro_407 IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsInStartArea
+		    Response C2M1Intro_407Mechanic
+		    then trevor C2M1Intro_408 foo:0 0.1
+		    ApplyContext "Talk:1:2.846"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C2M1Intro_408Trevor
+		{
+		    criteria ConceptC2M1Intro_408 IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsInStartArea
+		    Response C2M1Intro_408Mechanic
 		    ApplyContext "Talk:1:1.098"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C3M2SafeRoomSheva
+		Rule c2m3_DownHoleTrevor
 		{
-		    criteria ConceptTalkIdle IsSheva NotInCombat ismapc3m2_swamp IsInStartArea IsNotAlone IsNotSaidLeavingSafeArea AutoIsNotScavenge AutoIsNotSurvival _auto_NotSafeRoomQuiet _auto_IsSafeRoomStart IsNotSpeakingWeight0
-		    Response C3M2SafeRoomProducer
-		    then mechanic C3M2SafeRooma2 foo:0 1
+		    criteria Conceptc2m3downhole IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response c2m3_DownHoleMechanic
+		    ApplyContext "_auto_DownHole:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule c2m3CoasterEndTrevor
+		{
+		    criteria Conceptc2m3CoasterEnd IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response c2m3CoasterEndMechanic
+		    ApplyContext "_auto_Alarm:2:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C2M3CoasterRunGoTrevor
+		{
+		    criteria ConceptC2M3CoasterRunGo IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C2M3CoasterRunGoMechanic
+		}
+	},
+
+	{
+		Rule C2M3CoasterStartTrevor
+		{
+		    criteria Conceptc2m3CoasterStart IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C2M3CoasterStartMechanic
+		    then trevor _c2m3_howcool foo:0 1.0
+		    ApplyContext "WarnMegaMob:1:30,_auto_Alarm:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C2M3SaferoomTrevor
+		{
+		    criteria ConceptTalkIdle IsTrevor NotInCombat IsInStartArea IsNotAlone IsNotSaidLeavingSafeArea Ismap_c2m3 AutoIsNotScavenge AutoIsNotSurvival _auto_NotSafeRoomQuiet _auto_IsSafeRoomStart IsNotSpeakingWeight0
+		    Response C2M3SaferoomMechanic
+		    then producer C2M3SafeIntro009 foo:0 0.2
 		    ApplyContext "_auto_SafeRoomStart:2:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C3M2SafeRoom2Sheva
+		Rule C2M3SafeIntro006Trevor
 		{
-		    criteria ConceptC3M2SafeRoom2 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C3M2SafeRoom2Producer
+		    criteria ConceptC2M3SafeIntro006 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C2M3SafeIntro006Mechanic
 		    then self IntroEnd foo:0 0.1
 		}
 	},
 
 	{
-		Rule C3M2SafeRoom2dSheva
+		Rule C2M3SafeIntro010Trevor
 		{
-		    criteria ConceptC3M2SafeRoom2d IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C3M2SafeRoom2dProducer
-		    then gambler C3M2SafeRoom3d foo:0 -3.763
-		}
-	},
-
-	{
-		Rule InfoRemC3M2Bathtub3Sheva
-		{
-		    criteria ConceptInfoRemC3M2Bathtub3 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response InfoRemC3M2Bathtub3Producer
-		    ApplyContext "Talk:1:0.934"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule _C3M2PirogueSheva
-		{
-		    criteria Concept_C3M2Pirogue IsSheva ChanceToFire40Percent AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C3M2PirogueProducer
-		    then mechanic _C3M2Pirogue2 foo:0 0.1
-		    ApplyContext "Talk:1:1.250"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule _C3M2Pirogue2Sheva
-		{
-		    criteria Concept_C3M2Pirogue2 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C3M2Pirogue2Producer
-		    then coach _C3M2Pirogue2 foo:0 0.1
-		    ApplyContext "Talk:1:1.250"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule C3M3SafeRoomSheva
-		{
-		    criteria ConceptTalkIdle IsSheva NotInCombat Ismapc3m3_shantytown IsInStartArea IsNotAlone IsNotSaidLeavingSafeArea AutoIsNotScavenge AutoIsNotSurvival _auto_IsSafeRoomStart _auto_NotSafeRoomQuiet IsNotSpeakingWeight0
-		    Response C3M3SafeRoomProducer
-		    then mechanic C3M3SafeRoom2a2 foo:0 .05
-		    ApplyContext "_auto_SafeRoomStart:2:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule C3M3SafeRoom2a3Sheva
-		{
-		    criteria ConceptC3M3SafeRoom2a3 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C3M3SafeRoom2a3Producer
+		    criteria ConceptC2M3SafeIntro010 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C2M3SafeIntro010Mechanic
 		    then self IntroEnd foo:0 0.1
 		}
 	},
 
 	{
-		Rule C3M3SafeRoom2c2Sheva
+		Rule c2m3SeeChopperTrevor
 		{
-		    criteria ConceptC3M3SafeRoom2c2 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C3M3SafeRoom2c2Producer
-		    then mechanic C3M3SafeRoom2c3 foo:0 .05
+		    criteria Conceptc2m3SeeChopper IsTrevor IsTalk IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
+		    Response c2m3SeeChopperMechanic
+		    ApplyContext "_auto_OutOfTunnel:1:0"
+		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C3M3SafeRoom2e2Sheva
+		Rule c2m3SpotIncendiaryTrevor
 		{
-		    criteria ConceptC3M3SafeRoom2e2 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C3M3SafeRoom2e2Producer
+		    criteria ConceptPlayerSpotWeapon IsIncendiary IsTrevor IsTalk NotInCombat Ismap_c2m3 _auto_NotOutOfTunnel
+		    Response c2m3SpotIncendiaryMechanic
+		}
+	},
+
+	{
+		Rule c2m3SpotKatanaTrevor
+		{
+		    criteria ConceptPlayerSpotWeapon IsKatana IsTrevor IsTalk NotInCombat Ismap_c2m3 _auto_NotOutOfTunnel
+		    Response c2m3SpotKatanaMechanic
+		}
+	},
+
+	{
+		Rule C2M4ButtonPressedTrevor
+		{
+		    criteria ConceptC2M4ButtonPressed IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C2M4ButtonPressedMechanic
+		    ApplyContext "_auto_ButtonPressed:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C2M4Gate004Trevor
+		{
+		    criteria ConceptC2M4Gate004 IsTrevor IsTalk NotInCombat IsNotCoughing AutoIsNotScavenge AutoIsNotSurvival
+		    Response C2M4Gate004Mechanic
+		    then coach C2M4Gate005 foo:0 0.01
+		}
+	},
+
+	{
+		Rule C2M4Gate000Trevor
+		{
+		    criteria ConceptC2M4Gate000 IsTrevor IsNotIncapacitated ismap_c2m4 NotInCombat TimeSinceGroupInCombat02 AutoIsNotScavenge AutoIsNotSurvival _auto_IsNearGate _auto_NotNearGateNag _auto_NotTimerLockA _auto_NotTimerLockTrevor _auto_NotButtonPressed IsNotSpeakingWeight0
+		    Response C2M4Gate000Mechanic
+		    ApplyContext "Talk:1:1.116,_auto_TimerLockA:1:20,_auto_TimerLockTrevor:1:23,_auto_NearGateNag:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C2M4GateIdleTrevor
+		{
+		    criteria ConceptTalkIdle IsTrevor IsNotIncapacitated ismap_c2m4 NotInCombat TimeSinceGroupInCombat02 AutoIsNotScavenge AutoIsNotSurvival _auto_IsNearGateNag _auto_IsNearGate _auto_NotTimerLockA _auto_NotTimerLockTrevor _auto_NotButtonPressed IsNotSpeakingWeight0
+		    Response C2M4GateIdleMechanic
+		    ApplyContext "Talk:1:1.645,_auto_TimerLockA:1:20,_auto_TimerLockTrevor:1:23"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C2M4GateOpenCalloutTrevor
+		{
+		    criteria ConceptC2M4GateOpenCallout IsTrevor IsNotIncapacitated AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response C2M4GateOpenCalloutMechanic
+		    then any _C2M4_GateOpen001 foo:0 0.1
+		    ApplyContext "Talk:1:0.878"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule c2m4SeeChopperTrevor
+		{
+		    criteria Conceptc2m4SeeChopper IsTrevor IsTalk NotInCombat IsNotCoughing AutoIsNotScavenge AutoIsNotSurvival
+		    Response c2m4SeeChopperMechanic
+		}
+	},
+
+	{
+		Rule C2M5_Button2YellTrevor
+		{
+		    criteria ConceptC2M5_Button2Yell IsTrevor NotCoachMadAtRiders IsNotSpeaking AutoIsNotScavenge AutoIsNotSurvival
+		    Response C2M5_Button2YellMechanic
+		}
+	},
+
+	{
+		Rule C2M5_Button2YellCoachMadTrevor
+		{
+		    criteria ConceptC2M5_Button2Yell IsTrevor CoachMadAtRiders IsNotSpeaking AutoIsNotScavenge AutoIsNotSurvival
+		    Response C2M5_Button2YellMechanic
+		}
+	},
+
+	{
+		Rule C2M5_ChoppercomingTrevor
+		{
+		    criteria ConceptC2M5_Choppercoming IsTrevor IsNotIncapacitated AutoIsNotScavenge AutoIsNotSurvival
+		    Response C2M5_ChoppercomingMechanic
+		    then any C2M5_PlanWorked foo:0 0.01
+		}
+	},
+
+	{
+		Rule c2m5_intro003Trevor
+		{
+		    criteria Conceptc2m5_intro003 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response c2m5_intro003Mechanic
+		    then self c2m5_intro009 foo:0 0.4
+		}
+	},
+
+	{
+		Rule c2m5_intro005Trevor
+		{
+		    criteria Conceptc2m5_intro005 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response c2m5_intro005Mechanic
+		    then any c2m5_intro006 foo:0 0.1
+		}
+	},
+
+	{
+		Rule c2m5_intro008Trevor
+		{
+		    criteria Conceptc2m5_intro008 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response c2m5_intro008Mechanic
+		    then self IntroEnd foo:0 0.1
+		}
+	},
+
+	{
+		Rule c2m5_intro009Trevor
+		{
+		    criteria Conceptc2m5_intro009 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response c2m5_intro009Mechanic
+		    then self IntroEnd foo:0 0.1
+		}
+	},
+
+	{
+		Rule c2m5_intro011Trevor
+		{
+		    criteria Conceptc2m5_intro011 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response c2m5_intro011Mechanic
+		    then any c2m5_intro012 foo:0 0.1
+		}
+	},
+
+	{
+		Rule c2m5_intro012Trevor
+		{
+		    criteria Conceptc2m5_intro012 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response c2m5_intro012Mechanic
+		    then self IntroEnd foo:0 0.1
+		}
+	},
+
+	{
+		Rule c2m5_intro015Trevor
+		{
+		    criteria Conceptc2m5_intro015 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response c2m5_intro012Mechanic
+		    then self IntroEnd foo:0 0.1
+		}
+	},
+
+	{
+		Rule c2m5_intro016Trevor
+		{
+		    criteria Conceptc2m5_intro016 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response c2m5_intro012Mechanic
+		    then self IntroEnd foo:0 0.1
+		}
+	},
+
+	{
+		Rule c2m5_intro020Trevor
+		{
+		    criteria Conceptc2m5_intro020 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response c2m5_intro012Mechanic
+		    then self IntroEnd foo:0 0.1
+		}
+	},
+
+	{
+		Rule c2m5_intro025Trevor
+		{
+		    criteria Conceptc2m5_intro025 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response c2m5_intro012Mechanic
+		    then self IntroEnd foo:0 0.1
+		}
+	},
+
+	{
+		Rule c2m5_intro019Trevor
+		{
+		    criteria Conceptc2m5_intro019 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response c2m5_intro019Mechanic
+		    then any c2m5_intro020 foo:0 0.1
+		}
+	},
+
+	{
+		Rule c2m5_intro024Trevor
+		{
+		    criteria Conceptc2m5_intro024 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response c2m5_intro024Mechanic
+		    then any c2m5_intro025 foo:0 0.01
+		}
+	},
+
+	{
+		Rule C2M5_PlanWorkedTrevor
+		{
+		    criteria ConceptC2M5_PlanWorked IsTrevor NotCoachMadAtRiders IsNotIncapacitated NotInCombat AutoIsNotScavenge AutoIsNotSurvival
+		    Response C2M5_PlanWorkedMechanic
+		}
+	},
+
+	{
+		Rule C2M5_PlanWorkedCoachMadTrevor
+		{
+		    criteria ConceptC2M5_PlanWorked IsTrevor CoachMadAtRiders IsNotIncapacitated NotInCombat AutoIsNotScavenge AutoIsNotSurvival
+		    Response C2M5_PlanWorkedMechanic
+		}
+	},
+
+	{
+		Rule C2M5Button1Trevor
+		{
+		    criteria ConceptC2M5Button1 IsTrevor AutoIsNotScavenge AutoIsNotSurvival _auto_NotButton1
+		    Response C2M5Button1Mechanic
+		    ApplyContext "_auto_Button1:1:0,_auto_NoLostCall:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C2M5ChopperNagTrevor
+		{
+		    criteria ConceptGetToVehicle IsTrevor Ismap_c2m5 IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsNotInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockTrevor IsNotSpeakingWeight0
+		    Response C2M5ChopperNagMechanic
+		    ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockTrevor:1:30"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C2M5InChopperNagTrevor
+		{
+		    criteria ConceptGetToVehicle IsTrevor Ismap_c2m5 IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockTrevor IsNotSpeakingWeight0
+		    Response C2M5InChopperNagMechanic
+		    ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockTrevor:1:30"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C2M5InArenaNagTrevor
+		{
+		    criteria ConceptTalkIdle IsTrevor NotInCombat Ismap_c2m5 IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival _auto_NotButton1 _auto_NotTimerLockA _auto_NotTimerLockTrevor _auto_IsC2M5InArena IsNotSpeakingWeight0
+		    Response C2M5InArenaNagMechanic
+		    ApplyContext "_auto_TimerLockA:1:30,_auto_TimerLockTrevor:1:34"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C2M5SingingTrevor
+		{
+		    criteria ConceptC2M5Microphone IsTrevor NotInCombat Ismap_c2m5 TimeSinceGroupInCombat02 IsNotSpeaking AutoIsNotScavenge AutoIsNotSurvival _auto_NotButton2 _auto_IsButton1
+		    Response C2M5SingingMechanic
+		}
+	},
+
+	{
+		Rule SurvivorReloadingC2M5Trevor
+		{
+		    criteria ConceptPlayerReloading IsSurvivor IsNotZombiePresentTank IsNotSpeaking Ismap_c2m5 IsRocking IsTrevor IsNotIncapacitated IsTalk IsTalkTrevor RecentGroupInCombat10 HasNotgrenadelauncher IsWorldTalkTrevor _auto_ConcertIsLive _auto_NotRockingOut
+		    Response SurvivorReloadingC2M5Mechanic
+		    ApplyContext "_auto_RockingOut:1:20"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule SurvivorReloadingC2M5RockedOutTrevor
+		{
+		    criteria ConceptPlayerReloading IsSurvivor IsNotZombiePresentTank IsNotSpeaking IsRocking Ismap_c2m5 IsTrevor IsNotIncapacitated IsTalk IsTalkTrevor RecentGroupInCombat10 HasNotgrenadelauncher IsWorldTalkTrevor _auto_ConcertIsLive _auto_IsRockingOut
+		    Response NoResponse
+		}
+	},
+
+	{
+		Rule SurvivorVocalizeLookOutC2M5Trevor
+		{
+		    criteria ConceptPlayerLookOut IsNotCoughing Ismap_c2m5 IsRocking IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_ConcertIsLive _auto_NotRockingOut
+		    Response SurvivorVocalizeLookOutC2M5Mechanic
+		    ApplyContext "_auto_RockingOut:1:20"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule SurvivorVocalizeLookOutC2M5RockedOutTrevor
+		{
+		    criteria ConceptPlayerLookOut IsNotCoughing Ismap_c2m5 IsRocking IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_ConcertIsLive _auto_IsRockingOut
+		    Response NoResponse
+		}
+	},
+
+	{
+		Rule C2M5LeaveSafeTrevor
+		{
+		    criteria ConceptSurvivorLeavingInitialCheckpoint IsTrevor ismap_c2m5 IsNotSaidLeavingSafeArea
+		    Response C2M5LeaveSafeMechanic
+		    ApplyContext "Talk:0:0,SaidLeavingSafeArea:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C2M5ReloadingTankTrevor
+		{
+		    criteria ConceptPlayerReloading IsSurvivor IsNotSpeaking IsTrevor IsNotIncapacitated IsTalk IsTalkTrevor IsNotSaidReloadingTank IsZombiePresentTank IsSaidTankWarn2 IsWorldTalkTrevor Ismap_c2m5 _auto_ConcertIsLive
+		    Response C2M5ReloadingTankMechanic
+		    ApplyContext "SaidReloadingTank:1:10,SaidTankWarn2:1:20"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerKillTankConfirmationC2M5Trevor
+		{
+		    criteria ConceptKilledZombie IsNotCoughing IsTrevor IsTalk IsTalkTrevor SubjectIsTank IsNotSaidTankDead IsNotAlone IsNotIncapacitated IsWorldTalkTrevor Ismap_c2m5 _auto_ConcertIsLive IsNotSpeakingWeight0
+		    Response PlayerKillTankConfirmationC2M5Mechanic
+		    ApplyContext "SaidTankDead:1:60,TalkTrevor:1:5"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C2M5ThankYouTrevor
+		{
+		    criteria ConceptC2M5Microphone IsTrevor NotInCombat Ismap_c2m5 IsNotSpeaking AutoIsNotScavenge AutoIsNotSurvival _auto_IsEscapeReady
+		    Response C2M5ThankYouMechanic
+		    ApplyContext "Talk:1:5.287"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C3M1FerryEnd2Trevor
+		{
+		    criteria ConceptC3M1FerryEnd2 IsTrevor IsNotSaidC3M1FerryEnd AutoIsNotScavenge AutoIsNotSurvival
+		    Response C3M1FerryEnd2Mechanic
+		    ApplyContext "SaidC3M1FerryEnd:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule WorldC3M1FerryCrossingRochelleTrevor
+		{
+		    criteria ConceptRemark IsTrevor IsWorldC3M1FerryCrossing IsNotSaidWorldC3M1FerryCrossing IsNotCoughing NotInCombat IsTalkTrevor IsSubjectNear200 IsProducerAlive ChanceToFire25Percent IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    // 	forceweight 4
+		    Response WorldC3M1FerryCrossingRochelleMechanic
+		    then producer WorldC3M1FerryCrossingJ2 foo:0 -2.908
+		    ApplyContext "SaidWorldC3M1FerryCrossing:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule WorldC3M1FerryCrossingJ3Trevor
+		{
+		    criteria ConceptWorldC3M1FerryCrossingJ3 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response WorldC3M1FerryCrossingJ3Mechanic
+		}
+	},
+
+	{
+		Rule WorldC3M1FerryCrossingk3Trevor
+		{
+		    criteria ConceptWorldC3M1FerryCrossingk3 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response WorldC3M1FerryCrossingk3Mechanic
+		}
+	},
+
+	{
+		Rule WorldC3M1FerryCrossingL3Trevor
+		{
+		    criteria ConceptWorldC3M1FerryCrossingL3 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response WorldC3M1FerryCrossingL3Mechanic
+		    then coach WorldC3M1FerryCrossingD01 foo:0 0.1
+		}
+	},
+
+	{
+		Rule C3M2DisgustTrevor
+		{
+		    criteria Conceptc3m2disgust IsTrevor NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C3M2DisgustMechanic
+		    ApplyContext "Talk:1:1.803"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C3M2SafeRooma2Trevor
+		{
+		    criteria ConceptC3M2SafeRooma2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C3M2SafeRooma2Mechanic
+		    then self IntroEnd foo:0 0.1
+		}
+	},
+
+	{
+		Rule C3M2SafeRoomb3Trevor
+		{
+		    criteria ConceptC3M2SafeRoomb3 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C3M2SafeRoomb3Mechanic
+		    then self IntroEnd foo:0 0.1
+		}
+	},
+
+	{
+		Rule InfoRemc3m2_parachutist1Trevor
+		{
+		    criteria ConceptRemark IsTrevor Isc3m2_parachutist IsNotSaidc3m2_parachutist IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 ChanceToFire50Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    // 	forceweight 10
+		    Response InfoRemc3m2_parachutist1Mechanic
+		    then coach InfoRemc3m2_parachutist2 foo:0 -1.466
+		    ApplyContext "Saidc3m2_parachutist:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule AUTOBLANK_InfoRemc3m2_parachutist1Trevor
+		{
+		    criteria ConceptRemark IsTrevor Isc3m2_parachutist IsNotSaidc3m2_parachutist IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response _PlayerInfoRemarkableBlankMechanic
+		    ApplyContext "Saidc3m2_parachutist:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule InfoRemC3M2Bathtub2Trevor
+		{
+		    criteria ConceptInfoRemC3M2Bathtub2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response InfoRemC3M2Bathtub2Mechanic
+		    then producer InfoRemC3M2Bathtub3 foo:0 -1.559
+		    ApplyContext "Talk:1:1.659"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule _C3M2Pirogue2Trevor
+		{
+		    criteria Concept_C3M2Pirogue2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C3M2Pirogue2Mechanic
+		    then any _C3M2Pirogue2 foo:0 0.1
+		    ApplyContext "Talk:1:1.750"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C3M3SafeRoomTrevor
+		{
+		    criteria ConceptTalkIdle IsTrevor NotInCombat Ismapc3m3_shantytown IsInStartArea IsNotAlone IsNotSaidLeavingSafeArea AutoIsNotScavenge AutoIsNotSurvival _auto_IsSafeRoomStart _auto_NotSafeRoomQuiet IsNotSpeakingWeight0
+		    Response C3M3SafeRoomMechanic
 		    then coach C3M3SafeRoom2b2 foo:0 .05
-		}
-	},
-
-	{
-		Rule InfoRemC3M3Bodies2Sheva
-		{
-		    criteria ConceptInfoRemC3M3Bodies2 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response InfoRemC3M3Bodies2Producer
-		}
-	},
-
-	{
-		Rule InfoRemC3M3Bodies3Sheva
-		{
-		    criteria ConceptInfoRemC3M3Bodies3 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response InfoRemC3M3Bodies3Producer
-		}
-	},
-
-	{
-		Rule InfoRemC3M3LowerGateaSheva
-		{
-		    criteria ConceptInfoRemC3M3LowerGatea IsSheva IsNotSaidC3M3BridgeButton IntensityUnder25 AutoIsNotScavenge AutoIsNotSurvival
-		    Response InfoRemC3M3LowerGateaProducer
-		}
-	},
-
-	{
-		Rule C3M4BoatNagsSheva
-		{
-		    criteria ConceptGetToVehicle IsSheva ismapc3m4_plantation IsNotCoughing IsNotIncapacitated IsRunning IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsNotInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockSheva IsNotSpeakingWeight0
-		    Response C3M4BoatNagsProducer
-		    ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockSheva:1:30"
+		    ApplyContext "_auto_SafeRoomStart:2:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C3M4InBoatNagsSheva
+		Rule C3M3SafeRoom2a2Trevor
 		{
-		    criteria ConceptGetToVehicle IsSheva ismapc3m4_plantation IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockSheva IsNotSpeakingWeight0
-		    Response C3M4InBoatNagsProducer
-		    ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockSheva:1:30"
+		    criteria ConceptC3M3SafeRoom2a2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C3M3SafeRoom2a2Mechanic
+		    then producer C3M3SafeRoom2a3 foo:0 .05
+		}
+	},
+
+	{
+		Rule C3M3SafeRoom2c3Trevor
+		{
+		    criteria ConceptC3M3SafeRoom2c3 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C3M3SafeRoom2c3Mechanic
+		    then self IntroEnd foo:0 0.1
+		}
+	},
+
+	{
+		Rule C3M3SafeRoom2d2Trevor
+		{
+		    criteria ConceptC3M3SafeRoom2d2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C3M3SafeRoom2d2Mechanic
+		    then self IntroEnd foo:0 0.1
+		}
+	},
+
+	{
+		Rule InfoRemC3M3Bodies2Trevor
+		{
+		    criteria ConceptInfoRemC3M3Bodies2 IsTrevor IssuerClose AutoIsNotScavenge AutoIsNotSurvival
+		    Response InfoRemC3M3Bodies2Mechanic
+		    then producer InfoRemC3M3Bodies3 foo:0 -1.429
+		}
+	},
+
+	{
+		Rule InfoRemC3M3LowerGateaTrevor
+		{
+		    criteria ConceptInfoRemC3M3LowerGatea IsTrevor IsNotSaidC3M3BridgeButton IntensityUnder25 AutoIsNotScavenge AutoIsNotSurvival
+		    Response InfoRemC3M3LowerGateaMechanic
+		}
+	},
+
+	{
+		Rule InfoRemC3M3Unsanitarya1Trevor
+		{
+		    criteria ConceptInfoRemC3M3Unsanitarya1 IsTrevor IssuerClose ChanceToFire30Percent AutoIsNotScavenge AutoIsNotSurvival
+		    Response InfoRemC3M3Unsanitarya1Mechanic
+		    then gambler InfoRemC3M3Unsanitarya2 foo:0 -3.766
+		}
+	},
+
+	{
+		Rule C3M4BoatNagsTrevor
+		{
+		    criteria ConceptGetToVehicle IsTrevor IsNotCoughing ismapc3m4_plantation IsNotIncapacitated IsRunning IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsNotInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockTrevor IsNotSpeakingWeight0
+		    Response C3M4BoatNagsMechanic
+		    ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockTrevor:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C3M4Button1ASheva
+		Rule C3M4InBoatNagsTrevor
 		{
-		    criteria ConceptC3M4Button1A IsSheva FromIsAnOrator _auto_IsTalkingSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C3M4Button1AProducer
+		    criteria ConceptGetToVehicle IsTrevor IsNotCoughing ismapc3m4_plantation IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockTrevor IsNotSpeakingWeight0
+		    Response C3M4InBoatNagsMechanic
+		    ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockTrevor:1:30"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C3M4Button1ATrevor
+		{
+		    criteria ConceptC3M4Button1A IsTrevor FromIsAnOrator _auto_IsTalkingTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C3M4Button1AMechanic
 		    then orator C3M4Button101 foo:0 0.3
 		}
 	},
 
 	{
-		Rule C3M4ButtonNameSheva
+		Rule C3M4ButtonPickUsUpTrevor
 		{
-		    criteria ConceptC3M4ButtonName IsSheva FromIsAnOrator _auto_IsTalkingSheva AutoIsNotScavenge AutoIsNotSurvival _auto_NotFinaleStarted
-		    Response C3M4ButtonNameProducer
+		    criteria ConceptC3M4ButtonPickUsUp IsTrevor FromIsAnOrator AutoIsNotScavenge AutoIsNotSurvival _auto_NotFinaleStarted
+		    Response C3M4ButtonPickUsUpMechanic
+		    then orator C3M4ButtonHowMany foo:0 0.3
+		}
+	},
+
+	{
+		Rule C3M4ButtonNameTrevor
+		{
+		    criteria ConceptC3M4ButtonName IsTrevor FromIsAnOrator _auto_IsTalkingTrevor AutoIsNotScavenge AutoIsNotSurvival _auto_NotFinaleStarted
+		    Response C3M4ButtonNameMechanic
 		    then orator C3M4ButtonHowMany foo:0 0.1
 		}
 	},
 
 	{
-		Rule C3M4ButtonHowManyAnswerSheva
+		Rule C3M4HowManyAnswerTrevor
 		{
-		    criteria ConceptC3M4ButtonHowManyAnswer IsSheva FromIsAnOrator _auto_IsTalkingSheva AutoIsNotScavenge AutoIsNotSurvival _auto_NotFinaleStarted
-		    Response C3M4ButtonHowManyAnswerProducer
+		    criteria ConceptC3M4ButtonHowManyAnswer IsTrevor FromIsAnOrator IsEveryoneAlive _auto_IsTalkingTrevor AutoIsNotScavenge AutoIsNotSurvival _auto_NotFinaleStarted
+		    Response C3M4HowManyAnswerMechanic
 		    then orator C3M4Button102 foo:0 0.1
 		}
 	},
 
 	{
-		Rule C3M4Button201Sheva
+		Rule C3M4HowManyAnswerNot4Trevor
 		{
-		    criteria ConceptC3M4Button201 IsSheva FromIsAnOrator AutoIsNotScavenge AutoIsNotSurvival _auto_IsTalkingSheva
-		    Response C3M4Button201Producer
+		    criteria ConceptC3M4ButtonHowManyAnswer IsTrevor FromIsAnOrator IsEveryoneNotAlive _auto_IsTalkingTrevor AutoIsNotScavenge AutoIsNotSurvival _auto_NotFinaleStarted
+		    Response C3M4HowManyAnswerNot4Mechanic
+		    then orator C3M4Button102 foo:0 0.1
+		}
+	},
+
+	{
+		Rule C3M4Button201Trevor
+		{
+		    criteria ConceptC3M4Button201 IsTrevor FromIsAnOrator AutoIsNotScavenge AutoIsNotSurvival _auto_IsTalkingTrevor
+		    Response C3M4Button201Mechanic
 		    then orator C3M4Button202 foo:0 0.01
-		    ApplyContext "Talk:1:1.737"
+		    ApplyContext "Talk:1:2.509"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C3M4Button202Sheva
+		Rule C3M4Button202Trevor
 		{
-		    criteria ConceptC3M4Button202 FromIsAnOrator _auto_IsTalkingSheva IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C3M4Button202Producer
+		    criteria ConceptC3M4Button202 FromIsAnOrator _auto_IsTalkingTrevor IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C3M4Button202Mechanic
+		    then orator C3M4Button201 foo:0 0.01
 		    ApplyContext "Talk:1:3.424"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C3M4GateBlow01Sheva
+		Rule C3M4Button203Trevor
 		{
-		    criteria ConceptC3M4GateBlow01 IsSheva FromIsAnOrator IsTalk AutoIsNotScavenge AutoIsNotSurvival
-		    Response C3M4GateBlow01Producer
-		    then orator C3M4GateBlow02 foo:0 0.01
-		    ApplyContext "_auto_TimerLockA:1:3"
+		    criteria ConceptC3M4Button203 IsTrevor FromIsAnOrator _auto_IsTalkingTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C3M4Button203Mechanic
+		}
+	},
+
+	{
+		Rule C3M4ReloadingTankTrevor
+		{
+		    criteria ConceptPlayerReloading IsSurvivor IsNotSpeaking IsTrevor IsNotIncapacitated IsTalk IsTalkTrevor IsNotSaidReloadingTank IsZombiePresentTank IsSaidTankWarn2 IsWorldTalkTrevor ismapc3m4_plantation _auto_IsFinaleStarted
+		    Response C3M4ReloadingTankMechanic
+		    ApplyContext "SaidReloadingTank:1:10,SaidTankWarn2:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C4StormBlindIdleSheva
+		Rule PlayerKillTankConfirmationC3M4Trevor
 		{
-		    criteria ConceptTalkIdle IsSheva ChanceToFire30Percent IsNotIncapacitated _auto_NotTimerLockA _auto_IsTimerA _auto_NotC4ShevaInCover IsNotSpeakingWeight0
-		    Response C4StormBlindIdleProducer
+		    criteria ConceptKilledZombie IsNotCoughing IsTrevor IsTalk IsTalkTrevor SubjectIsTank IsNotSaidTankDead IsNotAlone IsNotIncapacitated IsWorldTalkTrevor ismapc3m4_plantation IsNotSpeakingWeight0 _auto_IsFinaleStarted
+		    Response PlayerKillTankConfirmationC3M4Mechanic
+		    ApplyContext "SaidTankDead:1:60,TalkTrevor:1:5"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C3M4GateBlow01Trevor
+		{
+		    criteria ConceptC3M4GateBlow01 IsTrevor FromIsAnOrator IsTalk AutoIsNotScavenge AutoIsNotSurvival
+		    Response C3M4GateBlow01Mechanic
+		    then orator C3M4GateBlow02 foo:0 0.01
+		    ApplyContext "_auto_TimerLockA:1:2"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C4StormBlindIdleTrevor
+		{
+		    criteria ConceptTalkIdle IsTrevor ChanceToFire30Percent IsNotIncapacitated _auto_NotTimerLockA _auto_IsTimerA _auto_NotC4TrevorInCover IsNotSpeakingWeight0
+		    Response C4StormBlindIdleMechanic
 		    ApplyContext "_auto_TimerA:0:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C4M2IdleWitchville01Sheva
+		Rule C4M2IdleWitchville01Trevor
 		{
-		    criteria ConceptPlayerWarnHearZombie IsWitchClass IsSurvivor ismap_c4m2_sugarmill_a IsNotSpeaking IsNotAlone IsClosestSurvivorNear1200 IsSheva IsNotIncapacitated IsTalk IsTalkSheva NotinCombat IsWorldTalkSheva NotSaidLotsOfWitches IsNotSaidSafeSpotAhead _auto_IsShevaInWitchville
-		    Response C4M2IdleWitchville01Producer
+		    criteria ConceptPlayerWarnHearZombie IsWitchClass IsSurvivor ismap_c4m2_sugarmill_a IsNotSpeaking IsNotAlone IsClosestSurvivorNear1200 IsTrevor IsNotIncapacitated IsTalk IsTalkTrevor NotInCombat IsWorldTalkTrevor NotSaidLotsOfWitches IsNotSaidSafeSpotAhead _auto_IsTrevorInWitchville
+		    Response C4M2IdleWitchville01Mechanic
 		    then any _c4m2_Witchville05 foo:0 0.01
 		    ApplyContext "SaidWitchWarn:1:20,WarnHeardWitch:1:300,SaidLotsOfWitches:1:90"
 		    applycontexttoworld
@@ -1596,330 +1931,557 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule C4M2PushedButtonSheva
+		Rule C4M2IdleWitchville02Trevor
 		{
-		    criteria Conceptc4m2_elevator_top_button IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C4M2PushedButtonProducer
-		    ApplyContext "SaidActivatedC4M2Elevator:1:0,WarnMegaMob:1:300,SaidSpecialWarn:1:30"
+		    criteria ConceptPlayerWarnHearZombie IsWitchClass IsSurvivor ismap_c4m2_sugarmill_a IsNotSpeaking IsGamblerAlive IsTrevor IsNotIncapacitated IsTalkTrevor NotInCombat IsWorldTalkTrevor IsGamblerNear400 ChanceToFire10Percent NotSaidLotsOfWitches IsNotSaidSafeSpotAhead _auto_IsTrevorInWitchville
+		    Response C4M2IdleWitchville02Mechanic
+		    then gambler _c4m2_Witchville01 foo:0 0.01
+		    ApplyContext "SaidWitchWarn:1:20,WarnHeardWitch:1:300,SaidLotsOfWitches:1:90"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C4M5BoatNagsSheva
+		Rule C4M2PushedButtonTrevor
 		{
-		    criteria ConceptGetToVehicle IsSheva Isc4m5 IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsNotInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockSheva IsNotSpeakingWeight0
-		    Response C4M5BoatNagsProducer
-		    ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockSheva:1:30"
+		    criteria Conceptc4m2_elevator_top_button IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C4M2PushedButtonMechanic
+		    ApplyContext "SaidActivatedC4M2Elevator:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C4M5InBoatNagsSheva
+		Rule C4M5BoatNagsTrevor
 		{
-		    criteria ConceptGetToVehicle IsSheva Isc4m5 IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockSheva IsNotSpeakingWeight0
-		    Response C4M5InBoatNagsProducer
-		    ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockSheva:1:30"
+		    criteria ConceptGetToVehicle IsTrevor Isc4m5 IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsNotInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockTrevor IsNotSpeakingWeight0
+		    Response C4M5BoatNagsMechanic
+		    ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockTrevor:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C5M1_intro002Sheva
+		Rule C4M5InBoatNagsTrevor
 		{
-		    criteria ConceptC5M1_intro002 IsSheva IsAlone AutoIsNotScavenge AutoIsNotSurvival
-		    Response C5M1_intro002Producer
+		    criteria ConceptGetToVehicle IsTrevor Isc4m5 IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockTrevor IsNotSpeakingWeight0
+		    Response C4M5InBoatNagsMechanic
+		    ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockTrevor:1:30"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C5M1_intro002Trevor
+		{
+		    criteria ConceptC5M1_intro002 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C5M1_intro002Mechanic
 		    then orator C5M1_intro003 foo:0 0.01
 		}
 	},
 
 	{
-		Rule C5M1_intro004Sheva
+		Rule C5M1_intro004Trevor
 		{
-		    criteria ConceptC5M1_intro004 IsSheva IsEveryoneAlive AutoIsNotScavenge AutoIsNotSurvival
-		    Response C5M1_intro004Producer
-		    then any C5M1_intro005 foo:0 0.01
+		    criteria ConceptC5M1_intro004 IsTrevor IsEveryoneAlive AutoIsNotScavenge AutoIsNotSurvival
+		    Response C5M1_intro004Mechanic
+		    then coach C5M1_intro008 foo:0 0.01
 		}
 	},
 
 	{
-		Rule C5M1_intro005Sheva
+		Rule C5M1_intro005Trevor
 		{
-		    criteria ConceptC5M1_intro005 IsSheva IsEveryoneAlive AutoIsNotScavenge AutoIsNotSurvival
-		    Response C5M1_intro005Producer
-		    then Mechanic C5M1_intro009 foo:0 0.01
+		    criteria ConceptC5M1_intro005 IsTrevor IsEveryoneAlive AutoIsNotScavenge AutoIsNotSurvival
+		    Response C5M1_intro005Mechanic
+		    then coach C5M1_intro008 foo:0 0.01
 		}
 	},
 
 	{
-		Rule C5M1_intro010Sheva
+		Rule C5M1_intro007Trevor
 		{
-		    criteria ConceptC5M1_intro010 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C5M1_intro010Producer
+		    criteria ConceptC5M1_intro007 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C5M1_intro007Mechanic
 		    then self IntroEnd foo:0 0.1
 		}
 	},
 
 	{
-		Rule C5M1Flyby01Sheva
+		Rule C5M1_intro008Trevor
 		{
-		    criteria ConceptC5M1Flyby01 IsSheva IsNotCoughing NotInCombat AutoIsNotScavenge AutoIsNotSurvival ChanceToFire80Percent
-		    Response C5M1Flyby01Producer
+		    criteria ConceptC5M1_intro008 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C5M1_intro008Mechanic
+		    then self IntroEnd foo:0 0.1
+		}
+	},
+
+	{
+		Rule C5M1_intro009Trevor
+		{
+		    criteria ConceptC5M1_intro009 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C5M1_intro009Mechanic
+		    then self IntroEnd foo:0 0.1
+		}
+	},
+
+	{
+		Rule C5M1Flyby01Trevor
+		{
+		    criteria ConceptC5M1Flyby01 IsTrevor IsNotCoughing NotInCombat AutoIsNotScavenge AutoIsNotSurvival ChanceToFire80Percent
+		    Response C5M1Flyby01Mechanic
 		    then any C5M1Flyby02 foo:0 0.1
 		}
 	},
 
 	{
-		Rule C5M1Flyby02Sheva
+		Rule C5M2AlarmNagTrevor
 		{
-		    criteria ConceptC5M1Flyby02 IsSheva IsNotCoughing NotInCombat IssuerClose AutoIsNotScavenge AutoIsNotSurvival
-		    Response C5M1Flyby02Producer
-		}
-	},
-
-	{
-		Rule C5M2_signcontagious01Sheva
-		{
-		    criteria ConceptC5M2_signcontagious01 IsSheva IsNotCoughing NotInCombat AutoIsNotScavenge AutoIsNotSurvival
-		    Response C5M2_signcontagious01Producer
-		}
-	},
-
-	{
-		Rule C5M2AlarmNagSheva
-		{
-		    criteria ConceptTalkIdle IsSheva IsMapc5m2_park AutoIsNotScavenge AutoIsNotSurvival ChanceToFire80Percent _auto_IsAlarm _auto_NotTimerLockA _auto_NotTimerLockSheva IsNotSpeakingWeight0
-		    Response C5M2AlarmNagProducer
-		    ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockSheva:1:13"
+		    criteria ConceptTalkIdle IsTrevor IsMapc5m2_park AutoIsNotScavenge AutoIsNotSurvival ChanceToFire80Percent _auto_IsAlarm _auto_NotTimerLockA _auto_NotTimerLockTrevor IsNotSpeakingWeight0
+		    Response C5M2AlarmNagMechanic
+		    ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockTrevor:1:13"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc5m2parkSheva
+		Rule PlayerRemarkWorldC502HorseTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc5m2park IsNotSaidc5m2park IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc5m2parkProducer
-		    ApplyContext "Saidc5m2park:1:0,Talk:1:1.354"
+		    criteria ConceptRemark IsTrevor IsWorldC502Horse IsNotSaidWorldC502Horse IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear600 ChanceToFire50Percent IsWorldTalkTrevor IsNotScavenge AutoIsNotSurvival TimeSinceGroupInCombat02 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC502HorseMechanic
+		    then Gambler WorldC502Horse2 foo:0 -2.947
+		    ApplyContext "SaidWorldC502Horse:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C5M3AlarmFieldNagsSheva
+		Rule AUTOBLANK_PlayerRemarkWorldC502HorseTrevor
 		{
-		    criteria ConceptTalkIdle IsSheva AutoIsNotScavenge AutoIsNotSurvival IsMapc5m3_cemetery NotInCombat IsNotCoughing IsTalk _auto_IsInAlarmField _auto_NotTimerLockA _auto_NotAlarmFieldOn IsNotSpeakingWeight0
+		    criteria ConceptRemark IsTrevor IsWorldC502Horse IsNotSaidWorldC502Horse IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear600 IsWorldTalkTrevor IsNotScavenge AutoIsNotSurvival TimeSinceGroupInCombat02 IsNotSpeakingWeight0
+		    Response _PlayerInfoRemarkableBlankMechanic
+		    ApplyContext "SaidWorldC502Horse:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkWorldC502Horse3Trevor
+		{
+		    criteria ConceptWorldC502Horse3 IsTrevor IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear300 IsWorldTalkTrevor IsNotScavenge TimeSinceGroupInCombat02
+		    Response PlayerRemarkWorldC502Horse3Mechanic
+		}
+	},
+
+	{
+		Rule C5M3AlarmFieldNagsTrevor
+		{
+		    criteria ConceptTalkIdle IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsMapc5m3_cemetery NotInCombat IsNotCoughing IsTalk _auto_IsInAlarmField _auto_NotTimerLockA _auto_NotAlarmFieldOn IsNotSpeakingWeight0
 		    // 	forceweight 200
-		    Response C5M3AlarmFieldNagsProducer
-		    ApplyContext "Talk:1:2.508,_auto_TimerLockA:1:12"
+		    Response C5M3AlarmFieldNagsMechanic
+		    then self C5M3AlarmFieldNags01 foo:0 0.2
+		    ApplyContext "Talk:1:3.125,_auto_TimerLockA:1:12"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C5M3FirstInAlarmSheva
+		Rule C5M3AlarmFieldNags01Trevor
 		{
-		    criteria ConceptC5M3FirstInAlarmField IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C5M3FirstInAlarmProducer
-		    ApplyContext "Saidremark_caralarm:1:0,Talk:1:2.382"
+		    criteria ConceptC5M3AlarmFieldNags01 IsTrevor NotInCombat AutoIsNotScavenge AutoIsNotSurvival _auto_IsInAlarmField _auto_NotAlarmFieldOn
+		    Response C5M3AlarmFieldNags01Mechanic
+		}
+	},
+
+	{
+		Rule C5M3AlarmFieldNags03Trevor
+		{
+		    criteria ConceptC5M3AlarmFieldNags03 IsTrevor NotInCombat AutoIsNotScavenge AutoIsNotSurvival
+		    Response C5M3AlarmFieldNags03Mechanic
+		}
+	},
+
+	{
+		Rule C5M3AlarmFieldNags2Trevor
+		{
+		    criteria ConceptTalkIdle IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsMapc5m3_cemetery NotInCombat IsNotCoughing IsTalk ChanceToFire10Percent IsGamblerAlive _auto_IsInAlarmField _auto_NotTimerLockA _auto_NotAlarmFieldOn IsNotSpeakingWeight0
+		    // 	forceweight 300
+		    Response C5M3AlarmFieldNags2Mechanic
+		    then gambler C5M3AlarmFieldNags02 foo:0 0.2
+		    ApplyContext "Talk:1:2.583,_auto_TimerLockA:1:15"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C5M3GraveNagsSheva
+		Rule C5M3Bodies01Trevor
 		{
-		    criteria ConceptTalkIdle IsSheva AutoIsNotScavenge AutoIsNotSurvival IsMapc5m3_cemetery NotInCombat IsNotCoughing IsTalk ChanceToFire10Percent IsNotAlone TimeSinceGroupInCombat02 IsNotSaidSafeSpotAhead _auto_IsOffHighway IsNotSpeakingWeight0
-		    Response C5M3GraveNagsProducer
+		    criteria ConceptC5M3Bodies01 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C5M3Bodies01Mechanic
 		}
 	},
 
 	{
-		Rule C5M3Jets2Sheva
+		Rule C5M3Bodies02Trevor
 		{
-		    criteria Conceptc5m3Jets2 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C5M3Jets2Producer
-		    then self C5M3Jets3 foo:0 0.3
-		    ApplyContext "Talk:1:2.098"
+		    criteria ConceptC5M3Bodies02 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C5M3Bodies01Mechanic
+		}
+	},
+
+	{
+		Rule C5M3FirstInAlarmTrevor
+		{
+		    criteria ConceptC5M3FirstInAlarmField IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C5M3FirstInAlarmMechanic
+		    ApplyContext "Saidremark_caralarm:1:0,Talk:1:2.675"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C5M3Jets3Sheva
+		Rule C5M3GraveNagsTrevor
 		{
-		    criteria ConceptC5M3Jets3 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C5M3Jets3Producer
-		    ApplyContext "Talk:1:2.098"
+		    criteria ConceptTalkIdle IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsMapc5m3_cemetery NotInCombat IsNotCoughing IsTalk ChanceToFire10Percent IsNotAlone TimeSinceGroupInCombat02 IsNotSaidSafeSpotAhead IsGamblerAlive _auto_IsOffHighway IsNotSpeakingWeight0
+		    Response C5M3GraveNagsMechanic
+		    then self _C5M3GraveSmells foo:0 0.1
+		    ApplyContext "Talk:1:2.810"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C5M3OnBridgeSheva
+		Rule C5M3GraveNagsNOFactTrevor
 		{
-		    criteria Conceptc5m3OnBridge IsSheva IsNotCoughing NotInCombat AutoIsNotScavenge AutoIsNotSurvival
+		    criteria ConceptTalkIdle IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsMapc5m3_cemetery NotInCombat IsNotCoughing IsTalk ChanceToFire10Percent IsNotAlone TimeSinceGroupInCombat02 IsNotSaidSafeSpotAhead IsGamblerAlive IsGamblerNear400 _auto_IsOffHighway _auto_NotSaidC5M3NewOrleansFact IsNotSpeakingWeight0
+		    Response C5M3GraveNagsNOFactMechanic
+		    then self C5M3GraveNags01 foo:0 0.4
+		    ApplyContext "Talk:1:2.810,_auto_C5M3NewOrleansFact:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C5M3GraveNags01Trevor
+		{
+		    criteria ConceptC5M3GraveNags01 IsTrevor NotInCombat IsNotCoughing IsNotAlone AutoIsNotScavenge AutoIsNotSurvival
+		    Response C5M3GraveNags01Mechanic
+		    then any C5M3GraveNags02 foo:0 0.01
+		    ApplyContext "Talk:1:2.810"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule _C5M3GraveSmellsTrevor
+		{
+		    criteria Concept_C5M3GraveSmells IsTrevor NotInCombat IsNotCoughing AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C5M3GraveSmellsMechanic
+		    ApplyContext "Talk:1:0.950"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule _C5M3SmallFavorsTrevor
+		{
+		    criteria Concept_C5M3SmallFavors IsTrevor AutoIsNotScavenge AutoIsNotSurvival NotInCombat IssuerClose IsNotCoughing IsTalk IsNotSpeakingWeight0
+		    Response _C5M3SmallFavorsMechanic
+		    ApplyContext "Talk:1:1.850"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C5M3Jets2Trevor
+		{
+		    criteria Conceptc5m3Jets2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C5M3Jets2Mechanic
+		    then self C5M3Jets3 foo:0 1
+		    ApplyContext "Talk:1:3.709"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C5M3Jets3Trevor
+		{
+		    criteria ConceptC5M3Jets3 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C5M3Jets3Mechanic
+		    then gambler C5M3StopZombies foo:0 0.1
+		    ApplyContext "Talk:1:3.709"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C5M3StopZombiesTrevor
+		{
+		    criteria ConceptC5M3StopZombies IsTrevor IssuerClose AutoIsNotScavenge AutoIsNotSurvival
+		    Response C5M3StopZombiesMechanic
+		}
+	},
+
+	{
+		Rule C5M3OnBridgeTrevor
+		{
+		    criteria Conceptc5m3OnBridge IsTrevor IsNotCoughing NotInCombat AutoIsNotScavenge AutoIsNotSurvival
 		    Response NoResponse
-		    ApplyContext "Talk:1:1.546,_auto_AlarmFieldOn:2:0"
+		    ApplyContext "Talk:1:1.267,_auto_AlarmFieldOn:2:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C5M3SeeGraveyard01Sheva
+		Rule C5M3SeeGraveyard01Trevor
 		{
-		    criteria ConceptC5M3SeeGraveyard01 IsSheva IssuerClose NotInCombat AutoIsNotScavenge AutoIsNotSurvival
-		    Response C5M3SeeGraveyard01Producer
+		    criteria ConceptC5M3SeeGraveyard01 IsTrevor NotInCombat AutoIsNotScavenge AutoIsNotSurvival
+		    Response C5M3SeeGraveyard01Mechanic
+		    then self C5M3SeeGraveyard03 foo:0 1.0
 		    ApplyContext "Talk:1:2.855"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C5M3ShootCarSheva
+		Rule C5M3SeeGraveyard04Trevor
 		{
-		    criteria ConceptPanicEvent IsSheva AutoIsNotScavenge AutoIsNotSurvival IsMapc5m3_cemetery SubjectIsSheva IsCarAlarm _auto_IsInAlarmField _auto_NotAlarmFieldOn
-		    Response C5M3ShootCarProducer
-		    ApplyContext "_auto_AlarmFieldOn:1:0,_auto_TimerLockA:1:2,WarnMegaMob:1:300"
+		    criteria ConceptC5M3SeeGraveyard04 IsTrevor NotInCombat AutoIsNotScavenge AutoIsNotSurvival
+		    Response C5M3SeeGraveyard04Mechanic
+		    ApplyContext "Talk:1:3.887"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C5M3ShootCar2Sheva
+		Rule C5M3SeeGraveyard03Trevor
 		{
-		    criteria ConceptPanicEvent IsSheva AutoIsNotScavenge AutoIsNotSurvival IsMapc5m3_cemetery SubjectIsNotSheva IsCarAlarm ChanceToFire25Percent _auto_IsInAlarmField _auto_ShotSecondCar _auto_IsAlarmFieldOn _auto_NotTimerLockA
-		    Response C5M3ShootCar2Producer
-		    ApplyContext "_auto_ShotCar:++1,_auto_TimerLockA:1:4"
+		    criteria ConceptC5M3SeeGraveyard03 IsTrevor NotInCombat AutoIsNotScavenge AutoIsNotSurvival
+		    Response C5M3SeeGraveyard03Mechanic
+		    then gambler C5M3SeeGraveyard05 foo:0 0.01
+		    ApplyContext "Talk:1:3.887"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C5M3ShootCar3Sheva
+		Rule C5M3SeeGraveyard06Trevor
 		{
-		    criteria ConceptPanicEvent IsSheva AutoIsNotScavenge AutoIsNotSurvival IsMapc5m3_cemetery SubjectIsNotSheva IsCarAlarm ChanceToFire25Percent IsNotSpeaking _auto_IsInAlarmField _auto_IsAlarmFieldOn _auto_ShotThirdCar _auto_NotTimerLockA
-		    Response C5M3ShootCar3Producer
-		    ApplyContext "Talk:1:2.879,_auto_ShotCar:++1"
+		    criteria ConceptC5M3SeeGraveyard06 IsTrevor NotInCombat AutoIsNotScavenge AutoIsNotSurvival
+		    Response C5M3SeeGraveyard06Mechanic
+		    ApplyContext "Talk:1:4.504"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C5M3Sniper01Sheva
+		Rule C5M3ShootCarTrevor
 		{
-		    criteria ConceptC5M3Sniper01 IsSheva IsNotCoughing NotInCombat IssuerClose AutoIsNotScavenge AutoIsNotSurvival
-		    Response C5M3Sniper01Producer
-		    ApplyContext "Talk:1:5"
+		    criteria ConceptPanicEvent IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsMapc5m3_cemetery SubjectIsTrevor IsCarAlarm _auto_IsInAlarmField _auto_NotAlarmFieldOn
+		    Response C5M3ShootCarMechanic
+		    ApplyContext "_auto_AlarmFieldOn:1:0,_auto_TimerLockA:1:1.5,WarnMegaMob:1:300"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc5m3bodiesSheva
+		Rule C5M3ShootCarNotTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc5m3bodies NotInCombat IsSubjectNear100 IsInStartArea IsNotAlone IsNotSaidLeavingSafeArea AutoIsNotScavenge AutoIsNotSurvival _auto_IsSafeRoomStart _auto_NotSafeRoomQuiet IsNotSpeakingWeight0
-		    Response PlayerRemarkc5m3bodiesProducer
-		    then any WorldC502NotZombies3 foo:0 0.1
+		    criteria ConceptPanicEvent IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsMapc5m3_cemetery SubjectIsNotTrevor IsCarAlarm ChanceToFire25Percent _auto_IsInAlarmField _auto_NotAlarmFieldOn
+		    // 	forceweight 500
+		    Response C5M3ShootCarNotMechanic
+		    ApplyContext "_auto_AlarmFieldOn:1:0,_auto_TimerLockA:1:3,WarnMegaMob:1:300"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C5M3ShootCar2Trevor
+		{
+		    criteria ConceptPanicEvent IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsMapc5m3_cemetery SubjectIsNotTrevor IsCarAlarm ChanceToFire25Percent _auto_ShotSecondCar _auto_IsInAlarmField _auto_IsAlarmFieldOn _auto_NotTimerLockA
+		    Response C5M3ShootCar2Mechanic
+		    ApplyContext "_auto_ShotCar:++1,_auto_TimerLockA:1:3"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C5M3ShootCar3Trevor
+		{
+		    criteria ConceptPanicEvent IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsMapc5m3_cemetery SubjectIsNotTrevor IsCarAlarm ChanceToFire25Percent IsNotSpeaking _auto_IsInAlarmField _auto_IsAlarmFieldOn _auto_ShotThirdCar _auto_NotTimerLockA
+		    Response C5M3ShootCar3Mechanic
+		    ApplyContext "Talk:1:1.931,_auto_ShotCar:++1"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C5M3ShootCar3SelfTrevor
+		{
+		    criteria ConceptPanicEvent IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsMapc5m3_cemetery SubjectIsTrevor IsCarAlarm ChanceToFire25Percent IsNotSpeaking _auto_IsInAlarmField _auto_IsAlarmFieldOn _auto_ShotThirdCar _auto_NotTimerLockA
+		    Response C5M3ShootCar3SelfMechanic
+		    ApplyContext "Talk:1:1.931,_auto_ShotCar:++1"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C5M3Sniper01Trevor
+		{
+		    criteria ConceptC5M3Sniper01 IsTrevor IsNotCoughing NotInCombat IssuerClose AutoIsNotScavenge AutoIsNotSurvival
+		    Response C5M3Sniper01Mechanic
+		    ApplyContext "Talk:1:3"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkc5m3bodiesTrevor
+		{
+		    criteria ConceptRemark IsTrevor Isc5m3bodies NotInCombat IsSubjectNear100 IsInStartArea IsNotAlone IsNotSaidLeavingSafeArea AutoIsNotScavenge AutoIsNotSurvival _auto_IsSafeRoomStart _auto_NotSafeRoomQuiet IsNotSpeakingWeight0
+		    Response PlayerRemarkc5m3bodiesMechanic
+		    then any WorldC502NotZombies2 foo:0 0.1
 		    ApplyContext "_auto_SafeRoomStart:2:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc5m2peopleSheva
+		Rule PlayerRemarkc5m2peopleTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc5m2people IsNotSaidc5m2people IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 ChanceToFire50Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc5m2peopleProducer
+		    criteria ConceptRemark IsTrevor Isc5m2people IsNotSaidc5m2people IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 ChanceToFire50Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc5m2peopleMechanic
 		    ApplyContext "Saidc5m2people:1:0,Talk:1:1.850"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule AUTOBLANK_PlayerRemarkc5m2peopleSheva
+		Rule AUTOBLANK_PlayerRemarkc5m2peopleTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc5m2people IsNotSaidc5m2people IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response _PlayerInfoRemarkableBlankProducer
+		    criteria ConceptRemark IsTrevor Isc5m2people IsNotSaidc5m2people IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response _PlayerInfoRemarkableBlankMechanic
 		    ApplyContext "Saidc5m2people:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC502NotZombies2Sheva
+		Rule C5M3BeenShotTrevor
 		{
-		    criteria ConceptWorldC502NotZombies2 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerRemarkWorldC502NotZombies2Producer
-		    then mechanic WorldC502NotZombies2 foo:0 0.1
+		    criteria ConceptC5M3BeenShot IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C5M3BeenShotMechanic
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC502NotZombies3bSheva
+		Rule PlayerRemarkc5m3crashedheliTrevor
 		{
-		    criteria ConceptWorldC502NotZombies3b IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerRemarkWorldC502NotZombies3bProducer
-		    then coach WorldC502NotZombies3b foo: 0.1
+		    criteria ConceptRemark IsTrevor Isc5m3crashedheli IsNotSaidc5m3crashedheli IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc5m3crashedheliMechanic
+		    ApplyContext "Saidc5m3crashedheli:1:0"
+		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc5m3insewerSheva
+		Rule PlayerRemarkc5m3insewerTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc5m3insewer IsNotSaidc5m3insewer IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear250 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc5m3insewerProducer
+		    criteria ConceptRemark IsTrevor Isc5m3insewer IsNotSaidc5m3insewer IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear250 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc5m3insewerMechanic
 		    ApplyContext "Saidc5m3insewer:1:0,_auto_InSewer:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc5m3offhighwaySheva
+		Rule PlayerRemarkc5m3safezoneTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc5m3offhighway IsNotSaidc5m3offhighway IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc5m3offhighwayProducer
+		    criteria ConceptRemark IsTrevor Isc5m3safezone NotInCombat IsSubjectNear150 IsInStartArea IsNotAlone IsNotSaidLeavingSafeArea AutoIsNotScavenge AutoIsNotSurvival _auto_IsSafeRoomStart _auto_NotSafeRoomQuiet IsNotSpeakingWeight0
+		    Response PlayerRemarkc5m3safezoneMechanic
+		    ApplyContext "_auto_SafeRoomStart:2:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkc5m3manholeTrevor
+		{
+		    criteria ConceptRemark IsTrevor Isc5m3manhole IsNotSaidc5m3manhole IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_NotInSewer IsNotSpeakingWeight0
+		    // 	forceweight 100
+		    Response PlayerRemarkc5m3manholeMechanic
+		    then any TrevorInterrupt foo:0 -11.59
+		    ApplyContext "Saidc5m3manhole:1:0,Talk:1:12,_auto_TellingStory:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkc5m3offhighwayTrevor
+		{
+		    criteria ConceptRemark IsTrevor Isc5m3offhighway IsNotSaidc5m3offhighway IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc5m3offhighwayMechanic
 		    ApplyContext "Saidc5m3offhighway:1:0,_auto_OffHighway:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc5m3upladderSheva
+		Rule PlayerRemarkc5m3seegraveyardTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc5m3upladder IsNotSaidc5m3upladder IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc5m3upladderProducer
+		    criteria ConceptRemark IsTrevor Isc5m3seegraveyard IsNotSaidc5m3seegraveyard IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotAlone _auto_IsBridgeBomb _auto_NotTimerLockA _auto_NotOffHighway IsNotSpeakingWeight0
+		    Response PlayerRemarkc5m3seegraveyardMechanic
+		    then self C5M3SeeGraveyard04 foo:0 0.1
+		    ApplyContext "Saidc5m3seegraveyard:1:0,Talk:1:2.855"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkc5m3seegraveyardEllisTrevor
+		{
+		    criteria ConceptRemark IsTrevor Isc5m3seegraveyard IsNotSaidc5m3seegraveyard IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotAlone _auto_IsBridgeBomb _auto_NotTimerLockA _auto_NotOffHighway IsNotSpeakingWeight0 _auto_C5M3TrevorReacted
+		    Response PlayerRemarkc5m3seegraveyardEllisMechanic
+		    ApplyContext "Saidc5m3seegraveyard:1:0,Talk:1:2.855"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkc5m3upladderTrevor
+		{
+		    criteria ConceptRemark IsTrevor Isc5m3upladder IsNotSaidc5m3upladder IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc5m3upladderMechanic
 		    ApplyContext "Saidc5m3upladder:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc5m3upstepsSheva
+		Rule PlayerRemarkc5m3upstepsTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc5m3upsteps IsNotSaidc5m3upsteps IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc5m3upstepsProducer
+		    criteria ConceptRemark IsTrevor Isc5m3upsteps IsNotSaidc5m3upsteps IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc5m3upstepsMechanic
 		    ApplyContext "Saidc5m3upsteps:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C5M4BombExtSheva
+		Rule C5M4BombExtTrevor
 		{
-		    criteria ConceptC5M4BombExt IsSheva NotInCombat IsTalk AutoIsNotScavenge AutoIsNotSurvival IsNotInStartArea
-		    Response C5M4BombExtProducer
-		    ApplyContext "Talk:1:2.203"
+		    criteria ConceptC5M4BombExt IsTrevor NotInCombat AutoIsNotScavenge AutoIsNotSurvival
+		    Response C5M4BombExtMechanic
+		    ApplyContext "Talk:1:3.411"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C5M4BombInt01Sheva
+		Rule C5M4BombInt01Trevor
 		{
-		    criteria ConceptC5M4BombInt IsSheva AutoIsNotScavenge AutoIsNotSurvival _auto_NoAirstrikes
-		    Response C5M4BombInt01Producer
+		    criteria ConceptC5M4BombInt IsTrevor AutoIsNotScavenge AutoIsNotSurvival _auto_NoAirstrikes
+		    Response C5M4BombInt01Mechanic
 		    then any C5M4BombIntA foo:0 0.01
 		    ApplyContext "_auto_Airstrike:++1"
 		    applycontexttoworld
@@ -1927,314 +2489,319 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule C5M4BombInt01ASheva
+		Rule C5M4BombIntATrevor
 		{
-		    criteria ConceptC5M4BombIntA IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C5M4BombInt01AProducer
+		    criteria ConceptC5M4BombIntA IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C5M4BombIntAMechanic
 		}
 	},
 
 	{
-		Rule C5M4BombInt02Sheva
+		Rule C5M4BombInt02Trevor
 		{
-		    criteria ConceptC5M4BombInt IsSheva NotInCombat IsTalk AutoIsNotScavenge AutoIsNotSurvival IsNotInStartArea _auto_FirstAirstrike
-		    Response C5M4BombInt02Producer
-		    ApplyContext "Talk:1:2.203,_auto_Airstrike:++1"
+		    criteria ConceptC5M4BombInt IsTrevor NotInCombat IsTalk AutoIsNotScavenge AutoIsNotSurvival IsNotInStartArea _auto_FirstAirstrike
+		    Response C5M4BombInt02Mechanic
+		    ApplyContext "Talk:1:1.534,_auto_Airstrike:++1"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C5M4BombInt03Sheva
+		Rule C5M4BombInt03Trevor
 		{
-		    criteria ConceptC5M4BombInt IsSheva NotInCombat IsTalk AutoIsNotScavenge AutoIsNotSurvival IsNotInStartArea _auto_SecondAirstrike
-		    Response C5M4BombInt03Producer
-		    ApplyContext "Talk:1:1.930,_auto_Airstrike:++1"
+		    criteria ConceptC5M4BombInt IsTrevor NotInCombat IsTalk AutoIsNotScavenge AutoIsNotSurvival IsNotInStartArea _auto_SecondAirstrike
+		    Response C5M4BombInt03Mechanic
+		    ApplyContext "Talk:1:1.990,_auto_Airstrike:++1"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C5M4BombIntManySheva
+		Rule C5M4BombIntManyTrevor
 		{
-		    criteria ConceptC5M4BombInt IsSheva NotInCombat IsTalk AutoIsNotScavenge AutoIsNotSurvival IsNotInStartArea _auto_ManyAirstrikes
-		    Response C5M4BombInt03Producer
-		    ApplyContext "Talk:1:1.930,_auto_Airstrike:++1"
+		    criteria ConceptC5M4BombInt IsTrevor NotInCombat IsTalk AutoIsNotScavenge AutoIsNotSurvival IsNotInStartArea _auto_ManyAirstrikes
+		    Response C5M4BombInt03Mechanic
+		    ApplyContext "Talk:1:1.990,_auto_Airstrike:++1"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc5m4inminifinaleSheva
+		Rule C5M4JetPlanesTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc5m4inminifinale IsNotSaidc5m4inminifinale IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc5m4inminifinaleProducer
+		    criteria ConceptC5M4JetPlanes IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotInStartArea
+		    Response C5M4JetPlanesMechanic
+		    then Gambler C5M4JetPlanes foo:0 0.01
+		}
+	},
+
+	{
+		Rule PlayerRemarkc5m4alleyTrevor
+		{
+		    criteria ConceptRemark IsTrevor Isc5m4alley IsNotSaidc5m4alley IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc5m4alleyMechanic
+		    ApplyContext "Saidc5m4alley:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C5M4PoolTableTrevor
+		{
+		    criteria ConceptC5M4PoolTable IsTrevor IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response C5M4PoolTableMechanic
+		    ApplyContext "Talk:1:3"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C5M4PoolTableRoTrevor
+		{
+		    criteria ConceptC5M4PoolTable IsTrevor IsNotCoughing IssuerClose IsProducerAlive IsProducerNear400 ChanceToFire40Percent IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response C5M4PoolTableRoMechanic
+		    ApplyContext "Talk:1:3"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkc5m4inminifinaleTrevor
+		{
+		    criteria ConceptRemark IsTrevor Isc5m4inminifinale IsNotSaidc5m4inminifinale IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc5m4inminifinaleMechanic
 		    ApplyContext "Saidc5m4inminifinale:1:0,_auto_InMiniFinale:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc5m4seebridgeSheva
+		Rule PlayerRemarkc5m4seebridgeTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc5m4seebridge IsNotSaidc5m4seebridge IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear1000 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc5m4seebridgeProducer
+		    criteria ConceptRemark IsTrevor Isc5m4seebridge IsNotSaidc5m4seebridge IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear1000 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc5m4seebridgeMechanic
 		    ApplyContext "Saidc5m4seebridge:1:0,_auto_SawBridge:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule EllisStoryInterruptSheva
+		Rule PlayerRemarkc5m4tractornagTrevor
 		{
-		    criteria ConceptSurvivorLeavingInitialCheckpoint IsNotSaidLeavingSafeArea IsSheva _auto_IsTellingStory _auto_NotDidInterrupt
-		    Response EllisStoryInterruptProducer
-		    then Mechanic EllisStoryReac01 foo:0 0.01
-		    ApplyContext "Talk:1:1.756,SaidLeavingSafeArea:1:0,_auto_DidInterrupt:1:0,_auto_TellingStory:0:0"
+		    criteria ConceptRemark IsTrevor Isc5m4tractornag IsNotSaidc5m4tractornag IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival _auto_NotTractorStarted IsNotSpeakingWeight0
+		    Response PlayerRemarkc5m4tractornagMechanic
+		    ApplyContext "Saidc5m4tractornag:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule EllisStoryInterruptGenericSheva
+		Rule C5M4TractorTrevor
 		{
-		    criteria ConceptEllisInterrupt IsSheva _auto_IsTellingStory _auto_NotDidInterrupt
-		    Response EllisStoryInterruptGenericProducer
-		    then Mechanic EllisStoryReac01 foo:0 0.01
-		    ApplyContext "_auto_DidInterrupt:1:0,_auto_TellingStory:0:0"
+		    criteria ConceptC5M4Tractor IsTrevor IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response C5M4TractorMechanic
+		    ApplyContext "Talk:1:3"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule EllisStoryInterruptC1M2Sheva
+		Rule C5M5_Button2Trevor
 		{
-		    criteria ConceptEllisInterrupt IsSheva ismap_c1m2_streets _auto_IsTellingStory _auto_NotDidInterrupt
-		    Response EllisStoryInterruptC1M2Producer
-		    ApplyContext "_auto_DidInterrupt:1:0,_auto_TellingStory:0:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule EllisStoryInterruptC1M3Sheva
-		{
-		    criteria ConceptEllisInterrupt IsSheva ismap_c1m3_mall _auto_IsTellingStory _auto_NotDidInterrupt
-		    Response EllisStoryInterruptGenericProducer
-		    then Mechanic EllisStoryReac01 foo:0 0.01
-		    ApplyContext "_auto_DidInterrupt:1:0,_auto_TellingStory:0:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule EllisStoryInterruptC2M5Sheva
-		{
-		    criteria ConceptEllisInterrupt IsSheva ismap_c2m5 _auto_IsTellingStory _auto_NotDidInterrupt
-		    Response EllisStoryInterruptGenericProducer
-		    then Mechanic EllisStoryReac01 foo:0 0.01
-		    ApplyContext "_auto_DidInterrupt:1:0,_auto_TellingStory:0:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule EllisStoryInterruptC3M2Sheva
-		{
-		    criteria ConceptEllisInterrupt IsSheva ismapc3m2_swamp _auto_IsTellingStory _auto_NotDidInterrupt
-		    Response EllisStoryInterruptC3M2Producer
-		    then Mechanic PlayerYes foo:0 0.1
-		    ApplyContext "_auto_DidInterrupt:1:0,_auto_TellingStory:0:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule EllisStoryInterruptC4M3Sheva
-		{
-		    criteria ConceptEllisInterrupt IsSheva isc4m3 _auto_IsTellingStory _auto_NotDidInterrupt
-		    Response EllisStoryInterruptGenericProducer
-		    then Mechanic EllisStoryReac01 foo:0 0.01
-		    ApplyContext "_auto_DidInterrupt:1:0,_auto_TellingStory:0:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule EllisStoryInterruptC4M4Sheva
-		{
-		    criteria ConceptEllisInterrupt IsSheva isc4m4 _auto_IsTellingStory _auto_NotDidInterrupt
-		    Response EllisStoryInterruptGenericProducer
-		    then Mechanic EllisStoryReac01 foo:0 0.01
-		    ApplyContext "_auto_DidInterrupt:1:0,_auto_TellingStory:0:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule EllisStoryInterruptC5M2Sheva
-		{
-		    criteria ConceptEllisInterrupt IsSheva IsMapc5m2_park _auto_IsTellingStory _auto_NotDidInterrupt
-		    Response EllisStoryInterruptGenericProducer
-		    then Mechanic EllisStoryReac01 foo:0 0.01
-		    ApplyContext "_auto_DidInterrupt:1:0,_auto_TellingStory:0:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule EllisStoryInterruptC5M5Sheva
-		{
-		    criteria ConceptEllisInterrupt IsSheva IsMapc5m5_bridge _auto_IsTellingStory _auto_NotDidInterrupt
-		    Response EllisStoryInterruptGenericProducer
-		    then Mechanic EllisStoryReac01 foo:0 0.01
-		    ApplyContext "_auto_DidInterrupt:1:0,_auto_TellingStory:0:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule EllisStoryInterruptC6M3Sheva
-		{
-		    criteria ConceptEllisInterrupt IsSheva Isc6m3_port _auto_IsTellingStory _auto_NotDidInterrupt IsNotSaidC6M3Elevator
-		    Response EllisStoryInterruptC6M3Producer
-		    ApplyContext "_auto_DidInterrupt:1:0,_auto_TellingStory:0:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule EllisStoryReac01Sheva
-		{
-		    criteria ConceptEllisStoryReac01 IsSheva ismapc3m2_swamp
-		    Response EllisStoryReac01Producer
-		}
-	},
-
-	{
-		Rule C5M5_Button2Sheva
-		{
-		    criteria ConceptC5M5_Button2 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C5M5_Button2Producer
+		    criteria ConceptC5M5_Button2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C5M5_Button2Mechanic
+		    then trevor C5M5_Button2200 foo:0 0.01
 		    ApplyContext "_auto_BridgeNag:0:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C5M5_GateDownSheva
+		Rule C5M5_GateDownTrevor
 		{
-		    criteria ConceptC5M5_GateDown IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C5M5_GateDownProducer
+		    criteria ConceptC5M5_GateDown IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C5M5_GateDownMechanic
 		}
 	},
 
 	{
-		Rule C5M5_Button2207Sheva
+		Rule C5M5_Button2100Trevor
 		{
-		    criteria ConceptC5M5_Button2207 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C5M5_Button2207Producer
+		    criteria ConceptC5M5_Button2100 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C5M5_Button2100Mechanic
 		}
 	},
 
 	{
-		Rule C5M5_SurvivorConv01Sheva
+		Rule C5M5_Button2200Trevor
 		{
-		    criteria ConceptC5M5_SurvivorConv01 IsSheva FromIsAnOrator AutoIsNotScavenge AutoIsNotSurvival _auto_IsTalkingSheva _auto_NotButton2
-		    Response C5M5_SurvivorConv01Producer
+		    criteria ConceptC5M5_Button2200 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C5M5_Button2200Mechanic
+		    then trevor C5M5_Button2201 foo:0 0.01
+		}
+	},
+
+	{
+		Rule C5M5_Button2201Trevor
+		{
+		    criteria ConceptC5M5_Button2201 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C5M5_Button2201Mechanic
+		    then trevor C5M5_Button2202 foo:0 0.3
+		}
+	},
+
+	{
+		Rule C5M5_Button2202Trevor
+		{
+		    criteria ConceptC5M5_Button2202 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C5M5_Button2202Mechanic
+		    then trevor C5M5_Button2203 foo:0 0.3
+		}
+	},
+
+	{
+		Rule C5M5_Button2203Trevor
+		{
+		    criteria ConceptC5M5_Button2203 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C5M5_Button2203Mechanic
+		    then trevor C5M5_Button2204 foo:0 0.3
+		}
+	},
+
+	{
+		Rule C5M5_Button2204Trevor
+		{
+		    criteria ConceptC5M5_Button2204 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C5M5_Button2204Mechanic
+		    then trevor C5M5_Button2205 foo:0 0.2
+		}
+	},
+
+	{
+		Rule C5M5_Button2205Trevor
+		{
+		    criteria ConceptC5M5_Button2205 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C5M5_Button2205Mechanic
+		    then self C5M5_Button2206 foo:0 0.2
+		}
+	},
+
+	{
+		Rule C5M5_Button2206Trevor
+		{
+		    criteria ConceptC5M5_Button2206 IsTrevor IsProducerAlive AutoIsNotScavenge AutoIsNotSurvival
+		    Response C5M5_Button2206Mechanic
+		    then producer C5M5_Button2207 foo:0 0.2
+		}
+	},
+
+	{
+		Rule C5M5_SurvivorConv01Trevor
+		{
+		    criteria ConceptC5M5_SurvivorConv01 IsTrevor FromIsAnOrator AutoIsNotScavenge AutoIsNotSurvival _auto_IsTalkingTrevor _auto_NotButton2
+		    Response C5M5_SurvivorConv01Mechanic
 		    then orator C5M5_Soldier1Conv03 foo:0 0.01
 		}
 	},
 
 	{
-		Rule C5M5_SurvivorConv02Sheva
+		Rule C5M5_SurvivorConv01BombTrevor
 		{
-		    criteria ConceptC5M5_SurvivorConv02 IsSheva FromIsAnOrator AutoIsNotScavenge AutoIsNotSurvival _auto_IsTalkingSheva _auto_NotButton2
-		    Response C5M5_SurvivorConv02Producer
+		    criteria ConceptC5M5_SurvivorConv01 IsTrevor FromIsAnOrator AutoIsNotScavenge AutoIsNotSurvival _auto_IsBuzzardRunMentioned _auto_IsTalkingTrevor _auto_NotButton2
+		    Response C5M5_SurvivorConv01BombMechanic
+		    then orator C5M5_Soldier1Conv03 foo:0 0.01
+		}
+	},
+
+	{
+		Rule C5M5_SurvivorConv02Trevor
+		{
+		    criteria ConceptC5M5_SurvivorConv02 IsTrevor FromIsAnOrator AutoIsNotScavenge AutoIsNotSurvival _auto_IsTalkingTrevor _auto_NotButton2
+		    Response C5M5_SurvivorConv02Mechanic
 		    then orator C5M5_Soldier1Conv04 foo:0 0.01
 		}
 	},
 
 	{
-		Rule C5M5_SurvivorConv03Sheva
+		Rule C5M5_SurvivorConv03Trevor
 		{
-		    criteria ConceptC5M5_SurvivorConv03 IsSheva FromIsAnOrator AutoIsNotScavenge AutoIsNotSurvival _auto_IsTalkingSheva _auto_NotButton2
-		    Response C5M5_SurvivorConv03Producer
+		    criteria ConceptC5M5_SurvivorConv03 IsTrevor FromIsAnOrator AutoIsNotScavenge AutoIsNotSurvival _auto_IsTalkingTrevor _auto_NotButton2
+		    Response C5M5_SurvivorConv03Mechanic
 		    then orator C5M5_Soldier1Conv05 foo:0 0.01
 		}
 	},
 
 	{
-		Rule C5M5_SurvivorConv04Sheva
+		Rule C5M5_SurvivorConv04Trevor
 		{
-		    criteria ConceptC5M5_SurvivorConv04 IsSheva FromIsAnOrator AutoIsNotScavenge AutoIsNotSurvival _auto_IsTalkingSheva _auto_NotButton2
-		    Response C5M5_SurvivorConv04Producer
+		    criteria ConceptC5M5_SurvivorConv04 IsTrevor FromIsAnOrator AutoIsNotScavenge AutoIsNotSurvival _auto_IsTalkingTrevor _auto_NotButton2
+		    Response C5M5_SurvivorConv04Mechanic
 		    then orator C5M5_Soldier1Conv08 foo:0 0.01
 		}
 	},
 
 	{
-		Rule C5M5_SurvivorConv05Sheva
+		Rule C5M5_SurvivorConv05Trevor
 		{
-		    criteria ConceptC5M5_SurvivorConv05 IsSheva FromIsAnOrator AutoIsNotScavenge AutoIsNotSurvival _auto_IsTalkingSheva _auto_NotButton2
-		    Response C5M5_SurvivorConv04Producer
+		    criteria ConceptC5M5_SurvivorConv05 IsTrevor FromIsAnOrator AutoIsNotScavenge AutoIsNotSurvival _auto_IsTalkingTrevor _auto_NotButton2
+		    Response C5M5_SurvivorConv05Mechanic
 		    then orator C5M5_Soldier1Conv08 foo:0 0.01
 		}
 	},
 
 	{
-		Rule C5M5_LowerTheBridgeSheva
+		Rule C5M5_LowerTheBridgeTrevor
 		{
-		    criteria ConceptTalkIdle IsSheva IsMapc5m5_bridge ChanceToFire90Percent AutoIsNotScavenge AutoIsNotSurvival _auto_NotTimerLockA _auto_NotTimerLockSheva _auto_IsBridgeNag IsNotSpeakingWeight0
-		    Response C5M5_LowerTheBridgeProducer
-		    ApplyContext "_auto_TimerLockA:1:30,_auto_TimerLockSheva:1:15"
+		    criteria ConceptTalkIdle IsTrevor IsMapc5m5_bridge ChanceToFire90Percent AutoIsNotScavenge AutoIsNotSurvival _auto_NotTimerLockA _auto_NotTimerLockTrevor _auto_IsBridgeNag IsNotSpeakingWeight0
+		    Response C5M5_LowerTheBridgeMechanic
+		    ApplyContext "_auto_TimerLockA:1:30,_auto_TimerLockTrevor:1:15"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C5M5Button1Sheva
+		Rule C5M5Button1Trevor
 		{
-		    criteria ConceptC5M5Button1 IsSheva FromIsAnOrator AutoIsNotScavenge AutoIsNotSurvival _auto_IsTalkingSheva _auto_NotButton2
-		    Response C5M5Button1Producer
+		    criteria ConceptC5M5Button1 IsTrevor FromIsAnOrator AutoIsNotScavenge AutoIsNotSurvival _auto_IsTalkingTrevor _auto_NotButton2
+		    Response C5M5Button1Mechanic
 		    then Orator C5M5_Soldier1Conv01 foo:0 0.01
 		}
 	},
 
 	{
-		Rule C5M5Button1BuzzardRunSheva
+		Rule C5M5Button1BuzzardRunTrevor
 		{
-		    criteria ConceptC5M5Button1 IsSheva FromIsAnOrator AutoIsNotScavenge AutoIsNotSurvival _auto_IsTalkingSheva _auto_NotButton2 _auto_IsBuzzardRunMentioned
-		    Response C5M5Button1BuzzardRunProducer
+		    criteria ConceptC5M5Button1 IsTrevor FromIsAnOrator AutoIsNotScavenge AutoIsNotSurvival _auto_IsTalkingTrevor _auto_IsBuzzardRunMentioned _auto_NotButton2
+		    Response C5M5Button1BuzzardRunMechanic
 		    then Orator C5M5_Soldier1Conv01 foo:0 0.01
 		}
 	},
 
 	{
-		Rule C5M5HearSoldiersSheva
+		Rule C5M5HearSoldiersNagTrevor
 		{
-		    criteria ConceptTalkIdle IsSheva IsMapc5m5_bridge ChanceToFire90Percent AutoIsNotScavenge _auto_NotRadioNag AutoIsNotSurvival _auto_IsSoldierChatter _auto_NotButton1 _auto_NotTimerLockA _auto_NotTimerLockSheva
-		    Response C5M5HearSoldiersProducer
-		    ApplyContext "_auto_RadioNag:1:0,_auto_TimerLockA:1:10,_auto_TimerLockSheva:1:15"
+		    criteria ConceptTalkIdle IsTrevor IsMapc5m5_bridge ChanceToFire90Percent AutoIsNotScavenge AutoIsNotSurvival _auto_IsSoldierChatter _auto_NotButton1 _auto_IsRadioNag _auto_NotTimerLockA _auto_NotTimerLockTrevor IsNotSpeakingWeight0
+		    Response C5M5HearSoldiersNagMechanic
+		    ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockTrevor:1:15"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C5M5HearSoldiersNagSheva
+		Rule C5M5HearSoldiersNagBuzzardTrevor
 		{
-		    criteria ConceptTalkIdle IsSheva IsMapc5m5_bridge ChanceToFire90Percent AutoIsNotScavenge AutoIsNotSurvival _auto_IsSoldierChatter _auto_NotButton1 _auto_IsRadioNag _auto_NotTimerLockA _auto_NotTimerLockSheva
-		    Response C5M5HearSoldiersNagProducer
-		    ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockSheva:1:15"
+		    criteria ConceptTalkIdle IsTrevor IsMapc5m5_bridge ChanceToFire90Percent AutoIsNotScavenge AutoIsNotSurvival _auto_IsBuzzardRunMentioned _auto_IsSoldierChatter _auto_NotButton1 _auto_IsRadioNag _auto_NotTimerLockA _auto_NotTimerLockTrevor IsNotSpeakingWeight0
+		    Response C5M5HearSoldiersNagBuzzardMechanic
+		    ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockTrevor:1:15"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C5M5LeaveSafeSheva
+		Rule C5M5LeaveSafeTrevor
 		{
-		    criteria ConceptSurvivorLeavingInitialCheckpoint IsSheva IsMapc5m5_bridge IsNotSaidLeavingSafeArea
-		    Response C5M5LeaveSafeProducer
+		    criteria ConceptSurvivorLeavingInitialCheckpoint IsTrevor IsMapc5m5_bridge IsNotSaidLeavingSafeArea
+		    Response C5M5LeaveSafeMechanic
 		    then orator C5M5_Soldier1 foo:0 0.01
 		    ApplyContext "Talk:0:0,SaidLeavingSafeArea:1:0,_auto_TimerLockA:1:5,_auto_SoldierChatter:1:0"
 		    applycontexttoworld
@@ -2242,10 +2809,10 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule C5M5RescueStartSheva
+		Rule C5M5RescueStartTrevor
 		{
-		    criteria ConceptFinalVehicleSpotted IsSheva IsMapc5m5_bridge _auto_IsFinaleStarted
-		    Response C5M5RescueStartProducer
+		    criteria ConceptFinalVehicleSpotted IsTrevor IsMapc5m5_bridge _auto_IsFinaleStarted
+		    Response C5M5RescueStartMechanic
 		    then orator_chopper C5M5SoldierHeliNag foo:0 0.01
 		    ApplyContext "_auto_Finale:2:0,_auto_TimerLockA:1:5"
 		    applycontexttoworld
@@ -2253,372 +2820,278 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule C5M5RunToHeliSheva
+		Rule C5M5SurvivorVocalizeLookOutTrevor
 		{
-		    criteria ConceptGetToVehicle IsSheva IsMapc5m5_bridge IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsNotInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockSheva IsNotSpeakingWeight0
-		    Response C5M5RunToHeliProducer
-		    ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockSheva:1:30"
+		    criteria ConceptPlayerLookOut IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsMapc5m5_bridge _auto_IsFinaleStarted
+		    Response C5M5SurvivorVocalizeLookOutMechanic
+		}
+	},
+
+	{
+		Rule C5M5SpottedTankTrevor
+		{
+		    criteria ConceptPlayerWarnSpecial IsSpecialTypeTank IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsMapc5m5_bridge _auto_IsFinaleStarted
+		    Response C5M5SpottedTankMechanic
+		    ApplyContext "SaidTankWarn:1:20,SaidTankWarn2:1:60"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C5M5BridgeDestroyed2Sheva
+		Rule C5M5ReloadingTankTrevor
 		{
-		    criteria ConceptC5M5BridgeDestroyed2 IsSheva IsNotIncapacitated IsEveryoneAlive CanSpeakC5M5SurvivorOutro
-		    Response C5M5BridgeDestroyed2Producer
+		    criteria ConceptPlayerReloading IsSurvivor IsNotSpeaking IsTrevor IsNotIncapacitated IsTalk IsTalkTrevor IsNotSaidReloadingTank IsZombiePresentTank IsSaidTankWarn2 IsWorldTalkTrevor IsMapc5m5_bridge _auto_IsFinaleStarted
+		    Response C5M5ReloadingTankMechanic
+		    ApplyContext "SaidReloadingTank:1:10,SaidTankWarn2:1:20"
+		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerKillTankConfirmationC5M5Sheva
+		Rule PlayerKillTankConfirmationC5M5Trevor
 		{
-		    criteria ConceptKilledZombie IsNotCoughing IsSheva IsTalk IsTalkSheva SubjectIsTank IsNotAlone IsNotIncapacitated IsWorldTalkSheva IsMapc5m5_bridge IsNotSurvival
-		    Response PlayerKillTankConfirmationC5M5Producer
-		    ApplyContext "TalkSheva:1:5"
+		    criteria ConceptKilledZombie IsNotCoughing IsTrevor IsTalk IsTalkTrevor SubjectIsTank IsNotAlone IsNotIncapacitated IsWorldTalkTrevor IsMapc5m5_bridge IsNotSurvival
+		    Response PlayerKillTankConfirmationC5M5Mechanic
+		    ApplyContext "TalkTrevor:1:5"
 		}
 	},
 
 	{
-		Rule C5M5_saferoom004Sheva
+		Rule C5M5RunToHeliTrevor
 		{
-		    criteria ConceptC5M5_saferoom004 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C5M5_saferoom004Producer
+		    criteria ConceptGetToVehicle IsTrevor IsMapc5m5_bridge IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsNotInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockTrevor IsNotSpeakingWeight0
+		    Response C5M5RunToHeliMechanic
+		    ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockTrevor:1:30"
+		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C6M1_IntotheparkNoHealthSheva
+		Rule C5M5InsideHeliTrevor
 		{
-		    criteria ConceptC6M1_IntotheparkNoHealth IsSheva IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C6M1_IntotheparkNoHealthProducer
+		    criteria ConceptGetToVehicle IsTrevor IsMapc5m5_bridge IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockTrevor IsNotSpeakingWeight0
+		    Response C5M5InsideHeliMechanic
+		    ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockTrevor:1:30"
+		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C6M1Intro_01Biker03Sheva
+		Rule C5M5BridgeDestroyed2Trevor
 		{
-		    criteria ConceptintroC6M1 IsSheva IsFrancisIntroActor IsNotSaidCXM1Intro IsNotVersus ChanceToFire100Percent AutoIsNotScavenge AutoIsNotSurvival
+		    criteria ConceptC5M5BridgeDestroyed2 IsTrevor IsNotIncapacitated IsEveryoneAlive CanSpeakC5M5SurvivorOutro
+		    Response C5M5BridgeDestroyed2Mechanic
+		}
+	},
+
+	{
+		Rule C5M5SafeRoomTrevor
+		{
+		    criteria ConceptTalkIdle IsTrevor NotInCombat IsMapc5m5_bridge IsInStartArea IsNotAlone IsNotSaidLeavingSafeArea AutoIsNotScavenge AutoIsNotSurvival _auto_IsSafeRoomStart _auto_NotSafeRoomQuiet IsNotSpeakingWeight0
+		    Response C5M5SafeRoomMechanic
+		    then gambler C5M5_saferoom001 foo:0 0.1
+		    ApplyContext "_auto_SafeRoomStart:2:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C5M5_saferoom002Trevor
+		{
+		    criteria ConceptC5M5_saferoom002 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C5M5_saferoom002Mechanic
+		    then gambler C5M5_saferoom004 foo:0 0.01
+		}
+	},
+
+	{
+		Rule C5M5_saferoom004Trevor
+		{
+		    criteria ConceptC5M5_saferoom004 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C5M5_saferoom004Mechanic
+		}
+	},
+
+	{
+		Rule C6M1_IntotheparkNoHealthTrevor
+		{
+		    criteria ConceptC6M1_IntotheparkNoHealth IsTrevor IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C6M1_IntotheparkNoHealthMechanic
+		}
+	},
+
+	{
+		Rule C6M1Intro_01aTrevor
+		{
+		    criteria ConceptC6M1Intro_01a IsTrevor IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
+		    Response C6M1Intro_01aMechanic
+		    then Biker C6M1Intro_01b foo:0 -6.365
+		}
+	},
+
+	{
+		Rule C6M1Intro_01Biker02Trevor
+		{
+		    criteria ConceptintroC6M1 IsTrevor IsFrancisIntroActor IsNotSaidCXM1Intro IsNotVersus ChanceToFire100Percent AutoIsNotScavenge AutoIsNotSurvival
 		    // 	forceweight 1
-		    Response C6M1Intro_01Biker03Producer
-		    then Biker C6M1Intro_06a foo:0 -2.023
+		    Response C6M1Intro_01Biker02Mechanic
+		    then Biker C6M1Intro_24b foo:0 -12.798
 		    ApplyContext "CXM1Intro:1:0,Talk:1:0,RemarkWorldC6M1_HistoricTour:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C6M1Intro_01TeenGirl03Sheva
+		Rule C6M1Intro_01cTrevor
 		{
-		    criteria ConceptintroC6M1 IsSheva IsZoeyIntroActor IsNotSaidCXM1Intro IsNotVersus ChanceToFire100Percent AutoIsNotScavenge AutoIsNotSurvival
+		    criteria ConceptC6M1Intro_01c IsTrevor IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
+		    Response C6M1Intro_01cMechanic
+		    then Biker C6M1Intro_01d foo:0 -0.982
+		}
+	},
+
+	{
+		Rule C6M1Intro_01TeenGirl04Trevor
+		{
+		    criteria ConceptintroC6M1 IsTrevor IsZoeyIntroActor IsNotSaidCXM1Intro IsNotVersus ChanceToFire100Percent AutoIsNotScavenge AutoIsNotSurvival
 		    // 	forceweight 1
-		    Response C6M1Intro_01TeenGirl03Producer
-		    then TeenGirl C6M1Intro_03a foo:0 -3.225
-		    ApplyContext "CXM1Intro:1:0,Talk:1:0,RemarkWorldC6M1_HistoricTour:1:0"
+		    Response C6M1Intro_01TeenGirl04Mechanic
+		    then TeenGirl C6M1Intro_23a foo:0 -2.512
+		    ApplyContext "CXM1Intro:1:0,Talk:1:0,TrevorInLoveC6M1:1:0,RemarkWorldC6M1_HistoricTour:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C6M1Intro_05aSheva
+		Rule C6M1Intro_02aTrevor
 		{
-		    criteria ConceptC6M1Intro_05a IsSheva IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		    Response C6M1Intro_05aProducer
-		    then Biker C6M1Intro_05b foo:0 -2.451
+		    criteria ConceptC6M1Intro_02a IsTrevor IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
+		    Response C6M1Intro_02aMechanic
+		    then Biker C6M1Intro_02b foo:0 -4.221
 		}
 	},
 
 	{
-		Rule C6M1Intro_05cSheva
+		Rule C6M1Intro_11aTrevor
 		{
-		    criteria ConceptC6M1Intro_05c IsSheva IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		    Response C6M1Intro_05cProducer
-		    then Biker C6M1Intro_05d foo:0 -1.958
+		    criteria ConceptC6M1Intro_11a IsTrevor IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
+		    Response C6M1Intro_11aMechanic
+		    then TeenGirl C6M1Intro_11b foo:0 -5.419
 		}
 	},
 
 	{
-		Rule C6M1Intro_05eSheva
+		Rule C6M1Intro_11cTrevor
 		{
-		    criteria ConceptC6M1Intro_05e IsSheva IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		    Response C6M1Intro_05eProducer
-		    then Any WorldC6M1_HistoricTour foo:0 -1.874
+		    criteria ConceptC6M1Intro_11c IsTrevor IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
+		    Response C6M1Intro_11cMechanic
+		    then Any WorldC6M1_HistoricTour foo:0 1
 		}
 	},
 
 	{
-		Rule C6M1Intro_06bSheva
+		Rule C6M1Intro_11cGamblerTrevor
 		{
-		    criteria ConceptC6M1Intro_06b IsSheva IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		    Response C6M1Intro_06bProducer
-		    then Biker C6M1Intro_06c foo:0 -2.236
+		    criteria ConceptC6M1Intro_11c IsTrevor IsGamblerAlive ChanceToFire10Percent IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
+		    Response C6M1Intro_11cGamblerMechanic
+		    then Gambler C6M1Intro_11d foo:0 -13.161
 		}
 	},
 
 	{
-		Rule C6M1Intro_06dSheva
+		Rule C6M1Intro_12bTrevor
 		{
-		    criteria ConceptC6M1Intro_06d IsSheva IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		    Response C6M1Intro_06dProducer
-		    then Biker C6M1Intro_06e foo:0 -0.709
+		    criteria ConceptC6M1Intro_12b IsTrevor IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
+		    Response C6M1Intro_12bMechanic
+		    then Producer C6M1Intro_12c foo:0 -4.691
 		}
 	},
 
 	{
-		Rule C6M1Intro_07bSheva
+		Rule C6M1Intro_13aTrevor
 		{
-		    criteria ConceptC6M1Intro_07b IsSheva IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		    Response C6M1Intro_07bProducer
+		    criteria ConceptC6M1Intro_13a IsTrevor IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
+		    Response C6M1Intro_13aMechanic
+		    then Coach C6M1Intro_13b foo:0 -14.217
+		}
+	},
+
+	{
+		Rule C6M1Intro_13cTrevor
+		{
+		    criteria ConceptC6M1Intro_13c IsTrevor IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
+		    Response C6M1Intro_13cMechanic
+		    then TeenGirl C6M1Intro_13d foo:0 -3.537
+		}
+	},
+
+	{
+		Rule C6M1Intro_13fTrevor
+		{
+		    criteria ConceptC6M1Intro_13f IsTrevor IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
+		    Response C6M1Intro_13fMechanic
+		}
+	},
+
+	{
+		Rule C6M1Intro_23bTrevor
+		{
+		    criteria ConceptC6M1Intro_23b IsTrevor IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
+		    Response C6M1Intro_23bMechanic
+		    then TeenGirl C6M1Intro_23c foo:0 -7.488
+		}
+	},
+
+	{
+		Rule C6M1Intro_23dTrevor
+		{
+		    criteria ConceptC6M1Intro_23d IsTrevor IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
+		    Response C6M1Intro_23dMechanic
+		    then Any WorldC6M1_HistoricTour foo:0 -4.369
+		}
+	},
+
+	{
+		Rule C6M1Intro_24cTrevor
+		{
+		    criteria ConceptC6M1Intro_24c IsTrevor IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
+		    Response C6M1Intro_24cMechanic
+		    then Biker C6M1Intro_24d foo:0 -2.841
+		}
+	},
+
+	{
+		Rule C6M1Intro_24eTrevor
+		{
+		    criteria ConceptC6M1Intro_24e IsTrevor IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
+		    Response C6M1Intro_24eMechanic
+		}
+	},
+
+	{
+		Rule C6M1Intro_ConfirmObjectiveTrevor
+		{
+		    criteria ConceptC6M1Intro_ConfirmObjective IsTrevor IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
+		    Response C6M1Intro_ConfirmObjectiveMechanic
 		    then self IntroEnd foo:0 0.1
 		}
 	},
 
 	{
-		Rule C6M1Intro_07cSheva
+		Rule LeavingC6M1StartTrevor
 		{
-		    criteria ConceptC6M1Intro_07c IsSheva IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		    Response C6M1Intro_07cProducer
-		    then Any WorldC6M1_HistoricTour foo:0 1
-		}
-	},
-
-	{
-		Rule C6M1Intro_09eSheva
-		{
-		    criteria ConceptC6M1Intro_09e IsSheva IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		    Response C6M1Intro_09eProducer
-		    then Sheva C6M1Intro_09f foo:0 -2.022
-		}
-	},
-
-	{
-		Rule C6M1Intro_09fSheva
-		{
-		    criteria ConceptC6M1Intro_09f IsSheva IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		    Response C6M1Intro_09fProducer
-		    then Biker C6M1Intro_09g foo:0 -1.643
-		}
-	},
-
-	{
-		Rule C6M1Intro_10bSheva
-		{
-		    criteria ConceptC6M1Intro_10b IsSheva IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		    Response C6M1Intro_10bProducer
-		    then Biker C6M1Intro_10c foo:0 -4.931
-		}
-	},
-
-	{
-		Rule C6M1Intro_10dSheva
-		{
-		    criteria ConceptC6M1Intro_10d IsSheva IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		    Response C6M1Intro_10dProducer
-		    then Sheva C6M1Intro_10e foo:0 -2.369
-		}
-	},
-
-	{
-		Rule C6M1Intro_10eSheva
-		{
-		    criteria ConceptC6M1Intro_10e IsSheva IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		    Response C6M1Intro_10eProducer
-		}
-	},
-
-	{
-		Rule C6M1Intro_12aSheva
-		{
-		    criteria ConceptC6M1Intro_12a IsSheva IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		    Response C6M1Intro_12aProducer
-		    then Mechanic C6M1Intro_12b foo:0 -2.341
-		}
-	},
-
-	{
-		Rule C6M1Intro_12cSheva
-		{
-		    criteria ConceptC6M1Intro_12c IsSheva IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		    Response C6M1Intro_12cProducer
-		    then Any WorldC6M1_HistoricTour foo:0 1
-		}
-	},
-
-	{
-		Rule C6M1Intro_14dSheva
-		{
-		    criteria ConceptC6M1Intro_14d IsSheva IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		    Response C6M1Intro_14dProducer
-		}
-	},
-
-	{
-		Rule C6M1Intro_15cSheva
-		{
-		    criteria ConceptC6M1Intro_15c IsSheva IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		    Response C6M1Intro_15cProducer
-		    then TeenGirl C6M1Intro_15d foo:0 -2.339
-		}
-	},
-
-	{
-		Rule C6M1Intro_17bSheva
-		{
-		    criteria ConceptC6M1Intro_17b IsSheva IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		    Response C6M1Intro_17bProducer
-		    then TeenGirl C6M1Intro_17c foo:0 -4.790
-		}
-	},
-
-	{
-		Rule C6M1Intro_17dSheva
-		{
-		    criteria ConceptC6M1Intro_17d IsSheva IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		    Response C6M1Intro_17dProducer
-		}
-	},
-
-	{
-		Rule C6M1Intro_18bSheva
-		{
-		    criteria ConceptC6M1Intro_18b IsSheva IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		    Response C6M1Intro_18bProducer
-		    then Biker C6M1Intro_18c foo:0 -2.243
-		}
-	},
-
-	{
-		Rule C6M1Intro_18dSheva
-		{
-		    criteria ConceptC6M1Intro_18d IsSheva IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		    Response C6M1Intro_18dProducer
-		    then Biker C6M1Intro_18e foo:0 -2.015
-		}
-	},
-
-	{
-		Rule C6M1Intro_19bSheva
-		{
-		    criteria ConceptC6M1Intro_19b IsSheva IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		    Response C6M1Intro_19bProducer
-		    then Any WorldC6M1_HistoricTour foo:0 1
-		}
-	},
-
-	{
-		Rule C6M1Intro_20aSheva
-		{
-		    criteria ConceptC6M1Intro_20a IsSheva IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		    Response C6M1Intro_20aProducer
-		    then Sheva C6M1Intro_20b foo:0 -0.951
-		}
-	},
-
-	{
-		Rule C6M1Intro_20bSheva
-		{
-		    criteria ConceptC6M1Intro_20b IsSheva IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		    Response C6M1Intro_20bProducer
-		    then Biker C6M1Intro_20c foo:0 -2.037
-		}
-	},
-
-	{
-		Rule C6M1Intro_20dSheva
-		{
-		    criteria ConceptC6M1Intro_20d IsSheva IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		    Response C6M1Intro_20dProducer
-		    then Biker C6M1Intro_20e foo:0 -4.900
-		    ApplyContext "C6M1_ShevaIsAVampire:1:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule C6M1Intro_20fSheva
-		{
-		    criteria ConceptC6M1Intro_20f IsSheva IsShevaAVampire IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		    Response C6M1Intro_20fProducer
-		    then biker C6M1Intro_20f foo:0 0.1
-		}
-	},
-
-	{
-		Rule C6M1Intro_20gSheva
-		{
-		    criteria ConceptC6M1Intro_20g IsSheva IsShevaAVampire IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		    Response C6M1Intro_20gProducer
-		}
-	},
-
-	{
-		Rule C6M1Intro_22aSheva
-		{
-		    criteria ConceptC6M1Intro_22a IsSheva IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		    Response C6M1Intro_22aProducer
-		    then TeenGirl C6M1Intro_22b foo:0 -3.403
-		}
-	},
-
-	{
-		Rule C6M1Intro_22cSheva
-		{
-		    criteria ConceptC6M1Intro_22c IsSheva IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		    Response C6M1Intro_22cProducer
-		    then TeenGirl C6M1Intro_22d foo:0 -2.930
-		}
-	},
-
-	{
-		Rule C6M1Intro_22fSheva
-		{
-		    criteria ConceptC6M1Intro_22f IsSheva IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		    Response C6M1Intro_22fProducer
-		    then TeenGirl C6M1Intro_22g foo:0 -3.037
-		}
-	},
-
-	{
-		Rule C6M1Intro_22hSheva
-		{
-		    criteria ConceptC6M1Intro_22h IsSheva IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		    Response C6M1Intro_22hProducer
-		}
-	},
-
-	{
-		Rule C6M1Intro_24bSheva
-		{
-		    criteria ConceptC6M1Intro_24b IsSheva IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		    Response C6M1Intro_24bProducer
-		    then mechanic C6M1Intro_24c foo:0 0.1
-		}
-	},
-
-	{
-		Rule C6M1Intro_ConfirmObjectiveSheva
-		{
-		    criteria ConceptC6M1Intro_ConfirmObjective IsSheva IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		    Response C6M1Intro_ConfirmObjectiveProducer
-		    then self IntroEnd foo:0 0.1
-		}
-	},
-
-	{
-		Rule LeavingC6M1StartSheva
-		{
-		    criteria ConceptSurvivorLeavingCheckpoint IsNotSaidLeavingSafeArea IsSheva IsNotAlone YesHasFirstAidKit Isc6m1_riverbank AutoIsNotScavenge AutoIsNotSurvival IsNotSpeaking
-		    Response LeavingC6M1StartProducer
+		    criteria ConceptSurvivorLeavingCheckpoint IsNotSaidLeavingSafeArea IsTrevor IsNotAlone YesHasFirstAidKit isc6m1_riverbank AutoIsNotScavenge AutoIsNotSurvival IsNotSpeaking
+		    Response LeavingC6M1StartMechanic
 		    ApplyContext "SaidLeavingSafeArea:1:0,Talk:0:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule LeavingC6M1StartNoHealthSheva
+		Rule LeavingC6M1StartnoHealthTrevor
 		{
-		    criteria ConceptSurvivorLeavingCheckpoint IsNotSaidLeavingSafeArea IsSheva IsNotAlone NoHasFirstAidKit Isc6m1_riverbank AutoIsNotScavenge AutoIsNotSurvival
-		    Response LeavingC6M1StartNoHealthProducer
+		    criteria ConceptSurvivorLeavingCheckpoint IsNotSaidLeavingSafeArea IsTrevor IsNotAlone NoHasFirstAidKit isc6m1_riverbank AutoIsNotScavenge AutoIsNotSurvival
+		    Response LeavingC6M1StartnoHealthMechanic
 		    then any C6M1_IntotheparkNoHealth foo:0 0.1
 		    ApplyContext "SaidLeavingSafeArea:1:0,Talk:0:0"
 		    applycontexttoworld
@@ -2626,592 +3099,542 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule C6M1Start1Sheva
+		Rule C6M1Start2Trevor
 		{
-		    criteria ConceptC6M1Start1 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C6M1Start1Producer
-		    then mechanic C6M1Start2 foo:0 0.1
+		    criteria ConceptC6M1Start2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C6M1Start2Mechanic
+		    then self C6M1Start3 foo:0 1
 		}
 	},
 
 	{
-		Rule RemWorldC6M1_WeddingWarn01Sheva
+		Rule C6M1Start3Trevor
 		{
-		    criteria ConceptRemWorldC6M1_WeddingWarn01 IsSheva IsSubjectDistNear800 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response RemWorldC6M1_WeddingWarn01Producer
-		}
-	},
-
-	{
-		Rule WorldC6M1_HistoricTourSheva
-		{
-		    criteria ConceptRemark IsSheva IsWorldC6M1_HistoricTour IsNotSaidWorldC6M1_HistoricTour CanRemarkWorldC6M1_HistoricTour IsSubjectNear800 IsTalk IsNotSaidLeavingSafeArea AutoIsNotScavenge AutoIsNotSurvival
-		    Response WorldC6M1_HistoricTourProducer
-		    then Coach HistoricTour02a foo:0 -3.829
-		    ApplyContext "SaidWorldC6M1_HistoricTour:1:0"
+		    criteria ConceptC6M1Start3 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C6M1Start3Mechanic
+		    ApplyContext "Talk:1:4"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule WorldC6M1_PostWedding02aSheva
+		Rule RemWorldC6M1_WeddingWarn02Trevor
 		{
-		    criteria ConceptWorldC6M1_PostWedding02a IsSheva IsSubjectDistNear800 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response WorldC6M1_PostWedding02aProducer
+		    criteria ConceptRemWorldC6M1_WeddingWarn02 IsTrevor IssuerClose IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response RemWorldC6M1_WeddingWarn02Mechanic
+		    ApplyContext "CoachCake:1:0"
+		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule WorldC6M1_WeddingWarn03aSheva
+		Rule WorldC6M1_WeddingWarn03aTrevor
 		{
-		    criteria ConceptWorldC6M1_WeddingWarn03a IsSheva IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response WorldC6M1_WeddingWarn03aProducer
+		    criteria ConceptWorldC6M1_WeddingWarn03a IsTrevor IssuerClose IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response WorldC6M1_WeddingWarn03aMechanic
+		    then Producer WorldC6M1_WeddingWarn03b foo:0 -0.799
 		}
 	},
 
 	{
-		Rule WorldC6M1_WeddingWarn03bSheva
+		Rule WorldC6M1_WeddingWarn03bTrevor
 		{
-		    criteria ConceptWorldC6M1_WeddingWarn03b IsSheva IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response WorldC6M1_WeddingWarn03bProducer
+		    criteria ConceptWorldC6M1_WeddingWarn03b IsTrevor IssuerClose IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response WorldC6M1_WeddingWarn03aMechanic
+		    then Producer WorldC6M1_WeddingWarn03b foo:0 -0.799
 		}
 	},
 
 	{
-		Rule WorldC6M1_WeddingWarn03cSheva
+		Rule WorldC6M1_WeddingWarn03cTrevor
 		{
-		    criteria ConceptWorldC6M1_WeddingWarn03c IsSheva IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response WorldC6M1_WeddingWarn03bProducer
+		    criteria ConceptWorldC6M1_WeddingWarn03c IsTrevor IssuerClose IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response WorldC6M1_WeddingWarn03cMechanic
 		}
 	},
 
 	{
-		Rule C6M2_OpenGate1Sheva
+		Rule WorldC6M1_WeddingWarn03dTrevor
 		{
-		    criteria ConceptC6M2_OpenGate1 IsSheva
-		    Response C6M2_OpenGate1Producer
+		    criteria ConceptWorldC6M1_WeddingWarn03d IsTrevor IssuerClose IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response WorldC6M1_WeddingWarn03dMechanic
+		}
+	},
+
+	{
+		Rule C6M2_OpenGate1Trevor
+		{
+		    criteria ConceptC6M2_OpenGate1 IsTrevor
+		    Response C6M2_OpenGate1Mechanic
 		    ApplyContext "SaidOpenedGate1:1:0,WarnMegaMob:1:300,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C6M2_OpenGate2Sheva
+		Rule C6M2_OpenGate1bTrevor
 		{
-		    criteria ConceptC6M2_OpenGate2 IsSheva
-		    Response C6M2_OpenGate2Producer
+		    criteria ConceptC6M2_OpenGate1b IsTrevor
+		    Response C6M2_OpenGate1bMechanic
+		}
+	},
+
+	{
+		Rule C6M2_OpenGate1BlameTrevor
+		{
+		    criteria ConceptC6M2_OpenGate1 IsTrevor IsGamblerNear400 ChanceToFire30Percent
+		    Response C6M2_OpenGate1BlameMechanic
+		    then Gambler C6M2_OpenGate1a foo:0 0.01
+		    ApplyContext "SaidOpenedGate1:1:0,WarnMegaMob:1:300,SaidSpecialWarn:1:30,SaidOpenedGate1BlameTrevor:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C6M2_OpenGate2Trevor
+		{
+		    criteria ConceptC6M2_OpenGate2 IsTrevor
+		    Response C6M2_OpenGate2Mechanic
 		    ApplyContext "SaidOpenedGate2:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule DLC1_C6M2_SafeRoomConvo01aSheva
+		Rule C6M2LeavingSafeRoomTrevor
 		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo01a IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response DLC1_C6M2_SafeRoomConvo01aProducer
-		    then Gambler DLC1_C6M2_SafeRoomConvo01b foo:0 -2.711
+		    criteria ConceptSurvivorLeavingInitialCheckpoint IsTrevor IsNotSaidLeavingSafeArea isc6m2_bedlam AutoIsNotScavenge AutoIsNotSurvival
+		    Response C6M2LeavingSafeRoomMechanic
+		    ApplyContext "SaidLeavingSafeArea:1:0,Talk:1:3"
+		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule DLC1_C6M2_SafeRoomConvo03aSheva
+		Rule DLC1_C6M2_SafeRoomConvo02aTrevor
 		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo03a IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response DLC1_C6M2_SafeRoomConvo03aProducer
-		    then Mechanic DLC1_C6M2_SafeRoomConvo03b foo:0 -2.886
+		    criteria ConceptDLC1_C6M2_SafeRoomConvo02a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response DLC1_C6M2_SafeRoomConvo02aMechanic
+		    then Gambler DLC1_C6M2_SafeRoomConvo02b foo:0 -3.509
 		}
 	},
 
 	{
-		Rule DLC1_C6M2_SafeRoomConvo03aZoeySheva
+		Rule DLC1_C6M2_SafeRoomConvoProducerStartTrevor
 		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo03a IsSheva IsZoeyIntroActor ChanceToFire50Percent AutoIsNotScavenge AutoIsNotSurvival
-		    Response DLC1_C6M2_SafeRoomConvo03aZoeyProducer
-		    then Mechanic DLC1_C6M2_SafeRoomConvo03b foo:0 -2.886
-		}
-	},
-
-	{
-		Rule DLC1_C6M2_SafeRoomConvo03cSheva
-		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo03c IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response DLC1_C6M2_SafeRoomConvo03cProducer
-		}
-	},
-
-	{
-		Rule DLC1_C6M2_SafeRoomConvo06aSheva
-		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo06a IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response DLC1_C6M2_SafeRoomConvo06aProducer
-		}
-	},
-
-	{
-		Rule DLC1_C6M2_SafeRoomConvoFrancisStartSheva
-		{
-		    criteria ConceptTalkIdle IsSheva NotInCombat Isc6m2_bedlam IsInStartArea IsNotSaidLeavingSafeArea AutoIsNotScavenge AutoIsNotSurvival IsFrancisIntroActor IsGamblerAlive ChanceToFire50Percent _auto_IsSafeRoomStart _auto_NotSafeRoomQuiet IsNotSpeakingWeight0
-		    Response DLC1_C6M2_SafeRoomConvoFrancisStartProducer
-		    then Gambler DLC1_C6M2_SafeRoomConvo08a foo:0 -1.679
+		    criteria ConceptTalkIdle IsTrevor NotInCombat Isc6m2_bedlam IsInStartArea IsNotAlone IsNotSaidLeavingSafeArea AutoIsNotScavenge AutoIsNotSurvival IsProducerAlive ChanceToFire50Percent _auto_IsSafeRoomStart _auto_NotSafeRoomQuiet IsNotSpeakingWeight0
+		    Response DLC1_C6M2_SafeRoomConvoProducerStartMechanic
+		    then Producer DLC1_C6M2_SafeRoomConvo03a foo:0 -3.330
 		    ApplyContext "_auto_SafeRoomStart:2:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule DLC1_C6M2_SafeRoomConvo07aSheva
+		Rule DLC1_C6M2_SafeRoomConvo03bTrevor
 		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo07a IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response DLC1_C6M2_SafeRoomConvo07aProducer
+		    criteria ConceptDLC1_C6M2_SafeRoomConvo03b IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response DLC1_C6M2_SafeRoomConvo03bMechanic
+		    then Producer DLC1_C6M2_SafeRoomConvo03c foo:0 -16.180
 		}
 	},
 
 	{
-		Rule DLC1_C6M2_SafeRoomConvo08bSheva
+		Rule DLC1_C6M2_SafeRoomConvoZoeyStartTrevor
 		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo08b IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response DLC1_C6M2_SafeRoomConvo08bProducer
-		    then Gambler DLC1_C6M2_SafeRoomConvo08c foo:0 -1.262
+		    criteria ConceptTalkIdle IsTrevor NotInCombat Isc6m2_bedlam IsInStartArea IsNotAlone IsNotSaidLeavingSafeArea AutoIsNotScavenge AutoIsNotSurvival IsZoeyIntroActor IsProducerAlive ChanceToFire50Percent _auto_IsSafeRoomStart _auto_NotSafeRoomQuiet IsNotSpeakingWeight0
+		    Response DLC1_C6M2_SafeRoomConvoZoeyStartMechanic
+		    then Any DLC1_C6M2_SafeRoomConvo07a foo:0 -6.763
+		    ApplyContext "_auto_SafeRoomStart:2:0,MentionedZoeyC6M2:1:0"
+		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule DLC1_C6M2_SafeRoomConvo08dSheva
+		Rule DLC1_C6M2_SafeRoomConvo08Trevor
 		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo08d IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response DLC1_C6M2_SafeRoomConvo08dProducer
-		    then Gambler DLC1_C6M2_SafeRoomConvo08e foo:0 -0.977
-		}
-	},
-
-	{
-		Rule DLC1_C6M2_SafeRoomConvo08fSheva
-		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo08f IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response DLC1_C6M2_SafeRoomConvo08fProducer
-		}
-	},
-
-	{
-		Rule DLC1_C6M2_SafeRoomConvo10aSheva
-		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo10a IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response DLC1_C6M2_SafeRoomConvo10aProducer
-		    then Gambler DLC1_C6M2_SafeRoomConvo10b foo:0 -2.753
-		}
-	},
-
-	{
-		Rule DLC1_C6M2_SafeRoomConvo10cSheva
-		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo10c IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response DLC1_C6M2_SafeRoomConvo10cProducer
-		    then Gambler DLC1_C6M2_SafeRoomConvo10d foo:0 -3.678
-		}
-	},
-
-	{
-		Rule DLC1_C6M2_SafeRoomConvo14aSheva
-		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo14a IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response DLC1_C6M2_SafeRoomConvo14aProducer
-		    then Mechanic DLC1_C6M2_SafeRoomConvo14b foo:0 -5.157
-		}
-	},
-
-	{
-		Rule DLC1_C6M2_SafeRoomConvo14cSheva
-		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo14c IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response DLC1_C6M2_SafeRoomConvo14cProducer
-		    then Coach DLC1_C6M2_SafeRoomConvo14d foo:0 -3.757
-		}
-	},
-
-	{
-		Rule DLC1_C6M2_SafeRoomConvo14eSheva
-		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo14e IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response DLC1_C6M2_SafeRoomConvo14eProducer
-		    then Gambler DLC1_C6M2_SafeRoomConvo14f foo:0 -0.987
-		}
-	},
-
-	{
-		Rule DLC1_C6M2_SafeRoomConvo15aSheva
-		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo15a IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response DLC1_C6M2_SafeRoomConvo15aProducer
-		    then Coach DLC1_C6M2_SafeRoomConvo15b foo:0 -3.064
-		}
-	},
-
-	{
-		Rule DLC1_C6M2_SafeRoomConvoStartSheva
-		{
-		    criteria ConceptTalkIdle IsSheva NotInCombat Isc6m2_bedlam IsInStartArea IsNotSaidLeavingSafeArea AutoIsNotScavenge AutoIsNotSurvival IsEveryoneAlive _auto_IsSafeRoomStart _auto_NotSafeRoomQuiet IsNotSpeakingWeight0
-		    Response DLC1_C6M2_SafeRoomConvoStartProducer
-		    then Mechanic DLC1_C6M2_SafeRoomConvo17a foo:0 -10.043
+		    criteria ConceptTalkIdle IsTrevor NotInCombat Isc6m2_bedlam IsInStartArea IsNotAlone IsNotSaidLeavingSafeArea AutoIsNotScavenge AutoIsNotSurvival _auto_IsSafeRoomStart _auto_NotSafeRoomQuiet IsNotSpeakingWeight0
+		    Response DLC1_C6M2_SafeRoomConvo08Mechanic
+		    then Producer DLC1_C6M2_SafeRoomConvo15a foo:0 -4.114
 		    ApplyContext "_auto_SafeRoomStart:2:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule DLC1_C6M2_SafeRoomConvo16aSheva
+		Rule DLC1_C6M2_SafeRoomConvo11aTrevor
 		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo16a IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response DLC1_C6M2_SafeRoomConvo16aProducer
-		    then Mechanic DLC1_C6M2_SafeRoomConvo16b foo:0 -5.036
+		    criteria ConceptDLC1_C6M2_SafeRoomConvo11a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response DLC1_C6M2_SafeRoomConvo11aMechanic
+		    then Gambler DLC1_C6M2_SafeRoomConvo11b foo:0 -4.069
 		}
 	},
 
 	{
-		Rule DLC1_C6M2_SafeRoomConvo16cSheva
+		Rule DLC1_C6M2_SafeRoomConvo14bTrevor
 		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo16c IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response DLC1_C6M2_SafeRoomConvo16cProducer
-		    then Mechanic DLC1_C6M2_SafeRoomConvo16d foo:0 -3.803
+		    criteria ConceptDLC1_C6M2_SafeRoomConvo14b IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response DLC1_C6M2_SafeRoomConvo14bMechanic
+		    then Producer DLC1_C6M2_SafeRoomConvo14c foo:0 -2.922
 		}
 	},
 
 	{
-		Rule DLC1_C6M2_SafeRoomConvo17bSheva
+		Rule DLC1_C6M2_SafeRoomConvo16bTrevor
 		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo17b IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response DLC1_C6M2_SafeRoomConvo17bProducer
+		    criteria ConceptDLC1_C6M2_SafeRoomConvo16b IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response DLC1_C6M2_SafeRoomConvo16bMechanic
+		    then Producer DLC1_C6M2_SafeRoomConvo16c foo:0 -1.763
 		}
 	},
 
 	{
-		Rule DLC1_C6M2_SafeRoomConvo18aSheva
+		Rule DLC1_C6M2_SafeRoomConvo16dRochelleTrevor
 		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo18a IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response DLC1_C6M2_SafeRoomConvo18aProducer
-		    then Mechanic DLC1_C6M2_SafeRoomConvo18b foo:0 -2.626
+		    criteria ConceptDLC1_C6M2_SafeRoomConvo16d IsTrevor FromIsProducer AutoIsNotScavenge AutoIsNotSurvival
+		    Response DLC1_C6M2_SafeRoomConvo16dRochelleMechanic
+		    then self IntroEnd foo:0 0.1
 		}
 	},
 
 	{
-		Rule DLC1_C6M2_SafeRoomConvo18dSheva
+		Rule DLC1_C6M2_SafeRoomConvo16dCoachTrevor
 		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo18d IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response DLC1_C6M2_SafeRoomConvo18dProducer
-		    then Coach DLC1_C6M2_SafeRoomConvo18e foo:0 -1.428
+		    criteria ConceptDLC1_C6M2_SafeRoomConvo16d IsTrevor FromIsCoach AutoIsNotScavenge AutoIsNotSurvival
+		    Response DLC1_C6M2_SafeRoomConvo16dCoachMechanic
+		    then self IntroEnd foo:0 0.1
 		}
 	},
 
 	{
-		Rule DLC1_C6M2_SafeRoomConvo19aSheva
+		Rule DLC1_C6M2_SafeRoomConvo17aTrevor
 		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo19a IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response DLC1_C6M2_SafeRoomConvo19aProducer
+		    criteria ConceptDLC1_C6M2_SafeRoomConvo17a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response DLC1_C6M2_SafeRoomConvo17aMechanic
+		    then Producer DLC1_C6M2_SafeRoomConvo17b foo:0 -7.751
 		}
 	},
 
 	{
-		Rule DLC1_C6M2_SafeRoomConvo19fSheva
+		Rule DLC1_C6M2_SafeRoomConvo18bTrevor
 		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo19f IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response DLC1_C6M2_SafeRoomConvo19fProducer
-		    then mechanic DLC1_C6M2_SafeRoomConvo19g foo:0 0.1
+		    criteria ConceptDLC1_C6M2_SafeRoomConvo18b IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response DLC1_C6M2_SafeRoomConvo18bMechanic
+		    then Coach DLC1_C6M2_SafeRoomConvo18c foo:0 -2.705
 		}
 	},
 
 	{
-		Rule DLC1_C6M2_SafeRoomConvo20aSheva
+		Rule DLC1_C6M2_SafeRoomConvo19aTrevor
 		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo20a IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response DLC1_C6M2_SafeRoomConvo20aProducer
+		    criteria ConceptDLC1_C6M2_SafeRoomConvo19a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response DLC1_C6M2_SafeRoomConvo19aMechanic
+		    then Coach DLC1_C6M2_SafeRoomConvo19b foo:0 -2.249
 		}
 	},
 
 	{
-		Rule DLC1_C6M2_SafeRoomConvo21aSheva
+		Rule DLC1_C6M2_SafeRoomConvo19cTrevor
 		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo21a IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response DLC1_C6M2_SafeRoomConvo21aProducer
-		    then Mechanic DLC1_C6M2_SafeRoomConvo21b foo:0 -3.574
+		    criteria ConceptDLC1_C6M2_SafeRoomConvo19c IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response DLC1_C6M2_SafeRoomConvo19cMechanic
+		    then Coach DLC1_C6M2_SafeRoomConvo19d foo:0 -6.193
 		}
 	},
 
 	{
-		Rule WorldC6M2_InSewer101aSheva
+		Rule DLC1_C6M2_SafeRoomConvo19eTrevor
 		{
-		    criteria ConceptWorldC6M2_InSewer101a IsSheva IssuerClose IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response WorldC6M2_InSewer101aProducer
-		    then Sheva WorldC6M2_InSewer101b foo:0 -2.388
+		    criteria ConceptDLC1_C6M2_SafeRoomConvo19e IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response DLC1_C6M2_SafeRoomConvo19eMechanic
 		}
 	},
 
 	{
-		Rule WorldC6M2_InSewer101bSheva
+		Rule DLC1_C6M2_SafeRoomConvo19gTrevor
 		{
-		    criteria ConceptWorldC6M2_InSewer101b IsSheva IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response WorldC6M2_InSewer101bProducer
-		    then Gambler WorldC6M2_InSewer202a foo:0 0.1
+		    criteria ConceptDLC1_C6M2_SafeRoomConvo19g IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response DLC1_C6M2_SafeRoomConvo19gMechanic
+		    then self IntroEnd foo:0 0.1
 		}
 	},
 
 	{
-		Rule WorldC6M2_InSewer202aSheva
+		Rule DLC1_C6M2_SafeRoomConvo21bTrevor
 		{
-		    criteria ConceptWorldC6M2_InSewer202a IsSheva IssuerClose IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response WorldC6M2_InSewer202aProducer
+		    criteria ConceptDLC1_C6M2_SafeRoomConvo21b IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response DLC1_C6M2_SafeRoomConvo21bMechanic
 		}
 	},
 
 	{
-		Rule WorldC6M2_OnTourWalk101aSheva
+		Rule WorldC6M2_FinalWater01bTrevor
 		{
-		    criteria ConceptWorldC6M2_OnTourWalk101a IsSheva IssuerClose IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response WorldC6M2_OnTourWalk101aProducer
-		    then Sheva WorldC6M2_OnTourWalk101b foo:0 -0.850
+		    criteria ConceptWorldC6M2_FinalWater01b IsTrevor IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response WorldC6M2_FinalWater01bMechanic
 		}
 	},
 
 	{
-		Rule WorldC6M2_OnTourWalk101bSheva
+		Rule WorldC6M2_InSewer101aTrevor
 		{
-		    criteria ConceptWorldC6M2_OnTourWalk101b IsSheva IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response WorldC6M2_OnTourWalk101bProducer
+		    criteria ConceptWorldC6M2_InSewer101a IsTrevor IssuerClose IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response WorldC6M2_InSewer101aMechanic
+		    then Gambler WorldC6M2_InSewer101c foo:0 -0.999
 		}
 	},
 
 	{
-		Rule WorldC6M2_OnTourWalk102bSheva
+		Rule WorldC6M2_OnTourWalk102bTrevor
 		{
-		    criteria ConceptWorldC6M2_OnTourWalk102b IsSheva IssuerClose IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response WorldC6M2_OnTourWalk102bProducer
+		    criteria ConceptWorldC6M2_OnTourWalk102b IsTrevor IssuerClose IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response WorldC6M2_OnTourWalk102bMechanic
 		}
 	},
 
 	{
-		Rule WorldC6M2_Phase201aSheva
+		Rule WorldC6M2_Tattoo03bTrevor
 		{
-		    criteria ConceptWorldC6M2_Phase201a IsSheva IssuerClose IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response WorldC6M2_Phase201aProducer
+		    criteria ConceptWorldC6M2_Tattoo03b IsTrevor IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response WorldC6M2_Tattoo03bMechanic
 		}
 	},
 
 	{
-		Rule WorldC6M2_Tattoo01aSheva
+		Rule C6M3_BridgeDownTrevor
 		{
-		    criteria ConceptWorldC6M2_Tattoo01a IsSheva IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response WorldC6M2_Tattoo01aProducer
-		    then Gambler WorldC6M2_Tattoo01b foo:0 -2.084
+		    criteria ConceptC6M3_BridgeDown IsTrevor
+		    Response C6M3_BridgeDownMechanic
 		}
 	},
 
 	{
-		Rule WorldC6M2_Tattoo02aSheva
+		Rule C6M3_BridgeGettoCarTrevor
 		{
-		    criteria ConceptWorldC6M2_Tattoo02a IsSheva IssuerClose IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response WorldC6M2_Tattoo02aProducer
-		    then Coach WorldC6M2_Tattoo02b foo:0 -0.489
-		}
-	},
-
-	{
-		Rule WorldC6M2_Tattoo02cSheva
-		{
-		    criteria ConceptWorldC6M2_Tattoo02c IsSheva IssuerClose IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response WorldC6M2_Tattoo02cProducer
-		}
-	},
-
-	{
-		Rule WorldC6M2_Tattoo02dSheva
-		{
-		    criteria ConceptWorldC6M2_Tattoo02d IsSheva IssuerClose IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response WorldC6M2_Tattoo02dProducer
-		}
-	},
-
-	{
-		Rule WorldC6M2_TourEntrance01aSheva
-		{
-		    criteria ConceptWorldC6M2_TourEntrance01a IsSheva IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response WorldC6M2_TourEntrance01aProducer
-		}
-	},
-
-	{
-		Rule C6M3_BridgeDownSheva
-		{
-		    criteria ConceptC6M3_BridgeDown IsSheva
-		    Response C6M3_BridgeDownProducer
-		}
-	},
-
-	{
-		Rule C6M3_BridgeGettoCarSheva
-		{
-		    criteria ConceptGetToVehicle IsSheva Isc6m3_port IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsNotInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockSheva IsNotSpeakingWeight0
-		    Response C6M3_BridgeGettoCarProducer
-		    ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockSheva:1:30"
+		    criteria ConceptGetToVehicle IsTrevor Isc6m3_port IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsNotInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockTrevor IsNotSpeakingWeight0
+		    Response C6M3_BridgeGettoCarMechanic
+		    ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockTrevor:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C6M3_elevatorCancelSheva
+		Rule C6M3_elevatorCancelTrevor
 		{
-		    criteria ConceptC6M3_ElevatorCancel IsSheva IsC6M3_port AutoIsNotScavenge AutoIsNotSurvival
+		    criteria ConceptC6M3_ElevatorCancel IsTrevor IsC6M3_port AutoIsNotScavenge AutoIsNotSurvival
 		    // 	forceweight 1
-		    Response _PlayerInfoRemarkableBlankProducer
+		    Response _PlayerInfoRemarkableBlankMechanic
 		}
 	},
 
 	{
-		Rule C6M3_elevatorSheva
+		Rule C6M3_elevatorTrevor
 		{
-		    criteria Conceptc6m3_elevator IsSheva IsC6M3_port IsNotSaidC6M3Elevator AutoIsNotScavenge AutoIsNotSurvival
-		    Response C6M3_elevatorProducer
+		    criteria Conceptc6m3_elevator IsTrevor IsC6M3_port IsNotSaidC6M3Elevator AutoIsNotScavenge AutoIsNotSurvival
+		    Response C6M3_elevatorMechanic
 		    ApplyContext "SaidC6M3Elevator:1:0,Talk:1:10"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C6M3_GivenItemBikerSheva
+		Rule C6M3_elevatorZoeyTrevor
 		{
-		    criteria ConceptPlayerPickup IsSheva IsDonorBiker Isc6m3_port
-		    Response C6M3_GivenItemBikerProducer
+		    criteria Conceptc6m3_elevator IsTrevor IsC6M3_port IsNotSaidC6M3Elevator IsZoeyIntroActor IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
+		    Response C6M3_elevatorZoeyMechanic
+		    ApplyContext "SaidC6M3Elevator:1:0,Talk:1:10"
+		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C6M3_GivenItemBikerIntroSheva
+		Rule C6M3_GivenItemBikerTrevor
 		{
-		    criteria ConceptPlayerPickup IsSheva IsDonorBiker Isc6m3_port IsFrancisIntroActor
-		    Response C6M3_GivenItemBikerIntroProducer
+		    criteria ConceptPlayerPickup IsTrevor IsDonorBiker Isc6m3_port
+		    Response C6M3_GivenItemBikerMechanic
 		}
 	},
 
 	{
-		Rule C6M3_GivenItemTeenGirlSheva
+		Rule C6M3_GivenItemTeenGirlTrevor
 		{
-		    criteria ConceptPlayerPickup IsSheva IsDonorTeenGirl Isc6m3_port
-		    Response C6M3_GivenItemTeenGirlProducer
+		    criteria ConceptPlayerPickup IsTrevor IsDonorTeenGirl Isc6m3_port
+		    Response C6M3_GivenItemTeenGirlMechanic
 		}
 	},
 
 	{
-		Rule DLC1_C6M3_SafeRoomConvoFrancisStartSheva
+		Rule C6M3_GivenItemTeenGirlIntroTrevor
 		{
-		    criteria ConceptTalkIdle IsSheva NotInCombat isC6m3_port IsInStartArea IsNotSaidLeavingSafeArea AutoIsNotScavenge AutoIsNotSurvival IsFrancisIntroActor _auto_IsSafeRoomStart _auto_NotSafeRoomQuiet IsNotSpeakingWeight0
-		    Response DLC1_C6M3_SafeRoomConvoFrancisStartProducer
-		    then Mechanic DLC1_C6M3_SafeRoomConvo01a foo:0 -1.260
+		    criteria ConceptPlayerPickup IsTrevor IsDonorTeenGirl Isc6m3_port IsZoeyIntroActor
+		    Response C6M3_GivenItemTeenGirlIntroMechanic
+		}
+	},
+
+	{
+		Rule DLC1_C6M3_SafeRoomConvo01aTrevor
+		{
+		    criteria ConceptDLC1_C6M3_SafeRoomConvo01a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response DLC1_C6M3_SafeRoomConvo01aMechanic
+		    then Producer DLC1_C6M3_SafeRoomConvo01b foo:0 -7.373
+		}
+	},
+
+	{
+		Rule DLC1_C6M3_SafeRoomConvo01cTrevor
+		{
+		    criteria ConceptDLC1_C6M3_SafeRoomConvo01c IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response DLC1_C6M3_SafeRoomConvo01cMechanic
+		}
+	},
+
+	{
+		Rule DLC1_C6M3_SafeRoomConvo02eTrevor
+		{
+		    criteria ConceptDLC1_C6M3_SafeRoomConvo02e IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response DLC1_C6M3_SafeRoomConvo02eMechanic
+		}
+	},
+
+	{
+		Rule DLC1_C6M3_SafeRoomConvo03aTrevor
+		{
+		    criteria ConceptDLC1_C6M3_SafeRoomConvo03a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response DLC1_C6M3_SafeRoomConvo03aMechanic
+		    then Gambler DLC1_C6M3_SafeRoomConvo03b foo:0 -1.144
+		}
+	},
+
+	{
+		Rule DLC1_C6M3_SafeRoomConvo03cTrevor
+		{
+		    criteria ConceptDLC1_C6M3_SafeRoomConvo03c IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response DLC1_C6M3_SafeRoomConvo03cMechanic
+		    then Gambler DLC1_C6M3_SafeRoomConvo03d foo:0 -1.799
+		}
+	},
+
+	{
+		Rule DLC1_C6M3_SafeRoomConvo04aTrevor
+		{
+		    criteria ConceptDLC1_C6M3_SafeRoomConvo04a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response DLC1_C6M3_SafeRoomConvo04aMechanic
+		    then Producer DLC1_C6M3_SafeRoomConvo04b foo:0 -3.659
+		}
+	},
+
+	{
+		Rule DLC1_C6M3_SafeRoomConvo04dTrevor
+		{
+		    criteria ConceptDLC1_C6M3_SafeRoomConvo04d IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response DLC1_C6M3_SafeRoomConvo04dMechanic
+		}
+	},
+
+	{
+		Rule DLC1_C6M3_SafeRoomConvo05aTrevor
+		{
+		    criteria ConceptDLC1_C6M3_SafeRoomConvo05a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response DLC1_C6M3_SafeRoomConvo05aMechanic
+		    then Gambler DLC1_C6M3_SafeRoomConvo05b foo:0 -2.546
+		}
+	},
+
+	{
+		Rule DLC1_C6M3_SafeRoomConvoFrancisStartTrevor
+		{
+		    criteria ConceptTalkIdle IsTrevor NotInCombat isC6m3_port IsInStartArea IsNotAlone IsNotSaidLeavingSafeArea AutoIsNotScavenge AutoIsNotSurvival IsFrancisIntroActor IsProducerAlive _auto_IsSafeRoomStart _auto_NotSafeRoomQuiet IsNotSpeakingWeight0
+		    Response DLC1_C6M3_SafeRoomConvoFrancisStartMechanic
+		    then Producer DLC1_C6M3_SafeRoomConvo06a foo:0 -5.805
 		    ApplyContext "_auto_SafeRoomStart:2:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule DLC1_C6M3_SafeRoomConvo01bSheva
+		Rule DLC1_C6M3_SafeRoomConvo06bTrevor
 		{
-		    criteria ConceptDLC1_C6M3_SafeRoomConvo01b IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response DLC1_C6M3_SafeRoomConvo01bProducer
-		    then Mechanic DLC1_C6M3_SafeRoomConvo01c foo:0 -0.926
+		    criteria ConceptDLC1_C6M3_SafeRoomConvo06b IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response DLC1_C6M3_SafeRoomConvo06bMechanic
 		}
 	},
 
 	{
-		Rule DLC1_C6M3_SafeRoomConvo02a1Sheva
+		Rule DLC1_C6M3_SafeRoomConvo07aTrevor
 		{
-		    criteria ConceptDLC1_C6M3_SafeRoomConvo02a1 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response DLC1_C6M3_SafeRoomConvo02a1Producer
-		    then Gambler DLC1_C6M3_SafeRoomConvo02b foo:0 -0.760
+		    criteria ConceptDLC1_C6M3_SafeRoomConvo07a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response DLC1_C6M3_SafeRoomConvo07aMechanic
+		    then Producer DLC1_C6M3_SafeRoomConvo07b foo:0 -2.804
 		}
 	},
 
 	{
-		Rule DLC1_C6M3_SafeRoomConvo02cSheva
+		Rule DLC1_C6M3_SafeRoomConvo07cTrevor
 		{
-		    criteria ConceptDLC1_C6M3_SafeRoomConvo02c IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response DLC1_C6M3_SafeRoomConvo02cProducer
-		    then Gambler DLC1_C6M3_SafeRoomConvo02d foo:0 -1.258
+		    criteria ConceptDLC1_C6M3_SafeRoomConvo07c IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response DLC1_C6M3_SafeRoomConvo07cMechanic
 		}
 	},
 
 	{
-		Rule DLC1_C6M3_SafeRoomConvo04bSheva
+		Rule DLC1_C6M3_SafeRoomConvo08aTrevor
 		{
-		    criteria ConceptDLC1_C6M3_SafeRoomConvo04b IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response DLC1_C6M3_SafeRoomConvo04bProducer
-		    then Gambler DLC1_C6M3_SafeRoomConvo04c foo:0 -2.568
+		    criteria ConceptDLC1_C6M3_SafeRoomConvo08a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response DLC1_C6M3_SafeRoomConvo08aMechanic
+		    then Coach DLC1_C6M3_SafeRoomConvo08b foo:0 -1.669
 		}
 	},
 
 	{
-		Rule DLC1_C6M3_SafeRoomConvo04dSheva
+		Rule DLC1_C6M3_SafeRoomConvo08cTrevor
 		{
-		    criteria ConceptDLC1_C6M3_SafeRoomConvo04d IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response DLC1_C6M3_SafeRoomConvo04dProducer
+		    criteria ConceptDLC1_C6M3_SafeRoomConvo08c IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response DLC1_C6M3_SafeRoomConvo08cMechanic
+		    then Trevor DLC1_C6M3_SafeRoomConvo08d foo:0 -0.936
 		}
 	},
 
 	{
-		Rule DLC1_C6M3_SafeRoomConvo05cSheva
+		Rule DLC1_C6M3_SafeRoomConvo08dTrevor
 		{
-		    criteria ConceptDLC1_C6M3_SafeRoomConvo05c IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response DLC1_C6M3_SafeRoomConvo05cProducer
-		    then Gambler DLC1_C6M3_SafeRoomConvo05d foo:0 -1.309
+		    criteria ConceptDLC1_C6M3_SafeRoomConvo08d IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response DLC1_C6M3_SafeRoomConvo08dMechanic
+		    then Trevor DLC1_C6M3_SafeRoomConvo08f foo:0 -1.479
 		}
 	},
 
 	{
-		Rule DLC1_C6M3_SafeRoomConvo06aSheva
+		Rule DLC1_C6M3_SafeRoomConvo08eTrevor
 		{
-		    criteria ConceptDLC1_C6M3_SafeRoomConvo06a IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response DLC1_C6M3_SafeRoomConvo06aProducer
-		    then Mechanic DLC1_C6M3_SafeRoomConvo06b foo:0 -3.045
+		    criteria ConceptDLC1_C6M3_SafeRoomConvo08e IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response DLC1_C6M3_SafeRoomConvo08eMechanic
+		    then Trevor DLC1_C6M3_SafeRoomConvo08f foo:0 -2.608
 		}
 	},
 
 	{
-		Rule DLC1_C6M3_SafeRoomConvoZoeyStartSheva
+		Rule DLC1_C6M3_SafeRoomConvo08fTrevor
 		{
-		    criteria ConceptTalkIdle IsSheva NotInCombat isC6m3_port IsInStartArea IsNotSaidLeavingSafeArea AutoIsNotScavenge AutoIsNotSurvival IsZoeyIntroActor _auto_IsSafeRoomStart _auto_NotSafeRoomQuiet IsNotSpeakingWeight0
-		    Response DLC1_C6M3_SafeRoomConvoZoeyStartProducer
-		    then Mechanic DLC1_C6M3_SafeRoomConvo07a foo:0 -3.413
-		    ApplyContext "_auto_SafeRoomStart:2:0"
-		    applycontexttoworld
+		    criteria ConceptDLC1_C6M3_SafeRoomConvo08f IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response DLC1_C6M3_SafeRoomConvo08fMechanic
+		    then Producer DLC1_C6M3_SafeRoomConvo08g foo:0 -5.514
 		}
 	},
 
 	{
-		Rule DLC1_C6M3_SafeRoomConvo07bSheva
+		Rule DLC1_C6M3_SafeRoomConvo09aTrevor
 		{
-		    criteria ConceptDLC1_C6M3_SafeRoomConvo07b IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response DLC1_C6M3_SafeRoomConvo07bProducer
-		    then Mechanic DLC1_C6M3_SafeRoomConvo07c foo:0 -4.242
+		    criteria ConceptDLC1_C6M3_SafeRoomConvo09a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response DLC1_C6M3_SafeRoomConvo09aMechanic
+		    then Producer DLC1_C6M3_SafeRoomConvo09b foo:0 -13.536
 		}
 	},
 
 	{
-		Rule DLC1_C6M3_SafeRoomConvo08gSheva
+		Rule IncapBounceTrevor
 		{
-		    criteria ConceptDLC1_C6M3_SafeRoomConvo08g IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response DLC1_C6M3_SafeRoomConvo08gProducer
-		}
-	},
-
-	{
-		Rule DLC1_C6M3_SafeRoomConvo09bSheva
-		{
-		    criteria ConceptDLC1_C6M3_SafeRoomConvo09b IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response DLC1_C6M3_SafeRoomConvo09bProducer
-		}
-	},
-
-	{
-		Rule IncapBounceSheva
-		{
-		    criteria ConceptSurvivorIncapacitated IsSheva IsNotSaidInCapBounce isC6m3_port
-		    Response IncapBounceProducer
+		    criteria ConceptSurvivorIncapacitated IsTrevor IsNotSaidInCapBounce isC6m3_port
+		    Response IncapBounceMechanic
 		    then Biker InCapBounce2 foo:0 0
 		    ApplyContext "SaidInCapBounce:1:30"
 		    applycontexttoworld
@@ -3219,547 +3642,796 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule PlayerCallForRescueSheva
+		Rule PlayerCallForRescueTrevor
 		{
-		    criteria ConceptCallForRescue IsSheva IsTalk IsTalkSheva IsWorldTalkSheva HasNotCalledForRescue
-		    Response PlayerCallForRescueProducer
+		    criteria ConceptCallForRescue IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor HasNotCalledForRescue
+		    Response PlayerCallForRescueMechanic
 		    ApplyContext "CalledForRescue:1:5"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule c6m3_outroSheva
+		Rule C1M2EllisStoryTrevor
 		{
-		    criteria Conceptc6m3_outro3 IsSheva isC6m3_port IsNotVersus IsNotIncapacitated ChanceToFire100Percent FromIsBiker
+		    criteria ConceptTalkIdle IsTrevor IsInStartArea IsNotSaidLeavingSafeArea IsNotSpeaking ismap_c1m2_streets IsACoopMode ChanceToFire10Percent IsNotSrcGrp_TREVORSTORY _auto_IsStoryWait _auto_NotStoryGate
 		    // 	forceweight 1
-		    Response c6m3_outroProducer
-		    then Mechanic c6m3_outroL4D1012a foo:0 0.1
+		    Response C1M2EllisStoryMechanic
+		    then any TrevorInterrupt foo:0 -19.75
+		    ApplyContext "_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0"
+		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpotFirstWeaponsSheva
+		Rule C1M3EllisStoryTrevor
 		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSpeaking IsWorldTalkSheva IsNotPickedUpFirstAidKit ismap_c1m1_hotel IsNotSaidFirstWeapon IsNotSaidWorldC1M1First IsWorldTalkSheva
-		    Response SurvivorSpotFirstWeaponsProducer
-		    then gambler Player.WhinyNick foo:0 0.1
+		    criteria ConceptTalkIdle IsTrevor IsInStartArea IsNotSaidLeavingSafeArea IsNotSpeaking ismap_c1m3_mall IsACoopMode ChanceToFire10Percent IsNotSrcGrp_TREVORSTORY _auto_IsStoryWait _auto_NotStoryGate
+		    // 	forceweight 1
+		    Response C1M3EllisStoryMechanic
+		    then any TrevorInterrupt foo:0 -7.93
+		    ApplyContext "_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C1M4EllisStoryTrevor
+		{
+		    criteria ConceptTalkIdle IsTrevor IsInStartArea IsNotSaidLeavingSafeArea IsNotSpeaking ismap_c1m4_atrium IsACoopMode ChanceToFire10Percent IsNotSrcGrp_TREVORSTORY _auto_IsStoryWait _auto_NotStoryGate
+		    // 	forceweight 1
+		    Response C1M4EllisStoryMechanic
+		    then any TrevorInterrupt foo:0 -12.29
+		    ApplyContext "_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C2M2EllisStoryTrevor
+		{
+		    criteria ConceptTalkIdle IsTrevor IsInStartArea IsNotSaidLeavingSafeArea IsNotSpeaking ismap_c2m2 IsACoopMode ChanceToFire10Percent IsNotSrcGrp_TREVORSTORY _auto_IsStoryWait _auto_NotStoryGate
+		    // 	forceweight 1
+		    Response C2M2EllisStoryMechanic
+		    then any TrevorInterrupt foo:0 -13.43
+		    ApplyContext "_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C2M3EllisStoryTrevor
+		{
+		    criteria ConceptTalkIdle IsTrevor IsInStartArea IsNotSaidLeavingSafeArea IsNotSpeaking ismap_c2m3 IsACoopMode ChanceToFire10Percent IsNotSrcGrp_TREVORSTORY _auto_IsStoryWait _auto_NotStoryGate
+		    // 	forceweight 1
+		    Response C2M3EllisStoryMechanic
+		    then any TrevorInterrupt foo:0 -15.02
+		    ApplyContext "_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C2M4EllisStoryTrevor
+		{
+		    criteria ConceptTalkIdle IsTrevor IsInStartArea IsNotSaidLeavingSafeArea IsNotSpeaking ismap_c2m4 IsACoopMode ChanceToFire10Percent IsNotSrcGrp_TREVORSTORY _auto_IsStoryWait _auto_NotStoryGate
+		    // 	forceweight 1
+		    Response C2M4EllisStoryMechanic
+		    then any TrevorInterrupt foo:0 -10.17
+		    ApplyContext "_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C2M5EllisStoryTrevor
+		{
+		    criteria ConceptTalkIdle IsTrevor IsInStartArea IsNotSaidLeavingSafeArea IsNotSpeaking ismap_c2m5 IsACoopMode ChanceToFire10Percent IsNotSrcGrp_TREVORSTORY _auto_IsStoryWait _auto_NotStoryGate
+		    // 	forceweight 1
+		    Response C2M5EllisStoryMechanic
+		    then any TrevorInterrupt foo:0 -14.33
+		    ApplyContext "_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C3M2EllisStoryTrevor
+		{
+		    criteria ConceptTalkIdle IsTrevor IsInStartArea IsNotSaidLeavingSafeArea IsNotSpeaking ismapc3m2_swamp IsACoopMode ChanceToFire10Percent IsNotSrcGrp_TREVORSTORY _auto_IsStoryWait _auto_NotStoryGate
+		    // 	forceweight 1
+		    Response C3M2EllisStoryMechanic
+		    then any TrevorInterrupt foo:0 -13.34
+		    ApplyContext "_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C3M3EllisStoryTrevor
+		{
+		    criteria ConceptTalkIdle IsTrevor IsInStartArea IsNotSaidLeavingSafeArea IsNotSpeaking ismapc3m3_shantytown IsACoopMode ChanceToFire10Percent IsNotSrcGrp_TREVORSTORY _auto_IsStoryWait _auto_NotStoryGate
+		    // 	forceweight 1
+		    Response C3M3EllisStoryMechanic
+		    then any TrevorInterrupt foo:0 -23.98
+		    ApplyContext "_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C3M4EllisStoryTrevor
+		{
+		    criteria ConceptTalkIdle IsTrevor IsInStartArea IsNotSaidLeavingSafeArea IsNotSpeaking ismapc3m4_plantation IsACoopMode ChanceToFire10Percent IsNotSrcGrp_TREVORSTORY _auto_IsStoryWait _auto_NotStoryGate
+		    // 	forceweight 1
+		    Response C3M4EllisStoryMechanic
+		    then any TrevorInterrupt foo:0 -15.53
+		    ApplyContext "_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C4M2EllisStoryTrevor
+		{
+		    criteria ConceptTalkIdle IsTrevor IsInStartArea IsNotSaidLeavingSafeArea IsNotSpeaking ismap_c4m2_sugarmill_a IsACoopMode ChanceToFire10Percent IsNotSrcGrp_TREVORSTORY _auto_IsStoryWait _auto_NotStoryGate
+		    // 	forceweight 1
+		    Response C4M2EllisStoryMechanic
+		    then any TrevorInterrupt foo:0 -16.69
+		    ApplyContext "_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C4M3EllisStoryTrevor
+		{
+		    criteria ConceptTalkIdle IsTrevor IsInStartArea IsNotSaidLeavingSafeArea IsNotSpeaking isc4m3 IsACoopMode ChanceToFire10Percent IsNotSrcGrp_TREVORSTORY _auto_IsStoryWait _auto_NotStoryGate
+		    // 	forceweight 1
+		    Response C4M3EllisStoryMechanic
+		    then any TrevorInterrupt foo:0 -9.99
+		    ApplyContext "_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C4M4EllisStoryTrevor
+		{
+		    criteria ConceptTalkIdle IsTrevor IsInStartArea IsNotSaidLeavingSafeArea IsNotSpeaking isc4m4 IsACoopMode ChanceToFire10Percent IsNotSrcGrp_TREVORSTORY _auto_IsStoryWait _auto_NotStoryGate
+		    // 	forceweight 1
+		    Response C4M4EllisStoryMechanic
+		    then any TrevorInterrupt foo:0 -15.21
+		    ApplyContext "_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C5M2EllisStoryTrevor
+		{
+		    criteria ConceptTalkIdle IsTrevor IsInStartArea IsNotSaidLeavingSafeArea IsNotSpeaking IsMapc5m2_park IsACoopMode ChanceToFire10Percent IsNotSrcGrp_TREVORSTORY _auto_IsStoryWait _auto_NotStoryGate
+		    // 	forceweight 1
+		    Response C5M2EllisStoryMechanic
+		    then any TrevorInterrupt foo:0 -8.54
+		    ApplyContext "_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C5M3EllisStoryTrevor
+		{
+		    criteria ConceptTalkIdle IsTrevor IsInStartArea IsNotSaidLeavingSafeArea IsNotSpeaking IsMapc5m3_cemetery IsACoopMode ChanceToFire10Percent IsNotSrcGrp_TREVORSTORY _auto_IsStoryWait _auto_NotStoryGate
+		    // 	forceweight 1
+		    Response C5M3EllisStoryMechanic
+		    then any TrevorInterrupt foo:0 -3.46
+		    ApplyContext "_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C5M4EllisStoryTrevor
+		{
+		    criteria ConceptTalkIdle IsTrevor IsInStartArea IsNotSaidLeavingSafeArea IsNotSpeaking IsMapc5m4_quarter IsACoopMode ChanceToFire10Percent IsNotSrcGrp_TREVORSTORY _auto_IsStoryWait _auto_NotStoryGate
+		    // 	forceweight 1
+		    Response C5M4EllisStoryMechanic
+		    then any TrevorInterrupt foo:0 -17.96
+		    ApplyContext "_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C5M5EllisStoryTrevor
+		{
+		    criteria ConceptTalkIdle IsTrevor IsInStartArea IsNotSaidLeavingSafeArea IsNotSpeaking IsMapc5m5_bridge IsACoopMode ChanceToFire10Percent IsNotSrcGrp_TREVORSTORY _auto_IsStoryWait _auto_NotStoryGate
+		    // 	forceweight 1
+		    Response C5M5EllisStoryMechanic
+		    then any TrevorInterrupt foo:0 -18.21
+		    ApplyContext "_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C6M2EllisStoryTrevor
+		{
+		    criteria ConceptTalkIdle IsTrevor IsInStartArea IsNotSaidLeavingSafeArea IsNotSpeaking isc6m2_bedlam IsACoopMode ChanceToFire20Percent IsNotSrcGrp_TREVORSTORY _auto_IsStoryWait _auto_NotStoryGate
+		    Response C6M2EllisStoryMechanic
+		    then any TrevorInterrupt foo:0 0.1
+		    ApplyContext "_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C6M2EllisStoryStart1Trevor
+		{
+		    criteria ConceptC6M2TrevorStoryStart1 IsTrevor _auto_NotDidInterrupt
+		    Response C6M2EllisStoryStart1Mechanic
+		    then any TrevorInterrupt foo:0 -26.93
+		}
+	},
+
+	{
+		Rule C6M3EllisBridgeStoryTrevor
+		{
+		    criteria ConceptTalkIdle IsTrevor IsNotSpeaking isc6m3_port IsACoopMode IsNotInStartArea ChanceToFire20Percent IsSaidFinaleExchange IsEndTrevorBridgeStoryStart IsNotSaidTrevorBridgeStoryStart IsNotSaidC6M3Elevator
+		    // 	forceweight 1
+		    Response C6M3EllisBridgeStoryMechanic
+		    then any TrevorInterrupt foo:0 0.1
+		    ApplyContext "Talk:1:0,_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0,SaidTrevorBridgeStoryStart:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C6M3EllisBridgeStory1Trevor
+		{
+		    criteria ConceptC6M3TrevorBridgeStory1 IsTrevor IsNotSaidC6M3Elevator _auto_NotDidInterrupt
+		    Response C6M3EllisBridgeStory1Mechanic
+		    then self C6M3TrevorBridgeStory1a foo:0 -24.62
+		}
+	},
+
+	{
+		Rule C6M3EllisBridgeStory1aTrevor
+		{
+		    criteria ConceptC6M3TrevorBridgeStory1a IsTrevor IsNotSaidC6M3Elevator _auto_NotDidInterrupt
+		    Response C6M3EllisBridgeStory1aMechanic
+		    then any TrevorInterrupt foo:0 0.1
+		}
+	},
+
+	{
+		Rule EllisStoryReac01Trevor
+		{
+		    criteria ConceptTrevorStoryReac01 IsTrevor
+		    Response EllisStoryReac01Mechanic
+		}
+	},
+
+	{
+		Rule EllisStoryReac01GoatTrevor
+		{
+		    criteria ConceptTrevorStoryReac01 IsTrevor ismap_c1m4_atrium
+		    // 	forceweight 100
+		    Response EllisStoryReac01GoatMechanic
+		}
+	},
+
+	{
+		Rule c6m3_outroTrevor
+		{
+		    criteria Conceptc6m3_outro3 IsTrevor isC6m3_port IsNotVersus IsNotIncapacitated ChanceToFire100Percent FromIsBiker
+		    // 	forceweight 1
+		    Response c6m3_outroMechanic
+		}
+	},
+
+	{
+		Rule c6m3_outroZoeyOutroTrevor
+		{
+		    criteria Conceptc6m3_outro3 IsTrevor isC6m3_port IsZoeyIntroActor IsNotVersus IsNotIncapacitated ChanceToFire100Percent FromIsBiker
+		    // 	forceweight 2
+		    Response c6m3_outroZoeyOutroMechanic
+		    then gambler c6m3_outroL4D1011a foo:0 0.1
+		}
+	},
+
+	{
+		Rule c6m3_outroRochelleOutroTrevor
+		{
+		    criteria Conceptc6m3_outroL4D1012a IsTrevor IsNotIncapacitated FromIsProducer
+		    Response c6m3_outroRochelleOutroMechanic
+		}
+	},
+
+	{
+		Rule SurvivorSpotFirstWeaponsTrevor
+		{
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotPickedUpFirstAidKit ismap_c1m1_hotel IsNotSaidFirstWeapon IsNotSaidWorldC1M1First IsWorldTalkTrevor
+		    Response SurvivorSpotFirstWeaponsMechanic
 		    ApplyContext "SaidFirstWeapon:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedAdrenalineSheva
+		Rule SurvivorSpottedAdrenalineTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSmartLookAuto IsAdrenaline IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response SurvivorSpottedAdrenalineProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto IsAdrenaline IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response SurvivorSpottedAdrenalineMechanic
 		    ApplyContext "SaidSpotAdrenaline:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedAdrenalineAutoSheva
+		Rule SurvivorSpottedAdrenalineAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotAdrenaline IsNotSaidSpot IsAdrenaline IsWorldTalkSheva IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedAdrenalineProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotAdrenaline IsNotSaidSpot IsAdrenaline IsWorldTalkTrevor IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedAdrenalineMechanic
 		    ApplyContext "SaidSpotAdrenaline:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedAmmoSheva
+		Rule SurvivorSpottedAmmoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsAmmo IsSheva IsTalk IsTalkSheva IsNotSmartLookAuto IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response SurvivorSpottedAmmoProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsAmmo IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response SurvivorSpottedAmmoMechanic
 		    ApplyContext "SaidSpotAmmo:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedAmmoAutoSheva
+		Rule SurvivorSpottedAmmoAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsAmmo IsSheva IsTalk IsTalkSheva IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotAmmo IsNotSaidSpot IsWorldTalkSheva IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedAmmoProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsAmmo IsTrevor IsTalk IsTalkTrevor IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotAmmo IsNotSaidSpot IsWorldTalkTrevor IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedAmmoMechanic
 		    ApplyContext "SaidSpotAmmo:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedAmmo2Sheva
+		Rule SurvivorSpottedAmmo2Trevor
 		{
-		    criteria ConceptPlayerSpotAmmo IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotInSafeSpot IsNotAlone IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response SurvivorSpottedAmmo2Producer
+		    criteria ConceptPlayerSpotAmmo IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotInSafeSpot IsNotAlone IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response SurvivorSpottedAmmo2Mechanic
 		}
 	},
 
 	{
-		Rule SurvivorSpottedCoachCloseSheva
+		Rule SurvivorSpottedCoachCloseTrevor
 		{
-		    criteria ConceptPlayerLookHere IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSmartLookAuto SubjectIsCoach IsCoachNear400 IsWorldTalkSheva
-		    Response SurvivorSpottedCoachCloseProducer
+		    criteria ConceptPlayerLookHere IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsCoach IsCoachNear400 IsWorldTalkTrevor
+		    Response SurvivorSpottedCoachCloseMechanic
 		}
 	},
 
 	{
-		Rule SurvivorSpottedCoachClose2Sheva
+		Rule SurvivorSpottedCoachClose2Trevor
 		{
-		    criteria ConceptPlayerLook IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSmartLookAuto SubjectIsCoach IsCoachNear400 IsWorldTalkSheva
-		    Response SurvivorSpottedCoachCloseProducer
+		    criteria ConceptPlayerLook IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsCoach IsCoachNear400 IsWorldTalkTrevor
+		    Response SurvivorSpottedCoachCloseMechanic
 		}
 	},
 
 	{
-		Rule SurvivorSpottedCoachClose2C1Sheva
+		Rule SurvivorSpottedCoachClose2C1Trevor
 		{
-		    criteria ConceptPlayerLook IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSmartLookAuto SubjectIsCoach IsCoachNear400 IsWorldTalkSheva ismap_c1m1_hotel NoKnowNames
-		    Response SurvivorSpottedCoachClose2C1Producer
+		    criteria ConceptPlayerLook IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsCoach IsCoachNear400 IsWorldTalkTrevor ismap_c1m1_hotel NoKnowNames
+		    Response SurvivorSpottedCoachClose2C1Mechanic
 		}
 	},
 
 	{
-		Rule SurvivorSpottedCoachCloseC1Sheva
+		Rule SurvivorSpottedCoachCloseC1Trevor
 		{
-		    criteria ConceptPlayerLookHere IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSmartLookAuto SubjectIsCoach IsCoachNear400 IsWorldTalkSheva ismap_c1m1_hotel NoKnowNames
-		    Response SurvivorSpottedCoachClose2C1Producer
+		    criteria ConceptPlayerLookHere IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsCoach IsCoachNear400 IsWorldTalkTrevor ismap_c1m1_hotel NoKnowNames
+		    Response SurvivorSpottedCoachClose2C1Mechanic
 		}
 	},
 
 	{
-		Rule SurvivorSpottedCoachFarSheva
+		Rule SurvivorSpottedCoachFarTrevor
 		{
-		    criteria ConceptPlayerLook IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSmartLookAuto SubjectIsCoach IsCoachFar400 IsWorldTalkSheva
-		    Response SurvivorSpottedCoachFarProducer
+		    criteria ConceptPlayerLook IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsCoach IsCoachFar400 IsWorldTalkTrevor
+		    Response SurvivorSpottedCoachFarMechanic
 		}
 	},
 
 	{
-		Rule SurvivorSpottedCoachFarC1Sheva
+		Rule SurvivorSpottedDefibrillatorTrevor
 		{
-		    criteria ConceptPlayerLook IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSmartLookAuto SubjectIsCoach IsCoachFar400 IsWorldTalkSheva ismap_c1m1_hotel NoKnowNames
-		    Response SurvivorSpottedCoachFarC1Producer
-		}
-	},
-
-	{
-		Rule SurvivorSpottedDefibrillatorSheva
-		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSmartLookAuto IsDefibrillator IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response SurvivorSpottedDefibrillatorProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto IsDefibrillator IsWorldTalkTrevor
+		    Response SurvivorSpottedDefibrillatorMechanic
 		    ApplyContext "SaidSpotDefibrillator:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedDefibrillatorAutoSheva
+		Rule SurvivorSpottedDefibrillatorAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidDefibrillator IsNotSaidSpot IsDefibrillator IsWorldTalkSheva IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedDefibrillatorProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidDefibrillator IsNotSaidSpot IsDefibrillator IsWorldTalkTrevor IsNotSpeakingWeight0
+		    Response SurvivorSpottedDefibrillatorMechanic
 		    ApplyContext "SaidSpotDefibrillator:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedGamblerCloseSheva
+		Rule SurvivorSpottedGamblerCloseTrevor
 		{
-		    criteria ConceptPlayerLookHere IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSmartLookAuto SubjectIsGambler IsGamblerNear400 IsWorldTalkSheva
-		    Response SurvivorSpottedGamblerCloseProducer
+		    criteria ConceptPlayerLookHere IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsGambler IsGamblerNear400 IsWorldTalkTrevor
+		    Response SurvivorSpottedGamblerCloseMechanic
 		}
 	},
 
 	{
-		Rule SurvivorSpottedGamblerClose2Sheva
+		Rule SurvivorSpottedGamblerClose2Trevor
 		{
-		    criteria ConceptPlayerLook IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSmartLookAuto SubjectIsGambler IsGamblerNear400 IsWorldTalkSheva
-		    Response SurvivorSpottedGamblerCloseProducer
+		    criteria ConceptPlayerLook IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsGambler IsGamblerNear400 IsWorldTalkTrevor
+		    Response SurvivorSpottedGamblerClose2Mechanic
 		}
 	},
 
 	{
-		Rule SurvivorSpottedGamblerClose2C1Sheva
+		Rule SurvivorSpottedGamblerClose2C1Trevor
 		{
-		    criteria ConceptPlayerLook IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSmartLookAuto SubjectIsGambler IsGamblerNear400 IsWorldTalkSheva ismap_c1m1_hotel NoKnowNames
-		    Response SurvivorSpottedGamblerClose2C1Producer
+		    criteria ConceptPlayerLook IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsGambler IsGamblerNear400 IsWorldTalkTrevor ismap_c1m1_hotel NoKnowNames
+		    Response SurvivorSpottedGamblerClose2C1Mechanic
 		}
 	},
 
 	{
-		Rule SurvivorSpottedGamblerCloseC1Sheva
+		Rule SurvivorSpottedGamblerCloseC1Trevor
 		{
-		    criteria ConceptPlayerLookHere IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSmartLookAuto SubjectIsGambler IsGamblerNear400 IsWorldTalkSheva ismap_c1m1_hotel NoKnowNames
-		    Response SurvivorSpottedGamblerClose2C1Producer
+		    criteria ConceptPlayerLookHere IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsGambler IsGamblerNear400 IsWorldTalkTrevor ismap_c1m1_hotel NoKnowNames
+		    Response SurvivorSpottedGamblerClose2C1Mechanic
 		}
 	},
 
 	{
-		Rule SurvivorSpottedGamblerFarSheva
+		Rule SurvivorSpottedGamblerFarTrevor
 		{
-		    criteria ConceptPlayerLook IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSmartLookAuto SubjectIsGambler IsGamblerFar400 IsWorldTalkSheva
-		    Response SurvivorSpottedGamblerFarProducer
+		    criteria ConceptPlayerLook IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsGambler IsGamblerFar400 IsWorldTalkTrevor
+		    Response SurvivorSpottedGamblerFarMechanic
 		}
 	},
 
 	{
-		Rule SurvivorSpottedGamblerFarC1Sheva
+		Rule SurvivorSpottedGamblerFarC1Trevor
 		{
-		    criteria ConceptPlayerLook IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSmartLookAuto SubjectIsGambler IsGamblerFar400 IsWorldTalkSheva ismap_c1m1_hotel NoKnowNames
-		    Response SurvivorSpottedGamblerFarC1Producer
+		    criteria ConceptPlayerLook IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsGambler IsGamblerFar400 IsWorldTalkTrevor ismap_c1m1_hotel NoKnowNames
+		    Response SurvivorSpottedGamblerFarC1Mechanic
 		}
 	},
 
 	{
-		Rule SurvivorSpottedGrenadeSheva
+		Rule SurvivorSpottedGrenadeTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSmartLookAuto IsPipeBomb IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response SurvivorSpottedGrenadeProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto IsPipeBomb IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response SurvivorSpottedGrenadeMechanic
 		    ApplyContext "SaidSpotGrenade:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedGrenadeAutoSheva
+		Rule SurvivorSpottedGrenadeAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotGrenade IsNotSaidSpot IsPipeBomb IsWorldTalkSheva YesHasGrenade IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedGrenadeProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotGrenade IsNotSaidSpot IsPipeBomb IsWorldTalkTrevor YesHasGrenade IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedGrenadeMechanic
 		    ApplyContext "SaidSpotGrenade:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedGrenadeLauncherC1M2Sheva
+		Rule SurvivorSpottedGrenadeLauncherTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSmartLookAuto Isgrenade_launcher C1M1orC1M2 IsWorldTalkSheva IsNotSurvival
-		    Response SurvivorSpottedGrenadeLauncherC1M2Producer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto Isgrenade_launcher IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response SurvivorSpottedGrenadeLauncherMechanic
 		    ApplyContext "SaidSpotgrenade_launcher:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedGrenadeLauncherAutoC1M2Sheva
+		Rule SurvivorSpottedGrenadeLauncherAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotgrenade_launcher C1M1orC1M2 IsNotSaidSpot Isgrenade_launcher IsWorldTalkSheva IsNotSurvival IsNotSpeakingWeight0
-		    Response SurvivorSpottedGrenadeLauncherC1M2Producer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotgrenade_launcher IsNotSaidSpot Isgrenade_launcher IsWorldTalkTrevor IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedGrenadeLauncherMechanic
 		    ApplyContext "SaidSpotgrenade_launcher:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedGrenadeLauncherSheva
+		Rule SurvivorSpottedHealthTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSmartLookAuto Isgrenade_launcher IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response SurvivorSpottedGrenadeLauncherProducer
-		    ApplyContext "SaidSpotgrenade_launcher:1:5,SaidSpot:1:20"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule SurvivorSpottedGrenadeLauncherAutoSheva
-		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotgrenade_launcher IsNotSaidSpot Isgrenade_launcher IsWorldTalkSheva IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedGrenadeLauncherProducer
-		    ApplyContext "SaidSpotgrenade_launcher:1:5,SaidSpot:1:20"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule SurvivorSpottedHealthSheva
-		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSmartLookAuto IsFirstAidKit IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response SurvivorSpottedHealthProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto IsFirstAidKit IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response SurvivorSpottedHealthMechanic
 		    ApplyContext "SaidSpotHealth:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedHealthAutoSheva
+		Rule SurvivorSpottedHealthAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotHealth IsNotSaidSpot IsFirstAidKit IsWorldTalkSheva IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedHealthProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotHealth IsNotSaidSpot IsFirstAidKit IsWorldTalkTrevor IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedHealthMechanic
 		    ApplyContext "SaidSpotHealth:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedMechanicCloseSheva
+		Rule SurvivorSpottedMolotovTrevor
 		{
-		    criteria ConceptPlayerLookHere IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSmartLookAuto SubjectIsMechanic IsMechanicNear400 IsWorldTalkSheva
-		    Response SurvivorSpottedMechanicCloseProducer
-		}
-	},
-
-	{
-		Rule SurvivorSpottedMechanicClose2Sheva
-		{
-		    criteria ConceptPlayerLook IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSmartLookAuto SubjectIsMechanic IsMechanicNear400 IsWorldTalkSheva
-		    Response SurvivorSpottedMechanicCloseProducer
-		}
-	},
-
-	{
-		Rule SurvivorSpottedMechanicClose2C1Sheva
-		{
-		    criteria ConceptPlayerLook IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSmartLookAuto SubjectIsMechanic IsMechanicNear400 IsWorldTalkSheva ismap_c1m1_hotel NoKnowNames
-		    Response SurvivorSpottedMechanicClose2C1Producer
-		}
-	},
-
-	{
-		Rule SurvivorSpottedMechanicCloseC1Sheva
-		{
-		    criteria ConceptPlayerLookHere IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSmartLookAuto SubjectIsMechanic IsMechanicNear400 IsWorldTalkSheva ismap_c1m1_hotel NoKnowNames
-		    Response SurvivorSpottedMechanicClose2C1Producer
-		}
-	},
-
-	{
-		Rule SurvivorSpottedMechanicFarSheva
-		{
-		    criteria ConceptPlayerLook IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSmartLookAuto SubjectIsMechanic IsMechanicFar400 IsWorldTalkSheva
-		    Response SurvivorSpottedMechanicFarProducer
-		}
-	},
-
-	{
-		Rule SurvivorSpottedMechanicFarC1Sheva
-		{
-		    criteria ConceptPlayerLook IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSmartLookAuto SubjectIsMechanic IsMechanicFar400 IsWorldTalkSheva ismap_c1m1_hotel NoKnowNames
-		    Response SurvivorSpottedMechanicFarC1Producer
-		}
-	},
-
-	{
-		Rule SurvivorSpottedMolotovSheva
-		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSmartLookAuto IsMolotov IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response SurvivorSpottedMolotovProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto IsMolotov IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response SurvivorSpottedMolotovMechanic
 		    ApplyContext "SaidSpotMolotov:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedMolotovAutoSheva
+		Rule SurvivorSpottedMolotovAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotMolotov IsNotSaidSpot IsMolotov IsWorldTalkSheva IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedMolotovProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotMolotov IsNotSaidSpot IsMolotov IsWorldTalkTrevor IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedMolotovMechanic
 		    ApplyContext "SaidSpotMolotov:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedPillsSheva
+		Rule SurvivorSpottedPillsTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSmartLookAuto IsPainPills IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response SurvivorSpottedPillsProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto IsPainPills IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response SurvivorSpottedPillsMechanic
 		    ApplyContext "SaidSpotPills:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedPillsAutoSheva
+		Rule SurvivorSpottedPillsAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotPills IsNotSaidSpot IsPainPills IsWorldTalkSheva IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedPillsProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotPills IsNotSaidSpot IsPainPills IsWorldTalkTrevor IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedPillsMechanic
 		    ApplyContext "SaidSpotPills:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedPillsAutoNoHasPillsSheva
+		Rule SurvivorSpottedProducerCloseTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsSmartLookAuto IsNotInSafeSpot NoHasPainPills IsNotAlone IsNotSaidSpotPills IsNotSaidSpot IsPainPills ChanceToFire10Percent IsWorldTalkSheva IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedPillsAutoNoHasPillsProducer
-		    ApplyContext "SaidSpotPills:1:5,SaidSpot:1:20"
-		    applycontexttoworld
+		    criteria ConceptPlayerLookHere IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsProducer IsProducerNear400 IsWorldTalkTrevor
+		    Response SurvivorSpottedProducerCloseMechanic
 		}
 	},
 
 	{
-		Rule SurvivorSpottedUpPack_ExplosiveSheva
+		Rule SurvivorSpottedProducerClose2Trevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSmartLookAuto IsUpgradePack_Explosive IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response SurvivorSpottedUpPack_ExplosiveProducer
+		    criteria ConceptPlayerLook IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsProducer IsProducerNear400 IsWorldTalkTrevor
+		    Response SurvivorSpottedProducerClose2Mechanic
+		}
+	},
+
+	{
+		Rule SurvivorSpottedProducerClose2C1Trevor
+		{
+		    criteria ConceptPlayerLook IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsProducer IsProducerNear400 IsWorldTalkTrevor ismap_c1m1_hotel NoKnowNames
+		    Response SurvivorSpottedProducerClose2C1Mechanic
+		}
+	},
+
+	{
+		Rule SurvivorSpottedProducerCloseC1Trevor
+		{
+		    criteria ConceptPlayerLookHere IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsProducer IsProducerNear400 IsWorldTalkTrevor ismap_c1m1_hotel NoKnowNames
+		    Response SurvivorSpottedProducerClose2C1Mechanic
+		}
+	},
+
+	{
+		Rule SurvivorSpottedProducerFarTrevor
+		{
+		    criteria ConceptPlayerLook IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsProducer IsProducerFar400 IsWorldTalkTrevor
+		    Response SurvivorSpottedProducerFarMechanic
+		}
+	},
+
+	{
+		Rule SurvivorSpottedProducerFarC1Trevor
+		{
+		    criteria ConceptPlayerLook IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsProducer IsProducerFar400 IsWorldTalkTrevor ismap_c1m1_hotel NoKnowNames
+		    Response SurvivorSpottedProducerFarC1Mechanic
+		}
+	},
+
+	{
+		Rule SurvivorSpottedUpPack_ExplosiveTrevor
+		{
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto IsUpgradePack_Explosive IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response SurvivorSpottedUpPack_ExplosiveMechanic
 		    ApplyContext "SaidSpotUpgradePack_Explosive:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedUpPack_ExplosiveAutoSheva
+		Rule SurvivorSpottedUpPack_ExplosiveAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsSmartLookAuto IsNotAlone IsNotSaidSpotUpgradePack_Explosive IsNotSaidSpot IsUpgradePack_Explosive IsWorldTalkSheva IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedUpPack_ExplosiveProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsSmartLookAuto IsNotAlone IsNotSaidSpotUpgradePack_Explosive IsNotSaidSpot IsUpgradePack_Explosive IsWorldTalkTrevor IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedUpPack_ExplosiveMechanic
 		    ApplyContext "SaidSpotUpgradePack_Explosive:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedUpPack_IncendiarySheva
+		Rule SurvivorSpottedUpPack_IncendiaryTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSmartLookAuto IsUpgradePack_Incendiary IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response SurvivorSpottedUpPack_IncendiaryProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto IsUpgradePack_Incendiary IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response SurvivorSpottedUpPack_IncendiaryMechanic
 		    ApplyContext "SaidSpotUpgradePack_Incendiary:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedUpPack_IncendiAutoSheva
+		Rule SurvivorSpottedUpPack_IncendiAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsSmartLookAuto IsNotAlone IsNotSaidSpotUpgradePack_Incendiary IsNotSaidSpot IsUpgradePack_Incendiary IsWorldTalkSheva IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedUpPack_IncendiaryProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsSmartLookAuto IsNotAlone IsNotSaidSpotUpgradePack_Incendiary IsNotSaidSpot IsUpgradePack_Incendiary IsWorldTalkTrevor IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedUpPack_IncendiaryMechanic
 		    ApplyContext "SaidSpotUpgradePack_Incendiary:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedVomitJarSheva
+		Rule SurvivorSpottedVomitJarTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSmartLookAuto IsVomitJar IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response SurvivorSpottedVomitJarProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto IsVomitJar IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response SurvivorSpottedVomitJarMechanic
 		    ApplyContext "SaidSpotVomitJar:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedVomitJarAutoSheva
+		Rule SurvivorSpottedVomitJarAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotVomitJar IsNotSaidSpot IsVomitJar IsWorldTalkSheva IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedVomitJarProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotVomitJar IsNotSaidSpot IsVomitJar IsWorldTalkTrevor IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedVomitJarMechanic
 		    ApplyContext "SaidSpotVomitJar:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedVomitJarAutoC1Sheva
+		Rule SurvivorSpottedVomitJarAutoC1Trevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotVomitJar IsNotSaidSpot IsVomitJar IsWorldTalkSheva ismap_c1m1_hotel IsNotSpeakingWeight0
-		    Response SurvivorSpottedVomitJarAutoC1Producer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotVomitJar IsNotSaidSpot IsVomitJar IsWorldTalkTrevor ismap_c1m1_hotel IsNotSpeakingWeight0
+		    Response SurvivorSpottedVomitJarAutoC1Mechanic
 		    ApplyContext "SaidSpotVomitJar:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedVomitJarC1Sheva
+		Rule SurvivorSpottedVomitJarC1Trevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSmartLookAuto IsVomitJar IsWorldTalkSheva ismap_c1m1_hotel
-		    Response SurvivorSpottedVomitJarAutoC1Producer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto IsVomitJar IsWorldTalkTrevor ismap_c1m1_hotel
+		    Response SurvivorSpottedVomitJarAutoC1Mechanic
 		    ApplyContext "SaidSpotVomitJar:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedWorldCloseSheva
+		Rule SurvivorSpottedWorldCloseTrevor
 		{
-		    criteria ConceptPlayerLookHere IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSmartLookAuto IsWorldTalkSheva
-		    Response SurvivorSpottedWorldCloseProducer
+		    criteria ConceptPlayerLookHere IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto IsWorldTalkTrevor
+		    Response SurvivorSpottedWorldCloseMechanic
 		}
 	},
 
 	{
-		Rule SurvivorSpottedArmoredC5M1Sheva
+		Rule SurvivorSpottedArmoredTrevor
 		{
-		    criteria ConceptPlayerWarnSpecial IsSpecialTypeArmored IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated ismap_c5m1_waterfront IsNotSaidArmoredWarn IsNotSpeakingWeight0
-		    Response SurvivorSpottedArmoredC5M1Producer
-		    ApplyContext "SaidArmoredWarn:1:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule SurvivorSpottedArmoredSheva
-		{
-		    criteria ConceptPlayerWarnSpecial IsSpecialTypeArmored IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated IsNotSaidArmoredWarn IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedArmoredProducer
+		    criteria ConceptPlayerWarnSpecial IsSpecialTypeArmored IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSaidArmoredWarn IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedArmoredMechanic
 		    ApplyContext "SaidArmoredWarn:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedBoomerSheva
+		Rule SurvivorSpottedArmoredC5M1Trevor
 		{
-		    criteria ConceptPlayerWarnSpecial IsSpecialTypeBoomer IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedBoomerProducer
+		    criteria ConceptPlayerWarnSpecial IsSpecialTypeArmored IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSaidArmoredWarn ismap_c5m1_waterfront IsNotSpeakingWeight0
+		    Response SurvivorSpottedArmoredC5M1Mechanic
+		    ApplyContext "SaidArmoredWarn:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule SurvivorSpottedBoomerTrevor
+		{
+		    criteria ConceptPlayerWarnSpecial IsSpecialTypeBoomer IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedBoomerMechanic
 		    ApplyContext "SaidBoomerWarn:1:20,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedBoomerAlsoSheva
+		Rule SurvivorSpottedBoomerAlsoTrevor
 		{
-		    criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeBoomer IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated _auto_NotSpottedVehicle
-		    Response SurvivorSpottedBoomerProducer
+		    criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeBoomer IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated _auto_NotSpottedVehicle
+		    Response SurvivorSpottedBoomerMechanic
+		    ApplyContext "SaidBoomerWarn:1:20,SaidSpecialWarn:1:30,TrevorAlsoWarn:1:30"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule SurvivorSpottedBoomer2Trevor
+		{
+		    criteria ConceptPlayerWarnBoomer IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated _auto_NotSpottedVehicle
+		    Response SurvivorSpottedBoomerMechanic
+		}
+	},
+
+	{
+		Rule SurvivorSpottedBoomerC1M1Trevor
+		{
+		    criteria ConceptPlayerWarnSpecial IsSpecialTypeBoomer IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated ismap_c1m1_hotel IsNotSpeakingWeight0
+		    Response SurvivorSpottedBoomerC1M1Mechanic
 		    ApplyContext "SaidBoomerWarn:1:20,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedBoomer2Sheva
+		Rule SurvivorSpottedBoomerAlsoC1M1Trevor
 		{
-		    criteria ConceptPlayerWarnBoomer IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated _auto_NotSpottedVehicle
-		    Response SurvivorSpottedBoomerProducer
-		}
-	},
-
-	{
-		Rule SurvivorSpottedBoomerC1M1Sheva
-		{
-		    criteria ConceptPlayerWarnSpecial IsSpecialTypeBoomer IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated ismap_c1m1_hotel IsNotSpeakingWeight0
-		    Response SurvivorSpottedBoomerC1M1Producer
+		    criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeBoomer IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated ismap_c1m1_hotel
+		    Response SurvivorSpottedBoomerC1M1Mechanic
 		    ApplyContext "SaidBoomerWarn:1:20,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedBoomerAlsoC1M1Sheva
+		Rule SurvivorSpottedBoomer2C1Trevor
 		{
-		    criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeBoomer IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated ismap_c1m1_hotel
-		    Response SurvivorSpottedBoomerC1M1Producer
-		    ApplyContext "SaidBoomerWarn:1:20,SaidSpecialWarn:1:30"
-		    applycontexttoworld
+		    criteria ConceptPlayerWarnBoomer IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated C1M1orC1M2 NoKnowBoomer IsNotSurvival
+		    Response SurvivorSpottedBoomerC1M1Mechanic
 		}
 	},
 
 	{
-		Rule SurvivorSpottedBoomer2C1Sheva
+		Rule SurvivorSpottedBoomerC1M2Trevor
 		{
-		    criteria ConceptPlayerWarnBoomer IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated C1M1orC1M2 NoKnowBoomer IsNotSurvival
-		    Response SurvivorSpottedBoomerC1M1Producer
-		}
-	},
-
-	{
-		Rule SurvivorSpottedBoomerC1M2Sheva
-		{
-		    criteria ConceptPlayerWarnSpecial IsSpecialTypeBoomer IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated ismap_c1m2_streets NoKnowBoomer IsNotSpeakingWeight0 IsNotSurvival
-		    Response SurvivorSpottedBoomerC1M2Producer
+		    criteria ConceptPlayerWarnSpecial IsSpecialTypeBoomer IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated ismap_c1m2_streets NoKnowBoomer IsNotSpeakingWeight0 IsNotSurvival
+		    Response SurvivorSpottedBoomerC1M2Mechanic
 		    then any Player.KnowBoomer foo:0 0.1
 		    ApplyContext "SaidBoomerWarn:1:20,SaidSpecialWarn:1:30,KnowBoomer:1:0,Talk:1:6"
 		    applycontexttoworld
@@ -3767,845 +4439,770 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule SurvivorSpottedBoomerAlsoC1M2Sheva
+		Rule SurvivorSpottedBoomerAlsoC1M2Trevor
 		{
-		    criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeBoomer IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated ismap_c1m2_streets NoKnowBoomer IsNotSurvival
-		    Response SurvivorSpottedBoomerC1M1Producer
+		    criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeBoomer IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated ismap_c1m2_streets NoKnowBoomer IsNotSurvival
+		    Response SurvivorSpottedBoomerC1M1Mechanic
 		    ApplyContext "SaidBoomerWarn:1:20,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedCedaSheva
+		Rule SurvivorSpottedCedaTrevor
 		{
-		    criteria ConceptPlayerWarnSpecial IsSpecialTypeCeda IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated IsNotSaidCedaWarn IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedCedaProducer
+		    criteria ConceptPlayerWarnSpecial IsSpecialTypeCeda IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSaidCedaWarn IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedCedaMechanic
 		    ApplyContext "SaidCedaWarn:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedCedaC1M1Sheva
+		Rule SurvivorSpottedCedaC1M1Trevor
 		{
-		    criteria ConceptPlayerWarnSpecial IsSpecialTypeCeda IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated IsNotSaidCedaWarn ismap_c1m1_hotel IsNotSpeakingWeight0
-		    Response SurvivorSpottedCedaC1M1Producer
+		    criteria ConceptPlayerWarnSpecial IsSpecialTypeCeda IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSaidCedaWarn ismap_c1m1_hotel IsNotSpeakingWeight0
+		    Response SurvivorSpottedCedaC1M1Mechanic
 		    ApplyContext "SaidCedaWarn:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedChargerSheva
+		Rule SurvivorSpottedChargerTrevor
 		{
-		    criteria ConceptPlayerWarnSpecial IsSpecialTypeCharger IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedChargerProducer
+		    criteria ConceptPlayerWarnSpecial IsSpecialTypeCharger IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedChargerMechanic
 		    ApplyContext "SaidChargerWarn:1:20,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedChargerAlsoSheva
+		Rule SurvivorSpottedChargerAlsoTrevor
 		{
-		    criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeCharger IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated _auto_NotSpottedVehicle
-		    Response SurvivorSpottedChargerProducer
+		    criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeCharger IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated _auto_NotSpottedVehicle
+		    Response SurvivorSpottedChargerMechanic
+		    ApplyContext "SaidChargerWarn:1:20,SaidSpecialWarn:1:30,TrevorAlsoWarn:1:30"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule SurvivorSpottedCharger2Trevor
+		{
+		    criteria ConceptPlayerWarnCharger IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated _auto_NotSpottedVehicle
+		    Response SurvivorSpottedChargerMechanic
+		}
+	},
+
+	{
+		Rule SurvivorSpottedChargerC1Trevor
+		{
+		    criteria ConceptPlayerWarnSpecial IsSpecialTypeCharger IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated C1M1orC1M2 NoKnowCharger IsNotSpeakingWeight0 IsNotSurvival
+		    Response SurvivorSpottedChargerC1Mechanic
 		    ApplyContext "SaidChargerWarn:1:20,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedCharger2Sheva
+		Rule SurvivorSpottedChargerAlsoC1Trevor
 		{
-		    criteria ConceptPlayerWarnCharger IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated _auto_NotSpottedVehicle
-		    Response SurvivorSpottedChargerProducer
-		}
-	},
-
-	{
-		Rule SurvivorSpottedChargerC1M1Sheva
-		{
-		    criteria ConceptPlayerWarnSpecial IsSpecialTypeCharger IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated ismap_c1m1_hotel IsNotSpeakingWeight0
-		    Response SurvivorSpottedChargerC1M1Producer
+		    criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeCharger IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated C1M1orC1M2 NoKnowCharger IsNotSurvival
+		    Response SurvivorSpottedChargerC1Mechanic
 		    ApplyContext "SaidChargerWarn:1:20,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedChargerAlsoC1M1Sheva
+		Rule SurvivorSpottedCharger2C1Trevor
 		{
-		    criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeCharger IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated ismap_c1m1_hotel
-		    Response SurvivorSpottedChargerC1M1Producer
-		    ApplyContext "SaidChargerWarn:1:20,SaidSpecialWarn:1:30"
-		    applycontexttoworld
+		    criteria ConceptPlayerWarnCharger IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated C1M1orC1M2 NoKnowCharger IsNotSurvival
+		    Response SurvivorSpottedChargerC1Mechanic
 		}
 	},
 
 	{
-		Rule SurvivorSpottedCharger2C1Sheva
+		Rule SurvivorSpottedClownTrevor
 		{
-		    criteria ConceptPlayerWarnCharger IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated C1M1orC1M2 NoKnowCharger IsNotSurvival
-		    Response SurvivorSpottedChargerC1M1Producer
-		}
-	},
-
-	{
-		Rule SurvivorSpottedChargerC1M2Sheva
-		{
-		    criteria ConceptPlayerWarnSpecial IsSpecialTypeCharger IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated ismap_c1m2_streets NoKnowCharger IsNotSpeakingWeight0 IsNotSurvival
-		    Response SurvivorSpottedChargerC1M2Producer
-		    then any Player.KnowCharger foo:0 0.1
-		    ApplyContext "SaidChargerWarn:1:20,SaidSpecialWarn:1:30,KnowCharger:1:0,Talk:1:6"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule SurvivorSpottedChargerAlsoC1M2Sheva
-		{
-		    criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeCharger IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated ismap_c1m2_streets NoKnowCharger IsNotSurvival
-		    Response SurvivorSpottedChargerC1M1Producer
-		    ApplyContext "SaidChargerWarn:1:20,SaidSpecialWarn:1:30"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule SurvivorSpottedClownSheva
-		{
-		    criteria ConceptPlayerWarnSpecial IsSpecialTypeClown IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated IsNotSaidClownWarn IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedClownProducer
+		    criteria ConceptPlayerWarnSpecial IsSpecialTypeClown IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSaidClownWarn IsNotSpeakingWeight0 _auto_ConcertNotLive _auto_NotSpottedVehicle
+		    Response SurvivorSpottedClownMechanic
 		    ApplyContext "SaidClownWarn:1:20,SawClowns:++1"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedClownC2M2Sheva
+		Rule SurvivorSpottedFallenTrevor
 		{
-		    criteria ConceptPlayerWarnSpecial IsSpecialTypeClown IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated IsNotSaidClownWarn ismap_c2m2 IsNotSpeakingWeight0
-		    Response SurvivorSpottedClownC2M2Producer
-		    ApplyContext "SaidClownWarn:1:0,SawClowns:++1"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule SurvivorSpottedFallenSheva
-		{
-		    criteria ConceptPlayerWarnSpecial IsSpecialTypeFallen IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated IsNotSaidFallenWarn IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedFallenProducer
+		    criteria ConceptPlayerWarnSpecial IsSpecialTypeFallen IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSaidFallenWarn IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedFallenMechanic
 		    ApplyContext "SaidFallenWarn:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedHunterSheva
+		Rule SurvivorSpottedFirstClownTrevor
 		{
-		    criteria ConceptPlayerWarnSpecial IsSpecialTypeHunter IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedHunterProducer
+		    criteria ConceptPlayerWarnSpecial IsSpecialTypeClown IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSaidClownWarn ismap_c2m2 IsNotSpeakingWeight0
+		    Response SurvivorSpottedFirstClownMechanic
+		    ApplyContext "SaidClownWarn:1:0,SawClowns:++1"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule SurvivorSpottedHunterTrevor
+		{
+		    criteria ConceptPlayerWarnSpecial IsSpecialTypeHunter IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedHunterMechanic
 		    ApplyContext "SaidHunterWarn:1:20,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedHunterAlsoSheva
+		Rule SurvivorSpottedHunterAlsoTrevor
 		{
-		    criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeHunter IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated _auto_NotSpottedVehicle
-		    Response SurvivorSpottedHunterProducer
+		    criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeHunter IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated _auto_NotSpottedVehicle
+		    Response SurvivorSpottedHunterMechanic
+		    ApplyContext "SaidHunterWarn:1:20,SaidSpecialWarn:1:30,TrevorAlsoWarn:1:30"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule SurvivorSpottedHunter2Trevor
+		{
+		    criteria ConceptPlayerWarnHunter IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated _auto_NotSpottedVehicle
+		    Response SurvivorSpottedHunterMechanic
+		}
+	},
+
+	{
+		Rule SurvivorSpottedHunterC1Trevor
+		{
+		    criteria ConceptPlayerWarnSpecial IsSpecialTypeHunter IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated C1M1orC1M2 NoKnowHunter IsNotSpeakingWeight0 IsNotSurvival
+		    Response SurvivorSpottedHunterC1Mechanic
 		    ApplyContext "SaidHunterWarn:1:20,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedHunter2Sheva
+		Rule SurvivorSpottedHunterAlsoC1Trevor
 		{
-		    criteria ConceptPlayerWarnHunter IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated _auto_NotSpottedVehicle
-		    Response SurvivorSpottedHunterProducer
-		}
-	},
-
-	{
-		Rule SurvivorSpottedHunterC1M1Sheva
-		{
-		    criteria ConceptPlayerWarnSpecial IsSpecialTypeHunter IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated ismap_c1m1_hotel IsNotSpeakingWeight0
-		    Response SurvivorSpottedHunterC1M1Producer
+		    criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeHunter IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated C1M1orC1M2 NoKnowHunter IsNotSurvival
+		    Response SurvivorSpottedHunterC1Mechanic
 		    ApplyContext "SaidHunterWarn:1:20,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedHunterAlsoC1M1Sheva
+		Rule SurvivorSpottedHunter2C1Trevor
 		{
-		    criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeHunter IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated ismap_c1m1_hotel
-		    Response SurvivorSpottedHunterC1M1Producer
-		    ApplyContext "SaidHunterWarn:1:20,SaidSpecialWarn:1:30"
-		    applycontexttoworld
+		    criteria ConceptPlayerWarnHunter IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated C1M1orC1M2 NoKnowHunter IsNotSurvival
+		    Response SurvivorSpottedHunterC1Mechanic
 		}
 	},
 
 	{
-		Rule SurvivorSpottedHunter2C1Sheva
+		Rule SurvivorSpottedInfectedTrevor
 		{
-		    criteria ConceptPlayerWarnHunter IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated C1M1orC1M2 NoKnowHunter IsNotSurvival
-		    Response SurvivorSpottedHunterC1M1Producer
+		    criteria ConceptPlayerIncoming IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated _auto_NotSpottedVehicle
+		    Response SurvivorSpottedInfectedMechanic
 		}
 	},
 
 	{
-		Rule SurvivorSpottedHunterC1M2Sheva
+		Rule SurvivorSpottedJimmyTrevor
 		{
-		    criteria ConceptPlayerWarnSpecial IsSpecialTypeHunter IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated ismap_c1m2_streets NoKnowHunter IsNotSpeakingWeight0 IsNotSurvival
-		    Response SurvivorSpottedHunterC1M2Producer
-		    then any Player.KnowHunter foo:0 0.1
-		    ApplyContext "SaidHunterWarn:1:20,SaidSpecialWarn:1:30,KnowHunter:1:0,Talk:1:6"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule SurvivorSpottedHunterAlsoC1M2Sheva
-		{
-		    criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeHunter IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated ismap_c1m2_streets NoKnowHunter IsNotSurvival
-		    Response SurvivorSpottedHunterC1M1Producer
-		    ApplyContext "SaidHunterWarn:1:20,SaidSpecialWarn:1:30"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule SurvivorSpottedInfectedSheva
-		{
-		    criteria ConceptPlayerIncoming IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated _auto_NotSpottedVehicle
-		    Response SurvivorSpottedInfectedProducer
-		}
-	},
-
-	{
-		Rule SurvivorSpottedJimmySheva
-		{
-		    criteria ConceptPlayerWarnSpecial IsSpecialTypeJimmy IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated IsNotSaidJimmyWarn IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedJimmyProducer
+		    criteria ConceptPlayerWarnSpecial IsSpecialTypeJimmy IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSaidJimmyWarn IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedJimmyMechanic
 		    ApplyContext "SaidJimmyWarn:1:3"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedJockeySheva
+		Rule SurvivorSpottedJockeyTrevor
 		{
-		    criteria ConceptPlayerWarnSpecial IsSpecialTypeJockey IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedJockeyProducer
+		    criteria ConceptPlayerWarnSpecial IsSpecialTypeJockey IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedJockeyMechanic
 		    ApplyContext "SaidJockeyWarn:1:20,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedJockeyAlsoSheva
+		Rule SurvivorSpottedJockeyAlsoTrevor
 		{
-		    criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeJockey IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated _auto_NotSpottedVehicle
-		    Response SurvivorSpottedJockeyProducer
+		    criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeJockey IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated _auto_NotSpottedVehicle
+		    Response SurvivorSpottedJockeyMechanic
+		    ApplyContext "SaidJockeyWarn:1:20,SaidSpecialWarn:1:30,TrevorAlsoWarn:1:30"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule SurvivorSpottedJockey2Trevor
+		{
+		    criteria ConceptPlayerWarnJockey IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated _auto_NotSpottedVehicle
+		    Response SurvivorSpottedJockeyMechanic
+		}
+	},
+
+	{
+		Rule SurvivorSpottedJockeyC1Trevor
+		{
+		    criteria ConceptPlayerWarnSpecial IsSpecialTypeJockey IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated C1M1orC1M2 NoKnowJockey IsNotSpeakingWeight0 IsNotSurvival
+		    Response SurvivorSpottedJockeyC1Mechanic
 		    ApplyContext "SaidJockeyWarn:1:20,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedJockey2Sheva
+		Rule SurvivorSpottedJockeyAlsoC1Trevor
 		{
-		    criteria ConceptPlayerWarnJockey IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated _auto_NotSpottedVehicle
-		    Response SurvivorSpottedJockeyProducer
-		}
-	},
-
-	{
-		Rule SurvivorSpottedJockeyC1M1Sheva
-		{
-		    criteria ConceptPlayerWarnSpecial IsSpecialTypeJockey IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated ismap_c1m1_hotel IsNotSpeakingWeight0
-		    Response SurvivorSpottedJockeyC1M1Producer
+		    criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeJockey IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated C1M1orC1M2 NoKnowJockey IsNotSurvival
+		    Response SurvivorSpottedJockeyC1Mechanic
 		    ApplyContext "SaidJockeyWarn:1:20,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedJockeyAlsoC1M1Sheva
+		Rule SurvivorSpottedJockey2C1Trevor
 		{
-		    criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeJockey IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated ismap_c1m1_hotel
-		    Response SurvivorSpottedJockeyC1M1Producer
-		    ApplyContext "SaidJockeyWarn:1:20,SaidSpecialWarn:1:30"
-		    applycontexttoworld
+		    criteria ConceptPlayerWarnJockey IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated C1M1orC1M2 NoKnowJockey IsNotSurvival
+		    Response SurvivorSpottedJockeyC1Mechanic
 		}
 	},
 
 	{
-		Rule SurvivorSpottedJockey2C1Sheva
+		Rule SurvivorSpottedMudmenC3M2Trevor
 		{
-		    criteria ConceptPlayerWarnJockey IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated C1M1orC1M2 NoKnowJockey IsNotSurvival
-		    Response SurvivorSpottedJockeyC1M1Producer
-		}
-	},
-
-	{
-		Rule SurvivorSpottedJockeyC1M2Sheva
-		{
-		    criteria ConceptPlayerWarnSpecial IsSpecialTypeJockey IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated ismap_c1m2_streets NoKnowJockey IsNotSpeakingWeight0 IsNotSurvival
-		    Response SurvivorSpottedJockeyC1M2Producer
-		    then any Player.KnowJockey foo:0 0.1
-		    ApplyContext "SaidJockeyWarn:1:20,SaidSpecialWarn:1:30,KnowJockey:1:0,Talk:1:6"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule SurvivorSpottedJockeyAlsoC1M2Sheva
-		{
-		    criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeJockey IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated ismap_c1m2_streets NoKnowJockey IsNotSurvival
-		    Response SurvivorSpottedJockeyC1M1Producer
-		    ApplyContext "SaidJockeyWarn:1:20,SaidSpecialWarn:1:30"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule SurvivorSpottedMudmenSheva
-		{
-		    criteria ConceptPlayerWarnSpecial IsSpecialTypeMudmen IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated IsNotSaidMudmenWarn IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedMudmenProducer
-		    ApplyContext "SaidMudmenWarn:1:20,SawMudMen:++1"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule SurvivorSpottedMudmenFirstSheva
-		{
-		    criteria ConceptPlayerWarnSpecial IsSpecialTypeMudmen IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated IsNotSaidMudmenWarn ismapc3m2_swamp IsNotSpeakingWeight0
-		    Response SurvivorSpottedMudmenFirstProducer
+		    criteria ConceptPlayerWarnSpecial IsSpecialTypeMudmen IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSaidMudmenWarn ismapc3m2_swamp IsNotSpeakingWeight0
+		    Response SurvivorSpottedMudmenC3M2Mechanic
 		    ApplyContext "SaidMudmenWarn:1:0,SawMudMen:++1"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedSmokerSheva
+		Rule SurvivorSpottedMudmenTrevor
 		{
-		    criteria ConceptPlayerWarnSpecial IsSpecialTypeSmoker IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedSmokerProducer
+		    criteria ConceptPlayerWarnSpecial IsSpecialTypeMudmen IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSaidMudmenWarn IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedMudmenMechanic
+		    ApplyContext "SaidMudmenWarn:1:20,SawMudMen:++1"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule SurvivorSpottedMudmen2Trevor
+		{
+		    criteria ConceptPlayerWarnSpecial IsSpecialTypeMudmen IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSaidMudmenWarn SawManyMudMen IntensityUnder50 IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedMudmen2Mechanic
+		    then gambler Player.SeeMudmen2a foo:0 -2.938
+		    ApplyContext "SaidMudmenWarn:1:20,SawMudMen:++1"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule SurvivorSpottedSmokerTrevor
+		{
+		    criteria ConceptPlayerWarnSpecial IsSpecialTypeSmoker IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedSmokerMechanic
 		    ApplyContext "SaidSmokerWarn:1:20,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedSmokerAlsoSheva
+		Rule SurvivorSpottedSmokerAlsoTrevor
 		{
-		    criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeSmoker IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated _auto_NotSpottedVehicle
-		    Response SurvivorSpottedSmokerProducer
+		    criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeSmoker IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated _auto_NotSpottedVehicle
+		    Response SurvivorSpottedSmokerMechanic
+		    ApplyContext "SaidSmokerWarn:1:20,SaidSpecialWarn:1:30,TrevorAlsoWarn:1:30"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule SurvivorSpottedSmoker2Trevor
+		{
+		    criteria ConceptPlayerWarnSmoker IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated _auto_NotSpottedVehicle
+		    Response SurvivorSpottedSmokerMechanic
+		}
+	},
+
+	{
+		Rule SurvivorSpottedSmokerC1Trevor
+		{
+		    criteria ConceptPlayerWarnSpecial IsSpecialTypeSmoker IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated C1M1orC1M2 NoKnowSmoker IsNotSpeakingWeight0 IsNotSurvival
+		    Response SurvivorSpottedSmokerC1Mechanic
 		    ApplyContext "SaidSmokerWarn:1:20,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedSmoker2Sheva
+		Rule SurvivorSpottedSmokerAlsoC1Trevor
 		{
-		    criteria ConceptPlayerWarnSmoker IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated _auto_NotSpottedVehicle
-		    Response SurvivorSpottedSmokerProducer
-		}
-	},
-
-	{
-		Rule SurvivorSpottedSmokerC1M1Sheva
-		{
-		    criteria ConceptPlayerWarnSpecial IsSpecialTypeSmoker IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated ismap_c1m1_hotel IsNotSpeakingWeight0
-		    Response SurvivorSpottedSmokerC1M1Producer
+		    criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeSmoker IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated C1M1orC1M2 NoKnowSmoker IsNotSurvival
+		    Response SurvivorSpottedSmokerC1Mechanic
 		    ApplyContext "SaidSmokerWarn:1:20,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedSmokerAlsoC1M1Sheva
+		Rule SurvivorSpottedSmoker2C1Trevor
 		{
-		    criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeSmoker IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated ismap_c1m1_hotel
-		    Response SurvivorSpottedSmokerC1M1Producer
-		    ApplyContext "SaidSmokerWarn:1:20,SaidSpecialWarn:1:30"
-		    applycontexttoworld
+		    criteria ConceptPlayerWarnSmoker IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated C1M1orC1M2 NoKnowSmoker IsNotSurvival
+		    Response SurvivorSpottedSmokerC1Mechanic
 		}
 	},
 
 	{
-		Rule SurvivorSpottedSmoker2C1Sheva
+		Rule SurvivorSpottedSpitterTrevor
 		{
-		    criteria ConceptPlayerWarnSmoker IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated C1M1orC1M2 NoKnowSmoker IsNotSurvival
-		    Response SurvivorSpottedSmokerC1M1Producer
-		}
-	},
-
-	{
-		Rule SurvivorSpottedSmokerC1M2Sheva
-		{
-		    criteria ConceptPlayerWarnSpecial IsSpecialTypeSmoker IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated ismap_c1m2_streets NoKnowSmoker IsNotSpeakingWeight0 IsNotSurvival
-		    Response SurvivorSpottedSmokerC1M2Producer
-		    then any Player.KnowSmoker foo:0 0.1
-		    ApplyContext "SaidSmokerWarn:1:20,SaidSpecialWarn:1:30,KnowSmoker:1:0,Talk:1:6"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule SurvivorSpottedSmokerAlsoC1M2Sheva
-		{
-		    criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeSmoker IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated ismap_c1m2_streets NoKnowSmoker IsNotSurvival
-		    Response SurvivorSpottedSmokerC1M1Producer
-		    ApplyContext "SaidSmokerWarn:1:20,SaidSpecialWarn:1:30"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule SurvivorSpottedSpitterSheva
-		{
-		    criteria ConceptPlayerWarnSpecial IsSpecialTypeSpitter IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedSpitterProducer
+		    criteria ConceptPlayerWarnSpecial IsSpecialTypeSpitter IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedSpitterMechanic
 		    ApplyContext "SaidSpitterWarn:1:20,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedSpitterAlsoSheva
+		Rule SurvivorSpottedSpitterAlsoTrevor
 		{
-		    criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeSpitter IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated _auto_NotSpottedVehicle
-		    Response SurvivorSpottedSpitterProducer
+		    criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeSpitter IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated _auto_NotSpottedVehicle
+		    Response SurvivorSpottedSpitterMechanic
+		    ApplyContext "SaidSpitterWarn:1:20,SaidSpecialWarn:1:30,TrevorAlsoWarn:1:30"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule SurvivorSpottedSpitter2Trevor
+		{
+		    criteria ConceptPlayerWarnSpitter IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated _auto_NotSpottedVehicle
+		    Response SurvivorSpottedSpitterMechanic
+		}
+	},
+
+	{
+		Rule SurvivorSpottedSpitterC1Trevor
+		{
+		    criteria ConceptPlayerWarnSpecial IsSpecialTypeSpitter IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated C1M1orC1M2 NoKnowSpitter IsNotSpeakingWeight0 IsNotSurvival
+		    Response SurvivorSpottedSpitterC1Mechanic
 		    ApplyContext "SaidSpitterWarn:1:20,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedSpitter2Sheva
+		Rule SurvivorSpottedSpitterAlsoC1Trevor
 		{
-		    criteria ConceptPlayerWarnSpitter IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated _auto_NotSpottedVehicle
-		    Response SurvivorSpottedSpitterProducer
-		}
-	},
-
-	{
-		Rule SurvivorSpottedSpitterC1M1Sheva
-		{
-		    criteria ConceptPlayerWarnSpecial IsSpecialTypeSpitter IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated ismap_c1m1_hotel IsNotSpeakingWeight0
-		    Response SurvivorSpottedSpitterC1M1Producer
+		    criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeSpitter IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated C1M1orC1M2 NoKnowSpitter IsNotSurvival
+		    Response SurvivorSpottedSpitterC1Mechanic
 		    ApplyContext "SaidSpitterWarn:1:20,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedSpitterAlsoC1M1Sheva
+		Rule SurvivorSpottedSpitter2C1Trevor
 		{
-		    criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeSpitter IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated ismap_c1m1_hotel
-		    Response SurvivorSpottedSpitterC1M1Producer
-		    ApplyContext "SaidSpitterWarn:1:20,SaidSpecialWarn:1:30"
-		    applycontexttoworld
+		    criteria ConceptPlayerWarnSpitter IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated C1M1orC1M2 NoKnowSpitter IsNotSurvival
+		    Response SurvivorSpottedSpitterC1Mechanic
 		}
 	},
 
 	{
-		Rule SurvivorSpottedSpitter2C1M1Sheva
+		Rule SurvivorSpottedTankTrevor
 		{
-		    criteria ConceptPlayerWarnSpitter IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated C1M1orC1M2 NoKnowSpitter IsNotSurvival
-		    Response SurvivorSpottedSpitterC1M1Producer
-		}
-	},
-
-	{
-		Rule SurvivorSpottedSpitterC1M2Sheva
-		{
-		    criteria ConceptPlayerWarnSpecial IsSpecialTypeSpitter IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated ismap_c1m2_streets NoKnowSpitter IsNotSpeakingWeight0 IsNotSurvival
-		    Response SurvivorSpottedSpitterC1M2Producer
-		    then any Player.KnowSpitter foo:0 0.1
-		    ApplyContext "SaidSpitterWarn:1:20,SaidSpecialWarn:1:30,KnowSpitter:1:0,Talk:1:6"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule SurvivorSpottedSpitterAlsoC1M2Sheva
-		{
-		    criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeSpitter IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated ismap_c1m2_streets NoKnowSpitter IsNotSurvival
-		    Response SurvivorSpottedSpitterC1M1Producer
-		    ApplyContext "SaidSpitterWarn:1:20,SaidSpecialWarn:1:30"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule SurvivorSpottedTankSheva
-		{
-		    criteria ConceptPlayerWarnSpecial IsSpecialTypeTank IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedTankProducer
+		    criteria ConceptPlayerWarnSpecial IsSpecialTypeTank IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedTankMechanic
 		    ApplyContext "SaidTankWarn:1:20,SaidTankWarn2:1:60"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedTank2Sheva
+		Rule SurvivorSpottedTank2Trevor
 		{
-		    criteria ConceptPlayerWarnTank IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated _auto_NotSpottedVehicle
-		    Response SurvivorSpottedTankProducer
+		    criteria ConceptPlayerWarnTank IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated _auto_NotSpottedVehicle
+		    Response SurvivorSpottedTankMechanic
 		}
 	},
 
 	{
-		Rule SurvivorSpottedTankC1Sheva
+		Rule SurvivorSpottedTankC1Trevor
 		{
-		    criteria ConceptPlayerWarnSpecial IsSpecialTypeTank IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated C1M1orC1M2 IsNotSpeakingWeight0 IsNotSurvival
-		    Response SurvivorSpottedTankC1Producer
+		    criteria ConceptPlayerWarnSpecial IsSpecialTypeTank IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated C1M1orC1M2 IsNotSpeakingWeight0 IsNotSurvival
+		    Response SurvivorSpottedTankC1Mechanic
 		    ApplyContext "SaidTankWarn:1:20,SaidTankWarn2:1:60"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedTank2C1Sheva
+		Rule SurvivorAlsoSpottedTankC1Trevor
 		{
-		    criteria ConceptPlayerWarnTank IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated C1M1orC1M2 IsNotSurvival
-		    Response SurvivorSpottedTankC1Producer
+		    criteria ConceptPlayerWarnTank IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated C1M1orC1M2 IsNotSurvival
+		    Response SurvivorSpottedTankC1Mechanic
 		}
 	},
 
 	{
-		Rule L4D1SpottedTankSheva
+		Rule L4D1SpottedTankTrevor
 		{
-		    criteria ConceptPlayerWarnSpecial IsSpecialTypeTank IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated Isc6m3_port IsNotSpeakingWeight0 IsNotVersus IsNotSurvival _auto_NotSpottedVehicle
-		    Response L4D1SpottedTankProducer
+		    criteria ConceptPlayerWarnSpecial IsSpecialTypeTank IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated Isc6m3_port IsNotSpeakingWeight0 IsNotVersus IsNotSurvival _auto_NotSpottedVehicle
+		    Response L4D1SpottedTankMechanic
 		    ApplyContext "SaidTankWarn:1:20,SaidTankWarn2:1:60"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule L4D1SpottedTank2Sheva
+		Rule L4D1SpottedTank2Trevor
 		{
-		    criteria ConceptPlayerWarnTank IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva Isc6m3_port IsNotIncapacitated IsNotVersus IsNotSurvival _auto_NotSpottedVehicle
-		    Response L4D1SpottedTankProducer
+		    criteria ConceptPlayerWarnTank IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated Isc6m3_port IsNotVersus IsNotSurvival _auto_NotSpottedVehicle
+		    Response L4D1SpottedTankMechanic
 		}
 	},
 
 	{
-		Rule SurvivorSpottedWitchSheva
+		Rule SurvivorSpottedWitchTrevor
 		{
-		    criteria ConceptPlayerWarnSpecial IsSpecialTypeWitch IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated IsNotSaidWitchStartAttack IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedWitchProducer
+		    criteria ConceptPlayerWarnSpecial IsSpecialTypeWitch IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSaidWitchStartAttack IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedWitchMechanic
 		    ApplyContext "SaidWitchWarn:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedWitch2Sheva
+		Rule SurvivorSpottedWitch2Trevor
 		{
-		    criteria ConceptPlayerWarnWitch IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated IsNotSaidWitchStartAttack _auto_NotSpottedVehicle
-		    Response SurvivorSpottedWitchProducer
+		    criteria ConceptPlayerWarnWitch IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSaidWitchStartAttack _auto_NotSpottedVehicle
+		    Response SurvivorSpottedWitchMechanic
 		}
 	},
 
 	{
-		Rule SurvivorSpottedWitchC1Sheva
+		Rule SurvivorSpottedWitchC1Trevor
 		{
-		    criteria ConceptPlayerWarnSpecial IsSpecialTypeWitch IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated IsNotSaidWitchStartAttack C1M1orC1M2 IsNotSpeakingWeight0 IsNotSurvival
-		    Response SurvivorSpottedWitchC1Producer
+		    criteria ConceptPlayerWarnSpecial IsSpecialTypeWitch IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSaidWitchStartAttack C1M1orC1M2 IsNotSpeakingWeight0
+		    Response SurvivorSpottedWitchC1Mechanic
 		    ApplyContext "SaidWitchWarn:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedWitch2C1Sheva
+		Rule SurvivorSpottedWitch2C1Trevor
 		{
-		    criteria ConceptPlayerWarnWitch IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated IsNotSaidWitchStartAttack C1M1orC1M2 IsNotSurvival
-		    Response SurvivorSpottedWitch2C1Producer
+		    criteria ConceptPlayerWarnWitch IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSaidWitchStartAttack C1M1orC1M2 IsNotSurvival
+		    Response SurvivorSpottedWitch2C1Mechanic
 		}
 	},
 
 	{
-		Rule PlayerAlertGiveItemSheva
+		Rule PlayerAlertGiveItemTrevor
 		{
-		    criteria ConceptPlayerAlertGiveItem IsNotCoughing IsSheva IsTalk IsTalkSheva NotInIntenseCombat IsWorldTalkSheva
-		    Response PlayerAlertGiveItemProducer
+		    criteria ConceptPlayerAlertGiveItem IsNotCoughing IsTrevor IsTalk IsTalkTrevor NotInIntenseCombat IsWorldTalkTrevor
+		    Response PlayerAlertGiveItemMechanic
 		}
 	},
 
 	{
-		Rule PlayerAlertGiveItemC1Sheva
+		Rule PlayerAlertGiveItemCombatTrevor
 		{
-		    criteria ConceptPlayerAlertGiveItem IsNotCoughing IsSheva IsTalk IsTalkSheva NotInIntenseCombat IsWorldTalkSheva NoKnowNames ismap_c1m1_hotel
-		    Response PlayerAlertGiveItemC1Producer
+		    criteria ConceptPlayerAlertGiveItem IsNotCoughing IsTrevor IsTalk IsTalkTrevor InIntenseCombat IsWorldTalkTrevor
+		    Response PlayerAlertGiveItemCombatMechanic
 		}
 	},
 
 	{
-		Rule PlayerAlertGiveItemCombatSheva
+		Rule PlayerFaultFriendlyFireTrevor
 		{
-		    criteria ConceptPlayerAlertGiveItem IsNotCoughing IsSheva IsTalk IsTalkSheva InIntenseCombat IsWorldTalkSheva
-		    Response PlayerAlertGiveItemCombatProducer
-		}
-	},
-
-	{
-		Rule PlayerAlertGiveItemTankSheva
-		{
-		    criteria ConceptPlayerAlertGiveItem IsNotCoughing IsSheva IsTalk IsTalkSheva IsZombiePresentTank IsSaidTankWarn2 IsWorldTalkSheva
-		    Response PlayerAlertGiveItemCombatProducer
-		}
-	},
-
-	{
-		Rule PlayerFaultFriendlyFireSheva
-		{
-		    criteria IsFaultConcept IsFaultFriendlyFire IsSheva
+		    criteria IsFaultConcept IsFaultFriendlyFire IsTrevor
 		    Response NoResponse
-		    ApplyContext "SaidFaultFriendlyFire:1:0.1,SaidFaultFriendlyFireSheva:1:0.1,ShotTeammateSheva:1:6"
+		    ApplyContext "SaidFaultFriendlyFire:1:0.1,SaidFaultFriendlyFireTrevor:1:0.1,ShotTeammateTrevor:1:6"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerFriendlyFireSheva
+		Rule PlayerFriendlyFireTrevor
 		{
-		    criteria ConceptPlayerFriendlyFire IsNotCoughing IsSheva IsNotFriendlyFire IsNotIncapacitated IsNotOnThirdStrike IsDamageTypeBullet IsTalk IsTalkSheva IsWorldTalkSheva IsNotZombiePresentTank
-		    Response PlayerFriendlyFireProducer
+		    criteria ConceptPlayerFriendlyFire IsNotCoughing IsTrevor IsNotFriendlyFire IsNotIncapacitated IsNotOnThirdStrike IsDamageTypeBullet IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotZombiePresentTank
+		    Response PlayerFriendlyFireMechanic
 		    ApplyContext "FriendlyFire:1:10"
 		}
 	},
 
 	{
-		Rule PlayerFriendlyFire2Sheva
+		Rule PlayerFriendlyFire2Trevor
 		{
-		    criteria ConceptPlayerFriendlyFire IsNotCoughing IsSheva IsOnThirdStrike IsFriendlyFire IsNotIncapacitated IsNotDamageTypeExplosive IsTalk IsTalkSheva IsWorldTalkSheva IsNotZombiePresentTank
-		    Response PlayerFriendlyFire2Producer
+		    criteria ConceptPlayerFriendlyFire IsNotCoughing IsTrevor IsNotFriendlyFire IsNotIncapacitated IsNotDamageTypeExplosive IsOnThirdStrike IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotZombiePresentTank
+		    Response PlayerFriendlyFire2Mechanic
 		    ApplyContext "FriendlyFire:1:10"
 		}
 	},
 
 	{
-		Rule PlayerFriendlyFireC1Sheva
+		Rule PlayerFriendlyFireC1Trevor
 		{
-		    criteria ConceptPlayerFriendlyFire IsNotCoughing IsSheva IsNotFriendlyFire IsNotIncapacitated IsDamageTypeBullet IsNotOnThirdStrike IsTalk IsTalkSheva IsWorldTalkSheva NoKnowNames ismap_c1m1_hotel NoKnowNames
-		    Response PlayerFriendlyFireC1Producer
+		    criteria ConceptPlayerFriendlyFire IsNotCoughing IsTrevor IsNotFriendlyFire IsNotIncapacitated IsNotOnThirdStrike IsDamageTypeBullet IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotZombiePresentTank ismap_c1m1_hotel NoKnowNames
+		    Response PlayerFriendlyFireC1Mechanic
 		    ApplyContext "FriendlyFire:1:10"
 		}
 	},
 
 	{
-		Rule PlayerFriendlyFireFromGamblerC1Sheva
+		Rule PlayerFriendlyFireFromCoachTrevor
 		{
-		    criteria ConceptPlayerFriendlyFire IsNotCoughing IsSheva IsNotFriendlyFire IsNotIncapacitated IsDamageTypeBullet IsNotOnThirdStrike IsTalk IsTalkSheva SubjectIsGambler ChanceToFire50Percent IsWorldTalkSheva ismap_c1m1_hotel NoKnowNames
-		    Response PlayerFriendlyFireFromGamblerC1Producer
+		    criteria ConceptPlayerFriendlyFire IsNotCoughing IsTrevor IsNotFriendlyFire IsNotIncapacitated IsNotOnThirdStrike IsDamageTypeBullet IsTalk IsTalkTrevor SubjectIsCoach ChanceToFire30Percent IsWorldTalkTrevor IsNotZombiePresentTank isNotmap_c1m1_hotel
+		    Response PlayerFriendlyFireFromCoachMechanic
 		    ApplyContext "FriendlyFire:1:10"
 		}
 	},
 
 	{
-		Rule PlayerFriendlyFireNoBulletSheva
+		Rule PlayerFriendlyFireFromCoachC1Trevor
 		{
-		    criteria ConceptPlayerFriendlyFire IsNotCoughing IsSheva IsNotFriendlyFire IsNotIncapacitated IsNotDamageTypeBullet IsNotDamageTypeExplosive IsNotOnThirdStrike IsTalk IsTalkSheva IsWorldTalkSheva IsNotZombiePresentTank
-		    Response PlayerFriendlyFireNoBulletProducer
+		    criteria ConceptPlayerFriendlyFire IsNotCoughing IsTrevor IsNotFriendlyFire IsNotIncapacitated IsNotOnThirdStrike IsDamageTypeBullet IsTalk IsTalkTrevor SubjectIsCoach ChanceToFire50Percent IsWorldTalkTrevor IsNotZombiePresentTank ismap_c1m1_hotel NoKnowNames
+		    Response PlayerFriendlyFireFromCoachC1Mechanic
 		    ApplyContext "FriendlyFire:1:10"
 		}
 	},
 
 	{
-		Rule PlayerFriendlyFireNoBulletC1Sheva
+		Rule PlayerFriendlyFireFromGamblerTrevor
 		{
-		    criteria ConceptPlayerFriendlyFire IsNotCoughing IsSheva IsNotFriendlyFire IsNotIncapacitated IsNotDamageTypeBullet IsNotDamageTypeExplosive IsNotOnThirdStrike IsTalk IsTalkSheva IsWorldTalkSheva ismap_c1m1_hotel NoKnowNames
-		    Response PlayerFriendlyFireNoBulletC1Producer
+		    criteria ConceptPlayerFriendlyFire IsNotCoughing IsTrevor IsNotFriendlyFire IsNotIncapacitated IsNotOnThirdStrike IsDamageTypeBullet IsTalk IsTalkTrevor SubjectIsGambler ChanceToFire50Percent IsWorldTalkTrevor IsNotZombiePresentTank isNotmap_c1m1_hotel
+		    Response PlayerFriendlyFireFromGamblerMechanic
 		    ApplyContext "FriendlyFire:1:10"
 		}
 	},
 
 	{
-		Rule PlayerFriendlyFireTankSheva
+		Rule PlayerFriendlyFireFromProducerTrevor
 		{
-		    criteria ConceptPlayerFriendlyFire IsNotCoughing IsSheva IsNotFriendlyFire IsNotIncapacitated IsDamageTypeBullet IsTalk IsTalkSheva IsZombiePresentTank IsSaidTankWarn2 IsNotIncapacitated IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets
-		    Response PlayerFriendlyFireTankProducer
+		    criteria ConceptPlayerFriendlyFire IsNotCoughing IsTrevor IsNotFriendlyFire IsNotIncapacitated IsNotOnThirdStrike IsDamageTypeBullet IsTalk IsTalkTrevor SubjectIsProducer ChanceToFire30Percent IsWorldTalkTrevor IsNotZombiePresentTank isNotmap_c1m1_hotel
+		    Response PlayerFriendlyFireFromProducerMechanic
 		    ApplyContext "FriendlyFire:1:10"
 		}
 	},
 
 	{
-		Rule PlayerFriendlyFireTankCoachSheva
+		Rule PlayerFriendlyFireFromProducerC1Trevor
 		{
-		    criteria ConceptPlayerFriendlyFire IsNotCoughing IsSheva IsNotFriendlyFire IsNotIncapacitated IsDamageTypeBullet IsTalk IsTalkSheva IsZombiePresentTank IsSaidTankWarn2 ChanceToFire30Percent IsNotIncapacitated SubjectIsCoach IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets
-		    Response PlayerFriendlyFireTankCoachProducer
+		    criteria ConceptPlayerFriendlyFire IsNotCoughing IsTrevor IsNotFriendlyFire IsNotIncapacitated IsNotOnThirdStrike IsDamageTypeBullet IsTalk IsTalkTrevor SubjectIsProducer ChanceToFire50Percent IsWorldTalkTrevor IsNotZombiePresentTank ismap_c1m1_hotel NoKnowNames
+		    Response PlayerFriendlyFireFromProducerC1Mechanic
 		    ApplyContext "FriendlyFire:1:10"
 		}
 	},
 
 	{
-		Rule PlayerFriendlyFireTankGamblerSheva
+		Rule PlayerFriendlyFireNoBulletTrevor
 		{
-		    criteria ConceptPlayerFriendlyFire IsNotCoughing IsSheva IsNotFriendlyFire IsNotIncapacitated IsDamageTypeBullet IsTalk IsTalkSheva IsZombiePresentTank IsSaidTankWarn2 ChanceToFire30Percent IsNotIncapacitated SubjectIsGambler IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets
-		    Response PlayerFriendlyFireTankGamblerProducer
+		    criteria ConceptPlayerFriendlyFire IsNotCoughing IsTrevor IsNotFriendlyFire IsNotIncapacitated IsNotOnThirdStrike IsNotDamageTypeBullet IsNotDamageTypeExplosive IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotZombiePresentTank
+		    Response PlayerFriendlyFireNoBulletMechanic
 		    ApplyContext "FriendlyFire:1:10"
 		}
 	},
 
 	{
-		Rule PlayerFriendlyFireTankMechanicSheva
+		Rule PlayerFriendlyFireNoBulletC1Trevor
 		{
-		    criteria ConceptPlayerFriendlyFire IsNotCoughing IsSheva IsNotFriendlyFire IsNotIncapacitated IsDamageTypeBullet IsTalk IsTalkSheva IsZombiePresentTank IsSaidTankWarn2 ChanceToFire30Percent IsNotIncapacitated SubjectIsMechanic IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets
-		    Response PlayerFriendlyFireTankMechanicProducer
+		    criteria ConceptPlayerFriendlyFire IsNotCoughing IsTrevor IsNotFriendlyFire IsNotIncapacitated IsNotOnThirdStrike IsNotDamageTypeBullet IsNotDamageTypeExplosive IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotZombiePresentTank ismap_c1m1_hotel NoKnowNames
+		    Response PlayerFriendlyFireNoBulletC1Mechanic
 		    ApplyContext "FriendlyFire:1:10"
 		}
 	},
 
 	{
-		Rule PlayerToTheRescueSheva
+		Rule PlayerFriendlyFireTankTrevor
 		{
-		    criteria ConceptSurvivorBotMovingToReviveFriend IsNotCoughing IsSheva IsTalk IsTalkSheva NotInCombat IsNotSaidRescueComing IsDistanceSubjectO600 IsWorldTalkSheva
-		    Response PlayerToTheRescueProducer
+		    criteria ConceptPlayerFriendlyFire IsNotCoughing IsTrevor IsNotFriendlyFire IsNotIncapacitated IsDamageTypeBullet IsTalk IsTalkTrevor IsZombiePresentTank IsSaidTankWarn2 IsNotIncapacitated IsWorldTalkTrevor isNotmap_c1m1_hotel isNotmap_c1m2_streets
+		    Response PlayerFriendlyFireTankMechanic
+		    ApplyContext "FriendlyFire:1:10"
+		}
+	},
+
+	{
+		Rule PlayerFriendlyFireTankCoachTrevor
+		{
+		    criteria ConceptPlayerFriendlyFire IsNotCoughing IsTrevor IsNotFriendlyFire IsNotIncapacitated IsDamageTypeBullet IsTalk IsTalkTrevor IsZombiePresentTank IsSaidTankWarn2 ChanceToFire30Percent IsNotIncapacitated SubjectIsCoach IsWorldTalkTrevor isNotmap_c1m1_hotel isNotmap_c1m2_streets
+		    Response PlayerFriendlyFireTankCoachMechanic
+		    ApplyContext "FriendlyFire:1:10"
+		}
+	},
+
+	{
+		Rule PlayerFriendlyFireTankGamblerTrevor
+		{
+		    criteria ConceptPlayerFriendlyFire IsNotCoughing IsTrevor IsNotFriendlyFire IsNotIncapacitated IsDamageTypeBullet IsTalk IsTalkTrevor IsZombiePresentTank IsSaidTankWarn2 ChanceToFire30Percent IsNotIncapacitated SubjectIsGambler IsWorldTalkTrevor isNotmap_c1m1_hotel isNotmap_c1m2_streets
+		    Response PlayerFriendlyFireTankGamblerMechanic
+		    ApplyContext "FriendlyFire:1:10"
+		}
+	},
+
+	{
+		Rule PlayerFriendlyFireTankProducerTrevor
+		{
+		    criteria ConceptPlayerFriendlyFire IsNotCoughing IsTrevor IsNotFriendlyFire IsNotIncapacitated IsDamageTypeBullet IsTalk IsTalkTrevor IsZombiePresentTank IsSaidTankWarn2 ChanceToFire30Percent IsNotIncapacitated SubjectIsProducer IsWorldTalkTrevor isNotmap_c1m1_hotel isNotmap_c1m2_streets
+		    Response PlayerFriendlyFireTankProducerMechanic
+		    ApplyContext "FriendlyFire:1:10"
+		}
+	},
+
+	{
+		Rule PlayerToTheRescueTrevor
+		{
+		    criteria ConceptSurvivorBotMovingToReviveFriend IsNotCoughing IsTrevor IsTalk IsTalkTrevor NotInCombat IsNotSaidRescueComing IsDistanceSubjectO600 IsWorldTalkTrevor
+		    Response PlayerToTheRescueMechanic
 		    ApplyContext "SaidRescueComing:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerToTheRescueRosSheva
+		Rule PlayerToTheRescueRosTrevor
 		{
-		    criteria ConceptPlayerToTheRescue IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerToTheRescueRosProducer
+		    criteria ConceptPlayerToTheRescue IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerToTheRescueRosMechanic
 		}
 	},
 
 	{
-		Rule SurvivorTauntResponseSheva
+		Rule SurvivorTauntResponseTrevor
 		{
-		    criteria ConceptPlayerTaunt IsSurvivor IsNotSpeaking IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotVersus
-		    Response SurvivorTauntResponseProducer
+		    criteria ConceptPlayerTaunt IsSurvivor IsNotSpeaking IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotVersus
+		    Response SurvivorTauntResponseMechanic
 		}
 	},
 
 	{
-		Rule C4M1IdleComment01Sheva
+		Rule C4M1IdleComment01Trevor
 		{
-		    criteria ConceptTalkIdle ChanceToFire40Percent IsSurvivor ismap_c4m1_milltown_a IsSaidc4m1_nogas IsNotSpeaking IsSheva IsNotIncapacitated IsTalk IsTalkSheva NotInCombat IsWorldTalkSheva TimeSinceGroupInCombat02 AutoIsNotScavenge AutoIsNotSurvival _auto_NotNoGasGate
-		    Response C4M1IdleComment01Producer
-		    ApplyContext "Talk:1:3.088,_auto_NoGasGate:2:0"
+		    criteria ConceptTalkIdle ChanceToFire40Percent IsSurvivor ismap_c4m1_milltown_a IsSaidc4m1_nogas IsNotSpeaking IsTrevor IsNotIncapacitated IsTalk IsTalkTrevor NotInCombat IsWorldTalkTrevor TimeSinceGroupInCombat02 AutoIsNotScavenge AutoIsNotSurvival _auto_NotNoGasGate
+		    Response C4M1IdleComment01Mechanic
+		    ApplyContext "Talk:1:4.299,_auto_NoGasGate:2:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C4M2IdleCommentCane01Sheva
+		Rule C4M2IdleCommentCane01Trevor
 		{
-		    criteria ConceptTalkIdle ChanceToFire60Percent IsSurvivor ismap_c4m2_sugarmill_a IsNotSpeaking IsSheva IsNotIncapacitated IsTalk IsTalkSheva IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival _auto_IsShevaInCane _auto_NotCaneYellGated _auto_NotLastSurvivorTalkedSheva
-		    Response C4M2IdleCommentCane01Producer
+		    criteria ConceptTalkIdle ChanceToFire60Percent IsSurvivor ismap_c4m2_sugarmill_a IsNotSpeaking IsTrevor IsNotIncapacitated IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival _auto_IsTrevorInCane _auto_NotCaneYellGated _auto_NotLastSurvivorTalkedTrevor
+		    Response C4M2IdleCommentCane01Mechanic
 		    then any _c4m2_caneyell01 foo:0 0.01
-		    ApplyContext "_auto_CaneYellGated:1:10,_auto_LastSurvivorTalkedSheva:1:15"
+		    ApplyContext "_auto_CaneYellGated:1:10,_auto_LastSurvivorTalkedTrevor:1:15"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerChokeResponseSheva
+		Rule PlayerChokeResponseTrevor
 		{
-		    criteria ConceptPlayerChoke IsSurvivor IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerChokeResponseProducer
-		    ApplyContext "TalkSheva:1:5"
+		    criteria ConceptPlayerChoke IsSurvivor IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerChokeResponseMechanic
+		    ApplyContext "TalkTrevor:1:5"
 		}
 	},
 
 	{
-		Rule PlayerChokeResponseC1Sheva
+		Rule PlayerChokeResponseC1Trevor
 		{
-		    criteria ConceptPlayerChoke IsSurvivor IsSheva IsTalk IsTalkSheva IsWorldTalkSheva C1M1orC1M2 NoKnowSmoker IsNotSurvival
-		    Response PlayerChokeResponseC1Producer
-		    ApplyContext "TalkSheva:1:5"
+		    criteria ConceptPlayerChoke IsSurvivor IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2 NoKNowSmoker IsNotSurvival
+		    Response PlayerChokeResponseC1Mechanic
+		    ApplyContext "TalkTrevor:1:5"
 		}
 	},
 
 	{
-		Rule PlayerReloadingC502RunSheva
+		Rule PlayerReloadingC502RunTrevor
 		{
-		    criteria ConceptPlayerReloading IsSurvivor IsNotSpeaking IsSheva IsNotIncapacitated IsMapc5m2_park IsTalk IsTalkSheva IsWorldTalkSheva IsNotZombiePresentTank ChanceToFire50Percent _auto_IsAlarm
-		    Response PlayerReloadingC502RunProducer
+		    criteria ConceptPlayerReloading IsSurvivor IsNotSpeaking IsTrevor IsNotIncapacitated IsMapc5m2_park IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotZombiePresentTank ChanceToFire50Percent _auto_IsAlarm
+		    Response PlayerReloadingC502RunMechanic
 		}
 	},
 
 	{
-		Rule PlayerReloadingTankSheva
+		Rule PlayerReloadingTankTrevor
 		{
-		    criteria ConceptPlayerReloading IsSurvivor IsNotSpeaking IsSheva IsNotIncapacitated IsTalk IsTalkSheva IsNotSaidReloadingTank IsZombiePresentTank IsSaidTankWarn2 IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response PlayerReloadingTankProducer
+		    criteria ConceptPlayerReloading IsSurvivor IsNotSpeaking IsTrevor IsNotIncapacitated IsTalk IsTalkTrevor IsNotSaidReloadingTank IsZombiePresentTank IsSaidTankWarn2 IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response PlayerReloadingTankMechanic
 		    ApplyContext "SaidReloadingTank:1:10,SaidTankWarn2:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerReloadingTankC1Sheva
+		Rule PlayerReloadingTankC1Trevor
 		{
-		    criteria ConceptPlayerReloading IsSurvivor IsNotSpeaking IsSheva IsNotIncapacitated IsTalk IsTalkSheva IsZombiePresentTank IsSaidTankWarn2 IsWorldTalkSheva C1M1orC1M2 IsNotSurvival
-		    Response PlayerReloadingTankC1Producer
+		    criteria ConceptPlayerReloading IsSurvivor IsNotSpeaking IsTrevor IsNotIncapacitated IsTalk IsTalkTrevor IsNotSaidReloadingTank IsZombiePresentTank IsSaidTankWarn2 IsWorldTalkTrevor C1M1orC1M2 IsNotSurvival
+		    Response PlayerReloadingTankC1Mechanic
 		    ApplyContext "SaidReloadingTank:1:10,SaidTankWarn2:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerWitchChasingSheva
+		Rule PlayerWitchChasingTrevor
 		{
-		    criteria ConceptPlayerExertionMinor IsSheva IsWitchPresent SubjectIsNotWitch IsNotSaidWitchChasing IsSaidWitchAttacking IsTalkSheva IsNotmap_c4m2 IsNotc6m1_riverbank IsWitchAggro
-		    Response PlayerWitchChasingProducer
-		    ApplyContext "SaidWitchChasing:1:5,TalkSheva:1:2"
+		    criteria ConceptPlayerExertionMinor IsTrevor IsWitchPresent SubjectIsNotWitch IsNotSaidWitchChasing IsSaidWitchAttacking IsTalkTrevor IsNotmap_c4m2 IsNotc6m1_riverbank IsWitchAggro
+		    Response PlayerWitchChasingMechanic
+		    ApplyContext "SaidWitchChasing:1:5,TalkTrevor:1:2"
 		}
 	},
 
 	{
-		Rule PlayerWitchChasingC6M1Sheva
+		Rule PlayerWitchChasingC6M1Trevor
 		{
-		    criteria ConceptPlayerExertionMinor IsSheva IsWitchPresent SubjectIsNotWitch IsNotSaidWitchChasing IsSaidWitchAttacking IsTalkSheva isc6m1_riverbank IsWitchAggro
+		    criteria ConceptPlayerExertionMinor IsTrevor IsWitchPresent SubjectIsNotWitch IsNotSaidWitchChasing IsSaidWitchAttacking IsTalkTrevor isc6m1_riverbank IsWitchAggro
 		    // 	forceweight 20
-		    Response PlayerWitchChasingC6M1Producer
-		    ApplyContext "SaidWitchChasing:1:15,TalkSheva:1:2"
+		    Response PlayerWitchChasingC6M1Mechanic
+		    ApplyContext "SaidWitchChasing:1:15,TalkTrevor:1:2,SaidWitchStartAttack:1:15"
 		}
 	},
 
 	{
-		Rule PlayerWitchStartAttackSheva
+		Rule PlayerWitchStartAttackC6M1Trevor
 		{
-		    criteria IsFaultConcept IsSheva IsFaultWitchHarassment
-		    Response PlayerWitchStartAttackProducer
-		    ApplyContext "SaidWitchAttacking:1:15,TalkSheva:1:2,SaidWitchStartAttack:1:15"
+		    criteria IsFaultConcept IsTrevor IsFaultWitchHarassment Isc6m1_riverbank
+		    Response PlayerWitchStartAttackC6M1Mechanic
+		    ApplyContext "SaidWitchAttacking:1:15,TalkTrevor:1:4,SaidWitchStartAttack:1:15"
 		}
 	},
 
 	{
-		Rule PlayerWitchStartAttackC6M1Sheva
+		Rule PlayerWitchStartAttackTrevor
 		{
-		    criteria IsFaultConcept IsSheva IsFaultWitchHarassment Isc6m1_riverbank
-		    // 	forceweight 20
-		    Response PlayerWitchStartAttackC6M1Producer
-		    ApplyContext "SaidWitchAttacking:1:15,TalkSheva:1:2,SaidWitchStartAttack:1:15"
+		    criteria IsFaultConcept IsTrevor IsFaultWitchHarassment
+		    Response PlayerWitchStartAttackMechanic
+		    ApplyContext "SaidWitchAttacking:1:15,TalkTrevor:1:2,SaidWitchStartAttack:1:15"
 		}
 	},
 
 	{
-		Rule WitchAggroSheva
+		Rule WitchAggroTrevor
 		{
-		    criteria ConceptWitchStartAttack IsSheva Iswitch_aggro_onSheva
+		    criteria ConceptWitchStartAttack IsTrevor Iswitch_aggro_onTrevor
 		    Response NoResponse
 		    ApplyContext "WitchAggro:++1"
 		    applycontexttoworld
@@ -4613,166 +5210,178 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule SurvivorCriticalHurtSheva
+		Rule SurvivorCriticalHurtTrevor
 		{
-		    criteria IsSurvivor InPain IsCriticalPain IsSheva IsTalk IsTalkSheva SubjectIsNotJockey IsWorldTalkSheva
-		    Response SurvivorCriticalHurtProducer
+		    criteria IsSurvivor InPain IsCriticalPain IsTrevor IsTalk IsTalkTrevor SubjectIsNotJockey IsWorldTalkTrevor
+		    Response SurvivorCriticalHurtMechanic
 		}
 	},
 
 	{
-		Rule SurvivorIncapacitatedHurtSheva
+		Rule SurvivorIncapacitatedHurtTrevor
 		{
-		    criteria IsSurvivor InPain IsNotSpeaking IsIncapacitatedPain IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response SurvivorIncapacitatedHurtProducer
+		    criteria IsSurvivor InPain IsNotSpeaking IsIncapacitatedPain IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response SurvivorIncapacitatedHurtMechanic
 		}
 	},
 
 	{
-		Rule SurvivorJockeyHurtMajorSheva
+		Rule SurvivorJockeyHurtMajorTrevor
 		{
-		    criteria IsSurvivor InPain IsMajorPain IsSheva IsTalk IsTalkSheva SubjectIsJockey IsNotSaidBeenJockeyedSheva IsWorldTalkSheva IsBeingJockeyed
-		    Response SurvivorJockeyHurtMajorProducer
-		    then all commentjockey foo:0 -3.462
-		    ApplyContext "SaidBeenJockeyedSheva:1:6,TalkSheva:1:6"
+		    criteria IsSurvivor InPain IsMajorPain IsTrevor IsTalk IsTalkTrevor SubjectIsJockey IsNotSaidBeenJockeyedTrevor IsWorldTalkTrevor IsBeingJockeyed
+		    Response SurvivorJockeyHurtMajorMechanic
+		    then all commentjockey foo:0 -1.739
+		    ApplyContext "SaidBeenJockeyedTrevor:1:6,TalkTrevor:1:6"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorJockeyHurtMinorSheva
+		Rule SurvivorJockeyHurtMinorTrevor
 		{
-		    criteria IsSurvivor InPain IsMinorPain IsSheva IsTalk IsTalkSheva SubjectIsJockey IsNotSaidBeenJockeyedSheva IsWorldTalkSheva IsBeingJockeyed
-		    Response SurvivorJockeyHurtMajorProducer
-		    then all commentjockey foo:0 -3.462
-		    ApplyContext "SaidBeenJockeyedSheva:1:6,TalkSheva:1:6"
+		    criteria IsSurvivor InPain IsMinorPain IsTrevor IsTalk IsTalkTrevor SubjectIsJockey IsNotSaidBeenJockeyedTrevor IsWorldTalkTrevor IsBeingJockeyed
+		    Response SurvivorJockeyHurtMajorMechanic
+		    then all commentjockey foo:0 -1.739
+		    ApplyContext "SaidBeenJockeyedTrevor:1:6,TalkTrevor:1:6"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorJockeyHurtMajorC1Sheva
+		Rule SurvivorJockeyHurtMajorC1Trevor
 		{
-		    criteria IsSurvivor InPain IsMajorPain IsSheva IsTalk IsTalkSheva SubjectIsJockey IsNotSaidBeenJockeyedSheva IsWorldTalkSheva C1M1orC1M2 NoKnowJockey IsBeingJockeyed IsNotSurvival
-		    Response SurvivorJockeyHurtMajorC1Producer
-		    ApplyContext "SaidBeenJockeyedSheva:1:6,TalkSheva:1:6"
+		    criteria IsSurvivor InPain IsMajorPain IsTrevor IsTalk IsTalkTrevor SubjectIsJockey IsNotSaidBeenJockeyedTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowJockey IsBeingJockeyed IsNotSurvival
+		    Response SurvivorJockeyHurtMajorC1Mechanic
+		    ApplyContext "SaidBeenJockeyedTrevor:1:6,TalkTrevor:1:6"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorJockeyHurtMinorC1Sheva
+		Rule SurvivorJockeyHurtMinorC1Trevor
 		{
-		    criteria IsSurvivor InPain IsMinorPain IsSheva IsTalk IsTalkSheva SubjectIsJockey IsNotSaidBeenJockeyedSheva IsWorldTalkSheva C1M1orC1M2 NoKnowJockey IsBeingJockeyed IsNotSurvival
-		    Response SurvivorJockeyHurtMajorC1Producer
-		    ApplyContext "SaidBeenJockeyedSheva:1:6,TalkSheva:1:6"
+		    criteria IsSurvivor InPain IsMinorPain IsTrevor IsTalk IsTalkTrevor SubjectIsJockey IsNotSaidBeenJockeyedTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowJockey IsBeingJockeyed IsNotSurvival
+		    Response SurvivorJockeyHurtMajorC1Mechanic
+		    ApplyContext "SaidBeenJockeyedTrevor:1:6,TalkTrevor:1:6"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorMajorHurtSheva
+		Rule SurvivorMajorHurtTrevor
 		{
-		    criteria IsSurvivor InPain IsMajorPain IsSheva IsTalk IsTalkSheva SubjectIsNotJockey IsWorldTalkSheva
-		    Response SurvivorMajorHurtProducer
+		    criteria IsSurvivor InPain IsMajorPain IsTrevor IsTalk IsTalkTrevor SubjectIsNotJockey IsWorldTalkTrevor
+		    Response SurvivorMajorHurtMechanic
 		}
 	},
 
 	{
-		Rule SurvivorMinorHurtSheva
+		Rule SurvivorMinorHurtTrevor
 		{
-		    criteria IsSurvivor InPain IsMinorPain IsSheva IsTalk IsTalkSheva SubjectIsNotJockey IsWorldTalkSheva
-		    Response SurvivorMinorHurtProducer
+		    criteria IsSurvivor InPain IsMinorPain IsTrevor IsTalk IsTalkTrevor SubjectIsNotJockey IsWorldTalkTrevor
+		    Response SurvivorMinorHurtMechanic
 		}
 	},
 
 	{
-		Rule SurvivorReloadingSheva
+		Rule SurvivorReloadingTrevor
 		{
-		    criteria ConceptPlayerReloading IsSurvivor IsNotSpeaking IsSheva IsNotIncapacitated IsTalk IsTalkSheva RecentGroupInCombat10 HasNotgrenadelauncher IsWorldTalkSheva ChanceToFire50Percent IsNotZombiePresentTank NotInIntenseCombat _auto_NotShevaInWitchville _auto_NotAlarmV2 _auto_ConcertNotLive _auto_NotSpottedVehicle
-		    Response SurvivorReloadingProducer
+		    criteria ConceptPlayerReloading IsSurvivor IsNotSpeaking IsTrevor IsNotIncapacitated IsTalk IsTalkTrevor RecentGroupInCombat10 HasNotgrenadelauncher IsWorldTalkTrevor IsNotZombiePresentTank NotInIntenseCombat _auto_NotTrevorInWitchville _auto_NotAlarmV2 _auto_ConcertNotLive _auto_NotSpottedVehicle
+		    Response SurvivorReloadingMechanic
 		}
 	},
 
 	{
-		Rule SurvivorReloadingIntenseSheva
+		Rule SurvivorReloadingIntenseTrevor
 		{
-		    criteria ConceptPlayerReloading IsSurvivor IsNotSpeaking IsSheva IsNotIncapacitated IsTalk IsTalkSheva RecentGroupInCombat10 HasNotgrenadelauncher IsWorldTalkSheva ChanceToFire50Percent IsNotZombiePresentTank InIntenseCombat _auto_NotShevaInWitchville _auto_NotAlarmV2 _auto_ConcertNotLive _auto_NotSpottedVehicle
-		    Response SurvivorReloadingIntenseProducer
+		    criteria ConceptPlayerReloading IsSurvivor IsNotSpeaking IsTrevor IsNotIncapacitated IsTalk IsTalkTrevor RecentGroupInCombat10 HasNotgrenadelauncher IsWorldTalkTrevor IsNotZombiePresentTank InIntenseCombat _auto_NotTrevorInWitchville _auto_NotAlarmV2 _auto_ConcertNotLive _auto_NotSpottedVehicle
+		    Response SurvivorReloadingIntenseMechanic
 		}
 	},
 
 	{
-		Rule SurvivorReloadingC4M2Sheva
+		Rule SurvivorReloadingC4M2Trevor
 		{
-		    criteria ConceptPlayerReloading IsSurvivor IsNotSpeaking IsSheva IsNotIncapacitated IsTalk IsTalkSheva RecentGroupInCombat10 HasNotgrenadelauncher IsWorldTalkSheva ChanceToFire50Percent ismap_c4m2_sugarmill_a IsNotSaidSafeSpotAhead IsNotZombiePresentTank _auto_IsShevaInWitchville
-		    Response SurvivorReloadingC4M2Producer
+		    criteria ConceptPlayerReloading IsSurvivor IsNotSpeaking IsTrevor IsNotIncapacitated IsTalk IsTalkTrevor RecentGroupInCombat10 HasNotgrenadelauncher IsWorldTalkTrevor ismap_c4m2_sugarmill_a IsNotSaidSafeSpotAhead IsNotZombiePresentTank _auto_IsTrevorInWitchville
+		    Response SurvivorReloadingC4M2Mechanic
 		}
 	},
 
 	{
-		Rule PlayerHelpIncappedSheva
+		Rule PlayerHelpIncappedTrevor
 		{
-		    criteria ConceptPlayerHelp IsSheva IsNotCoughing IsTalk IsTalkSheva IsIncappedStarted IsIncappedStarted2 IsIncapacitated NotCalledForHelpRecently IsWorldTalkSheva
-		    Response PlayerHelpIncappedProducer
+		    criteria ConceptPlayerHelp IsTrevor IsNotCoughing IsTalk IsTalkTrevor IsIncappedStarted IsIncappedStarted2 IsIncapacitated NotCalledForHelpRecently IsWorldTalkTrevor
+		    Response PlayerHelpIncappedMechanic
 		    ApplyContext "CalledForHelp:1:7.5"
 		}
 	},
 
 	{
-		Rule PlayerHelpIncappedBleedingSheva
+		Rule PlayerHelpIncappedBleeingTrevor
 		{
-		    criteria ConceptPlayerHelp IsSheva IsNotCoughing IsTalk IsTalkSheva IsIncappedBleeding1 IsIncappedBleeding2 IsIncapacitated NotCalledForHelpRecently IsWorldTalkSheva
-		    Response PlayerHelpIncappedBleedingProducer
+		    criteria ConceptPlayerHelp IsTrevor IsNotCoughing IsTalk IsTalkTrevor IsIncappedBleeding1 IsIncappedBleeding2 IsIncapacitated NotCalledForHelpRecently IsWorldTalkTrevor
+		    Response PlayerHelpIncappedBleeingMechanic
 		    ApplyContext "CalledForHelp:1:15"
 		}
 	},
 
 	{
-		Rule PlayerHelpIncappedLethargicSheva
+		Rule PlayerHelpIncappedLethargicTrevor
 		{
-		    criteria ConceptPlayerHelp IsSheva IsNotCoughing IsTalk IsTalkSheva IsIncappedLethargic IsIncapacitated NotCalledForHelpRecently IsWorldTalkSheva
-		    Response PlayerHelpIncappedLethargicProducer
+		    criteria ConceptPlayerHelp IsTrevor IsNotCoughing IsTalk IsTalkTrevor IsIncappedLethargic IsIncapacitated NotCalledForHelpRecently IsWorldTalkTrevor
+		    Response PlayerHelpIncappedLethargicMechanic
 		    ApplyContext "CalledForHelp:1:30"
 		}
 	},
 
 	{
-		Rule C2M1DoneFallingSheva
+		Rule C2M1DoneFallingTrevor
 		{
-		    criteria ConceptC2M1DoneFalling IsSheva NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsNotCoughing AutoIsNotScavenge AutoIsNotSurvival _auto_NotDoneFalling
-		    Response C2M1DoneFallingProducer
-		    ApplyContext "Talk:1:1.229,_auto_DoneFalling:1:0"
+		    criteria ConceptC2M1DoneFalling IsTrevor NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotCoughing AutoIsNotScavenge AutoIsNotSurvival _auto_NotDoneFalling
+		    Response C2M1DoneFallingMechanic
+		    then gambler _C2M1_Fall03 foo:0 0.01
+		    ApplyContext "Talk:1:3.351,_auto_DoneFalling:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C2M1FallingSheva
+		Rule C2M1DoneFalling2Trevor
 		{
-		    criteria ConceptC2M1Falling IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C2M1FallingProducer
+		    criteria ConceptC2M1DoneFalling IsTrevor NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotCoughing IsCoachAlive IsCoachNear200 ChanceToFire50Percent AutoIsNotScavenge AutoIsNotSurvival _auto_NotDoneFalling
+		    Response C2M1DoneFalling2Mechanic
+		    then coach _C2M1_Fall01 foo:0 0.01
+		    ApplyContext "Talk:1:2.044,_auto_DoneFalling:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C2M1FallingTrevor
+		{
+		    criteria ConceptC2M1Falling IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C2M1FallingMechanic
 		    then self EndOfWavWindow5 foo:0 0.01
-		    ApplyContext "Talk:1:2.036"
+		    ApplyContext "Talk:1:1.353"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C2M2CarouselOffSheva
+		Rule C2M2CarouselOffTrevor
 		{
-		    criteria Conceptc2m2CarouselEnd IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C2M2CarouselOffProducer
-		    ApplyContext "Talk:1:1.880,_auto_Alarm:2:0"
+		    criteria Conceptc2m2CarouselEnd IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C2M2CarouselOffMechanic
+		    ApplyContext "Talk:1:0.756,_auto_Alarm:2:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C2M2CarouselOnSheva
+		Rule C2M2CarouselOnTrevor
 		{
-		    criteria Conceptc2m2CarouselStart IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C2M2CarouselOnProducer
+		    criteria Conceptc2m2CarouselStart IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C2M2CarouselOnMechanic
 		    then any _C2M2_CaroStart03 foo:0 2.0
 		    ApplyContext "_auto_Alarm:1:0,_auto_TimerLockA:1:6,WarnMegaMob:1:300,SaidSpecialWarn:1:30"
 		    applycontexttoworld
@@ -4780,473 +5389,503 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule C3M3BridgeButtonSheva
+		Rule C3M3BridgeButtonTrevor
 		{
-		    criteria ConceptC3M3BridgeButton IsNotSaidC3M3BridgeButton IsSheva IsNotSaidC3M3BridgeButton AutoIsNotScavenge AutoIsNotSurvival
-		    Response C3M3BridgeButtonProducer
+		    criteria ConceptC3M3BridgeButton IsNotSaidC3M3BridgeButton IsTrevor IsNotSaidC3M3BridgeButton AutoIsNotScavenge AutoIsNotSurvival
+		    Response C3M3BridgeButtonMechanic
 		    ApplyContext "SaidC3M3BridgeButton:1:0,WarnMegaMob:1:300,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule EndOfWavWindow5Sheva
+		Rule EndOfWavWindow5Trevor
 		{
-		    criteria ConceptEndOfWavWindow5 IsSheva
-		    Response EndOfWavWindow5Producer
-		    ApplyContext "_auto_ShevaWavWindow:1:0"
+		    criteria ConceptEndOfWavWindow5 IsTrevor
+		    Response EndOfWavWindow5Mechanic
+		    ApplyContext "_auto_TrevorWavWindow:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerChainSawUsedSheva
+		Rule PlayerChainSawUsedTrevor
 		{
-		    criteria ConceptChainsawUsed IsNotSaidChainSawUsed IsSheva IsTalk IsTalkSheva IntensityOver25 IsWorldTalkSheva
-		    Response PlayerChainSawUsedProducer
+		    criteria ConceptChainsawUsed IsNotSaidChainSawUsed IsTrevor IsTalk IsTalkTrevor IntensityOver25 IsWorldTalkTrevor
+		    Response PlayerChainSawUsedMechanic
 		    ApplyContext "SaidChainSawUsed:1:90"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC1M1AroundFireSheva
+		Rule PlayerRemarkC1M1AroundFireTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC1M1AroundFire IsNotSaidC1M1AroundFire IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC1M1AroundFireProducer
-		    then any C1M1Cough foo:0 -1.293
+		    criteria ConceptRemark IsTrevor IsC1M1AroundFire IsNotSaidC1M1AroundFire IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkC1M1AroundFireMechanic
+		    then any C1M1Cough foo:0 -1.348
 		    ApplyContext "SaidC1M1AroundFire:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC1M1OverTableSheva
+		Rule PlayerRemarkC1M1OverTableTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC1M1OverTable IsNotSaidC1M1OverTable IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC1M1OverTableProducer
-		    then any C1M1Cough foo:0 -1.111
+		    criteria ConceptRemark IsTrevor IsC1M1OverTable IsNotSaidC1M1OverTable IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkC1M1OverTableMechanic
+		    then any C1M1Cough foo:0 -0.627
 		    ApplyContext "SaidC1M1OverTable:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC1M1SearchRoomsSheva
+		Rule PlayerRemarkC1M1SearchRoomsTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC1M1SearchRooms IsNotSaidC1M1SearchRooms IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC1M1SearchRoomsProducer
-		    then any C1M1Cough foo:0 -2.695
+		    criteria ConceptRemark IsTrevor IsC1M1SearchRooms IsNotSaidC1M1SearchRooms IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkC1M1SearchRoomsMechanic
+		    then any C1M1Cough foo:0 -3.339
 		    ApplyContext "SaidC1M1SearchRooms:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC1M1ThroughThisDoorSheva
+		Rule PlayerRemarkC1M1ThroughThisDoorTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC1M1ThroughThisDoor IsNotSaidC1M1ThroughThisDoor IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC1M1ThroughThisDoorProducer
-		    then any C1M1Cough foo:0 -0.677
+		    criteria ConceptRemark IsTrevor IsC1M1ThroughThisDoor IsNotSaidC1M1ThroughThisDoor IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkC1M1ThroughThisDoorMechanic
+		    then any C1M1Cough foo:0 -0.618
 		    ApplyContext "SaidC1M1ThroughThisDoor:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC1M3AlarmDoorsSheva
+		Rule PlayerRemarkC1M2SpotGunStoreTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC1M3AlarmDoors IsNotSaidC1M3AlarmDoors IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 _auto_NotAlarm AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC1M3AlarmDoorsProducer
+		    criteria ConceptRemark IsTrevor IsRemarkWorldC1M2SpotGunStore IsNotSaidRemarkWorldC1M2SpotGunStore IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear800 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkC1M2SpotGunStoreMechanic
+		    ApplyContext "SaidRemarkWorldC1M2SpotGunStore:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkC1M3AlarmDoorsTrevor
+		{
+		    criteria ConceptRemark IsTrevor IsC1M3AlarmDoors IsNotSaidC1M3AlarmDoors IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 _auto_NotAlarm AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkC1M3AlarmDoorsMechanic
 		    ApplyContext "SaidC1M3AlarmDoors:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC1M3CarefulWindowsSheva
+		Rule PlayerRemarkC1M3CarefulWindowsTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC1M3CarefulWindows IsNotSaidC1M3CarefulWindows IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 _auto_NotAlarm AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC1M3AlarmDoorsProducer
+		    criteria ConceptRemark IsTrevor IsC1M3CarefulWindows IsNotSaidC1M3CarefulWindows IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 _auto_NotAlarm AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkC1M3CarefulWindowsMechanic
 		    ApplyContext "SaidC1M3CarefulWindows:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC1M3CEDAGoneSheva
+		Rule PlayerRemarkC1M3CEDAGoneTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC1M3CEDAGone IsNotSaidC1M3CEDAGone IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC1M3CEDAGoneProducer
+		    criteria ConceptRemark IsTrevor IsC1M3CEDAGone IsNotSaidC1M3CEDAGone IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkC1M3CEDAGoneMechanic
 		    ApplyContext "SaidC1M3CEDAGone:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC1M3DownHereSheva
+		Rule PlayerRemarkC1M3DownHereTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC1M3DownHere IsNotSaidC1M3DownHere IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC1M3DownHereProducer
+		    criteria ConceptRemark IsTrevor IsC1M3DownHere IsNotSaidC1M3DownHere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkC1M3DownHereMechanic
 		    ApplyContext "SaidC1M3DownHere:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC1M3DownHere2Sheva
+		Rule PlayerRemarkC1M3DownHere2Trevor
 		{
-		    criteria ConceptRemark IsSheva IsC1M3DownHere2 IsNotSaidC1M3DownHere2 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC1M3DownHereProducer
+		    criteria ConceptRemark IsTrevor IsC1M3DownHere2 IsNotSaidC1M3DownHere2 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkC1M3DownHereMechanic
 		    ApplyContext "SaidC1M3DownHere2:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC1M3DownTheEscalatorSheva
+		Rule PlayerRemarkC1M3DownTheEscalatorTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC1M3DownTheEscalator IsNotSaidC1M3DownTheEscalator IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC1M3DownTheEscalatorProducer
+		    criteria ConceptRemark IsTrevor IsC1M3DownTheEscalator IsNotSaidC1M3DownTheEscalator IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkC1M3DownTheEscalatorMechanic
 		    ApplyContext "SaidC1M3DownTheEscalator:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC1M3OverHereSheva
+		Rule PlayerRemarkC1M3OverHereTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC1M3OverHere IsNotSaidC1M3OverHere IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC1M3OverHereProducer
+		    criteria ConceptRemark IsTrevor IsC1M3OverHere IsNotSaidC1M3OverHere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkC1M3OverHereMechanic
 		    ApplyContext "SaidC1M3OverHere:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC1M3SearchRoomsSheva
+		Rule PlayerRemarkC1M3SearchRoomsTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC1M3SearchRooms IsNotSaidC1M3SearchRooms IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC1M3SearchRoomsProducer
-		    then any C1M1Cough foo:0 -2.695
+		    criteria ConceptRemark IsTrevor IsC1M3SearchRooms IsNotSaidC1M3SearchRooms IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkC1M3SearchRoomsMechanic
+		    then any C1M1Cough foo:0 -3.339
 		    ApplyContext "SaidC1M3SearchRooms:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC1M3ThisWaySheva
+		Rule PlayerRemarkC1M3ThisWayTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC1M3ThisWay IsNotSaidC1M3ThisWay IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC1M3ThisWayProducer
+		    criteria ConceptRemark IsTrevor IsC1M3ThisWay IsNotSaidC1M3ThisWay IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkC1M3ThisWayMechanic
 		    ApplyContext "SaidC1M3ThisWay:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC1M3ThroughHereSheva
+		Rule PlayerRemarkC1M3ThroughHereTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC1M3ThroughHere IsNotSaidC1M3ThroughHere IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC1M3ThroughHereProducer
+		    criteria ConceptRemark IsTrevor IsC1M3ThroughHere IsNotSaidC1M3ThroughHere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkC1M3ThroughHereMechanic
 		    ApplyContext "SaidC1M3ThroughHere:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC1M3TurnOffAlarm1Sheva
+		Rule PlayerRemarkC1M3TurnOffAlarm1Trevor
 		{
-		    criteria ConceptRemark IsSheva IsC1M3TurnOffAlarm1 IsNotSaidC1M3TurnOffAlarm1 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_IsAlarm IsNotSpeakingWeight0
-		    Response PlayerRemarkC1M3TurnOffAlarm1Producer
+		    criteria ConceptRemark IsTrevor IsC1M3TurnOffAlarm1 IsNotSaidC1M3TurnOffAlarm1 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_IsAlarm IsNotSpeakingWeight0
+		    Response PlayerRemarkC1M3TurnOffAlarm1Mechanic
 		    ApplyContext "SaidC1M3TurnOffAlarm1:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC1M3TurnOffAlarm2Sheva
+		Rule PlayerRemarkC1M3TurnOffAlarm2Trevor
 		{
-		    criteria ConceptRemark IsSheva IsC1M3TurnOffAlarm2 IsNotSaidC1M3TurnOffAlarm2 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_IsAlarm IsNotSpeakingWeight0
-		    Response PlayerRemarkC1M3TurnOffAlarm2Producer
+		    criteria ConceptRemark IsTrevor IsC1M3TurnOffAlarm2 IsNotSaidC1M3TurnOffAlarm2 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_IsAlarm IsNotSpeakingWeight0
+		    Response PlayerRemarkC1M3TurnOffAlarm2Mechanic
 		    ApplyContext "SaidC1M3TurnOffAlarm2:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC1M3TurnOffAlarm3Sheva
+		Rule PlayerRemarkC1M3TurnOffAlarm3Trevor
 		{
-		    criteria ConceptRemark IsSheva IsC1M3TurnOffAlarm3 IsNotSaidC1M3TurnOffAlarm3 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_IsAlarm IsNotSpeakingWeight0
-		    Response PlayerRemarkC1M3TurnOffAlarm3Producer
+		    criteria ConceptRemark IsTrevor IsC1M3TurnOffAlarm3 IsNotSaidC1M3TurnOffAlarm3 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_IsAlarm IsNotSpeakingWeight0
+		    Response PlayerRemarkC1M3TurnOffAlarm3Mechanic
 		    ApplyContext "SaidC1M3TurnOffAlarm3:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC1M3UpEscalator1Sheva
+		Rule PlayerRemarkC1M3UpEscalator1Trevor
 		{
-		    criteria ConceptRemark IsSheva IsC1M3UpEscalator1 IsNotSaidC1M3UpEscalator1 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC1M3UpEscalator1Producer
+		    criteria ConceptRemark IsTrevor IsC1M3UpEscalator1 IsNotSaidC1M3UpEscalator1 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkC1M3UpEscalator1Mechanic
 		    ApplyContext "SaidC1M3UpEscalator1:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC1M3UpEscalator2Sheva
+		Rule PlayerRemarkC1M3UpEscalator2Trevor
 		{
-		    criteria ConceptRemark IsSheva IsC1M3UpEscalator2 IsNotSaidC1M3UpEscalator2 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC1M3UpEscalator1Producer
+		    criteria ConceptRemark IsTrevor IsC1M3UpEscalator2 IsNotSaidC1M3UpEscalator2 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkC1M3UpEscalator1Mechanic
 		    ApplyContext "SaidC1M3UpEscalator2:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC1M3UpEscalator3Sheva
+		Rule PlayerRemarkC1M3UpEscalator3Trevor
 		{
-		    criteria ConceptRemark IsSheva IsC1M3UpEscalator3 IsNotSaidC1M3UpEscalator3 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC1M3UpEscalator1Producer
+		    criteria ConceptRemark IsTrevor IsC1M3UpEscalator3 IsNotSaidC1M3UpEscalator3 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkC1M3UpEscalator1Mechanic
 		    ApplyContext "SaidC1M3UpEscalator3:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m1_carwreckageSheva
+		Rule PlayerRemarkc2m1_busblockTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m1_carwreckage IsNotSaidc2m1_carwreckage IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m1_carwreckageProducer
-		    ApplyContext "Saidc2m1_carwreckage:1:0,Talk:1:4.007"
+		    criteria ConceptRemark IsTrevor Isc2m1_busblock IsNotSaidc2m1_busblock IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m1_busblockMechanic
+		    then producer _C2M1MonsterTruck foo:0 0.02
+		    ApplyContext "Saidc2m1_busblock:1:0,Talk:1:1.499"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m1_checkroomsSheva
+		Rule PlayerRemarkc2m1_checkroomsTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m1_checkrooms IsNotSaidc2m1_checkrooms IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m1_checkroomsProducer
-		    ApplyContext "Saidc2m1_checkrooms:1:0,Talk:1:1.616"
+		    criteria ConceptRemark IsTrevor Isc2m1_checkrooms IsNotSaidc2m1_checkrooms IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m1_checkroomsMechanic
+		    ApplyContext "Saidc2m1_checkrooms:1:0,Talk:1:1.459"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m1_cliffSheva
+		Rule PlayerRemarkc2m1_cliffTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m1_cliff IsNotSaidc2m1_cliff IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m1_cliffProducer
-		    ApplyContext "Saidc2m1_cliff:1:0,Talk:1:2.824"
+		    criteria ConceptRemark IsTrevor Isc2m1_cliff IsNotSaidc2m1_cliff IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m1_cliffMechanic
+		    ApplyContext "Saidc2m1_cliff:1:0,Talk:1:3.248"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m1_downstairsSheva
+		Rule PlayerRemarkc2m1_downstairsTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m1_downstairs IsNotSaidc2m1_downstairs IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m1_downstairsProducer
-		    ApplyContext "Saidc2m1_downstairs:1:0,Talk:1:0.789"
+		    criteria ConceptRemark IsTrevor Isc2m1_downstairs IsNotSaidc2m1_downstairs IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m1_downstairsMechanic
+		    ApplyContext "Saidc2m1_downstairs:1:0,Talk:1:1.547"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m1_hillcomplainSheva
+		Rule PlayerRemarkc2m1_motelsignTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m1_hillcomplain IsNotSaidc2m1_hillcomplain IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear150 ChanceToFire10Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m1_hillcomplainProducer
-		    ApplyContext "Saidc2m1_hillcomplain:1:0,Talk:1:4.294"
+		    criteria ConceptRemark IsTrevor Isc2m1_motelsign IsNotSaidc2m1_motelsign IsNotSaidc2m1_throughmotel IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectFar100 ChanceToFire20Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m1_motelsignMechanic
+		    ApplyContext "Saidc2m1_motelsign:1:0,Talk:1:1.428"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule AUTOBLANK_PlayerRemarkc2m1_hillcomplainSheva
+		Rule AUTOBLANK_PlayerRemarkc2m1_motelsignTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m1_hillcomplain IsNotSaidc2m1_hillcomplain IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear150 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response _PlayerInfoRemarkableBlankProducer
-		    ApplyContext "Saidc2m1_hillcomplain:1:0"
+		    criteria ConceptRemark IsTrevor Isc2m1_motelsign IsNotSaidc2m1_motelsign IsNotSaidc2m1_throughmotel IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectFar100 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response _PlayerInfoRemarkableBlankMechanic
+		    ApplyContext "Saidc2m1_motelsign:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m1_offrampSheva
+		Rule PlayerRemarkc2m1_offrampTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m1_offramp IsNotSaidc2m1_offramp IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m1_offrampProducer
-		    ApplyContext "Saidc2m1_offramp:1:0,Talk:1:1.168"
+		    criteria ConceptRemark IsTrevor Isc2m1_offramp IsNotSaidc2m1_offramp IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m1_offrampMechanic
+		    ApplyContext "Saidc2m1_offramp:1:0,Talk:1:1.167"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m1_parkSheva
+		Rule PlayerRemarkc2m1_parkTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m1_park IsNotSaidc2m1_park IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m1_parkProducer
-		    ApplyContext "Saidc2m1_park:1:0,Talk:1:1.982"
+		    criteria ConceptRemark IsTrevor Isc2m1_park IsNotSaidc2m1_park IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m1_parkMechanic
+		    ApplyContext "Saidc2m1_park:1:0,Talk:1:2.273"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m1_poolSheva
+		Rule PlayerRemarkc2m1_poolTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m1_pool IsNotSaidc2m1_pool IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m1_poolProducer
-		    ApplyContext "Saidc2m1_pool:1:0,Talk:1:3.037"
+		    criteria ConceptRemark IsTrevor Isc2m1_pool IsNotSaidc2m1_pool IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m1_poolMechanic
+		    ApplyContext "Saidc2m1_pool:1:0,Talk:1:3.694"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m1_searchlightsSheva
+		Rule PlayerRemarkc2m1_searchlightsTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m1_searchlights IsNotSaidc2m1_searchlights IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectFar100 ChanceToFire100Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    criteria ConceptRemark IsTrevor Isc2m1_searchlights IsNotSaidc2m1_searchlights IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectFar100 ChanceToFire100Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
 		    // 	forceweight 1
-		    Response PlayerRemarkc2m1_searchlightsProducer
+		    Response PlayerRemarkc2m1_searchlightsMechanic
 		    then any _c2m1_searchlights01 foo:0 0.01
-		    ApplyContext "Saidc2m1_searchlights:1:0,Talk:1:3.241"
+		    ApplyContext "Saidc2m1_searchlights:1:0,Talk:1:3.371"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m1_searchlightsEllisSheva
+		Rule PlayerRemarkc2m1_throughhereTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m1_searchlights IsNotSaidc2m1_searchlights IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectFar100 IsMechanicAlive IsMechanicNear400 ChanceToFire50Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    // 	forceweight 2
-		    Response PlayerRemarkc2m1_searchlightsEllisProducer
-		    then mechanic _c2m1_searchlights04 foo:0 0.1
-		    ApplyContext "Saidc2m1_searchlights:1:0,Talk:1:3.241"
+		    criteria ConceptRemark IsTrevor Isc2m1_throughhere IsNotSaidc2m1_throughhere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m1_throughhereMechanic
+		    ApplyContext "Saidc2m1_throughhere:1:0,Talk:1:0.718"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m1_throughhereSheva
+		Rule PlayerRemarkc2m1_throughmotelTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m1_throughhere IsNotSaidc2m1_throughhere IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m1_throughhereProducer
-		    ApplyContext "Saidc2m1_throughhere:1:0,Talk:1:0.858"
+		    criteria ConceptRemark IsTrevor Isc2m1_throughmotel IsNotSaidc2m1_throughmotel IsNotSaidc2m1_motelsign IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m1_throughmotelMechanic
+		    ApplyContext "Saidc2m1_throughmotel:1:0,Talk:1:1.976"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m1_throughmotelSheva
+		Rule PlayerRemarkc2m1_throughwindowTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m1_throughmotel IsNotSaidc2m1_throughmotel IsNotSaidc2m1_motelsign IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m1_throughmotelProducer
-		    ApplyContext "Saidc2m1_throughmotel:1:0,Talk:1:2.616"
+		    criteria ConceptRemark IsTrevor Isc2m1_throughwindow IsNotSaidc2m1_throughwindow IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m1_throughwindowMechanic
+		    ApplyContext "Saidc2m1_throughwindow:1:0,Talk:1:1.042"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m1_throughwindowSheva
+		Rule PlayerRemarkc2m1_uphillTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m1_throughwindow IsNotSaidc2m1_throughwindow IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m1_throughwindowProducer
-		    ApplyContext "Saidc2m1_throughwindow:1:0,Talk:1:0.911"
+		    criteria ConceptRemark IsTrevor Isc2m1_uphill IsNotSaidc2m1_uphill IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m1_uphillMechanic
+		    ApplyContext "Saidc2m1_uphill:1:0,Talk:1:0.630"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m1_uphillSheva
+		Rule PlayerRemarkc2m1_upstairsTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m1_uphill IsNotSaidc2m1_uphill IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m1_uphillProducer
-		    ApplyContext "Saidc2m1_uphill:1:0,Talk:1:1.074"
+		    criteria ConceptRemark IsTrevor Isc2m1_upstairs IsNotSaidc2m1_upstairs IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m1_upstairsMechanic
+		    ApplyContext "Saidc2m1_upstairs:1:0,Talk:1:1.269"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m1_upstairsSheva
+		Rule PlayerRemarkc2m2_cottoncandyTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m1_upstairs IsNotSaidc2m1_upstairs IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m1_upstairsProducer
-		    ApplyContext "Saidc2m1_upstairs:1:0,Talk:1:1.252"
+		    criteria ConceptRemark IsTrevor Isc2m2_cottoncandy IsNotSaidc2m2_cottoncandy IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_NotCoachFoodBreak _auto_NotAlarm IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m2_cottoncandyMechanic
+		    then coach _C2M2_CottonCandy01 foo:0 0.01
+		    ApplyContext "Saidc2m2_cottoncandy:1:0,Talk:1:2.708,_auto_CoachFoodBreak:1:15"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m2_entrancesignSheva
+		Rule PlayerRemarkc2m2_cottoncandy2Trevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m2_entrancesign IsNotSaidc2m2_entrancesign IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear600 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m2_entrancesignProducer
+		    criteria ConceptRemark IsTrevor Isc2m2_cottoncandy2 IsNotSaidc2m2_cottoncandy IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival _auto_NotCoachFoodBreak _auto_NotAlarmV2 IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m2_cottoncandyMechanic
+		    then coach _C2M2_CottonCandy01 foo:0 0.01
+		    ApplyContext "Saidc2m2_cottoncandy:1:0,Talk:1:2.708,_auto_CoachFoodBreak:1:15"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkc2m2_entrancesignTrevor
+		{
+		    criteria ConceptRemark IsTrevor Isc2m2_entrancesign IsNotSaidc2m2_entrancesign IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear600 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m2_entrancesignMechanic
 		    ApplyContext "Saidc2m2_entrancesign:1:0,Talk:1:3.331"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m2_lilpeanutSheva
+		Rule _C2M2_CottonCandy01Trevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m2_lilpeanut IsNotSaidc2m2_lilpeanut IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear150 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m2_lilpeanutProducer
-		    then mechanic _C2M2_Peanut01 foo:0 0.01
-		    ApplyContext "Saidc2m2_lilpeanut:1:0"
+		    criteria Concept_C2M2_CottonCandy01 IsTrevor NotInCombat ChanceToFire50Percent AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C2M2_CottonCandy01Mechanic
+		    then coach _C2M2_CottonCandy01 foo:0 0.01
+		    ApplyContext "Talk:1:10.109"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m2_miscfoodSheva
+		Rule PlayerRemarkc2m2_kiddielandTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m2_miscfood IsNotSaidc2m2_miscfood IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival _auto_NotCoachFoodBreak _auto_NotAlarm IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m2_miscfoodProducer
-		    then Gambler _C2M2_LikeTaters foo:0 0.1
-		    ApplyContext "Saidc2m2_miscfood:1:0,Talk:1:2.500,_auto_CoachFoodBreak:1:15"
+		    criteria ConceptRemark IsTrevor Isc2m2_kiddieland IsNotSaidc2m2_kiddieland IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear800 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m2_kiddielandMechanic
+		    then any _C2M2_Kiddie01 foo:0 0.01
+		    ApplyContext "Saidc2m2_kiddieland:1:0,Talk:1:3.403,_auto_CoachFoodBreak:1:15"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m2_topofslideSheva
+		Rule PlayerRemarkc2m2_topofslideTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m2_topofslide IsNotSaidc2m2_topofslide IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear150 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m2_topofslideProducer
-		    then any _C2M2_Slide01 foo:0 0.01
+		    criteria ConceptRemark IsTrevor Isc2m2_topofslide IsNotSaidc2m2_topofslide IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear150 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m2_topofslideMechanic
 		    ApplyContext "Saidc2m2_topofslide:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m2_womensroomSheva
+		Rule PlayerRemarkc2m3_coasteroffTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m2_womensroom IsNotSaidc2m2_womensroom IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear150 IsClosestSurvivorNear150 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m2_womensroomProducer
-		    then any _C2M2_Bathroom01 foo:0 0.01
-		    ApplyContext "Saidc2m2_womensroom:1:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule PlayerRemarkc2m3_coasteroffSheva
-		{
-		    criteria ConceptRemark IsSheva Isc2m3_coasteroff IsNotSaidc2m3_coasteroff IsNotCoughing IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival _auto_IsAlarm _auto_IsTracksOK IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m3_coasteroffProducer
+		    criteria ConceptRemark IsTrevor Isc2m3_coasteroff IsNotSaidc2m3_coasteroff IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival _auto_IsAlarm _auto_IsTracksOK IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m3_coasteroffMechanic
 		    ApplyContext "Saidc2m3_coasteroff:1:0,_auto_TimerLockA:1:8"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m3_holeSheva
+		Rule PlayerRemarkc2m3_coollightTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m3_hole IsNotSaidc2m3_hole IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m3_holeProducer
+		    criteria ConceptRemark IsTrevor Isc2m3_coollight IsNotSaidc2m3_coollight IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m3_coollightMechanic
+		    ApplyContext "Saidc2m3_coollight:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkc2m3_coollightNickTrevor
+		{
+		    criteria ConceptRemark IsTrevor Isc2m3_coollight IsNotSaidc2m3_coollight IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsGamblerNear200 IsGamblerAlive ChanceToFire50Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m3_coollightNickMechanic
+		    then gambler _c2m3_coollight foo:0 0.1
+		    ApplyContext "Saidc2m3_coollight:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkc2m3_holeTrevor
+		{
+		    criteria ConceptRemark IsTrevor Isc2m3_hole IsNotSaidc2m3_hole IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m3_holeMechanic
 		    then any _c2m3_hole01 foo:0 0.1
 		    ApplyContext "Saidc2m3_hole:1:0"
 		    applycontexttoworld
@@ -5254,364 +5893,372 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule PlayerRemarkc2m3_longesttunnelSheva
+		Rule PlayerRemarkc2m3_overfenceTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m3_longesttunnel IsNotSaidc2m3_longesttunnel IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 IsGamblerAlive TimeSinceGroupInCombat04 ChanceToFire80Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m3_longesttunnelProducer
-		    ApplyContext "Saidc2m3_longesttunnel:1:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule AUTOBLANK_PlayerRemarkc2m3_longesttunnelSheva
-		{
-		    criteria ConceptRemark IsSheva Isc2m3_longesttunnel IsNotSaidc2m3_longesttunnel IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 IsGamblerAlive TimeSinceGroupInCombat04 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response _PlayerInfoRemarkableBlankProducer
-		    ApplyContext "Saidc2m3_longesttunnel:1:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule PlayerRemarkc2m3_overfenceSheva
-		{
-		    criteria ConceptRemark IsSheva Isc2m3_overfence IsNotSaidc2m3_overfence IsNotCoughing IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m3_overfenceProducer
+		    criteria ConceptRemark IsTrevor Isc2m3_overfence IsNotSaidc2m3_overfence IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m3_overfenceMechanic
 		    ApplyContext "Saidc2m3_overfence:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m3_swanroomSheva
+		Rule PlayerRemarkc2m3_screamingoakTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m3_swanroom IsNotSaidc2m3_swanroom IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m3_swanroomProducer
+		    criteria ConceptRemark IsTrevor Isc2m3_screamingoak IsNotSaidc2m3_screamingoak IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear800 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m3_screamingoakMechanic
+		    ApplyContext "Saidc2m3_screamingoak:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkc2m3_swanpileupTrevor
+		{
+		    criteria ConceptRemark IsTrevor Isc2m3_swanpileup IsNotSaidc2m3_swanpileup IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear150 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m3_swanpileupMechanic
+		    ApplyContext "Saidc2m3_swanpileup:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkc2m3_swanroomTrevor
+		{
+		    criteria ConceptRemark IsTrevor Isc2m3_swanroom IsNotSaidc2m3_swanroom IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m3_swanroomMechanic
 		    ApplyContext "Saidc2m3_swanroom:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m3_tracks01Sheva
+		Rule PlayerRemarkc2m3_tracks01Trevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m3_tracks01 IsNotSaidc2m3_tracks01 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_IsTracksOK IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m3_tracks01Producer
+		    criteria ConceptRemark IsTrevor Isc2m3_tracks01 IsNotSaidc2m3_tracks01 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_IsTracksOK IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m3_tracks01Mechanic
 		    ApplyContext "Saidc2m3_tracks01:1:0,_auto_TimerLockA:1:8"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m3_tracks02Sheva
+		Rule PlayerRemarkc2m3_tracks02Trevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m3_tracks02 IsNotSaidc2m3_tracks02 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_IsTracksOK IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m3_tracks01Producer
+		    criteria ConceptRemark IsTrevor Isc2m3_tracks02 IsNotSaidc2m3_tracks02 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_IsTracksOK IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m3_tracks01Mechanic
 		    ApplyContext "Saidc2m3_tracks02:1:0,_auto_TimerLockA:1:8"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m3_tracks03Sheva
+		Rule PlayerRemarkc2m3_tracks03Trevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m3_tracks03 IsNotSaidc2m3_tracks03 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_IsTracksOK IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m3_tracks01Producer
+		    criteria ConceptRemark IsTrevor Isc2m3_tracks03 IsNotSaidc2m3_tracks03 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_IsTracksOK IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m3_tracks01Mechanic
 		    ApplyContext "Saidc2m3_tracks03:1:0,_auto_TimerLockA:1:8"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m3_tracks04Sheva
+		Rule PlayerRemarkc2m3_tracks04Trevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m3_tracks04 IsNotSaidc2m3_tracks04 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_IsTracksOK IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m3_tracks01Producer
+		    criteria ConceptRemark IsTrevor Isc2m3_tracks04 IsNotSaidc2m3_tracks04 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_IsTracksOK IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m3_tracks01Mechanic
 		    ApplyContext "Saidc2m3_tracks04:1:0,_auto_TimerLockA:1:8"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m3_tracks05Sheva
+		Rule PlayerRemarkc2m3_tracks05Trevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m3_tracks05 IsNotSaidc2m3_tracks05 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_IsTracksOK IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m3_tracks01Producer
+		    criteria ConceptRemark IsTrevor Isc2m3_tracks05 IsNotSaidc2m3_tracks05 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_IsTracksOK IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m3_tracks01Mechanic
 		    ApplyContext "Saidc2m3_tracks05:1:0,_auto_TimerLockA:1:8"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m3_tracks06Sheva
+		Rule PlayerRemarkc2m3_tracks06Trevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m3_tracks06 IsNotSaidc2m3_tracks06 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_IsTracksOK IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m3_tracks01Producer
+		    criteria ConceptRemark IsTrevor Isc2m3_tracks06 IsNotSaidc2m3_tracks06 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_IsTracksOK IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m3_tracks01Mechanic
 		    ApplyContext "Saidc2m3_tracks06:1:0,_auto_TimerLockA:1:8"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m3_tracks07Sheva
+		Rule PlayerRemarkc2m3_tracks07Trevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m3_tracks07 IsNotSaidc2m3_tracks07 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_IsTracksOK IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m3_tracks01Producer
+		    criteria ConceptRemark IsTrevor Isc2m3_tracks07 IsNotSaidc2m3_tracks07 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_IsTracksOK IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m3_tracks01Mechanic
 		    ApplyContext "Saidc2m3_tracks07:1:0,_auto_TimerLockA:1:8"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m3_tracks08Sheva
+		Rule PlayerRemarkc2m3_tracks08Trevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m3_tracks08 IsNotSaidc2m3_tracks08 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_IsTracksOK IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m3_tracks01Producer
+		    criteria ConceptRemark IsTrevor Isc2m3_tracks08 IsNotSaidc2m3_tracks08 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_IsTracksOK IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m3_tracks01Mechanic
 		    ApplyContext "Saidc2m3_tracks08:1:0,_auto_TimerLockA:1:8"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m3_ventSheva
+		Rule PlayerRemarkc2m3_ventTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m3_vent IsNotSaidc2m3_vent IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear150 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m3_ventProducer
+		    criteria ConceptRemark IsTrevor Isc2m3_vent IsNotSaidc2m3_vent IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear150 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m3_ventMechanic
 		    ApplyContext "Saidc2m3_vent:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m4_barnentrySheva
+		Rule PlayerRemarkc2m3_waterTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m4_barnentry IsNotSaidc2m4_barnentry IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m4_barnentryProducer
+		    criteria ConceptRemark IsTrevor Isc2m3_water IsNotSaidc2m3_water IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear150 ChanceToFire60Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m3_waterMechanic
+		    then any _c2m3_water01 foo:0 0.1
+		    ApplyContext "Saidc2m3_water:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule AUTOBLANK_PlayerRemarkc2m3_waterTrevor
+		{
+		    criteria ConceptRemark IsTrevor Isc2m3_water IsNotSaidc2m3_water IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear150 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response _PlayerInfoRemarkableBlankMechanic
+		    ApplyContext "Saidc2m3_water:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkc2m3_wayblockedTrevor
+		{
+		    criteria ConceptRemark IsTrevor Isc2m3_wayblocked IsNotSaidc2m3_wayblocked IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m3_wayblockedMechanic
+		    ApplyContext "Saidc2m3_wayblocked:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkc2m4_barnentryTrevor
+		{
+		    criteria ConceptRemark IsTrevor Isc2m4_barnentry IsNotSaidc2m4_barnentry IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m4_barnentryMechanic
 		    ApplyContext "Saidc2m4_barnentry:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m4_bumpercarsSheva
+		Rule PlayerRemarkc2m4_bumpercarsTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m4_bumpercars IsNotSaidc2m4_bumpercars IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear800 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m4_bumpercarsProducer
+		    criteria ConceptRemark IsTrevor Isc2m4_bumpercars IsNotSaidc2m4_bumpercars IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear800 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m4_bumpercarsMechanic
 		    ApplyContext "Saidc2m4_bumpercars:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m4_pendoorSheva
+		Rule PlayerRemarkc2m4_pendoorTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m4_pendoor IsNotSaidc2m4_pendoor IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m4_pendoorProducer
+		    criteria ConceptRemark IsTrevor Isc2m4_pendoor IsNotSaidc2m4_pendoor IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m4_pendoorMechanic
 		    ApplyContext "Saidc2m4_pendoor:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m4_upbarnSheva
+		Rule PlayerRemarkc2m4_moustachioTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m4_upbarn IsNotSaidc2m4_upbarn IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m4_upbarnProducer
+		    criteria ConceptRemark IsTrevor Isc2m4_moustachio IsNotSaidc2m4_moustachio IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m4_moustachioMechanic
+		    ApplyContext "Saidc2m4_moustachio:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkc2m4_stadiumTrevor
+		{
+		    criteria ConceptRemark IsTrevor Isc2m4_stadium IsNotSaidc2m4_stadium IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m4_stadiumMechanic
+		    ApplyContext "Saidc2m4_stadium:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkc2m4_upbarnTrevor
+		{
+		    criteria ConceptRemark IsTrevor Isc2m4_upbarn IsNotSaidc2m4_upbarn IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m4_upbarnMechanic
 		    ApplyContext "Saidc2m4_upbarn:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m5_button2Sheva
+		Rule PlayerRemarkc2m5_button2Trevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m5_button2 IsNotSaidc2m5_button2 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear75 TimeSinceGroupInCombat02 AutoIsNotScavenge AutoIsNotSurvival _auto_IsButton1 _auto_NotButton2 IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m5_button2Producer
+		    criteria ConceptRemark IsTrevor Isc2m5_button2 IsNotSaidc2m5_button2 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear75 TimeSinceGroupInCombat02 AutoIsNotScavenge AutoIsNotSurvival _auto_IsButton1 _auto_NotButton2 IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m5_button2Mechanic
 		    ApplyContext "Saidc2m5_button2:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC3M3BridgeDownSheva
+		Rule PlayerRemarkC3M3BridgeDownTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC3M3BridgeDown IsNotSaidC3M3BridgeDown IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 IsSaidC3M3BridgeButton AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC3M3BridgeDownProducer
+		    criteria ConceptRemark IsTrevor IsC3M3BridgeDown IsNotSaidC3M3BridgeDown IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsSaidC3M3BridgeButton AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkC3M3BridgeDownMechanic
 		    ApplyContext "SaidC3M3BridgeDown:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC3M1NoSwimmingSheva
+		Rule PlayerRemarkC3M1NoSwimmingTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC3M1NoSwimming IsNotSaidC3M1NoSwimming IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC3M1NoSwimmingProducer
+		    criteria ConceptRemark IsTrevor IsC3M1NoSwimming IsNotSaidC3M1NoSwimming IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkC3M1NoSwimmingMechanic
 		    ApplyContext "SaidC3M1NoSwimming:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC3M2BathtubSheva
+		Rule PlayerRemarkc3m2_parachutistTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC3M2Bathtub IsNotSaidC3M2Bathtub IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 IsMechanicAlive IsMechanicNear400 AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerRemarkC3M2BathtubProducer
-		    then mechanic InfoRemC3M2Bathtub2 foo:0 -4.301
-		    ApplyContext "SaidC3M2Bathtub:1:0,Talk:1:4.401"
+		    criteria ConceptRemark IsTrevor Isc3m2_parachutist IsNotSaidc3m2_parachutist IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    // 	forceweight 10
+		    Response PlayerRemarkc3m2_parachutistMechanic
+		    ApplyContext "Saidc3m2_parachutist:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc3m2_overtreeSheva
+		Rule PlayerRemarkc3m2_overtreeTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC3M2OverTree IsNotSaidC3M2OverTree IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc3m2_overtreeProducer
+		    criteria ConceptRemark IsTrevor IsC3M2OverTree IsNotSaidC3M2OverTree IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc3m2_overtreeMechanic
+		    then any _C3M2Pirogue foo:0 0.1
 		    ApplyContext "SaidC3M2OverTree:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC3M2PlaneCrashSheva
+		Rule PlayerRemarkC3M2PlaneCrashTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC3M2PlaneCrash IsNotSaidC3M2PlaneCrash IsNotCoughing NotInCombat IsTalk IsTalkSheva IsSubjectNear600 IsNotSaidC3M2PlaneDoorNag IsWorldTalkSheva ChanceToFire100Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    criteria ConceptRemark IsTrevor IsC3M2PlaneCrash IsNotSaidC3M2PlaneCrash IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear600 IsNotSaidC3M2OpenDoor IsWorldTalkTrevor ChanceToFire100Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
 		    // 	forceweight 1
-		    Response PlayerRemarkC3M2PlaneCrashProducer
-		    ApplyContext "SaidC3M2PlaneCrash:1:0,Talk:1:2.691"
+		    Response PlayerRemarkC3M2PlaneCrashMechanic
+		    ApplyContext "SaidC3M2PlaneCrash:1:0,Talk:1:3.419"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC3M2PlaneDoorNagSheva
+		Rule PlayerRemarkC3M2PlaneDoorNagTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC3M2PlaneDoorNag IsNotSaidC3M2PlaneDoorNag IsNotCoughing IsTalk IsTalkSheva IsSubjectNear500 IsNotSaidC3M2OpenDoor IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC3M2PlaneDoorNagProducer
-		    ApplyContext "SaidC3M2PlaneDoorNag:1:0,_auto_TimerLockA:1:15,Talk:1:4.099"
+		    criteria ConceptRemark IsTrevor IsC3M2PlaneDoorNag IsNotSaidC3M2PlaneDoorNag IsNotCoughing IsTalk IsTalkTrevor IsSubjectNear500 IsNotSaidC3M2OpenDoor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkC3M2PlaneDoorNagMechanic
+		    ApplyContext "SaidC3M2PlaneDoorNag:1:0,_auto_TimerLockA:1:15,Talk:1:2.270"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC3M2PlaneDoorNagaSheva
+		Rule PlayerRemarkC3M2PlaneDoorNagaTrevor
 		{
-		    criteria ConceptTalkIdle IsSheva IsNotCoughing IsTalk IsTalkSheva IsSaidC3M2PlaneDoorNag ismapc3m2_swamp IsNotSaidC3M2OpenDoor IsNotZombiePresentTank AutoIsNotScavenge AutoIsNotSurvival IsWorldTalkSheva IsNotSpeakingWeight0 _auto_NotTimerLockA _auto_NotTimerLockSheva
-		    Response PlayerRemarkC3M2PlaneDoorNagaProducer
-		    ApplyContext "_auto_TimerLockA:1:20,_auto_TimerLockSheva:1:40,Talk:1:1.652"
+		    criteria ConceptTalkIdle IsTrevor IsSaidC3M2PlaneDoorNag IsNotSaidC3M2OpenDoor ismapc3m2_swamp IsNotCoughing IsTalk IsTalkTrevor IsNotZombiePresentTank AutoIsNotScavenge AutoIsNotSurvival IsWorldTalkTrevor IsNotSpeakingWeight0 _auto_NotTimerLockA _auto_NotTimerLockTrevor
+		    Response PlayerRemarkC3M2PlaneDoorNagaMechanic
+		    ApplyContext "_auto_TimerLockA:1:20,_auto_TimerLockTrevor:1:40,Talk:1:1.660"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC3M2RoadSheva
+		Rule PlayerRemarkC3M2RoadTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC3M2Road IsNotSaidC3M2Road IsNotCoughing NotInCombat IsTalk IsTalkSheva IsSubjectNear300 IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC3M2RoadProducer
-		    ApplyContext "SaidC3M2Road:1:0,Talk:1:1.265"
+		    criteria ConceptRemark IsTrevor IsC3M2Road IsNotSaidC3M2Road IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear300 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkC3M2RoadMechanic
+		    ApplyContext "SaidC3M2Road:1:0,Talk:1:1.154"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC3M2SickOfSwampSheva
+		Rule C3M2LeavingSafeRoomTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC3M2SickOfSwamp IsNotSaidC3M2SickOfSwamp IsNotCoughing NotInCombat IsTalk IsTalkSheva IsSubjectNear300 IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC3M2SickOfSwampProducer
-		    ApplyContext "SaidC3M2SickOfSwamp:1:0,Talk:1:2.450"
+		    criteria ConceptSurvivorLeavingInitialCheckpoint IsTrevor IsNotSaidLeavingSafeArea ismapc3m2_swamp _auto_NotTellingStory
+		    Response PlayerRemarkC3M2StartMechanic
+		    ApplyContext "SaidLeavingSafeArea:1:0,Talk:1:1.547"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C3M2LeavingSafeRoomSheva
+		Rule PlayerRemarkC3M2StartDryTrevor
 		{
-		    criteria ConceptSurvivorLeavingInitialCheckpoint IsSheva IsNotSaidLeavingSafeArea ismapc3m2_swamp _auto_NotTellingStory
-		    Response PlayerRemarkC3M2StartProducer
-		    ApplyContext "SaidLeavingSafeArea:1:0,Talk:1:3.298"
+		    criteria ConceptRemark IsTrevor IsC3M2StartDry IsNotSaidC3M2StartDry IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear200 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkC3M2StartDryMechanic
+		    ApplyContext "SaidC3M2StartDry:1:0,Talk:1:1.497"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC3M2StartDrySheva
+		Rule PlayerRemarkC3M2UnderWaterShackTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC3M2StartDry IsNotSaidC3M2StartDry IsNotCoughing NotInCombat IsTalk IsTalkSheva IsSubjectNear200 IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC3M2StartDryProducer
-		    ApplyContext "SaidC3M2StartDry:1:0,Talk:1:1.261"
+		    criteria ConceptRemark IsTrevor IsC3M2UnderWaterShack IsNotSaidC3M2UnderWaterShack IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear300 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkC3M2UnderWaterShackMechanic
+		    ApplyContext "SaidC3M2UnderWaterShack:1:0,Talk:1:4.380"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC3M2UnderWaterShackSheva
+		Rule _C3M2UnderwaterShackTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC3M2UnderWaterShack IsNotSaidC3M2UnderWaterShack IsNotCoughing NotInCombat IsTalk IsTalkSheva IsSubjectNear300 IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC3M2UnderWaterShackProducer
-		    ApplyContext "SaidC3M2UnderWaterShack:1:0,Talk:1:2.250"
+		    criteria Concept_C3M2UnderwaterShack IsTrevor IsNotCoughing NotInCombat IssuerClose AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response _C3M2UnderwaterShackMechanic
+		}
+	},
+
+	{
+		Rule PlayerRemarkC3M2Village1Trevor
+		{
+		    criteria ConceptRemark IsTrevor IsC3M2Village1 IsNotSaidC3M2Village1 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear800 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkC3M2Village1Mechanic
+		    ApplyContext "SaidC3M2Village1:1:0,Talk:1:1.848"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC3M2UnderWaterShackEllisSheva
+		Rule PlayerRemarkC3M3LowerGateTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC3M2UnderWaterShack IsNotSaidC3M2UnderWaterShack IsNotCoughing NotInCombat IsTalk IsTalkSheva IsSubjectNear300 IsMechanicAlive IsMechanicNear400 ChanceToFire30Percent IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC3M2UnderWaterShackEllisProducer
-		    then mechanic _C3M2UnderwaterShack foo:0 0.5
-		    ApplyContext "SaidC3M2UnderWaterShack:1:0,Talk:1:2.250"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule PlayerRemarkC3M2Village1Sheva
-		{
-		    criteria ConceptRemark IsSheva IsC3M2Village1 IsNotSaidC3M2Village1 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsSubjectNear800 IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC3M2Village1Producer
-		    ApplyContext "SaidC3M2Village1:1:0,Talk:1:2.647"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule PlayerRemarkC3M2WhereAreWeSheva
-		{
-		    criteria ConceptRemark IsSheva IsC3M2WhereAreWe IsNotSaidC3M2WhereAreWe IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival ChanceToFire30Percent IsNotSpeakingWeight0
-		    Response PlayerRemarkC3M2WhereAreWeProducer
-		    ApplyContext "SaidC3M2WhereAreWe:1:0,Talk:1:4.066"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule AUTOBLANK_PlayerRemarkC3M2WhereAreWeSheva
-		{
-		    criteria ConceptRemark IsSheva IsC3M2WhereAreWe IsNotSaidC3M2WhereAreWe IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response _PlayerInfoRemarkableBlankProducer
-		    ApplyContext "SaidC3M2WhereAreWe:1:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule PlayerRemarkC3M3BodiesSheva
-		{
-		    criteria ConceptRemark IsSheva IsC3M3Bodies IsNotSaidC3M3Bodies IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC3M3BodiesProducer
-		    then mechanic InfoRemC3M3Bodies2 foo:0 -4.955
-		    ApplyContext "SaidC3M3Bodies:1:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule PlayerRemarkC3M3LowerGateSheva
-		{
-		    criteria ConceptRemark IsSheva IsC3M3LowerGate IsNotSaidC3M3BridgeButton IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC3M3LowerGateProducer
+		    criteria ConceptRemark IsTrevor IsC3M3LowerGate IsNotSaidC3M3BridgeButton IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkC3M3LowerGateMechanic
 		    then any InfoRemC3M3LowerGatea foo:0 10
 		    ApplyContext "SaidC3M3LowerGate:1:0"
 		    applycontexttoworld
@@ -5619,191 +6266,170 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule PlayerRemarkC3M3MoreShacksSheva
+		Rule PlayerRemarkC3M3SearchHousesTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC3M3MoreShacks IsNotSaidC3M3MoreShacks IsNotCoughing IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear400 IsNotSaidC3M3BridgeButton AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC3M3MoreShacksProducer
-		    ApplyContext "SaidC3M3MoreShacks:1:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule AUTOBLANK_PlayerRemarkC3M3MoreShacksSheva
-		{
-		    criteria ConceptRemark IsSheva IsC3M3MoreShacks IsNotSaidC3M3MoreShacks IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsNotSaidC3M3BridgeButton AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response _PlayerInfoRemarkableBlankProducer
-		    ApplyContext "SaidC3M3MoreShacks:1:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule PlayerRemarkC3M3SearchHousesSheva
-		{
-		    criteria ConceptRemark IsSheva IsC3M3SearchHouses IsNotSaidC3M3SearchHouses IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC3M3SearchHousesProducer
+		    criteria ConceptRemark IsTrevor IsC3M3SearchHouses IsNotSaidC3M3SearchHouses IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkC3M3SearchHousesMechanic
 		    ApplyContext "SaidC3M3SearchHouses:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC3M3StairsSheva
+		Rule PlayerRemarkC3M3StairsTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC3M3Stairs IsNotSaidC3M3Stairs IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC3M3StairsProducer
+		    criteria ConceptRemark IsTrevor IsC3M3Stairs IsNotSaidC3M3Stairs IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkC3M3StairsMechanic
 		    ApplyContext "SaidC3M3Stairs:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC3M3StayUpHereSheva
+		Rule PlayerRemarkC3M3StayUpHereTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC3M3StayUpHere IsNotSaidC3M3StayUpHere IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 ChanceToFire50Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC3M3StayUpHereProducer
+		    criteria ConceptRemark IsTrevor IsC3M3StayUpHere IsNotSaidC3M3StayUpHere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 ChanceToFire30Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkC3M3StayUpHereMechanic
 		    ApplyContext "SaidC3M3StayUpHere:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule AUTOBLANK_PlayerRemarkC3M3StayUpHereSheva
+		Rule AUTOBLANK_PlayerRemarkC3M3StayUpHereTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC3M3StayUpHere IsNotSaidC3M3StayUpHere IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response _PlayerInfoRemarkableBlankProducer
+		    criteria ConceptRemark IsTrevor IsC3M3StayUpHere IsNotSaidC3M3StayUpHere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear100 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response _PlayerInfoRemarkableBlankMechanic
 		    ApplyContext "SaidC3M3StayUpHere:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC3M3ThisWaySheva
+		Rule PlayerRemarkC3M3ThisWayTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC3M3ThisWay IsNotSaidC3M3ThisWay IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear400 ChanceToFire50Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC3M3ThisWayProducer
+		    criteria ConceptRemark IsTrevor IsC3M3ThisWay IsNotSaidC3M3ThisWay IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 ChanceToFire50Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkC3M3ThisWayMechanic
 		    ApplyContext "SaidC3M3ThisWay:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule AUTOBLANK_PlayerRemarkC3M3ThisWaySheva
+		Rule AUTOBLANK_PlayerRemarkC3M3ThisWayTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC3M3ThisWay IsNotSaidC3M3ThisWay IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response _PlayerInfoRemarkableBlankProducer
+		    criteria ConceptRemark IsTrevor IsC3M3ThisWay IsNotSaidC3M3ThisWay IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response _PlayerInfoRemarkableBlankMechanic
 		    ApplyContext "SaidC3M3ThisWay:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC3M3ThroughHereSheva
+		Rule PlayerRemarkC3M3ThroughHereTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC3M3ThroughHere IsNotSaidC3M3ThroughHere IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC3M3ThroughHereProducer
+		    criteria ConceptRemark IsTrevor IsC3M3ThroughHere IsNotSaidC3M3ThroughHere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkC3M3ThroughHereMechanic
 		    ApplyContext "SaidC3M3ThroughHere:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC3M3ThroughThisHouseSheva
+		Rule PlayerRemarkC3M3ThroughThisHouseTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC3M3ThroughThisHouse IsNotSaidC3M3ThroughThisHouse IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC3M3ThroughThisHouseProducer
+		    criteria ConceptRemark IsTrevor IsC3M3ThroughThisHouse IsNotSaidC3M3ThroughThisHouse IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkC3M3ThroughThisHouseMechanic
 		    ApplyContext "SaidC3M3ThroughThisHouse:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC3M3UpHereSheva
+		Rule PlayerRemarkC3M3UpHereTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC3M3UpHere IsNotSaidC3M3UpHere IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear100 IsNotSaidC3M3BridgeButton AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC3M3UpHereProducer
+		    criteria ConceptRemark IsTrevor IsC3M3UpHere IsNotSaidC3M3UpHere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear100 IsNotSaidC3M3BridgeButton AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkC3M3UpHereMechanic
 		    ApplyContext "SaidC3M3UpHere:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC3M3UsePlanksSheva
+		Rule PlayerRemarkC3M3UsePlanksTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC3M3UsePlanks IsNotSaidC3M3UsePlanks IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear400 ChanceToFire30Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC3M3UsePlanksProducer
+		    criteria ConceptRemark IsTrevor IsC3M3UsePlanks IsNotSaidC3M3UsePlanks IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 ChanceToFire30Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkC3M3UsePlanksMechanic
 		    ApplyContext "SaidC3M3UsePlanks:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule AUTOBLANK_PlayerRemarkC3M3UsePlanksSheva
+		Rule AUTOBLANK_PlayerRemarkC3M3UsePlanksTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC3M3UsePlanks IsNotSaidC3M3UsePlanks IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response _PlayerInfoRemarkableBlankProducer
+		    criteria ConceptRemark IsTrevor IsC3M3UsePlanks IsNotSaidC3M3UsePlanks IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response _PlayerInfoRemarkableBlankMechanic
 		    ApplyContext "SaidC3M3UsePlanks:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc3m4downroadSheva
+		Rule PlayerRemarkc3m4downroadTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc3m4downroad IsNotSaidc3m4downroad IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc3m4downroadProducer
+		    criteria ConceptRemark IsTrevor Isc3m4downroad IsNotSaidc3m4downroad IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc3m4downroadMechanic
 		    ApplyContext "Saidc3m4downroad:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc3m4outhouseSheva
+		Rule PlayerRemarkc3m4radioTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc3m4outhouse IsNotSaidc3m4outhouse IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc3m4outhouseProducer
-		    ApplyContext "Saidc3m4outhouse:1:0"
+		    criteria ConceptRemark IsTrevor Isc3m4radio IsNotSaidc3m4radio IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival _auto_NotButton1 IsNotSpeakingWeight0
+		    Response PlayerRemarkc3m4radioMechanic
+		    ApplyContext "Saidc3m4radio:1:0,Talk:1:1.228"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule AUTOBLANK_PlayerRemarkc3m4outhouseSheva
+		Rule _C3M4_RadioTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc3m4outhouse IsNotSaidc3m4outhouse IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear400 ChanceToFire20Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response _PlayerInfoRemarkableBlankProducer
-		    ApplyContext "Saidc3m4outhouse:1:0"
+		    criteria Concept_C3M4_Radio IsTrevor IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IssuerClose AutoIsNotScavenge AutoIsNotSurvival _auto_NotButton1
+		    Response _C3M4_RadioMechanic
+		    ApplyContext "Talk:1:1.507"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc3m4radioSheva
+		Rule PlayerRemarkc3m4scaffoldTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc3m4radio IsNotSaidc3m4radio IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival _auto_NotButton1 IsNotSpeakingWeight0
-		    Response PlayerRemarkc3m4radioProducer
-		    then Mechanic _C3M4_Radio foo:0 0.1
-		    ApplyContext "Saidc3m4radio:1:0,Talk:1:1.207"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule PlayerRemarkc3m4scaffoldSheva
-		{
-		    criteria ConceptRemark IsSheva Isc3m4scaffold IsNotSaidc3m4scaffold IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc3m4scaffoldProducer
+		    criteria ConceptRemark IsTrevor Isc3m4scaffold IsNotSaidc3m4scaffold IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc3m4scaffoldMechanic
 		    ApplyContext "Saidc3m4scaffold:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc4m1_carcrashSheva
+		Rule PlayerRemarkc3m4shacksTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc4m1_carcrash IsNotSaidc4m1_carcrash IsNotCoughing NotInCombat IsTalk IsTalkSheva IsSubjectNear500 IsWorldTalkSheva ChanceToFire50Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m1_carcrashProducer
+		    criteria ConceptRemark IsTrevor Isc3m4shacks IsNotSaidc3m4shacks IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc3m4shacksMechanic
+		    ApplyContext "Saidc3m4shacks:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkc4m1_carcrashTrevor
+		{
+		    criteria ConceptRemark IsTrevor Isc4m1_carcrash IsNotSaidc4m1_carcrash IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear500 IsWorldTalkTrevor ChanceToFire50Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc4m1_carcrashMechanic
 		    then any c4m1_wreck01 foo:0 0.01
 		    ApplyContext "Saidc4m1_carcrash:1:0"
 		    applycontexttoworld
@@ -5811,71 +6437,71 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule AUTOBLANK_PlayerRemarkc4m1_carcrashSheva
+		Rule AUTOBLANK_PlayerRemarkc4m1_carcrashTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc4m1_carcrash IsNotSaidc4m1_carcrash IsNotCoughing NotInCombat IsTalk IsTalkSheva IsSubjectNear300 IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response _PlayerInfoRemarkableBlankProducer
+		    criteria ConceptRemark IsTrevor Isc4m1_carcrash IsNotSaidc4m1_carcrash IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear300 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response _PlayerInfoRemarkableBlankMechanic
 		    ApplyContext "Saidc4m1_carcrash:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc4m1_garagesaleSheva
+		Rule PlayerRemarkc4m1_garagesaleTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc4m1_garagesale IsNotSaidc4m1_garagesale IsNotCoughing NotInCombat IsTalk IsTalkSheva IsSubjectNear400 IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m1_garagesaleProducer
+		    criteria ConceptRemark IsTrevor Isc4m1_garagesale IsNotSaidc4m1_garagesale IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear400 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc4m1_garagesaleMechanic
 		    ApplyContext "Saidc4m1_garagesale:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc4m1_nogasSheva
+		Rule PlayerRemarkc4m1_nogasTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc4m1_nogas IsNotSaidc4m1_nogas IsNotCoughing NotInCombat IsTalk IsTalkSheva IsSubjectNear300 IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m1_nogasProducer
-		    then any c4m1_nogas10 foo:0 0.01
-		    ApplyContext "Saidc4m1_nogas:1:0,Talk:1:4.303,_auto_NoGasGate:1:25"
+		    criteria ConceptRemark IsTrevor Isc4m1_nogas IsNotSaidc4m1_nogas IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear300 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc4m1_nogasMechanic
+		    then any c4m1_nogas01 foo:0 0.01
+		    ApplyContext "Saidc4m1_nogas:1:0,Talk:1:0.929,_auto_NoGasGate:1:25"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc4m1_playgroundfarSheva
+		Rule PlayerRemarkc4m1_playgroundfarTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc4m1_playground IsNotSaidc4m1_playground IsNotCoughing NotInCombat IsTalk IsTalkSheva IsSubjectNear1000 IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m1_playgroundfarProducer
+		    criteria ConceptRemark IsTrevor Isc4m1_playground IsNotSaidc4m1_playground IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear1000 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc4m1_playgroundfarMechanic
 		    ApplyContext "Saidc4m1_playground:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc4m1_playgroundnearSheva
+		Rule PlayerRemarkc4m1_playgroundnearTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc4m1_playground IsNotSaidc4m1_playground IsNotCoughing NotInCombat IsTalk IsTalkSheva IsSubjectNear300 IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m1_playgroundnearProducer
+		    criteria ConceptRemark IsTrevor Isc4m1_playground IsNotSaidc4m1_playground IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear300 IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc4m1_playgroundnearMechanic
 		    ApplyContext "Saidc4m1_playground:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc4m1_throughhereASheva
+		Rule PlayerRemarkc4m1_throughhereATrevor
 		{
-		    criteria ConceptRemark IsSheva Isc4m1_throughhereA IsNotSaidc4m1_throughhereA IsNotCoughing IsTalk IsTalkSheva IsSubjectNear400 IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m1_throughhereAProducer
+		    criteria ConceptRemark IsTrevor Isc4m1_throughhereA IsNotSaidc4m1_throughhereA IsNotCoughing IsTalk IsTalkTrevor IsSubjectNear400 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc4m1_throughhereAMechanic
 		    ApplyContext "Saidc4m1_throughhereA:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc4m2_gasinsidesignSheva
+		Rule PlayerRemarkc4m2_gasinsidesignTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc4m2_gasinsidesign IsNotSaidc4m2_gasinsidesign IsNotSaidSafeSpotAhead IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear350 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m2_gasinsidesignProducer
+		    criteria ConceptRemark IsTrevor Isc4m2_gasinsidesign IsNotSaidc4m2_gasinsidesign IsNotSaidSafeSpotAhead IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear350 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc4m2_gasinsidesignMechanic
 		    then any _c4m2_gasinside01 foo:0 0.01
 		    ApplyContext "Saidc4m2_gasinsidesign:1:0"
 		    applycontexttoworld
@@ -5883,30 +6509,30 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule PlayerRemarkc4m2_millentranceSheva
+		Rule PlayerRemarkc4m2_millentranceTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc4m2_millentrance IsNotSaidc4m2_millentrance IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m2_millentranceProducer
+		    criteria ConceptRemark IsTrevor Isc4m2_millentrance IsNotSaidc4m2_millentrance IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc4m2_millentranceMechanic
 		    ApplyContext "Saidc4m2_millentrance:1:0,c4m2_PastStart:1:0,_auto_InsideMill:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc4m2_millentranceexitSheva
+		Rule PlayerRemarkc4m2_millentranceexitTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc4m2_millentranceexit IsNotSaidc4m2_millentranceexit IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m2_millentranceexitProducer
+		    criteria ConceptRemark IsTrevor Isc4m2_millentranceexit IsNotSaidc4m2_millentranceexit IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc4m2_millentranceexitMechanic
 		    ApplyContext "Saidc4m2_millentranceexit:1:0,c4m2_PastStart:1:0,_auto_InsideMill:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc4m2_seegasstationSheva
+		Rule PlayerRemarkc4m2_seegasstationTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc4m2_seegasstation IsNotSaidc4m2_seegasstation IsNotSaidActivatedC4M2Elevator IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear150 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m2_seegasstationProducer
+		    criteria ConceptRemark IsTrevor Isc4m2_seegasstation IsNotSaidc4m2_seegasstation IsNotSaidActivatedC4M2Elevator IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear150 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc4m2_seegasstationMechanic
 		    then self _c4m2_seestation01 foo:0 0.01
 		    ApplyContext "Talk:1:3,Saidc4m2_seegasstation:1:0,_auto_InsideMill:0:0"
 		    applycontexttoworld
@@ -5914,10 +6540,10 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule PlayerRemarkc4m2_streetblockedSheva
+		Rule PlayerRemarkc4m2_streetblockedTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc4m2_streetblocked IsNotSaidc4m2_streetblocked IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m2_streetblockedProducer
+		    criteria ConceptRemark IsTrevor Isc4m2_streetblocked IsNotSaidc4m2_streetblocked IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc4m2_streetblockedMechanic
 		    then any _c4m2_streetblocked01 foo:0 0.01
 		    ApplyContext "Saidc4m2_streetblocked:1:0,c4m2_PastStart:1:0,_auto_InsideMill:1:0"
 		    applycontexttoworld
@@ -5925,40 +6551,40 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule PlayerRemarkc4m2_uprampSheva
+		Rule PlayerRemarkc4m2_uprampTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc4m2_upramp IsNotSaidc4m2_upramp IsNotCoughing IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear600 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m2_uprampProducer
+		    criteria ConceptRemark IsTrevor Isc4m2_upramp IsNotSaidc4m2_upramp IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear600 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc4m2_uprampMechanic
 		    ApplyContext "Saidc4m2_upramp:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc4m2_upthestairsSheva
+		Rule PlayerRemarkc4m2_upthestairsTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc4m2_upthestairs IsNotSaidc4m2_upthestairs IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m2_upthestairsProducer
+		    criteria ConceptRemark IsTrevor Isc4m2_upthestairs IsNotSaidc4m2_upthestairs IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc4m2_upthestairsMechanic
 		    ApplyContext "Saidc4m2_upthestairs:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc4m2_useelevatorSheva
+		Rule PlayerRemarkc4m2_useelevatorTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc4m2_useelevator IsNotSaidc4m2_useelevator IsNotSaidActivatedC4M2Elevator IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 IsSaidc4m2_seegasstation AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m2_useelevatorProducer
+		    criteria ConceptRemark IsTrevor Isc4m2_useelevator IsNotSaidc4m2_useelevator IsNotSaidActivatedC4M2Elevator IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 IsSaidc4m2_seegasstation AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc4m2_useelevatorMechanic
 		    ApplyContext "Saidc4m2_useelevator:1:0,_auto_InsideMill:0:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc4m2_waterpoolSheva
+		Rule PlayerRemarkc4m2_waterpoolTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc4m2_waterpool IsNotSaidc4m2_waterpool IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m2_waterpoolProducer
+		    criteria ConceptRemark IsTrevor Isc4m2_waterpool IsNotSaidc4m2_waterpool IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc4m2_waterpoolMechanic
 		    then any _c4m2_waterpool02 foo:0 0.01
 		    ApplyContext "Saidc4m2_waterpool:1:0,c4m2_PastPuddle:1:0"
 		    applycontexttoworld
@@ -5966,226 +6592,191 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule PlayerRemarkc4m2_weatherSheva
+		Rule PlayerRemarkc4m2_weatherTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc4m2_weather IsNotSaidc4m2_weather IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear600 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m2_weatherProducer
+		    criteria ConceptRemark IsTrevor Isc4m2_weather IsNotSaidc4m2_weather IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear600 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc4m2_weatherMechanic
 		    ApplyContext "Saidc4m2_weather:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc4m3_caneSheva
+		Rule PlayerRemarkc4m3_caneTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc4m3_cane IsNotSaidc4m3_cane IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m3_caneProducer
+		    criteria ConceptRemark IsTrevor Isc4m3_cane IsNotSaidc4m3_cane IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc4m3_caneMechanic
 		    ApplyContext "Saidc4m3_cane:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc4m3_crosshereSheva
+		Rule PlayerRemarkc4m3_crosshereTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc4m3_crosshere IsNotSaidc4m3_crosshere IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear150 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m3_crosshereProducer
+		    criteria ConceptRemark IsTrevor Isc4m3_crosshere IsNotSaidc4m3_crosshere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear150 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc4m3_crosshereMechanic
 		    ApplyContext "Saidc4m3_crosshere:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc4m3_downhereSheva
+		Rule PlayerRemarkc4m3_downhereTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc4m3_downhere IsNotSaidc4m3_downhere IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear150 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m3_downhereProducer
+		    criteria ConceptRemark IsTrevor Isc4m3_downhere IsNotSaidc4m3_downhere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear150 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc4m3_downhereMechanic
 		    ApplyContext "Saidc4m3_downhere:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc4m3_downstairsSheva
+		Rule PlayerRemarkc4m3_downstairsTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc4m3_downstairs IsNotSaidc4m3_downstairs IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m3_downstairsProducer
+		    criteria ConceptRemark IsTrevor Isc4m3_downstairs IsNotSaidc4m3_downstairs IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc4m3_downstairsMechanic
 		    ApplyContext "Saidc4m3_downstairs:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc4m3_ducatelsignSheva
+		Rule PlayerRemarkc4m3_ducatelsignTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc4m3_ducatelsign IsNotSaidc4m3_ducatelsign IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m3_ducatelsignProducer
+		    criteria ConceptRemark IsTrevor Isc4m3_ducatelsign IsNotSaidc4m3_ducatelsign IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc4m3_ducatelsignMechanic
 		    ApplyContext "Saidc4m3_ducatelsign:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc4m3_elevatorSheva
+		Rule PlayerRemarkc4m3_elevatorTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc4m3_elevator IsNotSaidc4m3_elevator IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear600 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m3_elevatorProducer
+		    criteria ConceptRemark IsTrevor Isc4m3_elevator IsNotSaidc4m3_elevator IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear600 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc4m3_elevatorMechanic
 		    ApplyContext "Saidc4m3_elevator:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc4m3_floodedSheva
+		Rule PlayerRemarkc4m3_overtankTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc4m3_flooded IsNotSaidc4m3_flooded IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear100 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m3_floodedProducer
-		    then coach _C4M3_FLOODED01 foo:0 0.2
-		    ApplyContext "Saidc4m3_flooded:1:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule PlayerRemarkc4m3_overtankSheva
-		{
-		    criteria ConceptRemark IsSheva Isc4m3_overtank IsNotSaidc4m3_overtank IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m3_overtankProducer
+		    criteria ConceptRemark IsTrevor Isc4m3_overtank IsNotSaidc4m3_overtank IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc4m3_overtankMechanic
 		    ApplyContext "Saidc4m3_overtank:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc4m3_rainSheva
+		Rule PlayerRemarkc4m3_rainTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc4m3_rain IsNotSaidc4m3_rain IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m3_rainProducer
-		    then Mechanic _c4m3_rain02 foo:0 0.02
+		    criteria ConceptRemark IsTrevor Isc4m3_rain IsNotSaidc4m3_rain IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc4m3_rainMechanic
+		    then any _c4m3_rain01 foo:0 0.02
 		    ApplyContext "Saidc4m3_rain:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc4m3_thiswayaSheva
+		Rule PlayerRemarkc4m3_thiswayTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc4m3_thisway IsNotSaidc4m3_thisway IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear150 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m2_millentranceexitProducer
+		    criteria ConceptRemark IsTrevor Isc4m3_thisway IsNotSaidc4m3_thisway IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear150 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc4m2_millentranceexitMechanic
 		    ApplyContext "Saidc4m3_thisway:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc4m3_uppipesSheva
+		Rule PlayerRemarkc4m3_uppipesTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc4m3_uppipes IsNotSaidc4m3_uppipes IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m3_uppipesProducer
+		    criteria ConceptRemark IsTrevor Isc4m3_uppipes IsNotSaidc4m3_uppipes IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc4m3_uppipesMechanic
 		    ApplyContext "Saidc4m3_uppipes:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc4m4_floodedSheva
+		Rule PlayerRemarkc4m4_floodedTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc4m4_flooded NotInCombat IsSubjectNear150 AutoIsNotScavenge AutoIsNotSurvival _auto_IsSafeRoomStart _auto_NotSafeRoomQuiet IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m4_floodedProducer
-		    then any _C4M4_FLOODED01 foo:0 0.5
-		    ApplyContext "_auto_SafeRoomStart:2:0"
+		    criteria ConceptRemark IsTrevor Isc4m4_flooded NotInCombat IsSubjectNear150 AutoIsNotScavenge AutoIsNotSurvival _auto_IsSafeRoomStart _auto_NotSafeRoomQuiet IsNotSpeakingWeight0
+		    Response PlayerRemarkc4m4_floodedMechanic
+		    ApplyContext "SaidSaferoomRemarkIntro:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc4m4_garagesaleSheva
+		Rule PlayerRemarkc4m4_garagesaleTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc4m4_garagesale IsNotSaidc4m4_garagesale IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear1000 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m4_garagesaleProducer
-		    then any _C4M4_garagesale01 foo:0 0.1
+		    criteria ConceptRemark IsTrevor Isc4m4_garagesale IsNotSaidc4m4_garagesale IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear1000 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc4m4_garagesaleMechanic
 		    ApplyContext "Saidc4m4_garagesale:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc4m4_garagesale2Sheva
+		Rule PlayerRemarkc4m4_garagesale2Trevor
 		{
-		    criteria ConceptRemark IsSheva Isc4m4_garagesale2 IsNotSaidc4m4_garagesale IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear100 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m4_garagesaleProducer
-		    then any _C4M4_garagesale01 foo:0 0.1
+		    criteria ConceptRemark IsTrevor Isc4m4_garagesale2 IsNotSaidc4m4_garagesale IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear100 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc4m4_garagesaleMechanic
 		    ApplyContext "Saidc4m4_garagesale:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc4m4_playgroundSheva
+		Rule PlayerRemarkc4m4_playgroundTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc4m4_playground IsNotSaidc4m4_playground IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear800 AutoIsNotScavenge AutoIsNotSurvival _auto_NotLockA IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m4_playgroundProducer
+		    criteria ConceptRemark IsTrevor Isc4m4_playground IsNotSaidc4m4_playground IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear800 AutoIsNotScavenge AutoIsNotSurvival _auto_NotLockA IsNotSpeakingWeight0
+		    Response PlayerRemarkc4m4_playgroundMechanic
 		    ApplyContext "Saidc4m4_playground:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc4m4_porchlightSheva
+		Rule PlayerRemarkc4m4_porchlightTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc4m4_porchlight IsNotSaidc4m4_porchlight IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear800 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m4_porchlightProducer
+		    criteria ConceptRemark IsTrevor Isc4m4_porchlight IsNotSaidc4m4_porchlight IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear800 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc4m4_porchlightMechanic
 		    ApplyContext "Saidc4m4_porchlight:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc4m4_truckwreckSheva
+		Rule PlayerRemarkc4m4_truckwreckTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc4m4_truckwreck IsNotSaidc4m4_truckwreck IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear800 AutoIsNotScavenge AutoIsNotSurvival _auto_NotLockA IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m4_truckwreckProducer
+		    criteria ConceptRemark IsTrevor Isc4m4_truckwreck IsNotSaidc4m4_truckwreck IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear800 AutoIsNotScavenge AutoIsNotSurvival _auto_NotLockA IsNotSpeakingWeight0
+		    Response PlayerRemarkc4m4_truckwreckMechanic
 		    ApplyContext "Saidc4m4_truckwreck:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc4m4_useroofsSheva
+		Rule PlayerRemarkc4m4_useroofsTrevor
 		{
-		    criteria ConceptRemark IsSheva Isc4m4_useroofs IsNotSaidc4m4_useroofs IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m4_useroofsProducer
+		    criteria ConceptRemark IsTrevor Isc4m4_useroofs IsNotSaidc4m4_useroofs IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc4m4_useroofsMechanic
 		    ApplyContext "Saidc4m4_useroofs:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkpathc2m1_abandonedcarsSheva
+		Rule PlayerRemarkpathc2m1_billboardTrevor
 		{
-		    criteria ConceptRemark IsSheva Ispathc2m1_abandonedcars IsNotSaidpathc2m1_abandonedcars IsNotCoughing NotInCombat IsTalk IsTalkSheva IsSubjectNear300 ChanceToFire60Percent IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkpathc2m1_abandonedcarsProducer
-		    then Coach _C2M1abandoned01 foo:0 0.02
-		    ApplyContext "Saidpathc2m1_abandonedcars:1:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule AUTOBLANK_PlayerRemarkpathc2m1_abandonedcarsSheva
-		{
-		    criteria ConceptRemark IsSheva Ispathc2m1_abandonedcars IsNotSaidpathc2m1_abandonedcars IsNotCoughing NotInCombat IsTalk IsTalkSheva IsSubjectNear300 IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response _PlayerInfoRemarkableBlankProducer
-		    ApplyContext "Saidpathc2m1_abandonedcars:1:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule PlayerRemarkpathc2m1_billboardSheva
-		{
-		    criteria ConceptRemark IsSheva Ispathc2m1_billboard IsNotSaidpathc2m1_billboard IsNotCoughing NotInCombat IsTalkSheva IsSubjectNear1000 IsWorldTalkSheva IsNotSaidLeavingSafeArea AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkpathc2m1_billboardProducer
+		    criteria ConceptRemark IsTrevor Ispathc2m1_billboard IsNotSaidpathc2m1_billboard IsNotCoughing NotInCombat IsTalkTrevor IsSubjectNear1000 IsWorldTalkTrevor IsNotSaidLeavingSafeArea AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkpathc2m1_billboardMechanic
 		    then Coach _C2M1Billboard foo:0 0.01
 		    ApplyContext "Saidpathc2m1_billboard:1:0"
 		    applycontexttoworld
@@ -6193,816 +6784,1032 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule PlayerRemarkremark_MidnightRidersBusSheva
+		Rule PlayerRemarkremark_caralarmTrevor
 		{
-		    criteria ConceptRemark IsSheva Isremark_MidnightRidersBus IsNotSaidremark_MidnightRidersBus IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear1500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkremark_MidnightRidersBusProducer
+		    criteria ConceptRemark IsTrevor Isremark_caralarm IsNotSaidremark_caralarm IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear700 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkremark_caralarmMechanic
+		    ApplyContext "Saidremark_caralarm:1:300"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkremark_MidnightRidersBusTrevor
+		{
+		    criteria ConceptRemark IsTrevor Isremark_MidnightRidersBus IsNotSaidremark_MidnightRidersBus IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear1500 IsNotSpeakingWeight0
+		    Response PlayerRemarkremark_MidnightRidersBusMechanic
 		    ApplyContext "Saidremark_MidnightRidersBus:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC1M1CedaMapsSheva
+		Rule PlayerRemarkWorldC1M1CedaMapsTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC1M1CedaMaps IsNotSaidWorldC1M1CedaMaps IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC1M1CedaMapsProducer
-		    ApplyContext "SaidWorldC1M1CedaMaps:1:0,Talk:1:6.617"
+		    criteria ConceptRemark IsTrevor IsWorldC1M1CedaMaps IsNotSaidWorldC1M1CedaMaps IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC1M1CedaMapsMechanic
+		    ApplyContext "SaidWorldC1M1CedaMaps:1:0,Talk:1:5.579"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C1M1WeAreScrewedSheva
+		Rule PlayerRemarkWorldC1M1DownHereTrevor
 		{
-		    criteria ConceptC1M1WeAreScrewed IsSheva AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response C1M1WeAreScrewedProducer
-		}
-	},
-
-	{
-		Rule PlayerRemarkWorldC1M1DownHereSheva
-		{
-		    criteria ConceptRemark IsSheva IsWorldC1M1DownHere IsNotSaidWorldC1M1DownHere IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear600 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC1M1DownHereProducer
+		    criteria ConceptRemark IsTrevor IsWorldC1M1DownHere IsNotSaidWorldC1M1DownHere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear600 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC1M1DownHereMechanic
 		    ApplyContext "SaidWorldC1M1DownHere:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC1M1DownStairsSheva
+		Rule PlayerRemarkWorldC1M1DownStairsTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC1M1DownStairs IsNotSaidWorldC1M1DownStairs IsNotCoughing NotInCombat IsTalk IsTalkSheva IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsWorldTalkSheva IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC1M1DownStairsProducer
+		    criteria ConceptRemark IsTrevor IsWorldC1M1DownStairs IsNotSaidWorldC1M1DownStairs IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsWorldTalkTrevor IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC1M1DownStairsMechanic
 		    ApplyContext "SaidWorldC1M1DownStairs:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC1M1ElevatorBrokenSheva
+		Rule PlayerRemarkWorldC1M1ElevatorBrokenTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC1M1ElevatorBroken IsNotSaidWorldC1M1ElevatorBroken IsNotCoughing NotInCombat IsTalk IsTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsWorldTalkSheva IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC1M1ElevatorBrokenProducer
+		    criteria ConceptRemark IsTrevor IsWorldC1M1ElevatorBroken IsNotSaidWorldC1M1ElevatorBroken IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsWorldTalkTrevor IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC1M1ElevatorBrokenMechanic
 		    ApplyContext "SaidWorldC1M1ElevatorBroken:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC1M1FireSpreadingSheva
+		Rule PlayerRemarkWorldC1M1FireSpreadingTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC1M1FireSpreading IsNotSaidWorldC1M1FireSpreading IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC1M1FireSpreadingProducer
+		    criteria ConceptRemark IsTrevor IsWorldC1M1FireSpreading IsNotSaidWorldC1M1FireSpreading IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC1M1FireSpreadingMechanic
 		    ApplyContext "SaidWorldC1M1FireSpreading:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC1M1FirstSheva
+		Rule PlayerRemarkWorldC1M1FirstTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC1M1First IsNotSaidWorldC1M1First IsNotCoughing NotInCombat IsTalk IsTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsWorldTalkSheva IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC1M1FirstProducer
+		    criteria ConceptRemark IsTrevor IsWorldC1M1First IsNotSaidWorldC1M1First IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsWorldTalkTrevor IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC1M1FirstMechanic
 		    ApplyContext "SaidWorldC1M1First:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC1M1LedgeSheva
+		Rule PlayerRemarkWorldC1M1LedgeTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC1M1Ledge IsNotSaidWorldC1M1Ledge IsNotCoughing NotInCombat IsTalk IsTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsWorldTalkSheva IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC1M1LedgeProducer
+		    criteria ConceptRemark IsTrevor IsWorldC1M1Ledge IsNotSaidWorldC1M1Ledge IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsWorldTalkTrevor IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC1M1LedgeMechanic
 		    ApplyContext "SaidWorldC1M1Ledge:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC1M2CloseSheva
+		Rule PlayerRemarkWorldC1M1StairsSignTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC1M2Close IsNotSaidWorldC1M2Close IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC1M2CloseProducer
-		    ApplyContext "SaidWorldC1M2Close:1:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule PlayerRemarkWorldC1M1StairsSignSheva
-		{
-		    criteria ConceptRemark IsSheva IsWorldC1M1StairsSign IsNotSaidWorldC1M1StairsSign IsNotCoughing NotInCombat IsTalk IsTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsWorldTalkSheva IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC1M1StairsSignProducer
+		    criteria ConceptRemark IsTrevor IsWorldC1M1StairsSign IsNotSaidWorldC1M1StairsSign IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsWorldTalkTrevor IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC1M1StairsSignMechanic
 		    ApplyContext "SaidWorldC1M1StairsSign:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC1M2DownStairsSheva
+		Rule PlayerRemarkWorldC1M2CloseTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC1M2DownStairs IsNotSaidWorldC1M2DownStairs IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 TimeSinceGroupInCombat05 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC1M2DownStairsProducer
+		    criteria ConceptRemark IsTrevor IsWorldC1M2Close IsNotSaidWorldC1M2Close IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC1M2CloseMechanic
+		    ApplyContext "SaidWorldC1M2Close:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkWorldC1M2DownStairsTrevor
+		{
+		    criteria ConceptRemark IsTrevor IsWorldC1M2DownStairs IsNotSaidWorldC1M2DownStairs IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 TimeSinceGroupInCombat05 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC1M2DownStairsMechanic
 		    ApplyContext "SaidWorldC1M2DownStairs:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC1M2AbandonedSheva
+		Rule PlayerRemarkWorldC1M2AbandonedTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC1M2Abandoned IsNotSaidWorldC1M2Abandoned IsNotCoughing NotInCombat IntensityZero IsTalk IsTalkSheva IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC1M2AbandonedProducer
+		    criteria ConceptRemark IsTrevor IsWorldC1M2Abandoned IsNotSaidWorldC1M2Abandoned IsNotCoughing NotInCombat IntensityZero IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC1M2AbandonedMechanic
 		    ApplyContext "SaidWorldC1M2Abandoned:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC1M2DumpsterSheva
+		Rule PlayerRemarkWorldC1M2DumpsterTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC1M2Dumpster IsNotSaidWorldC1M2Dumpster IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC1M2DumpsterProducer
+		    criteria ConceptRemark IsTrevor IsWorldC1M2Dumpster IsNotSaidWorldC1M2Dumpster IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC1M2DumpsterMechanic
 		    ApplyContext "SaidWorldC1M2Dumpster:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC1M2InHereSheva
+		Rule PlayerRemarkWorldC1M2GunStoreCloseTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC1M2InHere IsNotSaidWorldC1M2InHere IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC1M2InHereProducer
+		    criteria ConceptRemark IsTrevor IsWorldC1M2GunStoreClose IsNotSaidWorldC1M2GunStoreClose IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC1M2GunStoreCloseMechanic
+		    ApplyContext "SaidWorldC1M2GunStoreClose:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkWorldC1M2InHereTrevor
+		{
+		    criteria ConceptRemark IsTrevor IsWorldC1M2InHere IsNotSaidWorldC1M2InHere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC1M2InHereMechanic
 		    ApplyContext "SaidWorldC1M2InHere:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC1M2JumpTruckSheva
+		Rule PlayerRemarkWorldC1M2JumpTruckTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC1M2JumpTruck IsNotSaidWorldC1M2JumpTruck IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC1M2JumpTruckProducer
+		    criteria ConceptRemark IsTrevor IsWorldC1M2JumpTruck IsNotSaidWorldC1M2JumpTruck IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC1M2JumpTruckMechanic
 		    ApplyContext "SaidWorldC1M2JumpTruck:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC1M2MallSignHereSheva
+		Rule PlayerRemarkWorldC1M2MallSignHereTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC1M2MallSignHere IsNotSaidWorldC1M2MallSignHere IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear800 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC1M2MallSignHereProducer
+		    criteria ConceptRemark IsTrevor IsWorldC1M2MallSignHere IsNotSaidWorldC1M2MallSignHere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear800 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC1M2MallSignHereMechanic
 		    ApplyContext "SaidWorldC1M2MallSignHere:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC1M2UpStairsSheva
+		Rule PlayerRemarkWorldC1M2MallThisWayTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC1M2UpStairs IsNotSaidWorldC1M2UpStairs IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear600 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC1M2UpStairsProducer
+		    criteria ConceptRemark IsTrevor IsWorldC1M2MallThisWay IsNotSaidWorldC1M2MallThisWay IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear600 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC1M2MallThisWayMechanic
+		    ApplyContext "SaidWorldC1M2MallThisWay:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkWorldC1M2UpStairsTrevor
+		{
+		    criteria ConceptRemark IsTrevor IsWorldC1M2UpStairs IsNotSaidWorldC1M2UpStairs IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear600 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC1M2UpStairsMechanic
 		    ApplyContext "SaidWorldC1M2UpStairs:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC3M1CheckingHousesSheva
+		Rule PlayerRemarkWorldC3M1AmmoUpTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC3M1CheckingHouses IsNotSaidWorldC3M1CheckingHouses IsNotCoughing NotInCombat IsTalk IsTalkSheva IsSubjectNear200 IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC3M1CheckingHousesProducer
+		    criteria ConceptRemark IsTrevor IsWorldC3M1AmmoUp IsNotSaidWorldC3M1AmmoUp IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear400 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC3M1AmmoUpMechanic
+		    ApplyContext "SaidWorldC3M1AmmoUp:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkWorldC3M1CheckingHousesTrevor
+		{
+		    criteria ConceptRemark IsTrevor IsWorldC3M1CheckingHouses IsNotSaidWorldC3M1CheckingHouses IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear200 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC3M1CheckingHousesMechanic
 		    ApplyContext "SaidWorldC3M1CheckingHouses:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC3M1FerryCrossingSheva
+		Rule PlayerRemarkWorldC3M1FeedGatorTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC3M1FerryCrossing IsNotSaidWorldC3M1FerryCrossing IsNotCoughing NotInCombat IsTalkSheva IsSubjectNear200 IsWorldTalkSheva ChanceToFire100Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    criteria ConceptRemark IsTrevor IsWorldC3M1FeedGator IsNotSaidWorldC3M1FeedGator IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear400 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC3M1FeedGatorMechanic
+		    ApplyContext "SaidWorldC3M1FeedGator:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkWorldC3M1FerryCrossingTrevor
+		{
+		    criteria ConceptRemark IsTrevor IsWorldC3M1FerryCrossing IsNotSaidWorldC3M1FerryCrossing IsNotCoughing NotInCombat IsTalkTrevor IsSubjectNear200 IsWorldTalkTrevor ChanceToFire100Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
 		    // 	forceweight 1
-		    Response PlayerRemarkWorldC3M1FerryCrossingProducer
-		    then any WorldC3M1FerryCrossingA01 foo:0 -4.110
+		    Response PlayerRemarkWorldC3M1FerryCrossingMechanic
+		    then producer WorldC3M1FerryCrossingE01 foo:0 -6.143
 		    ApplyContext "SaidWorldC3M1FerryCrossing:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC3M1FerryCrossingEllisSheva
+		Rule PlayerRemarkWorldC3M1FerryCrossingCoachTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC3M1FerryCrossing IsNotSaidWorldC3M1FerryCrossing IsNotCoughing NotInCombat IsTalkSheva IsSubjectNear200 IsMechanicAlive IsWorldTalkSheva ChanceToFire50Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    criteria ConceptRemark IsTrevor IsWorldC3M1FerryCrossing IsNotSaidWorldC3M1FerryCrossing IsNotCoughing NotInCombat IsTalkTrevor IsSubjectNear200 IsCoachAlive IsWorldTalkTrevor ChanceToFire75Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
 		    // 	forceweight 2
-		    Response PlayerRemarkWorldC3M1FerryCrossingEllisProducer
-		    then mechanic WorldC3M1FerryCrossingB01 foo:0 -2.025
+		    Response PlayerRemarkWorldC3M1FerryCrossingCoachMechanic
+		    then coach WorldC3M1FerryCrossingG01 foo:0 -4.268
 		    ApplyContext "SaidWorldC3M1FerryCrossing:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC3M1FerryCrossingNickSheva
+		Rule PlayerRemarkWorldC3M1FerryCrossingNickTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC3M1FerryCrossing IsNotSaidWorldC3M1FerryCrossing IsNotCoughing NotInCombat IsTalkSheva IsSubjectNear200 IsGamblerAlive IsWorldTalkSheva ChanceToFire25Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    criteria ConceptRemark IsTrevor IsWorldC3M1FerryCrossing IsNotSaidWorldC3M1FerryCrossing IsNotCoughing NotInCombat IsTalkTrevor IsSubjectNear200 IsGamblerAlive IsWorldTalkTrevor ChanceToFire50Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
 		    // 	forceweight 3
-		    Response PlayerRemarkWorldC3M1FerryCrossingNickProducer
-		    then gambler WorldC3M1FerryCrossingC01 foo:0 -3.171
+		    Response PlayerRemarkWorldC3M1FerryCrossingNickMechanic
+		    then gambler WorldC3M1FerryCrossingI01 foo:0 -2.234
 		    ApplyContext "SaidWorldC3M1FerryCrossing:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC3M1FerryNagSheva
+		Rule PlayerRemarkWorldC3M1FerryNagTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC3M1FerryNag IsNotSaidWorldC3M1FerryNag IsNotCoughing NotInCombat IsTalk IsTalkSheva IsSubjectNear600 IsNotSaidC3M1CallFerry2 IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC3M1FerryNagProducer
-		    then mechanic WorldIntroC3f2 foo:0 0.1
+		    criteria ConceptRemark IsTrevor IsWorldC3M1FerryNag IsNotSaidWorldC3M1FerryNag IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear600 IsNotSaidC3M1CallFerry2 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC3M1FerryNagMechanic
 		    ApplyContext "SaidWorldC3M1FerryNag:1:0,_auto_TimerLockA:1:15"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC3M1FerryNagaSheva
+		Rule _C3M1CrazyMilitantsTrevor
 		{
-		    criteria ConceptTalkIdle IsSheva IsNotCoughing NotInCombat IsTalk IsTalkSheva IsSubjectNear600 IsSaidWorldC3M1FerryNag IsNotSaidC3M1CallFerry2 AutoIsNotScavenge AutoIsNotSurvival IsWorldTalkSheva IsNotSpeakingWeight0 _auto_NotTimerLockA _auto_NotTimerLockSheva
-		    Response PlayerRemarkWorldC3M1FerryNagaProducer
-		    ApplyContext "_auto_TimerLockA:1:20,_auto_TimerLockSheva:1:40"
+		    criteria Concept_C3M1CrazyMilitants IsTrevor
+		    Response _C3M1CrazyMilitantsMechanic
+		}
+	},
+
+	{
+		Rule PlayerRemarkWorldC3M1FerryNagaTrevor
+		{
+		    criteria ConceptTalkIdle IsTrevor IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSaidWorldC3M1FerryNag IsNotSaidC3M1CallFerry2 AutoIsNotScavenge AutoIsNotSurvival IsWorldTalkTrevor IsNotSpeakingWeight0 _auto_NotTimerLockA _auto_NotTimerLockTrevor
+		    Response PlayerRemarkWorldC3M1FerryNagaMechanic
+		    ApplyContext "_auto_TimerLockA:1:20,_auto_TimerLockTrevor:1:40"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC3M1GetBackUpSheva
+		Rule PlayerRemarkWorldC3M1GetBackUpTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC3M1WeShouldGetBackUp IsNotSaidWorldC3M1WeShouldGetBackUp IsNotCoughing NotInCombat IsTalk IsTalkSheva IsSubjectNear300 IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC3M1GetBackUpProducer
+		    criteria ConceptRemark IsTrevor IsWorldC3M1WeShouldGetBackUp IsNotSaidWorldC3M1WeShouldGetBackUp IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear300 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC3M1GetBackUpMechanic
 		    ApplyContext "SaidWorldC3M1WeShouldGetBackUp:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC3M1Path01Sheva
+		Rule PlayerRemarkWorldC3M1LitterTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC3M1Path01 IsNotSaidWorldC3M1Path01 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsSubjectNear400 IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC3M1Path01Producer
+		    criteria ConceptRemark IsTrevor IsWorldC3M1Litter IsNotSaidWorldC3M1Litter IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear300 ChanceToFire20Percent IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC3M1LitterMechanic
+		    ApplyContext "SaidWorldC3M1Litter:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule AUTOBLANK_PlayerRemarkWorldC3M1LitterTrevor
+		{
+		    criteria ConceptRemark IsTrevor IsWorldC3M1Litter IsNotSaidWorldC3M1Litter IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear300 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response _PlayerInfoRemarkableBlankMechanic
+		    ApplyContext "SaidWorldC3M1Litter:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkWorldC3M1Path01Trevor
+		{
+		    criteria ConceptRemark IsTrevor IsWorldC3M1Path01 IsNotSaidWorldC3M1Path01 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear400 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC3M1Path01Mechanic
 		    ApplyContext "SaidWorldC3M1Path01:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC3M1PlanksRightSheva
+		Rule PlayerRemarkWorldC3M1PlanksRightTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC3M1PlanksRight IsNotSaidWorldC3M1PlanksRight IsNotCoughing NotInCombat IsTalk IsTalkSheva IsSubjectNear300 IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC3M1PlanksRightProducer
+		    criteria ConceptRemark IsTrevor IsWorldC3M1PlanksRight IsNotSaidWorldC3M1PlanksRight IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear300 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC3M1PlanksRightMechanic
 		    ApplyContext "SaidWorldC3M1PlanksRight:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC3M1WalkwaysSheva
+		Rule PlayerRemarkWorldC3M1StairsTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC3M1Walkways IsNotSaidWorldC3M1Walkways IsNotCoughing NotInCombat IsTalk IsTalkSheva IsSubjectNear600 IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC3M1WalkwaysProducer
-		    then coach WorldC3M1Walkways2 foo:0 -1.209
+		    criteria ConceptRemark IsTrevor IsWorldC3M1Stairs IsNotSaidWorldC3M1Stairs IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear300 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC3M1StairsMechanic
+		    ApplyContext "SaidWorldC3M1Stairs:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkWorldC3M1StayOnTrevor
+		{
+		    criteria ConceptRemark IsTrevor IsWorldC3M1StayOn IsNotSaidWorldC3M1StayOn IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear200 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC3M1StayOnMechanic
+		    ApplyContext "SaidWorldC3M1StayOn:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkWorldC3M1WalkwaysTrevor
+		{
+		    criteria ConceptRemark IsTrevor IsWorldC3M1Walkways IsNotSaidWorldC3M1Walkways IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear600 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC3M1WalkwaysMechanic
 		    ApplyContext "SaidWorldC3M1Walkways:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC3M1WhichWaySheva
+		Rule PlayerRemarkWorldC3M1WhichWayTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC3M1WhichWay IsNotSaidWorldC3M1WhichWay IsNotCoughing NotInCombat IsTalk IsTalkSheva IsSubjectNear400 IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC3M1WhichWayProducer
+		    criteria ConceptRemark IsTrevor IsWorldC3M1WhichWay IsNotSaidWorldC3M1WhichWay IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear400 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC3M1WhichWayMechanic
 		    ApplyContext "SaidWorldC3M1WhichWay:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC502AlarmButtonSheva
+		Rule PlayerRemarkWorldC502AlarmButtonTrevor
 		{
-		    criteria ConceptWorldC502AlarmButton IsSheva IsNotCoughing IsNotScavenge
-		    Response PlayerRemarkWorldC502AlarmButtonProducer
-		    then any WorldC502AlarmButtonRun foo:0 .1
+		    criteria ConceptWorldC502AlarmButton IsTrevor IsNotCoughing IsNotScavenge
+		    Response PlayerRemarkWorldC502AlarmButtonMechanic
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC502AlarmStoppedSheva
+		Rule PlayerRemarkWorldC502AlarmStoppedTrevor
 		{
-		    criteria ConceptWorldC502AlarmStopped IsSheva IsNotCoughing IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerRemarkWorldC502AlarmStoppedProducer
-		    then any WorldC502AlarmStopped2 foo:0 0.3
+		    criteria ConceptWorldC502AlarmStopped IsTrevor IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerRemarkWorldC502AlarmStoppedMechanic
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC502AlleySheva
+		Rule PlayerRemarkWorldC502AlarmStopped2Trevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC502Alley IsNotSaidWorldC502Alley IsNotCoughing NotInCombat IsTalk IsTalkSheva IsSubjectNear300 IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC502AlleyProducer
+		    criteria ConceptWorldC502AlarmStopped2 IsTrevor IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerRemarkWorldC502AlarmStopped2Mechanic
+		}
+	},
+
+	{
+		Rule PlayerRemarkWorldC502AlleyTrevor
+		{
+		    criteria ConceptRemark IsTrevor IsWorldC502Alley IsNotSaidWorldC502Alley IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear300 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC502AlleyMechanic
 		    ApplyContext "SaidWorldC52Alley:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC502SmellSheva
+		Rule PlayerRemarkWorldC502BusStoryTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC502Smell IsNotSaidWorldC502Smell IsNotCoughing NotInCombat IsTalk IsTalkSheva IsSubjectNear600 IsNotSaidSmell ChanceToFire50Percent IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC502SmellProducer
-		    then any WorldC502Smell2 foo:0 -2.701
+		    criteria ConceptRemark IsTrevor IsWorldC502BusStory IsNotSaidWorldC502BusStory IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear400 IsGamblerNear200 ChanceToFire50Percent IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival TimeSinceGroupInCombat02 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC502BusStoryMechanic
+		    then Gambler WorldC502BusStory2 foo:0 -4.418
+		    ApplyContext "SaidWorldC502BusStory:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule AUTOBLANK_PlayerRemarkWorldC502BusStoryTrevor
+		{
+		    criteria ConceptRemark IsTrevor IsWorldC502BusStory IsNotSaidWorldC502BusStory IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear400 IsGamblerNear200 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival TimeSinceGroupInCombat02 IsNotSpeakingWeight0
+		    Response _PlayerInfoRemarkableBlankMechanic
+		    ApplyContext "SaidWorldC502BusStory:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkWorldC502BusStory2bTrevor
+		{
+		    criteria ConceptWorldC502BusStory2b IsTrevor IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerRemarkWorldC502BusStory2bMechanic
+		    then self WorldC502BusStory2c foo:0 -2.060
+		}
+	},
+
+	{
+		Rule PlayerRemarkWorldC502BusStory2cTrevor
+		{
+		    criteria ConceptWorldC502BusStory2c IsTrevor IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerRemarkWorldC502BusStory2cMechanic
+		}
+	},
+
+	{
+		Rule PlayerRemarkWorldC502NotZombies2Trevor
+		{
+		    criteria ConceptWorldC502NotZombies2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerRemarkWorldC502NotZombies2Mechanic
+		}
+	},
+
+	{
+		Rule PlayerRemarkWorldC502Run1Trevor
+		{
+		    criteria ConceptWorldC502AlarmButtonRun IsTrevor IsNotCoughing
+		    Response PlayerRemarkWorldC502Run1Mechanic
+		}
+	},
+
+	{
+		Rule PlayerRemarkWorldSignReportUnusualTrevor
+		{
+		    criteria ConceptWorldSignReportUnusual2 IsTrevor IsNotCoughing NotInCombat IssuerClose IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerRemarkWorldSignReportUnusualMechanic
+		}
+	},
+
+	{
+		Rule PlayerRemarkWorldSignOfficialInstructionsTrevor
+		{
+		    criteria ConceptWorldC502OfficialInstructions IsTrevor IsNotCoughing NotInCombat AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerRemarkWorldSignOfficialInstructionsMechanic
+		}
+	},
+
+	{
+		Rule PlayerRemarkWorldSignQuarantineZoneTrevor
+		{
+		    criteria ConceptWorldC502QuarantineZone IsTrevor IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerRemarkWorldSignQuarantineZoneMechanic
+		}
+	},
+
+	{
+		Rule PlayerRemarkWorldC502SmellTrevor
+		{
+		    criteria ConceptRemark IsTrevor IsWorldC502Smell IsNotSaidWorldC502Smell IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear600 IsNotSaidSmell ChanceToFire50Percent IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC502SmellMechanic
 		    ApplyContext "SaidWorldC502Smell:1:0,SaidSmell:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule AUTOBLANK_PlayerRemarkWorldC502SmellSheva
+		Rule AUTOBLANK_PlayerRemarkWorldC502SmellTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC502Smell IsNotSaidWorldC502Smell IsNotCoughing NotInCombat IsTalk IsTalkSheva IsSubjectNear600 IsNotSaidSmell IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response _PlayerInfoRemarkableBlankProducer
+		    criteria ConceptRemark IsTrevor IsWorldC502Smell IsNotSaidWorldC502Smell IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear600 IsNotSaidSmell IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response _PlayerInfoRemarkableBlankMechanic
 		    ApplyContext "SaidWorldC502Smell:1:0,SaidSmell:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M1_AcrossHereSheva
+		Rule PlayerRemarkWorldC502Smell2Trevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M1_AcrossHere IsNotSaidWorldC6M1_AcrossHere IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M1_AcrossHereProducer
+		    criteria ConceptWorldC502Smell2 IsTrevor IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear300 IsWorldTalkTrevor IsNotScavenge
+		    Response PlayerRemarkWorldC502Smell2Mechanic
+		}
+	},
+
+	{
+		Rule PlayerRemarkWorldC502SmellBath2Trevor
+		{
+		    criteria ConceptWorldC502SmellBath2 IsTrevor IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear300 IsWorldTalkTrevor IsNotScavenge
+		    Response PlayerRemarkWorldC502SmellBath2Mechanic
+		    then Gambler WorldC502SmellBath3 foo:0 -2.916
+		}
+	},
+
+	{
+		Rule PlayerRemarkWorldC6M1_AcrossHereTrevor
+		{
+		    criteria ConceptRemark IsTrevor IsWorldC6M1_AcrossHere IsNotSaidWorldC6M1_AcrossHere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M1_AcrossHereMechanic
 		    ApplyContext "SaidWorldC6M1_AcrossHere:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M1_AlleyBelowSheva
+		Rule PlayerRemarkWorldC6M1_AlleyBelowTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M1_AlleyBelow IsNotSaidWorldC6M1_AlleyBelow IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M1_AlleyBelowProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M1_AlleyBelow IsNotSaidWorldC6M1_AlleyBelow IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M1_AlleyBelowMechanic
 		    ApplyContext "SaidWorldC6M1_AlleyBelow:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M1_AlleyIntoBuildingSheva
+		Rule PlayerRemarkWorldC6M1_AlleyIntoBuildingTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M1_AlleyIntoBuilding IsNotSaidWorldC6M1_AlleyIntoBuilding IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M1_AlleyIntoBuildingProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M1_AlleyIntoBuilding IsNotSaidWorldC6M1_AlleyIntoBuilding IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M1_AlleyIntoBuildingMechanic
 		    ApplyContext "SaidWorldC6M1_AlleyIntoBuilding:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M1_InAptsSheva
+		Rule PlayerRemarkWorldC6M1_InAptsTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M1_InApts IsNotSaidWorldC6M1_InApts IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M1_InAptsProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M1_InApts IsNotSaidWorldC6M1_InApts IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M1_InAptsMechanic
 		    ApplyContext "SaidWorldC6M1_InApts:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M1_IntoTheStoreSheva
+		Rule PlayerRemarkWorldC6M1_IntoThePark2Trevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M1_IntoTheStore IsNotSaidWorldC6M1_IntoTheStore IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M1_IntoTheStoreProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M1_IntoThePark2 IsNotSaidWorldC6M1_IntoThePark2 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M1_IntoThePark2Mechanic
+		    ApplyContext "SaidWorldC6M1_IntoThePark2:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkWorldC6M1_IntoTheStoreTrevor
+		{
+		    criteria ConceptRemark IsTrevor IsWorldC6M1_IntoTheStore IsNotSaidWorldC6M1_IntoTheStore IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M1_IntoTheStoreMechanic
 		    ApplyContext "SaidWorldC6M1_IntoTheStore:1:0,JustSaidWorldC6M1_IntoTheStore:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M1_PostWeddingSheva
+		Rule PlayerRemarkWorldC6M1_PostWeddingTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M1_PostWedding IsNotSaidWorldC6M1_PostWedding IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear600 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M1_PostWeddingProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M1_PostWedding IsNotSaidWorldC6M1_PostWedding IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear600 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M1_PostWeddingMechanic
 		    ApplyContext "SaidWorldC6M1_PostWedding:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M1_SafeRoomAlleySheva
+		Rule PlayerRemarkWorldC6M1_PostWeddingZTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M1_SafeRoomAlley IsNotSaidWorldC6M1_SafeRoomAlley IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear600 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M1_SafeRoomAlleyProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M1_PostWedding IsNotSaidWorldC6M1_PostWedding IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear600 IsZoeyIntroActor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M1_PostWeddingZMechanic
+		    then Any WorldC6M1_PostWedding02a foo:0 -3.481
+		    ApplyContext "SaidWorldC6M1_PostWedding:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkWorldC6M1_PostWeddingZCTrevor
+		{
+		    criteria ConceptRemark IsTrevor IsWorldC6M1_PostWedding IsNotSaidWorldC6M1_PostWedding IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear600 IsZoeyIntroActor ChanceToFire20Percent IsCoachAlive IsCoachNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M1_PostWeddingZCMechanic
+		    then Coach WorldC6M1_PostWedding01a foo:0 -2.761
+		    ApplyContext "SaidWorldC6M1_PostWedding:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkWorldC6M1_SafeRoomAlleyTrevor
+		{
+		    criteria ConceptRemark IsTrevor IsWorldC6M1_SafeRoomAlley IsNotSaidWorldC6M1_SafeRoomAlley IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear600 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M1_SafeRoomAlleyMechanic
 		    ApplyContext "SaidWorldC6M1_SafeRoomAlley:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M1_ThroughBarSheva
+		Rule PlayerRemarkWorldC6M1_ThroughBarTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M1_ThroughBar IsNotSaidWorldC6M1_ThroughBar IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M1_ThroughBarProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M1_ThroughBar IsNotSaidWorldC6M1_ThroughBar IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M1_ThroughBarMechanic
 		    ApplyContext "SaidWorldC6M1_ThroughBar:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M1_UpHereSheva
+		Rule PlayerRemarkWorldC6M1_UpHereTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M1_UpHere IsNotSaidWorldC6M1_UpHere IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M1_UpHereProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M1_UpHere IsNotSaidWorldC6M1_UpHere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M1_UpHereMechanic
 		    ApplyContext "SaidWorldC6M1_UpHere:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M1_UpTheStairsSheva
+		Rule PlayerRemarkWorldC6M1_UpTheStairsTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M1_UpTheStairs IsNotSaidWorldC6M1_UpTheStairs IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M1_UpTheStairsProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M1_UpTheStairs IsNotSaidWorldC6M1_UpTheStairs IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M1_UpTheStairsMechanic
 		    ApplyContext "SaidWorldC6M1_UpTheStairs:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M1_UpTheStairs2Sheva
+		Rule PlayerRemarkWorldC6M1_UpTheStairs2Trevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M1_UpTheStairs2 IsNotSaidWorldC6M1_UpTheStairs2 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M1_UpTheStairs2Producer
+		    criteria ConceptRemark IsTrevor IsWorldC6M1_UpTheStairs2 IsNotSaidWorldC6M1_UpTheStairs2 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M1_UpTheStairs2Mechanic
 		    ApplyContext "SaidWorldC6M1_UpTheStairs2:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M1_WeddingWarnSheva
+		Rule PlayerRemarkWorldC6M1_WeddingWarnTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M1_WeddingWarn IsNotSaidWorldC6M1_WeddingWarn IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsWitchPresent IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M1_WeddingWarnProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M1_WeddingWarn IsNotSaidWorldC6M1_WeddingWarn IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsWitchPresent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M1_WeddingWarnMechanic
 		    ApplyContext "SaidWorldC6M1_WeddingWarn:1:0,AtWedding:1:60"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M1_WeddingWarnAngelSheva
+		Rule PlayerRemarkWorldC6M2_AcrossPlankTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M1_WeddingWarn IsNotSaidWorldC6M1_WeddingWarn IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 IsWitchPresent IsMechanicAlive IsMechanicNear400 IsEllisInLoveC6M1 IsZoeyIntroActor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M1_WeddingWarnAngelProducer
-		    ApplyContext "SaidWorldC6M1_WeddingWarn:1:0,AtWedding:1:60"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule PlayerRemarkWorldC6M2_AcrossPlankSheva
-		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_AcrossPlank IsNotSaidWorldC6M2_AcrossPlank IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear250 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_AcrossPlankProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_AcrossPlank IsNotSaidWorldC6M2_AcrossPlank IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear250 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_AcrossPlankMechanic
 		    ApplyContext "SaidWorldC6M2_AcrossPlank:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_AfterGate1Sheva
+		Rule PlayerRemarkWorldC6M2_AfterGate1Trevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_AfterGate1 IsNotSaidWorldC6M2_AfterGate1 IsNotCoughing IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_AfterGate1Producer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_AfterGate1 IsNotSaidWorldC6M2_AfterGate1 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_AfterGate1Mechanic
 		    ApplyContext "SaidWorldC6M2_AfterGate1:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_AfterGate2Sheva
+		Rule PlayerRemarkWorldC6M2_AfterGate2Trevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_AfterGate2 IsNotSaidWorldC6M2_AfterGate2 IsNotCoughing IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_AfterGate2Producer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_AfterGate2 IsNotSaidWorldC6M2_AfterGate2 IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_AfterGate2Mechanic
+		    then Gambler WorldC6M2_AfterGate201a foo:0 -1.968
 		    ApplyContext "SaidWorldC6M2_AfterGate2:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_AfterGateNickSheva
+		Rule PlayerRemarkWorldC6M2_AfterGateNickTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_AfterGate2 IsNotSaidWorldC6M2_AfterGate2 IsNotCoughing IsTalk IsTalkSheva IsGamblerAlive IsGamblerNear400 ChanceToFire50Percent IsWorldTalkSheva IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_AfterGateNickProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_AfterGate2 IsNotSaidWorldC6M2_AfterGate2 IsNotCoughing IsTalk IsTalkTrevor IsGamblerNear400 ChanceToFire50Percent IsWorldTalkTrevor IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_AfterGateNickMechanic
+		    then Gambler WorldC6M2_AfterGate201a foo:0 -1.968
 		    ApplyContext "SaidWorldC6M2_AfterGate2:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_DownHereSheva
+		Rule PlayerRemarkWorldC6M2_DownHereTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_DownHere IsNotSaidWorldC6M2_DownHere IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_DownHereProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_DownHere IsNotSaidWorldC6M2_DownHere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_DownHereMechanic
 		    ApplyContext "SaidWorldC6M2_DownHere:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_DownIntoBuildingSheva
+		Rule PlayerRemarkWorldC6M2_DownIntoBuildingTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_DownIntoBuilding IsNotSaidWorldC6M2_DownIntoBuilding IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_DownIntoBuildingProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_DownIntoBuilding IsNotSaidWorldC6M2_DownIntoBuilding IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_DownIntoBuildingMechanic
 		    ApplyContext "SaidWorldC6M2_DownIntoBuilding:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_FinalLadderSheva
+		Rule PlayerRemarkWorldC6M2_FinalLadderTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_FinalLadder IsNotSaidWorldC6M2_FinalLadder IsNotCoughing IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_FinalLadderProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_FinalLadder IsNotSaidWorldC6M2_FinalLadder IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_FinalLadderMechanic
 		    ApplyContext "SaidWorldC6M2_FinalLadder:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_FinalWaterSheva
+		Rule PlayerRemarkWorldC6M2_FinalWaterTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_FinalWater IsNotSaidWorldC6M2_FinalWater IsNotCoughing IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_FinalWaterProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_FinalWater IsNotSaidWorldC6M2_FinalWater IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_FinalWaterMechanic
+		    then Gambler WorldC6M2_FinalWater01a foo:0 -1.706
 		    ApplyContext "SaidWorldC6M2_FinalWater:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_FinalWaterGoGoSheva
+		Rule PlayerRemarkWorldC6M2_FinalWaterNickTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_FinalWaterGoGo IsNotSaidWorldC6M2_FinalWaterGoGo IsNotCoughing IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_FinalWaterGoGoProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_FinalWater IsNotSaidWorldC6M2_FinalWater IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor IsGamblerNear400 ChanceToFire50Percent IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_FinalWaterNickMechanic
+		    then Gambler WorldC6M2_FinalWater01a foo:0 -1.706
+		    ApplyContext "SaidWorldC6M2_FinalWater:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkWorldC6M2_FinalWaterGoGoTrevor
+		{
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_FinalWaterGoGo IsNotSaidWorldC6M2_FinalWaterGoGo IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_FinalWaterGoGoMechanic
 		    ApplyContext "SaidWorldC6M2_FinalWaterGoGo:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_InJazzClubSheva
+		Rule PlayerRemarkWorldC6M2_InJazzClubTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_InJazzClub IsNotSaidWorldC6M2_InJazzClub IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear1000 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_InJazzClubProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_InJazzClub IsNotSaidWorldC6M2_InJazzClub IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear1000 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_InJazzClubMechanic
 		    ApplyContext "SaidWorldC6M2_InJazzClub:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_InSewer1Sheva
+		Rule PlayerRemarkWorldC6M2_InSewer2Trevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_InSewer1 IsNotSaidWorldC6M2_InSewer1 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_InSewer1Producer
-		    ApplyContext "SaidWorldC6M2_InSewer1:1:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule PlayerRemarkWorldC6M2_InSewer2Sheva
-		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_InSewer2 IsNotSaidWorldC6M2_InSewer2 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 IsGamblerAlive IsGamblerNear400 IsSaidWorldC6M2_InSewer1 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_InSewer2Producer
-		    then Gambler WorldC6M2_InSewer201a foo:0 -2.052
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_InSewer2 IsNotSaidWorldC6M2_InSewer2 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsSaidWorldC6M2_InSewer1 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_InSewer2Mechanic
+		    then Producer WorldC6M2_InSewer202a foo:0 -4.622
 		    ApplyContext "SaidWorldC6M2_InSewer2:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_InSewerLadder1Sheva
+		Rule PlayerRemarkWorldC6M2_InSewerLadder1Trevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_InSewerLadder1 IsNotSaidWorldC6M2_InSewerLadder1 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_InSewerLadder1Producer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_InSewerLadder1 IsNotSaidWorldC6M2_InSewerLadder1 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_InSewerLadder1Mechanic
+		    then Any WorldC6M2_InSewerLadder101a foo:0 -2.795
 		    ApplyContext "SaidWorldC6M2_InSewerLadder1:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_IntoConstructionSheva
+		Rule PlayerRemarkWorldC6M2_IntoConstructionTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_IntoConstruction IsNotSaidWorldC6M2_IntoConstruction IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear150 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_IntoConstructionProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_IntoConstruction IsNotSaidWorldC6M2_IntoConstruction IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear150 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_IntoConstructionMechanic
 		    ApplyContext "SaidWorldC6M2_IntoConstruction:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_IntoPoolHallSheva
+		Rule PlayerRemarkWorldC6M2_IntoPoolHallTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_IntoPoolHall IsNotSaidWorldC6M2_IntoPoolHall IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_IntoPoolHallProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_IntoPoolHall IsNotSaidWorldC6M2_IntoPoolHall IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_IntoPoolHallMechanic
 		    ApplyContext "SaidWorldC6M2_IntoPoolHall:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_JukeBoxSheva
+		Rule PlayerRemarkWorldC6M2_JukeBoxTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_JukeBox IsNotSaidWorldC6M2_JukeBox IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear150 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_JukeBoxProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_JukeBox IsNotSaidWorldC6M2_JukeBox IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear150 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_JukeBoxMechanic
 		    ApplyContext "SaidWorldC6M2_JukeBox:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_JumpDownSheva
+		Rule PlayerRemarkWorldC6M2_JumpDownTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_JumpDown IsNotSaidWorldC6M2_JumpDown IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_JumpDownProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_JumpDown IsNotSaidWorldC6M2_JumpDown IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_JumpDownMechanic
 		    ApplyContext "SaidWorldC6M2_JumpDown:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C6M2FallingSheva
+		Rule C6M2FallingTrevor
 		{
-		    criteria ConceptC2M1Falling IsSheva Isc6m2_bedlam AutoIsNotScavenge AutoIsNotSurvival
-		    Response NoResponse
+		    criteria ConceptC2M1Falling IsTrevor isc6m2_bedlam AutoIsNotScavenge AutoIsNotSurvival
+		    Response C6M2FallingMechanic
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_OnTourWalk1Sheva
+		Rule PlayerRemarkWorldC6M2_OnTourWalk2Trevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_OnTourWalk1 IsNotSaidWorldC6M2_OnTourWalk1 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_OnTourWalk1Producer
-		    ApplyContext "SaidWorldC6M2_OnTourWalk1:1:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule PlayerRemarkWorldC6M2_OnTourWalk2Sheva
-		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_OnTourWalk2 IsNotSaidWorldC6M2_OnTourWalk2 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_OnTourWalk2Producer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_OnTourWalk2 IsNotSaidWorldC6M2_OnTourWalk2 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_OnTourWalk2Mechanic
 		    ApplyContext "SaidWorldC6M2_OnTourWalk2:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_OnTourWalk3Sheva
+		Rule PlayerRemarkWorldC6M2_OnTourWalk3Trevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_OnTourWalk3 IsNotSaidWorldC6M2_OnTourWalk3 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_OnTourWalk3Producer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_OnTourWalk3 IsNotSaidWorldC6M2_OnTourWalk3 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_OnTourWalk3Mechanic
 		    ApplyContext "SaidWorldC6M2_OnTourWalk3:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_OpenGate1Sheva
+		Rule PlayerRemarkWorldC6M2_OpenGate1Trevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_OpenGate1 IsNotSaidWorldC6M2_OpenGate1 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 IsNotSaidOpenedGate1 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_OpenGate1Producer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_OpenGate1 IsNotSaidWorldC6M2_OpenGate1 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsNotSaidOpenedGate1 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_OpenGate1Mechanic
 		    ApplyContext "SaidWorldC6M2_OpenGate1:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_Phase2Sheva
+		Rule PlayerRemarkWorldC6M2_OpenGate2Trevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_Phase2 IsNotSaidWorldC6M2_Phase2 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_Phase2Producer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_OpenGate2 IsNotSaidWorldC6M2_OpenGate2 IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsNotSaidOpenedGate2 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_OpenGate2Mechanic
+		    ApplyContext "SaidWorldC6M2_OpenGate2:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkWorldC6M2_Phase2Trevor
+		{
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_Phase2 IsNotSaidWorldC6M2_Phase2 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_Phase2Mechanic
+		    then Producer WorldC6M2_Phase201a foo:0 -1.792
 		    ApplyContext "SaidWorldC6M2_Phase2:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_Phase2DownSheva
+		Rule PlayerRemarkWorldC6M2_Phase2DownTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_Phase2Down IsNotSaidWorldC6M2_Phase2Down IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_Phase2DownProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_Phase2Down IsNotSaidWorldC6M2_Phase2Down IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_Phase2DownMechanic
 		    ApplyContext "SaidWorldC6M2_Phase2Down:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_Phase2DownIntenseSheva
+		Rule PlayerRemarkWorldC6M2_Phase2DownIntenseTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_Phase2Down IsNotSaidWorldC6M2_Phase2Down IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 IntensityOver75 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_Phase2DownIntenseProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_Phase2Down IsNotSaidWorldC6M2_Phase2Down IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IntensityOver75 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_Phase2DownIntenseMechanic
 		    ApplyContext "SaidWorldC6M2_Phase2Down:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_PostGate1xSheva
+		Rule PlayerRemarkWorldC6M2_PostGate1xTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_PostGate1 IsNotSaidWorldC6M2_PostGate1 IsNotCoughing IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 IsSaidOpenedGate1 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_PostGate1xProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_PostGate1 IsNotSaidWorldC6M2_PostGate1 IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsSaidOpenedGate1 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_PostGate1xMechanic
 		    ApplyContext "SaidWorldC6M2_PostGate1:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_SuitcaseSheva
+		Rule PlayerRemarkWorldC6M2_TattooTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_Suitcase IsNotSaidWorldC6M2_Suitcase IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear100 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_SuitcaseProducer
-		    ApplyContext "SaidWorldC6M2_Suitcase:1:0"
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_Tattoo IsNotSaidWorldC6M2_Tattoo IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_TattooMechanic
+		    ApplyContext "SaidWorldC6M2_Tattoo:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_TourEntranceSheva
+		Rule PlayerRemarkWorldC6M2_TattooStoryTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_TourEntrance IsNotSaidWorldC6M2_TourEntrance IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_TourEntranceProducer
-		    then Sheva WorldC6M2_TourEntrance01a foo:0 -1.841
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_Tattoo IsNotSaidWorldC6M2_Tattoo ExtraWeight10 ChanceToFire10Percent IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_TattooStoryMechanic
+		    then any TrevorInterrupt foo:0 -13.10
+		    ApplyContext "SaidWorldC6M2_Tattoo:1:0,_auto_TellingStory:1:14"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkWorldC6M2_TourEntranceTrevor
+		{
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_TourEntrance IsNotSaidWorldC6M2_TourEntrance IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_TourEntranceMechanic
 		    ApplyContext "SaidWorldC6M2_TourEntrance:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_UpCatWalkSheva
+		Rule PlayerRemarkWorldC6M2_UpCatWalkTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_UpCatWalk IsNotSaidWorldC6M2_UpCatWalk IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_UpCatWalkProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_UpCatWalk IsNotSaidWorldC6M2_UpCatWalk IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_UpCatWalkMechanic
 		    ApplyContext "SaidWorldC6M2_UpCatWalk:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_UpStairsSheva
+		Rule PlayerRemarkWorldC6M2_UpStairsTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_UpStairs IsNotSaidWorldC6M2_UpStairs IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_UpStairsProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_UpStairs IsNotSaidWorldC6M2_UpStairs IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_UpStairsMechanic
 		    ApplyContext "SaidWorldC6M2_UpStairs:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_UpStairs2Sheva
+		Rule PlayerRemarkWorldC6M2_UpStairs2Trevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_UpStairs2 IsNotSaidWorldC6M2_UpStairs2 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_UpStairs2Producer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_UpStairs2 IsNotSaidWorldC6M2_UpStairs2 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_UpStairs2Mechanic
 		    ApplyContext "SaidWorldC6M2_UpStairs2:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M3_BridgeRunSheva
+		Rule PlayerRemarkWorldC6M3_BridgeRunTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M3_BridgeRun IsNotSaidWorldC6M3_BridgeRun IsNotCoughing IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M3_BridgeRunProducer
-		    then Any WorldC6M3_ByBridge01 foo:0 -0.909
+		    criteria ConceptRemark IsTrevor IsWorldC6M3_BridgeRun IsNotSaidWorldC6M3_BridgeRun IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M3_BridgeRunMechanic
+		    then any WorldC6M3_ByBridge01 foo:0 -1.803
 		    ApplyContext "SaidWorldC6M3_BridgeRun:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M3_ByBridgeSheva
+		Rule PlayerRemarkWorldC6M3_ByBridgeFrancisTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M3_ByBridge IsNotSaidWorldC6M3_ByBridge IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear500 _auto_C6M3BridgeDown AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M3_ByBridgeProducer
-		    ApplyContext "SaidWorldC6M3_ByBridge:1:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule PlayerRemarkWorldC6M3_ByBridgeFrancisSheva
-		{
-		    criteria ConceptRemark IsSheva IsWorldC6M3_ByBridge IsNotSaidWorldC6M3_ByBridge IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear500 IsFrancisIntroActor _auto_C6M3BridgeDown AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M3_ByBridgeFrancisProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M3_ByBridge IsNotSaidWorldC6M3_ByBridge IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 IsFrancisIntroActor AutoIsNotScavenge AutoIsNotSurvival _auto_C6M3BridgeDown IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M3_ByBridgeFrancisMechanic
 		    then biker WorldC6M3_ByBridge01 foo:0 0.3
 		    ApplyContext "SaidWorldC6M3_ByBridge:1:0"
 		    applycontexttoworld
@@ -7010,497 +7817,567 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule PlayerRemarkWorldFootLockerSheva
+		Rule PlayerRemarkWorldC6M3_ByBridgeZoeyTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldFootLocker IsNotSaidWorldFootLocker IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldFootLockerProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M3_ByBridge IsNotSaidWorldC6M3_ByBridge IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 IsZoeyIntroActor AutoIsNotScavenge AutoIsNotSurvival _auto_C6M3BridgeDown IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M3_ByBridgeZoeyMechanic
+		    then teengirl WorldC6M3_ByBridge01 foo:0 0.3
+		    ApplyContext "SaidWorldC6M3_ByBridge:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkWorldFootLockerTrevor
+		{
+		    criteria ConceptRemark IsTrevor IsWorldFootLocker IsNotSaidWorldFootLocker IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldFootLockerMechanic
 		    ApplyContext "SaidWorldFootLocker:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldSignColdBeerSheva
+		Rule PlayerRemarkWorldC6M3_BillTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldSignColdBeer IsNotSaidWorldSignColdBeer IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldSignColdBeerProducer
-		    then Any WorldSignHurricane2 foo:0 0.1
+		    criteria ConceptRemark IsTrevor IsWorldC6M3_Bill IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear100 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0 _auto_NotC6M3Bill
+		    Response PlayerRemarkWorldC6M3_BillMechanic
+		    ApplyContext "_auto_TrevorC6M3Bill:1:0,_auto_C6M3Bill:1:0,SaidSomeoneDied:1:10"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule WorldC6M3LossLouisTrevor
+		{
+		    criteria ConceptPlayerLook IsNotCoughing IsTrevor IsTalk IsTalkTrevor Isc6m3_port IsNotSmartLookAuto IsSubjectNone IsManagerNear500 IsWorldTalkTrevor _auto_SawC6M3Bill _auto_TrevorSawC6M3Bill
+		    Response WorldC6M3LossMechanic
+		    then Manager c6m3_loss foo:0 0.1
+		    ApplyContext "_auto_C6M3Bill:2:0,Talk:1:15"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule WorldC6M3LossLouis2Trevor
+		{
+		    criteria ConceptPlayerLookHere IsNotCoughing IsTrevor IsTalk IsTalkTrevor Isc6m3_port IsNotSmartLookAuto IsSubjectNone IsManagerNear500 IsWorldTalkTrevor _auto_SawC6M3Bill _auto_TrevorSawC6M3Bill
+		    Response WorldC6M3LossMechanic
+		    then Manager c6m3_loss foo:0 0.1
+		    ApplyContext "_auto_C6M3Bill:2:0,Talk:1:15"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule WorldC6M3Loss2Trevor
+		{
+		    criteria Conceptc6m3_loss IsNotCoughing IsTrevor
+		    Response WorldC6M3Loss2Mechanic
+		    then from c6m3_loss2 foo:0 -0.7
+		}
+	},
+
+	{
+		Rule WorldC6M3Loss3Trevor
+		{
+		    criteria Conceptc6m3_loss2 IsNotCoughing IsTrevor
+		    Response WorldC6M3Loss3Mechanic
+		    then from c6m3_loss3 foo:0 0.3
+		}
+	},
+
+	{
+		Rule PlayerRemarkWorldSignColdBeerTrevor
+		{
+		    criteria ConceptRemark IsTrevor IsWorldSignColdBeer IsNotSaidWorldSignColdBeer IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear200 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldSignColdBeerMechanic
+		    then Any WorldSignColdBeer2 foo:0 -2.701
 		    ApplyContext "SaidWorldSignColdBeer:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldSignHurricaneSheva
+		Rule PlayerRemarkWorldSignPhotography2Trevor
 		{
-		    criteria ConceptWorldSignHurricane3 IsSheva IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsNotScavenge AutoIsNotSurvival
-		    Response PlayerRemarkWorldSignHurricaneProducer
-		}
-	},
-
-	{
-		Rule PlayerRemarkWorldSignReportSick3Sheva
-		{
-		    criteria ConceptWorldSignReportSick3 IsSheva IsNotCoughing NotInCombat IsTalk IsTalkSheva IssuerClose IsWorldTalkSheva IsNotScavenge AutoIsNotSurvival
-		    Response PlayerRemarkWorldSignReportSick3Producer
-		}
-	},
-
-	{
-		Rule PlayerRemarkWorldSignWhereIsCEDA2Sheva
-		{
-		    criteria ConceptWorldSignWhereIsCEDA2 IsSheva IsNotCoughing IsTalk IsTalkSheva IssuerClose IsWorldTalkSheva IsNotScavenge AutoIsNotSurvival
-		    Response PlayerRemarkWorldSignWhereIsCEDA2Producer
-		    ApplyContext "Talk:1:3.799"
+		    criteria ConceptWorldSignPhotography2 IsTrevor IsNotCoughing NotInCombat IsTalk IsTalkTrevor IssuerClose IsWorldTalkTrevor IsNotScavenge
+		    Response PlayerRemarkWorldSignPhotography2Mechanic
+		    ApplyContext "Talk:1:1.763"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldSignArmYourselfSheva
+		Rule PlayerRemarkWorldSignReportSick2Trevor
 		{
-		    criteria ConceptWorldC502ArmYourself IsSheva IsNotCoughing NotInCombat AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerRemarkWorldSignArmYourselfProducer
+		    criteria ConceptWorldSignReportSick2 IsTrevor IsNotCoughing NotInCombat IsTalk IsTalkTrevor IssuerClose IsWorldTalkTrevor IsNotScavenge AutoIsNotSurvival
+		    Response PlayerRemarkWorldSignReportSick2Mechanic
+		    then Producer WorldSignReportSick3 foo:0 -1.323
 		}
 	},
 
 	{
-		Rule PlayerWorldSignC5AlarmWillSoundSheva
+		Rule PlayerWorldSignC5AlarmWillSoundTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldSignC5AlarmWillSound IsNotSaidWorldSignC5AlarmWillSound IsNotCoughing IsTalk IsTalkSheva IsSubjectNear200 IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerWorldSignC5AlarmWillSoundProducer
-		    then coach WorldSignC5AlarmWillSound3 foo:0 0.1
+		    criteria ConceptRemark IsTrevor IsWorldSignC5AlarmWillSound IsNotSaidWorldSignC5AlarmWillSound IsNotCoughing IsTalk IsTalkTrevor IsSubjectNear200 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerWorldSignC5AlarmWillSoundMechanic
+		    then any WorldSignC5AlarmWillSound3 foo:0 0.1
 		    ApplyContext "SaidWorldSignC5AlarmWillSound:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule RespondAffirmativeSheva
+		Rule PlayerWorldSignC5AlarmWillSound3Trevor
 		{
-		    criteria ConceptRespondAffirmative IssuerMediumClose IsNotCoughing NotInCombat isSheva IsTalkSheva IsWorldTalkSheva
-		    Response RespondAffirmativeProducer
+		    criteria ConceptWorldSignC5AlarmWillSound3 IsTrevor IsNotCoughing NotInCombat _auto_NotAlarm
+		    Response PlayerWorldSignC5AlarmWillSound3Mechanic
+		    then Gambler WorldSignC5AlarmWillSound3c foo:0 -1.502
+		    ApplyContext "Talk:1:2"
+		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerFollowMeSheva
+		Rule PlayerWorldSignC5AlarmWillSound3dTrevor
 		{
-		    criteria ConceptPlayerFollowMe IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerFollowMeProducer
+		    criteria ConceptWorldSignC5AlarmWillSound3d IsTrevor IsNotCoughing NotInCombat _auto_NotAlarm
+		    Response PlayerWorldSignC5AlarmWillSound3dMechanic
+		    ApplyContext "Talk:1:2"
+		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerHelpSheva
+		Rule RespondAffirmativeTrevor
 		{
-		    criteria ConceptPlayerHelp IsSheva IsNotCoughing IsNotIncapacitated IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerHelpProducer
+		    criteria ConceptRespondAffirmative IssuerMediumClose IsNotCoughing NotInCombat isTrevor IsTalkTrevor IsWorldTalkTrevor
+		    Response RespondAffirmativeMechanic
 		}
 	},
 
 	{
-		Rule PlayerHurryUpSheva
+		Rule PlayerFollowMeTrevor
 		{
-		    criteria ConceptPlayerHurryUp IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerHurryUpProducer
+		    criteria ConceptPlayerFollowMe IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerFollowMeMechanic
 		}
 	},
 
 	{
-		Rule PlayerHurryUpC4M2Sheva
+		Rule PlayerHelpTrevor
 		{
-		    criteria ConceptPlayerHurryUp IsNotCoughing IsSheva IsTalk IsTalkSheva ismap_c4m2_sugarmill_a IsNotSaidSafeSpotAhead IsNotZombiePresentTank IsWorldTalkSheva _auto_IsShevaInWitchville
-		    Response PlayerHurryUpC4M2Producer
+		    criteria ConceptPlayerHelp IsTrevor IsNotCoughing IsTalk IsNotIncapacitated IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerHelpMechanic
 		}
 	},
 
 	{
-		Rule PlayerKillThatLightSheva
+		Rule PlayerHurryUpTrevor
 		{
-		    criteria ConceptPlayerKillThatLight IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerKillThatLightProducer
+		    criteria ConceptPlayerHurryUp IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerHurryUpMechanic
 		}
 	},
 
 	{
-		Rule PlayerLeadOnSheva
+		Rule PlayerHurryUpC4M2Trevor
 		{
-		    criteria ConceptPlayerLeadOn IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerLeadOnProducer
+		    criteria ConceptPlayerHurryUp IsTrevor IsNotInSafeSpot IsNotInCheckpoint IsTalk IsTalkTrevor IsNotSaidSafeSpotAhead ismap_c4m2_sugarmill_a IsNotZombiePresentTank IsWorldTalkTrevor _auto_IsTrevorInWitchville
+		    Response PlayerHurryUpC4M2Mechanic
 		}
 	},
 
 	{
-		Rule PlayerMoveOnSheva
+		Rule PlayerKillThatLightTrevor
 		{
-		    criteria ConceptPlayerMoveOn IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerMoveOnProducer
+		    criteria ConceptPlayerKillThatLight IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerKillThatLightMechanic
 		}
 	},
 
 	{
-		Rule PlayerStayTogetherSheva
+		Rule PlayerLeadOnTrevor
 		{
-		    criteria ConceptPlayerStayTogether IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerStayTogetherProducer
+		    criteria ConceptPlayerLeadOn IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerLeadOnMechanic
 		}
 	},
 
 	{
-		Rule PlayerWatchOutBehindSheva
+		Rule PlayerMoveOnTrevor
 		{
-		    criteria ConceptPlayerWatchOutBehind IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerWatchOutBehindProducer
+		    criteria ConceptPlayerMoveOn IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerMoveOnMechanic
 		}
 	},
 
 	{
-		Rule PlayerAskReadySheva
+		Rule PlayerStayTogetherTrevor
 		{
-		    criteria ConceptPlayerAskReady IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerAskReadyProducer
+		    criteria ConceptPlayerStayTogether IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerStayTogetherMechanic
 		}
 	},
 
 	{
-		Rule PlayerImWithYouSheva
+		Rule PlayerWatchOutBehindTrevor
 		{
-		    criteria ConceptPlayerImWithYou IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerImWithYouProducer
+		    criteria ConceptPlayerWatchOutBehind IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerWatchOutBehindMechanic
 		}
 	},
 
 	{
-		Rule PlayerLaughSheva
+		Rule PlayerAskReadyTrevor
 		{
-		    criteria ConceptPlayerLaugh IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotVersus
-		    Response PlayerLaughProducer
+		    criteria ConceptPlayerAskReady IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerAskReadyMechanic
 		}
 	},
 
 	{
-		Rule PlayerLostCallSheva
+		Rule PlayerImWithYouTrevor
 		{
-		    criteria ConceptPlayerLostCall IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerLostCallProducer
+		    criteria ConceptPlayerImWithYou IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerImWithYouMechanic
 		}
 	},
 
 	{
-		Rule PlayerNiceJobResponseSheva
+		Rule PlayerLaughTrevor
 		{
-		    criteria ConceptPlayerNiceJob IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerNiceJobResponseProducer
+		    criteria ConceptPlayerLaugh IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotVersus
+		    Response PlayerLaughMechanic
 		}
 	},
 
 	{
-		Rule PlayerNoSheva
+		Rule PlayerLostCallTrevor
 		{
-		    criteria ConceptPlayerNo IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerNoProducer
+		    criteria ConceptPlayerLostCall IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerLostCallMechanic
 		}
 	},
 
 	{
-		Rule PlayerAnswerLostCallSheva
+		Rule PlayerNiceJobResponseTrevor
 		{
-		    criteria ConceptPlayerAnswerLostCall IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerAnswerLostCallProducer
+		    criteria ConceptPlayerNiceJob IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerNiceJobResponseMechanic
 		}
 	},
 
 	{
-		Rule KillStealCalledOutSheva
+		Rule PlayerNoTrevor
 		{
-		    criteria ConceptKillStealCalledOut IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response KillStealCalledOutProducer
+		    criteria ConceptPlayerNo IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerNoMechanic
 		}
 	},
 
 	{
-		Rule PlayerSorrySheva
+		Rule PlayerAnswerLostCallTrevor
 		{
-		    criteria ConceptPlayerSorry IsNotCoughing IsNotShotTeammateSheva IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerSorryProducer
+		    criteria ConceptPlayerAnswerLostCall IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerAnswerLostCallMechanic
 		}
 	},
 
 	{
-		Rule PlayerSorryFFSheva
+		Rule PlayerSorryTrevor
 		{
-		    criteria ConceptPlayerSorry IsNotCoughing IsShotTeammateSheva IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerSorryFFProducer
+		    criteria ConceptPlayerSorry IsNotCoughing IsNotShotTeammateTrevor IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerSorryMechanic
 		}
 	},
 
 	{
-		Rule PlayerThanksSheva
+		Rule PlayerSorryFFTrevor
 		{
-		    criteria ConceptPlayerThanks IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerThanksProducer
+		    criteria ConceptPlayerSorry IsNotCoughing IsShotTeammateTrevor IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerSorryFFMechanic
 		}
 	},
 
 	{
-		Rule PlayerYellRunSheva
+		Rule PlayerThanksTrevor
 		{
-		    criteria ConceptPlayerYellRun IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerYellRunProducer
+		    criteria ConceptPlayerThanks IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerThanksMechanic
 		}
 	},
 
 	{
-		Rule PlayerYesSheva
+		Rule PlayerYellRunTrevor
 		{
-		    criteria ConceptPlayerYes IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerYesProducer
+		    criteria ConceptPlayerYellRun IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerYellRunMechanic
 		}
 	},
 
 	{
-		Rule PlayerYouAreWelcomeSheva
+		Rule PlayerYesTrevor
 		{
-		    criteria ConceptPlayerYouAreWelcome IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerYouAreWelcomeProducer
+		    criteria ConceptPlayerYes IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerYesMechanic
 		}
 	},
 
 	{
-		Rule YouAreWelcomeSheva
+		Rule PlayerYouAreWelcomeTrevor
 		{
-		    criteria ConceptYouAreWelcome IsNotCoughing IsSheva IsTalk IsTalkSheva TimeSinceGroupInCombat05 IsNotSpeaking IsWorldTalkSheva
-		    Response PlayerYouAreWelcomeProducer
+		    criteria ConceptPlayerYouAreWelcome IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerYouAreWelcomeMechanic
 		}
 	},
 
 	{
-		Rule YouAreWelcomeCoachSheva
+		Rule YouAreWelcomeTrevor
 		{
-		    criteria ConceptYouAreWelcome IsNotCoughing IsNotSpeaking IsSheva IsTalk IsTalkSheva FromIsCoach TimeSinceGroupInCombat05 ChanceToFire30Percent IsWorldTalkSheva
-		    Response YouAreWelcomeCoachProducer
+		    criteria ConceptYouAreWelcome IsNotCoughing IsTrevor IsTalk IsTalkTrevor TimeSinceGroupInCombat05 IsNotSpeaking IsWorldTalkTrevor
+		    Response PlayerYouAreWelcomeMechanic
 		}
 	},
 
 	{
-		Rule YouAreWelcomeCoachC1Sheva
+		Rule YouAreWelcomeCoachTrevor
 		{
-		    criteria ConceptYouAreWelcome IsNotCoughing IsNotSpeaking IsSheva IsTalk IsTalkSheva FromIsCoach TimeSinceGroupInCombat05 ChanceToFire30Percent IsWorldTalkSheva ismap_c1m1_hotel NoKnowNames
-		    Response YouAreWelcomeCoachC1Producer
+		    criteria ConceptYouAreWelcome IsNotCoughing IsNotSpeaking IsTrevor IsTalk IsTalkTrevor FromIsCoach ChanceToFire30Percent TimeSinceGroupInCombat05 IsWorldTalkTrevor
+		    Response YouAreWelcomeCoachMechanic
 		}
 	},
 
 	{
-		Rule YouAreWelcomeGamblerC1Sheva
+		Rule YouAreWelcomeCoachC1Trevor
 		{
-		    criteria ConceptYouAreWelcome IsNotCoughing IsNotSpeaking IsSheva IsTalk IsTalkSheva FromIsGambler TimeSinceGroupInCombat05 ChanceToFire30Percent IsWorldTalkSheva ismap_c1m1_hotel NoKnowNames
-		    Response YouAreWelcomeGamblerC1Producer
+		    criteria ConceptYouAreWelcome IsNotCoughing IsNotSpeaking IsTrevor IsTalk IsTalkTrevor FromIsCoach ChanceToFire30Percent IsWorldTalkTrevor TimeSinceGroupInCombat05 ismap_c1m1_hotel NoKnowNames
+		    Response YouAreWelcomeCoachC1Mechanic
 		}
 	},
 
 	{
-		Rule YouAreWelcomeMechanicC1Sheva
+		Rule YouAreWelcomeGamblerTrevor
 		{
-		    criteria ConceptYouAreWelcome IsNotCoughing IsNotSpeaking IsSheva IsTalk IsTalkSheva FromIsMechanic TimeSinceGroupInCombat05 ChanceToFire30Percent IsWorldTalkSheva ismap_c1m1_hotel NoKnowNames
-		    Response YouAreWelcomeMechanicC1Producer
+		    criteria ConceptYouAreWelcome IsNotCoughing IsNotSpeaking IsTrevor IsTalk IsTalkTrevor FromIsGambler ChanceToFire30Percent TimeSinceGroupInCombat05 IsWorldTalkTrevor
+		    Response YouAreWelcomeGamblerMechanic
 		}
 	},
 
 	{
-		Rule BotAttentionBattleSheva
+		Rule YouAreWelcomeGamblerC1Trevor
 		{
-		    criteria ConceptSurvivorBotNoteHumanAttention IsNotCoughing IsSheva IsNotBotAttention IsTalk IsTalkSheva IsNotIncapacitated IsInBattlefield TimeSinceGroupInCombat20 IsWorldTalkSheva IsNotSpeakingWeight0
-		    Response BotAttentionBattleProducer
+		    criteria ConceptYouAreWelcome IsNotCoughing IsNotSpeaking IsTrevor IsTalk IsTalkTrevor FromIsGambler ChanceToFire30Percent TimeSinceGroupInCombat05 IsWorldTalkTrevor ismap_c1m1_hotel NoKnowNames
+		    Response YouAreWelcomeGamblerC1Mechanic
+		}
+	},
+
+	{
+		Rule YouAreWelcomeProducerTrevor
+		{
+		    criteria ConceptYouAreWelcome IsNotCoughing IsNotSpeaking IsTrevor IsTalk IsTalkTrevor FromIsProducer ChanceToFire30Percent TimeSinceGroupInCombat05 IsWorldTalkTrevor
+		    Response YouAreWelcomeProducerMechanic
+		}
+	},
+
+	{
+		Rule YouAreWelcomeProducerC1Trevor
+		{
+		    criteria ConceptYouAreWelcome IsNotCoughing IsNotSpeaking IsTrevor IsTalk IsTalkTrevor FromIsProducer ChanceToFire30Percent TimeSinceGroupInCombat05 IsWorldTalkTrevor ismap_c1m1_hotel NoKnowNames
+		    Response YouAreWelcomeProducerC1Mechanic
+		}
+	},
+
+	{
+		Rule BotAttentionBattleTrevor
+		{
+		    criteria ConceptSurvivorBotNoteHumanAttention IsNotCoughing IsTrevor IsNotBotAttention IsTalk IsTalkTrevor IsNotIncapacitated IsInBattlefield TimeSinceGroupInCombat20 IsWorldTalkTrevor IsNotSpeakingWeight0
+		    Response BotAttentionBattleMechanic
 		    ApplyContext "SaidBotAttention:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule BotNoteHumanAttentionSheva
+		Rule BotNoteHumanAttentionTrevor
 		{
-		    criteria ConceptSurvivorBotNoteHumanAttention IsNotCoughing IsSheva IsNotBotAttention IsTalk IsTalkSheva IsNotIncapacitated IsInStartArea IsWorldTalkSheva IsNotSpeakingWeight0
-		    Response BotNoteHumanAttentionProducer
+		    criteria ConceptSurvivorBotNoteHumanAttention IsNotCoughing IsTrevor IsNotBotAttention IsTalk IsTalkTrevor IsNotIncapacitated IsInStartArea IsWorldTalkTrevor IsNotSpeakingWeight0
+		    Response BotNoteHumanAttentionMechanic
 		    ApplyContext "SaidBotAttention:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerNegativeSheva
+		Rule PlayerNegativeTrevor
 		{
-		    criteria ConceptPlayerNegative IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerNegativeProducer
+		    criteria ConceptPlayerNegative IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerNegativeMechanic
 		}
 	},
 
 	{
-		Rule PlayerShootCarNotSheva
+		Rule PlayerShootCarNotTrevor
 		{
-		    criteria ConceptPanicEvent IsNotCoughing IsSheva SubjectIsNotSheva IsNotc5m3_cemetery IsTalk IsTalkSheva IsCarAlarm ChanceToFire40Percent IsWorldTalkSheva
-		    Response PlayerShootCarNotProducer
+		    criteria ConceptPanicEvent IsTrevor IsNotCoughing SubjectIsNotTrevor IsNotc5m3_cemetery IsTalk IsTalkTrevor IsCarAlarm ChanceToFire60Percent IsWorldTalkTrevor
+		    Response PlayerShootCarNotMechanic
 		    ApplyContext "Saidremark_caralarm:1:300"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerShootCarSheva
+		Rule PlayerShootCarTrevor
 		{
-		    criteria ConceptPanicEvent IsNotCoughing IsSheva SubjectIsSheva IsNotc5m3_cemetery IsTalk IsTalkSheva IsCarAlarm IsWorldTalkSheva
-		    Response PlayerShootCarProducer
+		    criteria ConceptPanicEvent IsTrevor IsNotCoughing SubjectIsTrevor IsNotc5m3_cemetery IsTalk IsTalkTrevor IsCarAlarm IsWorldTalkTrevor
+		    Response PlayerShootCarMechanic
 		    ApplyContext "Saidremark_caralarm:1:300"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerHeardBoomerSheva
+		Rule PlayerHeardBoomerTrevor
 		{
-		    criteria ConceptPlayerHeardBoomer IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response PlayerHeardBoomerProducer
+		    criteria ConceptPlayerHeardBoomer IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response PlayerHeardBoomerMechanic
 		}
 	},
 
 	{
-		Rule PlayerHeardHunterSheva
+		Rule PlayerHeardHunterTrevor
 		{
-		    criteria ConceptPlayerHeardHunter IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response PlayerHeardHunterProducer
+		    criteria ConceptPlayerHeardHunter IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response PlayerHeardHunterMechanic
 		}
 	},
 
 	{
-		Rule PlayerHeardSmokerSheva
+		Rule PlayerHeardSmokerTrevor
 		{
-		    criteria ConceptPlayerHeardSmoker IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response PlayerHeardSmokerProducer
+		    criteria ConceptPlayerHeardSmoker IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response PlayerHeardSmokerMechanic
 		}
 	},
 
 	{
-		Rule PlayerHeardChargerSheva
+		Rule PlayerHeardChargerTrevor
 		{
-		    criteria ConceptPlayerHeardCharger IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response PlayerHeardChargerProducer
+		    criteria ConceptPlayerHeardCharger IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response PlayerHeardChargerMechanic
 		}
 	},
 
 	{
-		Rule PlayerHeardSpitterSheva
+		Rule PlayerHeardSpitterTrevor
 		{
-		    criteria ConceptPlayerHeardSpitter IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response PlayerHeardSpitterProducer
+		    criteria ConceptPlayerHeardSpitter IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response PlayerHeardSpitterMechanic
 		}
 	},
 
 	{
-		Rule PlayerHeardJockeySheva
+		Rule PlayerHeardJockeyTrevor
 		{
-		    criteria ConceptPlayerHeardJockey IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response PlayerHeardJockeyProducer
+		    criteria ConceptPlayerHeardJockey IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response PlayerHeardJockeyMechanic
 		}
 	},
 
 	{
-		Rule PlayerHeardBoomerC1Sheva
+		Rule PlayerHeardBoomerC1Trevor
 		{
-		    criteria ConceptPlayerHeardBoomer IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva C1M1orC1M2 NoKnowBoomer
-		    Response PlayerHeardBoomerC1Producer
-		    then mechanic Player.C1WorseThanZombies foo:0 0.1
+		    criteria ConceptPlayerHeardBoomer IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowBoomer
+		    Response PlayerHeardBoomerC1Mechanic
 		}
 	},
 
 	{
-		Rule PlayerHeardHunterC1Sheva
+		Rule PlayerHeardHunterC1Trevor
 		{
-		    criteria ConceptPlayerHeardHunter IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva C1M1orC1M2 NoKnowHunter
-		    Response PlayerHeardBoomerC1Producer
-		    then mechanic Player.C1WorseThanZombies foo:0 0.1
+		    criteria ConceptPlayerHeardHunter IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowHunter
+		    Response PlayerHeardBoomerC1Mechanic
 		}
 	},
 
 	{
-		Rule PlayerHeardSmokerC1Sheva
+		Rule PlayerHeardSmokerC1Trevor
 		{
-		    criteria ConceptPlayerHeardSmoker IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva C1M1orC1M2 NoKnowSmoker
-		    Response PlayerHeardBoomerC1Producer
-		    then mechanic Player.C1WorseThanZombies foo:0 0.1
+		    criteria ConceptPlayerHeardSmoker IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowSmoker
+		    Response PlayerHeardBoomerC1Mechanic
 		}
 	},
 
 	{
-		Rule PlayerHeardChargerC1Sheva
+		Rule PlayerHeardChargerC1Trevor
 		{
-		    criteria ConceptPlayerHeardCharger IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva C1M1orC1M2 NoKnowCharger
-		    Response PlayerHeardBoomerC1Producer
-		    then mechanic Player.C1WorseThanZombies foo:0 0.1
+		    criteria ConceptPlayerHeardCharger IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowCharger
+		    Response PlayerHeardBoomerC1Mechanic
 		}
 	},
 
 	{
-		Rule PlayerHeardSpitterC1Sheva
+		Rule PlayerHeardSpitterC1Trevor
 		{
-		    criteria ConceptPlayerHeardSpitter IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva C1M1orC1M2 NoKnowSpitter
-		    Response PlayerHeardBoomerC1Producer
-		    then mechanic Player.C1WorseThanZombies foo:0 0.1
+		    criteria ConceptPlayerHeardSpitter IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowSpitter
+		    Response PlayerHeardBoomerC1Mechanic
 		}
 	},
 
 	{
-		Rule PlayerHeardJockeyC1Sheva
+		Rule PlayerHeardJockeyC1Trevor
 		{
-		    criteria ConceptPlayerHeardJockey IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva C1M1orC1M2 NoKnowJockey
-		    Response PlayerHeardJockeyC1Producer
+		    criteria ConceptPlayerHeardJockey IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowJockey
+		    Response PlayerHeardJockeyC1Mechanic
 		}
 	},
 
 	{
-		Rule PlayerHeardTankSheva
+		Rule PlayerHeardTankTrevor
 		{
-		    criteria ConceptPlayerHeardTank IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response PlayerHeardTankProducer
+		    criteria ConceptPlayerHeardTank IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response PlayerHeardTankMechanic
 		}
 	},
 
 	{
-		Rule PlayerHeardWitchSheva
+		Rule PlayerHeardWitchTrevor
 		{
-		    criteria ConceptPlayerHeardWitch IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response PlayerHeardWitchProducer
+		    criteria ConceptPlayerHeardWitch IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response PlayerHeardWitchMechanic
 		}
 	},
 
 	{
-		Rule PlayerHurrahSheva
+		Rule PlayerHurrahTrevor
 		{
-		    criteria ConceptPlayerHurrah IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerHurrahProducer
+		    criteria ConceptPlayerHurrah IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerHurrahMechanic
 		}
 	},
 
 	{
-		Rule PlayerWarnCarefulSheva
+		Rule PlayerWarnCarefulTrevor
 		{
-		    criteria ConceptPlayerWarnCareful IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerWarnCarefulProducer
+		    criteria ConceptPlayerWarnCareful IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerWarnCarefulMechanic
 		}
 	},
 
 	{
-		Rule SurvivorSpottedWorldFarSheva
+		Rule SurvivorSpottedWorldFarTrevor
 		{
-		    criteria ConceptPlayerLook IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSmartLookAuto IsWorldTalkSheva
-		    Response SurvivorSpottedWorldFarProducer
+		    criteria ConceptPlayerLook IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto IsWorldTalkTrevor
+		    Response SurvivorSpottedWorldFarMechanic
 		}
 	},
 
 	{
-		Rule C6M3_PourFinishedSheva
+		Rule C6M3_PourFinishedTrevor
 		{
-		    criteria ConceptPlayerPourFinished IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsL4D1Alive Isc6m3_port ChanceToFire20Percent
-		    Response C6M3_PourFinishedProducer
+		    criteria ConceptPlayerPourFinished IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsL4D1Alive Isc6m3_port ChanceToFire20Percent
+		    Response C6M3_PourFinishedMechanic
 		    then Manager L4D1_NiceJobPour foo:0 0
 		    ApplyContext "Talk:1:3"
 		    applycontexttoworld
@@ -7508,30 +8385,30 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule GasPour20MoreSCSheva
+		Rule GasPour20MoreSCTrevor
 		{
-		    criteria ConceptPlayerPourFinished IsSheva IsTalk IsTalkSheva IsWorldTalkSheva Score20MoreSC
-		    Response GasPour20MoreSCProducer
+		    criteria ConceptPlayerPourFinished IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor Score20MoreSC
+		    Response GasPour20MoreSCMechanic
 		    then self GasPour20More foo:0 0.01
-		    ApplyContext "_auto_GasCountOK:1:4,_auto_NoGasPourLine:1:0"
+		    ApplyContext "_auto_GasCountOK:1:4"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule GasPour20MoreWaitSheva
+		Rule GasPour20MoreWaitTrevor
 		{
-		    criteria ConceptGasPour20More IsSheva IsSpeaking _auto_IsGasCountOK
-		    Response GasPour20MoreWaitProducer
+		    criteria ConceptGasPour20More IsTrevor IsSpeaking _auto_IsGasCountOK
+		    Response GasPour20MoreWaitMechanic
 		    then self GasPour20More foo:0 0.1
 		}
 	},
 
 	{
-		Rule GasPour10MoreSCSheva
+		Rule GasPour10MoreSCTrevor
 		{
-		    criteria ConceptPlayerPourFinished IsSheva IsTalk IsTalkSheva IsWorldTalkSheva Score10MoreSC
-		    Response GasPour10MoreSCProducer
+		    criteria ConceptPlayerPourFinished IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor Score10MoreSC
+		    Response GasPour10MoreSCMechanic
 		    then self GasPour10More foo:0 0.01
 		    ApplyContext "_auto_GasCountOK:1:4"
 		    applycontexttoworld
@@ -7539,19 +8416,19 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule GasPour10MoreWaitSheva
+		Rule GasPour10MoreWaitTrevor
 		{
-		    criteria ConceptGasPour10More IsSheva IsSpeaking _auto_IsGasCountOK
-		    Response GasPour10MoreWaitProducer
+		    criteria ConceptGasPour10More IsTrevor IsSpeaking _auto_IsGasCountOK
+		    Response GasPour10MoreWaitMechanic
 		    then self GasPour10More foo:0 0.1
 		}
 	},
 
 	{
-		Rule GasPour1MoreSCSheva
+		Rule GasPour1MoreSCTrevor
 		{
-		    criteria ConceptPlayerPourFinished IsSheva IsTalk IsTalkSheva IsWorldTalkSheva Score1MoreSC
-		    Response GasPour1MoreSCProducer
+		    criteria ConceptPlayerPourFinished IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor Score1MoreSC
+		    Response GasPour1MoreSCMechanic
 		    then self GasPour1More foo:0 0.01
 		    ApplyContext "_auto_GasCountOK:1:4,_auto_NoGasPourLine:1:0"
 		    applycontexttoworld
@@ -7559,19 +8436,19 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule GasPour1MoreWaitSheva
+		Rule GasPour1MoreWaitTrevor
 		{
-		    criteria ConceptGasPour1More IsSheva IsSpeaking _auto_IsGasCountOK
-		    Response GasPour1MoreWaitProducer
+		    criteria ConceptGasPour1More IsTrevor IsSpeaking _auto_IsGasCountOK
+		    Response GasPour1MoreWaitMechanic
 		    then self GasPour1More foo:0 0.1
 		}
 	},
 
 	{
-		Rule GasPour2MoreSCSheva
+		Rule GasPour2MoreSCTrevor
 		{
-		    criteria ConceptPlayerPourFinished IsSheva IsTalk IsTalkSheva IsWorldTalkSheva Score2MoreSC
-		    Response GasPour2MoreSCProducer
+		    criteria ConceptPlayerPourFinished IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor Score2MoreSC
+		    Response GasPour2MoreSCMechanic
 		    then self GasPour2More foo:0 0.01
 		    ApplyContext "_auto_GasCountOK:1:4"
 		    applycontexttoworld
@@ -7579,19 +8456,19 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule GasPour2MoreWaitSheva
+		Rule GasPour2MoreWaitTrevor
 		{
-		    criteria ConceptGasPour2More IsSheva IsSpeaking _auto_IsGasCountOK
-		    Response GasPour2MoreWaitProducer
+		    criteria ConceptGasPour2More IsTrevor IsSpeaking _auto_IsGasCountOK
+		    Response GasPour2MoreWaitMechanic
 		    then self GasPour2More foo:0 0.1
 		}
 	},
 
 	{
-		Rule GasPour3MoreSCSheva
+		Rule GasPour3MoreSCTrevor
 		{
-		    criteria ConceptPlayerPourFinished IsSheva IsTalk IsTalkSheva IsWorldTalkSheva Score3MoreSC
-		    Response GasPour3MoreSCProducer
+		    criteria ConceptPlayerPourFinished IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor Score3MoreSC
+		    Response GasPour3MoreSCMechanic
 		    then self GasPour3More foo:0 0.01
 		    ApplyContext "_auto_GasCountOK:1:4"
 		    applycontexttoworld
@@ -7599,19 +8476,19 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule GasPour3MoreWaitSheva
+		Rule GasPour3MoreWaitTrevor
 		{
-		    criteria ConceptGasPour3More IsSheva IsSpeaking _auto_IsGasCountOK
-		    Response GasPour3MoreWaitProducer
+		    criteria ConceptGasPour3More IsTrevor IsSpeaking _auto_IsGasCountOK
+		    Response GasPour3MoreWaitMechanic
 		    then self GasPour3More foo:0 0.1
 		}
 	},
 
 	{
-		Rule GasPour5MoreSCSheva
+		Rule GasPour5MoreSCTrevor
 		{
-		    criteria ConceptPlayerPourFinished IsSheva IsTalk IsTalkSheva IsWorldTalkSheva Score5MoreSC
-		    Response GasPour5MoreSCProducer
+		    criteria ConceptPlayerPourFinished IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor Score5MoreSC
+		    Response GasPour5MoreSCMechanic
 		    then self GasPour5More foo:0 0.01
 		    ApplyContext "_auto_GasCountOK:1:4"
 		    applycontexttoworld
@@ -7619,404 +8496,438 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule GasPour5MoreWaitSheva
+		Rule GasPour5MoreWaitTrevor
 		{
-		    criteria ConceptGasPour5More IsSheva IsSpeaking _auto_IsGasCountOK
-		    Response GasPour5MoreWaitProducer
+		    criteria ConceptGasPour5More IsTrevor IsSpeaking _auto_IsGasCountOK
+		    Response GasPour5MoreWaitMechanic
 		    then self GasPour5More foo:0 0.1
 		}
 	},
 
 	{
-		Rule GasPourDoneSCSheva
+		Rule GasPourDoneSCTrevor
 		{
-		    criteria ConceptPlayerPourFinished IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsScavenge ScoreDoneSC
-		    Response GasPourDoneSCProducer
+		    criteria ConceptPlayerPourFinished IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsScavenge ScoreDoneSC
+		    Response GasPourDoneSCMechanic
 		    ApplyContext "Talk:1:3"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule GasPourSCSheva
+		Rule GasPourSCTrevor
 		{
-		    criteria ConceptPlayerPourStarted IsSheva IsTalk IsTalkSheva IsNotAlone IsWorldTalkSheva IsScavenge ChanceToFire50Percent _auto_NotNoGasPourLine
-		    Response GasPourSCProducer
-		    ApplyContext "TalkSheva:1:2"
+		    criteria ConceptPlayerPourStarted IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsScavenge ChanceToFire50Percent _auto_NotNoGasPourLine
+		    Response GasPourSCMechanic
+		    ApplyContext "TalkTrevor:1:2"
 		}
 	},
 
 	{
-		Rule GasPourSCAloneSheva
+		Rule GasPourSCSoloTrevor
 		{
-		    criteria ConceptPlayerPourStarted IsSheva IsAlone IsTalk IsTalkSheva IsWorldTalkSheva IsScavenge ChanceToFire50Percent _auto_NotNoGasPourLine
-		    Response GasPourSCAloneProducer
-		    ApplyContext "TalkSheva:1:2"
+		    criteria ConceptPlayerPourStarted IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsScavenge ChanceToFire50Percent _auto_NotNoGasPourLine
+		    Response GasPourSCSoloMechanic
+		    ApplyContext "TalkTrevor:1:2"
 		}
 	},
 
 	{
-		Rule GrabbingGasSCSheva
+		Rule GasPourAloneTrevor
 		{
-		    criteria ConceptPlayerEquippedScavengeItem IsSheva IsTalk IsNotAlone IsClosestSurvivorNear500 IsTalkSheva IsWorldTalkSheva NotSaidGrabbingCan
-		    Response GrabbingGasSCProducer
+		    criteria ConceptPlayerPourStarted IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotScavenge ChanceToFire50Percent _auto_NotNoGasPourLine
+		    Response GasPourSCSoloMechanic
+		    ApplyContext "TalkTrevor:1:2"
+		}
+	},
+
+	{
+		Rule GrabbingGasSCTrevor
+		{
+		    criteria ConceptPlayerEquippedScavengeItem IsTrevor IsTalk IsNotAlone IsClosestSurvivorNear500 IsTalkTrevor IsWorldTalkTrevor NotSaidGrabbingCan
+		    Response GrabbingGasSCMechanic
 		    ApplyContext "SaidGrabbingCan:1:8"
 		}
 	},
 
 	{
-		Rule PlayerShotGasCanSheva
+		Rule PlayerShotGasCanTrevor
 		{
-		    criteria ConceptPlayerShotGasCan IsSheva IsNotSaidPlayerShotGasCan IsScavenge
-		    Response PlayerShotGasCanProducer
+		    criteria ConceptPlayerShotGasCan IsTrevor IsNotSaidPlayerShotGasCan IsScavenge
+		    Response PlayerShotGasCanMechanic
 		    ApplyContext "SaidPlayerShotGasCan:1:10"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule ScavengeStartSheva
+		Rule ScavengeStartTrevor
 		{
-		    criteria ConceptSurvivorLeavingCheckpoint IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsScavenge IsNotSaidLeavingSafeArea
-		    Response ScavengeStartProducer
+		    criteria ConceptSurvivorLeavingCheckpoint IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsScavenge IsNotSaidLeavingSafeArea
+		    Response ScavengeStartMechanic
 		    ApplyContext "SaidLeavingSafeArea:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule ScavengeStartC1M4Sheva
+		Rule ScavengeStartC1M4Trevor
 		{
-		    criteria ConceptSurvivorLeavingCheckpoint IsSheva IsTalk IsTalkSheva ismap_c1m4_atrium IsWorldTalkSheva IsScavenge IsNotSaidLeavingSafeArea
-		    Response FinaleStartC1M4Producer
+		    criteria ConceptSurvivorLeavingCheckpoint IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor ismap_c1m4_atrium IsScavenge IsNotSaidLeavingSafeArea
+		    Response ScavengeStartC1M4Mechanic
 		    ApplyContext "SaidLeavingSafeArea:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerCommentJockeySheva
+		Rule PlayerCommentJockeyTrevor
 		{
-		    criteria ConceptCommentJockey IsSheva IssuerCloseEnough FromIsNotTeenGirl IsNotIncapacitated IntensityUnder50 IsNotSaidCommentJockey IsNotSaidBeenJockeyedSheva IsNotBeingJockeyed
-		    Response PlayerCommentJockeyProducer
+		    criteria ConceptCommentJockey IsTrevor IssuerCloseEnough IsNotIncapacitated IntensityUnder50 IsNotSaidCommentJockey IsNotSaidBeenJockeyedTrevor IsNotBeingJockeyed
+		    Response PlayerCommentJockeyMechanic
+		    then gambler commentjockey2 foo:0 0.1
 		    ApplyContext "SaidCommentJockey:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C4M2LockTheDoorCheckPointSheva
+		Rule PlayerCommentJockeyMaleTrevor
 		{
-		    criteria ConceptPlayerLockTheDoorCheckPoint IsNotCoughing IsSheva IsInSafeSpot IsTalk IsTalkSheva IsWorldTalkSheva ismap_c4m2_sugarmill_a AutoIsNotScavenge AutoIsNotSurvival
-		    Response C4M2LockTheDoorCheckPointProducer
+		    criteria ConceptCommentJockey IsTrevor IssuerCloseEnough IsNotIncapacitated FromIsNotProducer FromIsNotTeenGirl ChanceToFire25Percent IntensityUnder50 IsNotSaidCommentJockey IsNotSaidBeenJockeyedTrevor IsNotBeingJockeyed
+		    Response PlayerCommentJockeyMaleMechanic
+		    ApplyContext "SaidCommentJockey:1:0"
+		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule GoingToDieCoachCoachSheva
+		Rule C4M2LockTheDoorCheckPointTrevor
 		{
-		    criteria ConceptPlayerGoingToDie IsNotSpeaking IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotComplainBlock IsCoachAlive IsCoachNear200 ChanceToFire30Percent IsWorldTalkSheva IsNotInStartArea IsNotInCheckpoint _auto_NotSpottedVehicle
-		    Response GoingToDieCoachCoachProducer
+		    criteria ConceptPlayerLockTheDoorCheckPoint IsNotCoughing IsTrevor IsInSafeSpot IsTalk IsTalkTrevor IsWorldTalkTrevor ismap_c4m2_sugarmill_a AutoIsNotScavenge AutoIsNotSurvival
+		    Response C4M2LockTheDoorCheckPointMechanic
+		}
+	},
+
+	{
+		Rule GoingToDieCoachCoachTrevor
+		{
+		    criteria ConceptPlayerGoingToDie IsNotSpeaking IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotComplainBlock IsCoachAlive IsCoachNear200 ChanceToFire30Percent IsWorldTalkTrevor IsNotInStartArea IsNotInCheckpoint _auto_NotSpottedVehicle
+		    Response GoingToDieCoachCoachMechanic
 		    then coach coachcoaches foo:0 .5
 		    ApplyContext "IsComplain:1:25"
 		}
 	},
 
 	{
-		Rule PlayerAlertGiveItemStopSheva
+		Rule PlayerAlertGiveItemStopTrevor
 		{
-		    criteria ConceptAlertGiveItemStop IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidAlertGiveItemStop IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response PlayerAlertGiveItemStopProducer
+		    criteria ConceptAlertGiveItemStop IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidAlertGiveItemStop IsWorldTalkTrevor
+		    Response PlayerAlertGiveItemStopMechanic
 		    ApplyContext "SaidAlertGiveItemStop:1:10"
 		}
 	},
 
 	{
-		Rule PlayerAlertGiveItemStopAnFirstAidSheva
+		Rule PlayerAlertGiveItemStopAnFirstAidTrevor
 		{
-		    criteria ConceptAlertGiveItemStopFirstAidA IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidAlertGiveItemStopFirstAid NoHasFirstAidKit IsWorldTalkSheva
-		    Response PlayerAlertGiveItemStopAnFirstAidProducer
+		    criteria ConceptAlertGiveItemStopFirstAidA IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidAlertGiveItemStopFirstAid NoHasFirstAidKit IsWorldTalkTrevor
+		    Response PlayerAlertGiveItemStopAnFirstAidMechanic
 		    then subject AlertGiveItemStop foo:0 0
 		}
 	},
 
 	{
-		Rule PlayerAlertGiveItemStopC1Sheva
+		Rule PlayerAlertGiveItemStopC1Trevor
 		{
-		    criteria ConceptAlertGiveItemStop IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidAlertGiveItemStop IsWorldTalkSheva ismap_c1m1_hotel NoKnowNames
-		    Response PlayerAlertGiveItemStopC1Producer
+		    criteria ConceptAlertGiveItemStop IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidAlertGiveItemStop IsWorldTalkTrevor ismap_c1m1_hotel NoKnowNames
+		    Response PlayerAlertGiveItemStopC1Mechanic
 		    ApplyContext "SaidAlertGiveItemStop:1:10"
 		}
 	},
 
 	{
-		Rule PlayerAlertGiveItemStopQnFirstAidSheva
+		Rule PlayerAlertGiveItemStopQnFirstAidTrevor
 		{
-		    criteria ConceptBashWithItem IsNotCoughing IsSheva IsTalk IsTalkSheva IsItemFirstAidKit IsNotSaidAlertGiveItemStopFirstAid IsWorldTalkSheva
-		    Response PlayerAlertGiveItemStopQnFirstAidProducer
+		    criteria ConceptBashWithItem IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsItemFirstAidKit IsNotSaidAlertGiveItemStopFirstAid IsWorldTalkTrevor
+		    Response PlayerAlertGiveItemStopQnFirstAidMechanic
 		    then subject AlertGiveItemStopFirstAidA foo:0 0
 		    ApplyContext "SaidAlertGiveItemStopFirstAid:1:10"
 		}
 	},
 
 	{
-		Rule PlayerPouncedSheva
+		Rule PlayerCoachPouncedTrevor
 		{
-		    criteria ConceptSurvivorWasPounced ChanceToFire30Percent IsNotCoughing SubjectIsNotTeenGirl IsNotSaidPlayerPounced IsSheva IsTalk IsTalkSheva IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets
-		    Response PlayerPouncedProducer
-		    ApplyContext "SaidPlayerPounced:1:60"
+		    criteria ConceptSurvivorWasPounced ChanceToFire30Percent IsNotCoughing SubjectIsCoach IsNotSaidCoachPounced IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerCoachPouncedMechanic
+		    ApplyContext "CoachPounced:1:60"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerCoachPouncedSheva
+		Rule PlayerCoachPouncedC1Trevor
 		{
-		    criteria ConceptSurvivorWasPounced ChanceToFire30Percent IsNotCoughing SubjectIsCoach IsNotSaidCoachPounced IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerCoachPouncedProducer
+		    criteria ConceptSurvivorWasPounced ChanceToFire30Percent IsNotCoughing SubjectIsCoach IsNotSaidCoachPounced IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowHunter IsNotSurvival
+		    Response PlayerCoachPouncedC1Mechanic
 		    ApplyContext "SaidCoachPounced:1:60"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerCoachPouncedC1Sheva
+		Rule PlayerGamblerPouncedC1Trevor
 		{
-		    criteria ConceptSurvivorWasPounced ChanceToFire30Percent IsNotCoughing SubjectIsCoach IsNotSaidCoachPounced IsSheva IsTalk IsTalkSheva IsWorldTalkSheva C1M1orC1M2 NoKnowHunter IsNotSurvival
-		    Response PlayerCoachPouncedC1Producer
-		    ApplyContext "SaidCoachPounced:1:60"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule PlayerGamblerPouncedC1Sheva
-		{
-		    criteria ConceptSurvivorWasPounced ChanceToFire30Percent IsNotCoughing SubjectIsGambler IsNotSaidGamblerPounced IsSheva IsTalk IsTalkSheva IsWorldTalkSheva C1M1orC1M2 NoKnowHunter IsNotSurvival
-		    Response PlayerCoachPouncedC1Producer
+		    criteria ConceptSurvivorWasPounced ChanceToFire30Percent IsNotCoughing SubjectIsGambler IsNotSaidGamblerPounced IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowHunter IsNotSurvival
+		    Response PlayerCoachPouncedC1Mechanic
 		    ApplyContext "SaidGamblerPounced:1:60"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerMechanicPouncedC1Sheva
+		Rule PlayerEatPillsTrevor
 		{
-		    criteria ConceptSurvivorWasPounced ChanceToFire30Percent IsNotCoughing SubjectIsMechanic IsNotSaidMechanicPounced IsSheva IsTalk IsTalkSheva IsWorldTalkSheva C1M1orC1M2 NoKnowHunter IsNotSurvival
-		    Response PlayerCoachPouncedC1Producer
-		    ApplyContext "SaidMechanicPounced:1:60"
+		    criteria ConceptEatPills IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerEatPillsMechanic
+		}
+	},
+
+	{
+		Rule PlayerGamblerPouncedTrevor
+		{
+		    criteria ConceptSurvivorWasPounced ChanceToFire30Percent IsNotCoughing SubjectIsGambler IsNotSaidGamblerPounced IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerGamblerPouncedMechanic
+		    ApplyContext "GamblerPounced:1:60"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerEatPillsSheva
+		Rule PlayerGetInsideCheckPointTrevor
 		{
-		    criteria ConceptEatPills IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerEatPillsProducer
+		    criteria ConceptPlayerGetInsideCheckPoint IsNotCoughing IsTrevor IsInSafeSpot IsTalk IsTalkTrevor SomeoneOutsideSafeSpot IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerGetInsideCheckPointMechanic
+		    then any StayTogetherInsideReponse foo:0 -1.898
 		}
 	},
 
 	{
-		Rule PlayerGamblerPouncedSheva
+		Rule PlayerStayTogetherSaferoomTrevor
 		{
-		    criteria ConceptSurvivorWasPounced ChanceToFire90Percent IsNotCoughing SubjectIsGambler IsNotSaidGamblerPounced IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerGamblerPouncedProducer
-		    ApplyContext "SaidGamblerPounced:1:60"
+		    criteria ConceptPlayerStayTogether IsNotCoughing IsTrevor IsInSafeSpot IsTalk IsTalkTrevor SomeoneOutsideSafeSpot IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerStayTogetherSaferoomMechanic
+		}
+	},
+
+	{
+		Rule PlayerGetInsideCheckPointC2M2Trevor
+		{
+		    criteria ConceptPlayerGetInsideCheckPoint ismap_c2m2 IsNotCoughing IsTrevor IsInSafeSpot IsTalk IsTalkTrevor SomeoneOutsideSafeSpot IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerGetInsideCheckPointC2M2Mechanic
+		    then any StayTogetherInsideReponse foo:0 0.3
+		}
+	},
+
+	{
+		Rule PlayerGrabbedByJockeyTrevor
+		{
+		    criteria ConceptSurvivorJockeyed IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidBeenJockeyedTrevor IsWorldTalkTrevor
+		    Response PlayerGrabbedByJockeyMechanic
+		    ApplyContext "SaidBeenJockeyedTrevor:1:6,TalkTrevor:1:6"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerGetInsideCheckPointSheva
+		Rule PlayerGrabbedByJockeyC1Trevor
 		{
-		    criteria ConceptPlayerGetInsideCheckPoint IsNotCoughing IsSheva IsInSafeSpot IsTalk IsTalkSheva SomeoneOutsideSafeSpot IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerGetInsideCheckPointProducer
-		    then any StayTogetherInsideReponse foo:0 -1.498
-		}
-	},
-
-	{
-		Rule PlayerStayTogetherSaferoomSheva
-		{
-		    criteria ConceptPlayerStayTogether IsNotCoughing IsSheva IsInSafeSpot IsTalk IsTalkSheva SomeoneOutsideSafeSpot IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerStayTogetherSaferoomProducer
-		}
-	},
-
-	{
-		Rule PlayerGrabbedByJockeySheva
-		{
-		    criteria ConceptSurvivorJockeyed IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidBeenJockeyedSheva IsWorldTalkSheva
-		    Response PlayerGrabbedByJockeyProducer
-		    ApplyContext "SaidBeenJockeyedSheva:1:6,TalkSheva:1:6"
+		    criteria ConceptSurvivorJockeyed IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidBeenJockeyedTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowJockey IsNotSurvival
+		    Response PlayerGrabbedByJockeyC1Mechanic
+		    ApplyContext "SaidBeenJockeyedTrevor:1:6,TalkTrevor:1:6"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerGrabbedByJockeyC1Sheva
+		Rule PlayerGrenadeMolotovTrevor
 		{
-		    criteria ConceptSurvivorJockeyed IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidBeenJockeyedSheva IsWorldTalkSheva C1M1orC1M2 IsNotSurvival
-		    Response PlayerGrabbedByJockeyC1Producer
-		    ApplyContext "SaidBeenJockeyedSheva:1:6,TalkSheva:1:6"
-		    applycontexttoworld
+		    criteria ConceptThrewGrenade IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsGrenadeMolotov IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response PlayerGrenadeMolotovMechanic
+		    then Any GrenadeCareful foo:0 -0.821
 		}
 	},
 
 	{
-		Rule PlayerGrenadeMolotovSheva
+		Rule PlayerGrenadeMolotovTankTrevor
 		{
-		    criteria ConceptThrewGrenade IsNotCoughing IsSheva IsTalk IsTalkSheva IsGrenadeMolotov IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response PlayerGrenadeMolotovProducer
-		    then Any GrenadeCareful foo:0 -1.119
+		    criteria ConceptThrewGrenade IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsGrenadeMolotov IsZombiePresentTank IsSaidTankWarn2 IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response PlayerGrenadeMolotovTankMechanic
 		}
 	},
 
 	{
-		Rule PlayerGrenadeMolotovTankSheva
+		Rule PlayerGrenadePipeBombTrevor
 		{
-		    criteria ConceptThrewGrenade IsNotCoughing IsSheva IsTalk IsTalkSheva IsGrenadeMolotov IsZombiePresentTank IsSaidTankWarn2 IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response PlayerGrenadeMolotovTankProducer
+		    criteria ConceptThrewGrenade IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsGrenadePipeBomb IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response PlayerGrenadePipeBombMechanic
+		    then Any GrenadeCareful foo:0 -0.579
 		}
 	},
 
 	{
-		Rule PlayerGrenadePipeBombSheva
+		Rule PlayerGrenadeVomitJarTrevor
 		{
-		    criteria ConceptThrewGrenade IsNotCoughing IsSheva IsTalk IsTalkSheva IsGrenadePipeBomb IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response PlayerGrenadePipeBombProducer
-		    then Any GrenadeCareful foo:0 -0.642
+		    criteria ConceptThrewGrenade IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsGrenadeVomitJar IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response PlayerGrenadeVomitJarMechanic
+		    then Any GrenadeCareful foo:0 -1.598
 		}
 	},
 
 	{
-		Rule PlayerGrenadeVomitJarSheva
+		Rule PlayerGrenadeVomitJarTankTrevor
 		{
-		    criteria ConceptThrewGrenade IsNotCoughing IsSheva IsTalk IsTalkSheva IsGrenadeVomitJar IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response PlayerGrenadeVomitJarProducer
-		    then Any GrenadeCareful foo:0 -1.702
+		    criteria ConceptThrewGrenade IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsGrenadeVomitJar IsZombiePresentTank IsSaidTankWarn2 isNotmap_c1m1_hotel isNotmap_c1m2_streets IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response PlayerGrenadeVomitJarTankMechanic
 		}
 	},
 
 	{
-		Rule PlayerGrenadeVomitJarC1Sheva
+		Rule PlayerGrenadeVomitJarC1Trevor
 		{
-		    criteria ConceptThrewGrenade IsNotCoughing IsSheva IsTalk IsTalkSheva IsGrenadeVomitJar IsWorldTalkSheva ismap_c1m1_hotel
-		    Response PlayerGrenadeVomitJarC1Producer
-		    then Any GrenadeCareful foo:0 -1.702
+		    criteria ConceptThrewGrenade IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsGrenadeVomitJar IsWorldTalkTrevor ismap_c1m1_hotel
+		    Response PlayerGrenadeVomitJarC1Mechanic
+		    then Any GrenadeCareful foo:0 -1.517
 		}
 	},
 
 	{
-		Rule PlayerIncapacitatedInitialSheva
+		Rule PlayerIncapacitatedInitialTrevor
 		{
-		    criteria ConceptPlayerIncapacitated IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerIncapacitatedInitialProducer
-		    ApplyContext "TalkSheva:1:2"
+		    criteria ConceptPlayerIncapacitated IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerIncapacitatedInitialMechanic
+		    ApplyContext "TalkTrevor:1:2"
 		}
 	},
 
 	{
-		Rule PlayerIncapacitatedInitialC1M2Sheva
+		Rule PlayerIncapacitatedInitialC1M2Trevor
 		{
-		    criteria ConceptPlayerIncapacitated IsSheva ismap_c1m2_streets IsC1M2WhitakerErrand
-		    Response PlayerIncapacitatedInitialC1M2Producer
+		    criteria ConceptPlayerIncapacitated IsTrevor ismap_c1m2_streets IsC1M2WhitakerErrand
+		    Response PlayerIncapacitatedInitialC1M2Mechanic
 		    then orator C1M2SurvivorDown foo:0 0.1
-		    ApplyContext "TalkSheva:1:2"
+		    ApplyContext "TalkTrevor:1:2"
 		}
 	},
 
 	{
-		Rule PlayerKillConfirmationSheva
+		Rule PlayerKillConfirmationTrevor
 		{
-		    criteria ConceptKilledZombie IsNotCoughing IsSheva SubjectIsNotTank SubjectIsNotAWitch IsTalk IsTalkSheva IsSubjectFar300 ChanceToFire40Percent isNotmap_c1m1_hotel IsWorldTalkSheva isNotmap_c1m2_streets IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response PlayerKillConfirmationProducer
-		    then Any PlayerNiceShot foo:0 -0.465
+		    criteria ConceptKilledZombie IsNotCoughing IsTrevor SubjectIsNotTank SubjectIsNotAWitch IsTalk IsTalkTrevor IsSubjectFar300 ChanceToFire40Percent isNotmap_c1m1_hotel IsWorldTalkTrevor IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response PlayerKillConfirmationMechanic
+		    then Any PlayerNiceShot foo:0 -0.399
 		}
 	},
 
 	{
-		Rule PlayerKillConfirmationC1M1Sheva
+		Rule PlayerKillConfirmationC1M1Trevor
 		{
-		    criteria ConceptKilledZombie IsNotCoughing IsSheva SubjectIsNotTank IsTalk IsTalkSheva IsUsingFirearm ismap_c1m1_hotel IsNotFirstKillC1 IsWorldTalkSheva
-		    Response PlayerKillConfirmationC1M1Producer
-		    ApplyContext "Talk:1:3,FirstKill:1:0"
+		    criteria ConceptKilledZombie IsNotCoughing IsTrevor SubjectIsNotTank IsTalk IsTalkTrevor IsUsingFirearm IsSubjectFar300 ismap_c1m1_hotel IsNotFirstKillC1 IsWorldTalkTrevor
+		    Response PlayerKillConfirmationC1M1Mechanic
+		    ApplyContext "Talk:1:5,FirstKill:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerKillConfirmationC1M1MeleeSheva
+		Rule PlayerKillConfirmationC1M1MeleeTrevor
 		{
-		    criteria ConceptKilledZombie IsNotCoughing IsSheva SubjectIsNotTank SubjectIsNotBoomer SubjectIsNotSmoker IsTalk IsTalkSheva EquippedMeleeWeapon ismap_c1m1_hotel IsNotFirstKillC1 IsWorldTalkSheva
-		    Response PlayerKillConfirmationC1M1MeleeProducer
-		    ApplyContext "Talk:1:10,FirstKill:1:0"
+		    criteria ConceptKilledZombie IsNotCoughing IsTrevor SubjectIsNotTank SubjectIsNotBoomer SubjectIsNotSmoker IsTalk IsTalkTrevor EquippedMeleeWeapon ismap_c1m1_hotel IsNotFirstKillC1 IsWorldTalkTrevor
+		    Response PlayerKillConfirmationC1M1MeleeMechanic
+		    ApplyContext "Talk:1:5,FirstKill:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerKillConfirmationC1M2Sheva
+		Rule KillStealTrevor
 		{
-		    criteria ConceptKilledZombie IsNotCoughing IsSheva SubjectIsNotTank IsTalk IsTalkSheva IsUsingFirearm ismap_c1m2_streets IsSaidC1M2InsideGunShop IsWorldTalkSheva _auto_IsButton1 IsNotSpeaking
-		    Response PlayerKillConfirmationC1M2Producer
-		    then Mechanic C1M2GunshopKill foo:0 0.1
+		    criteria ConceptKillSteal IsNotCoughing IsTrevor IssuerReallyClose IsTrevorAlsoWarn IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotSpeakingWeight0
+		    Response KillStealMechanic
+		    then From RightfulKiller foo:0 -0.953
 		}
 	},
 
 	{
-		Rule RightfulKillerSheva
+		Rule InsistMineTrevor
 		{
-		    criteria ConceptRightfulKiller IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response RightfulKillerProducer
-		    then From InsistMine foo:0 0
+		    criteria ConceptInsistMine IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response InsistMineMechanic
+		    then From KillStealCalledOut foo:0 -1.545
+		    ApplyContext "TalkTrevor:1:1.1"
 		}
 	},
 
 	{
-		Rule PlayerKillTankConfirmationSheva
+		Rule PlayerKillSpitterConfirmationTrevor
 		{
-		    criteria ConceptKilledZombie IsNotCoughing IsSheva IsTalk IsTalkSheva SubjectIsTank IsNotSaidTankDead IsNotAlone IsNotIncapacitated IsRocking IsWorldTalkSheva _auto_NotFinaleStarted _auto_NotSpottedVehicle
-		    Response PlayerKillTankConfirmationProducer
-		    ApplyContext "SaidTankDead:1:60,TalkSheva:1:5"
+		    criteria ConceptKilledZombie IsNotCoughing IsTrevor IsTalk IsTalkTrevor SubjectIsSpitter IsSubjectNear250 ChanceToFire20Percent IsWorldTalkTrevor IsNotSpeakingWeight0
+		    Response PlayerKillSpitterConfirmationMechanic
+		}
+	},
+
+	{
+		Rule PlayerKillSpitterGamblerTrevor
+		{
+		    criteria ConceptKilledZombie IsNotCoughing IsTrevor IsTalk IsTalkTrevor SubjectIsSpitter IsGamblerNear400 ChanceToFire20Percent IsWorldTalkTrevor IsNotSpeakingWeight0
+		    Response PlayerKillSpitterGamblerMechanic
+		}
+	},
+
+	{
+		Rule PlayerKillTankConfirmationTrevor
+		{
+		    criteria ConceptKilledZombie IsNotCoughing IsTrevor IsTalk IsTalkTrevor SubjectIsTank IsNotSaidTankDead IsNotAlone IsNotIncapacitated IsRocking IsWorldTalkTrevor _auto_NotFinaleStarted _auto_NotSpottedVehicle
+		    Response PlayerKillTankConfirmationMechanic
+		    ApplyContext "SaidTankDead:1:60,TalkTrevor:1:5"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerKillConfirmationEllisCloseSheva
+		Rule PlayerKillTankNotHealthyTrevor
 		{
-		    criteria ConceptKilledZombie IsNotCoughing IsSheva IsTalk IsTalkSheva SubjectIsNotTank SubjectIsNotAWitch IsMechanicAlive IsMechanicNear400 IsEllisAlsoWarn ChanceToFire5Percent IsNotAlone IsNotIncapacitated IsRocking IsWorldTalkSheva _auto_NotFinaleStarted _auto_NotSpottedVehicle
-		    // 	forceweight 100
-		    Response PlayerKillConfirmationEllisCloseProducer
-		    then Mechanic KillSteal foo:0 0
+		    criteria ConceptKilledZombie IsNotCoughing IsTrevor IsTalk IsTalkTrevor SubjectIsTank IsNotSaidTankDead IsNotAlone IsNotIncapacitated IsNotHealthy IsWorldTalkTrevor _auto_NotFinaleStarted _auto_NotSpottedVehicle
+		    Response PlayerKillTankNotHealthyMechanic
+		    ApplyContext "SaidTankDead:1:60,TalkTrevor:1:5"
+		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerKillTankConfirmationC1M2Sheva
+		Rule PlayerKillTankConfirmationC1M2Trevor
 		{
-		    criteria ConceptKilledZombie IsNotCoughing IsSheva IsTalk IsTalkSheva SubjectIsTank IsNotSaidTankDead IsNotIncapacitated IsWorldTalkSheva ismap_c1m2_streets IsEveryoneAlive IsNotSurvival
-		    Response PlayerKillTankConfirmationC1M2Producer
-		    then mechanic C1M2TankInfo foo:0 0.1
+		    criteria ConceptKilledZombie IsNotCoughing IsTrevor IsTalk IsTalkTrevor SubjectIsTank IsNotSaidTankDead IsNotIncapacitated IsWorldTalkTrevor ismap_c1m2_streets IsEveryoneAlive IsNotSurvival
+		    Response PlayerKillTankConfirmationC1M2Mechanic
+		    then trevor C1M2TankInfo foo:0 0.1
 		    ApplyContext "SaidTankDead:1:0,Talk:1:12"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerCr0wnedWitchSheva
+		Rule PlayerCr0wnedWitchTrevor
 		{
-		    criteria ConceptKilledZombie IsSheva SubjectIsAWitch IsNotWitchAggro
+		    criteria ConceptKilledZombie IsTrevor SubjectIsAWitch IsNotWitchAggro
 		    Response NoResponse
 		}
 	},
 
 	{
-		Rule PlayerKilledStartledWitchSheva
+		Rule PlayerKilledStartledWitchTrevor
 		{
-		    criteria ConceptKilledZombie IsSheva SubjectIsAWitch IsWitchAggro
+		    criteria ConceptKilledZombie IsTrevor SubjectIsAWitch IsWitchAggro
 		    Response NoResponse
 		    ApplyContext "WitchAggro:--1"
 		    applycontexttoworld
@@ -8024,376 +8935,390 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule PlayerKillTankNotHealthySheva
+		Rule PlayerLockTheDoorCheckPointTrevor
 		{
-		    criteria ConceptKilledZombie IsNotCoughing IsSheva IsTalk IsTalkSheva SubjectIsTank IsNotSaidTankDead IsNotAlone IsNotIncapacitated IsNotHealthy IsWorldTalkSheva _auto_NotFinaleStarted _auto_NotSpottedVehicle
-		    Response PlayerKillTankNotHealthyProducer
-		    ApplyContext "SaidTankDead:1:60,TalkSheva:1:5"
+		    criteria ConceptPlayerLockTheDoorCheckPoint IsNotCoughing IsTrevor IsInSafeSpot IsNotAlone IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerLockTheDoorCheckPointMechanic
+		}
+	},
+
+	{
+		Rule PlayerLockTheDoorCheckPointC1Trevor
+		{
+		    criteria ConceptPlayerLockTheDoorCheckPoint IsNotCoughing IsTrevor IsInSafeSpot IsNotAlone ismap_c1m1_hotel IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerLockTheDoorCheckPointC1Mechanic
+		}
+	},
+
+	{
+		Rule PlayerProducerPouncedTrevor
+		{
+		    criteria ConceptSurvivorWasPounced ChanceToFire30Percent IsNotCoughing SubjectIsProducer IsNotSaidProducerPounced IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerProducerPouncedMechanic
+		    ApplyContext "SaidProducerPounced:1:60"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerLockTheDoorCheckPointSheva
+		Rule PlayerProducerPouncedC1Trevor
 		{
-		    criteria ConceptPlayerLockTheDoorCheckPoint IsNotCoughing IsSheva IsInSafeSpot IsNotAlone IsTalk IsTalkSheva IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerLockTheDoorCheckPointProducer
-		}
-	},
-
-	{
-		Rule PlayerLockTheDoorCheckPointC1Sheva
-		{
-		    criteria ConceptPlayerLockTheDoorCheckPoint IsNotCoughing IsSheva IsInSafeSpot IsNotAlone IsTalk IsTalkSheva ismap_c1m1_hotel IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerLockTheDoorCheckPointC1Producer
-		}
-	},
-
-	{
-		Rule PlayerMechanicPouncedSheva
-		{
-		    criteria ConceptSurvivorWasPounced ChanceToFire30Percent IsNotCoughing SubjectIsMechanic IsNotSaidMechanicPounced IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerMechanicPouncedProducer
-		    ApplyContext "SaidMechanicPounced:1:60"
+		    criteria ConceptSurvivorWasPounced ChanceToFire30Percent IsNotCoughing SubjectIsProducer IsNotSaidProducerPounced IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowHunter IsNotSurvival
+		    Response PlayerProducerPouncedC1Mechanic
+		    ApplyContext "SaidProducerPounced:1:60"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRevivedByDefibrillatorSheva
+		Rule PlayerRevivedByDefibrillatorTrevor
 		{
-		    criteria ConceptRevivedByDefibrillator IsNotCoughing IsSheva
-		    Response PlayerRevivedByDefibrillatorProducer
-		    ApplyContext "TalkSheva:1:3"
+		    criteria ConceptRevivedByDefibrillator IsNotCoughing IsTrevor
+		    Response PlayerRevivedByDefibrillatorMechanic
+		    ApplyContext "TalkTrevor:1:3"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRevivedByDefibrillator2Sheva
+		Rule PlayerRevivedByDefibrillator2Trevor
 		{
-		    criteria ConceptRevivedByDefibrillatorDelayed IsSheva
-		    Response PlayerRevivedByDefibrillator2Producer
-		    ApplyContext "TalkSheva:1:3"
+		    criteria ConceptRevivedByDefibrillatorDelayed IsTrevor
+		    Response PlayerRevivedByDefibrillator2Mechanic
+		    ApplyContext "TalkTrevor:1:3"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerSuggestMeHealthSheva
+		Rule PlayerSuggestMeHealthTrevor
 		{
-		    criteria ConceptTalkIdle IsNotHealthy TimeSinceGroupInCombat20 ChanceToFire50Percent IsNotSuggestedHealth IsNotIncapacitated YesHasFirstAidKit IsSheva IsNotBeingHealed IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerSuggestMeHealthProducer
+		    criteria ConceptTalkIdle IsNotHealthy TimeSinceGroupInCombat20 ChanceToFire50Percent IsNotIncapacitated IsNotSuggestedHealth YesHasFirstAidKit IsTrevor IsNotBeingHealed IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerSuggestMeHealthMechanic
 		    then Any PlayerSuggestHealth foo:0 0
 		}
 	},
 
 	{
-		Rule PlayerSuggestHealthGenericSheva
+		Rule PlayerSuggestHealthGenericTrevor
 		{
-		    criteria ConceptPlayerSuggestHealth IsSheva IssuerReallyClose IsNotBeingHealed IsTalk IsTalkSheva IsNotIncapacitated TimeSinceGroupInCombat20 IsNotSpeakingWeight0 IsWorldTalkSheva
-		    Response PlayerSuggestHealthGenericProducer
+		    criteria ConceptPlayerSuggestHealth IsTrevor IssuerReallyClose IsNotBeingHealed IsTalk IsTalkTrevor IsNotIncapacitated TimeSinceGroupInCombat20 IsNotSpeakingWeight0 IsWorldTalkTrevor
+		    Response PlayerSuggestHealthGenericMechanic
 		    ApplyContext "SuggestedHealth:1:120"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerSuggestHealthCoachSheva
+		Rule PlayerSuggestHealthC1Trevor
 		{
-		    criteria ConceptPlayerSuggestHealth IsSheva IssuerReallyClose IsNotBeingHealed IsTalk IsTalkSheva IsNotIncapacitated TimeSinceGroupInCombat20 IsNotSpeakingWeight0 FromIsCoach ChanceToFire50Percent IsWorldTalkSheva isNotmap_c1m1_hotel
-		    Response PlayerSuggestHealthCoachProducer
+		    criteria ConceptPlayerSuggestHealth IsTrevor IssuerReallyClose IsNotBeingHealed IsTalk IsTalkTrevor IsNotIncapacitated TimeSinceGroupInCombat20 IsNotSpeakingWeight0 IsWorldTalkTrevor ismap_c1m1_hotel NoKnowNames
+		    Response PlayerSuggestHealthC1Mechanic
 		    ApplyContext "SuggestedHealth:1:120"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerSuggestHealthGamblerSheva
+		Rule PlayerSuggestHealthCoachTrevor
 		{
-		    criteria ConceptPlayerSuggestHealth IsSheva IssuerReallyClose IsNotBeingHealed IsTalk IsTalkSheva IsNotIncapacitated TimeSinceGroupInCombat20 IsNotSpeakingWeight0 FromIsGambler ChanceToFire50Percent IsWorldTalkSheva isNotmap_c1m1_hotel
-		    Response PlayerSuggestHealthGamblerProducer
+		    criteria ConceptPlayerSuggestHealth IsTrevor IssuerReallyClose IsNotBeingHealed IsTalk IsTalkTrevor IsNotIncapacitated TimeSinceGroupInCombat20 IsNotSpeakingWeight0 FromIsCoach ChanceToFire50Percent IsWorldTalkTrevor isNotmap_c1m1_hotel
+		    Response PlayerSuggestHealthCoachMechanic
 		    ApplyContext "SuggestedHealth:1:120"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerSuggestHealthMechanicSheva
+		Rule PlayerSuggestHealthGamblerTrevor
 		{
-		    criteria ConceptPlayerSuggestHealth IsSheva IssuerReallyClose IsNotBeingHealed IsTalk IsTalkSheva IsNotIncapacitated TimeSinceGroupInCombat20 IsNotSpeakingWeight0 FromIsMechanic ChanceToFire50Percent IsWorldTalkSheva isNotmap_c1m1_hotel
-		    Response PlayerSuggestHealthMechanicProducer
+		    criteria ConceptPlayerSuggestHealth IsTrevor IssuerReallyClose IsNotBeingHealed IsTalk IsTalkTrevor IsNotIncapacitated TimeSinceGroupInCombat20 IsNotSpeakingWeight0 FromIsGambler ChanceToFire50Percent IsWorldTalkTrevor isNotmap_c1m1_hotel
+		    Response PlayerSuggestHealthGamblerMechanic
 		    ApplyContext "SuggestedHealth:1:120"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerTransitionSheva
+		Rule PlayerSuggestHealthProducerTrevor
 		{
-		    criteria ConceptPlayerTransition IsNotCoughing IsSheva IsNotSaidPlayerTransition IsTalk IsTalkSheva IsWorldTalkSheva IsNotSomeoneDied isNotmap_c1m1_hotel AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerTransitionProducer
+		    criteria ConceptPlayerSuggestHealth IsTrevor IssuerReallyClose IsNotBeingHealed IsTalk IsTalkTrevor IsNotIncapacitated TimeSinceGroupInCombat20 IsNotSpeakingWeight0 FromIsProducer ChanceToFire50Percent IsWorldTalkTrevor isNotmap_c1m1_hotel
+		    Response PlayerSuggestHealthProducerMechanic
+		    ApplyContext "SuggestedHealth:1:120"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerTransitionTrevor
+		{
+		    criteria ConceptPlayerTransition IsNotCoughing IsTrevor IsNotSaidPlayerTransition IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotSomeoneDied isNotmap_c1m1_hotel AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerTransitionMechanic
 		    ApplyContext "SaidPlayerTransition:1:90"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerTransitionCloseSheva
+		Rule PlayerTransitionCloseTrevor
 		{
-		    criteria ConceptPlayerTransition IsNotCoughing IsSheva IsNotSaidPlayerTransition IsTalk IsTalkSheva IsWorldTalkSheva IsNotAlone IsSomeoneDied isNotmap_c1m1_hotel AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerTransitionCloseProducer
+		    criteria ConceptPlayerTransition IsNotCoughing IsTrevor IsNotSaidPlayerTransition IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotAlone IsSomeoneDied isNotmap_c1m1_hotel AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerTransitionCloseMechanic
 		    ApplyContext "SaidPlayerTransition:1:90"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerTransitionC1M3Sheva
+		Rule PlayerTransitionC1M2Trevor
 		{
-		    criteria ConceptPlayerTransition IsNotCoughing IsSheva IsNotSaidPlayerTransition IsTalk IsTalkSheva IsWorldTalkSheva ismap_c1m3_mall IsNotAlone IsNotSomeoneDied AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerTransitionC1M3Producer
+		    criteria ConceptPlayerTransition IsNotCoughing IsTrevor IsNotSaidPlayerTransition IsTalk IsTalkTrevor IsWorldTalkTrevor ismap_c1m2_streets IsNotAlone IsNotSomeoneDied AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerTransitionC1M2Mechanic
 		    ApplyContext "SaidPlayerTransition:1:90"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerTransitionC2M1Sheva
+		Rule PlayerTransitionCloseC1M2Trevor
 		{
-		    criteria ConceptPlayerTransition IsNotCoughing IsSheva IsNotSaidPlayerTransition IsTalk IsTalkSheva IsWorldTalkSheva ismap_c2m1 IsNotAlone IsNotSomeoneDied AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerTransitionC2M1Producer
+		    criteria ConceptPlayerTransition IsNotCoughing IsTrevor IsNotSaidPlayerTransition IsTalk IsTalkTrevor IsWorldTalkTrevor ismap_c1m2_streets IsNotAlone IsSomeoneDied AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerTransitionCloseC1M2Mechanic
 		    ApplyContext "SaidPlayerTransition:1:90"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerTransitionC2M1EllisSheva
+		Rule PlayerTransitionC1M3Trevor
 		{
-		    criteria ConceptPlayerTransition IsNotCoughing IsSheva IsNotSaidPlayerTransition IsTalk IsTalkSheva IsWorldTalkSheva ismap_c2m1 IsNotAlone IsMechanicAlive ChanceToFire50Percent IsNotSomeoneDied AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerTransitionC2M1EllisProducer
+		    criteria ConceptPlayerTransition IsNotCoughing IsTrevor IsNotSaidPlayerTransition IsTalk IsTalkTrevor IsWorldTalkTrevor ismap_c1m3_mall IsNotAlone IsNotSomeoneDied AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerTransitionC1M3Mechanic
 		    ApplyContext "SaidPlayerTransition:1:90"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerTransitionC5M4Sheva
+		Rule PlayerTransitionC2M1Trevor
 		{
-		    criteria ConceptPlayerTransition IsNotCoughing IsSheva IsNotSaidPlayerTransition IsTalk IsTalkSheva IsWorldTalkSheva IsMapc5m4_quarter IsNotAlone IsNotSomeoneDied AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerTransitionC5M4Producer
+		    criteria ConceptPlayerTransition IsNotCoughing IsTrevor IsNotSaidPlayerTransition IsTalk IsTalkTrevor IsWorldTalkTrevor ismap_c2m1 IsNotAlone IsNotSomeoneDied AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerTransitionC2M1Mechanic
 		    ApplyContext "SaidPlayerTransition:1:90"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerUsingDefibrillatorSheva
+		Rule PlayerTransitionC5M4Trevor
 		{
-		    criteria ConceptPlayerUsingDefibrillator IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerUsingDefibrillatorProducer
+		    criteria ConceptPlayerTransition IsNotCoughing IsTrevor IsNotSaidPlayerTransition IsTalk IsTalkTrevor IsWorldTalkTrevor IsMapc5m4_quarter IsNotAlone IsNotSomeoneDied AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerTransitionC5M4Mechanic
+		    ApplyContext "SaidPlayerTransition:1:90"
+		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerWarnHeardBoomerSheva
+		Rule PlayerTransitionC6M2Trevor
 		{
-		    criteria ConceptPlayerWarnHearZombie IsBoomerClass IsNotCoughing IsSheva IsNotAlone IsClosestSurvivorNear1200 IsNotWarnHeardBoomer NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkSheva IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response PlayerWarnHeardBoomerProducer
+		    criteria ConceptPlayerTransition IsNotCoughing IsTrevor IsNotSaidPlayerTransition IsTalk IsTalkTrevor IsWorldTalkTrevor Isc6m2_bedlam IsZoeyIntroActor IsNotAlone IsNotSomeoneDied AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerTransitionC6M2Mechanic
+		    ApplyContext "SaidPlayerTransition:1:90"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerUsingDefibrillatorTrevor
+		{
+		    criteria ConceptPlayerUsingDefibrillator IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerUsingDefibrillatorMechanic
+		}
+	},
+
+	{
+		Rule PlayerWarnHeardBoomerTrevor
+		{
+		    criteria ConceptPlayerWarnHearZombie IsBoomerClass IsNotCoughing IsTrevor IsNotAlone IsClosestSurvivorNear1200 IsNotInCheckpoint IsNotInSafeSpot IsNotWarnHeardBoomer NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response PlayerWarnHeardBoomerMechanic
 		    ApplyContext "WarnHeardBoomer:1:300,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerWarnHeardChargerSheva
+		Rule PlayerWarnHeardChargerTrevor
 		{
-		    criteria ConceptPlayerWarnHearZombie IsChargerClass IsNotCoughing IsSheva IsNotAlone IsClosestSurvivorNear1200 IsNotWarnHeardCharger NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkSheva IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response PlayerWarnHeardChargerProducer
+		    criteria ConceptPlayerWarnHearZombie IsChargerClass IsNotCoughing IsTrevor IsNotAlone IsClosestSurvivorNear1200 IsNotInCheckpoint IsNotInSafeSpot IsNotWarnHeardCharger NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response PlayerWarnHeardChargerMechanic
 		    ApplyContext "WarnHeardCharger:1:300,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerWarnHeardHunterSheva
+		Rule PlayerWarnHeardHunterTrevor
 		{
-		    criteria ConceptPlayerWarnHearZombie IsHunterClass IsNotCoughing IsSheva IsNotAlone IsClosestSurvivorNear1200 IsNotWarnHeardHunter NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkSheva IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response PlayerWarnHeardHunterProducer
+		    criteria ConceptPlayerWarnHearZombie IsHunterClass IsNotCoughing IsTrevor IsNotAlone IsClosestSurvivorNear1200 IsNotInCheckpoint IsNotInSafeSpot IsNotWarnHeardHunter NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response PlayerWarnHeardHunterMechanic
 		    ApplyContext "WarnHeardHunter:1:300,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerWarnHeardHunterC1M3Sheva
+		Rule PlayerWarnHeardJockeyTrevor
 		{
-		    criteria ConceptPlayerWarnHearZombie IsHunterClass IsNotCoughing IsSheva IsNotAlone IsNotWarnHeardHunter NotInCombat IsSaidC1M3CoachFoodCourt ismap_c1m3_mall IsNotSaidSpecialWarn IsCoachAlive IsCoachNear200 ChanceToFire5Percent IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerWarnHeardHunterC1M3Producer
-		    then Coach PlayerLaugh foo:0 0
-		    ApplyContext "WarnHeardHunter:1:300,SaidSpecialWarn:1:30"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule PlayerWarnHeardJockeySheva
-		{
-		    criteria ConceptPlayerWarnHearZombie IsJockeyClass IsNotCoughing IsSheva IsNotAlone IsClosestSurvivorNear1200 IsNotWarnHeardJockey NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkSheva IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response PlayerWarnHeardJockeyProducer
+		    criteria ConceptPlayerWarnHearZombie IsJockeyClass IsNotCoughing IsTrevor IsNotAlone IsClosestSurvivorNear1200 IsNotInCheckpoint IsNotInSafeSpot IsNotWarnHeardJockey NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response PlayerWarnHeardJockeyMechanic
 		    ApplyContext "WarnHeardJockey:1:300,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerWarnHeardSmokerSheva
+		Rule PlayerWarnHeardJockeyC1Trevor
 		{
-		    criteria ConceptPlayerWarnHearZombie IsSmokerClass IsNotCoughing IsSheva IsNotAlone IsClosestSurvivorNear1200 IsNotWarnHeardSmoker NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkSheva IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response PlayerWarnHeardSmokerProducer
+		    criteria ConceptPlayerWarnHearZombie IsJockeyClass IsNotCoughing IsTrevor IsNotAlone IsClosestSurvivorNear1200 IsNotInCheckpoint IsNotInSafeSpot IsNotWarnHeardJockey NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowJockey IsNotSurvival
+		    Response PlayerWarnHeardJockeyC1Mechanic
+		    ApplyContext "WarnHeardJockey:1:300,SaidSpecialWarn:1:30"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerWarnHeardSmokerTrevor
+		{
+		    criteria ConceptPlayerWarnHearZombie IsSmokerClass IsNotCoughing IsTrevor IsNotAlone IsClosestSurvivorNear1200 IsNotInCheckpoint IsNotInSafeSpot IsNotWarnHeardSmoker NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response PlayerWarnHeardSmokerMechanic
 		    ApplyContext "WarnHeardSmoker:1:300,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerWarnHeardSpitterSheva
+		Rule PlayerWarnHeardSpitterTrevor
 		{
-		    criteria ConceptPlayerWarnHearZombie IsSpitterClass IsNotCoughing IsSheva IsNotAlone IsClosestSurvivorNear1200 IsNotWarnHeardSpitter NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkSheva IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response PlayerWarnHeardSpitterProducer
+		    criteria ConceptPlayerWarnHearZombie IsSpitterClass IsNotCoughing IsTrevor IsNotAlone IsClosestSurvivorNear1200 IsNotInCheckpoint IsNotInSafeSpot IsNotWarnHeardSpitter NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response PlayerWarnHeardSpitterMechanic
 		    ApplyContext "WarnHeardSpitter:1:300,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerWarnHeardJockeyC1Sheva
+		Rule PlayerWarnHeardBoomerC1Trevor
 		{
-		    criteria ConceptPlayerWarnHearZombie IsJockeyClass IsNotCoughing IsSheva IsNotAlone IsClosestSurvivorNear1200 IsNotWarnHeardJockey NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkSheva IsWorldTalkSheva C1M1orC1M2 NoKnowJockey IsNotSurvival
-		    Response PlayerWarnHeardJockeyC1Producer
-		    ApplyContext "WarnHeardJockey:1:300,SaidSpecialWarn:1:30"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule PlayerWarnHeardBoomerC1Sheva
-		{
-		    criteria ConceptPlayerWarnHearZombie IsBoomerClass IsNotCoughing IsSheva IsNotAlone IsClosestSurvivorNear1200 IsNotWarnHeardBoomer NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkSheva IsWorldTalkSheva C1M1orC1M2 NoKnowBoomer IsNotSurvival
-		    Response PlayerWarnHeardBoomerC1Producer
-		    then mechanic Player.C1WorseThanZombies foo:0 0.1
+		    criteria ConceptPlayerWarnHearZombie IsBoomerClass IsNotCoughing IsTrevor IsNotAlone IsClosestSurvivorNear1200 IsNotInCheckpoint IsNotInSafeSpot IsNotWarnHeardBoomer NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowBoomer IsNotSurvival
+		    Response PlayerWarnHeardBoomerC1Mechanic
 		    ApplyContext "WarnHeardBoomer:1:300,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerWarnHeardChargerC1Sheva
+		Rule PlayerWarnHeardChargerC1Trevor
 		{
-		    criteria ConceptPlayerWarnHearZombie IsChargerClass IsNotCoughing IsSheva IsNotAlone IsClosestSurvivorNear1200 IsNotWarnHeardCharger NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkSheva IsWorldTalkSheva C1M1orC1M2 NoKnowCharger IsNotSurvival
-		    Response PlayerWarnHeardBoomerC1Producer
-		    then mechanic Player.C1WorseThanZombies foo:0 0.1
+		    criteria ConceptPlayerWarnHearZombie IsChargerClass IsNotCoughing IsTrevor IsNotAlone IsClosestSurvivorNear1200 IsNotInCheckpoint IsNotInSafeSpot IsNotWarnHeardCharger NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowCharger IsNotSurvival
+		    Response PlayerWarnHeardBoomerC1Mechanic
 		    ApplyContext "WarnHeardCharger:1:300,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerWarnHeardHunterC1Sheva
+		Rule PlayerWarnHeardHunterC1Trevor
 		{
-		    criteria ConceptPlayerWarnHearZombie IsHunterClass IsNotCoughing IsSheva IsNotAlone IsClosestSurvivorNear1200 IsNotWarnHeardHunter NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkSheva IsWorldTalkSheva C1M1orC1M2 NoKnowHunter IsNotSurvival
-		    Response PlayerWarnHeardBoomerC1Producer
-		    then mechanic Player.C1WorseThanZombies foo:0 0.1
+		    criteria ConceptPlayerWarnHearZombie IsHunterClass IsNotCoughing IsTrevor IsNotAlone IsClosestSurvivorNear1200 IsNotInCheckpoint IsNotInSafeSpot IsNotWarnHeardHunter NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowHunter IsNotSurvival
+		    Response PlayerWarnHeardBoomerC1Mechanic
 		    ApplyContext "WarnHeardHunter:1:300,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerWarnHeardSmokerC1Sheva
+		Rule PlayerWarnHeardSmokerC1Trevor
 		{
-		    criteria ConceptPlayerWarnHearZombie IsSmokerClass IsNotCoughing IsSheva IsNotAlone IsClosestSurvivorNear1200 IsNotWarnHeardSmoker NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkSheva IsWorldTalkSheva C1M1orC1M2 NoKnowSmoker IsNotSurvival
-		    Response PlayerWarnHeardBoomerC1Producer
-		    then mechanic Player.C1WorseThanZombies foo:0 0.1
+		    criteria ConceptPlayerWarnHearZombie IsSmokerClass IsNotCoughing IsTrevor IsNotAlone IsClosestSurvivorNear1200 IsNotInCheckpoint IsNotInSafeSpot IsNotWarnHeardSmoker NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowSmoker IsNotSurvival
+		    Response PlayerWarnHeardBoomerC1Mechanic
 		    ApplyContext "WarnHeardSmoker:1:300,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerWarnHeardSpitterC1Sheva
+		Rule PlayerWarnHeardSpitterC1Trevor
 		{
-		    criteria ConceptPlayerWarnHearZombie IsSpitterClass IsNotCoughing IsSheva IsNotAlone IsClosestSurvivorNear1200 IsNotWarnHeardSpitter NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkSheva IsWorldTalkSheva C1M1orC1M2 NoKnowSpitter IsNotSurvival
-		    Response PlayerWarnHeardBoomerC1Producer
-		    then mechanic Player.C1WorseThanZombies foo:0 0.1
+		    criteria ConceptPlayerWarnHearZombie IsSpitterClass IsNotCoughing IsTrevor IsNotAlone IsClosestSurvivorNear1200 IsNotInCheckpoint IsNotInSafeSpot IsNotWarnHeardSpitter NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowSpitter IsNotSurvival
+		    Response PlayerWarnHeardBoomerC1Mechanic
 		    ApplyContext "WarnHeardSpitter:1:300,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerWarnHeardWitchSheva
+		Rule PlayerWarnHeardWitchTrevor
 		{
-		    criteria ConceptPlayerWarnHearZombie IsWitchClass IsNotCoughing IsNotAlone IsClosestSurvivorNear1200 IsSheva IsNotWarnHeardWitch NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkSheva IsWorldTalkSheva IsNotmap_c4m2 IsNotc6m1_riverbank _auto_NotAlarmV2 _auto_NotFinaleStarted
-		    Response PlayerWarnHeardWitchProducer
-		    then any PlayerKillThatLight foo:0 -1.093
+		    criteria ConceptPlayerWarnHearZombie IsWitchClass IsNotCoughing IsNotAlone IsClosestSurvivorNear1200 IsTrevor IsNotInCheckpoint IsNotInSafeSpot IsNotWarnHeardWitch NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotmap_c4m2 IsNotc6m1_riverbank _auto_NotAlarmV2 _auto_NotFinaleStarted
+		    Response PlayerWarnHeardWitchMechanic
+		    then any PlayerKillThatLight foo:0 -1.652
 		    ApplyContext "WarnHeardWitch:1:300,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerWarnHeardWitchC1Sheva
+		Rule PlayerWarnHeardWitchC1Trevor
 		{
-		    criteria ConceptPlayerWarnHearZombie IsWitchClass IsNotCoughing IsSheva IsNotAlone IsClosestSurvivorNear1200 IsNotWarnHeardWitch NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkSheva IsWorldTalkSheva C1M1orC1M2
-		    Response PlayerWarnHeardWitchC1Producer
+		    criteria ConceptPlayerWarnHearZombie IsWitchClass IsNotCoughing IsNotAlone IsClosestSurvivorNear1200 IsTrevor IsNotInCheckpoint IsNotInSafeSpot IsNotWarnHeardWitch NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2
+		    Response PlayerWarnHeardWitchC1Mechanic
 		    ApplyContext "WarnHeardWitch:1:300,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerHeardWitchC1Sheva
+		Rule PlayerHeardWitchC1Trevor
 		{
-		    criteria ConceptPlayerHeardWitch IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva C1M1orC1M2 IsNotSurvival
-		    Response PlayerWarnHeardWitchC1Producer
+		    criteria ConceptPlayerHeardWitch IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2 IsNotSurvival
+		    Response PlayerWarnHeardWitchC1Mechanic
 		}
 	},
 
 	{
-		Rule BeNiceSheva
+		Rule Player_C1WorseThanZombiesTrevor
 		{
-		    criteria ConceptBeNice IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotIncapacitated IsNotInSafeSpot IssuerClose
-		    Response BeNiceProducer
+		    criteria ConceptPlayer_C1WorseThanZombies IsTrevor IssuerClose IsNotSpeakingWeight0
+		    Response Player_C1WorseThanZombiesMechanic
 		}
 	},
 
 	{
-		Rule PlayerWarnMegaMobSheva
+		Rule PlayerWarnMegaMobTrevor
 		{
-		    criteria ConceptPlayerWarnMegaMob IsNotCoughing IsSheva IsNotWarnMegaMob IsTalk IsTalkSheva IsNotSpeaking IsWorldTalkSheva IsNotScavenge _auto_NotSpottedVehicle
-		    Response PlayerWarnMegaMobProducer
+		    criteria ConceptPlayerWarnMegaMob IsNotCoughing IsTrevor IsNotInCheckpoint IsNotInSafeSpot IsNotWarnMegaMob IsTalk IsTalkTrevor IsNotSpeaking IsWorldTalkTrevor IsNotScavenge _auto_NotSpottedVehicle
+		    Response PlayerWarnMegaMobMechanic
 		    ApplyContext "WarnMegaMob:1:300,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerWarnWitchAngrySheva
+		Rule PlayerWarnWitchAngryTrevor
 		{
-		    criteria ConceptWitchGettingAngry IsNotCoughing IsSheva IsNotWarnAngryWitch IsTalk IsTalkSheva IsWorldTalkSheva IsNotmap_c4m2 IsNotc6m1_riverbank
-		    Response PlayerWarnWitchAngryProducer
+		    criteria ConceptWitchGettingAngry IsNotCoughing IsTrevor IsNotWarnAngryWitch IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotmap_c4m2 IsNotc6m1_riverbank
+		    Response PlayerWarnWitchAngryMechanic
 		    ApplyContext "WarnAngryWitch:1:5,SaidSpecialWarn:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerWorldIntroC31BlankSheva
+		Rule PlayerWorldIntroC31BlankTrevor
 		{
-		    criteria ConceptintroC3M1 IsSheva IsNotSaidCXM1Intro IsNotAlone AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerWorldIntroC31BlankProducer
+		    criteria ConceptintroC3M1 IsTrevor IsNotSaidCXM1Intro IsNotAlone AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerWorldIntroC31BlankMechanic
 		    then any WorldIntroC31 foo:0 5
 		    ApplyContext "CXM1Intro:1:0"
 		    applycontexttoworld
@@ -8401,10 +9326,10 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule PlayerWorldIntroC51Sheva
+		Rule PlayerWorldIntroC51Trevor
 		{
-		    criteria ConceptintroC5M1 IsSheva IsNotSaidCXM1Intro AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerWorldIntroC51Producer
+		    criteria ConceptintroC5M1 IsTrevor IsNotSaidCXM1Intro AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerWorldIntroC51Mechanic
 		    then orator C5M1_intro001 foo:0 0.01
 		    ApplyContext "CXM1Intro:1:0"
 		    applycontexttoworld
@@ -8412,312 +9337,306 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule SurvivorCaughtVomitSheva
+		Rule SurvivorCaughtVomitTrevor
 		{
-		    criteria ConceptPlayerVomitInFace IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response SurvivorCaughtVomitProducer
-		    ApplyContext "TalkSheva:1:10"
+		    criteria ConceptPlayerVomitInFace IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response SurvivorCaughtVomitMechanic
+		    ApplyContext "TalkTrevor:1:10"
 		}
 	},
 
 	{
-		Rule PlayerVomitExpiredC1Sheva
+		Rule SurvivorchargerpoundTrevor
 		{
-		    criteria ConceptPlayerVomitExpired IsNotCoughing ismap_c1m1_hotel IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerVomitExpiredC1Producer
+		    criteria Conceptchargerpound IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidchargerpound IsWorldTalkTrevor
+		    Response SurvivorchargerpoundMechanic
+		    ApplyContext "Saidchargerpound:1:5,TalkTrevor:1:5"
 		}
 	},
 
 	{
-		Rule SurvivorchargerpoundSheva
+		Rule SurvivorchargerpoundC1Trevor
 		{
-		    criteria Conceptchargerpound IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidchargerpound IsWorldTalkSheva
-		    Response SurvivorchargerpoundProducer
-		    ApplyContext "Saidchargerpound:1:5,TalkSheva:1:5"
+		    criteria Conceptchargerpound IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidchargerpound IsWorldTalkTrevor C1M1orC1M2 NoKnowCharger IsNotSurvival
+		    Response SurvivorchargerpoundC1Mechanic
+		    ApplyContext "Saidchargerpound:1:5,TalkTrevor:1:5"
 		}
 	},
 
 	{
-		Rule SurvivorchargerpoundC1Sheva
+		Rule SurvivorCoughingTrevor
 		{
-		    criteria Conceptchargerpound IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidchargerpound IsWorldTalkSheva C1M1orC1M2 NoKnowCharger IsNotSurvival
-		    Response SurvivorchargerpoundC1Producer
-		    ApplyContext "Saidchargerpound:1:5,TalkSheva:1:5"
+		    criteria ConceptSurvivorCoughing IsCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response SurvivorCoughingMechanic
 		}
 	},
 
 	{
-		Rule SurvivorCoughingSheva
+		Rule SurvivorCoughingDeathTrevor
 		{
-		    criteria ConceptSurvivorCoughing IsCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response SurvivorCoughingProducer
+		    criteria ConceptPlayerDeath IsCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotVersus
+		    Response SurvivorCoughingMechanic
 		}
 	},
 
 	{
-		Rule SurvivorCoughingDeathSheva
+		Rule SurvivorDeathTrevor
 		{
-		    criteria ConceptPlayerDeath IsCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotVersus
-		    Response SurvivorCoughingProducer
+		    criteria ConceptPlayerDeath IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotVersus
+		    Response SurvivorDeathMechanic
 		}
 	},
 
 	{
-		Rule SurvivorDeathSheva
+		Rule SurvivorGooedBySpitterTrevor
 		{
-		    criteria ConceptPlayerDeath IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotVersus
-		    Response SurvivorDeathProducer
+		    criteria ConceptGooedBySpitter IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidGooedBySpitter IsWorldTalkTrevor IsNotIncapacitated
+		    Response SurvivorGooedBySpitterMechanic
+		    ApplyContext "SaidGooedBySpitter:1:20,TalkTrevor:1:3"
 		}
 	},
 
 	{
-		Rule SurvivorGooedBySpitterSheva
+		Rule SurvivorGooedBySpitterC1Trevor
 		{
-		    criteria ConceptGooedBySpitter IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidGooedBySpitter IsWorldTalkSheva IsNotIncapacitated
-		    Response SurvivorGooedBySpitterProducer
-		    ApplyContext "SaidGooedBySpitter:1:20,TalkSheva:1:3"
+		    criteria ConceptGooedBySpitter IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidGooedBySpitter IsWorldTalkTrevor C1M1orC1M2 NoKnowSpitter IsNotSurvival IsNotIncapacitated
+		    Response SurvivorGooedBySpitterC1Mechanic
+		    then trevor Player.GooedBySpitterC1R foo:0 -2.951
+		    ApplyContext "SaidGooedBySpitter:1:20,TalkTrevor:1:3"
 		}
 	},
 
 	{
-		Rule SurvivorGooedBySpitterC1Sheva
+		Rule SurvivorGrabbedByTongueTrevor
 		{
-		    criteria ConceptGooedBySpitter IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidGooedBySpitter IsWorldTalkSheva C1M1orC1M2 NoKnowSpitter IsNotSurvival IsNotIncapacitated
-		    Response SurvivorGooedBySpitterC1Producer
-		    ApplyContext "SaidGooedBySpitter:1:20,TalkSheva:1:3"
+		    criteria ConceptPlayerGrabbedByTongue IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response SurvivorGrabbedByTongueMechanic
 		}
 	},
 
 	{
-		Rule SurvivorGrabbedByTongueSheva
+		Rule SurvivorGrabbedByTongueC1Trevor
 		{
-		    criteria ConceptPlayerGrabbedByTongue IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response SurvivorGrabbedByTongueProducer
+		    criteria ConceptPlayerGrabbedByTongue IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowSmoker IsNotSurvival
+		    Response SurvivorGrabbedByTongueC1Mechanic
 		}
 	},
 
 	{
-		Rule SurvivorGrabbedByTongueC1Sheva
+		Rule SurvivorNearCheckpointTrevor
 		{
-		    criteria ConceptPlayerGrabbedByTongue IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva C1M1orC1M2 NoKnowSmoker IsNotSurvival
-		    Response SurvivorGrabbedByTongueC1Producer
-		}
-	},
-
-	{
-		Rule SurvivorNearCheckpointSheva
-		{
-		    criteria ConceptPlayerNearCheckpoint IsNotCoughing IsSheva IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkSheva IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response SurvivorNearCheckpointProducer
+		    criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response SurvivorNearCheckpointMechanic
 		    ApplyContext "SaidSafeSpotAhead:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorNearCheckpointC1M1Sheva
+		Rule SurvivorNearCheckpointC1M1Trevor
 		{
-		    criteria ConceptPlayerNearCheckpoint IsNotCoughing IsSheva IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkSheva ismap_c1m1_hotel IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response SurvivorNearCheckpointC1M1Producer
+		    criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor ismap_c1m1_hotel IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response SurvivorNearCheckpointC1M1Mechanic
 		    ApplyContext "SaidSafeSpotAhead:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorNearCheckpointC1M2Sheva
+		Rule SurvivorNearCheckpointC1M2Trevor
 		{
-		    criteria ConceptPlayerNearCheckpoint IsNotCoughing IsSheva IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkSheva ismap_c1m2_streets IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response SurvivorNearCheckpointC1M2Producer
+		    criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor ismap_c1m2_streets IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response SurvivorNearCheckpointC1M2Mechanic
 		    ApplyContext "SaidSafeSpotAhead:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorNearCheckpointC1M3Sheva
+		Rule SurvivorNearCheckpointC1M3Trevor
 		{
-		    criteria ConceptPlayerNearCheckpoint IsNotCoughing IsSheva IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkSheva ismap_c1m3_mall IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response SurvivorNearCheckpointC1M3Producer
+		    criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor ismap_c1m3_mall IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response SurvivorNearCheckpointC1M3Mechanic
 		    ApplyContext "SaidSafeSpotAhead:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorNearCheckpointC2M1Sheva
+		Rule SurvivorNearCheckpointC2M1Trevor
 		{
-		    criteria ConceptPlayerNearCheckpoint IsNotCoughing IsSheva IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkSheva ismap_c2m1 IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response SurvivorNearCheckpointC2M1Producer
+		    criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor ismap_c2m1 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response SurvivorNearCheckpointC2M1Mechanic
 		    ApplyContext "SaidSafeSpotAhead:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorNearCheckpointC2M2Sheva
+		Rule SurvivorNearCheckpointC2M2Trevor
 		{
-		    criteria ConceptPlayerNearCheckpoint IsNotCoughing IsSheva IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkSheva ismap_c2m2 IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response SurvivorNearCheckpointC2M2Producer
+		    criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor ismap_c2m2 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response SurvivorNearCheckpointC2M2Mechanic
+		    then any _C2M2_SeeSafehouse01 foo:0 0.1
 		    ApplyContext "SaidSafeSpotAhead:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorNearCheckpointC2M4Sheva
+		Rule SurvivorNearCheckpointC2M3Trevor
 		{
-		    criteria ConceptPlayerNearCheckpoint IsNotCoughing IsSheva IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkSheva ismap_c2m4 IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response SurvivorNearCheckpointC2M4Producer
+		    criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor ismap_c2m3 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response SurvivorNearCheckpointC2M3Mechanic
 		    ApplyContext "SaidSafeSpotAhead:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorNearCheckpointC3M1Sheva
+		Rule SurvivorNearCheckpointC2M4Trevor
 		{
-		    criteria ConceptPlayerNearCheckpoint IsNotCoughing IsSheva IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkSheva ismap_c3m1_plankcountry IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response SurvivorNearCheckpointC3M1Producer
+		    criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor ismap_c2m4 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response SurvivorNearCheckpointC2M4Mechanic
 		    ApplyContext "SaidSafeSpotAhead:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorNearCheckpointC3M2Sheva
+		Rule SurvivorNearCheckpointC3M1Trevor
 		{
-		    criteria ConceptPlayerNearCheckpoint IsNotCoughing IsSheva IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkSheva ismapc3m2_swamp IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response SurvivorNearCheckpointC3M2Producer
+		    criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor ismap_c3m1_plankcountry IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response SurvivorNearCheckpointC3M1Mechanic
 		    ApplyContext "SaidSafeSpotAhead:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkC3M3SafeHouseAheadSheva
+		Rule SurvivorNearCheckpointC3M2Trevor
 		{
-		    criteria ConceptRemark IsSheva IsC3M3SafeHouseAhead IsNotSaidSafeSpotAhead IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response SurvivorNearCheckpointC3M3Producer
+		    criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor ismapc3m2_swamp IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response SurvivorNearCheckpointC3M2Mechanic
 		    ApplyContext "SaidSafeSpotAhead:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorNearCheckpointC4M1Sheva
+		Rule PlayerRemarkC3M3SafeHouseAheadTrevor
 		{
-		    criteria ConceptPlayerNearCheckpoint IsNotCoughing IsSheva IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkSheva ismap_c4m1_milltown_a IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response SurvivorNearCheckpointC4M1Producer
+		    criteria ConceptRemark IsTrevor IsC3M3SafeHouseAhead IsNotSaidSafeSpotAhead IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response SurvivorNearCheckpointC3M3Mechanic
 		    ApplyContext "SaidSafeSpotAhead:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorNearCheckpointC4M2Sheva
+		Rule SurvivorNearCheckpointC4M1Trevor
 		{
-		    criteria ConceptPlayerNearCheckpoint IsNotCoughing IsSheva IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkSheva ismap_c4m2_sugarmill_a IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response SurvivorNearCheckpointC4M2Producer
+		    criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor ismap_c4m1_milltown_a IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response SurvivorNearCheckpointC4M1Mechanic
 		    ApplyContext "SaidSafeSpotAhead:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorNearCheckpointC4M3Sheva
+		Rule SurvivorNearCheckpointC4M2Trevor
 		{
-		    criteria ConceptPlayerNearCheckpoint IsNotCoughing IsSheva IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkSheva isc4m3 IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response SurvivorNearCheckpointC4M3Producer
+		    criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor ismap_c4m2_sugarmill_a IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response SurvivorNearCheckpointC4M2Mechanic
 		    ApplyContext "SaidSafeSpotAhead:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorNearCheckpointC4M4Sheva
+		Rule SurvivorNearCheckpointC4M3Trevor
 		{
-		    criteria ConceptPlayerNearCheckpoint IsNotCoughing IsSheva IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkSheva isc4m4 IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response NoResponse
+		    criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor isc4m3 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response SurvivorNearCheckpointC4M3Mechanic
 		    ApplyContext "SaidSafeSpotAhead:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorNearCheckpointC5M2Sheva
+		Rule SurvivorNearCheckpointC4M4Trevor
 		{
-		    criteria ConceptPlayerNearCheckpoint IsNotCoughing IsSheva IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkSheva IsMapc5m2_park IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response SurvivorNearCheckpointC5M2Producer
+		    criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor isc4m4 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response SurvivorNearCheckpointC4M4Mechanic
 		    ApplyContext "SaidSafeSpotAhead:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorNearCheckpointC6M1Sheva
+		Rule SurvivorNearCheckpointC5M2Trevor
 		{
-		    criteria ConceptPlayerNearCheckpoint IsNotCoughing IsSheva IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkSheva Isc6m1_riverbank IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response SurvivorNearCheckpointC6M1Producer
+		    criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor IsMapc5m2_park IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response SurvivorNearCheckpointC5M2Mechanic
 		    ApplyContext "SaidSafeSpotAhead:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorNearCheckpointC6M2Sheva
+		Rule SurvivorNearCheckpointC5M3Trevor
 		{
-		    criteria ConceptPlayerNearCheckpoint IsNotCoughing IsSheva IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkSheva Isc6m2_bedlam IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response SurvivorNearCheckpointC6M2Producer
+		    criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor IsMapc5m3_cemetery IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response SurvivorNearCheckpointC5M3Mechanic
 		    ApplyContext "SaidSafeSpotAhead:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorNearFinaleSheva
+		Rule SurvivorNearCheckpointC5M4Trevor
 		{
-		    criteria ConceptPlayerNearFinale IsNotCoughing IsSheva IsNotSaidFinaleAhead NotInCombat IsTalk IsTalkSheva IsNotIncapacitated IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response SurvivorNearFinaleProducer
+		    criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor IsMapc5m4_quarter IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response SurvivorNearCheckpointC5M4Mechanic
+		    ApplyContext "SaidSafeSpotAhead:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule SurvivorNearCheckpointC6M1Trevor
+		{
+		    criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor Isc6m1_riverbank IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response SurvivorNearCheckpointC6M1Mechanic
+		    ApplyContext "SaidSafeSpotAhead:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule SurvivorNearCheckpointC6M2Trevor
+		{
+		    criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor Isc6m2_bedlam IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response SurvivorNearCheckpointC6M2Mechanic
+		    ApplyContext "SaidSafeSpotAhead:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule SurvivorNearFinaleTrevor
+		{
+		    criteria ConceptPlayerNearFinale IsNotCoughing IsTrevor IsNotSaidFinaleAhead NotInCombat IsTalk IsTalkTrevor IsNotIncapacitated IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response SurvivorNearFinaleMechanic
 		    ApplyContext "SaidFinaleAhead:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorNearFinaleC1M4Sheva
+		Rule SurvivorNearFinaleC1M4Trevor
 		{
-		    criteria ConceptPlayerNearFinale IsNotCoughing IsSheva IsNotSaidFinaleAhead NotInCombat IsTalk IsTalkSheva IsNotIncapacitated IsWorldTalkSheva ismap_c1m4_atrium AutoIsNotScavenge AutoIsNotSurvival
-		    Response NoResponse
-		    ApplyContext "SaidFinaleAhead:1:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule SurvivorNearFinaleC2M5Sheva
-		{
-		    criteria ConceptPlayerNearFinale IsNotCoughing IsSheva IsNotSaidFinaleAhead NotInCombat IsTalk IsTalkSheva IsNotIncapacitated IsWorldTalkSheva ismap_c2m5 AutoIsNotScavenge AutoIsNotSurvival
-		    Response SurvivorNearFinaleC2M5Producer
-		    ApplyContext "SaidFinaleAhead:1:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule SurvivorNearFinaleC3M4Sheva
-		{
-		    criteria ConceptPlayerNearFinale IsNotCoughing IsSheva IsNotSaidFinaleAhead NotInCombat IsTalk IsTalkSheva IsNotIncapacitated IsWorldTalkSheva ismapc3m4_plantation AutoIsNotScavenge AutoIsNotSurvival
-		    Response SurvivorNearFinaleC3M4Producer
-		    ApplyContext "SaidFinaleAhead:1:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule SurvivorNearFinaleC4M5Sheva
-		{
-		    criteria ConceptPlayerNearFinale IsNotCoughing IsSheva IsNotSaidFinaleAhead NotInCombat IsTalk IsTalkSheva IsNotIncapacitated IsWorldTalkSheva isc4m5 AutoIsNotScavenge AutoIsNotSurvival
+		    criteria ConceptPlayerNearFinale IsNotCoughing IsTrevor IsNotSaidFinaleAhead NotInCombat IsTalk IsTalkTrevor IsNotIncapacitated IsWorldTalkTrevor ismap_c1m4_atrium AutoIsNotScavenge AutoIsNotSurvival
 		    Response NoResponse
 		    ApplyContext "SaidFinaleAhead:1:0"
 		    applycontexttoworld
@@ -8725,9 +9644,29 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule SurvivorNearFinaleC5M5Sheva
+		Rule SurvivorNearFinaleC2M5Trevor
 		{
-		    criteria ConceptPlayerNearFinale IsNotCoughing IsSheva IsNotSaidFinaleAhead NotInCombat IsTalk IsTalkSheva IsNotIncapacitated IsWorldTalkSheva IsMapc5m5_bridge AutoIsNotScavenge AutoIsNotSurvival
+		    criteria ConceptPlayerNearFinale IsNotCoughing IsTrevor IsNotSaidFinaleAhead NotInCombat IsTalk IsTalkTrevor IsNotIncapacitated IsWorldTalkTrevor ismap_c2m5 AutoIsNotScavenge AutoIsNotSurvival
+		    Response SurvivorNearFinaleC2M5Mechanic
+		    ApplyContext "SaidFinaleAhead:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule SurvivorNearFinaleC3M4Trevor
+		{
+		    criteria ConceptPlayerNearFinale IsNotCoughing IsTrevor IsNotSaidFinaleAhead NotInCombat IsTalk IsTalkTrevor IsNotIncapacitated IsWorldTalkTrevor ismapc3m4_plantation AutoIsNotScavenge AutoIsNotSurvival
+		    Response SurvivorNearFinaleC3M4Mechanic
+		    ApplyContext "SaidFinaleAhead:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule SurvivorNearFinaleC4M5Trevor
+		{
+		    criteria ConceptPlayerNearFinale IsNotCoughing IsTrevor IsNotSaidFinaleAhead NotInCombat IsTalk IsTalkTrevor IsNotIncapacitated IsWorldTalkTrevor isc4m5 AutoIsNotScavenge AutoIsNotSurvival
 		    Response NoResponse
 		    ApplyContext "SaidFinaleAhead:1:0"
 		    applycontexttoworld
@@ -8735,9 +9674,9 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule SurvivorNearFinaleC6M3Sheva
+		Rule SurvivorNearFinaleC5M5Trevor
 		{
-		    criteria ConceptPlayerNearFinale IsNotCoughing IsSheva IsNotSaidFinaleAhead NotInCombat IsTalk IsTalkSheva IsNotIncapacitated IsWorldTalkSheva Isc6m3_port AutoIsNotScavenge AutoIsNotSurvival
+		    criteria ConceptPlayerNearFinale IsNotCoughing IsTrevor IsNotSaidFinaleAhead NotInCombat IsTalk IsTalkTrevor IsNotIncapacitated IsWorldTalkTrevor IsMapc5m5_bridge AutoIsNotScavenge AutoIsNotSurvival
 		    Response NoResponse
 		    ApplyContext "SaidFinaleAhead:1:0"
 		    applycontexttoworld
@@ -8745,1116 +9684,1150 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule SurvivorPouncedByHunterSheva
+		Rule SurvivorNearFinaleC6M3Trevor
 		{
-		    criteria ConceptScreamWhilePounced IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response SurvivorPouncedByHunterProducer
-		    ApplyContext "TalkSheva:1:5"
+		    criteria ConceptPlayerNearFinale IsNotCoughing IsTrevor IsNotSaidFinaleAhead NotInCombat IsTalk IsTalkTrevor IsNotIncapacitated IsWorldTalkTrevor Isc6m3_port AutoIsNotScavenge AutoIsNotSurvival
+		    Response NoResponse
+		    ApplyContext "SaidFinaleAhead:1:0"
+		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorTankPoundSheva
+		Rule SurvivorPouncedByHunterTrevor
 		{
-		    criteria ConceptPlayerGroundPoundedByTank IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response SurvivorTankPoundProducer
-		    ApplyContext "TalkSheva:1:7"
+		    criteria ConceptScreamWhilePounced IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response SurvivorPouncedByHunterMechanic
+		    ApplyContext "TalkTrevor:1:5"
 		}
 	},
 
 	{
-		Rule SurvivorVocalizeBackUpSheva
+		Rule SurvivorTankPoundTrevor
 		{
-		    criteria ConceptPlayerBackUp IsSheva IsNotCoughing IsNotInSafeSpot IsNotInCheckpoint IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response SurvivorVocalizeBackUpProducer
+		    criteria ConceptPlayerGroundPoundedByTank IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response SurvivorTankPoundMechanic
+		    ApplyContext "TalkTrevor:1:5"
 		}
 	},
 
 	{
-		Rule SurvivorVocalizeEmphaticGoSheva
+		Rule SurvivorVocalizeBackUpTrevor
 		{
-		    criteria ConceptPlayerEmphaticGo IsSheva IsNotCoughing IsNotInSafeSpot IsNotInCheckpoint IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response SurvivorVocalizeEmphaticGoProducer
+		    criteria ConceptPlayerBackUp IsTrevor IsNotCoughing IsNotInSafeSpot IsNotInCheckpoint IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response SurvivorVocalizeBackUpMechanic
 		}
 	},
 
 	{
-		Rule SurvivorVocalizeGoingToDieSheva
+		Rule SurvivorVocalizeEmphaticGoTrevor
 		{
-		    criteria ConceptPlayerGoingToDie IsNotSpeaking IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotComplainBlock IsWorldTalkSheva IsNotInStartArea IsNotInCheckpoint _auto_NotSpottedVehicle
-		    Response SurvivorVocalizeGoingToDieProducer
+		    criteria ConceptPlayerEmphaticGo IsTrevor IsNotCoughing IsNotInSafeSpot IsNotInCheckpoint IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response SurvivorVocalizeEmphaticGoMechanic
+		}
+	},
+
+	{
+		Rule SurvivorVocalizeGoingToDieTrevor
+		{
+		    criteria ConceptPlayerGoingToDie IsNotSpeaking IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotComplainBlock IsWorldTalkTrevor IsNotInStartArea IsNotInCheckpoint _auto_NotSpottedVehicle
+		    Response SurvivorVocalizeGoingToDieMechanic
 		    ApplyContext "IsComplain:1:25"
 		}
 	},
 
 	{
-		Rule SurvivorVocalizeGoingToDie3Sheva
+		Rule SurvivorVocalizeGoingToDie3Trevor
 		{
-		    criteria ConceptPlayerGoingToDie IsNotSpeaking IsNotCoughing IsSheva IsOnThirdStrike IsTalk IsTalkSheva IsNotComplainBlock IsWorldTalkSheva IsNotInStartArea IsNotInCheckpoint _auto_NotSpottedVehicle
-		    Response SurvivorVocalizeGoingToDie3Producer
+		    criteria ConceptPlayerGoingToDie IsNotSpeaking IsNotCoughing IsTrevor IsOnThirdStrike IsTalk IsTalkTrevor IsNotComplainBlock IsWorldTalkTrevor IsNotInStartArea IsNotInCheckpoint _auto_NotSpottedVehicle
+		    Response SurvivorVocalizeGoingToDie3Mechanic
 		    ApplyContext "IsComplain:1:25"
 		}
 	},
 
 	{
-		Rule SurvivorVocalizeGoingToDieC5M5Sheva
+		Rule SurvivorVocalizeLookOutTrevor
 		{
-		    criteria ConceptPlayerGoingToDie IsNotSpeaking IsNotCoughing IsSheva IsOnThirdStrike IsTalk IsTalkSheva ChanceToFire30Percent IsNotSaidGoingToDieC5M5 IsMapc5m5_bridge IsNotComplainBlock IsWorldTalkSheva IsNotInStartArea IsNotInCheckpoint
-		    Response SurvivorVocalizeGoingToDieC5M5Producer
-		    ApplyContext "IsComplain:1:25,TalkSheva:1:8,SaidGoingToDieC5M5:1:0"
+		    criteria ConceptPlayerLookOut IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response SurvivorVocalizeLookOutMechanic
 		}
 	},
 
 	{
-		Rule SurvivorVocalizeLookOutSheva
+		Rule SurvivorVocalizeThisWayTrevor
 		{
-		    criteria ConceptPlayerLookOut IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response SurvivorVocalizeLookOutProducer
+		    criteria ConceptPlayerThisWay IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response SurvivorVocalizeThisWayMechanic
 		}
 	},
 
 	{
-		Rule SurvivorVocalizeThisWaySheva
+		Rule SurvivorVocalizeWaitHereTrevor
 		{
-		    criteria ConceptPlayerThisWay IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response SurvivorVocalizeThisWayProducer
+		    criteria ConceptPlayerWaitHere IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response SurvivorVocalizeWaitHereMechanic
 		}
 	},
 
 	{
-		Rule SurvivorVocalizeWaitHereSheva
+		Rule SurvivorWarnSpitterIncomingTrevor
 		{
-		    criteria ConceptPlayerWaitHere IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response SurvivorVocalizeWaitHereProducer
-		}
-	},
-
-	{
-		Rule SurvivorWarnSpitterIncomingSheva
-		{
-		    criteria ConceptWarnSpitterIncoming IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidWarnSpitterIncoming IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response SurvivorWarnSpitterIncomingProducer
+		    criteria ConceptWarnSpitterIncoming IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidWarnSpitterIncoming IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response SurvivorWarnSpitterIncomingMechanic
 		    ApplyContext "SaidWarnSpitterIncoming:1:10"
 		}
 	},
 
 	{
-		Rule SurvivorWarnSpitterIncomingC1Sheva
+		Rule SurvivorWarnSpitterIncomingC1Trevor
 		{
-		    criteria ConceptWarnSpitterIncoming IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidWarnSpitterIncoming C1M1orC1M2 IsWorldTalkSheva NoKnowSpitter IsNotSurvival
-		    Response SurvivorWarnSpitterIncomingC1Producer
+		    criteria ConceptWarnSpitterIncoming IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidWarnSpitterIncoming C1M1orC1M2 IsWorldTalkTrevor NoKnowSpitter IsNotSurvival
+		    Response SurvivorWarnSpitterIncomingC1Mechanic
 		    ApplyContext "SaidWarnSpitterIncoming:1:10"
 		}
 	},
 
 	{
-		Rule PlayerLedgeHangEndSheva
+		Rule PlayerLedgeHangEndTrevor
 		{
-		    criteria ConceptPlayerLedgeHangEnd IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerLedgeHangEndProducer
-		    ApplyContext "TalkSheva:1:5"
+		    criteria ConceptPlayerLedgeHangEnd IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerLedgeHangEndMechanic
+		    ApplyContext "TalkTrevor:1:5"
 		}
 	},
 
 	{
-		Rule PlayerLedgeHangMiddleSheva
+		Rule PlayerLedgeHangMiddleTrevor
 		{
-		    criteria ConceptPlayerLedgeHangMiddle IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerLedgeHangMiddleProducer
-		    ApplyContext "TalkSheva:1:5"
+		    criteria ConceptPlayerLedgeHangMiddle IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerLedgeHangMiddleMechanic
+		    ApplyContext "TalkTrevor:1:5"
 		}
 	},
 
 	{
-		Rule PlayerLedgeHangStartSheva
+		Rule PlayerLedgeHangStartTrevor
 		{
-		    criteria ConceptPlayerLedgeHangStart IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerLedgeHangStartProducer
-		    ApplyContext "TalkSheva:1:5"
+		    criteria ConceptPlayerLedgeHangStart IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerLedgeHangStartMechanic
+		    ApplyContext "TalkTrevor:1:5"
 		}
 	},
 
 	{
-		Rule SurvivorFirstDeathSheva
+		Rule SurvivorFirstDeathTrevor
 		{
-		    criteria ConceptSurvivorDied IsNotCoughing SurvivorDiedNearEnough IsSheva IsNotSaidSomeoneDied IsEveryoneAlive IsTalk IsTalkSheva IsNotSaidFaultFriendlyFireGeneral IsWorldTalkSheva
-		    Response SurvivorFirstDeathProducer
+		    criteria ConceptSurvivorDied IsNotCoughing SurvivorDiedNearEnough IsTrevor IsEveryoneAlive IsNotSaidSomeoneDied IsTalk IsTalkTrevor IsNotSaidFaultFriendlyFireGeneral IsWorldTalkTrevor
+		    Response SurvivorFirstDeathMechanic
 		    ApplyContext "SaidSomeoneDied:1:10"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule DeathAloneSheva
+		Rule SurvivorFirstDeathC1Trevor
 		{
-		    criteria ConceptSurvivorDied IsNotCoughing SurvivorDiedNearEnough IsSheva IsWithTwo IsNotSaidFaultFriendlyFireGeneral IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response DeathAloneProducer
+		    criteria ConceptSurvivorDied IsNotCoughing SurvivorDiedNearEnough IsTrevor IsEveryoneAlive IsNotSaidSomeoneDied ismap_c1m1_hotel IsTalk IsTalkTrevor IsNotSaidFaultFriendlyFireGeneral IsWorldTalkTrevor NoKnowNames
+		    Response SurvivorFirstDeathC1Mechanic
 		    ApplyContext "SaidSomeoneDied:1:10"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule DoubleDeath2Sheva
+		Rule DeathOneTrevor
 		{
-		    criteria ConceptSurvivorDied IsNotCoughing SurvivorDiedNearEnough IsSheva IsNotSaidSomeoneDied IsTalk IsTalkSheva IsWithOnlyThree IsNotIncapacitated IsNotSaidFaultFriendlyFireGeneral IsWorldTalkSheva
-		    Response DoubleDeath2Producer
+		    criteria ConceptSurvivorDied IsNotCoughing SurvivorDiedNearEnough IsTrevor IsWithTwo IsNotSaidSomeoneDied IsTalk IsTalkTrevor IsNotSaidFaultFriendlyFireGeneral IsWorldTalkTrevor
+		    Response DeathOneMechanic
 		    ApplyContext "SaidSomeoneDied:1:10"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule TeamKillSheva
+		Rule DoubleDeathTrevor
 		{
-		    criteria ConceptSurvivorDied IsNotCoughing SurvivorDiedReallyClose IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsSaidFaultFriendlyFireGeneral IsNotSaidFaultFriendlyFireSheva IsWorldTalkSheva
-		    Response TeamKillProducer
-		    ApplyContext "SaidSomeoneDied:1:10,TalkSheva:1:3"
+		    criteria ConceptSurvivorDied IsNotCoughing SurvivorDiedNearEnough IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsClosestSurvivorNear400 IsWithOnlyThree IsNotIncapacitated IsNotSaidFaultFriendlyFireGeneral IsWorldTalkTrevor
+		    Response DoubleDeathMechanic
+		    ApplyContext "SaidSomeoneDied:1:10"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C6M1TakeSubMachineGunSheva
+		Rule DoubleDeathProducerTrevor
 		{
-		    criteria ConceptPlayerPickup IsSheva IsPickedUpSMG IsTalk IsTalkSheva IsWorldTalkSheva isc6m1_riverbank IsJustSaidWorldC6M1_IntoTheStore
-		    Response C6M1TakeSubMachineGunProducer
+		    criteria ConceptSurvivorDied IsNotCoughing SurvivorDiedNearEnough IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsProducerAlive IsProducerNear400 IsWithOnlyThree ChanceToFire100Percent IsNotIncapacitated IsNotDeadProducer IsNotSaidFaultFriendlyFireGeneral IsWorldTalkTrevor isNotmap_c1m1_hotel
+		    Response DoubleDeathProducerMechanic
+		    ApplyContext "SaidSomeoneDied:1:10"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule TeamKillTrevor
+		{
+		    criteria ConceptSurvivorDied IsNotCoughing SurvivorDiedReallyClose IsTrevor IsTalk IsTalkTrevor IsSaidFaultFriendlyFireGeneral IsNotSaidFaultFriendlyFireTrevor IsWorldTalkTrevor
+		    Response TeamKillMechanic
+		    ApplyContext "SaidSomeoneDied:1:10,TalkTrevor:1:4"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule TeamKillFromCoachTrevor
+		{
+		    criteria ConceptSurvivorDied IsNotCoughing SurvivorDiedReallyClose IsTrevor IsTalk IsTalkTrevor IsSaidFaultFriendlyFireGeneral IsSaidFaultFriendlyFireCoach ChanceToFire50Percent IsWorldTalkTrevor
+		    Response TeamKillFromCoachMechanic
+		    ApplyContext "SaidSomeoneDied:1:10,TalkTrevor:1:3"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule TeamKillFromGamblerTrevor
+		{
+		    criteria ConceptSurvivorDied IsNotCoughing SurvivorDiedReallyClose IsTrevor IsTalk IsTalkTrevor IsSaidFaultFriendlyFireGeneral IsSaidFaultFriendlyFireGambler ChanceToFire50Percent IsWorldTalkTrevor
+		    Response TeamKillFromGamblerMechanic
+		    ApplyContext "SaidSomeoneDied:1:10,TalkTrevor:1:2"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule TeamKillFromProducerTrevor
+		{
+		    criteria ConceptSurvivorDied IsNotCoughing SurvivorDiedReallyClose IsTrevor IsTalk IsTalkTrevor IsSaidFaultFriendlyFireGeneral IsSaidFaultFriendlyFireProducer ChanceToFire50Percent IsWorldTalkTrevor
+		    Response TeamKillFromProducerMechanic
+		    ApplyContext "SaidSomeoneDied:1:10,TalkTrevor:1:2"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C6M1TakeSubMachineGunTrevor
+		{
+		    criteria ConceptPlayerPickup IsTrevor IsPickedUpSMG IsTalk IsTalkTrevor IsWorldTalkTrevor isc6m1_riverbank IsJustSaidWorldC6M1_IntoTheStore
+		    Response C6M1TakeSubMachineGunMechanic
 		    ApplyContext "JustSaidWorldC6M1_IntoTheStore:2:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C6M1TakeSubMachineGunSilencedSheva
+		Rule C6M1TakeSubMachineGunSilencedTrevor
 		{
-		    criteria ConceptPlayerPickup IsSheva IsPickedUpSmg_silenced IsTalk IsTalkSheva IsWorldTalkSheva isc6m1_riverbank IsJustSaidWorldC6M1_IntoTheStore
-		    Response C6M1TakeSubMachineGunProducer
+		    criteria ConceptPlayerPickup IsTrevor IsPickedUpSmg_silenced IsTalk IsTalkTrevor IsWorldTalkTrevor isc6m1_riverbank IsJustSaidWorldC6M1_IntoTheStore
+		    Response C6M1TakeSubMachineGunMechanic
 		    ApplyContext "JustSaidWorldC6M1_IntoTheStore:2:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C6M1TakePumpShotgunSheva
+		Rule C6M1TakePumpShotgunTrevor
 		{
-		    criteria ConceptPlayerPickup IsSheva IsPickedUpPumpShotgun IsTalk IsTalkSheva IsWorldTalkSheva isc6m1_riverbank IsJustSaidWorldC6M1_IntoTheStore
-		    Response C6M1TakeSubMachineGunProducer
+		    criteria ConceptPlayerPickup IsTrevor IsPickedUpPumpShotgun IsTalk IsTalkTrevor IsWorldTalkTrevor isc6m1_riverbank IsJustSaidWorldC6M1_IntoTheStore
+		    Response C6M1TakeSubMachineGunMechanic
 		    ApplyContext "JustSaidWorldC6M1_IntoTheStore:2:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C6M1TakeChromeShotgunSheva
+		Rule C6M1TakeChromeShotgunTrevor
 		{
-		    criteria ConceptPlayerPickup IsSheva IsPickedUpShotgun_Chrome IsTalk IsTalkSheva IsWorldTalkSheva isc6m1_riverbank IsJustSaidWorldC6M1_IntoTheStore
-		    Response C6M1TakeSubMachineGunProducer
+		    criteria ConceptPlayerPickup IsTrevor IsPickedUpShotgun_Chrome IsTalk IsTalkTrevor IsWorldTalkTrevor isc6m1_riverbank IsJustSaidWorldC6M1_IntoTheStore
+		    Response C6M1TakeSubMachineGunMechanic
 		    ApplyContext "JustSaidWorldC6M1_IntoTheStore:2:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C6M1TakeCSSMP5Sheva
+		Rule C6M1TakeCSSMP5Trevor
 		{
-		    criteria ConceptPlayerPickup IsSheva IsPickedUpSmg_mp5 IsTalk IsTalkSheva IsWorldTalkSheva isc6m1_riverbank IsJustSaidWorldC6M1_IntoTheStore
-		    Response C6M1TakeSubMachineGunProducer
+		    criteria ConceptPlayerPickup IsTrevor IsPickedUpSmg_mp5 IsTalk IsTalkTrevor IsWorldTalkTrevor isc6m1_riverbank IsJustSaidWorldC6M1_IntoTheStore
+		    Response C6M1TakeSubMachineGunMechanic
 		    ApplyContext "JustSaidWorldC6M1_IntoTheStore:2:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorDeployUpExplosivesSheva
+		Rule SurvivorDeployUpExplosivesTrevor
 		{
-		    criteria ConceptPlayerDeployingUpgradeAmmo IsNotCoughing IsSheva IsNotSpeaking IsTalk IsTalkSheva IsWorldTalkSheva IsNotSaidDeployUpgradePack_Explosive HasUpgradePack_Explosive IsNotInStartArea _auto_NotSpottedVehicle
-		    Response SurvivorDeployUpExplosivesProducer
+		    criteria ConceptPlayerDeployingUpgradeAmmo IsNotCoughing IsTrevor IsNotSpeaking IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotSaidDeployUpgradePack_Explosive HasUpgradePack_Explosive IsNotInStartArea _auto_NotSpottedVehicle
+		    Response SurvivorDeployUpExplosivesMechanic
 		    ApplyContext "SaidDeployUpgradePack_Explosive:1:30"
 		}
 	},
 
 	{
-		Rule SurvivorDeployUpIncendiarySheva
+		Rule SurvivorDeployUpIncendiaryTrevor
 		{
-		    criteria ConceptPlayerDeployingUpgradeAmmo IsNotCoughing IsSheva IsNotSpeaking IsTalk IsTalkSheva IsWorldTalkSheva IsNotSaidDeployUpgradePack_Incendiary HasUpgradePack_Incendiary IsNotInStartArea _auto_NotSpottedVehicle
-		    Response SurvivorDeployUpIncendiaryProducer
+		    criteria ConceptPlayerDeployingUpgradeAmmo IsNotCoughing IsTrevor IsNotSpeaking IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotSaidDeployUpgradePack_Incendiary HasUpgradePack_Incendiary IsNotInStartArea _auto_NotSpottedVehicle
+		    Response SurvivorDeployUpIncendiaryMechanic
 		    ApplyContext "SaidDeployUpgradePack_Incendiary:1:30"
 		}
 	},
 
 	{
-		Rule SurvivorPickupAdrenalineSheva
+		Rule SurvivorPickupAdrenalineTrevor
 		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpAdrenaline IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkSheva IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response SurvivorPickupAdrenalineProducer
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpAdrenaline IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response SurvivorPickupAdrenalineMechanic
 		    ApplyContext "PickedUpItem:1:30"
 		}
 	},
 
 	{
-		Rule SurvivorPickupAutoShotgunSheva
+		Rule SurvivorPickupAutoShotgunTrevor
 		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpAutoShotgun IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkSheva IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorPickupAutoShotgunProducer
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpAutoShotgun IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupAutoShotgunMechanic
 		    ApplyContext "PickedUpItem:1:30"
 		}
 	},
 
 	{
-		Rule SurvivorPickupSpasShotgunSheva
+		Rule SurvivorPickupSpasShotgunTrevor
 		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpShotgun_spas IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkSheva IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorPickupAutoShotgunProducer
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpShotgun_spas IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupAutoShotgunMechanic
 		    ApplyContext "PickedUpItem:1:30"
 		}
 	},
 
 	{
-		Rule SurvivorPickupAutoShotgunC1M2Sheva
+		Rule SurvivorPickupbaseball_batTrevor
 		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpAutoShotgun IsNotSpeaking NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkSheva IsWorldTalkSheva ismap_c1m2_streets IsSaidC1M2InsideGunShop _auto_IsButton1
-		    Response SurvivorPickupAutoShotgunC1M2Producer
-		    then Mechanic C1M2InsideGunShopPickupResponse2 foo:0 0.1
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpbaseball_bat IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupbaseball_batMechanic
 		    ApplyContext "PickedUpItem:1:30"
 		}
 	},
 
 	{
-		Rule SurvivorPickupSpasShotgunC1M2Sheva
+		Rule SurvivorPickupShovelTrevor
 		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpShotgun_spas IsNotSpeaking NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkSheva IsWorldTalkSheva ismap_c1m2_streets IsSaidC1M2InsideGunShop _auto_IsButton1
-		    Response SurvivorPickupAutoShotgunC1M2Producer
-		    then Mechanic C1M2InsideGunShopPickupResponse2 foo:0 0.1
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpShovel IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupShovelMechanic
 		    ApplyContext "PickedUpItem:1:30"
 		}
 	},
 
 	{
-		Rule SurvivorPickupbaseball_batSheva
+		Rule SurvivorPickupchainsawTrevor
 		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpbaseball_bat IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkSheva IsWorldTalkSheva IsNotInStartArea isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorPickupbaseball_batProducer
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpchainsaw IsNotSpeaking NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupchainsawMechanic
+		    then All AskWhat foo:0 0
 		    ApplyContext "PickedUpItem:1:30"
 		}
 	},
 
 	{
-		Rule SurvivorPickupShovelSheva
+		Rule SurvivorPickupKnifeTrevor
 		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpShovel IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkSheva IsWorldTalkSheva IsNotInStartArea isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorPickupbaseball_batProducer
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpKnife IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupKnifeMechanic
 		    ApplyContext "PickedUpItem:1:30"
 		}
 	},
 
 	{
-		Rule SurvivorPickupPitchforkSheva
+		Rule SurvivorPickupcricket_batTrevor
 		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpPitchfork IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkSheva IsWorldTalkSheva IsNotInStartArea isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorPickupbaseball_batProducer
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpcricket_bat IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupcricket_batMechanic
 		    ApplyContext "PickedUpItem:1:30"
 		}
 	},
 
 	{
-		Rule SurvivorPickupchainsawSheva
+		Rule SurvivorPickupPitchforkTrevor
 		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpchainsaw IsNotSpeaking NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkSheva IsWorldTalkSheva IsNotInStartArea isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorPickupchainsawProducer
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpPitchfork IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupPitchforkMechanic
 		    ApplyContext "PickedUpItem:1:30"
 		}
 	},
 
 	{
-		Rule SurvivorPickupcricket_batSheva
+		Rule SurvivorPickupCrowBarTrevor
 		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpcricket_bat IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkSheva IsWorldTalkSheva IsNotInStartArea isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorPickupcricket_batProducer
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpCrowBar IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupCrowBarMechanic
 		    ApplyContext "PickedUpItem:1:30"
 		}
 	},
 
 	{
-		Rule SurvivorPickupKnifeSheva
+		Rule SurvivorPickupDefibrillatorTrevor
 		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpKnife IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkSheva IsWorldTalkSheva IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		    Response SurvivorPickupbaseball_batProducer
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpDefibrillator ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotSpeaking IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea _auto_NotSpottedVehicle
+		    Response SurvivorPickupDefibrillatorMechanic
 		    ApplyContext "PickedUpItem:1:30"
 		}
 	},
 
 	{
-		Rule SurvivorPickupCrowBarSheva
+		Rule SurvivorPickupelectric_guitarTrevor
 		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpCrowBar IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkSheva IsWorldTalkSheva IsNotInStartArea isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorPickupCrowBarProducer
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpelectric_guitar IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupelectric_guitarMechanic
 		    ApplyContext "PickedUpItem:1:30"
 		}
 	},
 
 	{
-		Rule SurvivorPickupDefibrillatorSheva
+		Rule SurvivorPickupFireAxeTrevor
 		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpDefibrillator ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotSpeaking IsTalk IsTalkSheva IsWorldTalkSheva IsNotInStartArea _auto_NotSpottedVehicle
-		    Response SurvivorPickupDefibrillatorProducer
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpFireAxe ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotSpeaking IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupFireAxeMechanic
 		    ApplyContext "PickedUpItem:1:30"
 		}
 	},
 
 	{
-		Rule SurvivorPickupelectric_guitarSheva
+		Rule SurvivorPickupFirstAidKitTrevor
 		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpelectric_guitar IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkSheva IsWorldTalkSheva IsNotInStartArea isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorPickupelectric_guitarProducer
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpFirstAidKit IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea IsNotScavenge _auto_NotSpottedVehicle
+		    Response SurvivorPickupFirstAidKitMechanic
 		    ApplyContext "PickedUpItem:1:30"
 		}
 	},
 
 	{
-		Rule SurvivorPickupFireAxeSheva
+		Rule SurvivorPickupFirstSMGTrevor
 		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpFireAxe ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsNotSpeaking IsTalk IsTalkSheva IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorPickupFireAxeProducer
-		    ApplyContext "PickedUpItem:1:30"
-		}
-	},
-
-	{
-		Rule SurvivorPickupFirstAidKitSheva
-		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpFirstAidKit IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkSheva IsWorldTalkSheva IsNotScavenge _auto_NotSpottedVehicle
-		    Response SurvivorPickupFirstAidKitProducer
-		    ApplyContext "PickedUpItem:1:30"
-		}
-	},
-
-	{
-		Rule SurvivorPickupFirstSMGSheva
-		{
-		    criteria ConceptPlayerPickup IsSheva IsPickedUpSmg_silenced IsTalk IsTalkSheva IsNotSaidPickupFirstSMG IsSaidC1M1OpenDoor ExtraWeight10 IsWorldTalkSheva
-		    Response SurvivorPickupFirstSMGProducer
-		    then self PlayerPickupFirstSMG2 foo:0 0.2
+		    criteria ConceptPlayerPickup IsTrevor IsPickedUpSmg_silenced IsTalk IsTalkTrevor IsNotSaidPickupFirstSMG IsSaidC1M1OpenDoor ExtraWeight10 IsWorldTalkTrevor
+		    Response SurvivorPickupFirstSMGMechanic
 		    ApplyContext "SaidPickupFirstSMG:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorPickupFryingPanSheva
+		Rule SurvivorPickupFryingPanTrevor
 		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpFryingPan IsNotSpeaking ChanceToFire30Percent IsNotInStartArea NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkSheva IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorPickupFryingPanProducer
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpFryingPan IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupFryingPanMechanic
 		    ApplyContext "PickedUpItem:1:30"
 		}
 	},
 
 	{
-		Rule SurvivorPickupGolfClubSheva
+		Rule SurvivorPickupGolfCLubTrevor
 		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpGolfClub IsNotSpeaking ChanceToFire30Percent IsNotInStartArea NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkSheva IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorPickupGolfClubProducer
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpGolfClub IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupGolfCLubMechanic
 		    ApplyContext "PickedUpItem:1:30"
 		}
 	},
 
 	{
-		Rule SurvivorPickupGrenadeLauncherSheva
+		Rule SurvivorPickupGrenadeLauncherTrevor
 		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpGrenadeLauncher NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsNotSpeaking IsTalk IsTalkSheva IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorPickupGrenadeLauncherProducer
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpGrenadeLauncher NotPickedUpItem IsNotInSafeSpot IsNotSpeaking IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupGrenadeLauncherMechanic
 		    ApplyContext "PickedUpItem:1:30"
 		}
 	},
 
 	{
-		Rule SurvivorPickupGunC1M2Sheva
+		Rule SurvivorPickupGunC1M2Trevor
 		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsNotSpeaking IsTalk IsSaidC1M2InsideGunShop IsNotPickedUpFirstAidKit IsNotPickedUpAdrenaline IsNotPickedUpPainPills IsNotPickedUpAmmo IsNotPickedUpVomitJar IsNotPickedUpLaserSights IsNotPickedUpMolotov IsNotPickedUpPipeBomb IsWorldTalkSheva _auto_NotButton1
-		    Response SurvivorPickupGunC1M2Producer
-		    then Mechanic C1M2InsideGunShopPickupResponse foo:0 0.1
-		}
-	},
-
-	{
-		Rule SurvivorPickupHuntingRifleSheva
-		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpHuntingRifle IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkSheva IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorPickupHuntingRifleProducer
-		    ApplyContext "PickedUpItem:1:30"
-		}
-	},
-
-	{
-		Rule SurvivorPickupMilitarySniperSheva
-		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpSniper_Military IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkSheva IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorPickupHuntingRifleProducer
-		    ApplyContext "PickedUpItem:1:30"
-		}
-	},
-
-	{
-		Rule SurvivorPickupScoutSniperSheva
-		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpSniper_scout IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkSheva IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorPickupHuntingRifleProducer
-		    ApplyContext "PickedUpItem:1:30"
-		}
-	},
-
-	{
-		Rule SurvivorPickupAWPSniperSheva
-		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpSniper_awp IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkSheva IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorPickupHuntingRifleProducer
-		    ApplyContext "PickedUpItem:1:30"
-		}
-	},
-
-	{
-		Rule SurvivorPickupHuntingRifleC1M2Sheva
-		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpHuntingRifle IsNotSpeaking NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkSheva IsWorldTalkSheva ismap_c1m2_streets IsSaidC1M2InsideGunShop _auto_IsButton1
-		    Response SurvivorPickupHuntingRifleC1M2Producer
-		    then Mechanic C1M2InsideGunShopPickupResponse2 foo:0 -1.564
-		    ApplyContext "PickedUpItem:1:30"
-		}
-	},
-
-	{
-		Rule SurvivorPickupMilitarySniperC1M2Sheva
-		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpSniper_Military IsNotSpeaking NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkSheva IsWorldTalkSheva ismap_c1m2_streets IsSaidC1M2InsideGunShop _auto_IsButton1
-		    Response SurvivorPickupHuntingRifleC1M2Producer
-		    then Mechanic C1M2InsideGunShopPickupResponse2 foo:0 -1.564
-		    ApplyContext "PickedUpItem:1:30"
-		}
-	},
-
-	{
-		Rule SurvivorPickupIncendiaryAmmoSheva
-		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpIncendiaryAmmo IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkSheva IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorPickupIncendiaryAmmoProducer
-		    ApplyContext "PickedUpItem:1:30"
-		}
-	},
-
-	{
-		Rule SurvivorPickupKatanaSheva
-		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpKatana IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkSheva IsWorldTalkSheva IsNotInStartArea isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorPickupKatanaProducer
-		    ApplyContext "PickedUpItem:1:30"
-		}
-	},
-
-	{
-		Rule SurvivorPickupLaserSightsAlwaysSheva
-		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpLaserSights IsNotSpeaking IsBotNotAvailable ChanceToFire50Percent IsNotInStartArea IsNotInCheckpoint IsNotInSafeSpot NotPickedUpItem IsTalk IsTalkSheva IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response SurvivorPickupLaserSightsAlwaysProducer
-		    ApplyContext "PickedUpItem:1:30"
-		}
-	},
-
-	{
-		Rule SurvivorPickupM60Sheva
-		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpM60 IsNotSpeaking NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkSheva IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorPickupM60Producer
-		    ApplyContext "PickedUpItem:1:30"
-		}
-	},
-
-	{
-		Rule SurvivorPickupMacheteSheva
-		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpMachete IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkSheva IsWorldTalkSheva IsNotInStartArea isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorPickupMacheteProducer
-		    ApplyContext "PickedUpItem:1:30"
-		}
-	},
-
-	{
-		Rule SurvivorPickupMagnumSheva
-		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpMagnum IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkSheva IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorPickupMagnumProducer
-		    ApplyContext "PickedUpItem:1:30"
-		}
-	},
-
-	{
-		Rule SurvivorPickupMolotovSheva
-		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpMolotov IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkSheva IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorPickupMolotovProducer
-		    ApplyContext "PickedUpItem:1:30"
-		}
-	},
-
-	{
-		Rule SurvivorPickupPainPillsSheva
-		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpPainPills IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkSheva IsWorldTalkSheva IsNotScavenge _auto_NotSpottedVehicle
-		    Response SurvivorPickupPainPillsProducer
-		    ApplyContext "PickedUpItem:1:30"
-		}
-	},
-
-	{
-		Rule SurvivorPickupPipeBombSheva
-		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpPipeBomb IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkSheva IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorPickupPipeBombProducer
-		    ApplyContext "PickedUpItem:1:30"
-		}
-	},
-
-	{
-		Rule SurvivorPickupPumpShotgunSheva
-		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpPumpShotgun IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkSheva IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorPickupPumpShotgunProducer
-		    ApplyContext "PickedUpItem:1:30"
-		}
-	},
-
-	{
-		Rule SurvivorPickupChromeShotgunSheva
-		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpShotgun_Chrome IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkSheva IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorPickupPumpShotgunProducer
-		    ApplyContext "PickedUpItem:1:30"
-		}
-	},
-
-	{
-		Rule SurvivorPickupRifleSheva
-		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpRifle IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkSheva IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorPickupRifleProducer
-		    ApplyContext "PickedUpItem:1:30"
-		}
-	},
-
-	{
-		Rule SurvivorPickupDesertRifleSheva
-		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpRifle_Desert IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkSheva IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorPickupRifleProducer
-		    ApplyContext "PickedUpItem:1:30"
-		}
-	},
-
-	{
-		Rule SurvivorPickupAK47RifleSheva
-		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpRifle_AK47 IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkSheva IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorPickupRifleProducer
-		    ApplyContext "PickedUpItem:1:30"
-		}
-	},
-
-	{
-		Rule SurvivorPickupSG552RifleSheva
-		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpRifle_sg552 IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkSheva IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorPickupRifleProducer
-		    ApplyContext "PickedUpItem:1:30"
-		}
-	},
-
-	{
-		Rule SurvivorPickupRifleC1M2Sheva
-		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpRifle IsNotSpeaking NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkSheva IsWorldTalkSheva ismap_c1m2_streets IsSaidC1M2InsideGunShop _auto_IsButton1
-		    Response SurvivorPickupRifleC1M2Producer
-		    then Mechanic C1M2InsideGunShopPickupResponse2 foo:0 -1.564
-		    ApplyContext "PickedUpItem:1:30"
-		}
-	},
-
-	{
-		Rule SurvivorPickupDesertRifleC1M2Sheva
-		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpRifle_Desert IsNotSpeaking NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkSheva IsWorldTalkSheva ismap_c1m2_streets IsSaidC1M2InsideGunShop _auto_IsButton1
-		    Response SurvivorPickupRifleC1M2Producer
-		    then Mechanic C1M2InsideGunShopPickupResponse2 foo:0 -1.564
-		    ApplyContext "PickedUpItem:1:30"
-		}
-	},
-
-	{
-		Rule SurvivorPickupAK47RifleC1M2Sheva
-		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpRifle_AK47 IsNotSpeaking NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkSheva IsWorldTalkSheva ismap_c1m2_streets IsSaidC1M2InsideGunShop _auto_IsButton1
-		    Response SurvivorPickupRifleC1M2Producer
-		    then Mechanic C1M2InsideGunShopPickupResponse2 foo:0 -1.564
-		    ApplyContext "PickedUpItem:1:30"
-		}
-	},
-
-	{
-		Rule SurvivorPickupSecondPistolSheva
-		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpSecondPistol IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkSheva IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorPickupSecondPistolProducer
-		    ApplyContext "PickedUpItem:1:30"
-		}
-	},
-
-	{
-		Rule SurvivorPickupSMGSheva
-		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpSMG IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkSheva IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorPickupSMGProducer
-		    ApplyContext "PickedUpItem:1:30"
-		}
-	},
-
-	{
-		Rule SurvivorPickupSilencedSMGSheva
-		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpSMG_silenced IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkSheva IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorPickupSMGProducer
-		    ApplyContext "PickedUpItem:1:30"
-		}
-	},
-
-	{
-		Rule SurvivorPickupSilencedMP5SMGSheva
-		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpSMG_mp5 IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkSheva IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorPickupSMGProducer
-		    ApplyContext "PickedUpItem:1:30"
-		}
-	},
-
-	{
-		Rule SurvivorPickuptonfaSheva
-		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUptonfa IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkSheva IsWorldTalkSheva IsNotInStartArea isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorPickuptonfaProducer
-		    ApplyContext "PickedUpItem:1:30"
-		}
-	},
-
-	{
-		Rule SurvivorPickupUpExplosiveAmmoSheva
-		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpExplosiveAmmo IsNotSpeaking IsNotInStartArea IsTalk IsTalkSheva IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response SurvivorPickupUpExplosiveAmmoProducer
-		    ApplyContext "PickedUpItem:1:30"
-		}
-	},
-
-	{
-		Rule SurvivorPickupUpExplosivesSheva
-		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpUpgradePack_Explosive IsNotSpeaking IsNotInStartArea IsTalk IsTalkSheva IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response SurvivorPickupUpExplosivesProducer
-		    ApplyContext "PickedUpItem:1:30"
-		}
-	},
-
-	{
-		Rule SurvivorPickupUpIncendiarySheva
-		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpUpgradePack_Incendiary IsNotSpeaking IsNotInStartArea IsTalk IsTalkSheva IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response SurvivorPickupUpIncendiaryProducer
-		    ApplyContext "PickedUpItem:1:30"
-		}
-	},
-
-	{
-		Rule SurvivorPickupVomitJarSheva
-		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpVomitJar IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkSheva IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorPickupVomitJarProducer
-		    ApplyContext "PickedUpItem:1:30"
-		}
-	},
-
-	{
-		Rule SurvivorPickupVomitJarAlwaysC1Sheva
-		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpVomitJar IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkSheva IsWorldTalkSheva ismap_c1m1_hotel
-		    Response SurvivorPickupVomitJarAlwaysC1Producer
-		    ApplyContext "PickedUpItem:1:30"
-		}
-	},
-
-	{
-		Rule PlayerGettingRevivedSheva
-		{
-		    criteria ConceptReviveFriendDown IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response PlayerGettingRevivedProducer
-		    then From ReviveFriendDownFinal foo:0 -3.840
-		}
-	},
-
-	{
-		Rule PlayerHealOtherSheva
-		{
-		    criteria ConceptPlayerHealingOther IsNotCoughing IsSheva IsTalk IsTalkSheva NotInIntenseCombat IsWorldTalkSheva
-		    Response PlayerHealOtherProducer
-		    ApplyContext "TalkSheva:1:5"
-		}
-	},
-
-	{
-		Rule PlayerHealOtherCombatSheva
-		{
-		    criteria ConceptPlayerHealingOther IsNotCoughing IsSheva IsTalk IsTalkSheva InIntenseCombat IsWorldTalkSheva
-		    Response PlayerHealOtherCombatProducer
-		    ApplyContext "TalkSheva:1:5"
-		}
-	},
-
-	{
-		Rule PlayerHealOtherTankSheva
-		{
-		    criteria ConceptPlayerHealingOther IsNotCoughing IsSheva IsTalk IsTalkSheva IsZombiePresentTank IsSaidTankWarn2 IsWorldTalkSheva
-		    // 	forceweight 30
-		    Response PlayerHealOtherCombatProducer
-		    ApplyContext "TalkSheva:1:5"
-		}
-	},
-
-	{
-		Rule PlayerLedgeSaveSheva
-		{
-		    criteria ConceptPlayerLedgeSave IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response PlayerLedgeSaveProducer
-		    ApplyContext "TalkSheva:1:5"
-		}
-	},
-
-	{
-		Rule PlayerReviveFriendSheva
-		{
-		    criteria ConceptPlayerReviveFriend IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva NotInIntenseCombat _auto_NotSpottedVehicle
-		    Response PlayerReviveFriendProducer
-		    then Subject ReviveFriendDown foo:0 -0.633
-		    ApplyContext "TalkSheva:1:2"
-		}
-	},
-
-	{
-		Rule PlayerReviveEllisSheva
-		{
-		    criteria ConceptPlayerReviveFriend IsNotCoughing IsSheva IsTalk IsTalkSheva SubjectIsMechanic ChanceToFire5Percent IsWorldTalkSheva NotInIntenseCombat _auto_NotSpottedVehicle
-		    Response PlayerReviveEllisProducer
-		    then Subject ReviveFriendDown foo:0 -0.897
-		    ApplyContext "TalkSheva:1:2,EllisCrying:1:2"
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsNotSpeaking IsTalk IsSaidC1M2InsideGunShop IsNotPickedUpFirstAidKit IsNotPickedUpAmmo IsNotPickedUpVomitJar IsNotPickedUpLaserSights IsNotPickedUpAdrenaline IsNotPickedUpPainPills IsNotPickedUpMolotov IsNotPickedUpPipeBomb IsWorldTalkTrevor IsNotSaidC1M2InsideGunShopPickUp ChanceToFire50Percent _auto_NotButton1
+		    Response SurvivorPickupGunC1M2Mechanic
+		    ApplyContext "SaidC1M2InsideGunShopPickUp:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerReviveFriendBSheva
+		Rule SurvivorPickupHuntingRifleTrevor
 		{
-		    criteria ConceptReviveFriendDownFinal IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotReviveInterrupt
-		    Response PlayerReviveFriendBProducer
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpHuntingRifle IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupHuntingRifleMechanic
+		    ApplyContext "PickedUpItem:1:30"
 		}
 	},
 
 	{
-		Rule PlayerReviveFriendCriticalSheva
+		Rule SurvivorPickupMilitarySniperTrevor
 		{
-		    criteria ConceptPlayerReviveFriendCritical IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva NotInIntenseCombat _auto_NotSpottedVehicle
-		    Response PlayerReviveFriendCriticalProducer
-		    ApplyContext "TalkSheva:1:5"
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpSniper_Military IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupHuntingRifleMechanic
+		    ApplyContext "PickedUpItem:1:30"
 		}
 	},
 
 	{
-		Rule PlayerReviveFriendLoudSheva
+		Rule SurvivorPickupScoutSniperTrevor
 		{
-		    criteria ConceptPlayerReviveFriend IsNotCoughing IsSheva IsZombiePresentTank IsSaidTankWarn2 IsTalk IsTalkSheva IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response PlayerReviveFriendLoudProducer
-		    ApplyContext "TalkSheva:1:5"
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpSniper_scout IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupHuntingRifleMechanic
+		    ApplyContext "PickedUpItem:1:30"
 		}
 	},
 
 	{
-		Rule PlayerLedgeSaveCriticalSheva
+		Rule SurvivorPickupAWPSniperTrevor
 		{
-		    criteria ConceptPlayerLedgeSaveCritical IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response PlayerLedgeSaveProducer
-		    ApplyContext "TalkSheva:1:5"
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpSniper_awp IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupHuntingRifleMechanic
+		    ApplyContext "PickedUpItem:1:30"
 		}
 	},
 
 	{
-		Rule PlayerReviveFriendFFSheva
+		Rule SurvivorPickupIncendiaryAmmoTrevor
 		{
-		    criteria ConceptPlayerReviveFriend IsNotCoughing IsSheva IsTalk IsTalkSheva IsShotTeammateSheva IsWorldTalkSheva NotInIntenseCombat _auto_NotSpottedVehicle
-		    // 	forceweight 20
-		    Response PlayerReviveFriendFFProducer
-		    ApplyContext "TalkSheva:1:5"
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpIncendiaryAmmo IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupIncendiaryAmmoMechanic
+		    ApplyContext "PickedUpItem:1:30"
 		}
 	},
 
 	{
-		Rule PlayerReviveFriendCriticalFFSheva
+		Rule SurvivorPickupKatanaTrevor
 		{
-		    criteria ConceptPlayerReviveFriendCritical IsNotCoughing IsSheva IsTalk IsTalkSheva IsShotTeammateSheva IsWorldTalkSheva NotInIntenseCombat _auto_NotSpottedVehicle
-		    // 	forceweight 20
-		    Response PlayerReviveFriendFFProducer
-		    ApplyContext "TalkSheva:1:5"
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpKatana IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupKatanaMechanic
+		    ApplyContext "PickedUpItem:1:30"
 		}
 	},
 
 	{
-		Rule PlayerReviveFriendLoud2Sheva
+		Rule SurvivorPickupLaserSightsAlwaysTrevor
 		{
-		    criteria ConceptPlayerReviveFriend IsNotCoughing IsSheva InIntenseCombat IsTalk IsTalkSheva IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response PlayerReviveFriendLoudProducer
-		    ApplyContext "TalkSheva:1:5"
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpLaserSights IsNotSpeaking IsBotNotAvailable ChanceToFire50Percent NotPickedUpItem IsNotInStartArea IsNotInCheckpoint IsNotInSafeSpot IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response SurvivorPickupLaserSightsAlwaysMechanic
+		    ApplyContext "PickedUpItem:1:30"
 		}
 	},
 
 	{
-		Rule PlayerReviveFriendLoudCritSheva
+		Rule SurvivorPickupM60Trevor
 		{
-		    criteria ConceptPlayerReviveFriendCritical IsNotCoughing IsSheva InIntenseCombat IsTalk IsTalkSheva IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response PlayerReviveFriendLoudProducer
-		    ApplyContext "TalkSheva:1:5"
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpM60 IsNotSpeaking NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupM60Mechanic
+		    ApplyContext "PickedUpItem:1:30"
 		}
 	},
 
 	{
-		Rule PlayerReviveFriendLoudCrit2Sheva
+		Rule SurvivorPickupMacheteTrevor
 		{
-		    criteria ConceptPlayerReviveFriendCritical IsNotCoughing IsSheva IsZombiePresentTank IsSaidTankWarn2 IsTalk IsTalkSheva IsWorldTalkSheva _auto_NotSpottedVehicle
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpMachete IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupMacheteMechanic
+		    ApplyContext "PickedUpItem:1:30"
+		}
+	},
+
+	{
+		Rule SurvivorPickupMagnumTrevor
+		{
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpMagnum IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupMagnumMechanic
+		    ApplyContext "PickedUpItem:1:30"
+		}
+	},
+
+	{
+		Rule SurvivorPickupMolotovTrevor
+		{
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpMolotov IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupMolotovMechanic
+		    ApplyContext "PickedUpItem:1:30"
+		}
+	},
+
+	{
+		Rule SurvivorPickupPainPillsTrevor
+		{
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpPainPills ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotSpeaking IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotScavenge _auto_NotSpottedVehicle
+		    Response SurvivorPickupPainPillsMechanic
+		    ApplyContext "PickedUpItem:1:30"
+		}
+	},
+
+	{
+		Rule SurvivorPickupPipeBombTrevor
+		{
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpPipeBomb IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupPipeBombMechanic
+		    ApplyContext "PickedUpItem:1:30"
+		}
+	},
+
+	{
+		Rule SurvivorPickupPumpShotgunTrevor
+		{
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpPumpShotgun IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupPumpShotgunMechanic
+		    ApplyContext "PickedUpItem:1:30"
+		}
+	},
+
+	{
+		Rule SurvivorPickupChromeShotgunTrevor
+		{
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpShotgun_Chrome IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupPumpShotgunMechanic
+		    ApplyContext "PickedUpItem:1:30"
+		}
+	},
+
+	{
+		Rule SurvivorPickupRifleTrevor
+		{
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpRifle IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupRifleMechanic
+		    ApplyContext "PickedUpItem:1:30"
+		}
+	},
+
+	{
+		Rule SurvivorPickupDesertRifleTrevor
+		{
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpRifle_Desert IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupDesertRifleMechanic
+		    ApplyContext "PickedUpItem:1:30"
+		}
+	},
+
+	{
+		Rule SurvivorPickupAK47RifleTrevor
+		{
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpRifle_AK47 IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupDesertRifleMechanic
+		    ApplyContext "PickedUpItem:1:30"
+		}
+	},
+
+	{
+		Rule SurvivorPickupSG552RifleTrevor
+		{
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpRifle_sg552 IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupDesertRifleMechanic
+		    ApplyContext "PickedUpItem:1:30"
+		}
+	},
+
+	{
+		Rule SurvivorPickupSecondPistolTrevor
+		{
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpSecondPistol IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupSecondPistolMechanic
+		    ApplyContext "PickedUpItem:1:30"
+		}
+	},
+
+	{
+		Rule SurvivorPickupSMGTrevor
+		{
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpSMG IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupSMGMechanic
+		    ApplyContext "PickedUpItem:1:30"
+		}
+	},
+
+	{
+		Rule SurvivorPickupSilencedSMGTrevor
+		{
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpSMG_silenced IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupSMGMechanic
+		    ApplyContext "PickedUpItem:1:30"
+		}
+	},
+
+	{
+		Rule SurvivorPickupMP5SMGTrevor
+		{
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpSMG_mp5 IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupSMGMechanic
+		    ApplyContext "PickedUpItem:1:30"
+		}
+	},
+
+	{
+		Rule SurvivorPickuptonfaTrevor
+		{
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUptonfa IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickuptonfaMechanic
+		    ApplyContext "PickedUpItem:1:30"
+		}
+	},
+
+	{
+		Rule SurvivorPickupUpExplosiveAmmoTrevor
+		{
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpExplosiveAmmo ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotSpeaking IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupUpExplosiveAmmoMechanic
+		    ApplyContext "PickedUpItem:1:30"
+		}
+	},
+
+	{
+		Rule SurvivorPickupUpExplosivesTrevor
+		{
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpUpgradePack_Explosive NotPickedUpItem IsNotInSafeSpot IsNotSpeaking IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupUpExplosivesMechanic
+		    ApplyContext "PickedUpItem:1:30"
+		}
+	},
+
+	{
+		Rule SurvivorPickupUpIncendiaryTrevor
+		{
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpUpgradePack_Incendiary IsNotSpeaking NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorPickupUpIncendiaryMechanic
+		    ApplyContext "PickedUpItem:1:30"
+		}
+	},
+
+	{
+		Rule SurvivorPickupVomitJarTrevor
+		{
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpVomitJar IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response SurvivorPickupVomitJarMechanic
+		    ApplyContext "PickedUpItem:1:30"
+		}
+	},
+
+	{
+		Rule SurvivorPickupVomitJarAlwaysC1Trevor
+		{
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpVomitJar ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotSpeaking IsTalk IsTalkTrevor IsWorldTalkTrevor ismap_c1m1_hotel
+		    Response SurvivorPickupVomitJarAlwaysC1Mechanic
+		    ApplyContext "PickedUpItem:1:30"
+		}
+	},
+
+	{
+		Rule PlayerGettingRevivedTrevor
+		{
+		    criteria ConceptReviveFriendDown IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerGettingRevivedMechanic
+		    then From ReviveFriendDownFinal foo:0 -0.608
+		}
+	},
+
+	{
+		Rule PlayerGettingRevivedCrybabyTrevor
+		{
+		    criteria ConceptReviveFriendDown IsNotCoughing IsTrevor IsTrevorCrybaby FromIsProducer IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response PlayerGettingRevivedCrybabyMechanic
+		    then From ReviveFriendDownFinal foo:0 -1.447
+		}
+	},
+
+	{
+		Rule PlayerHealOtherTrevor
+		{
+		    criteria ConceptPlayerHealingOther IsNotCoughing IsTrevor IsTalk IsTalkTrevor NotInIntenseCombat IsWorldTalkTrevor
+		    Response PlayerHealOtherMechanic
+		    ApplyContext "TalkTrevor:1:5"
+		}
+	},
+
+	{
+		Rule PlayerHealOtherC1Trevor
+		{
+		    criteria ConceptPlayerHealingOther IsNotCoughing IsTrevor IsTalk IsTalkTrevor NotInIntenseCombat IsWorldTalkTrevor ismap_c1m1_hotel
+		    Response PlayerHealOtherC1Mechanic
+		    ApplyContext "TalkTrevor:1:5"
+		}
+	},
+
+	{
+		Rule PlayerHealOtherCombatTrevor
+		{
+		    criteria ConceptPlayerHealingOther IsNotCoughing IsTrevor IsTalk IsTalkTrevor InIntenseCombat IsWorldTalkTrevor
+		    Response PlayerHealOtherCombatMechanic
+		    ApplyContext "TalkTrevor:1:5"
+		}
+	},
+
+	{
+		Rule PlayerHealOtherTankTrevor
+		{
+		    criteria ConceptPlayerHealingOther IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsZombiePresentTank IsSaidTankWarn2 IsWorldTalkTrevor
 		    // 	forceweight 30
-		    Response PlayerReviveFriendLoudProducer
-		    ApplyContext "TalkSheva:1:5"
+		    Response PlayerHealOtherCombatMechanic
+		    ApplyContext "TalkTrevor:1:5"
 		}
 	},
 
 	{
-		Rule _C1M1_ElevatorHelloSheva
+		Rule PlayerLedgeSaveTrevor
 		{
-		    criteria Concept_C1M1_ElevatorHello IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C1M1_ElevatorHelloProducer
+		    criteria ConceptPlayerLedgeSave IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response PlayerLedgeSaveMechanic
+		    ApplyContext "TalkTrevor:1:5"
 		}
 	},
 
 	{
-		Rule _C1M1_ElevatorHelloStartAllAliveSheva
+		Rule PlayerReviveFriendTrevor
 		{
-		    criteria Concept_C1M1_ElevatorHelloStart IsSheva AutoIsNotScavenge AutoIsNotSurvival IsEveryoneAlive
-		    Response _C1M1_ElevatorHelloStartAllAliveProducer
-		    then mechanic _C1M1_ElevatorHello05c foo:0 -4.637
+		    criteria ConceptPlayerReviveFriend IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor NotInIntenseCombat _auto_NotSpottedVehicle
+		    Response PlayerReviveFriendMechanic
+		    then Subject ReviveFriendDown foo:0 -0.664
+		    ApplyContext "TalkTrevor:1:2"
 		}
 	},
 
 	{
-		Rule _C1M1_ElevatorHelloStart3AliveSheva
+		Rule PlayerReviveFriendBTrevor
 		{
-		    criteria Concept_C1M1_ElevatorHelloStart IsSheva AutoIsNotScavenge AutoIsNotSurvival IsWithOnlyThree
-		    Response _C1M1_ElevatorHelloStart3AliveProducer
-		    then self _C1M1_ElevatorHello3AliveShevaIntro foo:0 0.1
+		    criteria ConceptReviveFriendDownFinal IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotReviveInterrupt
+		    Response PlayerReviveFriendBMechanic
 		}
 	},
 
 	{
-		Rule _C1M1_ElevatorHelloStart2AliveSheva
+		Rule PlayerReviveFriendCriticalTrevor
 		{
-		    criteria Concept_C1M1_ElevatorHelloStart IsSheva AutoIsNotScavenge AutoIsNotSurvival IsWithTwo
-		    Response _C1M1_ElevatorHelloStart2AliveProducer
-		    then any _C1M1_ElevatorHello2AliveName1 foo:0 0.1
+		    criteria ConceptPlayerReviveFriendCritical IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor NotInIntenseCombat _auto_NotSpottedVehicle
+		    Response PlayerReviveFriendCriticalMechanic
+		    ApplyContext "TalkTrevor:1:5"
 		}
 	},
 
 	{
-		Rule _C1M1_ElevatorHello01cSheva
+		Rule PlayerReviveFriendLoudTrevor
 		{
-		    criteria Concept_C1M1_ElevatorHello01c IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C1M1_ElevatorHello01cProducer
-		    then mechanic _C1M1_ElevatorHello13a foo:0 -4.068
+		    criteria ConceptPlayerReviveFriend IsNotCoughing IsTrevor IsZombiePresentTank IsSaidTankWarn2 IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    // 	forceweight 30
+		    Response PlayerReviveFriendLoudMechanic
+		    ApplyContext "TalkTrevor:1:5"
 		}
 	},
 
 	{
-		Rule _C1M1_ElevatorHello02aSheva
+		Rule PlayerLedgeSaveCriticalTrevor
 		{
-		    criteria Concept_C1M1_ElevatorHello02a IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C1M1_ElevatorHello02aProducer
-		    then mechanic _C1M1_ElevatorHello03a foo:0 -1.195
+		    criteria ConceptPlayerLedgeSaveCritical IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response PlayerLedgeSaveMechanic
+		    ApplyContext "TalkTrevor:1:5"
 		}
 	},
 
 	{
-		Rule _C1M1_ElevatorHello02dSheva
+		Rule PlayerReviveFriendLoud2Trevor
 		{
-		    criteria Concept_C1M1_ElevatorHello02d IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C1M1_ElevatorHello02dProducer
-		    then mechanic _C1M1_ElevatorHello03d foo:0 -0.555
+		    criteria ConceptPlayerReviveFriend IsNotCoughing IsTrevor InIntenseCombat IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response PlayerReviveFriendLoudMechanic
+		    ApplyContext "TalkTrevor:1:5"
 		}
 	},
 
 	{
-		Rule _C1M1_ElevatorHello03cSheva
+		Rule PlayerReviveFriendLoudCritTrevor
 		{
-		    criteria Concept_C1M1_ElevatorHello03c IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C1M1_ElevatorHello03cProducer
-		    then gambler _C1M1_ElevatorHello04c foo:0 -1.195
+		    criteria ConceptPlayerReviveFriendCritical IsNotCoughing IsTrevor InIntenseCombat IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response PlayerReviveFriendLoudMechanic
+		    ApplyContext "TalkTrevor:1:5"
 		}
 	},
 
 	{
-		Rule _C1M1_ElevatorHello04bSheva
+		Rule PlayerReviveFriendLoudCrit2Trevor
 		{
-		    criteria Concept_C1M1_ElevatorHello04b IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C1M1_ElevatorHello04bProducer
-		    then mechanic _C1M1_ElevatorHello05b foo:0 -1.195
+		    criteria ConceptPlayerReviveFriendCritical IsNotCoughing IsTrevor IsZombiePresentTank IsSaidTankWarn2 IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    // 	forceweight 30
+		    Response PlayerReviveFriendLoudMechanic
+		    ApplyContext "TalkTrevor:1:5"
 		}
 	},
 
 	{
-		Rule _C1M1_ElevatorHello04dSheva
+		Rule _C1M1_ElevatorHelloTrevor
 		{
-		    criteria Concept_C1M1_ElevatorHello04d IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C1M1_ElevatorHello04dProducer
+		    criteria Concept_C1M1_ElevatorHello IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C1M1_ElevatorHelloMechanic
 		}
 	},
 
 	{
-		Rule _C1M1_ElevatorHello07aSheva
+		Rule _C1M1_ElevatorHello02cTrevor
 		{
-		    criteria Concept_C1M1_ElevatorHello07a IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C1M1_ElevatorHello07aProducer
-		    then mechanic _C1M1_ElevatorHello12a foo:0 -2.849
+		    criteria Concept_C1M1_ElevatorHello02c IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C1M1_ElevatorHello02cMechanic
+		    then producer _C1M1_ElevatorHello03c foo:0 -1.856
 		}
 	},
 
 	{
-		Rule _C1M1_ElevatorHello07cSheva
+		Rule _C1M1_ElevatorHello03aTrevor
 		{
-		    criteria Concept_C1M1_ElevatorHello07c IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C1M1_ElevatorHello07cProducer
-		    then mechanic _C1M1_ElevatorHello07d foo:0 0.1
+		    criteria Concept_C1M1_ElevatorHello03a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C1M1_ElevatorHello03aMechanic
+		    then self _C1M1_ElevatorHello03e foo:0 -8.671
 		}
 	},
 
 	{
-		Rule _C1M1_ElevatorHello07eSheva
+		Rule _C1M1_ElevatorHello03eTrevor
 		{
-		    criteria Concept_C1M1_ElevatorHello07e IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C1M1_ElevatorHello07eProducer
-		    then mechanic _C1M1_ElevatorHello07f foo:0 0.1
+		    criteria Concept_C1M1_ElevatorHello03e IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C1M1_ElevatorHello03eMechanic
 		}
 	},
 
 	{
-		Rule _C1M1_ElevatorHello08bSheva
+		Rule _C1M1_ElevatorHello03dTrevor
 		{
-		    criteria Concept_C1M1_ElevatorHello08b IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C1M1_ElevatorHello08bProducer
-		    then mechanic _C1M1_ElevatorHello08c foo:0 0.1
+		    criteria Concept_C1M1_ElevatorHello03d IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C1M1_ElevatorHello03dMechanic
+		    then gambler _C1M1_ElevatorHello04d foo:0 -0.479
 		}
 	},
 
 	{
-		Rule _C1M1_ElevatorHello08dSheva
+		Rule _C1M1_ElevatorHello05bTrevor
 		{
-		    criteria Concept_C1M1_ElevatorHello08d IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C1M1_ElevatorHello08dProducer
-		    then mechanic _C1M1_ElevatorHello08e foo:0 0.1
+		    criteria Concept_C1M1_ElevatorHello05b IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C1M1_ElevatorHello05bMechanic
 		}
 	},
 
 	{
-		Rule _C1M1_ElevatorHello09aSheva
+		Rule _C1M1_ElevatorHello05cRochelleTrevor
 		{
-		    criteria Concept_C1M1_ElevatorHello09a IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C1M1_ElevatorHello09aProducer
-		    then gambler _C1M1_ElevatorHello04e foo:0 -3.927
+		    criteria Concept_C1M1_ElevatorHello05c IsTrevor FromIsProducer AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C1M1_ElevatorHello05cRochelleMechanic
+		    then coach _C1M1_ElevatorHello03c foo:0 0.1
 		}
 	},
 
 	{
-		Rule _C1M1_ElevatorHello11aSheva
+		Rule _C1M1_ElevatorHello05cCoachTrevor
 		{
-		    criteria Concept_C1M1_ElevatorHello11a IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C1M1_ElevatorHello11aProducer
-		    then coach _C1M1_ElevatorHello07g foo:0 -1.195
+		    criteria Concept_C1M1_ElevatorHello05c IsTrevor FromIsCoach AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C1M1_ElevatorHello05cCoachMechanic
+		    then Producer _C1M1_ElevatorHello03c foo:0 0.1
 		}
 	},
 
 	{
-		Rule _C1M1_ElevatorHello13aSheva
+		Rule _C1M1_ElevatorHello05cNickTrevor
 		{
-		    criteria Concept_C1M1_ElevatorHello13a IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C1M1_ElevatorHello13aProducer
-		    then coach _C1M1_ElevatorHello13b foo:0 0.1
+		    criteria Concept_C1M1_ElevatorHello05c IsTrevor FromIsGambler AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C1M1_ElevatorHello05cNickMechanic
+		    then Producer _C1M1_ElevatorHello11a foo:0 0.1
 		}
 	},
 
 	{
-		Rule _C1M1_ElevatorHello13bSheva
+		Rule _C1M1_ElevatorHello07bTrevor
 		{
-		    criteria Concept_C1M1_ElevatorHello13b IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C1M1_ElevatorHello13bProducer
-		    then gambler _C1M1_ElevatorHello13d foo:0 -1.195
+		    criteria Concept_C1M1_ElevatorHello07b IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C1M1_ElevatorHello07bMechanic
+		    then producer _C1M1_ElevatorHello07c foo:0 0.1
 		}
 	},
 
 	{
-		Rule _C1M1_ElevatorHello13cSheva
+		Rule _C1M1_ElevatorHello07dTrevor
 		{
-		    criteria Concept_C1M1_ElevatorHello13c IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C1M1_ElevatorHello13cProducer
-		    then gambler _C1M1_ElevatorHello04c foo:0 -1.195
+		    criteria Concept_C1M1_ElevatorHello07d IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C1M1_ElevatorHello07dMechanic
+		    then coach _C1M1_ElevatorHello07g foo:0 0.1
 		}
 	},
 
 	{
-		Rule _c1m4startelevator3aSheva
+		Rule _C1M1_ElevatorHello07fTrevor
 		{
-		    criteria Concept_c1m4startelevator3a IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _c1m4startelevator3aProducer
-		    then mechanic _c1m4startelevator3b foo:0 0.2
+		    criteria Concept_C1M1_ElevatorHello07f IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C1M1_ElevatorHello07fMechanic
+		    then any c1m1_elevator_ready2 foo:0 0.1
+		    ApplyContext "LongElevatorIntro:1:0"
+		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule _c1m4startelevator3cSheva
+		Rule _C1M1_ElevatorHello08aTrevor
 		{
-		    criteria Concept_c1m4startelevator3c IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _c1m4startelevator3cProducer
-		    then any _c1m4startelevatorLast foo:0 -5.233
+		    criteria Concept_C1M1_ElevatorHello08a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C1M1_ElevatorHello08aMechanic
+		    then producer _C1M1_ElevatorHello08b foo:0 0.1
 		}
 	},
 
 	{
-		Rule _c1m4startelevator5aSheva
+		Rule _C1M1_ElevatorHello08cTrevor
 		{
-		    criteria Concept_c1m4startelevator5a IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _c1m4startelevator5aProducer
-		    then mechanic _c1m4startelevator5a foo:0 -5.233
+		    criteria Concept_C1M1_ElevatorHello08c IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C1M1_ElevatorHello08cMechanic
+		    then producer _C1M1_ElevatorHello08d foo:0 0.1
 		}
 	},
 
 	{
-		Rule _c1m4startelevatorLastSheva
+		Rule _C1M1_ElevatorHello08eTrevor
 		{
-		    criteria Concept_c1m4startelevatorLast IsSheva ElevatorTimeNotUp AutoIsNotScavenge AutoIsNotSurvival
-		    Response _c1m4startelevatorLastProducer
+		    criteria Concept_C1M1_ElevatorHello08e IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C1M1_ElevatorHello08eMechanic
+		    then coach _C1M1_ElevatorHello07g foo:0 0.1
+		}
+	},
+
+	{
+		Rule _C1M1_ElevatorHello09aTrevor
+		{
+		    criteria Concept_C1M1_ElevatorHello09a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C1M1_ElevatorHello09aMechanic
+		    then producer _C1M1_ElevatorHello09a foo:0 0.1
+		}
+	},
+
+	{
+		Rule _C1M1_ElevatorHello12aTrevor
+		{
+		    criteria Concept_C1M1_ElevatorHello12a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C1M1_ElevatorHello12aMechanic
+		    then Coach _C1M1_ElevatorHello07g foo:0 0.1
+		}
+	},
+
+	{
+		Rule _C1M1_ElevatorHello13aTrevor
+		{
+		    criteria Concept_C1M1_ElevatorHello13a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C1M1_ElevatorHello13aMechanic
+		    then from _C1M1_ElevatorHello13a foo:0 -2.554
+		}
+	},
+
+	{
+		Rule _c1m4startelevator2Trevor
+		{
+		    criteria Concept_c1m4startelevator2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _c1m4startelevator2Mechanic
+		    then any _c1m4startelevator5a foo:0 -8.777
+		}
+	},
+
+	{
+		Rule _c1m4startelevator2aTrevor
+		{
+		    criteria Concept_c1m4startelevator2a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _c1m4startelevator2aMechanic
+		    then trevor _c1m4startelevator3e foo:0 -2.084
+		}
+	},
+
+	{
+		Rule _c1m4startelevator2bTrevor
+		{
+		    criteria Concept_c1m4startelevator2b IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _c1m4startelevator2bMechanic
+		    then trevor _c1m4startelevator3c foo:0 -1.250
+		}
+	},
+
+	{
+		Rule _c1m4startelevator2cTrevor
+		{
+		    criteria Concept_c1m4startelevator2c IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _c1m4startelevator2cMechanic
+		    then producer _c1m4startelevator5a foo:0 -12.096
+		}
+	},
+
+	{
+		Rule _c1m4startelevator3Trevor
+		{
+		    criteria Concept_c1m4startelevator3 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _c1m4startelevator3Mechanic
+		    then producer _c1m4startelevator3a foo:0 0.2
+		}
+	},
+
+	{
+		Rule _c1m4startelevator3bTrevor
+		{
+		    criteria Concept_c1m4startelevator3b IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _c1m4startelevator3bMechanic
+		    then producer _c1m4startelevator3c foo:0 0.2
+		}
+	},
+
+	{
+		Rule _c1m4startelevator3cTrevor
+		{
+		    criteria Concept_c1m4startelevator3c IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _c1m4startelevator3cMechanic
+		    then coach _c1m4startelevator5a foo:0 -4.225
+		}
+	},
+
+	{
+		Rule _c1m4startelevator3dTrevor
+		{
+		    criteria Concept_c1m4startelevator3d IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _c1m4startelevator3dMechanic
+		    then gambler _c1m4startelevator5a foo:0 -4.225
+		}
+	},
+
+	{
+		Rule _c1m4startelevator3eTrevor
+		{
+		    criteria Concept_c1m4startelevator3e IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _c1m4startelevator3eMechanic
+		    then gambler _c1m4startelevator5a foo:0 -8.562
+		}
+	},
+
+	{
+		Rule _c1m4startelevator5aTrevor
+		{
+		    criteria Concept_c1m4startelevator5a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _c1m4startelevator5aMechanic
+		    then any _c1m4startelevatorLast foo:0 -4.282
+		}
+	},
+
+	{
+		Rule _c1m4startelevator5a1Trevor
+		{
+		    criteria Concept_c1m4startelevator5a1 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _c1m4startelevator5a1Mechanic
+		    then gambler _c1m4startelevator6a1 foo:0 -4.779
+		}
+	},
+
+	{
+		Rule _c1m4startelevator5bTrevor
+		{
+		    criteria Concept_c1m4startelevator5b IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _c1m4startelevator5bMechanic
+		    then trevor _c1m4startelevator5a foo:0 -2.936
+		}
+	},
+
+	{
+		Rule _c1m4startelevatorLastTrevor
+		{
+		    criteria Concept_c1m4startelevatorLast IsTrevor ElevatorTimeNotUp AutoIsNotScavenge AutoIsNotSurvival
+		    Response _c1m4startelevatorLastMechanic
 		    ApplyContext "Talk:1:5"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule _c1m4startelevatorLastSheva
+		Rule _c1m4startelevatorLastTimeUpTrevor
 		{
-		    criteria Concept_c1m4startelevatorLast IsSheva ElevatorTimeUp AutoIsNotScavenge AutoIsNotSurvival
+		    criteria Concept_c1m4startelevatorLast IsTrevor ElevatorTimeUp AutoIsNotScavenge AutoIsNotSurvival
 		    Response NoResponse
 		    ApplyContext "Talk:0:0"
 		    applycontexttoworld
@@ -9862,188 +10835,245 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule _C2M1_Fall02Sheva
+		Rule _c2m1_searchlights01Trevor
 		{
-		    criteria Concept_C2M1_Fall02 IsSheva NotInCombat IssuerClose AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C2M1_Fall02Producer
-		}
-	},
-
-	{
-		Rule _c2m1_searchlights01Sheva
-		{
-		    criteria Concept_c2m1_searchlights01 IsSheva NotInCombat IssuerClose AutoIsNotScavenge AutoIsNotSurvival
-		    Response _c2m1_searchlights01Producer
-		    ApplyContext "Talk:1:2.003"
+		    criteria Concept_c2m1_searchlights01 IsTrevor NotInCombat IssuerClose AutoIsNotScavenge AutoIsNotSurvival
+		    Response _c2m1_searchlights01Mechanic
+		    ApplyContext "Talk:1:2.662"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule _c2m1_searchlights04Sheva
+		Rule _c2m1_searchlights04Trevor
 		{
-		    criteria Concept_c2m1_searchlights04 IsSheva NotInCombat AutoIsNotScavenge AutoIsNotSurvival
-		    Response _c2m1_searchlights04Producer
-		    ApplyContext "Talk:1:2.003"
+		    criteria Concept_c2m1_searchlights04 IsTrevor NotInCombat IssuerClose AutoIsNotScavenge AutoIsNotSurvival
+		    Response _c2m1_searchlights04Mechanic
+		    then from _c2m1_searchlights04 foo:0 0.1
+		    ApplyContext "Talk:1:2.662"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule _C2M1abandoned02Sheva
+		Rule _C2M2_Bathroom01Trevor
 		{
-		    criteria Concept_C2M1abandoned02 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C2M1abandoned02Producer
+		    criteria Concept_C2M2_Bathroom01 IsTrevor NotInCombat IsSubjectDistNear200 AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C2M2_Bathroom01Mechanic
 		}
 	},
 
 	{
-		Rule _C2M2_Kiddie01Sheva
+		Rule _C2M2_CaroStart03Trevor
 		{
-		    criteria Concept_C2M2_Kiddie01 IsSheva NotInCombat IsSubjectDistNear500 ChanceToFire50Percent AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C2M2_Kiddie01Producer
-		    then self _C2M2_Kiddie02 foo:0 0.3
-		    ApplyContext "Talk:1:1.713"
+		    criteria Concept_C2M2_CaroStart03 IsTrevor IsNotIncapacitated AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C2M2_CaroStart03Mechanic
+		    then self _C2M2_CaroStart04 foo:0 0.2
+		}
+	},
+
+	{
+		Rule _C2M2_CaroStart04Trevor
+		{
+		    criteria Concept_C2M2_CaroStart04 IsTrevor IsNotIncapacitated AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C2M2_CaroStart04Mechanic
+		}
+	},
+
+	{
+		Rule _C2M2_Kiddie03Trevor
+		{
+		    criteria Concept_C2M2_Kiddie03 IsTrevor NotInCombat IsSubjectDistNear500 ChanceToFire80Percent AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C2M2_Kiddie03Mechanic
+		    then any _C2M2_Kiddie04 foo:0 0.1
+		    ApplyContext "Talk:1:5.572"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule _C2M2_Kiddie02Sheva
+		Rule _C2M2_Peanut01Trevor
 		{
-		    criteria Concept_C2M2_Kiddie02 IsSheva NotInCombat IsSubjectDistNear500 ChanceToFire80Percent AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C2M2_Kiddie02Producer
-		    ApplyContext "Talk:1:3.566"
+		    criteria Concept_C2M2_Peanut01 IsTrevor NotInCombat IsSubjectDistNear800 ChanceToFire80Percent AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C2M2_Peanut01Mechanic
+		    ApplyContext "Talk:1:6.681"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule _C2M2_Kiddie05Sheva
+		Rule _C2M2_Slide01Trevor
 		{
-		    criteria Concept_C2M2_Kiddie05 IsSheva NotInCombat IsSubjectDistNear500 ChanceToFire80Percent AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C2M2_Kiddie05Producer
-		    ApplyContext "Talk:1:2.576"
+		    criteria Concept_C2M2_Slide01 IsTrevor NotInCombat IsSubjectDistNear400 ChanceToFire80Percent AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C2M2_Slide01Mechanic
+		    ApplyContext "Talk:1:2.922"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule _C2M2_CobblerSheva
+		Rule _C2M2_ThisTall02Trevor
 		{
-		    criteria Concept_C2M2_Cobbler IsSheva IssuerClose ChanceToFire40Percent AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C2M2_CobblerProducer
-		    ApplyContext "Talk:1:3"
+		    criteria Concept_C2M2_ThisTall02 IsTrevor NotInCombat IssuerClose ChanceToFire80Percent AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C2M2_ThisTall02Mechanic
+		    ApplyContext "Talk:1:2.201"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule _C2M2_Steak01Sheva
+		Rule _C2M2_ThisTall02NickTrevor
 		{
-		    criteria Concept_C2M2_Steak01 IsSheva NotInCombat IsSubjectDistNear500 ChanceToFire80Percent AutoIsNotScavenge AutoIsNotSurvival _auto_NotAlarm
-		    Response _C2M2_Steak01Producer
-		    ApplyContext "Talk:1:9.2"
+		    criteria Concept_C2M2_ThisTall02 IsTrevor NotInCombat IssuerClose FromIsGambler TrevorNotTall AutoIsNotScavenge AutoIsNotSurvival
+		    // 	forceweight 100
+		    Response _C2M2_ThisTall02NickMechanic
+		    then Gambler _C2M2_ThisTall02 foo:0 0.1
+		    ApplyContext "Talk:1:2.201"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule _C2M2_ThisTall01Sheva
+		Rule _C2M2_LikeTatersTrevor
 		{
-		    criteria Concept_C2M2_ThisTall01 IsSheva NotInCombat IsSubjectDistNear500 ChanceToFire80Percent AutoIsNotScavenge AutoIsNotSurvival _auto_NotAlarm
-		    Response _C2M2_ThisTall01Producer
-		    ApplyContext "Talk:1:2.272"
+		    criteria Concept_C2M2_LikeTaters IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response _C2M2_LikeTatersMechanic
+		    ApplyContext "TalkTrevor:1:4.435"
+		}
+	},
+
+	{
+		Rule _C2M2_Kiddie06Trevor
+		{
+		    criteria Concept_C2M2_Kiddie06 IsTrevor NotInCombat AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C2M2_ThisTall02Mechanic
+		    ApplyContext "Talk:1:2.201,TrevorTallJoke:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule _C2M2_MiscFoodSheva
+		Rule _c2m3_cement01Trevor
 		{
-		    criteria Concept_C2M2_MiscFood IsSheva NotInCombat ChanceToFire40Percent IssuerClose AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C2M2_MiscFoodProducer
-		    ApplyContext "Talk:1:3"
+		    criteria Concept_c2m3_cement01 IsTrevor NotInCombat IsNotIncapacitated IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotSurvival AutoIsNotScavenge
+		    Response _c2m3_cement01Mechanic
+		}
+	},
+
+	{
+		Rule _c2m3_coaster01Trevor
+		{
+		    criteria Concept_c2m3_coaster01 IsTrevor AutoIsNotScavenge AutoIsNotSurvival _auto_NotAlarm
+		    Response _c2m3_coaster01Mechanic
+		    then self _c2m3_coaster07 foo:0 0.3
+		    ApplyContext "Talk:1:2.653"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule _C2M2_OkraSheva
+		Rule _c2m3_coaster03Trevor
 		{
-		    criteria Concept_C2M2_Okra IsSheva NotInCombat IssuerClose AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C2M2_OkraProducer
-		    ApplyContext "Talk:1:3"
+		    criteria Concept_c2m3_coaster03 IsTrevor AutoIsNotScavenge AutoIsNotSurvival _auto_NotAlarm
+		    Response _c2m3_coaster03Mechanic
+		    ApplyContext "Talk:1:2.171"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m2_okraSheva
+		Rule _c2m3_coaster06Trevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m2_okra IsNotSaidc2m2_okra IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival _auto_NotCoachFoodBreak _auto_NotAlarm IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m2_okraProducer
-		    then coach _C2M2_Okra foo:0 0.1
-		    ApplyContext "Saidc2m2_okra:1:0,Talk:1:6.240,_auto_CoachFoodBreak:1:15"
+		    criteria Concept_c2m3_coaster06 IsTrevor AutoIsNotScavenge AutoIsNotSurvival _auto_NotAlarm
+		    Response _c2m3_coaster06Mechanic
+		    then self _c2m3_coaster07 foo:0 0.3
+		    ApplyContext "Talk:1:2.653"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkc2m2_okrabSheva
+		Rule _c2m3_coaster07Trevor
 		{
-		    criteria ConceptRemark IsSheva Isc2m2_okra2 IsNotSaidc2m2_okra IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival _auto_NotCoachFoodBreak _auto_NotAlarmV2 IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m2_okraProducer
-		    then coach _C2M2_Okra foo:0 0.1
-		    ApplyContext "Saidc2m2_okra:1:0,Talk:1:6.240,_auto_CoachFoodBreak:1:15"
+		    criteria Concept_c2m3_coaster07 IsTrevor AutoIsNotScavenge AutoIsNotSurvival _auto_NotAlarm
+		    Response _c2m3_coaster07Mechanic
+		    then any _c2m3_coaster05 foo:0 0.01
+		    ApplyContext "Talk:1:2.194"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule _C2M4_GateOpen001Sheva
+		Rule _c2m3_coaster08Trevor
 		{
-		    criteria Concept_C2M4_GateOpen001 IsSheva IsNotIncapacitated AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C2M4_GateOpen001Producer
+		    criteria Concept_c2m3_coaster08 IsTrevor AutoIsNotScavenge AutoIsNotSurvival _auto_NotAlarm
+		    Response _c2m3_coaster08Mechanic
+		    then self _c2m3_coaster07 foo:0 0.3
+		    ApplyContext "Talk:1:2.653"
+		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule _C4_BigStormHits01Sheva
+		Rule _c2m3_coollight01Trevor
 		{
-		    criteria Concept_C4_BigStormHits01 IsSheva _auto_NotC4ShevaInCover _auto_IsTimerA FromIsAnOrator
-		    Response _C4_BigStormHits01Producer
+		    criteria Concept_c2m3_coollight01 IsTrevor IssuerClose IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _c2m3_coollight01Mechanic
+		}
+	},
+
+	{
+		Rule _c2m3_howcoolTrevor
+		{
+		    criteria Concept_c2m3_howcool IsTrevor ChanceToFire50Percent NotInCombat AutoIsNotScavenge AutoIsNotSurvival
+		    Response _c2m3_howcoolMechanic
+		}
+	},
+
+	{
+		Rule _C2M4_GateOpen001Trevor
+		{
+		    criteria Concept_C2M4_GateOpen001 IsTrevor IsNotIncapacitated AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C2M4_GateOpen001Mechanic
+		}
+	},
+
+	{
+		Rule _C4_BigStormHits01Trevor
+		{
+		    criteria Concept_C4_BigStormHits01 IsTrevor _auto_NotC4TrevorInCover _auto_IsTimerA FromIsAnOrator
+		    Response _C4_BigStormHits01Mechanic
 		    then any _C4_BigStormHits02 foo:0 0.04
-		    ApplyContext "Talk:1:1.662"
+		    ApplyContext "Talk:1:1.139"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule _C4_BigStormHits02Sheva
+		Rule _C4_BigStormHits02Trevor
 		{
-		    criteria Concept_C4_BigStormHits02 IsSheva IsNotCoughing IssuerClose IsNotIncapacitated _auto_NotC4ShevaInCover
-		    Response _C4_BigStormHits02Producer
-		    ApplyContext "Talk:1:1.050"
+		    criteria Concept_C4_BigStormHits02 IsTrevor IsNotCoughing IssuerClose IsNotIncapacitated _auto_NotC4TrevorInCover
+		    Response _C4_BigStormHits02Mechanic
+		    ApplyContext "Talk:1:1.845"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule _c4m1_rainresponseSheva
+		Rule _c4m1_rainresponseTrevor
 		{
-		    criteria Concept_c4m1_rainresponse IsSheva NotInCombat IsTalkSheva IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival IsNotSaidc4m1_rainresponse
-		    Response _c4m1_rainresponseProducer
+		    criteria Concept_c4m1_rainresponse IsTrevor NotInCombat IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSaidc4m1_rainresponse
+		    Response _c4m1_rainresponseMechanic
 		    ApplyContext "Saidc4m1_rainresponse:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C4M1IntroSheva
+		Rule C4M1IntroTrevor
 		{
-		    criteria ConceptIntroC4M1 IsSheva IsNotSaidCXM1Intro AutoIsNotScavenge AutoIsNotSurvival
-		    Response C4M1IntroProducer
+		    criteria ConceptIntroC4M1 IsTrevor IsNotSaidCXM1Intro AutoIsNotScavenge AutoIsNotSurvival
+		    Response C4M1IntroMechanic
 		    then orator _c4m1Intro01 foo:0 0.01
 		    ApplyContext "CXM1Intro:1:0,Saidremark_caralarm:1:400"
 		    applycontexttoworld
@@ -10051,274 +11081,354 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule _c4m1Intro03Sheva
+		Rule _c4m1Intro05Trevor
 		{
-		    criteria Concept_c4m1Intro03 IsSheva IsEveryoneAlive AutoIsNotScavenge AutoIsNotSurvival
-		    Response _c4m1Intro03Producer
-		    then gambler _c4m1Intro04 foo:0 0.01
+		    criteria Concept_c4m1Intro05 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _c4m1Intro05Mechanic
+		    then coach _c4m1Intro05 foo:0 0.01
 		}
 	},
 
 	{
-		Rule _c4m1Intro04Sheva
+		Rule _c4m1Intro07Trevor
 		{
-		    criteria Concept_c4m1Intro04 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _c4m1Intro04Producer
-		    then coach _c4m1Intro04 foo:0 0.01
+		    criteria Concept_c4m1Intro07 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _c4m1Intro07Mechanic
+		    then any _c4m1Intro07 foo:0 0.01
 		}
 	},
 
 	{
-		Rule _c4m1Intro06Sheva
+		Rule _c4m1Intro08Trevor
 		{
-		    criteria Concept_c4m1Intro06 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _c4m1Intro06Producer
-		    then mechanic _c4m1Intro07 foo:0 0.01
+		    criteria Concept_c4m1Intro08 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _c4m1Intro08Mechanic
+		    then any _c4m1Intro09 foo:0 -1.0
 		}
 	},
 
 	{
-		Rule _c4m1Intro08Sheva
+		Rule _c4m1Intro12Trevor
 		{
-		    criteria Concept_c4m1Intro08 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _c4m1Intro08Producer
-		    then self _c4m1Intro08 foo:0 0.01
+		    criteria Concept_c4m1Intro12 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _c4m1Intro12Mechanic
+		    then coach _c4m1Intro14 foo:0 -0.30
 		}
 	},
 
 	{
-		Rule _c4m1Intro10Sheva
+		Rule _c4m1Intro16Trevor
 		{
-		    criteria Concept_c4m1Intro10 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _c4m1Intro10Producer
-		    then gambler _c4m1Intro11 foo:0 0.01
+		    criteria Concept_c4m1Intro16 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _c4m1Intro16Mechanic
+		    then gambler _c4m1Intro07 foo:0 0.01
 		}
 	},
 
 	{
-		Rule _c4m2_caneyell01Sheva
+		Rule _c4m2_caneyell01Trevor
 		{
-		    criteria Concept_c4m2_caneyell01 IsSheva ChanceToFire50Percent AutoIsNotScavenge AutoIsNotSurvival _auto_IsShevaInCane
-		    Response _c4m2_caneyell01Producer
+		    criteria Concept_c4m2_caneyell01 IsTrevor ChanceToFire50Percent AutoIsNotScavenge AutoIsNotSurvival _auto_IsTrevorInCane
+		    Response _c4m2_caneyell01Mechanic
 		}
 	},
 
 	{
-		Rule _c4m2_ElevatorHere01Sheva
+		Rule _c4m2_ElevatorHere01Trevor
 		{
-		    criteria Concept_c4m2_ElevatorHere01 IsSheva IsNotIncapacitated IsNotCoughing AutoIsNotScavenge AutoIsNotSurvival
-		    Response _c4m2_ElevatorHere01Producer
+		    criteria Concept_c4m2_ElevatorHere01 IsTrevor IsNotIncapacitated IsNotCoughing AutoIsNotScavenge AutoIsNotSurvival
+		    Response _c4m2_ElevatorHere01Mechanic
 		}
 	},
 
 	{
-		Rule _c4m2_gasinside01Sheva
+		Rule _c4m2_gasinside01Trevor
 		{
-		    criteria Concept_c4m2_gasinside01 IsSheva NotInCombat IsSubjectDistNear400 AutoIsNotScavenge AutoIsNotSurvival _auto_NotShevaInCane
-		    Response _c4m2_gasinside01Producer
+		    criteria Concept_c4m2_gasinside01 IsTrevor NotInCombat IsSubjectDistNear400 AutoIsNotScavenge AutoIsNotSurvival _auto_NotTrevorInCane
+		    Response _c4m2_gasinside01Mechanic
 		}
 	},
 
 	{
-		Rule _c4m2_streetblocked01Sheva
+		Rule _c4m2_seestation01Trevor
 		{
-		    criteria Concept_c4m2_streetblocked01 IsSheva IsSubjectDistNear400 AutoIsNotScavenge AutoIsNotSurvival
-		    Response _c4m2_streetblocked01Producer
+		    criteria Concept_c4m2_seestation01 IsTrevor IsSubjectDistNear200 IsNotSaidActivatedC4M2Elevator NotInCombat AutoIsNotScavenge AutoIsNotSurvival
+		    Response _c4m2_seestation01Mechanic
+		    ApplyContext "Talk:1:2"
+		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule _c4m2_streetblocked01bSheva
+		Rule _c4m2_seestation02NTrevor
 		{
-		    criteria Concept_c4m2_streetblocked01 IsSheva IsSubjectDistFar400 AutoIsNotScavenge AutoIsNotSurvival
-		    Response _c4m2_streetblocked01bProducer
+		    criteria Concept_c4m2_seestation02 IsTrevor IsSubjectDistNear400 IsNotSaidActivatedC4M2Elevator FromIsGambler NotInCombat AutoIsNotScavenge AutoIsNotSurvival
+		    Response _c4m2_seestation02NMechanic
+		    then from _c4m2_seestation03 foo:0 0.01
+		    ApplyContext "Talk:1:2"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule _c4m2_seestation02RTrevor
+		{
+		    criteria Concept_c4m2_seestation02 IsTrevor IsSubjectDistNear400 IsNotSaidActivatedC4M2Elevator FromIsProducer NotInCombat AutoIsNotScavenge AutoIsNotSurvival
+		    Response _c4m2_seestation02RMechanic
+		    then from _c4m2_seestation03 foo:0 0.01
+		    ApplyContext "Talk:1:2"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule _c4m2_streetblocked01Trevor
+		{
+		    criteria Concept_c4m2_streetblocked01 IsTrevor IsSubjectDistNear400 AutoIsNotScavenge AutoIsNotSurvival
+		    Response _c4m2_streetblocked01Mechanic
+		}
+	},
+
+	{
+		Rule _c4m2_streetblocked01bTrevor
+		{
+		    criteria Concept_c4m2_streetblocked01 IsTrevor IsSubjectDistFar400 AutoIsNotScavenge AutoIsNotSurvival
+		    Response _c4m2_streetblocked01bMechanic
 		    then subject _c4m2_streetblocked02 foo:0 0.01
 		}
 	},
 
 	{
-		Rule _c4m2_streetblocked02Sheva
+		Rule _c4m2_streetblocked02Trevor
 		{
-		    criteria Concept_c4m2_streetblocked02 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _c4m2_streetblocked01Producer
+		    criteria Concept_c4m2_streetblocked02 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _c4m2_streetblocked01Mechanic
 		}
 	},
 
 	{
-		Rule _c4m2_Witchville02Sheva
+		Rule _c4m2_waterpool01Trevor
 		{
-		    criteria Concept_c4m2_Witchville02 IsSheva IssuerClose NotInCombat AutoIsNotScavenge AutoIsNotSurvival
-		    Response _c4m2_Witchville02Producer
+		    criteria Concept_c4m2_waterpool01 IsTrevor IsSubjectDistNear400 NotInCombat AutoIsNotScavenge AutoIsNotSurvival
+		    Response _c4m2_waterpool01Mechanic
 		}
 	},
 
 	{
-		Rule _c4m2_seestation01Sheva
+		Rule _c4m2_Witchville05Trevor
 		{
-		    criteria Concept_c4m2_seestation01 IsSheva IsSubjectDistNear200 IsNotSaidActivatedC4M2Elevator NotInCombat AutoIsNotScavenge AutoIsNotSurvival
-		    Response _c4m2_seestation01Producer
-		    then mechanic _c4m2_seestation02 foo:0 0.01
-		    ApplyContext "Talk:1:2"
-		    applycontexttoworld
+		    criteria Concept_c4m2_Witchville05 IsTrevor IssuerClose NotInCombat AutoIsNotScavenge AutoIsNotSurvival
+		    Response _c4m2_Witchville05Mechanic
 		}
 	},
 
 	{
-		Rule _c4m2_seestation03Sheva
+		Rule _c4m3_rain02Trevor
 		{
-		    criteria Concept_c4m2_seestation03 IsSheva IsSubjectDistNear200 IsNotSaidActivatedC4M2Elevator NotInCombat ChanceToFire50Percent AutoIsNotScavenge AutoIsNotSurvival
-		    Response _c4m2_seestation03Producer
-		    ApplyContext "Talk:1:2"
-		    applycontexttoworld
+		    criteria Concept_c4m3_rain02 IsTrevor NotInCombat IsSubjectDistNear400 AutoIsNotScavenge AutoIsNotSurvival
+		    Response _c4m3_rain02Mechanic
 		}
 	},
 
 	{
-		Rule _C4M5_FinaleStart01Sheva
+		Rule _c4m3_startsafe02Trevor
 		{
-		    criteria Concept_C4M5_FinaleStart01 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C4M5_FinaleStart01Producer
+		    criteria Concept_c4m3_startsafe02 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _c4m3_startsafe02Mechanic
+		    then any _c4m3_startsafe03 foo:0 0.2
 		}
 	},
 
 	{
-		Rule _C4M5_BoatComing01Sheva
+		Rule _c4m3_startsafe03Trevor
 		{
-		    criteria Concept_C4M5_BoatComing01 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C4M5_BoatComing01Producer
-		}
-	},
-
-	{
-		Rule _C4M5_Intro03Sheva
-		{
-		    criteria Concept_C4M5_Intro03 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C4M5_Intro03Producer
-		    then any _C4M5_Intro04 foo:0 0.1
-		}
-	},
-
-	{
-		Rule _C4M5_Intro04Sheva
-		{
-		    criteria Concept_C4M5_Intro04 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C4M5_Intro04Producer
+		    criteria Concept_c4m3_startsafe03 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _c4m3_startsafe03Mechanic
 		    then self IntroEnd foo:0 0.1
 		}
 	},
 
 	{
-		Rule PlayerRemarkc4m5_BurgerTankSheva
+		Rule _C4M4_FLOODED01Trevor
 		{
-		    criteria ConceptRemark IsSheva Isc4m5_burgertank IsNotSaidc4m5_burgertank IsNotCoughing IsTalk IsTalkSheva IsSubjectNear1000 IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m5_BurgerTankProducer
+		    criteria Concept_C4M4_FLOODED01 IsTrevor ChanceToFire50Percent AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C4M4_FLOODED01Mechanic
+		}
+	},
+
+	{
+		Rule _C4M4_garagesale01Trevor
+		{
+		    criteria Concept_C4M4_garagesale01 IsTrevor IssuerClose AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C4M4_garagesale01Mechanic
+		}
+	},
+
+	{
+		Rule _C4M5_BoatComing01Trevor
+		{
+		    criteria Concept_C4M5_BoatComing01 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C4M5_BoatComing01Mechanic
+		}
+	},
+
+	{
+		Rule _C4M5_Intro03Trevor
+		{
+		    criteria Concept_C4M5_Intro03 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C4M5_Intro03Mechanic
+		    then any _C4M5_Intro04 foo:0 0.1
+		}
+	},
+
+	{
+		Rule _C4M5_Intro04Trevor
+		{
+		    criteria Concept_C4M5_Intro04 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C4M5_Intro04Mechanic
+		    then self IntroEnd foo:0 0.1
+		}
+	},
+
+	{
+		Rule PlayerRemarkc4m5_BurgerTankTrevor
+		{
+		    criteria ConceptRemark IsTrevor Isc4m5_burgertank IsNotSaidc4m5_burgertank IsNotCoughing IsTalk IsTalkTrevor IsSubjectNear1000 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc4m5_BurgerTankMechanic
 		    ApplyContext "Saidc4m5_burgertank:1:0,Talk:1:2"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule _introc1m1MovieIntroSheva
+		Rule _introc1m1Trevor
 		{
-		    criteria Concept_introc1m1MovieIntro IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _introc1m1MovieIntroProducer
-		    then coach _introc1m1MovieIntro foo:0 -4
+		    criteria Concept_introc1m1 IsTrevor IsNotAlone AutoIsNotScavenge AutoIsNotSurvival
+		    Response _introc1m1Mechanic
+		    then any _introc1m1a01 foo:0 -1
 		}
 	},
 
 	{
-		Rule _introc1m1a02Sheva
+		Rule _introc1m1AloneTrevor
 		{
-		    criteria Concept_introc1m1a02 IsSheva IsNotAlone AutoIsNotScavenge AutoIsNotSurvival
-		    Response _introc1m1a02Producer
-		    then any _introc1m1a03 foo:0 -1
+		    criteria Concept_introc1m1 IsTrevor IsAlone AutoIsNotScavenge AutoIsNotSurvival
+		    Response _introc1m1AloneMechanic
 		}
 	},
 
 	{
-		Rule _introc1m1a02AloneSheva
+		Rule _introc1m1MovieIntroTrevor
 		{
-		    criteria Concept_introc1m1a02 IsSheva IsAlone AutoIsNotScavenge AutoIsNotSurvival
-		    Response _introc1m1a02AloneProducer
+		    criteria Concept_introc1m1 IsTrevor IsNotAlone ExtraWeight10 ChanceToFire5Percent AutoIsNotScavenge AutoIsNotSurvival
+		    Response _introc1m1MovieIntroMechanic
+		    then self _introc1m1MovieIntro foo:0 0.5
 		}
 	},
 
 	{
-		Rule _introc1m1a04Sheva
+		Rule _introc1m1MovieIntro2Trevor
 		{
-		    criteria Concept_introc1m1a04 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _introc1m1a04Producer
-		    then gambler _introc1m1a04 foo:0 0.1
+		    criteria Concept_introc1m1MovieIntro IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _introc1m1MovieIntro2Mechanic
+		    then producer _introc1m1MovieIntro foo:0 -1.5
 		}
 	},
 
 	{
-		Rule _introc1m1b05Sheva
+		Rule _introc1m1a04Trevor
 		{
-		    criteria Concept_introc1m1b05 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _introc1m1b05Producer
-		    then any _introc1m1b08 foo:0 0.1
+		    criteria Concept_introc1m1a04 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _introc1m1a04Mechanic
+		    then gambler _introc1m1b03 foo:0 -1.120
 		}
 	},
 
 	{
-		Rule _introc1m1b06Sheva
+		Rule _introc1m1a05Trevor
 		{
-		    criteria Concept_introc1m1b06 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _introc1m1b06Producer
+		    criteria Concept_introc1m1a05 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _introc1m1a05Mechanic
+		    then gambler _introc1m1b10 foo:0 0.1
+		}
+	},
+
+	{
+		Rule _introc1m1b02Trevor
+		{
+		    criteria Concept_introc1m1b02 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _introc1m1b02Mechanic
+		    then gambler _introc1m1b03 foo:0 -1.120
+		}
+	},
+
+	{
+		Rule _introc1m1b03Trevor
+		{
+		    criteria Concept_introc1m1b03 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _introc1m1b03Mechanic
+		    then gambler _introc1m1b06 foo:0 0.1
+		}
+	},
+
+	{
+		Rule _introc1m1lastTrevor
+		{
+		    criteria Concept_introc1m1last IsTrevor FromIsNotCoach ChanceToFire30Percent AutoIsNotScavenge AutoIsNotSurvival
+		    Response _introc1m1lastMechanic
 		    then self IntroEnd foo:0 0.1
 		}
 	},
 
 	{
-		Rule _introc1m1d01Sheva
+		Rule _introc1m1lastCoachTrevor
 		{
-		    criteria Concept_introc1m1d01 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _introc1m1d01Producer
+		    criteria Concept_introc1m1last IsTrevor FromIsCoach ChanceToFire30Percent AutoIsNotScavenge AutoIsNotSurvival
+		    Response _introc1m1lastCoachMechanic
+		    then self IntroEnd foo:0 0.1
+		}
+	},
+
+	{
+		Rule _introc1m1b05Trevor
+		{
+		    criteria Concept_introc1m1b05 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _introc1m1b05Mechanic
+		    then any _introc1m1b08 foo:0 0.1
+		}
+	},
+
+	{
+		Rule _introc1m1b06Trevor
+		{
+		    criteria Concept_introc1m1b06 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _introc1m1b06Mechanic
+		    then any _introc1m1last foo:0 -5.084
+		}
+	},
+
+	{
+		Rule _introc1m1b08Trevor
+		{
+		    criteria Concept_introc1m1b08 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _introc1m1b08Mechanic
+		    then any _introc1m1last foo:0 -5.084
+		}
+	},
+
+	{
+		Rule _introc1m1firealertTrevor
+		{
+		    criteria Concept_introc1m1firealert IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _introc1m1firealertMechanic
 		    then coach _introc1m1b08 foo:0 0.1
 		}
 	},
 
 	{
-		Rule _introc1m1lastSheva
+		Rule BlankTestoTrevor
 		{
-		    criteria Concept_introc1m1last IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _introc1m1lastProducer
-		    then self IntroEnd foo:0 0.1
-		}
-	},
-
-	{
-		Rule _introc1m1lastweaponsSheva
-		{
-		    criteria Concept_introc1m1lastweapons IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _introc1m1lastProducer
-		    then self IntroEnd foo:0 0.1
-		}
-	},
-
-	{
-		Rule _introc1m1b07Sheva
-		{
-		    criteria Concept_introc1m1b07 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _introc1m1b07Producer
-		    then any _introc1m1b08 foo:0 0.1
-		}
-	},
-
-	{
-		Rule _introc1m1b08Sheva
-		{
-		    criteria Concept_introc1m1b08 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _introc1m1b08Producer
-		    then any _introc1m1last foo:0 0.1
-		}
-	},
-
-	{
-		Rule BlankTestoSheva
-		{
-		    criteria ConceptBlankTesto IsSheva
+		    criteria ConceptBlankTesto IsTrevor
 		    Response NoResponse
 		    ApplyContext "_auto_BlankTesto:1:0"
 		    applycontexttoworld
@@ -10326,387 +11436,415 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule c1m1_elevator_door_openSheva
+		Rule c1m1_elevator_door_openTrevor
 		{
-		    criteria Conceptc1m1_elevator_door_open2 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response c1m1_elevator_door_openProducer
-		    then all C1M1Cough foo:0 -2.638
+		    criteria Conceptc1m1_elevator_door_open2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response c1m1_elevator_door_openMechanic
+		    then all C1M1Cough foo:0 -1.399
 		}
 	},
 
 	{
-		Rule c1m1_elevator_ready2Sheva
+		Rule c1m1_elevator_ready2Trevor
 		{
-		    criteria Conceptc1m1_elevator_ready2 IsSheva IsNotSaidC1M1OpenDoor AutoIsNotScavenge AutoIsNotSurvival
-		    Response c1m1_elevator_ready2Producer
-		    then sheva C1M1Cough foo:0 -2.467
+		    criteria Conceptc1m1_elevator_ready2 IsTrevor IsNotSaidC1M1OpenDoor AutoIsNotScavenge AutoIsNotSurvival
+		    Response c1m1_elevator_ready2Mechanic
+		    then Trevor C1M1Cough foo:0 -0.618
 		    ApplyContext "SaidC1M1OpenDoor:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule _C1M1_ElevatorHello2AliveName2Sheva
+		Rule _C1M1_ElevatorHello2AliveName1Trevor
 		{
-		    criteria Concept_C1M1_ElevatorHello2AliveName2 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C1M1_ElevatorHello2AliveName2Producer
+		    criteria Concept_C1M1_ElevatorHello2AliveName1 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C1M1_ElevatorHello2AliveName1Mechanic
+		    then any _C1M1_ElevatorHello2AliveName2 foo:0 -0.911
 		}
 	},
 
 	{
-		Rule _C1M1_ElevatorHello2AliveName2CSheva
+		Rule _C1M1_ElevatorHello2AliveName2Trevor
 		{
-		    criteria Concept_C1M1_ElevatorHello2AliveName2 IsSheva FromIsCoach ChanceToFire100Percent AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C1M1_ElevatorHello2AliveName2CProducer
+		    criteria Concept_C1M1_ElevatorHello2AliveName2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C1M1_ElevatorHello2AliveName2Mechanic
+		    then any _C1M1_ElevatorHello2AliveExtra1 foo:0 -0.911
 		}
 	},
 
 	{
-		Rule _C1M1_ElevatorHello2AliveExtra1Sheva
+		Rule _C1M1_ElevatorHello2AliveExtra1Trevor
 		{
-		    criteria Concept_C1M1_ElevatorHello2AliveExtra1 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C1M1_ElevatorHello2AliveExtra1Producer
-		    then any _C1M1_ElevatorHello2AliveExtra1 foo:0 0.1
+		    criteria Concept_C1M1_ElevatorHello2AliveExtra1 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C1M1_ElevatorHello2AliveExtra1Mechanic
+		    then any _C1M1_ElevatorHello2AliveExtra2 foo:0 0.1
 		}
 	},
 
 	{
-		Rule _C1M1_ElevatorHello2AliveExtra2Sheva
+		Rule _C1M1_ElevatorHello2AliveExtra2Trevor
 		{
-		    criteria Concept_C1M1_ElevatorHello2AliveExtra2 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C1M1_ElevatorHello2AliveExtra2Producer
+		    criteria Concept_C1M1_ElevatorHello2AliveExtra2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C1M1_ElevatorHello2AliveExtra2Mechanic
 		}
 	},
 
 	{
-		Rule _C1M1_ElevatorHello3AliveRochelleIntroSheva
+		Rule _C1M1_ElevatorHello3AliveName1Trevor
 		{
-		    criteria Concept_C1M1_ElevatorHello3AliveShevaIntro IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C1M1_ElevatorHello3AliveRochelleIntroProducer
-		    then any _C1M1_ElevatorHello3AliveName1 foo:0 0.1
-		    ApplyContext "ShevaIntroduced:1:0"
+		    criteria Concept_C1M1_ElevatorHello3AliveName1 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C1M1_ElevatorHello3AliveName1Mechanic
+		    then any _C1M1_ElevatorHello3AliveName2 foo:0 -1.856
+		}
+	},
+
+	{
+		Rule _C1M1_ElevatorHello3AliveName1RTrevor
+		{
+		    criteria Concept_C1M1_ElevatorHello3AliveName1 FromIsProducer ChanceToFire100Percent IsRochelleElevatorIntro IsNotTrevorIntroduced IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C1M1_ElevatorHello3AliveName1RMechanic
+		    then from _C1M1_ElevatorHello3AliveExtra2 foo:0 -1.856
+		    ApplyContext "TrevorIntroduced:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule _C1M1_ElevatorHello3AliveExtra1Sheva
+		Rule _C1M1_ElevatorHello3AliveName2RTrevor
 		{
-		    criteria Concept_C1M1_ElevatorHello3AliveExtra1 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C1M1_ElevatorHello3AliveExtra1Producer
-		    then from _C1M1_ElevatorHello3AliveName1 foo:0 0.1
-		    ApplyContext "ShevaElevatorIntro:1:0"
+		    criteria Concept_C1M1_ElevatorHello3AliveName2 FromIsProducer IsRochelleElevatorIntro ChanceToFire100Percent IsNotTrevorIntroduced IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C1M1_ElevatorHello3AliveName2RMechanic
+		    then from _C1M1_ElevatorHello3AliveName2 foo:0 -1.856
+		    ApplyContext "TrevorIntroduced:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule _C1M1_ElevatorHello3AliveExtra2Sheva
+		Rule _C1M1_ElevatorHello3AliveName2Trevor
 		{
-		    criteria Concept_C1M1_ElevatorHello3AliveExtra2 IsShevaElevatorIntro IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C1M1_ElevatorHello3AliveExtra2Producer
-		    then any _C1M1_ElevatorHello3AliveName2 foo:0 0.1
-		}
-	},
-
-	{
-		Rule _C1M1_ElevatorHello3AliveName1Sheva
-		{
-		    criteria Concept_C1M1_ElevatorHello3AliveName1 IsSheva IsNotShevaIntroduced AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C1M1_ElevatorHello3AliveName1Producer
-		    then any _C1M1_ElevatorHello3AliveName2 foo:0 -0.648
-		    ApplyContext "ShevaIntroduced:1:0"
+		    criteria Concept_C1M1_ElevatorHello3AliveName2 IsTrevor IsNotTrevorIntroduced AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C1M1_ElevatorHello3AliveName2Mechanic
+		    then any _C1M1_ElevatorHello3WhoIsDead foo:0 -0.911
+		    ApplyContext "TrevorIntroduced:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule _C1M1_ElevatorHello3AliveName2Sheva
+		Rule _C1M1_ElevatorHello3AliveWhoIsDeadTrevor
 		{
-		    criteria Concept_C1M1_ElevatorHello3AliveName2 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C1M1_ElevatorHello3AliveName2Producer
+		    criteria Concept_C1M1_ElevatorHello3AliveWhoIsDead IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C1M1_ElevatorHello3AliveWhoIsDeadMechanic
+		    then any _C1M1_ElevatorHello3NameDead foo:0 -0.671
 		}
 	},
 
 	{
-		Rule _C1M1_ElevatorHello3AliveName2CNSheva
+		Rule _C1M1_ElevatorHello3AliveNameDeadRTrevor
 		{
-		    criteria Concept_C1M1_ElevatorHello3AliveName2 IsSheva FromIsGambler IsMechanicNotAlive ChanceToFire100Percent AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C1M1_ElevatorHello3AliveName2CNProducer
-		    then self _C1M1_ElevatorHello3AliveExtraGuns foo:0 0.1
+		    criteria Concept_C1M1_ElevatorHello3AliveNameDead IsProducerNotAlive IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C1M1_ElevatorHello3AliveNameDeadRMechanic
 		}
 	},
 
 	{
-		Rule _C1M1_ElevatorHello3AliveExtraGunsSheva
+		Rule _C1M1_ElevatorHello3AliveNameDeadCTrevor
 		{
-		    criteria Concept_C1M1_ElevatorHello3AliveExtraGuns IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C1M1_ElevatorHello3AliveExtraGunsProducer
+		    criteria Concept_C1M1_ElevatorHello3AliveNameDead IsCoachNotAlive IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C1M1_ElevatorHello3AliveNameDeadCMechanic
+		    then any _C1M1_ElevatorHello3NameDead foo:0 -0.671
 		}
 	},
 
 	{
-		Rule _C1M1_ElevatorHello3AliveWhoIsDeadSheva
+		Rule _C1M1_ElevatorHello3AliveNameDeadNTrevor
 		{
-		    criteria Concept_C1M1_ElevatorHello3AliveWhoIsDead IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C1M1_ElevatorHello3AliveWhoIsDeadProducer
-		    then any _C1M1_ElevatorHello3AliveNameDead foo:0 -0.858
+		    criteria Concept_C1M1_ElevatorHello3AliveNameDead IsGamblerNotAlive IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response _C1M1_ElevatorHello3AliveNameDeadNMechanic
 		}
 	},
 
 	{
-		Rule _C1M1_ElevatorHello3AliveNameDeadNSheva
+		Rule Concept_C1M1_ElevatorHello3AliveNameDeadSelfTrevor
 		{
-		    criteria Concept_C1M1_ElevatorHello3AliveNameDead IsGamblerNotAlive IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C1M1_ElevatorHello3AliveNameDeadNProducer
+		    criteria Concept_C1M1_ElevatorHello3AliveNameDead IsTrevor IsCoachAlive ChanceToFire30Percent AutoIsNotScavenge AutoIsNotSurvival
+		    Response Concept_C1M1_ElevatorHello3AliveNameDeadSelfMechanic
+		    then coach _C1M1_ElevatorHello3AliveNameDead2 foo:0 0.1
 		}
 	},
 
 	{
-		Rule _C1M1_ElevatorHello3AliveNameDeadESheva
+		Rule C1M1CoughTrevor
 		{
-		    criteria Concept_C1M1_ElevatorHello3AliveNameDead IsMechanicNotAlive IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C1M1_ElevatorHello3AliveNameDeadEProducer
+		    criteria ConceptC1M1Cough IsTrevor ismap_c1m1_hotel AutoIsNotScavenge AutoIsNotSurvival
+		    Response C1M1CoughMechanic
 		}
 	},
 
 	{
-		Rule _C1M1_ElevatorHello3AliveNameDeadCSheva
+		Rule C1M2SafeRoomTrevor
 		{
-		    criteria Concept_C1M1_ElevatorHello3AliveNameDead IsCoachNotAlive IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C1M1_ElevatorHello3AliveNameDeadCProducer
-		}
-	},
-
-	{
-		Rule _C1M1_ElevatorHello3AliveExtraEnd1Sheva
-		{
-		    criteria Concept_C1M1_ElevatorHello3AliveExtraEnd1 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C1M1_ElevatorHello3AliveExtraEnd1Producer
-		}
-	},
-
-	{
-		Rule C1M1CoughSheva
-		{
-		    criteria ConceptC1M1Cough IsSheva ismap_c1m1_hotel AutoIsNotScavenge AutoIsNotSurvival
-		    Response C1M1CoughProducer
-		}
-	},
-
-	{
-		Rule C1M2SafeRoomSheva
-		{
-		    criteria ConceptTalkIdle IsSheva NotInCombat ismap_c1m2_streets IsInStartArea IsNotAlone IsNotSaidLeavingSafeArea AutoIsNotScavenge AutoIsNotSurvival _auto_IsSafeRoomStart _auto_NotSafeRoomQuiet IsNotSpeakingWeight0
-		    Response C1M2SafeRoomProducer
-		    then mechanic C1M2SafeRoomc1 foo:0 -2.170
+		    criteria ConceptTalkIdle IsTrevor NotInCombat ismap_c1m2_streets IsInStartArea IsNotAlone AutoIsNotScavenge AutoIsNotSurvival _auto_IsSafeRoomStart _auto_NotSafeRoomQuiet IsNotSaidLeavingSafeArea IsNotSpeakingWeight0
+		    Response C1M2SafeRoomMechanic
+		    then gambler C1M2SafeRoomb1 foo:0 -3.584
 		    ApplyContext "_auto_SafeRoomStart:2:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C1M3AlarmOffaSheva
+		Rule C1M2SafeRooma4Trevor
 		{
-		    criteria ConceptC1M3AlarmOffa IsSheva IsSubjectDistNear600 AutoIsNotScavenge AutoIsNotSurvival
-		    Response C1M3AlarmOffaProducer
+		    criteria ConceptC1M2SafeRooma4 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C1M2SafeRooma4Mechanic
+		    then producer C1M2SafeRooma3 foo:0 0.1
 		}
 	},
 
 	{
-		Rule C1M3SafeRoomSheva
+		Rule C1M2SafeRooma3Trevor
 		{
-		    criteria ConceptTalkIdle IsSheva NotInCombat IsInStartArea IsNotAlone IsNotSaidLeavingSafeArea ismap_c1m3_mall AutoIsNotScavenge AutoIsNotSurvival _auto_NotSafeRoomQuiet _auto_IsSafeRoomStart IsNotSpeakingWeight0
-		    Response C1M3SafeRoomProducer
-		    then gambler C1M3SafeRoom2a foo:0 -3.646
+		    criteria ConceptC1M2SafeRooma3 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C1M2SafeRooma3Mechanic
+		    then producer C1M2SafeRooma4 foo:0 0.1
+		}
+	},
+
+	{
+		Rule C1M3AlarmOffaTrevor
+		{
+		    criteria ConceptC1M3AlarmOffa IsTrevor IsSubjectDistNear600 AutoIsNotScavenge AutoIsNotSurvival
+		    Response C1M3AlarmOffaMechanic
+		}
+	},
+
+	{
+		Rule C1M3SafeRoomTrevor
+		{
+		    criteria ConceptTalkIdle IsTrevor NotInCombat IsInStartArea IsNotAlone IsNotSaidLeavingSafeArea ismap_c1m3_mall AutoIsNotScavenge AutoIsNotSurvival _auto_NotSafeRoomQuiet _auto_IsSafeRoomStart IsNotSpeakingWeight0
+		    Response C1M3SafeRoomMechanic
+		    then self IntroEnd foo:0 0.1
 		    ApplyContext "_auto_SafeRoomStart:2:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C1M3SafeRoom2eSheva
+		Rule C1M3SafeRoom2eTrevor
 		{
-		    criteria ConceptC1M3SafeRoom2e IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C1M3SafeRoom2eProducer
+		    criteria ConceptC1M3SafeRoom2e IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C1M3SafeRoom2eMechanic
 		    then self IntroEnd foo:0 0.1
 		}
 	},
 
 	{
-		Rule C1M4NearFinale03aSheva
+		Rule C1M4NearFinale03cTrevor
 		{
-		    criteria ConceptC1M4NearFinale03a IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C1M4NearFinale03aProducer
+		    criteria ConceptC1M4NearFinale03c IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C1M4NearFinale03cMechanic
 		}
 	},
 
 	{
-		Rule C1M4NearFinale02dSheva
+		Rule c1m4NearFinale1Trevor
 		{
-		    criteria ConceptC1M4NearFinale02d IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C1M4NearFinale02dProducer
+		    criteria Conceptc1m4NearFinale1 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response c1m4NearFinale1Mechanic
 		}
 	},
 
 	{
-		Rule c1m4NearFinale1Sheva
+		Rule C1M4SafeRoomTrevor
 		{
-		    criteria Conceptc1m4NearFinale1 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response c1m4NearFinale1Producer
-		}
-	},
-
-	{
-		Rule C1M4SafeRoomSheva
-		{
-		    criteria ConceptTalkIdle IsSheva NotInCombat IsInStartArea IsNotAlone IsNotSaidLeavingSafeArea ismap_c1m4_atrium AutoIsNotScavenge AutoIsNotSurvival _auto_NotSafeRoomQuiet _auto_IsSafeRoomStart IsNotSpeakingWeight0
-		    Response C1M4SafeRoomProducer
-		    then mechanic C1M4SafeRoom2b1 foo:0 -1.823
+		    criteria ConceptTalkIdle IsTrevor NotInCombat IsInStartArea IsNotAlone IsNotSaidLeavingSafeArea ismap_c1m4_atrium AutoIsNotScavenge AutoIsNotSurvival _auto_NotSafeRoomQuiet _auto_IsSafeRoomStart IsNotSpeakingWeight0
+		    Response C1M4SafeRoomMechanic
+		    then trevor C1M4SafeRoom2c1 foo:0 1.250
 		    ApplyContext "_auto_SafeRoomStart:2:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C1M4SafeRoom2b2Sheva
+		Rule C1M4SafeRoom2a1Trevor
 		{
-		    criteria ConceptC1M4SafeRoom2b2 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C1M4SafeRoom2b2Producer
-		    then mechanic C1M4SafeRoom2b3 foo:0 -2.719
+		    criteria ConceptC1M4SafeRoom2a1 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C1M4SafeRoom2a1Mechanic
+		    then gambler C1M4SafeRoom2a2 foo:0 -5.969
 		}
 	},
 
 	{
-		Rule C1M4SafeRoomEndSheva
+		Rule C1M4SafeRoom2b1Trevor
 		{
-		    criteria ConceptSurvivorLeavingInitialCheckpoint ismap_c1m4_atrium IsSheva IsNotSaidLeavingSafeArea _auto_NotTellingStory
-		    Response C1M4SafeRoomEndProducer
+		    criteria ConceptC1M4SafeRoom2b1 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C1M4SafeRoom2b1Mechanic
+		    then producer C1M4SafeRoom2b2 foo:0 -5.969
+		}
+	},
+
+	{
+		Rule C1M4SafeRoom2b3Trevor
+		{
+		    criteria ConceptC1M4SafeRoom2b3 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C1M4SafeRoom2b3Mechanic
+		    then trevor C1M4SafeRoom2b4 foo:0 -1.539
+		}
+	},
+
+	{
+		Rule C1M4SafeRoom2b4Trevor
+		{
+		    criteria ConceptC1M4SafeRoom2b4 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C1M4SafeRoom2b4Mechanic
+		    then coach C1M4SafeRoom2b5 foo:0 -1.719
+		}
+	},
+
+	{
+		Rule C1M4SafeRoom2a5Trevor
+		{
+		    criteria ConceptC1M4SafeRoom2a5 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C1M4SafeRoom2a5Mechanic
+		    then self IntroEnd foo:0 0.1
+		}
+	},
+
+	{
+		Rule C1M4SafeRoom2c1Trevor
+		{
+		    criteria ConceptC1M4SafeRoom2c1 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C1M4SafeRoom2c1Mechanic
+		    then self IntroEnd foo:0 0.1
+		}
+	},
+
+	{
+		Rule C1M4SafeRoomEndTrevor
+		{
+		    criteria ConceptSurvivorLeavingInitialCheckpoint ismap_c1m4_atrium IsTrevor IsNotSaidLeavingSafeArea _auto_NotTellingStory
+		    Response C1M4SafeRoomEndMechanic
 		    ApplyContext "SaidLeavingSafeArea:1:0,Talk:0:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C1M4FinaleStartResponseSheva
+		Rule C1M4FinaleStartResponseTrevor
 		{
-		    criteria ConceptC1M4FinaleStartResponse IsSheva
-		    Response C1M4FinaleStartResponseProducer
+		    criteria ConceptC1M4FinaleStartResponse IsTrevor
+		    Response C1M4FinaleStartResponseMechanic
 		}
 	},
 
 	{
-		Rule C2M1IntroStartSheva
+		Rule C2M1IntroStartTrevor
 		{
-		    criteria ConceptIntroC2M1 IsSheva IsNotSaidCXM1Intro IsNotAlone AutoIsNotScavenge AutoIsNotSurvival
-		    Response C2M1IntroStartProducer
-		    then Mechanic C2M1Intro002 foo:0 0.01
+		    criteria ConceptIntroC2M1 IsTrevor IsNotSaidCXM1Intro IsNotAlone AutoIsNotScavenge AutoIsNotSurvival
+		    Response C2M1IntroStartMechanic
+		    then Any C2M1Intro002 foo:0 0.01
 		    ApplyContext "CXM1Intro:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C2M1Intro002Sheva
+		Rule C2M1Intro002Trevor
 		{
-		    criteria ConceptC2M1Intro002 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C2M1Intro002Producer
-		    then coach C2M1Intro002 foo:0 0.01
+		    criteria ConceptC2M1Intro002 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C2M1Intro002Mechanic
+		    then Any C2M1Intro002 foo:0 0.02
 		}
 	},
 
 	{
-		Rule C2M1Intro003Sheva
+		Rule C2M1Intro003Trevor
 		{
-		    criteria ConceptC2M1Intro003 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C2M1Intro003Producer
+		    criteria ConceptC2M1Intro003 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C2M1Intro003Mechanic
+		    then Any C2M1Intro002 foo:0 0.02
+		}
+	},
+
+	{
+		Rule C2M1Intro005Trevor
+		{
+		    criteria ConceptC2M1Intro005 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C2M1Intro005Mechanic
+		    then any C2M1Intro_400 foo:0 0.5
+		    ApplyContext "Talk:1:10"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C2M1Intro008Trevor
+		{
+		    criteria ConceptC2M1Intro008 IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsInStartArea
+		    Response C2M1Intro008Mechanic
+		}
+	},
+
+	{
+		Rule C2M1Intro009Trevor
+		{
+		    criteria ConceptC2M1Intro009 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C2M1Intro009Mechanic
 		    then self IntroEnd foo:0 0.1
 		}
 	},
 
 	{
-		Rule C2M1Intro_400Sheva
+		Rule C2M4PenSmell001Trevor
 		{
-		    criteria ConceptC2M1Intro_400 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C2M1Intro_400Producer
-		    then mechanic C2M1Intro_400 foo:0 1
-		    ApplyContext "Talk:1:5.363"
-		    applycontexttoworld
+		    criteria ConceptC2M4PenSmell001 IsTrevor IsTalk NotInCombat IsGamblerNear400 IsNotCoughing AutoIsNotScavenge AutoIsNotSurvival
+		    Response C2M4PenSmell001Mechanic
 		}
 	},
 
 	{
-		Rule LeavingC2M1StartSheva
+		Rule C2M5_lipsync001Trevor
 		{
-		    criteria ConceptSurvivorLeavingCheckpoint IsNotSaidLeavingSafeArea IsSheva Ismap_c2m1 IsTalk
-		    Response LeavingC2M1StartProducer
-		    then mechanic C2M1Intro005 foo:0 0.1
-		    ApplyContext "SaidLeavingSafeArea:1:0"
-		    applycontexttoworld
+		    criteria ConceptC2M5_lipsync001 IsTrevor TimeSinceGroupInCombat02 NotInCombat IsNotSpeaking IsGamblerNear400 AutoIsNotScavenge AutoIsNotSurvival _auto_NotButton2
+		    Response C2M5_lipsync001Mechanic
 		}
 	},
 
 	{
-		Rule _C2M1MonsterTruckSheva
+		Rule C2M5_lipsync002Trevor
 		{
-		    criteria Concept_C2M1MonsterTruck IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response _C2M1MonsterTruckProducer
+		    criteria ConceptC2M5_lipsync002 IsTrevor TimeSinceGroupInCombat02 NotInCombat IsNotSpeaking IsCoachAlive IsCoachNear400 AutoIsNotScavenge AutoIsNotSurvival _auto_NotButton2
+		    Response C2M5_lipsync002Mechanic
 		}
 	},
 
 	{
-		Rule C2M4PenSmell001Sheva
+		Rule C4EnterCoverTrevor
 		{
-		    criteria ConceptC2M4PenSmell001 IsSheva IsTalk NotInCombat IssuerClose IsNotCoughing AutoIsNotScavenge AutoIsNotSurvival
-		    Response C2M4PenSmell001Producer
-		}
-	},
-
-	{
-		Rule C4EnterCoverSheva
-		{
-		    criteria ConceptC4EnterCover IsSheva
+		    criteria ConceptC4EnterCover IsTrevor
 		    Response NoResponse
-		    ApplyContext "_auto_C4ShevaInCover:1:0"
+		    ApplyContext "_auto_C4TrevorInCover:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C4ExitCoverSheva
+		Rule C4ExitCoverTrevor
 		{
-		    criteria ConceptC4ExitCover IsSheva
+		    criteria ConceptC4ExitCover IsTrevor
 		    Response NoResponse
-		    ApplyContext "_auto_C4ShevaInCover:0:0"
+		    ApplyContext "_auto_C4TrevorInCover:0:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule c4m1_InBurgerTank01Sheva
+		Rule C4FinaleStartTrevor
 		{
-		    criteria Conceptc4m1_InBurgerTank01 IsSheva NotInCombat AutoIsNotScavenge AutoIsNotSurvival
-		    Response c4m1_InBurgerTank01Producer
-		    ApplyContext "TalkSheva:1:3"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule c4m1_InBurgerTank02Sheva
-		{
-		    criteria Conceptc4m1_InBurgerTank02 IsSheva NotInCombat ChanceToFire40Percent AutoIsNotScavenge AutoIsNotSurvival
-		    Response c4m1_InBurgerTank02Producer
-		    ApplyContext "TalkSheva:1:3"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule C4FinaleStartSheva
-		{
-		    criteria ConceptC4FinaleStart IsSheva
-		    Response C4FinaleStartProducer
+		    criteria ConceptC4FinaleStart IsTrevor
+		    Response C4FinaleStartMechanic
 		    then any _C4M5_FinaleStart01 foo:0 0.01
 		    ApplyContext "_auto_NoLostCall:1:0"
 		    applycontexttoworld
@@ -10714,985 +11852,1065 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule PlayerRemarkc4m1_InBurgerTankSheva
+		Rule c4m1_nogas01Trevor
 		{
-		    criteria ConceptRemark IsSheva Isc4m1_InBurgerTank IsNotSaidc4m1_InBurgerTank IsNotCoughing IsTalk IsTalkSheva IsSubjectNear200 IsWorldTalkSheva AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m1_InBurgerTankProducer
-		    ApplyContext "Saidc4m1_InBurgerTank:1:0,TalkSheva:1:4"
+		    criteria Conceptc4m1_nogas01 IsTrevor NotInCombat IsSubjectDistNear500 AutoIsNotScavenge AutoIsNotSurvival
+		    Response c4m1_nogas01Mechanic
+		    then any c4m1_nogas02 foo:0 0.01
+		    ApplyContext "Talk:1:3.179"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule c4m1_nogas01Sheva
+		Rule c4m1_nogas10Trevor
 		{
-		    criteria Conceptc4m1_nogas01 IsSheva NotInCombat IsSubjectDistNear500 AutoIsNotScavenge AutoIsNotSurvival
-		    Response c4m1_nogas01Producer
-		    then coach c4m1_nogas06 foo:0 0.01
-		    ApplyContext "Talk:1:2.502"
+		    criteria Conceptc4m1_nogas10 IsTrevor NotInCombat IsSubjectDistNear300 AutoIsNotScavenge AutoIsNotSurvival
+		    Response c4m1_nogas10Mechanic
+		    then any c4m1_nogas02 foo:0 0.01
+		    ApplyContext "Talk:1:3.179"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule c4m1_nogas04Sheva
+		Rule c4m1_wreck01Trevor
 		{
-		    criteria Conceptc4m1_nogas04 IsSheva NotInCombat IsSubjectDistNear500 AutoIsNotScavenge AutoIsNotSurvival
-		    Response c4m1_nogas04Producer
-		    ApplyContext "Talk:1:2.502"
+		    criteria Conceptc4m1_wreck01 IsTrevor NotInCombat AutoIsNotScavenge AutoIsNotSurvival
+		    Response c4m1_wreck01Mechanic
+		    then self c4m1_wreck02 foo:0 0.03
+		}
+	},
+
+	{
+		Rule c4m1_wreck02Trevor
+		{
+		    criteria Conceptc4m1_wreck02 IsTrevor NotInCombat ChanceToFire60Percent AutoIsNotScavenge AutoIsNotSurvival
+		    Response c4m1_wreck02Mechanic
+		}
+	},
+
+	{
+		Rule GasPour20MoreTrevor
+		{
+		    criteria ConceptGasPour20More IsTrevor IsNotSpeaking _auto_IsGasCountOK
+		    Response GasPour20MoreMechanic
+		}
+	},
+
+	{
+		Rule GasPour10MoreTalkTrevor
+		{
+		    criteria ConceptGasPour10More IsTrevor IsNotSpeaking _auto_IsGasCountOK
+		    Response GasPour10MoreTalkMechanic
+		}
+	},
+
+	{
+		Rule GasPour1MoreTrevor
+		{
+		    criteria ConceptGasPour1More IsTrevor IsNotSpeaking _auto_IsGasCountOK
+		    Response GasPour1MoreMechanic
+		}
+	},
+
+	{
+		Rule GasPour2MoreTrevor
+		{
+		    criteria ConceptGasPour2More IsTrevor IsNotSpeaking _auto_IsGasCountOK
+		    Response GasPour2MoreMechanic
+		}
+	},
+
+	{
+		Rule GasPour3MoreTrevor
+		{
+		    criteria ConceptGasPour3More IsTrevor IsNotSpeaking _auto_IsGasCountOK
+		    Response GasPour3MoreMechanic
+		}
+	},
+
+	{
+		Rule GasPour5MoreTrevor
+		{
+		    criteria ConceptGasPour5More IsTrevor IsNotSpeaking _auto_IsGasCountOK
+		    Response GasPour5MoreMechanic
+		}
+	},
+
+	{
+		Rule Player_CoverMeC1RTrevor
+		{
+		    criteria ConceptPlayer_CoverMeC1R IsTrevor ChanceToFire20Percent
+		    Response Player_CoverMeC1RMechanic
+		}
+	},
+
+	{
+		Rule Player_CoverMeC1RCoach1Trevor
+		{
+		    criteria ConceptPlayer_CoverMeC1RCoach1 IsTrevor ChanceToFire20Percent
+		    Response Player_CoverMeC1RCoach1Mechanic
+		    then coach Player.CoverMeC1RCoach2 foo:0 -2.261
+		    ApplyContext "TalkCoach:1:3"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule GasPour20MoreSheva
+		Rule Player_GooedBySpitterC1RTrevor
 		{
-		    criteria ConceptGasPour20More IsSheva IsNotSpeaking _auto_IsGasCountOK
-		    Response GasPour20MoreProducer
+		    criteria ConceptPlayer_GooedBySpitterC1R IsTrevor IsNotIncapacitated IsTalkTrevor IsWorldTalkTrevor
+		    Response Player_GooedBySpitterC1RMechanic
 		}
 	},
 
 	{
-		Rule GasPour10MoreTalkSheva
+		Rule Player_KnowHunterC1Trevor
 		{
-		    criteria ConceptGasPour10More IsSheva IsNotSpeaking _auto_IsGasCountOK
-		    Response GasPour10MoreTalkProducer
+		    criteria ConceptPlayer_KnowHunter IsTrevor IssuerClose IsNotIncapacitated IsTalkTrevor IsWorldTalkTrevor IsNotSpeakingWeight0
+		    Response Player_KnowHunterC1Mechanic
+		    then from Player.KnowHunter2 foo:0 0.1
 		}
 	},
 
 	{
-		Rule GasPour1MoreSheva
+		Rule Player_KnowBoomerC1Trevor
 		{
-		    criteria ConceptGasPour1More IsSheva IsNotSpeaking _auto_IsGasCountOK
-		    Response GasPour1MoreProducer
+		    criteria ConceptPlayer_KnowBoomer IsTrevor IssuerClose IsNotIncapacitated IsTalkTrevor IsWorldTalkTrevor IsNotSpeakingWeight0
+		    Response Player_KnowBoomerC1Mechanic
 		}
 	},
 
 	{
-		Rule GasPour2MoreSheva
+		Rule Player_KnowChargerC1Trevor
 		{
-		    criteria ConceptGasPour2More IsSheva IsNotSpeaking _auto_IsGasCountOK
-		    Response GasPour2MoreProducer
+		    criteria ConceptPlayer_KnowCharger IsTrevor IssuerClose IsNotIncapacitated IsTalkTrevor IsWorldTalkTrevor IsNotSpeakingWeight0
+		    Response Player_KnowChargerC1Mechanic
 		}
 	},
 
 	{
-		Rule GasPour3MoreSheva
+		Rule Player_KnowJockeyC1Trevor
 		{
-		    criteria ConceptGasPour3More IsSheva IsNotSpeaking _auto_IsGasCountOK
-		    Response GasPour3MoreProducer
+		    criteria ConceptPlayer_KnowJockey IsTrevor IssuerClose IsNotIncapacitated IsTalkTrevor IsWorldTalkTrevor IsNotSpeakingWeight0
+		    Response Player_KnowJockeyC1Mechanic
 		}
 	},
 
 	{
-		Rule GasPour5MoreSheva
+		Rule C1M2TankInfoTrevor
 		{
-		    criteria ConceptGasPour5More IsSheva IsNotSpeaking _auto_IsGasCountOK
-		    Response GasPour5MoreProducer
+		    criteria ConceptC1M2TankInfo IsTrevor
+		    Response C1M2TankInfoMechanic
+		    then producer C1M2TankInfo foo:0 0.1
 		}
 	},
 
 	{
-		Rule HistoricTour02bSheva
+		Rule Player_KnowSpitterC1Trevor
 		{
-		    criteria ConceptHistoricTour02b IsSheva
-		    Response HistoricTour02bProducer
+		    criteria ConceptPlayer_KnowSpitter IsTrevor IssuerClose IsNotIncapacitated IsTalkTrevor IsWorldTalkTrevor IsNotSpeakingWeight0
+		    Response Player_KnowSpitterC1Mechanic
 		}
 	},
 
 	{
-		Rule Player_KnowHunter2Sheva
+		Rule PlayerCr0wnedBrideTrevor
 		{
-		    criteria ConceptPlayer_KnowHunter2 IsSheva IssuerClose IsNotIncapacitated IsTalkSheva IsWorldTalkSheva
-		    Response Player_KnowHunter2Producer
-		}
-	},
-
-	{
-		Rule C1M2TankInfoSheva
-		{
-		    criteria ConceptC1M2TankInfo IsSheva
-		    Response C1M2TankInfoProducer
-		    then Gambler C1M2TankInfo foo:0 0.1
-		}
-	},
-
-	{
-		Rule Player_NotPackingHeatSheva
-		{
-		    criteria ConceptPlayer_NotPackingHeat IsSheva
-		    Response Player_NotPackingHeatProducer
-		    then gambler Player.NotPackingHeat foo:0 0.1
-		}
-	},
-
-	{
-		Rule Player_NotPackingHeat2Sheva
-		{
-		    criteria ConceptPlayer_NotPackingHeat2 IsSheva
-		    Response Player_NotPackingHeat2Producer
-		    then gambler Player.NotPackingHeat2 foo:0 0.1
-		}
-	},
-
-	{
-		Rule PlayerCr0wnedBrideSheva
-		{
-		    criteria ConceptKilledZombie IsNotCoughing IsSheva SubjectIsAWitch KilledByCr0wn IsNotWitchAggro ChanceToFire100Percent IsTalk IsTalkSheva isc6m1_riverbank IsWorldTalkSheva
+		    criteria ConceptKilledZombie IsNotCoughing IsTrevor SubjectIsAWitch KilledByCr0wn IsNotWitchAggro ChanceToFire100Percent IsTalk IsTalkTrevor isc6m1_riverbank IsWorldTalkTrevor
 		    // 	forceweight 101
-		    Response PlayerCr0wnedBrideProducer
+		    Response PlayerCr0wnedBrideMechanic
+		    then any WeddingWitchDead02 foo:0 3.1
 		}
 	},
 
 	{
-		Rule PlayerCr0wnedBrideGamblerSheva
+		Rule WeddingWitchDead02Trevor
 		{
-		    criteria ConceptKilledZombie IsNotCoughing IsSheva SubjectIsAWitch KilledByCr0wn IsNotWitchAggro IsGamblerAlive IsGamblerNear400 ChanceToFire30Percent IsTalk IsTalkSheva isc6m1_riverbank IsWorldTalkSheva
-		    // 	forceweight 102
-		    Response PlayerCr0wnedBrideGamblerProducer
-		    then Gambler WeddingWitchDead04 foo:0 3.1
+		    criteria ConceptWeddingWitchDead02 IsTrevor
+		    Response WeddingWitchDead02Mechanic
+		    then producer WeddingWitchDead02a foo:0 0.1
 		}
 	},
 
 	{
-		Rule WeddingWitchDead01Sheva
+		Rule WorldIntroC31a2Trevor
 		{
-		    criteria ConceptWeddingWitchDead01 IsSheva
-		    Response WeddingWitchDead01Producer
+		    criteria ConceptWorldIntroC31a2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response WorldIntroC31a2Mechanic
+		    then gambler WorldIntroC31a3 foo:0 -3.934
 		}
 	},
 
 	{
-		Rule WeddingWitchDead02aSheva
+		Rule WorldIntroC31c1Trevor
 		{
-		    criteria ConceptWeddingWitchDead02a IsSheva
-		    Response WeddingWitchDead02aProducer
+		    criteria ConceptWorldIntroC31c1 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response WorldIntroC31c1Mechanic
+		    then gambler WorldIntroC31c2 foo:0 -7.301
 		}
 	},
 
 	{
-		Rule WorldIntroC31a2Sheva
+		Rule WorldIntroC31d2Trevor
 		{
-		    criteria ConceptWorldIntroC31a2 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response WorldIntroC31a2Producer
-		    then sheva WorldIntroC31a4 foo:0 -6.296
-		}
-	},
-
-	{
-		Rule WorldIntroC31a4Sheva
-		{
-		    criteria ConceptWorldIntroC31a4 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response WorldIntroC31a4Producer
+		    criteria ConceptWorldIntroC31d2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response WorldIntroC31d2Mechanic
 		    then self IntroEnd foo:0 0.1
 		}
 	},
 
 	{
-		Rule WorldIntroC31c3Sheva
+		Rule WorldIntroC31e2aTrevor
 		{
-		    criteria ConceptWorldIntroC31c3 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response WorldIntroC31c3Producer
-		    then gambler WorldIntroC31c4 foo:0 -2.381
+		    criteria ConceptWorldIntroC31e2a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response WorldIntroC31e2aMechanic
+		    then gambler WorldIntroC31e3a foo:0 -1.367
 		}
 	},
 
 	{
-		Rule WorldIntroC31d2Sheva
+		Rule WorldIntroC3f2Trevor
 		{
-		    criteria ConceptWorldIntroC31d2 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response WorldIntroC31d2Producer
+		    criteria ConceptWorldIntroC3f2 IsTrevor IssuerClose AutoIsNotScavenge AutoIsNotSurvival
+		    Response WorldIntroC3f2Mechanic
 		    then self IntroEnd foo:0 0.1
 		}
 	},
 
 	{
-		Rule WorldIntroC31e1Sheva
+		Rule WorldIntroC31g1Trevor
 		{
-		    criteria ConceptWorldIntroC31e1 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response WorldIntroC31e1Producer
-		    then sheva WorldIntroC31e2 foo:0 -4.802
+		    criteria ConceptWorldIntroC31g1 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response WorldIntroC31g1Mechanic
+		    then coach WorldIntroC31g2 foo:0 -3.349
 		}
 	},
 
 	{
-		Rule WorldIntroC31e2Sheva
+		Rule PlayerCoverMeHealTrevor
 		{
-		    criteria ConceptWorldIntroC31e2 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response WorldIntroC31e2Producer
-		    then coach WorldIntroC31e3 foo:0 -1.530
-		}
-	},
-
-	{
-		Rule PlayerCoverMeHealSheva
-		{
-		    criteria ConceptPlayerHealing IsNotCoughing IsSheva IsNotAskedForCover IsTalk IsTalkSheva IsNotAlone IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response PlayerCoverMeHealProducer
+		    criteria ConceptPlayerHealing IsNotCoughing IsTrevor IsNotAskedForCover IsTalk IsTalkTrevor IsNotAlone IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response PlayerCoverMeHealMechanic
 		    ApplyContext "AskForCover:1:30"
 		}
 	},
 
 	{
-		Rule PlayerCoverMeHealC1Sheva
+		Rule PlayerCoverMeHealC1Trevor
 		{
-		    criteria ConceptPlayerHealing IsNotCoughing IsSheva IsNotAskedForCover IsTalk IsTalkSheva IsNotAlone IsWorldTalkSheva ismap_c1m1_hotel
-		    Response PlayerCoverMeHealC1Producer
+		    criteria ConceptPlayerHealing IsNotCoughing IsTrevor IsNotAskedForCover IsTalk IsTalkTrevor IsNotAlone IsWorldTalkTrevor ismap_c1m1_hotel
+		    Response PlayerCoverMeHealC1Mechanic
 		    ApplyContext "AskForCover:1:30"
 		}
 	},
 
 	{
-		Rule Player_LostCallC6M3Sheva
+		Rule Player_LostCallC6M3Trevor
 		{
-		    criteria ConceptTalkIdle IsSheva IsClosestSurvivorFar3000 IsNotAlone IsNotSaidPlayerLostCall Isc6m3_port ChanceToFire100Percent IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response Player_LostCallC6M3Producer
+		    criteria ConceptTalkIdle IsTrevor IsClosestSurvivorFar3000 IsNotAlone IsNotSaidPlayerLostCall Isc6m3_port ChanceToFire100Percent IsNotSpeakingWeight0
+		    Response Player_LostCallC6M3Mechanic
 		    ApplyContext "SaidPlayerLostCall:1:50"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule AutoPlayerLostCallSheva
+		Rule AutoPlayerLostCallTrevor
 		{
-		    criteria ConceptTalkIdle IsSheva IsClosestSurvivorFar3000 IsNotAlone IsNotSaidPlayerLostCall _auto_NotNoLostCall IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response AutoPlayerLostCallProducer
+		    criteria ConceptTalkIdle IsTrevor IsClosestSurvivorFar3000 IsNotAlone IsNotSaidPlayerLostCall _auto_NotNoLostCall IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response AutoPlayerLostCallMechanic
 		    ApplyContext "SaidPlayerLostCall:1:50"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedChainsawSheva
+		Rule SurvivorSpottedChainsawTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsNotSmartLookAuto IsChainsaw IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorSpottedChainsawProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsChainsaw IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorSpottedChainsawMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedChainsawAutoSheva
+		Rule SurvivorSpottedChainsawAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsChainsaw IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedChainsawProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsChainsaw IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedChainsawMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedcricket_batSheva
+		Rule SurvivorSpottedcricket_batTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsNotSmartLookAuto Iscricket_bat IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorSpottedcricket_batProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto Iscricket_bat IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorSpottedcricket_batMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedcricket_batAutoSheva
+		Rule SurvivorSpottedcricket_batAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot Iscricket_bat IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedcricket_batProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot Iscricket_bat IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedcricket_batMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedcrowbarSheva
+		Rule SurvivorSpottedcrowbarTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsNotSmartLookAuto Iscrowbar IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorSpottedcrowbarProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto Iscrowbar IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorSpottedcrowbarMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedcrowbarAutoSheva
+		Rule SurvivorSpottedcrowbarAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot Iscrowbar IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedcrowbarProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot Iscrowbar IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedcrowbarMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedGolfClubSheva
+		Rule SurvivorSpottedGolfClubTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsGolfClub IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedGolfClubProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsGolfClub IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedGolfClubMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedGolfClubAutoSheva
+		Rule SurvivorSpottedGolfClubAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsNotSmartLookAuto IsGolfClub IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorSpottedGolfClubProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsGolfClub IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorSpottedGolfClubMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedGuitarSheva
+		Rule SurvivorSpottedGuitarTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsNotSmartLookAuto IsGuitar IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorSpottedGuitarProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsGuitar IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorSpottedGuitarMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedGuitarAutoSheva
+		Rule SurvivorSpottedGuitarAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsGuitar IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedGuitarProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsGuitar IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedGuitarMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedKatanaSheva
+		Rule SurvivorSpottedKatanaTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsNotSmartLookAuto IsKatana IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorSpottedKatanaProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsKatana IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorSpottedKatanaMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedKatanaAutoSheva
+		Rule SurvivorSpottedKatanaAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons isNotmap_c1m1_hotel isNotmap_c1m2_streets IsNotSaidSpot IsKatana IsWorldTalkSheva IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedKatanaProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsKatana IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedKatanaMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedLaserSightsSheva
+		Rule SurvivorSpottedLaserSightsTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsNotSmartLookAuto IsLaserSights IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response SurvivorSpottedLaserSightsProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsLaserSights IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response SurvivorSpottedLaserSightsMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedLaserSightsAutoSheva
+		Rule SurvivorSpottedLaserSightsAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsLaserSights IsWorldTalkSheva IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedLaserSightsProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsLaserSights IsWorldTalkTrevor IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedLaserSightsMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorBotPickupLaserSightsSpottedSheva
+		Rule SurvivorBotPickupLaserSightsSpottedTrevor
 		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpLaserSights IsNotSpeaking IsBotIsAvailable IsNotInStartArea IsNotInCheckpoint IsNotInSafeSpot IsNotSaidSpotWeapons IsTalk IsTalkSheva IsWorldTalkSheva _auto_NotSpottedVehicle
-		    Response SurvivorSpottedLaserSightsProducer
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpLaserSights IsNotSpeaking IsBotIsAvailable IsNotInSafeSpot IsNotInCheckpoint IsNotInStartArea IsNotSaidSpotWeapons IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
+		    Response SurvivorSpottedLaserSightsMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedM60Sheva
+		Rule SurvivorSpottedM60Trevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsM60 IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedM60Producer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsM60 IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedM60Mechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedM60AutoSheva
+		Rule SurvivorSpottedM60AutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsNotSmartLookAuto IsM60 IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorSpottedM60Producer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsM60 IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorSpottedM60Mechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedMacheteSheva
+		Rule SurvivorSpottedMacheteTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsNotSmartLookAuto IsMachete IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorSpottedMacheteProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsMachete IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorSpottedMacheteMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedMacheteAutoSheva
+		Rule SurvivorSpottedMacheteAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsMachete IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedMacheteProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsMachete IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedMacheteMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedMagnumSheva
+		Rule SurvivorSpottedMagnumTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsNotSmartLookAuto IsMagnum IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorSpottedMagnumProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsMagnum IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorSpottedMagnumMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedMagnumAutoSheva
+		Rule SurvivorSpottedMagnumAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsMagnum IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedMagnumProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsMagnum IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedMagnumMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedSMGSheva
+		Rule SurvivorSpottedSecondPistolTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsNotSmartLookAuto IsSMG IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorSpottedSMGProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsSecondPistol IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorSpottedMagnumMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedSMGAutoSheva
+		Rule SurvivorSpottedSecondPistolAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsSMG IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedSMGProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsSecondPistol IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedMagnumMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedSMG_silencedSheva
+		Rule SurvivorSpottedtonfaTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsNotSmartLookAuto IsSmg_silenced IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorSpottedSMGProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto Istonfa IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorSpottedtonfaMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedSMG_silencedAutoSheva
+		Rule SurvivorSpottedtonfaAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsSmg_silenced IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedSMGProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot Istonfa IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedtonfaMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedSMG_MP5Sheva
+		Rule SurvivorSpottedAutoShotgunTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsNotSmartLookAuto IsSmg_mp5 IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorSpottedSMGProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsAutoShotgun IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorSpottedShotgunMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedSMG_MP5AutoSheva
+		Rule SurvivorSpottedAutoShotgunAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsSmg_mp5 IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedSMGProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsAutoShotgun IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedShotgunMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedtonfaSheva
+		Rule SurvivorSpottedPumpShotgunTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsNotSmartLookAuto Istonfa IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorSpottedtonfaProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsPumpShotgun IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorSpottedShotgunMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedtonfaAutoSheva
+		Rule SurvivorSpottedPumpShotgunAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot Istonfa IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedtonfaProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsPumpShotgun IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedShotgunMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedSecondPistolSheva
+		Rule SurvivorSpottedShotgun_ChromeTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsNotSmartLookAuto IsSecondPistol IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorSpottedPistolProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsShotgun_Chrome IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorSpottedShotgunMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedSecondPistolAutoSheva
+		Rule SurvivorSpottedShotgun_spasTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsSecondPistol IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedPistolProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsShotgun_spas IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedShotgunMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedAutoShotgunSheva
+		Rule SurvivorSpottedShotgun_spasAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsNotSmartLookAuto IsAutoShotgun IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorSpottedShotgunProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsShotgun_spas IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorSpottedShotgunMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedAutoShotgunAutoSheva
+		Rule SurvivorSpottedSMGTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsAutoShotgun IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedShotgunProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsSMG IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorSpottedSMGMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedPumpShotgunSheva
+		Rule SurvivorSpottedSMGAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsNotSmartLookAuto IsPumpShotgun IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorSpottedShotgunProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsSMG IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedSMGMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedPumpShotgunAutoSheva
+		Rule SurvivorSpottedSMG_silencedTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsPumpShotgun IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedShotgunProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsSmg_silenced IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorSpottedSMGMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedShotgun_ChromeSheva
+		Rule SurvivorSpottedSMG_silencedAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsNotSmartLookAuto IsShotgun_Chrome IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorSpottedShotgunProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsSmg_silenced IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedSMGMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedShotgun_ChromeAutoSheva
+		Rule SurvivorSpottedMP5SMGTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsShotgun_Chrome IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedShotgunProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsSMG_mp5 IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorSpottedSMGMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedShotgun_spasSheva
+		Rule SurvivorSpottedMP5SMGAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsNotSmartLookAuto IsShotgun_spas IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorSpottedShotgunProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsSMG_mp5 IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedSMGMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedShotgun_spasAutoSheva
+		Rule SurvivorSpottedHuntingRifleTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsShotgun_spas IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedShotgunProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsHuntingRifle IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorSpottedHuntingRifleMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedRifleSheva
+		Rule SurvivorSpottedHuntingRifleAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsNotSmartLookAuto IsRifle IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorSpottedWeaponProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsHuntingRifle IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedHuntingRifleMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedRifleAutoSheva
+		Rule SurvivorSpottedRifleTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsRifle IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedWeaponProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsRifle IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorSpottedWeaponMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedRifle_AK47Sheva
+		Rule SurvivorSpottedRifleAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsNotSmartLookAuto IsRifle_AK47 IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorSpottedWeaponProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsRifle IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedWeaponMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedRifle_AK47AutoSheva
+		Rule SurvivorSpottedRifle_AK47Trevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsRifle_AK47 IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedWeaponProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsRifle_AK47 IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorSpottedWeaponMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedRifle_desertSheva
+		Rule SurvivorSpottedRifle_AK47AutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsNotSmartLookAuto IsRifle_desert IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorSpottedWeaponProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsRifle_AK47 IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedWeaponMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedRifle_desertAutoSheva
+		Rule SurvivorSpottedRifle_desertTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsRifle_desert IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedWeaponProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsRifle_desert IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorSpottedWeaponMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedRifle_SG552Sheva
+		Rule SurvivorSpottedRifle_desertAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsNotSmartLookAuto IsRifle_sg552 IsWorldTalkSheva isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		    Response SurvivorSpottedWeaponProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsRifle_desert IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedWeaponMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedRifle_SG552AutoSheva
+		Rule SurvivorSpottedRifle_SG552Trevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsRifle_sg552 IsWorldTalkSheva isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedWeaponProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsRifle_sg552 IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorSpottedWeaponMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedMilitarySniperSheva
+		Rule SurvivorSpottedRifle_SG552AutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsNotSmartLookAuto IsSniper_military IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorSpottedWeaponProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsRifle_sg552 IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedWeaponMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedMilitarySniperAutoSheva
+		Rule SurvivorSpottedMilitarySniperTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsSniper_military IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedWeaponProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsSniper_military IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorSpottedWeaponMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedHuntingRifleSheva
+		Rule SurvivorSpottedMilitarySniperAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsNotSmartLookAuto IsHuntingRifle IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorSpottedWeaponProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsSniper_military IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedWeaponMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedHuntingRifleAutoSheva
+		Rule SurvivorSpottedScoutSniperTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsHuntingRifle IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedWeaponProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsSniper_scout IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorSpottedWeaponMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedScoutSniperSheva
+		Rule SurvivorSpottedScoutSniperAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsNotSmartLookAuto IsSniper_scout IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorSpottedWeaponProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsSniper_scout IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedWeaponMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedScoutSniperAutoSheva
+		Rule SurvivorSpottedAWPSniperTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsSniper_scout IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedWeaponProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsSniper_awp IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorSpottedWeaponMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedAWPSniperSheva
+		Rule SurvivorSpottedAWPSniperAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsNotSmartLookAuto IsSniper_awp IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorSpottedWeaponProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsSniper_awp IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedWeaponMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedAWPSniperAutoSheva
+		Rule SurvivorSpottedBaseBallBatTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsSniper_awp IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedWeaponProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto Isbaseball_bat IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorSpottedMeleeWeaponMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedBaseBallBatSheva
+		Rule SurvivorSpottedBaseBallBatAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied Isbaseball_bat IsNotSmartLookAuto IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorSpottedMeleeWeaponProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot Isbaseball_bat IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedMeleeWeaponMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedBaseBallBatAutoSheva
+		Rule SurvivorSpottedFryingPanTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot Isbaseball_bat IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedMeleeWeaponProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsFryingPan IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorSpottedMeleeWeaponMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedAxeSheva
+		Rule SurvivorSpottedFryingPanAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsNotSmartLookAuto IsFryingPan IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorSpottedMeleeWeaponProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsFryingPan IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedMeleeWeaponMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedFryingPanAutoSheva
+		Rule SurvivorSpottedAxeTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsWorldTalkSheva IsFryingPan isNotmap_c1m1_hotel isNotmap_c1m2_streets IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedMeleeWeaponProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsFireAxe IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorSpottedMeleeWeaponMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedFryingPanSheva
+		Rule SurvivorSpottedAxeAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsNotSmartLookAuto IsFireAxe IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorSpottedMeleeWeaponProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsFireAxe IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedMeleeWeaponMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedAxeAutoSheva
+		Rule SurvivorSpottedShovelTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsFireAxe IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedMeleeWeaponProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsShovel IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorSpottedMeleeWeaponMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedShovelSheva
+		Rule SurvivorSpottedShovelAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsNotSmartLookAuto IsShovel IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorSpottedMeleeWeaponProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsShovel IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedMeleeWeaponMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedShovelAutoSheva
+		Rule SurvivorSpottedPitchforkTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsShovel IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedMeleeWeaponProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsPitchfork IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorSpottedMeleeWeaponMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedPitchforkSheva
+		Rule SurvivorSpottedPitchforkAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsNotSmartLookAuto IsPitchfork IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorSpottedMeleeWeaponProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsPitchfork IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedMeleeWeaponMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedPitchforkAutoSheva
+		Rule SurvivorSpottedKnifeTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsPitchfork IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedMeleeWeaponProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsKnife IsNotSmartLookAuto IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorSpottedMeleeWeaponMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedKnifeSheva
+		Rule SurvivorSpottedKnifeAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsKnife IsNotSmartLookAuto IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorSpottedMeleeWeaponProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsKnife IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		    Response SurvivorSpottedMeleeWeaponMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedKnifeAutoSheva
+		Rule SurvivorSpottedOtherWeaponTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsKnife IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		    Response SurvivorSpottedMeleeWeaponProducer
+		    criteria ConceptPlayerSpotOtherWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorSpottedWeaponMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedOtherWeaponSheva
+		Rule SurvivorSpottedWeaponPistolTrevor
 		{
-		    criteria ConceptPlayerSpotOtherWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsNotSmartLookAuto IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorSpottedWeaponProducer
+		    criteria ConceptPlayerSpotPistol IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorSpottedMagnumMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedWeaponPistolSheva
+		Rule SurvivorSpottedShotgunTrevor
 		{
-		    criteria ConceptPlayerSpotPistol IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsNotSmartLookAuto IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorSpottedPistolProducer
+		    criteria ConceptPlayerSpotShotgun IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
+		    Response SurvivorSpottedShotgunMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedShotgunSheva
+		Rule C2M3AlarmOffNagTrevor
 		{
-		    criteria ConceptPlayerSpotShotgun IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSaidSomeoneDied IsNotSmartLookAuto IsWorldTalkSheva isNotmap_c1m1_hotel isNotmap_c1m2_streets _auto_NotSpottedVehicle
-		    Response SurvivorSpottedShotgunProducer
-		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		    criteria ConceptTalkIdle IsTrevor ChanceToFire50Percent IsNotIncapacitated ismap_c2m3 AutoIsNotScavenge AutoIsNotSurvival _auto_IsAlarm _auto_IsTracksOK _auto_NotTimerLockA _auto_NotTimerLockTrevor IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m3_coasteroffMechanic
+		    ApplyContext "_auto_TimerLockA:1:8,_auto_TimerLockTrevor:1:11"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C2M3AlarmOffNagSheva
+		Rule C2M3Chopper001Trevor
 		{
-		    criteria ConceptTalkIdle IsSheva ChanceToFire50Percent IsNotIncapacitated ismap_c2m3 AutoIsNotScavenge AutoIsNotSurvival _auto_IsAlarm _auto_IsTracksOK _auto_NotTimerLockA _auto_NotTimerLockSheva IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m3_coasteroffProducer
-		    ApplyContext "_auto_TimerLockA:1:8,_auto_TimerLockSheva:1:11"
-		    applycontexttoworld
+		    criteria ConceptC2M3Chopper001 IsTrevor IsTalk IsSubjectDistNear400 AutoIsNotScavenge AutoIsNotSurvival
+		    Response C2M3Chopper001Mechanic
+		}
+	},
+
+	{
+		Rule SurvivorSpottedBikerCloseTrevor
+		{
+		    criteria ConceptPlayerLookHere IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsBiker IsSubjectDistNear400 IsWorldTalkTrevor
+		    Response SurvivorSpottedBikerCloseMechanic
+		}
+	},
+
+	{
+		Rule SurvivorSpottedBikerClose2Trevor
+		{
+		    criteria ConceptPlayerLook IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsBiker IsSubjectDistNear400 IsWorldTalkTrevor
+		    Response SurvivorSpottedBikerCloseMechanic
+		}
+	},
+
+	{
+		Rule SurvivorSpottedManagerCloseTrevor
+		{
+		    criteria ConceptPlayerLookHere IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsManager IsSubjectDistNear400 IsWorldTalkTrevor
+		    Response SurvivorSpottedManagerCloseMechanic
+		}
+	},
+
+	{
+		Rule SurvivorSpottedManagerClose2Trevor
+		{
+		    criteria ConceptPlayerLook IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsManager IsSubjectDistNear400 IsWorldTalkTrevor
+		    Response SurvivorSpottedManagerCloseMechanic
+		}
+	},
+
+	{
+		Rule SurvivorSpottedNamVetClose2Trevor
+		{
+		    criteria ConceptPlayerLook IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsNamVet IsSubjectDistNear400 IsWorldTalkTrevor
+		    Response SurvivorSpottedNamVetClose2Mechanic
+		}
+	},
+
+	{
+		Rule SurvivorSpottedNamVetCloseTrevor
+		{
+		    criteria ConceptPlayerLookHere IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsNamVet IsSubjectDistNear400 IsWorldTalkTrevor
+		    Response SurvivorSpottedNamVetClose2Mechanic
+		}
+	},
+
+	{
+		Rule SurvivorSpottedNamVetFarTrevor
+		{
+		    criteria ConceptPlayerLook IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsNamVet IsSubjectDistFar400 IsWorldTalkTrevor
+		    Response SurvivorSpottedNamVetFarMechanic
 		}
 	},
 
 	{
-		Rule C2M3Chopper001Sheva
+		Rule SurvivorSpottedTeenGirlCloseTrevor
 		{
-		    criteria ConceptC2M3Chopper001 IsSheva IsTalk IsSubjectDistNear400 AutoIsNotScavenge AutoIsNotSurvival
-		    Response C2M3Chopper001Producer
+		    criteria ConceptPlayerLookHere IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsTeenGirl IsSubjectDistNear400 IsWorldTalkTrevor
+		    Response SurvivorSpottedTeenGirlCloseMechanic
 		}
 	},
 
 	{
-		Rule AskWhatSheva
+		Rule SurvivorSpottedTeenGirlClose2Trevor
 		{
-		    criteria ConceptAskWhat IsSheva
-		    Response AskWhatProducer
+		    criteria ConceptPlayerLook IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsTeenGirl IsSubjectDistNear400 IsWorldTalkTrevor
+		    Response SurvivorSpottedTeenGirlCloseMechanic
 		}
 	},
 
 	{
-		Rule C13M1IntroStartSheva
+		Rule C13M1IntroStartTrevor
 		{
-		    criteria ConceptIntroC13M1 IsSheva IsNotSaidCXM1Intro IsNotAlone AutoIsNotScavenge AutoIsNotSurvival
-		    Response C13M1IntroStartProducer
+		    criteria ConceptIntroC13M1 IsTrevor IsNotSaidCXM1Intro AutoIsNotScavenge AutoIsNotSurvival
+		    Response C13M1IntroStartMechanic
 		    then any C13M1Intro2 foo:0 0.1
 		    ApplyContext "CXM1Intro:1:0"
 		    applycontexttoworld
@@ -11700,176 +12918,176 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule C13M1Intro2Sheva
+		Rule C13M1Intro2Trevor
 		{
-		    criteria ConceptC13M1Intro2 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C13M1Intro2Producer
-		    then any C13M1Intro2 foo:0 0.1
+		    criteria ConceptC13M1Intro2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival C13M1TrevorNotPanicking
+		    Response C13M1Intro2Mechanic
+		    then any C13M1Intro3 foo:0 0.1
 		}
 	},
 
 	{
-		Rule C13M1Intro3Sheva
+		Rule C13M1Intro3Trevor
 		{
-		    criteria ConceptC13M1Intro3 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C13M1Intro3Producer
-		    then any C13M1IntroLast foo:0 -1.675
+		    criteria ConceptC13M1Intro3 IsTrevor AutoIsNotScavenge AutoIsNotSurvival C13M1TrevorNotPanicking
+		    Response C13M1Intro3Mechanic
+		    then any C13M1IntroLast foo:0 0.1
 		}
 	},
 
 	{
-		Rule C13M1IntroLastSheva
+		Rule C13M1IntroLastTrevor
 		{
-		    criteria ConceptC13M1IntroLast IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C13M1IntroLastProducer
+		    criteria ConceptC13M1IntroLast IsTrevor AutoIsNotScavenge AutoIsNotSurvival C13M1TrevorNotPanicking
+		    Response C13M1IntroLastMechanic
 		    then self IntroEnd foo:0 0.1
 		}
 	},
 
 	{
-		Rule C13M1IntroLocationLastSheva
+		Rule C13M1IntroLocationLastTrevor
 		{
-		    criteria ConceptC13M1IntroLocationLast IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C13M1IntroLocationLastProducer
+		    criteria ConceptC13M1IntroLocationLast IsTrevor C13M1TrevorNotPanicking AutoIsNotScavenge AutoIsNotSurvival
+		    Response C13M1IntroLocationLastMechanic
 		    then self IntroEnd foo:0 0.1
 		}
 	},
 
 	{
-		Rule RemarkC13M1UpHillSheva
+		Rule RemarkC13M1UpHillTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC13M1UpHill IsNotRemarkedC13M1UpHill NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear100 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m2_upthestairsProducer
+		    criteria ConceptRemark IsTrevor IsC13M1UpHill IsNotRemarkedC13M1UpHill NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear100 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m1_uphillMechanic
 		    ApplyContext "RemarkedC13M1UpHill:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule RemarkC13M1DownHereSheva
+		Rule RemarkC13M1DownHereTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC13M1DownHere IsNotRemarkedC13M1DownHere NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m1_downstairsProducer
+		    criteria ConceptRemark IsTrevor IsC13M1DownHere IsNotRemarkedC13M1DownHere NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkC1M3DownHereMechanic
 		    ApplyContext "RemarkedC13M1DownHere:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule RemarkC13M1ThroughHereSheva
+		Rule RemarkC13M1ThroughHereTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC13M1ThroughHere IsNotRemarkedC13M1ThroughHere NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response RemarkC13M1ThroughHereProducer
+		    criteria ConceptRemark IsTrevor IsC13M1ThroughHere IsNotRemarkedC13M1ThroughHere NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response RemarkC13M1ThroughHereMechanic
 		    ApplyContext "RemarkedC13M1ThroughHere:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule RemarkC13M1ThroughWindowSheva
+		Rule RemarkC13M1ThroughWindowTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC13M1ThroughWindow IsNotRemarkedC13M1ThroughWindow NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m1_throughwindowProducer
+		    criteria ConceptRemark IsTrevor IsC13M1ThroughWindow IsNotRemarkedC13M1ThroughWindow NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc2m1_throughwindowMechanic
 		    ApplyContext "RemarkedC13M1ThroughWindow:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule RemarkC13M1UpStepsSheva
+		Rule RemarkC13M1UpStepsTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC13M1UpSteps IsNotRemarkedC13M1UpSteps NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M1_UpTheStairsProducer
+		    criteria ConceptRemark IsTrevor IsC13M1UpSteps IsNotRemarkedC13M1UpSteps NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M1_UpTheStairs2Mechanic
 		    ApplyContext "RemarkedC13M1UpSteps:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule RemarkC13M1CrossHereSheva
+		Rule RemarkC13M1CrossHereTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC13M1CrossHere IsNotRemarkedC13M1CrossHere NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear150 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc4m3_crosshereProducer
+		    criteria ConceptRemark IsTrevor IsC13M1CrossHere IsNotRemarkedC13M1CrossHere NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear150 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M1_AcrossHereMechanic
 		    ApplyContext "RemarkedC13M1CrossHere:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule RemarkC13M1PreBunkerOpenSheva
+		Rule RemarkC13M1PreBunkerOpenTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC13M1PreBunkerOpen IsNotRemarkedC13M1PreBunkerOpen NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkC1M2PreAlarmDoorProducer
+		    criteria ConceptRemark IsTrevor IsC13M1PreBunkerOpen IsNotRemarkedC13M1PreBunkerOpen NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response RemarkC13M1PreBunkerOpenMechanic
 		    ApplyContext "RemarkedC13M1PreBunkerOpen:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C13M1OpeningBunkerSheva
+		Rule C13M1OpeningBunkerTrevor
 		{
-		    criteria ConceptC13M1OpeningBunker IsSheva IsNotC13M1OpeningBunker AutoIsNotScavenge AutoIsNotSurvival
-		    Response C13M1OpeningBunkerProducer
+		    criteria ConceptC13M1OpeningBunker IsTrevor IsNotC13M1OpeningBunker AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerC3M2OpenDoor2Mechanic
 		    ApplyContext "C13M1OpeningBunker:1:0,RemarkedC13M1PreBunkerOpen:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule RemarkC13M2UpHillSheva
+		Rule RemarkC13M2UpHillTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC13M2UpHill IsNotRemarkedC13M2UpHill NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear100 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc2m1_uphillProducer
+		    criteria ConceptRemark IsTrevor IsC13M2UpHill IsNotRemarkedC13M2UpHill NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear100 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response RemarkC13M2UpHillMechanic
 		    ApplyContext "RemarkedC13M2UpHill:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule RemarkC13M2DownHereSheva
+		Rule RemarkC13M2DownHereTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC13M2DownHere IsNotRemarkedC13M2DownHere NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response RemarkC13M2DownHereProducer
+		    criteria ConceptRemark IsTrevor IsC13M2DownHere IsNotRemarkedC13M2DownHere NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkC1M3DownHereMechanic
 		    ApplyContext "RemarkedC13M2DownHere:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule RemarkC13M2UpLadderSheva
+		Rule RemarkC13M2UpLadderTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC13M2UpLadder IsNotRemarkedC13M2UpLadder NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkc5m3upladderProducer
+		    criteria ConceptRemark IsTrevor IsC13M2UpLadder IsNotRemarkedC13M2UpLadder NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkc5m3upladderMechanic
 		    ApplyContext "RemarkedC13M2UpStairs:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule RemarkC13M2UpStairsSheva
+		Rule RemarkC13M2UpStairsTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC13M2UpStairs IsNotRemarkedC13M2UpStairs NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M1_UpTheStairsProducer
+		    criteria ConceptRemark IsTrevor IsC13M2UpStairs IsNotRemarkedC13M2UpStairs NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M1_UpTheStairs2Mechanic
 		    ApplyContext "RemarkedC13M2UpStairs:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C13M2TankApproachingSheva
+		Rule C13M2TankApproachingTrevor
 		{
-		    criteria ConceptC13M2TankApproaching IsSheva IsNotNoticedC13M2ShakingGround AutoIsNotScavenge AutoIsNotSurvival
-		    Response C13M2TankApproachingProducer
+		    criteria ConceptC13M2TankApproaching IsTrevor IsNotNoticedC13M2ShakingGround AutoIsNotScavenge AutoIsNotSurvival
+		    Response C13M2TankApproachingMechanic
 		    ApplyContext "NoticedC13M2ShakingGround:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C13M2BarrelsIgnitedSheva
+		Rule C13M2BarrelsIgnitedTrevor
 		{
-		    criteria ConceptC13M2BarrelsIgnited IsSheva IsNotC13M2IgnitedBarrels AutoIsNotScavenge AutoIsNotSurvival
-		    Response C13M2BarrelsIgnitedProducer
+		    criteria ConceptC13M2BarrelsIgnited IsTrevor IsNotC13M2IgnitedBarrels AutoIsNotScavenge AutoIsNotSurvival
+		    Response C13M2BarrelsIgnitedMechanic
 		    then any C13M2Barrels1 foo:0 5
 		    ApplyContext "C13M2IgnitedBarrels:1:0"
 		    applycontexttoworld
@@ -11877,10 +13095,10 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule C13M2Barrels1Sheva
+		Rule C13M2Barrels1Trevor
 		{
-		    criteria ConceptC13M2Barrels1 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C13M2Barrels1Producer
+		    criteria ConceptC13M2Barrels1 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C13M2Barrels1Mechanic
 		    then any C13M2Barrels2 foo:0 0.1
 		    ApplyContext "Talk:1:3"
 		    applycontexttoworld
@@ -11888,30 +13106,30 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule C13M2Barrels2Sheva
+		Rule C13M2Barrels2Trevor
 		{
-		    criteria ConceptC13M2Barrels2 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerYellRunProducer
+		    criteria ConceptC13M2Barrels2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C13M2Barrels2Mechanic
 		    ApplyContext "Talk:1:3"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule RemarkC13M3DownHereSheva
+		Rule RemarkC13M3DownHereTrevor
 		{
-		    criteria ConceptRemark IsSheva IsC13M3DownHere IsNotRemarkedC13M3DownHere NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		    Response RemarkC13M2DownHereProducer
+		    criteria ConceptRemark IsTrevor IsC13M3DownHere IsNotRemarkedC13M3DownHere NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		    Response PlayerRemarkC1M3DownHereMechanic
 		    ApplyContext "RemarkedC13M3DownHere:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C13M3ApproachingTankerSheva
+		Rule C13M3ApproachingTankerTrevor
 		{
-		    criteria ConceptC13M3ApproachingTanker IsSheva IsNotSawC13M3Tanker AutoIsNotScavenge AutoIsNotSurvival
-		    Response C13M3ApproachingTankerProducer
+		    criteria ConceptC13M3ApproachingTanker IsTrevor IsNotSawC13M3Tanker AutoIsNotScavenge AutoIsNotSurvival
+		    Response C13M3ApproachingTankerMechanic
 		    then any C13M3Tanker1 foo:0 3
 		    ApplyContext "SawC13M3Tanker:1:0"
 		    applycontexttoworld
@@ -11919,10 +13137,10 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule C13M3Tanker1Sheva
+		Rule C13M3Tanker1Trevor
 		{
-		    criteria ConceptC13M3Tanker1 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C13M3Tanker1Producer
+		    criteria ConceptC13M3Tanker1 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C13M3Tanker1Mechanic
 		    then any C13M3Tanker2 foo:0 -0.3
 		    ApplyContext "Talk:1:3"
 		    applycontexttoworld
@@ -11930,10 +13148,10 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule C13M3Tanker2Sheva
+		Rule C13M3Tanker2Trevor
 		{
-		    criteria ConceptC13M3Tanker2 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C13M3Tanker2Producer
+		    criteria ConceptC13M3Tanker2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C13M3Tanker2Mechanic
 		    then any C13M3Tanker3 foo:0 3
 		    ApplyContext "Talk:1:3"
 		    applycontexttoworld
@@ -11941,51 +13159,51 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule C13M3Tanker3Sheva
+		Rule C13M3Tanker3Trevor
 		{
-		    criteria ConceptC13M3Tanker3 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C13M3Tanker3Producer
+		    criteria ConceptC13M3Tanker3 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C13M3Tanker3Mechanic
 		    ApplyContext "Talk:1:3"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C13M3OnScaffoldSheva
+		Rule C13M3OnScaffoldTrevor
 		{
-		    criteria ConceptC13M3OnScaffold IsSheva IsNotOnC13M3Scaffold AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerRemarkWorldC1M2DownStairsProducer
+		    criteria ConceptC13M3OnScaffold IsTrevor IsNotOnC13M3Scaffold AutoIsNotScavenge AutoIsNotSurvival
+		    Response PlayerRemarkWorldC1M2DownStairsMechanic
 		    ApplyContext "OnC13M3Scaffold:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C13M3AirstrikeSheva
+		Rule C13M3AirstrikeTrevor
 		{
-		    criteria ConceptC13M3Airstrike IsSheva IsNotWitnissedC13M3Airstrike AutoIsNotScavenge AutoIsNotSurvival
-		    Response C13M3AirstrikeProducer
-		    then any C13M3Airstrike2 foo:0 0.3
+		    criteria ConceptC13M3Airstrike IsTrevor IsNotWitnissedC13M3Airstrike AutoIsNotScavenge AutoIsNotSurvival
+		    Response C13M3AirstrikeMechanic
+		    then any C13M3Airstrike2 foo:0 0.01
 		    ApplyContext "WitnissedC13M3Airstrike:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C13M3Airstrike2Sheva
+		Rule C13M3Airstrike2Trevor
 		{
-		    criteria ConceptC13M3Airstrike2 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C13M3Airstrike2Producer
+		    criteria ConceptC13M3Airstrike2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C13M3Airstrike2Mechanic
 		    ApplyContext "Talk:1:3"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C13M4Button1Sheva
+		Rule C13M4Button1Trevor
 		{
-		    criteria ConceptC13M4Button1 IsSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C13M4Button1Producer
+		    criteria ConceptC13M4Button1 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C13M4Button1Mechanic
 		    then orator C13M4FinaleBrief foo:0 0.3
 		    ApplyContext "Talk:1:3"
 		    applycontexttoworld
@@ -11993,70 +13211,70 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule C13M4FinaleTriggeredSheva
+		Rule C13M4FinaleTriggeredTrevor
 		{
-		    criteria ConceptFinaleTriggered IsSheva ismapc13m4_cutthroatcreek IsTriggeredBySheva _auto_NotFinaleStarted
-		    Response C13M4FinaleTriggeredProducer
+		    criteria ConceptFinaleTriggered IsTrevor ismapc13m4_cutthroatcreek IsTriggeredByTrevor _auto_NotFinaleStarted
+		    Response C13M4FinaleTriggeredMechanic
 		    then orator C13M4FinaleStart foo:0 0.01
-		    ApplyContext "_auto_Finale:1:0,_auto_TalkingSheva:1:0"
+		    ApplyContext "_auto_Finale:1:0,_auto_TalkingTrevor:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C13M4FinaleStart2Sheva
+		Rule C13M4FinaleStart2Trevor
 		{
-		    criteria ConceptC13M4FinaleStart2 IsSheva _auto_IsTalkingSheva AutoIsNotScavenge AutoIsNotSurvival
-		    Response C13M4FinaleStart2Producer
+		    criteria ConceptC13M4FinaleStart2 IsTrevor _auto_IsTalkingTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C13M4FinaleStart2Mechanic
 		    ApplyContext "Talk:1:3"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C13M4DownCreekSheva
+		Rule C13M4DownCreekTrevor
 		{
-		    criteria ConceptC13M4DownCreek IsSheva IsNotInC13M4Creek AutoIsNotScavenge AutoIsNotSurvival
-		    Response PlayerRemarkWorldC6M2_FinalWaterProducer
+		    criteria ConceptC13M4DownCreek IsTrevor IsNotInC13M4Creek AutoIsNotScavenge AutoIsNotSurvival
+		    Response C13M4DownCreekMechanic
 		    ApplyContext "Talk:1:3,InC13M4Creek:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C13M4InSmokeSheva
+		Rule C13M4InSmokeTrevor
 		{
-		    criteria ConceptC13M4InSmoke IsSheva IsNotInC13M4Smoke AutoIsNotScavenge AutoIsNotSurvival
-		    Response SurvivorCoughingProducer
-		    ApplyContext "TalkSheva:1:3,InC13M4Smoke:1:0"
+		    criteria ConceptC13M4InSmoke IsTrevor IsNotInC13M4Smoke AutoIsNotScavenge AutoIsNotSurvival
+		    Response SurvivorCoughingMechanic
+		    ApplyContext "TalkTrevor:1:3,InC13M4Smoke:1:0"
 		}
 	},
 
 	{
-		Rule C13M4NoticedHelicopterSheva
+		Rule C13M4NoticedHelicopterTrevor
 		{
-		    criteria ConceptC13M4NoticedHelicopter IsSheva IsNotNoticedC13M4Helicopter AutoIsNotScavenge AutoIsNotSurvival
-		    Response c2m3SeeChopperProducer
+		    criteria ConceptC13M4NoticedHelicopter IsTrevor IsNotNoticedC13M4Helicopter AutoIsNotScavenge AutoIsNotSurvival
+		    Response C13M4NoticedHelicopterMechanic
 		    ApplyContext "Talk:1:3,NoticedC13M4Helicopter:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C13M4AlmostThereSheva
+		Rule C13M4AlmostThereTrevor
 		{
-		    criteria ConceptC13M4AlmostThere IsSheva IsNotC13M4AlmostThere AutoIsNotScavenge AutoIsNotSurvival
-		    Response C13M4AlmostThereProducer
+		    criteria ConceptC13M4AlmostThere IsTrevor IsNotC13M4AlmostThere AutoIsNotScavenge AutoIsNotSurvival
+		    Response C13M4AlmostThereMechanic
 		    ApplyContext "Talk:1:3,C13M4AlmostThere:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C13M4SpottedVehicleSheva
+		Rule C13M4SpottedVehicleTrevor
 		{
-		    criteria ConceptFinalVehicleSpotted IsSheva ismapc13m4_cutthroatcreek _auto_IsFinaleStarted
-		    Response C13M4SpottedVehicleProducer
+		    criteria ConceptFinalVehicleSpotted IsTrevor ismapc13m4_cutthroatcreek _auto_IsFinaleStarted
+		    Response C13M4SpottedVehicleMechanic
 		    then pilot C13M4PilotEscapeNag foo:0 2
 		    ApplyContext "_auto_Finale:2:0,_auto_TimerLockA:1:5"
 		    applycontexttoworld
@@ -12064,29 +13282,40 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule C13M4GetToVehicleSheva
+		Rule C13M4GetToVehicleTrevor
 		{
-		    criteria ConceptGetToVehicle IsSheva ismapc13m4_cutthroatcreek IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsNotInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockSheva IsNotSpeakingWeight0
-		    Response C13M4GetToVehicleProducer
-		    ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockSheva:1:30"
+		    criteria ConceptGetToVehicle IsTrevor ismapc13m4_cutthroatcreek IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsNotInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockTrevor IsNotSpeakingWeight0
+		    Response C13M4GetToVehicleMechanic
+		    ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockTrevor:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C13M4InsideVehicleSheva
+		Rule C13M4InsideVehicleTrevor
 		{
-		    criteria ConceptGetToVehicle IsSheva ismapc13m4_cutthroatcreek IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockSheva IsNotSpeakingWeight0
-		    Response C13M4InsideVehicleProducer
-		    ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockSheva:1:30"
+		    criteria ConceptGetToVehicle IsTrevor ismapc13m4_cutthroatcreek IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockTrevor IsNotSpeakingWeight0
+		    Response C13M4InsideVehicleMechanic
+		    ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockTrevor:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SafeRoomStartSheva
+		Rule EllisStoryStartTrevor
 		{
-		    criteria ConceptTalkIdle IsSheva IsInStartArea AutoIsNotScavenge AutoIsNotSurvival _auto_NotSafeRoomStart
+		    criteria ConceptTalkIdle IsTrevor IsNotSpeaking AutoIsNotScavenge AutoIsNotSurvival IsNotSrcGrp_TREVORSTORYINIT
+		    // 	forceweight 1
+		    Response NoResponse
+		    ApplyContext "_auto_StoryWait:1:0,_auto_StoryGate:1:60,SrcGrp_TREVORSTORYINIT:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule SafeRoomStartTrevor
+		{
+		    criteria ConceptTalkIdle IsTrevor IsInStartArea AutoIsNotScavenge AutoIsNotSurvival _auto_NotSafeRoomStart
 		    Response NoResponse
 		    ApplyContext "Talk:1:45,_auto_SafeRoomStart:1:0,_auto_SafeRoomQuiet:1:5"
 		    applycontexttoworld
@@ -12094,9 +13323,9 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule IntroEndSheva
+		Rule IntroEndTrevor
 		{
-		    criteria ConceptIntroEnd IsSheva FromIsSheva IsNotSaidLeavingSafeArea AutoIsNotScavenge AutoIsNotSurvival
+		    criteria ConceptIntroEnd IsTrevor FromIsTrevor IsNotSaidLeavingSafeArea AutoIsNotScavenge AutoIsNotSurvival
 		    Response NoResponse
 		    ApplyContext "Talk:0:0"
 		    applycontexttoworld
@@ -12104,9 +13333,9 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule LeavingSafeAreaSheva
+		Rule LeavingSafeAreaTrevor
 		{
-		    criteria ConceptSurvivorLeavingCheckpoint IsSheva IsNotSaidLeavingSafeArea
+		    criteria ConceptSurvivorLeavingCheckpoint IsTrevor IsNotSaidLeavingSafeArea
 		    Response NoResponse
 		    ApplyContext "SaidLeavingSafeArea:1:0,Talk:0:0"
 		    applycontexttoworld
@@ -12114,9 +13343,9 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule LeavingSafeRoomSheva
+		Rule LeavingSafeRoomTrevor
 		{
-		    criteria ConceptSurvivorLeavingInitialCheckpoint IsSheva IsNotSaidLeavingSafeArea
+		    criteria ConceptSurvivorLeavingInitialCheckpoint IsTrevor IsNotSaidLeavingSafeArea
 		    Response NoResponse
 		    ApplyContext "SaidLeavingSafeArea:1:0,Talk:0:0"
 		    applycontexttoworld
@@ -12124,9 +13353,9 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule FinaleTriggeredSheva
+		Rule FinaleTriggeredTrevor
 		{
-		    criteria ConceptFinaleTriggered IsSheva IsTriggeredBySheva AutoIsNotScavenge AutoIsNotSurvival _auto_NotFinaleStarted
+		    criteria ConceptFinaleTriggered IsTrevor IsTriggeredByTrevor AutoIsNotScavenge AutoIsNotSurvival _auto_NotFinaleStarted
 		    Response NoResponse
 		    ApplyContext "_auto_Finale:1:0"
 		    applycontexttoworld
@@ -12134,9 +13363,9 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule FinalVehicleSpottedSheva
+		Rule FinalVehicleSpottedTrevor
 		{
-		    criteria ConceptFinalVehicleSpotted IsSheva _auto_IsFinaleStarted _auto_NotEscapeReady
+		    criteria ConceptFinalVehicleSpotted IsTrevor _auto_IsFinaleStarted _auto_NotEscapeReady
 		    Response NoResponse
 		    ApplyContext "_auto_Finale:2:0"
 		    applycontexttoworld
@@ -12144,9 +13373,9 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule FinalVehicleArrivedSheva
+		Rule FinalVehicleArrivedTrevor
 		{
-		    criteria ConceptFinalVehicleArrived IsSheva _auto_HasSpottedVehicle _auto_NotEscapeReady
+		    criteria ConceptFinalVehicleArrived IsTrevor _auto_HasSpottedVehicle _auto_NotEscapeReady
 		    Response NoResponse
 		    ApplyContext "_auto_Escape:1:0"
 		    applycontexttoworld
@@ -12154,424 +13383,282 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule L4D1PlayerNiceShotSheva
+		Rule L4D1PlayerNiceShotTrevor
 		{
-		    criteria ConceptL4D1PlayerNiceShot IsNotCoughing IsSheva IsSubjectDistNear1500 IsTalk IsTalkSheva IsWorldTalkSheva IsNotSpeaking ChanceToFire70Percent
-		    Response L4D1PlayerNiceShotProducer
+		    criteria ConceptL4D1PlayerNiceShot IsNotCoughing IsTrevor IsSubjectDistNear1500 IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotSpeaking ChanceToFire70Percent
+		    Response L4D1PlayerNiceShotMechanic
 		}
 	},
 
 	{
-		Rule L4D1PlayerNiceShotFrancisSheva
+		Rule L4D1PlayerNiceShotFrancisTrevor
 		{
-		    criteria ConceptL4D1PlayerNiceShot IsNotCoughing IsSheva IsSubjectDistNear1500 IsTalk IsTalkSheva IsWorldTalkSheva SubjectIsBiker ChanceToFire70Percent IsNotSpeaking
-		    Response L4D1PlayerNiceShotFrancisProducer
+		    criteria ConceptL4D1PlayerNiceShot IsNotCoughing IsTrevor IsSubjectDistNear1500 IsTalk IsTalkTrevor IsWorldTalkTrevor SubjectIsBiker ChanceToFire70Percent IsNotSpeaking
+		    Response L4D1PlayerNiceShotFrancisMechanic
 		}
 	},
 
 	{
-		Rule L4D1PlayerNiceShotLouisSheva
+		Rule L4D1PlayerNiceShotLouisTrevor
 		{
-		    criteria ConceptL4D1PlayerNiceShot IsNotCoughing IsSheva IsSubjectDistNear1500 IsTalk IsTalkSheva IsWorldTalkSheva SubjectIsManager ChanceToFire70Percent IsNotSpeaking
-		    Response L4D1PlayerNiceShotLouisProducer
+		    criteria ConceptL4D1PlayerNiceShot IsNotCoughing IsTrevor IsSubjectDistNear1500 IsTalk IsTalkTrevor IsWorldTalkTrevor SubjectIsManager ChanceToFire70Percent IsNotSpeaking
+		    Response L4D1PlayerNiceShotLouisMechanic
 		}
 	},
 
 	{
-		Rule L4D1PlayerNiceShotZoeySheva
+		Rule L4D1PlayerNiceShotZoeyTrevor
 		{
-		    criteria ConceptL4D1PlayerNiceShot IsNotCoughing IsSheva IsSubjectDistNear1500 IsTalk IsTalkSheva IsWorldTalkSheva SubjectIsTeenGirl ChanceToFire70Percent IsNotSpeaking
-		    Response L4D1PlayerNiceShotZoeyProducer
+		    criteria ConceptL4D1PlayerNiceShot IsNotCoughing IsTrevor IsSubjectDistNear1500 IsTalk IsTalkTrevor IsWorldTalkTrevor SubjectIsTeenGirl ChanceToFire70Percent IsNotSpeaking
+		    Response L4D1PlayerNiceShotZoeyMechanic
 		}
 	},
 
 	{
-		Rule C6M3GasPourSheva
+		Rule C6M3GasPourTrevor
 		{
-		    criteria ConceptPlayerPourStarted IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotScavenge isC6M3_Port ChanceToFire70Percent
-		    Response C6M3GasPourProducer
-		    ApplyContext "TalkSheva:1:2"
+		    criteria ConceptPlayerPourStarted IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotScavenge isC6M3_Port ChanceToFire70Percent
+		    Response C6M3GasPourMechanic
+		    ApplyContext "TalkTrevor:1:2"
 		}
 	},
 
 	{
-		Rule C6M1_IntotheparkNoHealthSheva
+		Rule C6M1_IntotheparkNoHealthTrevor
 		{
-		    criteria ConceptC6M1_IntotheparkNoHealth IsSheva
-		    Response C6M1_IntotheparkNoHealthProducer
+		    criteria ConceptC6M1_IntotheparkNoHealth IsTrevor
+		    Response C6M1_IntotheparkNoHealthMechanic
 		}
 	},
 
 	{
-		Rule C6M1Intro_01Biker03Sheva
+		Rule C6M1Intro_01aTrevor
 		{
-		    criteria ConceptintroC6M1 IsSheva IsFrancisIntroActor IsNotSaidIntroScene FrancisGroup3 IsNotVersus
-		    Response C6M1Intro_01Biker03Producer
-		    then Biker C6M1Intro_06a foo:0 -2.023
+		    criteria ConceptC6M1Intro_01a IsTrevor IsNotVersus
+		    Response C6M1Intro_01aMechanic
+		    then Biker C6M1Intro_01b foo:0 -6.365
+		}
+	},
+
+	{
+		Rule C6M1Intro_01Biker02Trevor
+		{
+		    criteria ConceptintroC6M1 IsTrevor IsFrancisIntroActor IsNotSaidIntroScene FrancisGroup2 IsNotVersus
+		    Response C6M1Intro_01Biker02Mechanic
+		    then Biker C6M1Intro_24b foo:0 -12.798
 		    ApplyContext "SaidIntroScene:1:0,Talk:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C6M1Intro_01Biker04Sheva
+		Rule C6M1Intro_01cTrevor
 		{
-		    criteria ConceptintroC6M1 IsSheva IsFrancisIntroActor IsNotSaidIntroScene FrancisGroup4 IsNotVersus
-		    Response C6M1Intro_01Biker04Producer
-		    then Biker C6M1Intro_18a foo:0 -3.074
+		    criteria ConceptC6M1Intro_01c IsTrevor IsNotVersus
+		    Response C6M1Intro_01cMechanic
+		    then Biker C6M1Intro_01d foo:0 -0.982
+		}
+	},
+
+	{
+		Rule C6M1Intro_01TeenGirl04Trevor
+		{
+		    criteria ConceptintroC6M1 IsTrevor IsZoeyIntroActor IsNotSaidIntroScene MoreThan60 LessThan100 IsNotVersus
+		    Response C6M1Intro_01TeenGirl04Mechanic
+		    then TeenGirl C6M1Intro_23a foo:0 -2.512
 		    ApplyContext "SaidIntroScene:1:0,Talk:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C6M1Intro_01TeenGirl03Sheva
+		Rule C6M1Intro_02aTrevor
 		{
-		    criteria ConceptintroC6M1 IsSheva IsZoeyIntroActor IsNotSaidIntroScene MoreThan40 LessThan60 IsNotVersus
-		    Response C6M1Intro_01TeenGirl03Producer
-		    then TeenGirl C6M1Intro_03a foo:0 -3.225
-		    ApplyContext "SaidIntroScene:1:0,Talk:1:30"
-		    applycontexttoworld
+		    criteria ConceptC6M1Intro_02a IsTrevor
+		    Response C6M1Intro_02aMechanic
+		    then Biker C6M1Intro_02b foo:0 -4.221
 		}
 	},
 
 	{
-		Rule C6M1Intro_05aSheva
+		Rule C6M1Intro_11aTrevor
 		{
-		    criteria ConceptC6M1Intro_05a IsSheva
-		    Response C6M1Intro_05aProducer
-		    then Biker C6M1Intro_05b foo:0 -2.451
+		    criteria ConceptC6M1Intro_11a IsTrevor
+		    Response C6M1Intro_11aMechanic
+		    then TeenGirl C6M1Intro_11b foo:0 -5.419
 		}
 	},
 
 	{
-		Rule C6M1Intro_05cSheva
+		Rule C6M1Intro_11cTrevor
 		{
-		    criteria ConceptC6M1Intro_05c IsSheva
-		    Response C6M1Intro_05cProducer
-		    then Biker C6M1Intro_05d foo:0 -1.958
-		}
-	},
-
-	{
-		Rule C6M1Intro_05eSheva
-		{
-		    criteria ConceptC6M1Intro_05e IsSheva
-		    Response C6M1Intro_05eProducer
-		    then Any WorldC6M1_HistoricTour foo:0 -1.874
-		    ApplyContext "Talk:0:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule C6M1Intro_06bSheva
-		{
-		    criteria ConceptC6M1Intro_06b IsSheva
-		    Response C6M1Intro_06bProducer
-		    then Biker C6M1Intro_06c foo:0 -2.236
-		}
-	},
-
-	{
-		Rule C6M1Intro_06dSheva
-		{
-		    criteria ConceptC6M1Intro_06d IsSheva
-		    Response C6M1Intro_06dProducer
-		    then Biker C6M1Intro_06e foo:0 -0.709
-		}
-	},
-
-	{
-		Rule C6M1Intro_07cSheva
-		{
-		    criteria ConceptC6M1Intro_07c IsSheva
-		    Response C6M1Intro_07cProducer
+		    criteria ConceptC6M1Intro_11c IsTrevor
+		    Response C6M1Intro_11cMechanic
 		    then Any WorldC6M1_HistoricTour foo:0 1
+		}
+	},
+
+	{
+		Rule C6M1Intro_12bTrevor
+		{
+		    criteria ConceptC6M1Intro_12b IsTrevor
+		    Response C6M1Intro_12bMechanic
+		    then Producer C6M1Intro_12c foo:0 -4.691
+		}
+	},
+
+	{
+		Rule C6M1Intro_13aTrevor
+		{
+		    criteria ConceptC6M1Intro_13a IsTrevor
+		    Response C6M1Intro_13aMechanic
+		    then Coach C6M1Intro_13b foo:0 -14.217
+		}
+	},
+
+	{
+		Rule C6M1Intro_13cTrevor
+		{
+		    criteria ConceptC6M1Intro_13c IsTrevor
+		    Response C6M1Intro_13cMechanic
+		    then TeenGirl C6M1Intro_13d foo:0 -3.537
+		}
+	},
+
+	{
+		Rule C6M1Intro_13fTrevor
+		{
+		    criteria ConceptC6M1Intro_13f IsTrevor
+		    Response C6M1Intro_13fMechanic
 		    ApplyContext "Talk:0:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C6M1Intro_09eSheva
+		Rule C6M1Intro_23bTrevor
 		{
-		    criteria ConceptC6M1Intro_09e IsSheva
-		    Response C6M1Intro_09eProducer
-		    then Sheva C6M1Intro_09f foo:0 -2.022
+		    criteria ConceptC6M1Intro_23b IsTrevor
+		    Response C6M1Intro_23bMechanic
+		    then TeenGirl C6M1Intro_23c foo:0 -7.488
 		}
 	},
 
 	{
-		Rule C6M1Intro_09fSheva
+		Rule C6M1Intro_23dTrevor
 		{
-		    criteria ConceptC6M1Intro_09f IsSheva
-		    Response C6M1Intro_09fProducer
-		    then Biker C6M1Intro_09g foo:0 -1.643
-		}
-	},
-
-	{
-		Rule C6M1Intro_10bSheva
-		{
-		    criteria ConceptC6M1Intro_10b IsSheva
-		    Response C6M1Intro_10bProducer
-		    then Biker C6M1Intro_10c foo:0 -4.931
-		}
-	},
-
-	{
-		Rule C6M1Intro_10dSheva
-		{
-		    criteria ConceptC6M1Intro_10d IsSheva
-		    Response C6M1Intro_10dProducer
-		    then Sheva C6M1Intro_10e foo:0 -2.369
-		}
-	},
-
-	{
-		Rule C6M1Intro_10eSheva
-		{
-		    criteria ConceptC6M1Intro_10e IsSheva
-		    Response C6M1Intro_10eProducer
+		    criteria ConceptC6M1Intro_23d IsTrevor
+		    Response C6M1Intro_23dMechanic
+		    then Any WorldC6M1_HistoricTour foo:0 -4.369
 		    ApplyContext "Talk:0:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C6M1Intro_12aSheva
+		Rule C6M1Intro_24cTrevor
 		{
-		    criteria ConceptC6M1Intro_12a IsSheva
-		    Response C6M1Intro_12aProducer
-		    then Mechanic C6M1Intro_12b foo:0 -2.341
+		    criteria ConceptC6M1Intro_24c IsTrevor
+		    Response C6M1Intro_24cMechanic
+		    then Biker C6M1Intro_24d foo:0 -2.841
 		}
 	},
 
 	{
-		Rule C6M1Intro_12cSheva
+		Rule C6M1Intro_24eTrevor
 		{
-		    criteria ConceptC6M1Intro_12c IsSheva
-		    Response C6M1Intro_12cProducer
-		    then Any WorldC6M1_HistoricTour foo:0 1
+		    criteria ConceptC6M1Intro_24e IsTrevor
+		    Response C6M1Intro_24eMechanic
 		    ApplyContext "Talk:0:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C6M1Intro_14dSheva
+		Rule LeavingC6M1StartTrevor
 		{
-		    criteria ConceptC6M1Intro_14d IsSheva
-		    Response C6M1Intro_14dProducer
-		    ApplyContext "Talk:0:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule C6M1Intro_15cSheva
-		{
-		    criteria ConceptC6M1Intro_15c IsSheva
-		    Response C6M1Intro_15cProducer
-		    then TeenGirl C6M1Intro_15d foo:0 -2.339
-		}
-	},
-
-	{
-		Rule C6M1Intro_17bSheva
-		{
-		    criteria ConceptC6M1Intro_17b IsSheva
-		    Response C6M1Intro_17bProducer
-		    then TeenGirl C6M1Intro_17c foo:0 -4.790
-		}
-	},
-
-	{
-		Rule C6M1Intro_17dSheva
-		{
-		    criteria ConceptC6M1Intro_17d IsSheva
-		    Response C6M1Intro_17dProducer
-		    ApplyContext "Talk:0:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule C6M1Intro_18bSheva
-		{
-		    criteria ConceptC6M1Intro_18b IsSheva
-		    Response C6M1Intro_18bProducer
-		    then Biker C6M1Intro_18c foo:0 -2.243
-		}
-	},
-
-	{
-		Rule C6M1Intro_18dSheva
-		{
-		    criteria ConceptC6M1Intro_18d IsSheva
-		    Response C6M1Intro_18dProducer
-		    then Biker C6M1Intro_18e foo:0 -2.015
-		}
-	},
-
-	{
-		Rule C6M1Intro_19bSheva
-		{
-		    criteria ConceptC6M1Intro_19b IsSheva
-		    Response C6M1Intro_19bProducer
-		    then Any WorldC6M1_HistoricTour foo:0 1
-		    ApplyContext "Talk:0:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule C6M1Intro_20aSheva
-		{
-		    criteria ConceptC6M1Intro_20a IsSheva
-		    Response C6M1Intro_20aProducer
-		    then Sheva C6M1Intro_20b foo:0 -0.951
-		}
-	},
-
-	{
-		Rule C6M1Intro_20bSheva
-		{
-		    criteria ConceptC6M1Intro_20b IsSheva
-		    Response C6M1Intro_20bProducer
-		    then Biker C6M1Intro_20c foo:0 -2.037
-		}
-	},
-
-	{
-		Rule C6M1Intro_20dSheva
-		{
-		    criteria ConceptC6M1Intro_20d IsSheva
-		    Response C6M1Intro_20dProducer
-		    then Biker C6M1Intro_20e foo:0 -4.900
-		}
-	},
-
-	{
-		Rule C6M1Intro_20gSheva
-		{
-		    criteria ConceptC6M1Intro_20g IsSheva
-		    Response C6M1Intro_20gProducer
-		    ApplyContext "Talk:0:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule C6M1Intro_22aSheva
-		{
-		    criteria ConceptC6M1Intro_22a IsSheva
-		    Response C6M1Intro_22aProducer
-		    then TeenGirl C6M1Intro_22b foo:0 -3.403
-		}
-	},
-
-	{
-		Rule C6M1Intro_22cSheva
-		{
-		    criteria ConceptC6M1Intro_22c IsSheva
-		    Response C6M1Intro_22cProducer
-		    then TeenGirl C6M1Intro_22d foo:0 -2.930
-		}
-	},
-
-	{
-		Rule C6M1Intro_22fSheva
-		{
-		    criteria ConceptC6M1Intro_22f IsSheva
-		    Response C6M1Intro_22fProducer
-		    then TeenGirl C6M1Intro_22g foo:0 -3.037
-		}
-	},
-
-	{
-		Rule C6M1Intro_22hSheva
-		{
-		    criteria ConceptC6M1Intro_22h IsSheva
-		    Response C6M1Intro_22hProducer
-		    ApplyContext "Talk:0:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule LeavingC6M1StartSheva
-		{
-		    criteria ConceptSurvivorLeavingCheckpoint IsSheva
-		    Response LeavingC6M1StartProducer
+		    criteria ConceptSurvivorLeavingCheckpoint IsTrevor
+		    Response LeavingC6M1StartMechanic
 		    ApplyContext "LeftC6M1Start:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule RemWorldC6M1_WeddingWarn01Sheva
+		Rule RemWorldC6M1_WeddingWarn02Trevor
 		{
-		    criteria ConceptRemWorldC6M1_WeddingWarn01 IsSheva IsSubjectDistNear800
-		    Response RemWorldC6M1_WeddingWarn01Producer
+		    criteria ConceptRemWorldC6M1_WeddingWarn02 IsTrevor IsSubjectDistNear800
+		    Response RemWorldC6M1_WeddingWarn02Mechanic
+		    ApplyContext "AtWedding:1:60, CoachCake:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule WorldC6M1_WeddingWarn03aTrevor
+		{
+		    criteria ConceptWorldC6M1_WeddingWarn03a IsTrevor
+		    Response WorldC6M1_WeddingWarn03aMechanic
+		    then Producer WorldC6M1_WeddingWarn03b foo:0 -0.799
 		    ApplyContext "AtWedding:1:60"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule WorldC6M1_HistoricTourSheva
+		Rule C6M2_OpenGate1Trevor
 		{
-		    criteria ConceptWorldC6M1_HistoricTour IsSheva IsNotLeftC6M1Start
-		    Response WorldC6M1_HistoricTourProducer
-		    then Coach HistoricTour02a foo:0 -3.829
-		}
-	},
-
-	{
-		Rule WorldC6M1_PostWedding02aSheva
-		{
-		    criteria ConceptWorldC6M1_PostWedding02a IsSheva IsSubjectDistNear800
-		    Response WorldC6M1_PostWedding02aProducer
-		}
-	},
-
-	{
-		Rule WorldC6M1_WeddingWarn03bSheva
-		{
-		    criteria ConceptWorldC6M1_WeddingWarn03b IsSheva
-		    Response WorldC6M1_WeddingWarn03bProducer
-		    ApplyContext "AtWedding:1:60"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule C6M2_OpenGate1Sheva
-		{
-		    criteria ConceptC6M2_OpenGate1 IsSheva
-		    Response C6M2_OpenGate1Producer
+		    criteria ConceptC6M2_OpenGate1 IsTrevor
+		    Response C6M2_OpenGate1Mechanic
 		    ApplyContext "SaidOpenedGate1:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C6M2_OpenGate2Sheva
+		Rule C6M2_OpenGate1bTrevor
 		{
-		    criteria ConceptC6M2_OpenGate2 IsSheva
-		    Response C6M2_OpenGate2Producer
+		    criteria ConceptC6M2_OpenGate1b IsTrevor
+		    Response C6M2_OpenGate1bMechanic
+		}
+	},
+
+	{
+		Rule C6M2_OpenGate1BlameTrevor
+		{
+		    criteria ConceptC6M2_OpenGate1 IsTrevor IsGamblerNear800Weight0
+		    Response C6M2_OpenGate1BlameMechanic
+		    then Gambler C6M2_OpenGate1a foo:0 0.01
+		    ApplyContext "SaidOpenedGate1:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C6M2_OpenGate2Trevor
+		{
+		    criteria ConceptC6M2_OpenGate2 IsTrevor
+		    Response C6M2_OpenGate2Mechanic
 		    ApplyContext "Said:OpenedGate2:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C6M2SafeRoomSheva
+		Rule C6M2LeavingSafeRoomTrevor
 		{
-		    criteria ConceptTalkIdle Joined3 IsSheva isC6m2_bedlam IsInStartArea AutoIsNotScavenge AutoIsNotSurvival IsNotSaidC6M2SafeRoom IsNotSpeakingWeight0
-		    Response C6M2SafeRoomProducer
+		    criteria ConceptSurvivorLeavingInitialCheckpoint IsTrevor IsNotSaidC6M2LeavingSafeRoom isc6m2_bedlam ChanceToFire70Percent
+		    Response C6M2LeavingSafeRoomMechanic
+		    ApplyContext "SaidC6M2LeavingSafeRoom:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule C6M2SafeRoomTrevor
+		{
+		    criteria ConceptTalkIdle Joined3 IsTrevor isC6m2_bedlam IsInStartArea AutoIsNotScavenge AutoIsNotSurvival IsNotSaidC6M2SafeRoom IsNotSpeakingWeight0
+		    Response C6M2SafeRoomMechanic
 		    then any C6M2SafeRoom2 foo:0 3
 		    ApplyContext "SaidC6M2SafeRoom:1:0"
 		    applycontexttoworld
@@ -12579,389 +13666,289 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule DLC1_C6M2_SafeRoomConvo01aSheva
+		Rule DLC1_C6M2_SafeRoomConvo02aTrevor
 		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo01a IsSheva
-		    Response DLC1_C6M2_SafeRoomConvo01aProducer
-		    then Gambler DLC1_C6M2_SafeRoomConvo01b foo:0 -2.711
+		    criteria ConceptDLC1_C6M2_SafeRoomConvo02a IsTrevor
+		    Response DLC1_C6M2_SafeRoomConvo02aMechanic
+		    then Gambler DLC1_C6M2_SafeRoomConvo02b foo:0 -3.509
 		}
 	},
 
 	{
-		Rule DLC1_C6M2_SafeRoomConvo03aSheva
+		Rule DLC1_C6M2_SafeRoomConvo03Trevor
 		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo03a IsSheva
-		    Response DLC1_C6M2_SafeRoomConvo03aProducer
-		    then Mechanic DLC1_C6M2_SafeRoomConvo03b foo:0 -2.886
-		}
-	},
-
-	{
-		Rule DLC1_C6M2_SafeRoomConvo03cSheva
-		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo03c IsSheva
-		    Response DLC1_C6M2_SafeRoomConvo03cProducer
-		}
-	},
-
-	{
-		Rule DLC1_C6M2_SafeRoomConvo04aSheva
-		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo04a IsSheva
-		    Response DLC1_C6M2_SafeRoomConvo04aProducer
-		}
-	},
-
-	{
-		Rule DLC1_C6M2_SafeRoomConvo06aSheva
-		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo06a IsSheva
-		    Response DLC1_C6M2_SafeRoomConvo06aProducer
-		}
-	},
-
-	{
-		Rule DLC1_C6M2_SafeRoomConvo07Sheva
-		{
-		    criteria ConceptC6M2SafeRoom2 IsSheva IsFrancisIntroActor FrancisGroup3 IsNotSaidC6M2SafeRoom2
-		    Response DLC1_C6M2_SafeRoomConvo07Producer
-		    then Gambler DLC1_C6M2_SafeRoomConvo08a foo:0 -1.679
+		    criteria ConceptC6M2SafeRoom2 IsTrevor IsFrancisIntroActor FrancisGroup1 IsNotSaidC6M2SafeRoom2
+		    Response DLC1_C6M2_SafeRoomConvo03Mechanic
+		    then Producer DLC1_C6M2_SafeRoomConvo03a foo:0 -3.330
 		    ApplyContext "SaidC6M2SafeRoom2:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule DLC1_C6M2_SafeRoomConvo07aSheva
+		Rule DLC1_C6M2_SafeRoomConvo03bTrevor
 		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo07a IsSheva
-		    Response DLC1_C6M2_SafeRoomConvo07aProducer
+		    criteria ConceptDLC1_C6M2_SafeRoomConvo03b IsTrevor
+		    Response DLC1_C6M2_SafeRoomConvo03bMechanic
+		    then Producer DLC1_C6M2_SafeRoomConvo03c foo:0 -16.180
 		}
 	},
 
 	{
-		Rule DLC1_C6M2_SafeRoomConvo08bSheva
+		Rule DLC1_C6M2_SafeRoomConvo06Trevor
 		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo08b IsSheva
-		    Response DLC1_C6M2_SafeRoomConvo08bProducer
-		    then Gambler DLC1_C6M2_SafeRoomConvo08c foo:0 -1.262
-		}
-	},
-
-	{
-		Rule DLC1_C6M2_SafeRoomConvo08dSheva
-		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo08d IsSheva
-		    Response DLC1_C6M2_SafeRoomConvo08dProducer
-		    then Gambler DLC1_C6M2_SafeRoomConvo08e foo:0 -0.977
-		}
-	},
-
-	{
-		Rule DLC1_C6M2_SafeRoomConvo08fSheva
-		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo08f IsSheva
-		    Response DLC1_C6M2_SafeRoomConvo08fProducer
-		}
-	},
-
-	{
-		Rule DLC1_C6M2_SafeRoomConvo10aSheva
-		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo10a IsSheva
-		    Response DLC1_C6M2_SafeRoomConvo10aProducer
-		    then Gambler DLC1_C6M2_SafeRoomConvo10b foo:0 -2.753
-		}
-	},
-
-	{
-		Rule DLC1_C6M2_SafeRoomConvo10cSheva
-		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo10c IsSheva
-		    Response DLC1_C6M2_SafeRoomConvo10cProducer
-		    then Gambler DLC1_C6M2_SafeRoomConvo10d foo:0 -3.678
-		}
-	},
-
-	{
-		Rule DLC1_C6M2_SafeRoomConvo13Sheva
-		{
-		    criteria ConceptC6M2SafeRoom2 IsSheva IsZoeyIntroActor ZoeyGroup3 IsNotSaidC6M2SafeRoom2
-		    Response DLC1_C6M2_SafeRoomConvo13Producer
-		    then Sheva DLC1_C6M2_SafeRoomConvo14a foo:0 -1.209
+		    criteria ConceptC6M2SafeRoom2 IsTrevor IsZoeyIntroActor ZoeyGroup1 IsNotSaidC6M2SafeRoom2
+		    Response DLC1_C6M2_SafeRoomConvo06Mechanic
+		    then Any DLC1_C6M2_SafeRoomConvo07a foo:0 -6.763
 		    ApplyContext "SaidC6M2SafeRoom2:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule DLC1_C6M2_SafeRoomConvo14aSheva
+		Rule DLC1_C6M2_SafeRoomConvo08Trevor
 		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo14a IsSheva
-		    Response DLC1_C6M2_SafeRoomConvo14aProducer
-		    then Mechanic DLC1_C6M2_SafeRoomConvo14b foo:0 -5.157
-		}
-	},
-
-	{
-		Rule DLC1_C6M2_SafeRoomConvo14cSheva
-		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo14c IsSheva
-		    Response DLC1_C6M2_SafeRoomConvo14cProducer
-		    then Coach DLC1_C6M2_SafeRoomConvo14d foo:0 -3.757
-		}
-	},
-
-	{
-		Rule DLC1_C6M2_SafeRoomConvo14eSheva
-		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo14e IsSheva
-		    Response DLC1_C6M2_SafeRoomConvo14eProducer
-		    then Gambler DLC1_C6M2_SafeRoomConvo14f foo:0 -0.987
-		}
-	},
-
-	{
-		Rule DLC1_C6M2_SafeRoomConvo15aSheva
-		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo15a IsSheva
-		    Response DLC1_C6M2_SafeRoomConvo15aProducer
-		    then Coach DLC1_C6M2_SafeRoomConvo15b foo:0 -3.064
-		}
-	},
-
-	{
-		Rule DLC1_C6M2_SafeRoomConvo16Sheva
-		{
-		    criteria ConceptC6M2SafeRoom2 IsSheva IsFrancisIntroActor IsNotSaidC6M2SafeRoom2
-		    Response DLC1_C6M2_SafeRoomConvo16Producer
-		    then Mechanic DLC1_C6M2_SafeRoomConvo17a foo:0 -10.043
+		    criteria ConceptC6M2SafeRoom2 IsTrevor IsNotSaidC6M2SafeRoom2
+		    Response DLC1_C6M2_SafeRoomConvo08Mechanic
+		    then Producer DLC1_C6M2_SafeRoomConvo15a foo:0 -4.114
 		    ApplyContext "SaidC6M2SafeRoom2:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule DLC1_C6M2_SafeRoomConvo16aSheva
+		Rule DLC1_C6M2_SafeRoomConvo11aTrevor
 		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo16a IsSheva
-		    Response DLC1_C6M2_SafeRoomConvo16aProducer
-		    then Mechanic DLC1_C6M2_SafeRoomConvo16b foo:0 -5.036
+		    criteria ConceptDLC1_C6M2_SafeRoomConvo11a IsTrevor
+		    Response DLC1_C6M2_SafeRoomConvo11aMechanic
+		    then Gambler DLC1_C6M2_SafeRoomConvo11b foo:0 -4.069
 		}
 	},
 
 	{
-		Rule DLC1_C6M2_SafeRoomConvo16cSheva
+		Rule DLC1_C6M2_SafeRoomConvo14bTrevor
 		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo16c IsSheva
-		    Response DLC1_C6M2_SafeRoomConvo16cProducer
-		    then Mechanic DLC1_C6M2_SafeRoomConvo16d foo:0 -3.803
+		    criteria ConceptDLC1_C6M2_SafeRoomConvo14b IsTrevor
+		    Response DLC1_C6M2_SafeRoomConvo14bMechanic
+		    then Producer DLC1_C6M2_SafeRoomConvo14c foo:0 -2.922
 		}
 	},
 
 	{
-		Rule DLC1_C6M2_SafeRoomConvo17bSheva
+		Rule DLC1_C6M2_SafeRoomConvo15Trevor
 		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo17b IsSheva
-		    Response DLC1_C6M2_SafeRoomConvo17bProducer
+		    criteria ConceptC6M2SafeRoom2 IsTrevor IsNotSaidC6M2SafeRoom2
+		    Response DLC1_C6M2_SafeRoomConvo15Mechanic
+		    then Coach DLC1_C6M2_SafeRoomConvo16a1 foo:0 -3.684
+		    ApplyContext "SaidC6M2SafeRoom2:1:0"
+		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule DLC1_C6M2_SafeRoomConvo18aSheva
+		Rule DLC1_C6M2_SafeRoomConvo16bTrevor
 		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo18a IsSheva
-		    Response DLC1_C6M2_SafeRoomConvo18aProducer
-		    then Mechanic DLC1_C6M2_SafeRoomConvo18b foo:0 -2.626
+		    criteria ConceptDLC1_C6M2_SafeRoomConvo16b IsTrevor
+		    Response DLC1_C6M2_SafeRoomConvo16bMechanic
+		    then Producer DLC1_C6M2_SafeRoomConvo16c foo:0 -1.763
 		}
 	},
 
 	{
-		Rule DLC1_C6M2_SafeRoomConvo18dSheva
+		Rule DLC1_C6M2_SafeRoomConvo16b1Trevor
 		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo18d IsSheva
-		    Response DLC1_C6M2_SafeRoomConvo18dProducer
-		    then Coach DLC1_C6M2_SafeRoomConvo18e foo:0 -1.428
+		    criteria ConceptDLC1_C6M2_SafeRoomConvo16b1 IsTrevor
+		    Response DLC1_C6M2_SafeRoomConvo16b1Mechanic
+		    then Coach DLC1_C6M2_SafeRoomConvo16e foo:0 -1.763
 		}
 	},
 
 	{
-		Rule DLC1_C6M2_SafeRoomConvo19aSheva
+		Rule DLC1_C6M2_SafeRoomConvo16dTrevor
 		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo19a IsSheva
-		    Response DLC1_C6M2_SafeRoomConvo19aProducer
+		    criteria ConceptDLC1_C6M2_SafeRoomConvo16d IsTrevor
+		    Response DLC1_C6M2_SafeRoomConvo16dMechanic
 		}
 	},
 
 	{
-		Rule DLC1_C6M2_SafeRoomConvo20aSheva
+		Rule DLC1_C6M2_SafeRoomConvo16fTrevor
 		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo20a IsSheva
-		    Response DLC1_C6M2_SafeRoomConvo20aProducer
+		    criteria ConceptDLC1_C6M2_SafeRoomConvo16f IsTrevor
+		    Response DLC1_C6M2_SafeRoomConvo16fMechanic
 		}
 	},
 
 	{
-		Rule DLC1_C6M2_SafeRoomConvo21aSheva
+		Rule DLC1_C6M2_SafeRoomConvo17Trevor
 		{
-		    criteria ConceptDLC1_C6M2_SafeRoomConvo21a IsSheva
-		    Response DLC1_C6M2_SafeRoomConvo21aProducer
-		    then Mechanic DLC1_C6M2_SafeRoomConvo21b foo:0 -3.574
+		    criteria ConceptC6M2SafeRoom2 IsTrevor IsZoeyIntroActor IsNotSaidC6M2SafeRoom2
+		    Response DLC1_C6M2_SafeRoomConvo17Mechanic
+		    then Producer DLC1_C6M2_SafeRoomConvo18a foo:0 -3.626
+		    ApplyContext "SaidC6M2SafeRoom2:1:0"
+		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule WorldC6M2_InSewer101aSheva
+		Rule DLC1_C6M2_SafeRoomConvo17aTrevor
 		{
-		    criteria ConceptWorldC6M2_InSewer101a IsSheva
-		    Response WorldC6M2_InSewer101aProducer
-		    then Sheva WorldC6M2_InSewer101b foo:0 -2.388
+		    criteria ConceptDLC1_C6M2_SafeRoomConvo17a IsTrevor
+		    Response DLC1_C6M2_SafeRoomConvo17aMechanic
+		    then Producer DLC1_C6M2_SafeRoomConvo17b foo:0 -7.751
 		}
 	},
 
 	{
-		Rule WorldC6M2_InSewer102bSheva
+		Rule DLC1_C6M2_SafeRoomConvo18bTrevor
 		{
-		    criteria ConceptWorldC6M2_InSewer102b IsSheva
-		    Response WorldC6M2_InSewer102bProducer
+		    criteria ConceptDLC1_C6M2_SafeRoomConvo18b IsTrevor
+		    Response DLC1_C6M2_SafeRoomConvo18bMechanic
+		    then Coach DLC1_C6M2_SafeRoomConvo18c foo:0 -2.705
 		}
 	},
 
 	{
-		Rule WorldC6M2_InSewer202aSheva
+		Rule DLC1_C6M2_SafeRoomConvo19aTrevor
 		{
-		    criteria ConceptWorldC6M2_InSewer202a IsSheva
-		    Response WorldC6M2_InSewer202aProducer
+		    criteria ConceptDLC1_C6M2_SafeRoomConvo19a IsTrevor
+		    Response DLC1_C6M2_SafeRoomConvo19aMechanic
+		    then Coach DLC1_C6M2_SafeRoomConvo19b foo:0 -2.249
 		}
 	},
 
 	{
-		Rule WorldC6M2_OnTourWalk101aSheva
+		Rule DLC1_C6M2_SafeRoomConvo19cTrevor
 		{
-		    criteria ConceptWorldC6M2_OnTourWalk101a IsSheva
-		    Response WorldC6M2_OnTourWalk101aProducer
-		    then Sheva WorldC6M2_OnTourWalk101b foo:0 -0.850
+		    criteria ConceptDLC1_C6M2_SafeRoomConvo19c IsTrevor
+		    Response DLC1_C6M2_SafeRoomConvo19cMechanic
+		    then Coach DLC1_C6M2_SafeRoomConvo19d foo:0 -6.193
 		}
 	},
 
 	{
-		Rule WorldC6M2_OnTourWalk101bSheva
+		Rule DLC1_C6M2_SafeRoomConvo19eTrevor
 		{
-		    criteria ConceptWorldC6M2_OnTourWalk101b IsSheva
-		    Response WorldC6M2_OnTourWalk101bProducer
+		    criteria ConceptDLC1_C6M2_SafeRoomConvo19e IsTrevor
+		    Response DLC1_C6M2_SafeRoomConvo19eMechanic
 		}
 	},
 
 	{
-		Rule WorldC6M2_OnTourWalk102bSheva
+		Rule DLC1_C6M2_SafeRoomConvo20Trevor
 		{
-		    criteria ConceptWorldC6M2_OnTourWalk102b IsSheva
-		    Response WorldC6M2_OnTourWalk102bProducer
+		    criteria ConceptC6M2SafeRoom2 IsTrevor IsNotSaidC6M2SafeRoom2
+		    Response DLC1_C6M2_SafeRoomConvo20Mechanic
+		    then Producer DLC1_C6M2_SafeRoomConvo21a foo:0 -12.293
+		    ApplyContext "SaidC6M2SafeRoom2:1:0"
+		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule WorldC6M2_Phase201aSheva
+		Rule DLC1_C6M2_SafeRoomConvo21bTrevor
 		{
-		    criteria ConceptWorldC6M2_Phase201a IsSheva
-		    Response WorldC6M2_Phase201aProducer
+		    criteria ConceptDLC1_C6M2_SafeRoomConvo21b IsTrevor
+		    Response DLC1_C6M2_SafeRoomConvo21bMechanic
 		}
 	},
 
 	{
-		Rule WorldC6M2_Tattoo01a_Sheva
+		Rule WorldC6M2_FinalWater01bTrevor
 		{
-		    criteria ConceptWorldC6M2_Tattoo01a_ IsSheva
-		    Response WorldC6M2_Tattoo01a_Producer
-		    then Gambler WorldC6M2_Tattoo01b> foo:0 -2.084
+		    criteria ConceptWorldC6M2_FinalWater01b IsTrevor
+		    Response WorldC6M2_FinalWater01bMechanic
 		}
 	},
 
 	{
-		Rule WorldC6M2_Tattoo02a_Sheva
+		Rule WorldC6M2_InSewer101aTrevor
 		{
-		    criteria ConceptWorldC6M2_Tattoo02a_ IsSheva
-		    Response WorldC6M2_Tattoo02a_Producer
-		    then Coach WorldC6M2_Tattoo02b> foo:0 -0.489
+		    criteria ConceptWorldC6M2_InSewer101a IsTrevor
+		    Response WorldC6M2_InSewer101aMechanic
+		    then Gambler WorldC6M2_InSewer101c foo:0 -0.999
 		}
 	},
 
 	{
-		Rule WorldC6M2_Tattoo02c_Sheva
+		Rule WorldC6M2_OnTourWalk102bTrevor
 		{
-		    criteria ConceptWorldC6M2_Tattoo02c_ IsSheva
-		    Response WorldC6M2_Tattoo02c_Producer
+		    criteria ConceptWorldC6M2_OnTourWalk102b IsTrevor
+		    Response WorldC6M2_OnTourWalk102bMechanic
 		}
 	},
 
 	{
-		Rule WorldC6M2_Tattoo02d_Sheva
+		Rule WorldC6M2_Tattoo03b_Trevor
 		{
-		    criteria ConceptWorldC6M2_Tattoo02d_ IsSheva
-		    Response WorldC6M2_Tattoo02d_Producer
+		    criteria ConceptWorldC6M2_Tattoo03b_ IsTrevor
+		    Response WorldC6M2_Tattoo03b_Mechanic
 		}
 	},
 
 	{
-		Rule WorldC6M2_TourEntrance01aSheva
+		Rule C6M3_BridgeDownTrevor
 		{
-		    criteria ConceptWorldC6M2_TourEntrance01a IsSheva
-		    Response WorldC6M2_TourEntrance01aProducer
-		}
-	},
-
-	{
-		Rule C6M3_BridgeDownSheva
-		{
-		    criteria ConceptC6M3_BridgeDown IsSheva
-		    Response C6M3_BridgeDownProducer
+		    criteria ConceptC6M3_BridgeDown IsTrevor
+		    Response C6M3_BridgeDownMechanic
 		    ApplyContext "SaidGetToCar:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C6M3_BridgeGettoCarSheva
+		Rule C6M3_BridgeGettoCarTrevor
 		{
-		    criteria ConceptGetToVehicle IsSheva IsNotSaidGetToCar Isc6m3_port
-		    Response C6M3_BridgeGettoCarProducer
+		    criteria ConceptGetToVehicle IsTrevor IsNotSaidGetToCar Isc6m3_port
+		    Response C6M3_BridgeGettoCarMechanic
 		    ApplyContext "SaidGetToCar:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C6M3_elevatorSheva
+		Rule C6M3_elevatorTrevor
 		{
-		    criteria Conceptc6m3_elevatorCancel IsSheva IsNotSaidC6M3Elevator IsC6M3_port
+		    criteria Conceptc6m3_elevatorCancel IsTrevor IsNotSaidC6M3Elevator IsC6M3_port
 		    // 	forceweight 1
-		    Response C6M3_elevatorProducer
+		    Response C6M3_elevatorMechanic
 		    ApplyContext "SaidC6M3Elevator:1:0,Talk:0:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C6M3_GivenItemBikerSheva
+		Rule C6M3_elevatorZoeyTrevor
 		{
-		    criteria ConceptPlayerPickup IsSheva IsDonorBiker Isc6m3_portHeavy
-		    Response C6M3_GivenItemBikerProducer
+		    criteria Conceptc6m3_elevatorCancel IsTrevor IsNotSaidC6M3Elevator IsC6M3_port IsZoeyIntroActor IsNotVersus ZoeyGroup1
+		    // 	forceweight 1
+		    Response C6M3_elevatorZoeyMechanic
+		    ApplyContext "SaidC6M3Elevator:1:0,Talk:0:0"
+		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C6M3_GivenItemTeenGirlSheva
+		Rule C6M3_GivenItemBikerTrevor
 		{
-		    criteria ConceptPlayerPickup IsSheva IsDonorTeenGirl Isc6m3_portHeavy
-		    Response C6M3_GivenItemTeenGirlProducer
+		    criteria ConceptPlayerPickup IsTrevor IsDonorBiker Isc6m3_portHeavy
+		    Response C6M3_GivenItemBikerMechanic
 		}
 	},
 
 	{
-		Rule C6M3SafeRoomSheva
+		Rule C6M3_GivenItemTeenGirlTrevor
 		{
-		    criteria ConceptTalkIdle Joined3 IsSheva isC6m3_port IsInStartArea AutoIsNotScavenge AutoIsNotSurvival IsNotSaidC6M3SafeRoom IsNotSpeakingWeight0
-		    Response C6M3SafeRoomProducer
+		    criteria ConceptPlayerPickup IsTrevor IsDonorTeenGirl Isc6m3_portHeavy
+		    Response C6M3_GivenItemTeenGirlMechanic
+		}
+	},
+
+	{
+		Rule C6M3SafeRoomTrevor
+		{
+		    criteria ConceptTalkIdle Joined3 IsTrevor isC6m3_port IsInStartArea AutoIsNotScavenge AutoIsNotSurvival IsNotSaidC6M3SafeRoom IsNotSpeakingWeight0
+		    Response C6M3SafeRoomMechanic
 		    then any C6M3SafeRoom2 foo:0 3
 		    ApplyContext "SaidC6M3SafeRoom:1:0"
 		    applycontexttoworld
@@ -12969,130 +13956,169 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule DLC1_C6M3_SafeRoomConvo01Sheva
+		Rule DLC1_C6M3_SafeRoomConvo01aTrevor
 		{
-		    criteria ConceptC6M3SafeRoom2 IsSheva IsNotSaidC6M3SafeRoom2 IsFrancisIntroActor FrancisGroup3 IsInStartArea
-		    Response DLC1_C6M3_SafeRoomConvo01Producer
-		    then Mechanic DLC1_C6M3_SafeRoomConvo01a foo:0 -1.260
+		    criteria ConceptDLC1_C6M3_SafeRoomConvo01a IsTrevor IsInStartArea
+		    Response DLC1_C6M3_SafeRoomConvo01aMechanic
+		    then Producer DLC1_C6M3_SafeRoomConvo01b foo:0 -7.373
+		}
+	},
+
+	{
+		Rule DLC1_C6M3_SafeRoomConvo01cTrevor
+		{
+		    criteria ConceptDLC1_C6M3_SafeRoomConvo01c IsTrevor
+		    Response DLC1_C6M3_SafeRoomConvo01cMechanic
+		}
+	},
+
+	{
+		Rule DLC1_C6M3_SafeRoomConvo02eTrevor
+		{
+		    criteria ConceptDLC1_C6M3_SafeRoomConvo02e IsTrevor IsInStartArea
+		    Response DLC1_C6M3_SafeRoomConvo02eMechanic
+		}
+	},
+
+	{
+		Rule DLC1_C6M3_SafeRoomConvo03aTrevor
+		{
+		    criteria ConceptDLC1_C6M3_SafeRoomConvo03a IsTrevor IsInStartArea
+		    Response DLC1_C6M3_SafeRoomConvo03aMechanic
+		    then Gambler DLC1_C6M3_SafeRoomConvo03b foo:0 -1.144
+		}
+	},
+
+	{
+		Rule DLC1_C6M3_SafeRoomConvo03cTrevor
+		{
+		    criteria ConceptDLC1_C6M3_SafeRoomConvo03c IsTrevor IsInStartArea
+		    Response DLC1_C6M3_SafeRoomConvo03cMechanic
+		    then Gambler DLC1_C6M3_SafeRoomConvo03d foo:0 -1.799
+		}
+	},
+
+	{
+		Rule DLC1_C6M3_SafeRoomConvo04aTrevor
+		{
+		    criteria ConceptDLC1_C6M3_SafeRoomConvo04a IsTrevor IsInStartArea
+		    Response DLC1_C6M3_SafeRoomConvo04aMechanic
+		    then Producer DLC1_C6M3_SafeRoomConvo04b foo:0 -3.659
+		}
+	},
+
+	{
+		Rule DLC1_C6M3_SafeRoomConvo04dTrevor
+		{
+		    criteria ConceptDLC1_C6M3_SafeRoomConvo04d IsTrevor IsInStartArea
+		    Response DLC1_C6M3_SafeRoomConvo04dMechanic
+		}
+	},
+
+	{
+		Rule DLC1_C6M3_SafeRoomConvo05aTrevor
+		{
+		    criteria ConceptDLC1_C6M3_SafeRoomConvo05a IsTrevor IsInStartArea
+		    Response DLC1_C6M3_SafeRoomConvo05aMechanic
+		    then Gambler DLC1_C6M3_SafeRoomConvo05b foo:0 -2.546
+		}
+	},
+
+	{
+		Rule DLC1_C6M3_SafeRoomConvo06Trevor
+		{
+		    criteria ConceptC6M3SafeRoom2 IsTrevor IsNotSaidC6M3SafeRoom2 IsFrancisIntroActor FrancisGroup4 IsInStartArea
+		    Response DLC1_C6M3_SafeRoomConvo06Mechanic
+		    then Producer DLC1_C6M3_SafeRoomConvo06a foo:0 -5.805
 		    ApplyContext "SaidC6M3SafeRoom2:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule DLC1_C6M3_SafeRoomConvo01bSheva
+		Rule DLC1_C6M3_SafeRoomConvo06bTrevor
 		{
-		    criteria ConceptDLC1_C6M3_SafeRoomConvo01b IsSheva IsInStartArea
-		    Response DLC1_C6M3_SafeRoomConvo01bProducer
-		    then Mechanic DLC1_C6M3_SafeRoomConvo01c foo:0 -0.926
+		    criteria ConceptDLC1_C6M3_SafeRoomConvo06b IsTrevor IsInStartArea
+		    Response DLC1_C6M3_SafeRoomConvo06bMechanic
 		}
 	},
 
 	{
-		Rule DLC1_C6M3_SafeRoomConvo02a1Sheva
+		Rule DLC1_C6M3_SafeRoomConvo07aTrevor
 		{
-		    criteria ConceptDLC1_C6M3_SafeRoomConvo02a1 IsSheva
-		    Response DLC1_C6M3_SafeRoomConvo02a1Producer
-		    then Gambler DLC1_C6M3_SafeRoomConvo02b foo:0 -0.760
+		    criteria ConceptDLC1_C6M3_SafeRoomConvo07a IsTrevor IsInStartArea
+		    Response DLC1_C6M3_SafeRoomConvo07aMechanic
+		    then Producer DLC1_C6M3_SafeRoomConvo07b foo:0 -2.804
 		}
 	},
 
 	{
-		Rule DLC1_C6M3_SafeRoomConvo02cSheva
+		Rule DLC1_C6M3_SafeRoomConvo07cTrevor
 		{
-		    criteria ConceptDLC1_C6M3_SafeRoomConvo02c IsSheva IsInStartArea
-		    Response DLC1_C6M3_SafeRoomConvo02cProducer
-		    then Gambler DLC1_C6M3_SafeRoomConvo02d foo:0 -1.258
+		    criteria ConceptDLC1_C6M3_SafeRoomConvo07c IsTrevor IsInStartArea
+		    Response DLC1_C6M3_SafeRoomConvo07cMechanic
 		}
 	},
 
 	{
-		Rule DLC1_C6M3_SafeRoomConvo04bSheva
+		Rule DLC1_C6M3_SafeRoomConvo08aTrevor
 		{
-		    criteria ConceptDLC1_C6M3_SafeRoomConvo04b IsSheva IsInStartArea
-		    Response DLC1_C6M3_SafeRoomConvo04bProducer
-		    then Gambler DLC1_C6M3_SafeRoomConvo04c foo:0 -2.568
+		    criteria ConceptDLC1_C6M3_SafeRoomConvo08a IsTrevor IsInStartArea
+		    Response DLC1_C6M3_SafeRoomConvo08aMechanic
+		    then Coach DLC1_C6M3_SafeRoomConvo08b foo:0 -1.669
 		}
 	},
 
 	{
-		Rule DLC1_C6M3_SafeRoomConvo04dSheva
+		Rule DLC1_C6M3_SafeRoomConvo08cTrevor
 		{
-		    criteria ConceptDLC1_C6M3_SafeRoomConvo04d IsSheva IsInStartArea
-		    Response DLC1_C6M3_SafeRoomConvo04dProducer
+		    criteria ConceptDLC1_C6M3_SafeRoomConvo08c IsTrevor IsInStartArea
+		    Response DLC1_C6M3_SafeRoomConvo08cMechanic
+		    then Trevor DLC1_C6M3_SafeRoomConvo08d foo:0 -0.936
 		}
 	},
 
 	{
-		Rule DLC1_C6M3_SafeRoomConvo05cSheva
+		Rule DLC1_C6M3_SafeRoomConvo08dTrevor
 		{
-		    criteria ConceptDLC1_C6M3_SafeRoomConvo05c IsSheva IsInStartArea
-		    Response DLC1_C6M3_SafeRoomConvo05cProducer
-		    then Gambler DLC1_C6M3_SafeRoomConvo05d foo:0 -1.309
+		    criteria ConceptDLC1_C6M3_SafeRoomConvo08d IsTrevor IsInStartArea
+		    Response DLC1_C6M3_SafeRoomConvo08dMechanic
+		    then Trevor DLC1_C6M3_SafeRoomConvo08f foo:0 -1.479
 		}
 	},
 
 	{
-		Rule DLC1_C6M3_SafeRoomConvo06aSheva
+		Rule DLC1_C6M3_SafeRoomConvo08eTrevor
 		{
-		    criteria ConceptDLC1_C6M3_SafeRoomConvo06a IsSheva IsInStartArea
-		    Response DLC1_C6M3_SafeRoomConvo06aProducer
-		    then Mechanic DLC1_C6M3_SafeRoomConvo06b foo:0 -3.045
+		    criteria ConceptDLC1_C6M3_SafeRoomConvo08e IsTrevor IsInStartArea
+		    Response DLC1_C6M3_SafeRoomConvo08eMechanic
+		    then Trevor DLC1_C6M3_SafeRoomConvo08f foo:0 -2.608
 		}
 	},
 
 	{
-		Rule DLC1_C6M3_SafeRoomConvo07Sheva
+		Rule DLC1_C6M3_SafeRoomConvo08fTrevor
 		{
-		    criteria ConceptC6M3SafeRoom2 IsSheva IsNotSaidC6M3SafeRoom2 IsZoeyIntroActor IsInStartArea
-		    Response DLC1_C6M3_SafeRoomConvo07Producer
-		    then Mechanic DLC1_C6M3_SafeRoomConvo07a foo:0 -3.413
-		    ApplyContext "SaidC6M3SafeRoom2:1:0"
-		    applycontexttoworld
+		    criteria ConceptDLC1_C6M3_SafeRoomConvo08f IsTrevor IsInStartArea
+		    Response DLC1_C6M3_SafeRoomConvo08fMechanic
+		    then Producer DLC1_C6M3_SafeRoomConvo08g foo:0 -5.514
 		}
 	},
 
 	{
-		Rule DLC1_C6M3_SafeRoomConvo07bSheva
+		Rule DLC1_C6M3_SafeRoomConvo09aTrevor
 		{
-		    criteria ConceptDLC1_C6M3_SafeRoomConvo07b IsSheva IsInStartArea
-		    Response DLC1_C6M3_SafeRoomConvo07bProducer
-		    then Mechanic DLC1_C6M3_SafeRoomConvo07c foo:0 -4.242
+		    criteria ConceptDLC1_C6M3_SafeRoomConvo09a IsTrevor IsInStartArea
+		    Response DLC1_C6M3_SafeRoomConvo09aMechanic
+		    then Producer DLC1_C6M3_SafeRoomConvo09b foo:0 -13.536
 		}
 	},
 
 	{
-		Rule DLC1_C6M3_SafeRoomConvo08gSheva
+		Rule IncapBounceTrevor
 		{
-		    criteria ConceptDLC1_C6M3_SafeRoomConvo08g IsSheva IsInStartArea
-		    Response DLC1_C6M3_SafeRoomConvo08gProducer
-		}
-	},
-
-	{
-		Rule DLC1_C6M3_SafeRoomConvo09Sheva
-		{
-		    criteria ConceptC6M3SafeRoom2 IsSheva IsNotSaidC6M3SafeRoom2 IsZoeyIntroActor ZoeyGroup1 IsInStartArea
-		    Response DLC1_C6M3_SafeRoomConvo09Producer
-		    then Mechanic DLC1_C6M3_SafeRoomConvo09a foo:0 -4.131
-		    ApplyContext "SaidC6M3SafeRoom2:1:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule DLC1_C6M3_SafeRoomConvo09bSheva
-		{
-		    criteria ConceptDLC1_C6M3_SafeRoomConvo09b IsSheva IsInStartArea
-		    Response DLC1_C6M3_SafeRoomConvo09bProducer
-		}
-	},
-
-	{
-		Rule IncapBounceSheva
-		{
-		    criteria ConceptSurvivorIncapacitated IsSheva IsNotSaidInCapBounce isC6m3_port
-		    Response IncapBounceProducer
+		    criteria ConceptSurvivorIncapacitated IsTrevor IsNotSaidInCapBounce isC6m3_port
+		    Response IncapBounceMechanic
 		    then Biker InCapBounce2 foo:0 0
 		    ApplyContext "SaidInCapBounce:1:0"
 		    applycontexttoworld
@@ -13100,729 +14126,749 @@ local sheva_alomar_rules =
 	},
 
 	{
-		Rule C6M3_CansDoneSheva
+		Rule C6M3_CansDoneTrevor
 		{
-		    criteria Conceptc6m3escapeready IsSheva IsC6M3_Port IsNotSaidc6m3escapeready
-		    Response C6M3_CansDoneProducer
-		    then any EmphaticArriveRun foo:0 -1.498
+		    criteria Conceptc6m3escapeready IsTrevor IsC6M3_Port IsNotSaidc6m3escapeready
+		    Response C6M3_CansDoneMechanic
+		    then any EmphaticArriveRun foo:0 -1.830
 		    ApplyContext "Saidc6m3escapeready:1:0,Talk:1:5"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule L4D1AlsoSpottedTankSheva
+		Rule L4D1AlsoSpottedTankTrevor
 		{
-		    criteria ConceptPlayerAlsoWarnTank IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva Isc6m3_port
-		    Response L4D1AlsoSpottedTankProducer
+		    criteria ConceptPlayerAlsoWarnTank IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor Isc6m3_port
+		    Response L4D1AlsoSpottedTankMechanic
 		    ApplyContext "SaidTankWarn:1:20,SaidSpecialWarn:1:30,SaidTankWarn2:1:60"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule L4D1SpottedTankSheva
+		Rule L4D1SpottedTankTrevor
 		{
-		    criteria ConceptPlayerWarnSpecial IsSpecialTypeTank IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva Isc6m3_port IsNotSpeakingWeight0
-		    Response L4D1SpottedTankProducer
+		    criteria ConceptPlayerWarnSpecial IsSpecialTypeTank IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor Isc6m3_port IsNotSpeakingWeight0
+		    Response L4D1SpottedTankMechanic
 		    ApplyContext "SaidTankWarn:1:20,SaidSpecialWarn:1:30,SaidTankWarn2:1:60"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedFallenSheva
+		Rule SurvivorSpottedFallenTrevor
 		{
-		    criteria ConceptPlayerWarnSpecial IsSpecialTypeFallen IsNotCoughing IsSheva IsTalk IsTalkSheva IsWorldTalkSheva IsNotSaidFallenWarn IsNotSpeakingWeight0
-		    Response SurvivorSpottedFallenProducer
+		    criteria ConceptPlayerWarnSpecial IsSpecialTypeFallen IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotSaidFallenWarn IsNotSpeakingWeight0
+		    Response SurvivorSpottedFallenMechanic
 		    ApplyContext "SaidFallenWarn:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerWitchChasingC6M1Sheva
+		Rule PlayerWitchChasingC6M1Trevor
 		{
-		    criteria ConceptPlayerExertionMinor IsSheva IsWitchPresent SubjectIsNotWitch IsNotSaidShevaWitchChasing IsSaidShevaWitchAttacking isc6m1_riverbank
+		    criteria ConceptPlayerExertionMinor IsTrevor IsWitchPresent SubjectIsNotWitch IsNotSaidTrevorWitchChasing IsSaidTrevorWitchAttacking isc6m1_riverbank
 		    // 	forceweight 20
-		    Response PlayerWitchChasingC6M1Producer
-		    ApplyContext "SaidShevaWitchChasing:1:15,TalkSheva:1:2"
+		    Response PlayerWitchChasingC6M1Mechanic
+		    ApplyContext "SaidTrevorWitchChasing:1:15,TalkTrevor:1:2"
 		}
 	},
 
 	{
-		Rule PlayerRemarkremark_MidnightRidersBusSheva
+		Rule PlayerRemarkremark_MidnightRidersBusTrevor
 		{
-		    criteria ConceptRemark IsSheva Isremark_MidnightRidersBus IsNotSaidremark_MidnightRidersBus IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear1500 IsNotSpeakingWeight0
-		    Response PlayerRemarkremark_MidnightRidersBusProducer
+		    criteria ConceptRemark IsTrevor Isremark_MidnightRidersBus IsNotSaidremark_MidnightRidersBus IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear1500 IsNotSpeakingWeight0
+		    Response PlayerRemarkremark_MidnightRidersBusMechanic
 		    ApplyContext "Saidremark_MidnightRidersBus:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M1_AcrossHereSheva
+		Rule PlayerRemarkWorldC6M1_AcrossHereTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M1_AcrossHere IsNotSaidWorldC6M1_AcrossHere IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M1_AcrossHereProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M1_AcrossHere IsNotSaidWorldC6M1_AcrossHere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M1_AcrossHereMechanic
 		    ApplyContext "SaidWorldC6M1_AcrossHere:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M1_AlleyBelowSheva
+		Rule PlayerRemarkWorldC6M1_AlleyBelowTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M1_AlleyBelow IsNotSaidWorldC6M1_AlleyBelow IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear400 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M1_AlleyBelowProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M1_AlleyBelow IsNotSaidWorldC6M1_AlleyBelow IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M1_AlleyBelowMechanic
 		    ApplyContext "SaidWorldC6M1_AlleyBelow:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M1_AlleyIntoBuildingSheva
+		Rule PlayerRemarkWorldC6M1_AlleyIntoBuildingTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M1_AlleyIntoBuilding IsNotSaidWorldC6M1_AlleyIntoBuilding IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear400 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M1_AlleyIntoBuildingProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M1_AlleyIntoBuilding IsNotSaidWorldC6M1_AlleyIntoBuilding IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M1_AlleyIntoBuildingMechanic
 		    ApplyContext "SaidWorldC6M1_AlleyIntoBuilding:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M1_InAptsSheva
+		Rule PlayerRemarkWorldC6M1_InAptsTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M1_InApts IsNotSaidWorldC6M1_InApts IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M1_InAptsProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M1_InApts IsNotSaidWorldC6M1_InApts IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M1_InAptsMechanic
 		    ApplyContext "SaidWorldC6M1_InApts:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M1_IntotheparkSheva
+		Rule PlayerRemarkWorldC6M1_IntotheparkTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M1_Intothepark IsNotSaidWorldC6M1_Intothepark IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M1_IntotheparkProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M1_Intothepark IsNotSaidWorldC6M1_Intothepark IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M1_IntotheparkMechanic
 		    ApplyContext "SaidWorldC6M1_Intothepark:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M1_IntoThePark2Sheva
+		Rule PlayerRemarkWorldC6M1_IntoThePark2Trevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M1_IntoThePark2 IsNotSaidWorldC6M1_IntoThePark2 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M1_IntoThePark2Producer
+		    criteria ConceptRemark IsTrevor IsWorldC6M1_IntoThePark2 IsNotSaidWorldC6M1_IntoThePark2 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M1_IntoThePark2Mechanic
 		    ApplyContext "SaidWorldC6M1_IntoThePark2:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M1_IntoTheStoreSheva
+		Rule PlayerRemarkWorldC6M1_IntoTheStoreTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M1_IntoTheStore IsNotSaidWorldC6M1_IntoTheStore IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear400 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M1_IntoTheStoreProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M1_IntoTheStore IsNotSaidWorldC6M1_IntoTheStore IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M1_IntoTheStoreMechanic
 		    ApplyContext "SaidWorldC6M1_IntoTheStore:1:0,JustSaidWorldC6M1_IntoTheStore:1:30"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M1_PostWeddingSheva
+		Rule PlayerRemarkWorldC6M1_PostWeddingTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M1_PostWedding IsNotSaidWorldC6M1_PostWedding IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear600 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M1_PostWeddingProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M1_PostWedding IsNotSaidWorldC6M1_PostWedding IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear600 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M1_PostWeddingMechanic
 		    ApplyContext "SaidWorldC6M1_PostWedding:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M1_SafeRoomAlleySheva
+		Rule PlayerRemarkWorldC6M1_PostWeddingZTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M1_SafeRoomAlley IsNotSaidWorldC6M1_SafeRoomAlley IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear600 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M1_SafeRoomAlleyProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M1_PostWedding IsNotSaidWorldC6M1_PostWedding IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear600 IsZoeyIntroActor ZoeyGroup1 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M1_PostWeddingZMechanic
+		    then Any WorldC6M1_PostWedding02a foo:0 -3.481
+		    ApplyContext "SaidWorldC6M1_PostWedding:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkWorldC6M1_PostWeddingZCTrevor
+		{
+		    criteria ConceptRemark IsTrevor IsWorldC6M1_PostWedding IsNotSaidWorldC6M1_PostWedding IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear600 IsZoeyIntroActor ZoeyGroup2 IsCoachNear800Weight0 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M1_PostWeddingZCMechanic
+		    then Coach WorldC6M1_PostWedding01a foo:0 -2.761
+		    ApplyContext "SaidWorldC6M1_PostWedding:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkWorldC6M1_SafeRoomAlleyTrevor
+		{
+		    criteria ConceptRemark IsTrevor IsWorldC6M1_SafeRoomAlley IsNotSaidWorldC6M1_SafeRoomAlley IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear600 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M1_SafeRoomAlleyMechanic
 		    ApplyContext "SaidWorldC6M1_SafeRoomAlley:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M1_ThroughBarSheva
+		Rule PlayerRemarkWorldC6M1_ThroughBarTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M1_ThroughBar IsNotSaidWorldC6M1_ThroughBar IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M1_ThroughBarProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M1_ThroughBar IsNotSaidWorldC6M1_ThroughBar IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M1_ThroughBarMechanic
 		    ApplyContext "SaidWorldC6M1_ThroughBar:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M1_UpHereSheva
+		Rule PlayerRemarkWorldC6M1_UpHereTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M1_UpHere IsNotSaidWorldC6M1_UpHere IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M1_UpHereProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M1_UpHere IsNotSaidWorldC6M1_UpHere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M1_UpHereMechanic
 		    ApplyContext "SaidWorldC6M1_UpHere:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M1_UpTheStairsSheva
+		Rule PlayerRemarkWorldC6M1_UpTheStairsTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M1_UpTheStairs IsNotSaidWorldC6M1_UpTheStairs IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M1_UpTheStairsProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M1_UpTheStairs IsNotSaidWorldC6M1_UpTheStairs IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M1_UpTheStairsMechanic
 		    ApplyContext "SaidWorldC6M1_UpTheStairs:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M1_UpTheStairs2Sheva
+		Rule PlayerRemarkWorldC6M1_UpTheStairs2Trevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M1_UpTheStairs2 IsNotSaidWorldC6M1_UpTheStairs2 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear400 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M1_UpTheStairs2Producer
+		    criteria ConceptRemark IsTrevor IsWorldC6M1_UpTheStairs2 IsNotSaidWorldC6M1_UpTheStairs2 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M1_UpTheStairs2Mechanic
 		    ApplyContext "SaidWorldC6M1_UpTheStairs2:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M1_WeddingWarnSheva
+		Rule PlayerRemarkWorldC6M1_WeddingWarnTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M1_WeddingWarn IsNotSaidWorldC6M1_WeddingWarn IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M1_WeddingWarnProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M1_WeddingWarn IsNotSaidWorldC6M1_WeddingWarn IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M1_WeddingWarnMechanic
 		    ApplyContext "SaidWorldC6M1_WeddingWarn:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M1_WeddingWarn1Sheva
+		Rule PlayerRemarkWorldC6M1_WeddingWarn1Trevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M1_WeddingWarn1 IsNotSaidWorldC6M1_WeddingWarn IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M1_WeddingWarn1Producer
+		    criteria ConceptRemark IsTrevor IsWorldC6M1_WeddingWarn1 IsNotSaidWorldC6M1_WeddingWarn IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M1_WeddingWarn1Mechanic
 		    ApplyContext "SaidWorldC6M1_WeddingWarn:1:0,AtWedding:1:60"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M1_WeddingWarn2Sheva
+		Rule PlayerRemarkWorldC6M1_WeddingWarn2Trevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M1_WeddingWarn2 IsNotSaidWorldC6M1_WeddingWarn IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M1_WeddingWarn2Producer
+		    criteria ConceptRemark IsTrevor IsWorldC6M1_WeddingWarn2 IsNotSaidWorldC6M1_WeddingWarn IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M1_WeddingWarn2Mechanic
 		    ApplyContext "SaidWorldC6M1_WeddingWarn:1:0,AtWedding:1:60"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M1_WeddingWarn3Sheva
+		Rule PlayerRemarkWorldC6M1_WeddingWarn3Trevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M1_WeddingWarn3 IsNotSaidWorldC6M1_WeddingWarn IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M1_WeddingWarn3Producer
+		    criteria ConceptRemark IsTrevor IsWorldC6M1_WeddingWarn3 IsNotSaidWorldC6M1_WeddingWarn IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M1_WeddingWarn3Mechanic
 		    ApplyContext "SaidWorldC6M1_WeddingWarn:1:0,AtWedding:1:60"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M1_WeddingWarnAngelSheva
+		Rule PlayerRemarkWorldC6M2_AcrossPlankTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M1_WeddingWarn IsNotSaidWorldC6M1_WeddingWarn IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 IsMechanicNear800Weight0 IsZoeyIntroActor ZoeyGroup2 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M1_WeddingWarnAngelProducer
-		    ApplyContext "SaidWorldC6M1_WeddingWarn:1:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule PlayerRemarkWorldC6M2_AcrossPlankSheva
-		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_AcrossPlank IsNotSaidWorldC6M2_AcrossPlank IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear250 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_AcrossPlankProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_AcrossPlank IsNotSaidWorldC6M2_AcrossPlank IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear250 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_AcrossPlankMechanic
 		    ApplyContext "SaidWorldC6M2_AcrossPlank:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_AfterGate1Sheva
+		Rule PlayerRemarkWorldC6M2_AfterGate1Trevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_AfterGate1 IsNotSaidWorldC6M2_AfterGate1 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear500 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_AfterGate1Producer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_AfterGate1 IsNotSaidWorldC6M2_AfterGate1 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_AfterGate1Mechanic
 		    ApplyContext "SaidWorldC6M2_AfterGate1:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_AfterGate2Sheva
+		Rule PlayerRemarkWorldC6M2_AfterGate2Trevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_AfterGate2 IsNotSaidWorldC6M2_AfterGate2 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear500 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_AfterGate2Producer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_AfterGate2 IsNotSaidWorldC6M2_AfterGate2 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_AfterGate2Mechanic
+		    then Gambler WorldC6M2_AfterGate201a foo:0 -1.968
 		    ApplyContext "SaidWorldC6M2_AfterGate2:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_DownHereSheva
+		Rule PlayerRemarkWorldC6M2_DownHereTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_DownHere IsNotSaidWorldC6M2_DownHere IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_DownHereProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_DownHere IsNotSaidWorldC6M2_DownHere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_DownHereMechanic
 		    ApplyContext "SaidWorldC6M2_DownHere:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_DownIntoBuildingSheva
+		Rule PlayerRemarkWorldC6M2_DownIntoBuildingTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_DownIntoBuilding IsNotSaidWorldC6M2_DownIntoBuilding IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear400 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_DownIntoBuildingProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_DownIntoBuilding IsNotSaidWorldC6M2_DownIntoBuilding IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_DownIntoBuildingMechanic
 		    ApplyContext "SaidWorldC6M2_DownIntoBuilding:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_FinalLadderSheva
+		Rule PlayerRemarkWorldC6M2_FinalLadderTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_FinalLadder IsNotSaidWorldC6M2_FinalLadder IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_FinalLadderProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_FinalLadder IsNotSaidWorldC6M2_FinalLadder IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_FinalLadderMechanic
 		    ApplyContext "SaidWorldC6M2_FinalLadder:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_FinalWaterSheva
+		Rule PlayerRemarkWorldC6M2_FinalWaterTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_FinalWater IsNotSaidWorldC6M2_FinalWater IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_FinalWaterProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_FinalWater IsNotSaidWorldC6M2_FinalWater IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_FinalWaterMechanic
+		    then Gambler WorldC6M2_FinalWater01a foo:0 -1.706
 		    ApplyContext "SaidWorldC6M2_FinalWater:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_FinalWaterGoGoSheva
+		Rule PlayerRemarkWorldC6M2_FinalWaterGoGoTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_FinalWaterGoGo IsNotSaidWorldC6M2_FinalWaterGoGo IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_FinalWaterGoGoProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_FinalWaterGoGo IsNotSaidWorldC6M2_FinalWaterGoGo IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_FinalWaterGoGoMechanic
 		    ApplyContext "SaidWorldC6M2_FinalWaterGoGo:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_InJazzClubSheva
+		Rule PlayerRemarkWorldC6M2_InJazzClubTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_InJazzClub IsNotSaidWorldC6M2_InJazzClub IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear1000 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_InJazzClubProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_InJazzClub IsNotSaidWorldC6M2_InJazzClub IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear1000 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_InJazzClubMechanic
 		    ApplyContext "SaidWorldC6M2_InJazzClub:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_InSewer1Sheva
+		Rule PlayerRemarkWorldC6M2_InSewer2Trevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_InSewer1 IsNotSaidWorldC6M2_InSewer1 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_InSewer1Producer
-		    ApplyContext "SaidWorldC6M2_InSewer1:1:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule PlayerRemarkWorldC6M2_InSewer2Sheva
-		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_InSewer2 IsNotSaidWorldC6M2_InSewer2 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 IsSaidWorldC6M2_InSewer1 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_InSewer2Producer
-		    then Gambler WorldC6M2_InSewer201a foo:0 -2.052
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_InSewer2 IsNotSaidWorldC6M2_InSewer2 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsSaidWorldC6M2_InSewer1 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_InSewer2Mechanic
+		    then Producer WorldC6M2_InSewer202a foo:0 -4.622
 		    ApplyContext "SaidWorldC6M2_InSewer2:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_InSewerLadder1Sheva
+		Rule PlayerRemarkWorldC6M2_InSewerLadder1Trevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_InSewerLadder1 IsNotSaidWorldC6M2_InSewerLadder1 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_InSewerLadder1Producer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_InSewerLadder1 IsNotSaidWorldC6M2_InSewerLadder1 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_InSewerLadder1Mechanic
+		    then Any WorldC6M2_InSewerLadder101a foo:0 -2.795
 		    ApplyContext "SaidWorldC6M2_InSewerLadder1:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_IntoConstructionSheva
+		Rule PlayerRemarkWorldC6M2_IntoConstructionTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_IntoConstruction IsNotSaidWorldC6M2_IntoConstruction IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear150 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_IntoConstructionProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_IntoConstruction IsNotSaidWorldC6M2_IntoConstruction IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear150 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_IntoConstructionMechanic
 		    ApplyContext "SaidWorldC6M2_IntoConstruction:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_IntoPoolHallSheva
+		Rule PlayerRemarkWorldC6M2_IntoPoolHallTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_IntoPoolHall IsNotSaidWorldC6M2_IntoPoolHall IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_IntoPoolHallProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_IntoPoolHall IsNotSaidWorldC6M2_IntoPoolHall IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_IntoPoolHallMechanic
 		    ApplyContext "SaidWorldC6M2_IntoPoolHall:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_JukeBoxSheva
+		Rule PlayerRemarkWorldC6M2_JukeBoxTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_JukeBox IsNotSaidWorldC6M2_JukeBox IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear150 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_JukeBoxProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_JukeBox IsNotSaidWorldC6M2_JukeBox IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear150 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_JukeBoxMechanic
 		    ApplyContext "SaidWorldC6M2_JukeBox:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_JumpDownSheva
+		Rule PlayerRemarkWorldC6M2_JumpDownTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_JumpDown IsNotSaidWorldC6M2_JumpDown IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_JumpDownProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_JumpDown IsNotSaidWorldC6M2_JumpDown IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_JumpDownMechanic
 		    ApplyContext "SaidWorldC6M2_JumpDown:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_OnTourWalk1Sheva
+		Rule PlayerRemarkWorldC6M2_OnTourWalk2Trevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_OnTourWalk1 IsNotSaidWorldC6M2_OnTourWalk1 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_OnTourWalk1Producer
-		    ApplyContext "SaidWorldC6M2_OnTourWalk1:1:0"
-		    applycontexttoworld
-		}
-	},
-
-	{
-		Rule PlayerRemarkWorldC6M2_OnTourWalk2Sheva
-		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_OnTourWalk2 IsNotSaidWorldC6M2_OnTourWalk2 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_OnTourWalk2Producer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_OnTourWalk2 IsNotSaidWorldC6M2_OnTourWalk2 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_OnTourWalk2Mechanic
 		    ApplyContext "SaidWorldC6M2_OnTourWalk2:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_OnTourWalk3Sheva
+		Rule PlayerRemarkWorldC6M2_OnTourWalk3Trevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_OnTourWalk3 IsNotSaidWorldC6M2_OnTourWalk3 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_OnTourWalk3Producer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_OnTourWalk3 IsNotSaidWorldC6M2_OnTourWalk3 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_OnTourWalk3Mechanic
 		    ApplyContext "SaidWorldC6M2_OnTourWalk3:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_OpenGate1Sheva
+		Rule PlayerRemarkWorldC6M2_OpenGate1Trevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_OpenGate1 IsNotSaidWorldC6M2_OpenGate1 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 IsNotSaidOpenedGate1 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_OpenGate1Producer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_OpenGate1 IsNotSaidWorldC6M2_OpenGate1 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsNotSaidOpenedGate1 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_OpenGate1Mechanic
 		    ApplyContext "SaidWorldC6M2_OpenGate1:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_Phase2Sheva
+		Rule PlayerRemarkWorldC6M2_OpenGate2Trevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_Phase2 IsNotSaidWorldC6M2_Phase2 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_Phase2Producer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_OpenGate2 IsNotSaidWorldC6M2_OpenGate2 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsNotSaidOpenedGate2 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_OpenGate2Mechanic
+		    ApplyContext "SaidWorldC6M2_OpenGate2:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule PlayerRemarkWorldC6M2_Phase2Trevor
+		{
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_Phase2 IsNotSaidWorldC6M2_Phase2 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_Phase2Mechanic
+		    then Producer WorldC6M2_Phase201a foo:0 -1.792
 		    ApplyContext "SaidWorldC6M2_Phase2:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_Phase2DownSheva
+		Rule PlayerRemarkWorldC6M2_Phase2DownTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_Phase2Down IsNotSaidWorldC6M2_Phase2Down IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_Phase2DownProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_Phase2Down IsNotSaidWorldC6M2_Phase2Down IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_Phase2DownMechanic
 		    ApplyContext "SaidWorldC6M2_Phase2Down:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_Phase2DownIntenseSheva
+		Rule PlayerRemarkWorldC6M2_Phase2DownIntenseTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_Phase2Down IsNotSaidWorldC6M2_Phase2Down IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 IntensityOver75 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_Phase2DownIntenseProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_Phase2Down IsNotSaidWorldC6M2_Phase2Down IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IntensityOver75 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_Phase2DownIntenseMechanic
 		    ApplyContext "SaidWorldC6M2_Phase2Down:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_PostGate1xSheva
+		Rule PlayerRemarkWorldC6M2_PostGate1xTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_PostGate1 IsNotSaidWorldC6M2_PostGate1 IsNotCoughing IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 IsSaidOpenedGate1 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_PostGate1xProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_PostGate1 IsNotSaidWorldC6M2_PostGate1 IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsSaidOpenedGate1 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_PostGate1xMechanic
 		    ApplyContext "SaidWorldC6M2_PostGate1:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_SafeRoomSheva
+		Rule PlayerRemarkWorldC6M2_SafeRoomTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_SafeRoom IsNotSaidWorldC6M2_SafeRoom IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear800 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_SafeRoomProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_SafeRoom IsNotSaidWorldC6M2_SafeRoom IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear800 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_SafeRoomMechanic
 		    ApplyContext "SaidWorldC6M2_SafeRoom:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_SuitcaseSheva
+		Rule PlayerRemarkWorldC6M2_TattooTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_Suitcase IsNotSaidWorldC6M2_Suitcase IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear100 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_SuitcaseProducer
-		    ApplyContext "SaidWorldC6M2_Suitcase:1:0"
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_Tattoo IsNotSaidWorldC6M2_Tattoo IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_TattooMechanic
+		    ApplyContext "SaidWorldC6M2_Tattoo:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_TourEntranceSheva
+		Rule PlayerRemarkWorldC6M2_TourEntranceTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_TourEntrance IsNotSaidWorldC6M2_TourEntrance IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_TourEntranceProducer
-		    then Sheva WorldC6M2_TourEntrance01a foo:0 -1.841
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_TourEntrance IsNotSaidWorldC6M2_TourEntrance IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_TourEntranceMechanic
 		    ApplyContext "SaidWorldC6M2_TourEntrance:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_UpCatWalkSheva
+		Rule PlayerRemarkWorldC6M2_UpCatWalkTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_UpCatWalk IsNotSaidWorldC6M2_UpCatWalk IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_UpCatWalkProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_UpCatWalk IsNotSaidWorldC6M2_UpCatWalk IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_UpCatWalkMechanic
 		    ApplyContext "SaidWorldC6M2_UpCatWalk:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_UpStairsSheva
+		Rule PlayerRemarkWorldC6M2_UpStairsTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_UpStairs IsNotSaidWorldC6M2_UpStairs IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_UpStairsProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_UpStairs IsNotSaidWorldC6M2_UpStairs IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_UpStairsMechanic
 		    ApplyContext "SaidWorldC6M2_UpStairs:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M2_UpStairs2Sheva
+		Rule PlayerRemarkWorldC6M2_UpStairs2Trevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M2_UpStairs2 IsNotSaidWorldC6M2_UpStairs2 IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear200 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M2_UpStairs2Producer
+		    criteria ConceptRemark IsTrevor IsWorldC6M2_UpStairs2 IsNotSaidWorldC6M2_UpStairs2 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M2_UpStairs2Mechanic
 		    ApplyContext "SaidWorldC6M2_UpStairs2:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M3_BridgeRunSheva
+		Rule PlayerRemarkWorldC6M3_BridgeRunTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M3_BridgeRun IsNotSaidWorldC6M3_BridgeRun IsNotCoughing IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear500 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M3_BridgeRunProducer
-		    then Any WorldC6M3_ByBridge01 foo:0 -0.909
+		    criteria ConceptRemark IsTrevor IsWorldC6M3_BridgeRun IsNotSaidWorldC6M3_BridgeRun IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M3_BridgeRunMechanic
+		    then any WorldC6M3_ByBridge01 foo:0 -1.803
 		    ApplyContext "SaidWorldC6M3_BridgeRun:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldC6M3_ByBridgeSheva
+		Rule PlayerRemarkWorldC6M3_ByBridgeTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldC6M3_ByBridge IsNotSaidWorldC6M3_ByBridge IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear300 IsSaidFinalVehicleArrived IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldC6M3_ByBridgeProducer
+		    criteria ConceptRemark IsTrevor IsWorldC6M3_ByBridge IsNotSaidWorldC6M3_ByBridge IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 IsSaidFinalVehicleArrived IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldC6M3_ByBridgeMechanic
 		    ApplyContext "SaidWorldC6M3_ByBridge:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule PlayerRemarkWorldFootLockerSheva
+		Rule PlayerRemarkWorldFootLockerTrevor
 		{
-		    criteria ConceptRemark IsSheva IsWorldFootLocker IsNotSaidWorldFootLocker IsNotCoughing NotInCombat IsTalk IsTalkSheva IsWorldTalkSheva IsSubjectNear500 IsNotSpeakingWeight0
-		    Response PlayerRemarkWorldFootLockerProducer
+		    criteria ConceptRemark IsTrevor IsWorldFootLocker IsNotSaidWorldFootLocker IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 IsNotSpeakingWeight0
+		    Response PlayerRemarkWorldFootLockerMechanic
 		    ApplyContext "SaidWorldFootLocker:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule C6M3_PourFinishedSheva
+		Rule C6M3_PourFinishedTrevor
 		{
-		    criteria ConceptPlayerPourFinished IsSheva IsTalk IsTalkSheva IsWorldTalkSheva Isc6m3_port ChanceToFire20Percent
-		    Response C6M3_PourFinishedProducer
+		    criteria ConceptPlayerPourFinished IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor Isc6m3_port ChanceToFire20Percent
+		    Response C6M3_PourFinishedMechanic
 		    then Manager L4D1_NiceJobPour foo:0 0
 		    ApplyContext "Talk:1:3"
 		}
 	},
 
 	{
-		Rule SurvivorNearFinaleC6M3Sheva
+		Rule SurvivorNearFinaleC6M3Trevor
 		{
-		    criteria ConceptPlayerNearFinale IsNotCoughing IsSheva IsNotSaidFinaleAhead NotInCombat IsTalk IsTalkSheva IsNotIncapacitated IsWorldTalkSheva Isc6m3_port
-		    Response SurvivorNearFinaleC6M3Producer
+		    criteria ConceptPlayerNearFinale IsNotCoughing IsTrevor IsNotSaidFinaleAhead NotInCombat IsTalk IsTalkTrevor IsNotIncapacitated IsWorldTalkTrevor Isc6m3_port
+		    Response SurvivorNearFinaleC6M3Mechanic
 		    ApplyContext "SaidFinaleAhead:1:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorPickupGolfCLubSheva
+		Rule SurvivorPickupGolfCLubTrevor
 		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpGolfClub IsNotSpeaking ShevaNotPickedUpItem IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response SurvivorPickupGolfCLubProducer
-		    ApplyContext "ShevaPickedUpItem:1:30"
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpGolfClub IsNotSpeaking TrevorNotPickedUpItem IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response SurvivorPickupGolfCLubMechanic
+		    ApplyContext "TrevorPickedUpItem:1:30"
 		}
 	},
 
 	{
-		Rule SurvivorPickupM60Sheva
+		Rule SurvivorPickupM60Trevor
 		{
-		    criteria ConceptPlayerPickup IsNotCoughing IsSheva IsPickedUpM60 IsNotSpeaking ShevaNotPickedUpItem IsTalk IsTalkSheva IsWorldTalkSheva
-		    Response SurvivorPickupM60Producer
-		    ApplyContext "ShevaPickedUpItem:1:30"
+		    criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpM60 IsNotSpeaking TrevorNotPickedUpItem IsTalk IsTalkTrevor IsWorldTalkTrevor
+		    Response SurvivorPickupM60Mechanic
+		    ApplyContext "TrevorPickedUpItem:1:30"
 		}
 	},
 
 	{
-		Rule HistoricTour02bSheva
+		Rule WeddingWitchDead04Trevor
 		{
-		    criteria ConceptHistoricTour02b IsSheva
-		    Response HistoricTour02bProducer
+		    criteria ConceptWeddingWitchDead04 IsTrevor
+		    Response WeddingWitchDead04Mechanic
 		}
 	},
 
 	{
-		Rule WeddingWitchDead01Sheva
+		Rule Player_LostCallC6M3Trevor
 		{
-		    criteria ConceptWeddingWitchDead01 IsSheva
-		    Response WeddingWitchDead01Producer
-		}
-	},
-
-	{
-		Rule WeddingWitchDead04Sheva
-		{
-		    criteria ConceptWeddingWitchDead04 IsSheva
-		    Response WeddingWitchDead04Producer
-		}
-	},
-
-	{
-		Rule Player_LostCallC6M3Sheva
-		{
-		    criteria ConceptTalkIdle IsSheva IsClosestSurvivorFar3000 IsNotSaidPlayerLostCall Isc6m3_port ChanceToFire100Percent IsNotSpeakingWeight0
-		    Response Player_LostCallC6M3Producer
+		    criteria ConceptTalkIdle IsTrevor IsClosestSurvivorFar3000 IsNotSaidPlayerLostCall Isc6m3_port ChanceToFire100Percent IsNotSpeakingWeight0
+		    Response Player_LostCallC6M3Mechanic
 		    ApplyContext "SaidPlayerLostCall:1:50"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedGolfClubSheva
+		Rule SurvivorSpottedGolfClubTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsGolfClub IsWorldTalkSheva IsNotSpeakingWeight0
-		    Response SurvivorSpottedGolfClubProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsGolfClub IsWorldTalkTrevor IsNotSpeakingWeight0
+		    Response SurvivorSpottedGolfClubMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedGolfClubAutoSheva
+		Rule SurvivorSpottedGolfClubAutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSmartLookAuto IsGolfClub IsWorldTalkSheva
-		    Response SurvivorSpottedGolfClubAutoProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto IsGolfClub IsWorldTalkTrevor
+		    Response SurvivorSpottedGolfClubAutoMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedM60Sheva
+		Rule SurvivorSpottedM60Trevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsM60 IsWorldTalkSheva IsNotSpeakingWeight0
-		    Response SurvivorSpottedM60Producer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsM60 IsWorldTalkTrevor IsNotSpeakingWeight0
+		    Response SurvivorSpottedM60Mechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule SurvivorSpottedM60AutoSheva
+		Rule SurvivorSpottedM60AutoTrevor
 		{
-		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsSheva IsTalk IsTalkSheva IsNotSmartLookAuto IsM60 IsWorldTalkSheva
-		    Response SurvivorSpottedM60AutoProducer
+		    criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto IsM60 IsWorldTalkTrevor
+		    Response SurvivorSpottedM60AutoMechanic
 		    ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule HitCraneButtonSheva
+		Rule C1M2InsideGunShopTrevor
 		{
-		    criteria ConceptAirport02CraneStarted PanicEventSheva
-		    Response HitCraneButtonProducer
-		    then Sheva airport02_creshendoCrane foo:0  .01
+		    criteria ConceptC1M2InsideGunShop PanicEventTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C1M2InsideGunShopMechanic
+		    then trevor C1M2InsideGunShop2 foo:0 0
 		}
 	},
 
 	{
-		Rule Airport03FireStartedSheva
+		Rule C1M3AlarmOffOratorTrevor
 		{
-		    criteria ConceptAirport03FireStarted PanicEventSheva
-		    Response Airport03FireStartedProducer
-		    then Sheva Airport03FireStartedX foo:0  .01
-		}
-	},
-
-	{
-		Rule FinaleSceneTriggerFrancisSheva
-		{
-		    criteria ConceptC6M3Stairs IsSheva IsNotSaidFinaleExchange Isc6m3_port IsFrancisIntroActor IsNotVersus
-		    Response FinaleSceneTriggerFrancisProducer
-		    ApplyContext "SaidFinaleExchange:1:0,Talk:1:28,SaidEllisBridgeStoryStart:1:60,EndEllisBridgeStoryStart:1:0"
+		    criteria ConceptC1M3AlarmOff PanicEventTrevor AutoIsNotScavenge AutoIsNotSurvival
+		    Response C1M3AlarmOffOratorMechanic
+		    then trevor C1M3AlarmOff2 foo:0 0
+		    ApplyContext "_auto_Alarm:2:0"
 		    applycontexttoworld
 		}
 	},
 
 	{
-		Rule FinaleSceneTriggerLouisSheva
+		Rule C1M3BrokeWindowOratorTrevor
 		{
-		    criteria ConceptC6M3Stairs IsSheva IsNotSaidFinaleExchange Isc6m3_port IsZoeyIntroActor IsNotVersus
-		    Response FinaleSceneTriggerLouisProducer
-		    ApplyContext "SaidFinaleExchange:1:0,Talk:1:23,SaidEllisBridgeStoryStart:1:60,EndEllisBridgeStoryStart:1:0"
+		    criteria ConceptC1M3BrokeWindow PanicEventTrevor AutoIsNotScavenge AutoIsNotSurvival _auto_NotAlarm
+		    Response C1M3BrokeWindowOratorMechanic
+		    then trevor C1M3AlarmActive foo:0 0
+		    ApplyContext "_auto_Alarm:1:0,WarnMegaMob:1:300,SaidSpecialWarn:1:30"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule HitCraneButtonTrevor
+		{
+		    criteria ConceptAirport02CraneStarted PanicEventTrevor
+		    Response HitCraneButtonMechanic
+		    then Trevor airport02_creshendoCrane foo:0  .01
+		}
+	},
+
+	{
+		Rule Airport03FireStartedTrevor
+		{
+		    criteria ConceptAirport03FireStarted PanicEventTrevor
+		    Response Airport03FireStartedMechanic
+		    then Trevor Airport03FireStartedX foo:0  .01
+		}
+	},
+
+	{
+		Rule FinaleSceneTriggerZoeyTrevor
+		{
+		    criteria ConceptC6M3Stairs IsTrevor IsNotSaidFinaleExchange Isc6m3_port IsZoeyIntroActor IsNotVersus
+		    Response FinaleSceneTriggerZoeyMechanic
+		    ApplyContext "SaidFinaleExchange:1:0,Talk:1:28,SaidTrevorBridgeStoryStart:1:60,EndTrevorBridgeStoryStart:1:0"
+		    applycontexttoworld
+		}
+	},
+
+	{
+		Rule FinaleSceneTriggerFrancisTrevor
+		{
+		    criteria ConceptC6M3Stairs IsTrevor IsNotSaidFinaleExchange Isc6m3_port IsFrancisIntroActor IsNotVersus
+		    Response FinaleSceneTriggerFrancisMechanic
+		    ApplyContext "SaidFinaleExchange:1:0,Talk:1:29,SaidTrevorBridgeStoryStart:1:60,EndTrevorBridgeStoryStart:1:0"
 		    applycontexttoworld
 		}
 	},
 
 ];
 
-rr_ProcessRules(sheva_alomar_rules);
+rr_ProcessRules(trevor_philips_rules);

@@ -43,7 +43,7 @@ def scan_path(path, extract_fn):
 
 # === Set folders ===
 check_path = "16_rules_format_applycontext.nut"
-responses_path = "../../[custom talker ] base/scripts/vscripts/yeoh_custom_talker_base_producer.nut"
+responses_path = "../../[custom talker ] base/scripts/vscripts/yeoh_custom_talker_base_mechanic.nut"
 
 used = scan_path(check_path, extract_used_functions)
 defined = scan_path(responses_path, extract_defined_functions)

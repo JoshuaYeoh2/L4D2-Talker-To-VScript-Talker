@@ -122,12 +122,12 @@ if __name__ == "__main__":
         suffix_find_replace={
             
             # "Gambler": "Leon",
-            "Producer": "Sheva",
+            # "Producer": "Sheva",
             # "Coach": "Chris",
-            # "Mechanic": "Holly",
+            "Mechanic": "Trevor",
             
-            # "Namvet": "Hunk",
-            # "NamVet": "Hunk",
+            # "Namvet": "Robin",
+            # "NamVet": "Robin",
             # "TeenGirl": "Rebecca",
             # "Manager": "Lee",
             # "Biker": "Kenny",
