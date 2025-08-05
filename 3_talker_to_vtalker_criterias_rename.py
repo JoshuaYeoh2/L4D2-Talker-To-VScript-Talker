@@ -103,14 +103,14 @@ if __name__ == "__main__":
 
             # "coach": "david",
 
-            "mechanic": "trevor",
-            "ellis": "trevor",
+            # "mechanic": "trevor",
+            # "ellis": "trevor",
 
             # "namvet": "robin",
             # "bill": "robin",
             
-            # "teengirl": "rebecca",
-            # "zoey": "rebecca",
+            "zoey": "betazoeyrvc",
+            "teengirl": "betazoeyrvc",
             
             # "manager": "lee",
             # "louis": "lee",

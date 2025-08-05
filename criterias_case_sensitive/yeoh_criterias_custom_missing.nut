@@ -332,6 +332,30 @@ function TrevorNotPickedUpItem(query) { return query.pickedupitem != 1; }
 function IsNotSaidTrevorWitchChasing(query) { return query.saidwitchchasing != 1; }
 function IsSaidTrevorWitchAttacking(query) { return query.saidwitchattacking == 1; }
 
+// betazoey ============================================================================================================================
+
+function isBetazoey(query) { return query.who == "BetaZoey"; }
+function IsSmalltownBarricadeBetazoey(query) { return query.worldsmalltownbarricadebetazoey != 1; }
+function ConceptC7M2CrowsFlySpeakBetazoey(query) { return query.concept == "C7M2CrowsFlySpeak"; }
+function ConceptC7M3BridgeLeapSpeakBetazoey(query) { return query.concept == "C7M3BridgeLeapSpeak"; }
+function ConceptC7M3GeneratorSpeakBetazoey(query) { return query.concept == "C7M3GeneratorSpeak"; }
+function Conceptc7m1opentankdoorspeakBetazoey(query) { return query.concept == "C7M1OpenTankDoorSpeak"; }
+
+function BetazoeyGroup1(query) { return false; }
+function BetazoeyGroup2(query) { return false; }
+
+// betazoeyrvc ============================================================================================================================
+
+function isBetazoeyrvc(query) { return query.who == "BetaZoeyRVC"; }
+function IsSmalltownBarricadeBetazoeyrvc(query) { return query.worldsmalltownbarricadebetazoeyrvc != 1; }
+function ConceptC7M2CrowsFlySpeakBetazoeyrvc(query) { return query.concept == "C7M2CrowsFlySpeak"; }
+function ConceptC7M3BridgeLeapSpeakBetazoeyrvc(query) { return query.concept == "C7M3BridgeLeapSpeak"; }
+function ConceptC7M3GeneratorSpeakBetazoeyrvc(query) { return query.concept == "C7M3GeneratorSpeak"; }
+function Conceptc7m1opentankdoorspeakBetazoeyrvc(query) { return query.concept == "C7M1OpenTankDoorSpeak"; }
+
+function BetazoeyrvcGroup1(query) { return false; }
+function BetazoeyrvcGroup2(query) { return false; }
+
 // ============================================================================================================================
 
 

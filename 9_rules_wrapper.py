@@ -26,4 +26,4 @@ def wrap_rules(input_path, output_path, rules_name):
 
 # usage
 if __name__ == "__main__":
-    wrap_rules("8-5_rules_rearrange.txt", "9_rules_wrapped.nut", "trevor_philips_rules")
+    wrap_rules("8-5_rules_rearrange.txt", "9_rules_wrapped.nut", "beta_zoey_rvc_rules")

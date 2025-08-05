@@ -124,11 +124,11 @@ if __name__ == "__main__":
             # "Gambler": "Leon",
             # "Producer": "Sheva",
             # "Coach": "Chris",
-            "Mechanic": "Trevor",
+            # "Mechanic": "Trevor",
             
             # "Namvet": "Robin",
             # "NamVet": "Robin",
-            # "TeenGirl": "Rebecca",
+            "TeenGirl": "BetaZoeyRVC",
             # "Manager": "Lee",
             # "Biker": "Kenny",
         },

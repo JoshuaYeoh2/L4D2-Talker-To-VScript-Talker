@@ -28,6 +28,6 @@ if __name__ == "__main__":
     convert_responses_only(
         input="11_rules_format_criterias.nut",
         output="13_rules_format_responses.nut",
-        response_prefix="Custom_Talker_Trevor.",
+        response_prefix="Custom_Talker_BetaZoeyRVC.",
         response_suffix=""
     )

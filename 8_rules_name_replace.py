@@ -52,14 +52,14 @@ if __name__ == "__main__":
 
             # "coach": "david",
 
-            "mechanic": "trevor",
-            "ellis": "trevor",
+            # "mechanic": "trevor",
+            # "ellis": "trevor",
 
             # "namvet": "robin",
             # "bill": "robin",
             
-            # "teengirl": "ellie",
-            # "zoey": "ellie",
+            "zoey": "betazoeyrvc",
+            "teengirl": "betazoeyrvc",
             
             # "manager": "josh",
             # "louis": "josh",

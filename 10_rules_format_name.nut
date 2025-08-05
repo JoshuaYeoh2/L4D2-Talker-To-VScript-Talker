@@ -1,11754 +1,10195 @@
-local trevor_philips_rules = 
+local beta_zoey_rvc_rules = 
 [
 	{
-		name = "C3M1CallFerryTrevor",
-		criteria ConceptC3M1CallFerry PanicEventTrevor IsNotSaidC3M1CallFerry2
-		Response C3M1CallFerryMechanic
-		then any C3M1CallFerry2 TrevorActor:1 0
-		ApplyContext "SaidC3M1CallFerry2:1:0"
+		name = "ConceptHospitalRadioTalkBetaZoeyRVC",
+		criteria ConceptHospitalRadioTalk IsBetazoeyrvc
+		Response ConceptHospitalRadioTalkTeenGirl
+		then pilot ConceptHospitalRadioPrepare foo:0 -0.636
+	},
+
+	{
+		name = "ConceptHospitalReadyConfirmedBetaZoeyRVC",
+		criteria ConceptHospitalReadyConfirmed IsBetazoeyrvc
+		Response ConceptHospitalReadyConfirmedTeenGirl
+		then pilot ConceptHospitalPilotOnTheWay foo:0 -0.875
+	},
+
+	{
+		name = "C6M3PlayerNiceShotBetaZoeyRVC",
+		criteria ConceptPlayerNiceShot IsNotCoughing IsBetazoeyrvc IssuerNotSoClose IsC6M3_Port IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotSpeaking ChanceToFire70Percent
+		Response C6M3PlayerNiceShotTeenGirl
+	},
+
+	{
+		name = "PlayerNiceShotBetaZoeyRVC",
+		criteria ConceptPlayerNiceShot IsNotCoughing IsBetazoeyrvc IssuerClose IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotSpeaking ChanceToFire30Percent
+		Response C6M3PlayerNiceShotTeenGirl
+	},
+
+	{
+		name = "PlayerNiceShotNamVetBetaZoeyRVC",
+		criteria ConceptPlayerNiceShot IsNotCoughing IsBetazoeyrvc IssuerClose IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc SubjectIsNamVet IsNotSpeaking ChanceToFire30Percent
+		Response PlayerNiceShotNamVetTeenGirl
+	},
+
+	{
+		name = "L4D1ReviveMeInterruptedMinorBetaZoeyRVC",
+		criteria ConceptReviveMeInterrupted IsBetazoeyrvc IsIncappedStarted IsIncappedStarted2
+		Response L4D1ReviveMeInterruptedMinorTeenGirl
+		ApplyContext "ReviveInterrupt:1:2"
 		applycontexttoworld
 	},
 
 	{
-		name = "C3M2OpenDoorTrevor",
-		criteria ConceptC3M2OpenDoor PanicEventTrevor
-		Response C3M2OpenDoorMechanic
-		then Trevor C3M2OpenDoor2 TrevorActor:1 0
-		ApplyContext "SaidC3M2OpenDoor:1:0,Talk:1:2.157,WarnMegaMob:1:300,SaidSpecialWarn:1:30"
+		name = "L4D1ReviveMeInterruptedMajorBetaZoeyRVC",
+		criteria ConceptReviveMeInterrupted IsBetazoeyrvc IsIncappedBleeding1 IsIncappedBleeding2
+		Response L4D1ReviveMeInterruptedMajorTeenGirl
+		ApplyContext "ReviveInterrupt:1:2"
 		applycontexttoworld
 	},
 
 	{
-		name = "c5m4floatstartTrevor",
-		criteria Conceptc5m4floatstart PanicEventTrevor
-		Response c5m4floatstartMechanic
-		then trevor c5m4floatstart2 foo:0 0
-		ApplyContext "Saidc5m4floatstart:1:0,_auto_TractorStarted:1:0,_auto_InMiniFinale:1:0,WarnMegaMob:1:300,SaidSpecialWarn:1:30"
+		name = "L4D1ReviveMeInterruptedCriticalBetaZoeyRVC",
+		criteria ConceptReviveMeInterrupted IsBetazoeyrvc IsIncappedLethargic
+		Response L4D1ReviveMeInterruptedCriticalTeenGirl
+		ApplyContext "ReviveInterrupt:1:2"
 		applycontexttoworld
 	},
 
 	{
-		name = "C1M1InSmokeTrevor",
-		criteria ConceptTalkIdle IsTrevor IsSaidC1M1InSmoke ismap_c1m1_hotel AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response C1M1InSmokeMechanic
-		then any C1M1Cough foo:0 -1.399
+		name = "L4D1SurvivorMournBillBetaZoeyRVC",
+		criteria ConceptPlayerSeeDeadPlayer IsNotCoughing IsBetazoeyrvc IsDeadNamVet IsNotSaidSomeoneDied HasNotDefibrillator IsTalk IsTalkBetazoeyrvc IsNotIncapacitated IsWorldTalkBetazoeyrvc
+		Response L4D1SurvivorMournBillTeenGirl
 	},
 
 	{
-		name = "C1M3AlarmOffTrevor",
-		criteria ConceptC1M3AlarmOff2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C1M3AlarmOffMechanic
-		then any C1M3AlarmOffa foo:0 .5
+		name = "L4D1SurvivorMournFrancisBetaZoeyRVC",
+		criteria ConceptPlayerSeeDeadPlayer IsNotCoughing IsBetazoeyrvc IsDeadBiker IsNotSaidSomeoneDied HasNotDefibrillator IsTalk IsTalkBetazoeyrvc IsNotIncapacitated IsWorldTalkBetazoeyrvc
+		Response L4D1SurvivorMournFrancisTeenGirl
 	},
 
 	{
-		name = "C1M3AlarmActiveTrevor",
-		criteria ConceptC1M3AlarmActive IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C1M3AlarmActiveMechanic
+		name = "L4D1SurvivorMournLouisBetaZoeyRVC",
+		criteria ConceptPlayerSeeDeadPlayer IsNotCoughing IsBetazoeyrvc IsDeadManager IsNotSaidSomeoneDied HasNotDefibrillator IsTalk IsTalkBetazoeyrvc IsNotIncapacitated IsWorldTalkBetazoeyrvc
+		Response L4D1SurvivorMournLouisTeenGirl
 	},
 
 	{
-		name = "C4M3SaferoomTrevor",
-		criteria ConceptTalkIdle IsTrevor NotInCombat IsInStartArea IsNotAlone IsNotSaidLeavingSafeArea isc4m3 AutoIsNotScavenge AutoIsNotSurvival _auto_NotSafeRoomQuiet _auto_IsSafeRoomStart IsNotSpeakingWeight0
-		Response C4M3SaferoomMechanic
-		then any _c4m3_startsafe02 foo:0 0.01
-		ApplyContext "_auto_SafeRoomStart:2:0"
-		applycontexttoworld
+		name = "PlayerRelaxedSighBetaZoeyRVC",
+		criteria ConceptRelaxedSigh IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response PlayerRelaxedSighTeenGirl
 	},
 
 	{
-		name = "L4D1PlayerNiceShotFrancisC6M3Trevor",
-		criteria ConceptPlayerNiceShot IsNotCoughing IsTrevor IssuerNotSoClose IsC6M3_Port IsTalk IsTalkTrevor IsWorldTalkTrevor SubjectIsBiker ChanceToFire70Percent IsNotSpeaking
-		Response L4D1PlayerNiceShotFrancisC6M3Mechanic
+		name = "PlayerUseAdrenalineBetaZoeyRVC",
+		criteria ConceptUseAdrenaline IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response PlayerUseAdrenalineTeenGirl
 	},
 
 	{
-		name = "PlayerNiceShotFrancisTrevor",
-		criteria ConceptPlayerNiceShot IsNotCoughing IsTrevor IssuerClose IsTalk IsTalkTrevor IsWorldTalkTrevor SubjectIsBiker ChanceToFire30Percent IsNotSpeaking
-		Response PlayerNiceShotFrancisMechanic
+		name = "L4D1ThanksGotItemBetaZoeyRVC",
+		criteria IsAwardConcept IsSharingSubject IsNotCoughing SubjectIsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1ThanksGotItemTeenGirl
 	},
 
 	{
-		name = "L4D1PlayerNiceShotLouisC6M3Trevor",
-		criteria ConceptPlayerNiceShot IsNotCoughing IsTrevor IssuerNotSoClose IsC6M3_Port IsTalk IsTalkTrevor IsWorldTalkTrevor SubjectIsManager ChanceToFire70Percent IsNotSpeaking
-		Response L4D1PlayerNiceShotLouisC6M3Mechanic
+		name = "L4D1RescuedSurvivorBetaZoeyRVC",
+		criteria IsAwardConcept IsRescuer IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1RescuedSurvivorTeenGirl
 	},
 
 	{
-		name = "PlayerNiceShotLouisTrevor",
-		criteria ConceptPlayerNiceShot IsNotCoughing IsTrevor IssuerClose IsTalk IsTalkTrevor IsWorldTalkTrevor SubjectIsManager ChanceToFire10Percent IsNotSpeaking
-		Response PlayerNiceShotLouisMechanic
+		name = "PlayerGivenItemBetaZoeyRVC",
+		criteria ConceptPlayerGivenItem IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response PlayerGivenItemTeenGirl
 	},
 
 	{
-		name = "L4D1PlayerNiceShotZoeyC6M3Trevor",
-		criteria ConceptPlayerNiceShot IsNotCoughing IsTrevor IssuerNotSoClose IsC6M3_Port IsTalk IsTalkTrevor IsWorldTalkTrevor SubjectIsTeenGirl ChanceToFire70Percent IsFrancisIntroActor IsNotSpeaking
-		Response L4D1PlayerNiceShotZoeyC6M3Mechanic
-	},
-
-	{
-		name = "L4D1PlayerNiceShotZoeyC6M3IntroTrevor",
-		criteria ConceptPlayerNiceShot IsNotCoughing IsTrevor IssuerNotSoClose IsC6M3_Port IsTalk IsTalkTrevor IsWorldTalkTrevor SubjectIsTeenGirl ChanceToFire70Percent IsZoeyIntroActor IsNotSpeaking
-		Response L4D1PlayerNiceShotZoeyC6M3IntroMechanic
-	},
-
-	{
-		name = "PlayerNiceShotZoeyTrevor",
-		criteria ConceptPlayerNiceShot IsNotCoughing IsTrevor IssuerClose IsTalk IsTalkTrevor IsWorldTalkTrevor SubjectIsTeenGirl ChanceToFire10Percent IsNotSpeaking
-		Response L4D1PlayerNiceShotZoeyC6M3Mechanic
-	},
-
-	{
-		name = "PlayerNiceShotTrevor",
-		criteria ConceptPlayerNiceShot IsNotCoughing IsTrevor IssuerClose IsTalk IsTalkTrevor ChanceToFire30Percent IsWorldTalkTrevor
-		Response PlayerNiceShotMechanic
-	},
-
-	{
-		name = "L4D1PlayerNiceShotTrevor",
-		criteria ConceptPlayerNiceShot IsNotCoughing IsTrevor IssuerNotSoClose IsC6M3_Port SubjectIsNotProducer SubjectIsNotGambler SubjectIsNotCoach IsTalk IsTalkTrevor ChanceToFire30Percent IsWorldTalkTrevor
-		Response PlayerNiceShotMechanic
-	},
-
-	{
-		name = "PlayerNiceShotCoachTrevor",
-		criteria ConceptPlayerNiceShot IsNotCoughing IsTrevor IssuerClose IsTalk IsTalkTrevor ChanceToFire10Percent IsWorldTalkTrevor SubjectIsCoach
-		Response PlayerNiceShotCoachMechanic
-	},
-
-	{
-		name = "PlayerNiceShotGamblerTrevor",
-		criteria ConceptPlayerNiceShot IsNotCoughing IsTrevor IssuerClose IsTalk IsTalkTrevor ChanceToFire10Percent IsWorldTalkTrevor SubjectIsGambler
-		Response PlayerNiceShotGamblerMechanic
-	},
-
-	{
-		name = "PlayerNiceShotProducerTrevor",
-		criteria ConceptPlayerNiceShot IsNotCoughing IsTrevor IssuerClose IsTalk IsTalkTrevor ChanceToFire10Percent IsWorldTalkTrevor SubjectIsProducer
-		Response PlayerNiceShotProducerMechanic
-	},
-
-	{
-		name = "SurvivorMournCoachTrevor",
-		criteria ConceptPlayerSeeDeadPlayer IsNotCoughing IsTrevor IsDeadCoach IsNotSaidSomeoneDied IsTalk IsTalkTrevor IsNotIncapacitated HasNotDefibrillator IsWorldTalkTrevor
-		Response SurvivorMournCoachMechanic
-	},
-
-	{
-		name = "SurvivorMournCoachC1Trevor",
-		criteria ConceptPlayerSeeDeadPlayer IsNotCoughing IsTrevor IsDeadCoach IsNotSaidSomeoneDied IsTalk IsTalkTrevor IsNotIncapacitated HasNotDefibrillator IsWorldTalkTrevor NoKnowNames ismap_c1m1_hotel
-		Response SurvivorMournCoachC1Mechanic
-	},
-
-	{
-		name = "SurvivorMournGamblerTrevor",
-		criteria ConceptPlayerSeeDeadPlayer IsNotCoughing IsTrevor IsDeadGambler IsNotSaidSomeoneDied IsTalk IsTalkTrevor IsNotIncapacitated HasNotDefibrillator IsWorldTalkTrevor
-		Response SurvivorMournGamblerMechanic
-	},
-
-	{
-		name = "SurvivorMournGamblerC1Trevor",
-		criteria ConceptPlayerSeeDeadPlayer IsNotCoughing IsTrevor IsDeadGambler IsNotSaidSomeoneDied IsTalk IsTalkTrevor IsNotIncapacitated HasNotDefibrillator IsWorldTalkTrevor NoKnowNames ismap_c1m1_hotel
-		Response SurvivorMournGamblerC1Mechanic
-	},
-
-	{
-		name = "SurvivorMournProducerTrevor",
-		criteria ConceptPlayerSeeDeadPlayer IsNotCoughing IsTrevor IsDeadProducer IsNotSaidSomeoneDied IsTalk IsTalkTrevor IsNotIncapacitated HasNotDefibrillator IsWorldTalkTrevor
-		Response SurvivorMournProducerMechanic
-	},
-
-	{
-		name = "SurvivorMournProducerC1Trevor",
-		criteria ConceptPlayerSeeDeadPlayer IsNotCoughing IsTrevor IsDeadProducer IsNotSaidSomeoneDied IsTalk IsTalkTrevor IsNotIncapacitated HasNotDefibrillator IsWorldTalkTrevor NoKnowNames ismap_c1m1_hotel
-		Response SurvivorMournProducerC1Mechanic
-	},
-
-	{
-		name = "_C1M1_ElevatorHelloStartAllAliveTrevor",
-		criteria Concept_C1M1_ElevatorHelloStart IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsEveryoneAlive
-		Response _C1M1_ElevatorHelloStartAllAliveMechanic
-		then any _C1M1_ElevatorHello01c foo:0 -8.677
-	},
-
-	{
-		name = "_C1M1_ElevatorHelloStart3AliveTrevor",
-		criteria Concept_C1M1_ElevatorHelloStart IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsWithOnlyThree
-		Response _C1M1_ElevatorHelloStart3AliveMechanic
-		then any _C1M1_ElevatorHello3AliveExtra1 foo:0 -3.112
-	},
-
-	{
-		name = "_C1M1_ElevatorHelloStart2AliveTrevor",
-		criteria Concept_C1M1_ElevatorHelloStart IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsWithTwo
-		Response _C1M1_ElevatorHelloStart2AliveMechanic
-		then any _C1M1_ElevatorHello2AliveName2 foo:0 -2.926
-	},
-
-	{
-		name = "C3M1FerryInTransitTrevor",
-		criteria ConceptC3M1FerryInTransit IsTrevor IsTalk IsTalkTrevor IsNotSaidC3M1FerryInTransit IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C3M1FerryInTransitMechanic
-		ApplyContext "SaidC3M1FerryInTransit:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "Playerc1m1_enter_elevatorTrevor",
-		criteria Conceptc1m1_enter_elevator IsTrevor IsTalk IsTalkTrevor IsNotSaidc1m1_enter_elevator AutoIsNotScavenge AutoIsNotSurvival IsWorldTalkTrevor
-		Response Playerc1m1_enter_elevatorMechanic
-		ApplyContext "Saidc1m1_enter_elevator:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "Playerc1m1_elevator_pushbuttonTrevor",
-		criteria Conceptc1m1_elevator_pushbutton IsTrevor IsTalk IsTalkTrevor IsNotSaidc1m1_elevator_pushbutton AutoIsNotScavenge AutoIsNotSurvival IsWorldTalkTrevor
-		Response Playerc1m1_elevator_pushbuttonMechanic
-		ApplyContext "Saidc1m1_elevator_pushbutton:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkC1M2PreAlarmDoorTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC1M2PreStoreAlarm IsNotSaidWorldC1M2PreStoreAlarm IsNotSaidC1M2AlarmSetoff IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerRemarkC1M2PreAlarmDoorMechanic
-		ApplyContext "SaidWorldC1M2PreStoreAlarm:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C1M2AlarmDoor2Trevor",
-		criteria ConceptC1M2AlarmDoor2 IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotAlone AutoIsNotScavenge AutoIsNotSurvival
-		Response C1M2AlarmDoor2Mechanic
-		then orator C1M2StoreAlarm foo:0 0.3
-	},
-
-	{
-		name = "PlayerRemarkC1M2PostAlarmDoorTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC1M2StoreAlarm IsSaidC1M2AlarmSetoff IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_SaidC1M2GrabbedCola
-		Response PlayerRemarkC1M2PostAlarmDoorMechanic
-		then orator C1M2WhitakerErrandInProgress foo:0 1
-		ApplyContext "C1M2AlarmSetOff:2:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerC1M2GrabbingColaTrevor",
-		criteria ConceptPlayerPickup IsTrevor IsTalk IsTalkTrevor IsNotSaidC1M2GrabbingCola2 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsPickedUpColaBottles ismap_c1m2_streets _auto_NotSaidC1M2GrabbedCola
-		Response PlayerC1M2GrabbingColaMechanic
-		ApplyContext "SaidC1M2GrabbingCola2:1:5,_auto_SaidC1M2GrabbedCola:1:0,Talk:1:3.092"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerC1M2GrabbingCola2Trevor",
-		criteria ConceptPlayerPickup IsTrevor IsTalk IsTalkTrevor IsNotSaidC1M2GrabbingCola2 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsPickedUpColaBottles ismap_c1m2_streets _auto_SaidC1M2GrabbedCola
-		Response PlayerC1M2GrabbingCola2Mechanic
-		ApplyContext "SaidC1M2GrabbingCola2:1:5,Talk:1:3.092"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerC1M2FirstOutsideResponseTrevor",
-		criteria ConceptC1M2FirstOutsideResponse IsTrevor FromIsAnOrator IsNotSaidC1M2AlarmSetoff AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerC1M2FirstOutsideResponseMechanic
-		then orator Whitaker.Nags foo:0 10
-	},
-
-	{
-		name = "C1M2GunRoomDoorResponseGratitudeTrevor",
-		criteria ConceptC1M2GunRoomDoorResponseGratitude IsTrevor ChanceToFire50Percent AutoIsNotScavenge AutoIsNotSurvival
-		Response C1M2GunRoomDoorResponseGratitudeMechanic
-	},
-
-	{
-		name = "PlayerC1M2InsideGunShop2Trevor",
-		criteria ConceptC1M2InsideGunShop2 IsTrevor IsTalk IsTalkTrevor IsNotSaidC1M2InsideGunShop IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerC1M2InsideGunShop2Mechanic
-		ApplyContext "Talk:1:2,SaidC1M2InsideGunShop:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerC1M2InsideGunShop3Trevor",
-		criteria ConceptC1M2InsideGunShop3 IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerC1M2InsideGunShop3Mechanic
-		ApplyContext "Talk:1:3"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerC1M2InsideGunShopPickupResponseTrevor",
-		criteria ConceptC1M2InsideGunShopPickupResponse IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerC1M2InsideGunShopPickupResponseMechanic
-	},
-
-	{
-		name = "PlayerC1M2InsideGunShopPickupResponse2Trevor",
-		criteria ConceptC1M2InsideGunShopPickupResponse2 IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival ChanceToFire30Percent
-		Response PlayerC1M2InsideGunShopPickupResponse2Mechanic
-	},
-
-	{
-		name = "PlayerC1M2GunShopKillTrevor",
-		criteria ConceptC1M2Gunshopkill IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IssuerClose AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerC1M2GunShopKillMechanic
-		ApplyContext "Talk:1:7"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerC3M1CallFerry2Trevor",
-		criteria ConceptC3M1CallFerry2 IsTrevor IsTalk IsTalkTrevor IsTrevorActor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerC3M1CallFerry2Mechanic
-		then any C3M1FerryInTransit foo:0 25
-	},
-
-	{
-		name = "PlayerC3M1FerryLandedIdleTrevor",
-		criteria ConceptTalkIdle IsTrevor IsTalk IsTalkTrevor C3M1Ferry IsNotIncapacitated NotInCombat IsNotAlone IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerC3M1FerryLandedIdleMechanic
-		ApplyContext "Talk:1:4"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerC3M1FerryLaunched2aTrevor",
-		criteria ConceptC3M1FerryLaunched2 IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerC3M1FerryLaunched2aMechanic
-	},
-
-	{
-		name = "PlayerC3M2ComingHomeTrevor",
-		criteria ConceptTalkIdle IsTrevor IsTalk IsTalkTrevor IsNotSaidSafeSpotAhead IsSaidC3M2Village1 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerC3M2ComingHomeMechanic
-		ApplyContext "Talk:1:1"
-		applycontexttoworld
-	},
-
-	{
-		name = "_C3M2BloodFarmersTrevor",
-		criteria Concept_C3M2BloodFarmers IsTrevor IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _C3M2BloodFarmersMechanic
-	},
-
-	{
-		name = "PlayerC3M2OpenDoor2Trevor",
-		criteria ConceptC3M2OpenDoor2 IsTrevor IsTalkTrevor IsTrevorActor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerC3M2OpenDoor2Mechanic
-	},
-
-	{
-		name = "Playerc5m4floatendTrevor",
-		criteria Conceptc5m4floatend2 IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response Playerc5m4floatendMechanic
-	},
-
-	{
-		name = "Playerc5m4floatstart2Trevor",
-		criteria Conceptc5m4floatstart2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response Playerc5m4floatstart2Mechanic
-	},
-
-	{
-		name = "PlayerintroC1M1Trevor",
-		criteria ConceptintroC1M1 IsTrevor IsNotAlone IsNotSaidCXM1Intro AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerintroC1M1Mechanic
-		then any _introc1m1 foo:0 4
-		ApplyContext "CXM1Intro:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerintroC1M1AloneTrevor",
-		criteria ConceptintroC1M1 IsTrevor IsAlone IsNotSaidCXM1Intro AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerintroC1M1AloneMechanic
-		then self _introc1m1 foo:0 4
-		ApplyContext "CXM1Intro:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "WhitakerC1M2DeliverColaTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC1M2DeliverCola IsC1M2WhitakerErrand IsSubjectNear300 HasWhitakerCola AutoIsNotScavenge AutoIsNotSurvival _auto_SaidC1M2GrabbedCola
-		Response WhitakerC1M2DeliverColaMechanic
-		then orator whitakerputcola foo:0 0
-		ApplyContext "C1M2AlarmSetOff:3:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerPlayerUsingColaBottlesTrevor",
-		criteria ConceptPlayerUsingColaBottles IsTrevor IsNotSaidPlayerUsingColaBottles
-		Response NoResponse
-		ApplyContext "SaidPlayerUsingColaBottles:1:20,WhoPutCola:Trevor:35"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRelaxedSighTrevor",
-		criteria ConceptRelaxedSigh IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerRelaxedSighMechanic
-	},
-
-	{
-		name = "PlayerStayTogetherInsideReponseTrevor",
-		criteria ConceptStayTogetherInsideReponse IsTrevor IsTalk IsTalkTrevor IsNotSaidStayTogetherInsideReponse IsNotHealthySlow IsNotInSafeSpot IsWorldTalkTrevor
-		Response PlayerStayTogetherInsideReponseMechanic
-		ApplyContext "SaidStayTogetherInsideReponse:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerUseAdrenalineTrevor",
-		criteria ConceptUseAdrenaline IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerUseAdrenalineMechanic
-	},
-
-	{
-		name = "PlayerWorldC3M1FeedGator2Trevor",
-		criteria ConceptWorldC3M1FeedGator2 IsTrevor IsTalk IsTalkTrevor IssuerClose ChanceToFire30Percent IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerWorldC3M1FeedGator2Mechanic
-	},
-
-	{
-		name = "PlayerWorldC3M1FerryCrossingA01Trevor",
-		criteria ConceptWorldC3M1FerryCrossingA01 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerWorldC3M1FerryCrossingA01Mechanic
-	},
-
-	{
-		name = "PlayerWorldC3M1FerryCrossingB01Trevor",
-		criteria ConceptWorldC3M1FerryCrossingB01 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerWorldC3M1FerryCrossingB01Mechanic
-		then producer WorldC3M1FerryCrossingB02 foo:0 -3.058
-	},
-
-	{
-		name = "PlayerWorldC3M1FerryCrossingD03Trevor",
-		criteria ConceptWorldC3M1FerryCrossingD03 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerWorldC3M1FerryCrossingD03Mechanic
-		then producer WorldC3M1FerryCrossingD04 foo:0 -1.705
-	},
-
-	{
-		name = "PlayerWorldC3M1FerryCrossingE02Trevor",
-		criteria ConceptWorldC3M1FerryCrossingE02 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerWorldC3M1FerryCrossingE02Mechanic
-		then any WorldC3M1FerryCrossingE03 foo:0 -5.643
-	},
-
-	{
-		name = "PlayerWorldC3M1FerryCrossingE04Trevor",
-		criteria ConceptWorldC3M1FerryCrossingE04 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerWorldC3M1FerryCrossingE04Mechanic
-	},
-
-	{
-		name = "PlayerWorldC3M1FerryCrossingG02Trevor",
-		criteria ConceptWorldC3M1FerryCrossingG02 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerWorldC3M1FerryCrossingG02Mechanic
-	},
-
-	{
-		name = "PlayerWorldC3M1FerryCrossingI02Trevor",
-		criteria ConceptWorldC3M1FerryCrossingI02 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerWorldC3M1FerryCrossingI02Mechanic
-		then coach WorldC3M1FerryCrossingI03 foo:0 -3.258
-	},
-
-	{
-		name = "WorldC3M1FerryCrossingM2Trevor",
-		criteria ConceptWorldC3M1FerryCrossingM2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response WorldC3M1FerryCrossingM2Mechanic
-		then gambler WorldC3M1FerryCrossingM3 foo:0 0.1
-	},
-
-	{
-		name = "WorldC3M1FerryCrossingM4Trevor",
-		criteria ConceptWorldC3M1FerryCrossingM4 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response WorldC3M1FerryCrossingM4Mechanic
-		then coach WorldC3M1FerryCrossingM5 foo:0 0.1
-	},
-
-	{
-		name = "PlayerWorldIntroC31Trevor",
-		criteria ConceptWorldIntroC31 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerWorldIntroC31Mechanic
-		then gambler WorldIntroC31a1 foo:0 -1.960
-	},
-
-	{
-		name = "ThanksGotItemTrevor",
-		criteria IsAwardConcept IsSharingSubject IsNotCoughing SubjectIsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response NoResponse
-	},
-
-	{
-		name = "RescuedSurvivorTrevor",
-		criteria IsAwardConcept IsRescuer IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response RescuedSurvivorMechanic
-	},
-
-	{
-		name = "PlayerGivenItemTrevor",
-		criteria ConceptPlayerGivenItem IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerGivenItemMechanic
-	},
-
-	{
-		name = "ItemDonorProducerTrevor",
-		criteria ConceptPlayerPickup IsTrevor IsDonorProducer ChanceToFire30Percent isNotmap_c1m1_hotel IsPickedUpValidHealingItem
-		Response ItemDonorProducerMechanic
+		name = "ItemDonorProducerBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsBetazoeyrvc IsDonorProducer ChanceToFire30Percent IsPickedUpValidHealingItem
+		Response ItemDonorProducerTeenGirl
 		then producer YouAreWelcome foo:0 0
-		ApplyContext "TalkTrevor:1:3"
+		ApplyContext "TalkBetazoeyrvc:1:3"
 		applycontexttoworld
 	},
 
 	{
-		name = "ItemDonorCoachTrevor",
-		criteria ConceptPlayerPickup IsTrevor IsDonorCoach ChanceToFire30Percent isNotmap_c1m1_hotel IsPickedUpValidHealingItem
-		Response ItemDonorCoachMechanic
-		then Coach YouAreWelcome foo:0 0
-		ApplyContext "TalkTrevor:1:3"
+		name = "ItemDonorCoachBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsBetazoeyrvc IsDonorCoach ChanceToFire30Percent IsPickedUpValidHealingItem
+		Response ItemDonorCoachTeenGirl
+		then coach YouAreWelcome foo:0 0
+		ApplyContext "TalkBetazoeyrvc:1:3"
 		applycontexttoworld
 	},
 
 	{
-		name = "ItemDonorGamblerTrevor",
-		criteria ConceptPlayerPickup IsTrevor IsDonorGambler ChanceToFire30Percent isNotmap_c1m1_hotel IsPickedUpValidHealingItem
-		Response ItemDonorGamblerMechanic
+		name = "ItemDonorGamblerBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsBetazoeyrvc IsDonorGambler ChanceToFire30Percent IsPickedUpValidHealingItem
+		Response ItemDonorGamblerTeenGirl
 		then gambler YouAreWelcome foo:0 0
-		ApplyContext "TalkTrevor:1:3"
+		ApplyContext "TalkBetazoeyrvc:1:3"
 		applycontexttoworld
 	},
 
 	{
-		name = "ItemDonorBikerTrevor",
-		criteria ConceptPlayerPickup IsTrevor IsDonorBiker ChanceToFire30Percent IsPickedUpValidHealingItem
-		Response ItemDonorBikerMechanic
-		then gambler YouAreWelcome foo:0 0
-		ApplyContext "TalkTrevor:1:3"
+		name = "ItemDonorMechanicBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsBetazoeyrvc IsDonorMechanic ChanceToFire30Percent IsPickedUpValidHealingItem
+		Response ItemDonorMechanicTeenGirl
+		then mechanic YouAreWelcome foo:0 0
+		ApplyContext "TalkBetazoeyrvc:1:3"
 		applycontexttoworld
 	},
 
 	{
-		name = "ItemDonorTeenGirlTrevor",
-		criteria ConceptPlayerPickup IsTrevor IsDonorTeenGirl ChanceToFire30Percent IsPickedUpValidHealingItem
-		Response ItemDonorTeenGirlMechanic
-		then teengirl YouAreWelcome foo:0 0
-		ApplyContext "TalkTrevor:1:3"
+		name = "ItemDonorBikerBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsBetazoeyrvc IsDonorBiker ChanceToFire30Percent IsPickedUpValidHealingItem
+		Response ItemDonorBikerTeenGirl
+		then biker YouAreWelcome foo:0 0
+		ApplyContext "TalkBetazoeyrvc:1:3"
 		applycontexttoworld
 	},
 
 	{
-		name = "ItemDonorManagerTrevor",
-		criteria ConceptPlayerPickup IsTrevor IsDonorManager ChanceToFire30Percent IsPickedUpValidHealingItem
-		Response ItemDonorManagerMechanic
+		name = "ItemDonorManagerBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsBetazoeyrvc IsDonorManager ChanceToFire30Percent IsPickedUpValidHealingItem
+		Response ItemDonorManagerTeenGirl
 		then manager YouAreWelcome foo:0 0
-		ApplyContext "TalkTrevor:1:3"
+		ApplyContext "TalkBetazoeyrvc:1:3"
 		applycontexttoworld
 	},
 
 	{
-		name = "ItemDonorNamVetTrevor",
-		criteria ConceptPlayerPickup IsTrevor IsDonorNamVet ChanceToFire30Percent IsPickedUpValidHealingItem
-		Response ItemDonorNamVetMechanic
+		name = "ItemDonorNamVetBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsBetazoeyrvc IsDonorNamVet ChanceToFire30Percent IsPickedUpValidHealingItem
+		Response ItemDonorNamVetTeenGirl
 		then namvet YouAreWelcome foo:0 0
-		ApplyContext "TalkTrevor:1:3"
+		ApplyContext "TalkBetazoeyrvc:1:3"
 		applycontexttoworld
 	},
 
 	{
-		name = "ReviveMeInterruptedMinorTrevor",
-		criteria ConceptReviveMeInterrupted IsTrevor IsIncappedStarted IsIncappedStarted2
-		Response ReviveMeInterruptedMinorMechanic
-		ApplyContext "ReviveInterrupt:1:2"
-		applycontexttoworld
-	},
-
-	{
-		name = "ReviveMeInterruptedMajorTrevor",
-		criteria ConceptReviveMeInterrupted IsTrevor IsIncappedBleeding1 IsIncappedBleeding2
-		Response ReviveMeInterruptedMajorMechanic
-		ApplyContext "ReviveInterrupt:1:2"
-		applycontexttoworld
-	},
-
-	{
-		name = "ReviveMeInterruptedCriticalTrevor",
-		criteria ConceptReviveMeInterrupted IsTrevor IsIncappedLethargic
-		Response ReviveMeInterruptedCriticalMechanic
-		ApplyContext "ReviveInterrupt:1:2"
-		applycontexttoworld
-	},
-
-	{
-		name = "ReviveThanksTrevor",
-		criteria ConceptRevivedByFriend IsNotCoughing IsTrevor
-		Response ReviveThanksMechanic
-		then subject YouAreWelcome foo:0 0
-		ApplyContext "TalkTrevor:1:2"
-	},
-
-	{
-		name = "ReviveThanksCoachTrevor",
-		criteria ConceptRevivedByFriend IsNotCoughing IsTrevor SubjectIsCoach ChanceToFire30Percent
-		Response ReviveThanksCoachMechanic
-		then Subject YouAreWelcome foo:0 0
-		ApplyContext "TalkTrevor:1:2"
-	},
-
-	{
-		name = "ReviveThanksCoachC1Trevor",
-		criteria ConceptRevivedByFriend IsNotCoughing IsTrevor SubjectIsCoach ChanceToFire30Percent ismap_c1m1_hotel NoKnowNames
-		Response ReviveThanksCoachC1Mechanic
-		then subject YouAreWelcome foo:0 0
-		ApplyContext "TalkTrevor:1:2"
-	},
-
-	{
-		name = "ReviveThanksGamblerTrevor",
-		criteria ConceptRevivedByFriend IsNotCoughing IsTrevor SubjectIsGambler ChanceToFire30Percent
-		Response ReviveThanksGamblerMechanic
-		then Subject YouAreWelcome foo:0 0
-		ApplyContext "TalkTrevor:1:2"
-	},
-
-	{
-		name = "ReviveThanksGamblerC1Trevor",
-		criteria ConceptRevivedByFriend IsNotCoughing IsTrevor SubjectIsGambler ChanceToFire30Percent ismap_c1m1_hotel NoKnowNames
-		Response ReviveThanksMechanic
-		then subject YouAreWelcome foo:0 0
-		ApplyContext "TalkTrevor:1:2"
-	},
-
-	{
-		name = "ReviveThanksProducerTrevor",
-		criteria ConceptRevivedByFriend IsNotCoughing IsTrevor SubjectIsProducer ChanceToFire30Percent
-		Response ReviveThanksProducerMechanic
-		then subject YouAreWelcome foo:0 0
-		ApplyContext "TalkTrevor:1:2"
-	},
-
-	{
-		name = "ReviveThanksBikerTrevor",
-		criteria ConceptRevivedByFriend IsNotCoughing IsTrevor SubjectIsBiker ChanceToFire30Percent
-		Response ReviveThanksBikerMechanic
-		then subject YouAreWelcome foo:0 0
-		ApplyContext "TalkTrevor:1:2"
-	},
-
-	{
-		name = "ReviveThanksManagerTrevor",
-		criteria ConceptRevivedByFriend IsNotCoughing IsTrevor SubjectIsManager ChanceToFire30Percent
-		Response ReviveThanksManagerMechanic
-		then subject YouAreWelcome foo:0 0
-		ApplyContext "TalkTrevor:1:2"
-	},
-
-	{
-		name = "ReviveThanksNamVetTrevor",
-		criteria ConceptRevivedByFriend IsNotCoughing IsTrevor SubjectIsNamVet ChanceToFire30Percent
-		Response ReviveThanksManagerMechanic
-		then subject YouAreWelcome foo:0 0
-		ApplyContext "TalkTrevor:1:2"
-	},
-
-	{
-		name = "ReviveThanksTeenGirlTrevor",
-		criteria ConceptRevivedByFriend IsNotCoughing IsTrevor SubjectIsTeenGirl ChanceToFire30Percent
-		Response ReviveThanksTeenGirlMechanic
-		then subject YouAreWelcome foo:0 0
-		ApplyContext "TalkTrevor:1:2"
-	},
-
-	{
-		name = "BotPlayer_YourWelcomeTrevor",
-		criteria ConceptSurvivorBotYouAreWelcome IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response BotPlayer_YourWelcomeMechanic
-	},
-
-	{
-		name = "BotReassureComingTrevor",
-		criteria ConceptSurvivorBotReassureComing IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotSpeaking
-		Response BotReassureComingMechanic
-	},
-
-	{
-		name = "BotYesReadyTrevor",
-		criteria ConceptSurvivorBotYesReady IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotSpeaking
-		Response BotReassureComingMechanic
-	},
-
-	{
-		name = "BotReassureNearbyTrevor",
-		criteria ConceptSurvivorBotReassureNearby IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotSpeaking
-		Response BotReassureNearbyMechanic
-	},
-
-	{
-		name = "C1M2LeavingSafeRoomTrevor",
-		criteria ConceptSurvivorLeavingInitialCheckpoint IsTrevor IsNotSaidLeavingSafeArea ismap_c1m2_streets _auto_NotTellingStory
-		Response C1M2LeavingSafeRoomMechanic
-		ApplyContext "SaidLeavingSafeArea:1:0,Talk:1:1.547"
-		applycontexttoworld
-	},
-
-	{
-		name = "C1M2SafeRooma2Trevor",
-		criteria ConceptC1M2SafeRooma2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C1M2SafeRooma2Mechanic
-		then self IntroEnd foo:0 0.1
-	},
-
-	{
-		name = "C1M2SafeRoomc1Trevor",
-		criteria ConceptC1M2SafeRoomc1 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C1M2SafeRoomc1Mechanic
-		then gambler C1M2SafeRoomc2 foo:0 -3.765
-	},
-
-	{
-		name = "C1M2TankerAttackTrevor",
-		criteria ConceptC1M2TankerAttack2 IsTrevor WhoPutColaTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C1M2TankerAttackMechanic
-		then orator C1M2GoodLuckGettingToTheMall foo:0 3
-	},
-
-	{
-		name = "c1m4escapeTrevor",
-		criteria Conceptc1m4escape IsTrevor NotSaidOutro AutoIsNotScavenge AutoIsNotSurvival
-		Response c1m4escapeMechanic
-		ApplyContext "Talk:1:0,SaidOutro:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "c1m4escapeCheckSuccessTrevor",
-		criteria Conceptc1m4escapeTrevorCheck IsTrevor IsNotIncapacitated AutoIsNotScavenge AutoIsNotSurvival
-		Response c1m4escapeCheckSuccessMechanic
-		then from c1m4escapeTrevorCheckSuccess foo:0 0
-	},
-
-	{
-		name = "c1m4escapeCheckFailTrevor",
-		criteria Conceptc1m4escapeTrevorCheck IsTrevor IsIncapacitated AutoIsNotScavenge AutoIsNotSurvival
-		Response c1m4escapeCheckFailMechanic
-		then from c1m4escapeTrevorCheckFail foo:0 0
-	},
-
-	{
-		name = "C1M4GasPourTrevor",
-		criteria ConceptPlayerPourStarted IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotScavenge ismap_c1m4_atrium _auto_NotNoGasPourLine
-		Response C1M4GasPourMechanic
-		ApplyContext "TalkTrevor:1:2"
-	},
-
-	{
-		name = "C1M4PlayerGetToRescueVehicleTrevor",
-		criteria ConceptGetToVehicle IsTrevor ismap_c1m4_atrium IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockTrevor IsNotSpeakingWeight0
-		Response C1M4PlayerGetToRescueVehicleMechanic
-		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockTrevor:1:30"
-		applycontexttoworld
-	},
-
-	{
-		name = "c1m4startelevatorTrevor",
-		criteria Conceptc1m4startelevator IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response c1m4startelevatorMechanic
-		then trevor _c1m4startelevator2 foo:0 -4.816
-		ApplyContext "Talk:1:0,ElevatorTimer:1:25"
-		applycontexttoworld
-	},
-
-	{
-		name = "C6M3GasPourTrevor",
-		criteria ConceptPlayerPourStarted IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotScavenge isC6M3_Port ChanceToFire70Percent
-		Response C6M3GasPourMechanic
-		ApplyContext "TalkTrevor:1:2"
-	},
-
-	{
-		name = "FinaleStartC1M4Trevor",
-		criteria ConceptFinaleTriggered IsTrevor IsTalkTrevor IsWorldTalkTrevor ismap_c1m4_atrium IsNotScavenge _auto_NotFinaleStarted
-		Response FinaleStartC1M4Mechanic
-		ApplyContext "Talk:1:3,_auto_Finale:1:0,_auto_NoLostCall:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "GasPourDoneC1M4Trevor",
-		criteria ConceptPlayerPourFinished IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotScavenge ismap_c1m4_atrium ScoreDoneSC
-		Response GasPourDoneC1M4Mechanic
-		ApplyContext "_auto_TimerLockA:1:5"
-		applycontexttoworld
-	},
-
-	{
-		name = "C2M2CarouselIdleTrevor",
-		criteria ConceptTalkIdle IsTrevor ChanceToFire30Percent IsNotIncapacitated ismap_c2m2 IsNotInSafeSpot IsNotSaidSafeSpotAhead AutoIsNotScavenge AutoIsNotSurvival _auto_IsAlarm _auto_NotTimerLockA _auto_NotTimerLockTrevor IsNotSpeakingWeight0
-		Response C2M2CarouselIdleMechanic
-		ApplyContext "_auto_TimerLockA:1:13,_auto_TimerLockTrevor:1:30"
-		applycontexttoworld
-	},
-
-	{
-		name = "C2M3RubbleNagIdleTrevor",
-		criteria ConceptTalkIdle IsTrevor ChanceToFire50Percent IsNotIncapacitated ismap_c2m3 AutoIsNotScavenge AutoIsNotSurvival _auto_IsTeamNearCoaster _auto_NotAlarm _auto_NotTimerLockA _auto_NotTimerLockTrevor _auto_IsCoasterExpo IsNotSpeakingWeight0
-		Response C2M3RubbleNagIdleMechanic
-		ApplyContext "Talk:1:0.903,_auto_TimerLockA:1:10,_auto_TimerLockTrevor:1:13"
-		applycontexttoworld
-	},
-
-	{
-		name = "C2M2SaferoomTrevor",
-		criteria ConceptTalkIdle IsTrevor NotInCombat IsInStartArea IsNotAlone IsNotSaidLeavingSafeArea Ismap_c2m2 AutoIsNotScavenge AutoIsNotSurvival _auto_NotSafeRoomQuiet _auto_IsSafeRoomStart IsNotSpeakingWeight0
-		Response C2M2SaferoomMechanic
-		then any _C2M2_Riders01 foo:0 0.1
-		ApplyContext "_auto_SafeRoomStart:2:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "_C2M2_Riders02Trevor",
-		criteria Concept_C2M2_Riders02 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _C2M2_Riders02Mechanic
-		then self IntroEnd foo:0 0.1
-	},
-
-	{
-		name = "_C2M2_Riders03Trevor",
-		criteria Concept_C2M2_Riders03 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _C2M2_Riders03Mechanic
-		then self IntroEnd foo:0 0.1
-	},
-
-	{
-		name = "_C2M2_Riders04Trevor",
-		criteria Concept_C2M2_Riders04 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _C2M2_Riders04Mechanic
-		then coach _C2M2_Riders04 foo:0 0.1
-	},
-
-	{
-		name = "_C2M2_Riders06Trevor",
-		criteria Concept_C2M2_Riders06 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _C2M2_Riders06Mechanic
-		then self IntroEnd foo:0 0.1
-	},
-
-	{
-		name = "_C2M2_Riders07Trevor",
-		criteria Concept_C2M2_Riders07 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _C2M2_Riders07Mechanic
-		then self IntroEnd foo:0 0.1
-	},
-
-	{
-		name = "C2M1Intro_400Trevor",
-		criteria ConceptC2M1Intro_400 IsTrevor IsSaidLeavingSafeArea IsInStartArea AutoIsNotScavenge AutoIsNotSurvival
-		Response C2M1Intro_400Mechanic
-		then trevor C2M1Intro_405 foo:0 0.1
-		ApplyContext "Talk:1:5.363"
-		applycontexttoworld
-	},
-
-	{
-		name = "C2M1Intro_401Trevor",
-		criteria ConceptC2M1Intro_401 IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsInStartArea
-		Response C2M1Intro_401Mechanic
-		then trevor C2M1Intro_402 foo:0 0.3
-		ApplyContext "Talk:1:3.772"
-		applycontexttoworld
-	},
-
-	{
-		name = "C2M1Intro_402Trevor",
-		criteria ConceptC2M1Intro_402 IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsInStartArea
-		Response C2M1Intro_402Mechanic
-		ApplyContext "Talk:1:0.790"
-		applycontexttoworld
-	},
-
-	{
-		name = "C2M1Intro_403Trevor",
-		criteria ConceptC2M1Intro_403 IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsInStartArea
-		Response C2M1Intro_403Mechanic
-		then trevor C2M1Intro_404 foo:0 0.1
-		ApplyContext "Talk:1:1.198"
-		applycontexttoworld
-	},
-
-	{
-		name = "C2M1Intro_404Trevor",
-		criteria ConceptC2M1Intro_404 IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsInStartArea
-		Response C2M1Intro_404Mechanic
-		ApplyContext "Talk:1:1.506"
-		applycontexttoworld
-	},
-
-	{
-		name = "C2M1Intro_405Trevor",
-		criteria ConceptC2M1Intro_405 IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsInStartArea
-		Response C2M1Intro_405Mechanic
-		then trevor C2M1Intro_406 foo:0 0.1
-		ApplyContext "Talk:1:1.411"
-		applycontexttoworld
-	},
-
-	{
-		name = "C2M1Intro_406Trevor",
-		criteria ConceptC2M1Intro_406 IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsInStartArea
-		Response C2M1Intro_406Mechanic
-		ApplyContext "Talk:1:1.506"
-		applycontexttoworld
-	},
-
-	{
-		name = "C2M1Intro_407Trevor",
-		criteria ConceptC2M1Intro_407 IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsInStartArea
-		Response C2M1Intro_407Mechanic
-		then trevor C2M1Intro_408 foo:0 0.1
-		ApplyContext "Talk:1:2.846"
-		applycontexttoworld
-	},
-
-	{
-		name = "C2M1Intro_408Trevor",
-		criteria ConceptC2M1Intro_408 IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsInStartArea
-		Response C2M1Intro_408Mechanic
-		ApplyContext "Talk:1:1.098"
-		applycontexttoworld
-	},
-
-	{
-		name = "c2m3_DownHoleTrevor",
-		criteria Conceptc2m3downhole IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response c2m3_DownHoleMechanic
-		ApplyContext "_auto_DownHole:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "c2m3CoasterEndTrevor",
-		criteria Conceptc2m3CoasterEnd IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response c2m3CoasterEndMechanic
-		ApplyContext "_auto_Alarm:2:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C2M3CoasterRunGoTrevor",
-		criteria ConceptC2M3CoasterRunGo IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C2M3CoasterRunGoMechanic
-	},
-
-	{
-		name = "C2M3CoasterStartTrevor",
-		criteria Conceptc2m3CoasterStart IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C2M3CoasterStartMechanic
-		then trevor _c2m3_howcool foo:0 1.0
-		ApplyContext "WarnMegaMob:1:30,_auto_Alarm:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C2M3SaferoomTrevor",
-		criteria ConceptTalkIdle IsTrevor NotInCombat IsInStartArea IsNotAlone IsNotSaidLeavingSafeArea Ismap_c2m3 AutoIsNotScavenge AutoIsNotSurvival _auto_NotSafeRoomQuiet _auto_IsSafeRoomStart IsNotSpeakingWeight0
-		Response C2M3SaferoomMechanic
-		then producer C2M3SafeIntro009 foo:0 0.2
-		ApplyContext "_auto_SafeRoomStart:2:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C2M3SafeIntro006Trevor",
-		criteria ConceptC2M3SafeIntro006 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C2M3SafeIntro006Mechanic
-		then self IntroEnd foo:0 0.1
-	},
-
-	{
-		name = "C2M3SafeIntro010Trevor",
-		criteria ConceptC2M3SafeIntro010 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C2M3SafeIntro010Mechanic
-		then self IntroEnd foo:0 0.1
-	},
-
-	{
-		name = "c2m3SeeChopperTrevor",
-		criteria Conceptc2m3SeeChopper IsTrevor IsTalk IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		Response c2m3SeeChopperMechanic
-		ApplyContext "_auto_OutOfTunnel:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "c2m3SpotIncendiaryTrevor",
-		criteria ConceptPlayerSpotWeapon IsIncendiary IsTrevor IsTalk NotInCombat Ismap_c2m3 _auto_NotOutOfTunnel
-		Response c2m3SpotIncendiaryMechanic
-	},
-
-	{
-		name = "c2m3SpotKatanaTrevor",
-		criteria ConceptPlayerSpotWeapon IsKatana IsTrevor IsTalk NotInCombat Ismap_c2m3 _auto_NotOutOfTunnel
-		Response c2m3SpotKatanaMechanic
-	},
-
-	{
-		name = "C2M4ButtonPressedTrevor",
-		criteria ConceptC2M4ButtonPressed IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C2M4ButtonPressedMechanic
-		ApplyContext "_auto_ButtonPressed:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C2M4Gate004Trevor",
-		criteria ConceptC2M4Gate004 IsTrevor IsTalk NotInCombat IsNotCoughing AutoIsNotScavenge AutoIsNotSurvival
-		Response C2M4Gate004Mechanic
-		then coach C2M4Gate005 foo:0 0.01
-	},
-
-	{
-		name = "C2M4Gate000Trevor",
-		criteria ConceptC2M4Gate000 IsTrevor IsNotIncapacitated ismap_c2m4 NotInCombat TimeSinceGroupInCombat02 AutoIsNotScavenge AutoIsNotSurvival _auto_IsNearGate _auto_NotNearGateNag _auto_NotTimerLockA _auto_NotTimerLockTrevor _auto_NotButtonPressed IsNotSpeakingWeight0
-		Response C2M4Gate000Mechanic
-		ApplyContext "Talk:1:1.116,_auto_TimerLockA:1:20,_auto_TimerLockTrevor:1:23,_auto_NearGateNag:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C2M4GateIdleTrevor",
-		criteria ConceptTalkIdle IsTrevor IsNotIncapacitated ismap_c2m4 NotInCombat TimeSinceGroupInCombat02 AutoIsNotScavenge AutoIsNotSurvival _auto_IsNearGateNag _auto_IsNearGate _auto_NotTimerLockA _auto_NotTimerLockTrevor _auto_NotButtonPressed IsNotSpeakingWeight0
-		Response C2M4GateIdleMechanic
-		ApplyContext "Talk:1:1.645,_auto_TimerLockA:1:20,_auto_TimerLockTrevor:1:23"
-		applycontexttoworld
-	},
-
-	{
-		name = "C2M4GateOpenCalloutTrevor",
-		criteria ConceptC2M4GateOpenCallout IsTrevor IsNotIncapacitated AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response C2M4GateOpenCalloutMechanic
-		then any _C2M4_GateOpen001 foo:0 0.1
-		ApplyContext "Talk:1:0.878"
-		applycontexttoworld
-	},
-
-	{
-		name = "c2m4SeeChopperTrevor",
-		criteria Conceptc2m4SeeChopper IsTrevor IsTalk NotInCombat IsNotCoughing AutoIsNotScavenge AutoIsNotSurvival
-		Response c2m4SeeChopperMechanic
-	},
-
-	{
-		name = "C2M5_Button2YellTrevor",
-		criteria ConceptC2M5_Button2Yell IsTrevor NotCoachMadAtRiders IsNotSpeaking AutoIsNotScavenge AutoIsNotSurvival
-		Response C2M5_Button2YellMechanic
-	},
-
-	{
-		name = "C2M5_Button2YellCoachMadTrevor",
-		criteria ConceptC2M5_Button2Yell IsTrevor CoachMadAtRiders IsNotSpeaking AutoIsNotScavenge AutoIsNotSurvival
-		Response C2M5_Button2YellMechanic
-	},
-
-	{
-		name = "C2M5_ChoppercomingTrevor",
-		criteria ConceptC2M5_Choppercoming IsTrevor IsNotIncapacitated AutoIsNotScavenge AutoIsNotSurvival
-		Response C2M5_ChoppercomingMechanic
-		then any C2M5_PlanWorked foo:0 0.01
-	},
-
-	{
-		name = "c2m5_intro003Trevor",
-		criteria Conceptc2m5_intro003 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response c2m5_intro003Mechanic
-		then self c2m5_intro009 foo:0 0.4
-	},
-
-	{
-		name = "c2m5_intro005Trevor",
-		criteria Conceptc2m5_intro005 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response c2m5_intro005Mechanic
-		then any c2m5_intro006 foo:0 0.1
-	},
-
-	{
-		name = "c2m5_intro008Trevor",
-		criteria Conceptc2m5_intro008 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response c2m5_intro008Mechanic
-		then self IntroEnd foo:0 0.1
-	},
-
-	{
-		name = "c2m5_intro009Trevor",
-		criteria Conceptc2m5_intro009 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response c2m5_intro009Mechanic
-		then self IntroEnd foo:0 0.1
-	},
-
-	{
-		name = "c2m5_intro011Trevor",
-		criteria Conceptc2m5_intro011 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response c2m5_intro011Mechanic
-		then any c2m5_intro012 foo:0 0.1
-	},
-
-	{
-		name = "c2m5_intro012Trevor",
-		criteria Conceptc2m5_intro012 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response c2m5_intro012Mechanic
-		then self IntroEnd foo:0 0.1
-	},
-
-	{
-		name = "c2m5_intro015Trevor",
-		criteria Conceptc2m5_intro015 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response c2m5_intro012Mechanic
-		then self IntroEnd foo:0 0.1
-	},
-
-	{
-		name = "c2m5_intro016Trevor",
-		criteria Conceptc2m5_intro016 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response c2m5_intro012Mechanic
-		then self IntroEnd foo:0 0.1
-	},
-
-	{
-		name = "c2m5_intro020Trevor",
-		criteria Conceptc2m5_intro020 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response c2m5_intro012Mechanic
-		then self IntroEnd foo:0 0.1
-	},
-
-	{
-		name = "c2m5_intro025Trevor",
-		criteria Conceptc2m5_intro025 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response c2m5_intro012Mechanic
-		then self IntroEnd foo:0 0.1
-	},
-
-	{
-		name = "c2m5_intro019Trevor",
-		criteria Conceptc2m5_intro019 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response c2m5_intro019Mechanic
-		then any c2m5_intro020 foo:0 0.1
-	},
-
-	{
-		name = "c2m5_intro024Trevor",
-		criteria Conceptc2m5_intro024 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response c2m5_intro024Mechanic
-		then any c2m5_intro025 foo:0 0.01
-	},
-
-	{
-		name = "C2M5_PlanWorkedTrevor",
-		criteria ConceptC2M5_PlanWorked IsTrevor NotCoachMadAtRiders IsNotIncapacitated NotInCombat AutoIsNotScavenge AutoIsNotSurvival
-		Response C2M5_PlanWorkedMechanic
-	},
-
-	{
-		name = "C2M5_PlanWorkedCoachMadTrevor",
-		criteria ConceptC2M5_PlanWorked IsTrevor CoachMadAtRiders IsNotIncapacitated NotInCombat AutoIsNotScavenge AutoIsNotSurvival
-		Response C2M5_PlanWorkedMechanic
-	},
-
-	{
-		name = "C2M5Button1Trevor",
-		criteria ConceptC2M5Button1 IsTrevor AutoIsNotScavenge AutoIsNotSurvival _auto_NotButton1
-		Response C2M5Button1Mechanic
-		ApplyContext "_auto_Button1:1:0,_auto_NoLostCall:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C2M5ChopperNagTrevor",
-		criteria ConceptGetToVehicle IsTrevor Ismap_c2m5 IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsNotInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockTrevor IsNotSpeakingWeight0
-		Response C2M5ChopperNagMechanic
-		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockTrevor:1:30"
-		applycontexttoworld
-	},
-
-	{
-		name = "C2M5InChopperNagTrevor",
-		criteria ConceptGetToVehicle IsTrevor Ismap_c2m5 IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockTrevor IsNotSpeakingWeight0
-		Response C2M5InChopperNagMechanic
-		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockTrevor:1:30"
-		applycontexttoworld
-	},
-
-	{
-		name = "C2M5InArenaNagTrevor",
-		criteria ConceptTalkIdle IsTrevor NotInCombat Ismap_c2m5 IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival _auto_NotButton1 _auto_NotTimerLockA _auto_NotTimerLockTrevor _auto_IsC2M5InArena IsNotSpeakingWeight0
-		Response C2M5InArenaNagMechanic
-		ApplyContext "_auto_TimerLockA:1:30,_auto_TimerLockTrevor:1:34"
-		applycontexttoworld
-	},
-
-	{
-		name = "C2M5SingingTrevor",
-		criteria ConceptC2M5Microphone IsTrevor NotInCombat Ismap_c2m5 TimeSinceGroupInCombat02 IsNotSpeaking AutoIsNotScavenge AutoIsNotSurvival _auto_NotButton2 _auto_IsButton1
-		Response C2M5SingingMechanic
-	},
-
-	{
-		name = "SurvivorReloadingC2M5Trevor",
-		criteria ConceptPlayerReloading IsSurvivor IsNotZombiePresentTank IsNotSpeaking Ismap_c2m5 IsRocking IsTrevor IsNotIncapacitated IsTalk IsTalkTrevor RecentGroupInCombat10 HasNotgrenadelauncher IsWorldTalkTrevor _auto_ConcertIsLive _auto_NotRockingOut
-		Response SurvivorReloadingC2M5Mechanic
-		ApplyContext "_auto_RockingOut:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorReloadingC2M5RockedOutTrevor",
-		criteria ConceptPlayerReloading IsSurvivor IsNotZombiePresentTank IsNotSpeaking IsRocking Ismap_c2m5 IsTrevor IsNotIncapacitated IsTalk IsTalkTrevor RecentGroupInCombat10 HasNotgrenadelauncher IsWorldTalkTrevor _auto_ConcertIsLive _auto_IsRockingOut
-		Response NoResponse
-	},
-
-	{
-		name = "SurvivorVocalizeLookOutC2M5Trevor",
-		criteria ConceptPlayerLookOut IsNotCoughing Ismap_c2m5 IsRocking IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_ConcertIsLive _auto_NotRockingOut
-		Response SurvivorVocalizeLookOutC2M5Mechanic
-		ApplyContext "_auto_RockingOut:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorVocalizeLookOutC2M5RockedOutTrevor",
-		criteria ConceptPlayerLookOut IsNotCoughing Ismap_c2m5 IsRocking IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_ConcertIsLive _auto_IsRockingOut
-		Response NoResponse
-	},
-
-	{
-		name = "C2M5LeaveSafeTrevor",
-		criteria ConceptSurvivorLeavingInitialCheckpoint IsTrevor ismap_c2m5 IsNotSaidLeavingSafeArea
-		Response C2M5LeaveSafeMechanic
-		ApplyContext "Talk:0:0,SaidLeavingSafeArea:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C2M5ReloadingTankTrevor",
-		criteria ConceptPlayerReloading IsSurvivor IsNotSpeaking IsTrevor IsNotIncapacitated IsTalk IsTalkTrevor IsNotSaidReloadingTank IsZombiePresentTank IsSaidTankWarn2 IsWorldTalkTrevor Ismap_c2m5 _auto_ConcertIsLive
-		Response C2M5ReloadingTankMechanic
-		ApplyContext "SaidReloadingTank:1:10,SaidTankWarn2:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerKillTankConfirmationC2M5Trevor",
-		criteria ConceptKilledZombie IsNotCoughing IsTrevor IsTalk IsTalkTrevor SubjectIsTank IsNotSaidTankDead IsNotAlone IsNotIncapacitated IsWorldTalkTrevor Ismap_c2m5 _auto_ConcertIsLive IsNotSpeakingWeight0
-		Response PlayerKillTankConfirmationC2M5Mechanic
-		ApplyContext "SaidTankDead:1:60,TalkTrevor:1:5"
-		applycontexttoworld
-	},
-
-	{
-		name = "C2M5ThankYouTrevor",
-		criteria ConceptC2M5Microphone IsTrevor NotInCombat Ismap_c2m5 IsNotSpeaking AutoIsNotScavenge AutoIsNotSurvival _auto_IsEscapeReady
-		Response C2M5ThankYouMechanic
-		ApplyContext "Talk:1:5.287"
-		applycontexttoworld
-	},
-
-	{
-		name = "C3M1FerryEnd2Trevor",
-		criteria ConceptC3M1FerryEnd2 IsTrevor IsNotSaidC3M1FerryEnd AutoIsNotScavenge AutoIsNotSurvival
-		Response C3M1FerryEnd2Mechanic
-		ApplyContext "SaidC3M1FerryEnd:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "WorldC3M1FerryCrossingRochelleTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC3M1FerryCrossing IsNotSaidWorldC3M1FerryCrossing IsNotCoughing NotInCombat IsTalkTrevor IsSubjectNear200 IsProducerAlive ChanceToFire25Percent IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		// 	forceweight 4
-		Response WorldC3M1FerryCrossingRochelleMechanic
-		then producer WorldC3M1FerryCrossingJ2 foo:0 -2.908
-		ApplyContext "SaidWorldC3M1FerryCrossing:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "WorldC3M1FerryCrossingJ3Trevor",
-		criteria ConceptWorldC3M1FerryCrossingJ3 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response WorldC3M1FerryCrossingJ3Mechanic
-	},
-
-	{
-		name = "WorldC3M1FerryCrossingk3Trevor",
-		criteria ConceptWorldC3M1FerryCrossingk3 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response WorldC3M1FerryCrossingk3Mechanic
-	},
-
-	{
-		name = "WorldC3M1FerryCrossingL3Trevor",
-		criteria ConceptWorldC3M1FerryCrossingL3 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response WorldC3M1FerryCrossingL3Mechanic
-		then coach WorldC3M1FerryCrossingD01 foo:0 0.1
-	},
-
-	{
-		name = "C3M2DisgustTrevor",
-		criteria Conceptc3m2disgust IsTrevor NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C3M2DisgustMechanic
-		ApplyContext "Talk:1:1.803"
-		applycontexttoworld
-	},
-
-	{
-		name = "C3M2SafeRooma2Trevor",
-		criteria ConceptC3M2SafeRooma2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C3M2SafeRooma2Mechanic
-		then self IntroEnd foo:0 0.1
-	},
-
-	{
-		name = "C3M2SafeRoomb3Trevor",
-		criteria ConceptC3M2SafeRoomb3 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C3M2SafeRoomb3Mechanic
-		then self IntroEnd foo:0 0.1
-	},
-
-	{
-		name = "InfoRemc3m2_parachutist1Trevor",
-		criteria ConceptRemark IsTrevor Isc3m2_parachutist IsNotSaidc3m2_parachutist IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 ChanceToFire50Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		// 	forceweight 10
-		Response InfoRemc3m2_parachutist1Mechanic
-		then coach InfoRemc3m2_parachutist2 foo:0 -1.466
-		ApplyContext "Saidc3m2_parachutist:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "AUTOBLANK_InfoRemc3m2_parachutist1Trevor",
-		criteria ConceptRemark IsTrevor Isc3m2_parachutist IsNotSaidc3m2_parachutist IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response _PlayerInfoRemarkableBlankMechanic
-		ApplyContext "Saidc3m2_parachutist:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "InfoRemC3M2Bathtub2Trevor",
-		criteria ConceptInfoRemC3M2Bathtub2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response InfoRemC3M2Bathtub2Mechanic
-		then producer InfoRemC3M2Bathtub3 foo:0 -1.559
-		ApplyContext "Talk:1:1.659"
-		applycontexttoworld
-	},
-
-	{
-		name = "_C3M2Pirogue2Trevor",
-		criteria Concept_C3M2Pirogue2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _C3M2Pirogue2Mechanic
-		then any _C3M2Pirogue2 foo:0 0.1
-		ApplyContext "Talk:1:1.750"
-		applycontexttoworld
-	},
-
-	{
-		name = "C3M3SafeRoomTrevor",
-		criteria ConceptTalkIdle IsTrevor NotInCombat Ismapc3m3_shantytown IsInStartArea IsNotAlone IsNotSaidLeavingSafeArea AutoIsNotScavenge AutoIsNotSurvival _auto_IsSafeRoomStart _auto_NotSafeRoomQuiet IsNotSpeakingWeight0
-		Response C3M3SafeRoomMechanic
-		then coach C3M3SafeRoom2b2 foo:0 .05
-		ApplyContext "_auto_SafeRoomStart:2:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C3M3SafeRoom2a2Trevor",
-		criteria ConceptC3M3SafeRoom2a2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C3M3SafeRoom2a2Mechanic
-		then producer C3M3SafeRoom2a3 foo:0 .05
-	},
-
-	{
-		name = "C3M3SafeRoom2c3Trevor",
-		criteria ConceptC3M3SafeRoom2c3 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C3M3SafeRoom2c3Mechanic
-		then self IntroEnd foo:0 0.1
-	},
-
-	{
-		name = "C3M3SafeRoom2d2Trevor",
-		criteria ConceptC3M3SafeRoom2d2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C3M3SafeRoom2d2Mechanic
-		then self IntroEnd foo:0 0.1
-	},
-
-	{
-		name = "InfoRemC3M3Bodies2Trevor",
-		criteria ConceptInfoRemC3M3Bodies2 IsTrevor IssuerClose AutoIsNotScavenge AutoIsNotSurvival
-		Response InfoRemC3M3Bodies2Mechanic
-		then producer InfoRemC3M3Bodies3 foo:0 -1.429
-	},
-
-	{
-		name = "InfoRemC3M3LowerGateaTrevor",
-		criteria ConceptInfoRemC3M3LowerGatea IsTrevor IsNotSaidC3M3BridgeButton IntensityUnder25 AutoIsNotScavenge AutoIsNotSurvival
-		Response InfoRemC3M3LowerGateaMechanic
-	},
-
-	{
-		name = "InfoRemC3M3Unsanitarya1Trevor",
-		criteria ConceptInfoRemC3M3Unsanitarya1 IsTrevor IssuerClose ChanceToFire30Percent AutoIsNotScavenge AutoIsNotSurvival
-		Response InfoRemC3M3Unsanitarya1Mechanic
-		then gambler InfoRemC3M3Unsanitarya2 foo:0 -3.766
-	},
-
-	{
-		name = "C3M4BoatNagsTrevor",
-		criteria ConceptGetToVehicle IsTrevor IsNotCoughing ismapc3m4_plantation IsNotIncapacitated IsRunning IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsNotInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockTrevor IsNotSpeakingWeight0
-		Response C3M4BoatNagsMechanic
-		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockTrevor:1:30"
-		applycontexttoworld
-	},
-
-	{
-		name = "C3M4InBoatNagsTrevor",
-		criteria ConceptGetToVehicle IsTrevor IsNotCoughing ismapc3m4_plantation IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockTrevor IsNotSpeakingWeight0
-		Response C3M4InBoatNagsMechanic
-		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockTrevor:1:30"
-		applycontexttoworld
-	},
-
-	{
-		name = "C3M4Button1ATrevor",
-		criteria ConceptC3M4Button1A IsTrevor FromIsAnOrator _auto_IsTalkingTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C3M4Button1AMechanic
-		then orator C3M4Button101 foo:0 0.3
-	},
-
-	{
-		name = "C3M4ButtonPickUsUpTrevor",
-		criteria ConceptC3M4ButtonPickUsUp IsTrevor FromIsAnOrator AutoIsNotScavenge AutoIsNotSurvival _auto_NotFinaleStarted
-		Response C3M4ButtonPickUsUpMechanic
-		then orator C3M4ButtonHowMany foo:0 0.3
-	},
-
-	{
-		name = "C3M4ButtonNameTrevor",
-		criteria ConceptC3M4ButtonName IsTrevor FromIsAnOrator _auto_IsTalkingTrevor AutoIsNotScavenge AutoIsNotSurvival _auto_NotFinaleStarted
-		Response C3M4ButtonNameMechanic
-		then orator C3M4ButtonHowMany foo:0 0.1
-	},
-
-	{
-		name = "C3M4HowManyAnswerTrevor",
-		criteria ConceptC3M4ButtonHowManyAnswer IsTrevor FromIsAnOrator IsEveryoneAlive _auto_IsTalkingTrevor AutoIsNotScavenge AutoIsNotSurvival _auto_NotFinaleStarted
-		Response C3M4HowManyAnswerMechanic
-		then orator C3M4Button102 foo:0 0.1
-	},
-
-	{
-		name = "C3M4HowManyAnswerNot4Trevor",
-		criteria ConceptC3M4ButtonHowManyAnswer IsTrevor FromIsAnOrator IsEveryoneNotAlive _auto_IsTalkingTrevor AutoIsNotScavenge AutoIsNotSurvival _auto_NotFinaleStarted
-		Response C3M4HowManyAnswerNot4Mechanic
-		then orator C3M4Button102 foo:0 0.1
-	},
-
-	{
-		name = "C3M4Button201Trevor",
-		criteria ConceptC3M4Button201 IsTrevor FromIsAnOrator AutoIsNotScavenge AutoIsNotSurvival _auto_IsTalkingTrevor
-		Response C3M4Button201Mechanic
-		then orator C3M4Button202 foo:0 0.01
-		ApplyContext "Talk:1:2.509"
-		applycontexttoworld
-	},
-
-	{
-		name = "C3M4Button202Trevor",
-		criteria ConceptC3M4Button202 FromIsAnOrator _auto_IsTalkingTrevor IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C3M4Button202Mechanic
-		then orator C3M4Button201 foo:0 0.01
-		ApplyContext "Talk:1:3.424"
-		applycontexttoworld
-	},
-
-	{
-		name = "C3M4Button203Trevor",
-		criteria ConceptC3M4Button203 IsTrevor FromIsAnOrator _auto_IsTalkingTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C3M4Button203Mechanic
-	},
-
-	{
-		name = "C3M4ReloadingTankTrevor",
-		criteria ConceptPlayerReloading IsSurvivor IsNotSpeaking IsTrevor IsNotIncapacitated IsTalk IsTalkTrevor IsNotSaidReloadingTank IsZombiePresentTank IsSaidTankWarn2 IsWorldTalkTrevor ismapc3m4_plantation _auto_IsFinaleStarted
-		Response C3M4ReloadingTankMechanic
-		ApplyContext "SaidReloadingTank:1:10,SaidTankWarn2:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerKillTankConfirmationC3M4Trevor",
-		criteria ConceptKilledZombie IsNotCoughing IsTrevor IsTalk IsTalkTrevor SubjectIsTank IsNotSaidTankDead IsNotAlone IsNotIncapacitated IsWorldTalkTrevor ismapc3m4_plantation IsNotSpeakingWeight0 _auto_IsFinaleStarted
-		Response PlayerKillTankConfirmationC3M4Mechanic
-		ApplyContext "SaidTankDead:1:60,TalkTrevor:1:5"
-		applycontexttoworld
-	},
-
-	{
-		name = "C3M4GateBlow01Trevor",
-		criteria ConceptC3M4GateBlow01 IsTrevor FromIsAnOrator IsTalk AutoIsNotScavenge AutoIsNotSurvival
-		Response C3M4GateBlow01Mechanic
-		then orator C3M4GateBlow02 foo:0 0.01
-		ApplyContext "_auto_TimerLockA:1:2"
-		applycontexttoworld
-	},
-
-	{
-		name = "C4StormBlindIdleTrevor",
-		criteria ConceptTalkIdle IsTrevor ChanceToFire30Percent IsNotIncapacitated _auto_NotTimerLockA _auto_IsTimerA _auto_NotC4TrevorInCover IsNotSpeakingWeight0
-		Response C4StormBlindIdleMechanic
-		ApplyContext "_auto_TimerA:0:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C4M2IdleWitchville01Trevor",
-		criteria ConceptPlayerWarnHearZombie IsWitchClass IsSurvivor ismap_c4m2_sugarmill_a IsNotSpeaking IsNotAlone IsClosestSurvivorNear1200 IsTrevor IsNotIncapacitated IsTalk IsTalkTrevor NotInCombat IsWorldTalkTrevor NotSaidLotsOfWitches IsNotSaidSafeSpotAhead _auto_IsTrevorInWitchville
-		Response C4M2IdleWitchville01Mechanic
-		then any _c4m2_Witchville05 foo:0 0.01
-		ApplyContext "SaidWitchWarn:1:20,WarnHeardWitch:1:300,SaidLotsOfWitches:1:90"
-		applycontexttoworld
-	},
-
-	{
-		name = "C4M2IdleWitchville02Trevor",
-		criteria ConceptPlayerWarnHearZombie IsWitchClass IsSurvivor ismap_c4m2_sugarmill_a IsNotSpeaking IsGamblerAlive IsTrevor IsNotIncapacitated IsTalkTrevor NotInCombat IsWorldTalkTrevor IsGamblerNear400 ChanceToFire10Percent NotSaidLotsOfWitches IsNotSaidSafeSpotAhead _auto_IsTrevorInWitchville
-		Response C4M2IdleWitchville02Mechanic
-		then gambler _c4m2_Witchville01 foo:0 0.01
-		ApplyContext "SaidWitchWarn:1:20,WarnHeardWitch:1:300,SaidLotsOfWitches:1:90"
-		applycontexttoworld
-	},
-
-	{
-		name = "C4M2PushedButtonTrevor",
-		criteria Conceptc4m2_elevator_top_button IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C4M2PushedButtonMechanic
-		ApplyContext "SaidActivatedC4M2Elevator:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C4M5BoatNagsTrevor",
-		criteria ConceptGetToVehicle IsTrevor Isc4m5 IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsNotInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockTrevor IsNotSpeakingWeight0
-		Response C4M5BoatNagsMechanic
-		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockTrevor:1:30"
-		applycontexttoworld
-	},
-
-	{
-		name = "C4M5InBoatNagsTrevor",
-		criteria ConceptGetToVehicle IsTrevor Isc4m5 IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockTrevor IsNotSpeakingWeight0
-		Response C4M5InBoatNagsMechanic
-		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockTrevor:1:30"
-		applycontexttoworld
-	},
-
-	{
-		name = "C5M1_intro002Trevor",
-		criteria ConceptC5M1_intro002 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C5M1_intro002Mechanic
-		then orator C5M1_intro003 foo:0 0.01
-	},
-
-	{
-		name = "C5M1_intro004Trevor",
-		criteria ConceptC5M1_intro004 IsTrevor IsEveryoneAlive AutoIsNotScavenge AutoIsNotSurvival
-		Response C5M1_intro004Mechanic
-		then coach C5M1_intro008 foo:0 0.01
-	},
-
-	{
-		name = "C5M1_intro005Trevor",
-		criteria ConceptC5M1_intro005 IsTrevor IsEveryoneAlive AutoIsNotScavenge AutoIsNotSurvival
-		Response C5M1_intro005Mechanic
-		then coach C5M1_intro008 foo:0 0.01
-	},
-
-	{
-		name = "C5M1_intro007Trevor",
-		criteria ConceptC5M1_intro007 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C5M1_intro007Mechanic
-		then self IntroEnd foo:0 0.1
-	},
-
-	{
-		name = "C5M1_intro008Trevor",
-		criteria ConceptC5M1_intro008 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C5M1_intro008Mechanic
-		then self IntroEnd foo:0 0.1
-	},
-
-	{
-		name = "C5M1_intro009Trevor",
-		criteria ConceptC5M1_intro009 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C5M1_intro009Mechanic
-		then self IntroEnd foo:0 0.1
-	},
-
-	{
-		name = "C5M1Flyby01Trevor",
-		criteria ConceptC5M1Flyby01 IsTrevor IsNotCoughing NotInCombat AutoIsNotScavenge AutoIsNotSurvival ChanceToFire80Percent
-		Response C5M1Flyby01Mechanic
-		then any C5M1Flyby02 foo:0 0.1
-	},
-
-	{
-		name = "C5M2AlarmNagTrevor",
-		criteria ConceptTalkIdle IsTrevor IsMapc5m2_park AutoIsNotScavenge AutoIsNotSurvival ChanceToFire80Percent _auto_IsAlarm _auto_NotTimerLockA _auto_NotTimerLockTrevor IsNotSpeakingWeight0
-		Response C5M2AlarmNagMechanic
-		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockTrevor:1:13"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC502HorseTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC502Horse IsNotSaidWorldC502Horse IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear600 ChanceToFire50Percent IsWorldTalkTrevor IsNotScavenge AutoIsNotSurvival TimeSinceGroupInCombat02 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC502HorseMechanic
-		then Gambler WorldC502Horse2 foo:0 -2.947
-		ApplyContext "SaidWorldC502Horse:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "AUTOBLANK_PlayerRemarkWorldC502HorseTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC502Horse IsNotSaidWorldC502Horse IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear600 IsWorldTalkTrevor IsNotScavenge AutoIsNotSurvival TimeSinceGroupInCombat02 IsNotSpeakingWeight0
-		Response _PlayerInfoRemarkableBlankMechanic
-		ApplyContext "SaidWorldC502Horse:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC502Horse3Trevor",
-		criteria ConceptWorldC502Horse3 IsTrevor IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear300 IsWorldTalkTrevor IsNotScavenge TimeSinceGroupInCombat02
-		Response PlayerRemarkWorldC502Horse3Mechanic
-	},
-
-	{
-		name = "C5M3AlarmFieldNagsTrevor",
-		criteria ConceptTalkIdle IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsMapc5m3_cemetery NotInCombat IsNotCoughing IsTalk _auto_IsInAlarmField _auto_NotTimerLockA _auto_NotAlarmFieldOn IsNotSpeakingWeight0
-		// 	forceweight 200
-		Response C5M3AlarmFieldNagsMechanic
-		then self C5M3AlarmFieldNags01 foo:0 0.2
-		ApplyContext "Talk:1:3.125,_auto_TimerLockA:1:12"
-		applycontexttoworld
-	},
-
-	{
-		name = "C5M3AlarmFieldNags01Trevor",
-		criteria ConceptC5M3AlarmFieldNags01 IsTrevor NotInCombat AutoIsNotScavenge AutoIsNotSurvival _auto_IsInAlarmField _auto_NotAlarmFieldOn
-		Response C5M3AlarmFieldNags01Mechanic
-	},
-
-	{
-		name = "C5M3AlarmFieldNags03Trevor",
-		criteria ConceptC5M3AlarmFieldNags03 IsTrevor NotInCombat AutoIsNotScavenge AutoIsNotSurvival
-		Response C5M3AlarmFieldNags03Mechanic
-	},
-
-	{
-		name = "C5M3AlarmFieldNags2Trevor",
-		criteria ConceptTalkIdle IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsMapc5m3_cemetery NotInCombat IsNotCoughing IsTalk ChanceToFire10Percent IsGamblerAlive _auto_IsInAlarmField _auto_NotTimerLockA _auto_NotAlarmFieldOn IsNotSpeakingWeight0
-		// 	forceweight 300
-		Response C5M3AlarmFieldNags2Mechanic
-		then gambler C5M3AlarmFieldNags02 foo:0 0.2
-		ApplyContext "Talk:1:2.583,_auto_TimerLockA:1:15"
-		applycontexttoworld
-	},
-
-	{
-		name = "C5M3Bodies01Trevor",
-		criteria ConceptC5M3Bodies01 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C5M3Bodies01Mechanic
-	},
-
-	{
-		name = "C5M3Bodies02Trevor",
-		criteria ConceptC5M3Bodies02 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C5M3Bodies01Mechanic
-	},
-
-	{
-		name = "C5M3FirstInAlarmTrevor",
-		criteria ConceptC5M3FirstInAlarmField IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C5M3FirstInAlarmMechanic
-		ApplyContext "Saidremark_caralarm:1:0,Talk:1:2.675"
-		applycontexttoworld
-	},
-
-	{
-		name = "C5M3GraveNagsTrevor",
-		criteria ConceptTalkIdle IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsMapc5m3_cemetery NotInCombat IsNotCoughing IsTalk ChanceToFire10Percent IsNotAlone TimeSinceGroupInCombat02 IsNotSaidSafeSpotAhead IsGamblerAlive _auto_IsOffHighway IsNotSpeakingWeight0
-		Response C5M3GraveNagsMechanic
-		then self _C5M3GraveSmells foo:0 0.1
-		ApplyContext "Talk:1:2.810"
-		applycontexttoworld
-	},
-
-	{
-		name = "C5M3GraveNagsNOFactTrevor",
-		criteria ConceptTalkIdle IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsMapc5m3_cemetery NotInCombat IsNotCoughing IsTalk ChanceToFire10Percent IsNotAlone TimeSinceGroupInCombat02 IsNotSaidSafeSpotAhead IsGamblerAlive IsGamblerNear400 _auto_IsOffHighway _auto_NotSaidC5M3NewOrleansFact IsNotSpeakingWeight0
-		Response C5M3GraveNagsNOFactMechanic
-		then self C5M3GraveNags01 foo:0 0.4
-		ApplyContext "Talk:1:2.810,_auto_C5M3NewOrleansFact:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C5M3GraveNags01Trevor",
-		criteria ConceptC5M3GraveNags01 IsTrevor NotInCombat IsNotCoughing IsNotAlone AutoIsNotScavenge AutoIsNotSurvival
-		Response C5M3GraveNags01Mechanic
-		then any C5M3GraveNags02 foo:0 0.01
-		ApplyContext "Talk:1:2.810"
-		applycontexttoworld
-	},
-
-	{
-		name = "_C5M3GraveSmellsTrevor",
-		criteria Concept_C5M3GraveSmells IsTrevor NotInCombat IsNotCoughing AutoIsNotScavenge AutoIsNotSurvival
-		Response _C5M3GraveSmellsMechanic
-		ApplyContext "Talk:1:0.950"
-		applycontexttoworld
-	},
-
-	{
-		name = "_C5M3SmallFavorsTrevor",
-		criteria Concept_C5M3SmallFavors IsTrevor AutoIsNotScavenge AutoIsNotSurvival NotInCombat IssuerClose IsNotCoughing IsTalk IsNotSpeakingWeight0
-		Response _C5M3SmallFavorsMechanic
-		ApplyContext "Talk:1:1.850"
-		applycontexttoworld
-	},
-
-	{
-		name = "C5M3Jets2Trevor",
-		criteria Conceptc5m3Jets2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C5M3Jets2Mechanic
-		then self C5M3Jets3 foo:0 1
-		ApplyContext "Talk:1:3.709"
-		applycontexttoworld
-	},
-
-	{
-		name = "C5M3Jets3Trevor",
-		criteria ConceptC5M3Jets3 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C5M3Jets3Mechanic
-		then gambler C5M3StopZombies foo:0 0.1
-		ApplyContext "Talk:1:3.709"
-		applycontexttoworld
-	},
-
-	{
-		name = "C5M3StopZombiesTrevor",
-		criteria ConceptC5M3StopZombies IsTrevor IssuerClose AutoIsNotScavenge AutoIsNotSurvival
-		Response C5M3StopZombiesMechanic
-	},
-
-	{
-		name = "C5M3OnBridgeTrevor",
-		criteria Conceptc5m3OnBridge IsTrevor IsNotCoughing NotInCombat AutoIsNotScavenge AutoIsNotSurvival
-		Response NoResponse
-		ApplyContext "Talk:1:1.267,_auto_AlarmFieldOn:2:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C5M3SeeGraveyard01Trevor",
-		criteria ConceptC5M3SeeGraveyard01 IsTrevor NotInCombat AutoIsNotScavenge AutoIsNotSurvival
-		Response C5M3SeeGraveyard01Mechanic
-		then self C5M3SeeGraveyard03 foo:0 1.0
-		ApplyContext "Talk:1:2.855"
-		applycontexttoworld
-	},
-
-	{
-		name = "C5M3SeeGraveyard04Trevor",
-		criteria ConceptC5M3SeeGraveyard04 IsTrevor NotInCombat AutoIsNotScavenge AutoIsNotSurvival
-		Response C5M3SeeGraveyard04Mechanic
-		ApplyContext "Talk:1:3.887"
-		applycontexttoworld
-	},
-
-	{
-		name = "C5M3SeeGraveyard03Trevor",
-		criteria ConceptC5M3SeeGraveyard03 IsTrevor NotInCombat AutoIsNotScavenge AutoIsNotSurvival
-		Response C5M3SeeGraveyard03Mechanic
-		then gambler C5M3SeeGraveyard05 foo:0 0.01
-		ApplyContext "Talk:1:3.887"
-		applycontexttoworld
-	},
-
-	{
-		name = "C5M3SeeGraveyard06Trevor",
-		criteria ConceptC5M3SeeGraveyard06 IsTrevor NotInCombat AutoIsNotScavenge AutoIsNotSurvival
-		Response C5M3SeeGraveyard06Mechanic
-		ApplyContext "Talk:1:4.504"
-		applycontexttoworld
-	},
-
-	{
-		name = "C5M3ShootCarTrevor",
-		criteria ConceptPanicEvent IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsMapc5m3_cemetery SubjectIsTrevor IsCarAlarm _auto_IsInAlarmField _auto_NotAlarmFieldOn
-		Response C5M3ShootCarMechanic
-		ApplyContext "_auto_AlarmFieldOn:1:0,_auto_TimerLockA:1:1.5,WarnMegaMob:1:300"
-		applycontexttoworld
-	},
-
-	{
-		name = "C5M3ShootCarNotTrevor",
-		criteria ConceptPanicEvent IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsMapc5m3_cemetery SubjectIsNotTrevor IsCarAlarm ChanceToFire25Percent _auto_IsInAlarmField _auto_NotAlarmFieldOn
-		// 	forceweight 500
-		Response C5M3ShootCarNotMechanic
-		ApplyContext "_auto_AlarmFieldOn:1:0,_auto_TimerLockA:1:3,WarnMegaMob:1:300"
-		applycontexttoworld
-	},
-
-	{
-		name = "C5M3ShootCar2Trevor",
-		criteria ConceptPanicEvent IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsMapc5m3_cemetery SubjectIsNotTrevor IsCarAlarm ChanceToFire25Percent _auto_ShotSecondCar _auto_IsInAlarmField _auto_IsAlarmFieldOn _auto_NotTimerLockA
-		Response C5M3ShootCar2Mechanic
-		ApplyContext "_auto_ShotCar:++1,_auto_TimerLockA:1:3"
-		applycontexttoworld
-	},
-
-	{
-		name = "C5M3ShootCar3Trevor",
-		criteria ConceptPanicEvent IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsMapc5m3_cemetery SubjectIsNotTrevor IsCarAlarm ChanceToFire25Percent IsNotSpeaking _auto_IsInAlarmField _auto_IsAlarmFieldOn _auto_ShotThirdCar _auto_NotTimerLockA
-		Response C5M3ShootCar3Mechanic
-		ApplyContext "Talk:1:1.931,_auto_ShotCar:++1"
-		applycontexttoworld
-	},
-
-	{
-		name = "C5M3ShootCar3SelfTrevor",
-		criteria ConceptPanicEvent IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsMapc5m3_cemetery SubjectIsTrevor IsCarAlarm ChanceToFire25Percent IsNotSpeaking _auto_IsInAlarmField _auto_IsAlarmFieldOn _auto_ShotThirdCar _auto_NotTimerLockA
-		Response C5M3ShootCar3SelfMechanic
-		ApplyContext "Talk:1:1.931,_auto_ShotCar:++1"
-		applycontexttoworld
-	},
-
-	{
-		name = "C5M3Sniper01Trevor",
-		criteria ConceptC5M3Sniper01 IsTrevor IsNotCoughing NotInCombat IssuerClose AutoIsNotScavenge AutoIsNotSurvival
-		Response C5M3Sniper01Mechanic
-		ApplyContext "Talk:1:3"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc5m3bodiesTrevor",
-		criteria ConceptRemark IsTrevor Isc5m3bodies NotInCombat IsSubjectNear100 IsInStartArea IsNotAlone IsNotSaidLeavingSafeArea AutoIsNotScavenge AutoIsNotSurvival _auto_IsSafeRoomStart _auto_NotSafeRoomQuiet IsNotSpeakingWeight0
-		Response PlayerRemarkc5m3bodiesMechanic
-		then any WorldC502NotZombies2 foo:0 0.1
-		ApplyContext "_auto_SafeRoomStart:2:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc5m2peopleTrevor",
-		criteria ConceptRemark IsTrevor Isc5m2people IsNotSaidc5m2people IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 ChanceToFire50Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc5m2peopleMechanic
-		ApplyContext "Saidc5m2people:1:0,Talk:1:1.850"
-		applycontexttoworld
-	},
-
-	{
-		name = "AUTOBLANK_PlayerRemarkc5m2peopleTrevor",
-		criteria ConceptRemark IsTrevor Isc5m2people IsNotSaidc5m2people IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response _PlayerInfoRemarkableBlankMechanic
-		ApplyContext "Saidc5m2people:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C5M3BeenShotTrevor",
-		criteria ConceptC5M3BeenShot IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C5M3BeenShotMechanic
-	},
-
-	{
-		name = "PlayerRemarkc5m3crashedheliTrevor",
-		criteria ConceptRemark IsTrevor Isc5m3crashedheli IsNotSaidc5m3crashedheli IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc5m3crashedheliMechanic
-		ApplyContext "Saidc5m3crashedheli:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc5m3insewerTrevor",
-		criteria ConceptRemark IsTrevor Isc5m3insewer IsNotSaidc5m3insewer IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear250 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc5m3insewerMechanic
-		ApplyContext "Saidc5m3insewer:1:0,_auto_InSewer:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc5m3safezoneTrevor",
-		criteria ConceptRemark IsTrevor Isc5m3safezone NotInCombat IsSubjectNear150 IsInStartArea IsNotAlone IsNotSaidLeavingSafeArea AutoIsNotScavenge AutoIsNotSurvival _auto_IsSafeRoomStart _auto_NotSafeRoomQuiet IsNotSpeakingWeight0
-		Response PlayerRemarkc5m3safezoneMechanic
-		ApplyContext "_auto_SafeRoomStart:2:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc5m3manholeTrevor",
-		criteria ConceptRemark IsTrevor Isc5m3manhole IsNotSaidc5m3manhole IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_NotInSewer IsNotSpeakingWeight0
-		// 	forceweight 100
-		Response PlayerRemarkc5m3manholeMechanic
-		then any TrevorInterrupt foo:0 -11.59
-		ApplyContext "Saidc5m3manhole:1:0,Talk:1:12,_auto_TellingStory:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc5m3offhighwayTrevor",
-		criteria ConceptRemark IsTrevor Isc5m3offhighway IsNotSaidc5m3offhighway IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc5m3offhighwayMechanic
-		ApplyContext "Saidc5m3offhighway:1:0,_auto_OffHighway:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc5m3seegraveyardTrevor",
-		criteria ConceptRemark IsTrevor Isc5m3seegraveyard IsNotSaidc5m3seegraveyard IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotAlone _auto_IsBridgeBomb _auto_NotTimerLockA _auto_NotOffHighway IsNotSpeakingWeight0
-		Response PlayerRemarkc5m3seegraveyardMechanic
-		then self C5M3SeeGraveyard04 foo:0 0.1
-		ApplyContext "Saidc5m3seegraveyard:1:0,Talk:1:2.855"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc5m3seegraveyardEllisTrevor",
-		criteria ConceptRemark IsTrevor Isc5m3seegraveyard IsNotSaidc5m3seegraveyard IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotAlone _auto_IsBridgeBomb _auto_NotTimerLockA _auto_NotOffHighway IsNotSpeakingWeight0 _auto_C5M3TrevorReacted
-		Response PlayerRemarkc5m3seegraveyardEllisMechanic
-		ApplyContext "Saidc5m3seegraveyard:1:0,Talk:1:2.855"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc5m3upladderTrevor",
-		criteria ConceptRemark IsTrevor Isc5m3upladder IsNotSaidc5m3upladder IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc5m3upladderMechanic
-		ApplyContext "Saidc5m3upladder:1:0"
-		applycontexttoworld
+		name = "L4D1HealThanksBetaZoeyRVC",
+		criteria ConceptHealedByFriend IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc SubjectIsNotBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1HealThanksTeenGirl
+		then Subject YouAreWelcome foo:0 0.3
+		ApplyContext "TalkBetazoeyrvc:1:2"
 	},
 
 	{
-		name = "PlayerRemarkc5m3upstepsTrevor",
-		criteria ConceptRemark IsTrevor Isc5m3upsteps IsNotSaidc5m3upsteps IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc5m3upstepsMechanic
-		ApplyContext "Saidc5m3upsteps:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C5M4BombExtTrevor",
-		criteria ConceptC5M4BombExt IsTrevor NotInCombat AutoIsNotScavenge AutoIsNotSurvival
-		Response C5M4BombExtMechanic
-		ApplyContext "Talk:1:3.411"
-		applycontexttoworld
-	},
-
-	{
-		name = "C5M4BombInt01Trevor",
-		criteria ConceptC5M4BombInt IsTrevor AutoIsNotScavenge AutoIsNotSurvival _auto_NoAirstrikes
-		Response C5M4BombInt01Mechanic
-		then any C5M4BombIntA foo:0 0.01
-		ApplyContext "_auto_Airstrike:++1"
-		applycontexttoworld
-	},
-
-	{
-		name = "C5M4BombIntATrevor",
-		criteria ConceptC5M4BombIntA IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C5M4BombIntAMechanic
-	},
-
-	{
-		name = "C5M4BombInt02Trevor",
-		criteria ConceptC5M4BombInt IsTrevor NotInCombat IsTalk AutoIsNotScavenge AutoIsNotSurvival IsNotInStartArea _auto_FirstAirstrike
-		Response C5M4BombInt02Mechanic
-		ApplyContext "Talk:1:1.534,_auto_Airstrike:++1"
-		applycontexttoworld
-	},
-
-	{
-		name = "C5M4BombInt03Trevor",
-		criteria ConceptC5M4BombInt IsTrevor NotInCombat IsTalk AutoIsNotScavenge AutoIsNotSurvival IsNotInStartArea _auto_SecondAirstrike
-		Response C5M4BombInt03Mechanic
-		ApplyContext "Talk:1:1.990,_auto_Airstrike:++1"
-		applycontexttoworld
-	},
-
-	{
-		name = "C5M4BombIntManyTrevor",
-		criteria ConceptC5M4BombInt IsTrevor NotInCombat IsTalk AutoIsNotScavenge AutoIsNotSurvival IsNotInStartArea _auto_ManyAirstrikes
-		Response C5M4BombInt03Mechanic
-		ApplyContext "Talk:1:1.990,_auto_Airstrike:++1"
-		applycontexttoworld
-	},
-
-	{
-		name = "C5M4JetPlanesTrevor",
-		criteria ConceptC5M4JetPlanes IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotInStartArea
-		Response C5M4JetPlanesMechanic
-		then Gambler C5M4JetPlanes foo:0 0.01
-	},
-
-	{
-		name = "PlayerRemarkc5m4alleyTrevor",
-		criteria ConceptRemark IsTrevor Isc5m4alley IsNotSaidc5m4alley IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc5m4alleyMechanic
-		ApplyContext "Saidc5m4alley:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C5M4PoolTableTrevor",
-		criteria ConceptC5M4PoolTable IsTrevor IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response C5M4PoolTableMechanic
-		ApplyContext "Talk:1:3"
-		applycontexttoworld
-	},
-
-	{
-		name = "C5M4PoolTableRoTrevor",
-		criteria ConceptC5M4PoolTable IsTrevor IsNotCoughing IssuerClose IsProducerAlive IsProducerNear400 ChanceToFire40Percent IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response C5M4PoolTableRoMechanic
-		ApplyContext "Talk:1:3"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc5m4inminifinaleTrevor",
-		criteria ConceptRemark IsTrevor Isc5m4inminifinale IsNotSaidc5m4inminifinale IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc5m4inminifinaleMechanic
-		ApplyContext "Saidc5m4inminifinale:1:0,_auto_InMiniFinale:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc5m4seebridgeTrevor",
-		criteria ConceptRemark IsTrevor Isc5m4seebridge IsNotSaidc5m4seebridge IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear1000 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc5m4seebridgeMechanic
-		ApplyContext "Saidc5m4seebridge:1:0,_auto_SawBridge:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc5m4tractornagTrevor",
-		criteria ConceptRemark IsTrevor Isc5m4tractornag IsNotSaidc5m4tractornag IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival _auto_NotTractorStarted IsNotSpeakingWeight0
-		Response PlayerRemarkc5m4tractornagMechanic
-		ApplyContext "Saidc5m4tractornag:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C5M4TractorTrevor",
-		criteria ConceptC5M4Tractor IsTrevor IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response C5M4TractorMechanic
-		ApplyContext "Talk:1:3"
-		applycontexttoworld
-	},
-
-	{
-		name = "C5M5_Button2Trevor",
-		criteria ConceptC5M5_Button2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C5M5_Button2Mechanic
-		then trevor C5M5_Button2200 foo:0 0.01
-		ApplyContext "_auto_BridgeNag:0:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C5M5_GateDownTrevor",
-		criteria ConceptC5M5_GateDown IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C5M5_GateDownMechanic
-	},
-
-	{
-		name = "C5M5_Button2100Trevor",
-		criteria ConceptC5M5_Button2100 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C5M5_Button2100Mechanic
-	},
-
-	{
-		name = "C5M5_Button2200Trevor",
-		criteria ConceptC5M5_Button2200 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C5M5_Button2200Mechanic
-		then trevor C5M5_Button2201 foo:0 0.01
-	},
-
-	{
-		name = "C5M5_Button2201Trevor",
-		criteria ConceptC5M5_Button2201 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C5M5_Button2201Mechanic
-		then trevor C5M5_Button2202 foo:0 0.3
-	},
-
-	{
-		name = "C5M5_Button2202Trevor",
-		criteria ConceptC5M5_Button2202 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C5M5_Button2202Mechanic
-		then trevor C5M5_Button2203 foo:0 0.3
-	},
-
-	{
-		name = "C5M5_Button2203Trevor",
-		criteria ConceptC5M5_Button2203 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C5M5_Button2203Mechanic
-		then trevor C5M5_Button2204 foo:0 0.3
-	},
-
-	{
-		name = "C5M5_Button2204Trevor",
-		criteria ConceptC5M5_Button2204 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C5M5_Button2204Mechanic
-		then trevor C5M5_Button2205 foo:0 0.2
-	},
-
-	{
-		name = "C5M5_Button2205Trevor",
-		criteria ConceptC5M5_Button2205 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C5M5_Button2205Mechanic
-		then self C5M5_Button2206 foo:0 0.2
-	},
-
-	{
-		name = "C5M5_Button2206Trevor",
-		criteria ConceptC5M5_Button2206 IsTrevor IsProducerAlive AutoIsNotScavenge AutoIsNotSurvival
-		Response C5M5_Button2206Mechanic
-		then producer C5M5_Button2207 foo:0 0.2
-	},
-
-	{
-		name = "C5M5_SurvivorConv01Trevor",
-		criteria ConceptC5M5_SurvivorConv01 IsTrevor FromIsAnOrator AutoIsNotScavenge AutoIsNotSurvival _auto_IsTalkingTrevor _auto_NotButton2
-		Response C5M5_SurvivorConv01Mechanic
-		then orator C5M5_Soldier1Conv03 foo:0 0.01
-	},
-
-	{
-		name = "C5M5_SurvivorConv01BombTrevor",
-		criteria ConceptC5M5_SurvivorConv01 IsTrevor FromIsAnOrator AutoIsNotScavenge AutoIsNotSurvival _auto_IsBuzzardRunMentioned _auto_IsTalkingTrevor _auto_NotButton2
-		Response C5M5_SurvivorConv01BombMechanic
-		then orator C5M5_Soldier1Conv03 foo:0 0.01
-	},
-
-	{
-		name = "C5M5_SurvivorConv02Trevor",
-		criteria ConceptC5M5_SurvivorConv02 IsTrevor FromIsAnOrator AutoIsNotScavenge AutoIsNotSurvival _auto_IsTalkingTrevor _auto_NotButton2
-		Response C5M5_SurvivorConv02Mechanic
-		then orator C5M5_Soldier1Conv04 foo:0 0.01
-	},
-
-	{
-		name = "C5M5_SurvivorConv03Trevor",
-		criteria ConceptC5M5_SurvivorConv03 IsTrevor FromIsAnOrator AutoIsNotScavenge AutoIsNotSurvival _auto_IsTalkingTrevor _auto_NotButton2
-		Response C5M5_SurvivorConv03Mechanic
-		then orator C5M5_Soldier1Conv05 foo:0 0.01
-	},
-
-	{
-		name = "C5M5_SurvivorConv04Trevor",
-		criteria ConceptC5M5_SurvivorConv04 IsTrevor FromIsAnOrator AutoIsNotScavenge AutoIsNotSurvival _auto_IsTalkingTrevor _auto_NotButton2
-		Response C5M5_SurvivorConv04Mechanic
-		then orator C5M5_Soldier1Conv08 foo:0 0.01
-	},
-
-	{
-		name = "C5M5_SurvivorConv05Trevor",
-		criteria ConceptC5M5_SurvivorConv05 IsTrevor FromIsAnOrator AutoIsNotScavenge AutoIsNotSurvival _auto_IsTalkingTrevor _auto_NotButton2
-		Response C5M5_SurvivorConv05Mechanic
-		then orator C5M5_Soldier1Conv08 foo:0 0.01
-	},
-
-	{
-		name = "C5M5_LowerTheBridgeTrevor",
-		criteria ConceptTalkIdle IsTrevor IsMapc5m5_bridge ChanceToFire90Percent AutoIsNotScavenge AutoIsNotSurvival _auto_NotTimerLockA _auto_NotTimerLockTrevor _auto_IsBridgeNag IsNotSpeakingWeight0
-		Response C5M5_LowerTheBridgeMechanic
-		ApplyContext "_auto_TimerLockA:1:30,_auto_TimerLockTrevor:1:15"
-		applycontexttoworld
-	},
-
-	{
-		name = "C5M5Button1Trevor",
-		criteria ConceptC5M5Button1 IsTrevor FromIsAnOrator AutoIsNotScavenge AutoIsNotSurvival _auto_IsTalkingTrevor _auto_NotButton2
-		Response C5M5Button1Mechanic
-		then Orator C5M5_Soldier1Conv01 foo:0 0.01
-	},
-
-	{
-		name = "C5M5Button1BuzzardRunTrevor",
-		criteria ConceptC5M5Button1 IsTrevor FromIsAnOrator AutoIsNotScavenge AutoIsNotSurvival _auto_IsTalkingTrevor _auto_IsBuzzardRunMentioned _auto_NotButton2
-		Response C5M5Button1BuzzardRunMechanic
-		then Orator C5M5_Soldier1Conv01 foo:0 0.01
-	},
-
-	{
-		name = "C5M5HearSoldiersNagTrevor",
-		criteria ConceptTalkIdle IsTrevor IsMapc5m5_bridge ChanceToFire90Percent AutoIsNotScavenge AutoIsNotSurvival _auto_IsSoldierChatter _auto_NotButton1 _auto_IsRadioNag _auto_NotTimerLockA _auto_NotTimerLockTrevor IsNotSpeakingWeight0
-		Response C5M5HearSoldiersNagMechanic
-		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockTrevor:1:15"
-		applycontexttoworld
-	},
-
-	{
-		name = "C5M5HearSoldiersNagBuzzardTrevor",
-		criteria ConceptTalkIdle IsTrevor IsMapc5m5_bridge ChanceToFire90Percent AutoIsNotScavenge AutoIsNotSurvival _auto_IsBuzzardRunMentioned _auto_IsSoldierChatter _auto_NotButton1 _auto_IsRadioNag _auto_NotTimerLockA _auto_NotTimerLockTrevor IsNotSpeakingWeight0
-		Response C5M5HearSoldiersNagBuzzardMechanic
-		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockTrevor:1:15"
-		applycontexttoworld
+		name = "L4D1ReviveThanksBetaZoeyRVC",
+		criteria ConceptRevivedByFriend IsNotCoughing IsBetazoeyrvc
+		Response L4D1HealThanksTeenGirl
+		then Subject YouAreWelcome foo:0 0.3
+		ApplyContext "TalkBetazoeyrvc:1:2"
 	},
 
 	{
-		name = "C5M5LeaveSafeTrevor",
-		criteria ConceptSurvivorLeavingInitialCheckpoint IsTrevor IsMapc5m5_bridge IsNotSaidLeavingSafeArea
-		Response C5M5LeaveSafeMechanic
-		then orator C5M5_Soldier1 foo:0 0.01
-		ApplyContext "Talk:0:0,SaidLeavingSafeArea:1:0,_auto_TimerLockA:1:5,_auto_SoldierChatter:1:0"
-		applycontexttoworld
+		name = "L4D1ReviveThanksBillBetaZoeyRVC",
+		criteria ConceptRevivedByFriend IsNotCoughing IsBetazoeyrvc SubjectIsNamVet ChanceToFire30Percent
+		Response L4D1ReviveThanksBillTeenGirl
+		then Subject YouAreWelcome foo:0 0.3
+		ApplyContext "TalkBetazoeyrvc:1:2"
 	},
 
 	{
-		name = "C5M5RescueStartTrevor",
-		criteria ConceptFinalVehicleSpotted IsTrevor IsMapc5m5_bridge _auto_IsFinaleStarted
-		Response C5M5RescueStartMechanic
-		then orator_chopper C5M5SoldierHeliNag foo:0 0.01
-		ApplyContext "_auto_Finale:2:0,_auto_TimerLockA:1:5"
-		applycontexttoworld
+		name = "L4D1ReviveThanksFrancisBetaZoeyRVC",
+		criteria ConceptRevivedByFriend IsNotCoughing IsBetazoeyrvc SubjectIsBiker ChanceToFire30Percent
+		Response L4D1ReviveThanksFrancisTeenGirl
+		then Subject YouAreWelcome foo:0 0.3
+		ApplyContext "TalkBetazoeyrvc:1:2"
 	},
 
 	{
-		name = "C5M5SurvivorVocalizeLookOutTrevor",
-		criteria ConceptPlayerLookOut IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsMapc5m5_bridge _auto_IsFinaleStarted
-		Response C5M5SurvivorVocalizeLookOutMechanic
+		name = "L4D1ReviveThanksLouisBetaZoeyRVC",
+		criteria ConceptRevivedByFriend IsNotCoughing IsBetazoeyrvc SubjectIsManager ChanceToFire30Percent
+		Response L4D1ReviveThanksLouisTeenGirl
+		then Subject YouAreWelcome foo:0 0.3
+		ApplyContext "TalkBetazoeyrvc:1:2"
 	},
 
 	{
-		name = "C5M5SpottedTankTrevor",
-		criteria ConceptPlayerWarnSpecial IsSpecialTypeTank IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsMapc5m5_bridge _auto_IsFinaleStarted
-		Response C5M5SpottedTankMechanic
-		ApplyContext "SaidTankWarn:1:20,SaidTankWarn2:1:60"
+		name = "BotHurrahAlsoBetaZoeyRVC",
+		criteria ConceptHurrahAlso IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidHurrahAlso IsBotIsAvailable IsWorldTalkBetazoeyrvc
+		Response BotHurrahAlsoTeenGirl
+		ApplyContext "SaidHurrahAlso:1:5"
 		applycontexttoworld
 	},
 
 	{
-		name = "C5M5ReloadingTankTrevor",
-		criteria ConceptPlayerReloading IsSurvivor IsNotSpeaking IsTrevor IsNotIncapacitated IsTalk IsTalkTrevor IsNotSaidReloadingTank IsZombiePresentTank IsSaidTankWarn2 IsWorldTalkTrevor IsMapc5m5_bridge _auto_IsFinaleStarted
-		Response C5M5ReloadingTankMechanic
-		ApplyContext "SaidReloadingTank:1:10,SaidTankWarn2:1:20"
-		applycontexttoworld
+		name = "L4D1AutoYouAreWelcomeBetaZoeyRVC",
+		criteria ConceptYouAreWelcome IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc TimeSinceGroupInCombat05 IsNotSpeaking IsWorldTalkBetazoeyrvc
+		Response L4D1AutoYouAreWelcomeTeenGirl
 	},
 
 	{
-		name = "PlayerKillTankConfirmationC5M5Trevor",
-		criteria ConceptKilledZombie IsNotCoughing IsTrevor IsTalk IsTalkTrevor SubjectIsTank IsNotAlone IsNotIncapacitated IsWorldTalkTrevor IsMapc5m5_bridge IsNotSurvival
-		Response PlayerKillTankConfirmationC5M5Mechanic
-		ApplyContext "TalkTrevor:1:5"
+		name = "L4D1AutoYouAreWelcomeBillBetaZoeyRVC",
+		criteria ConceptYouAreWelcome IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc FromIsNamVet ChanceToFire5Percent TimeSinceGroupInCombat05 IsNotSpeaking IsWorldTalkBetazoeyrvc
+		Response L4D1AutoYouAreWelcomeBillTeenGirl
 	},
 
 	{
-		name = "C5M5RunToHeliTrevor",
-		criteria ConceptGetToVehicle IsTrevor IsMapc5m5_bridge IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsNotInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockTrevor IsNotSpeakingWeight0
-		Response C5M5RunToHeliMechanic
-		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockTrevor:1:30"
-		applycontexttoworld
+		name = "L4D1AutoYouAreWelcomeLouisBetaZoeyRVC",
+		criteria ConceptYouAreWelcome IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc FromIsManager ChanceToFire5Percent TimeSinceGroupInCombat05 IsNotSpeaking IsWorldTalkBetazoeyrvc
+		Response L4D1AutoYouAreWelcomeLouisTeenGirl
 	},
 
 	{
-		name = "C5M5InsideHeliTrevor",
-		criteria ConceptGetToVehicle IsTrevor IsMapc5m5_bridge IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockTrevor IsNotSpeakingWeight0
-		Response C5M5InsideHeliMechanic
-		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockTrevor:1:30"
+		name = "L4D1BotAttentionBattleBetaZoeyRVC",
+		criteria ConceptSurvivorBotNoteHumanAttention IsNotCoughing IsBetazoeyrvc IsNotBotAttention IsTalk IsTalkBetazoeyrvc IsNotIncapacitated IsInBattlefield TimeSinceGroupInCombat20 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0
+		Response L4D1BotAttentionBattleTeenGirl
+		ApplyContext "SaidBotAttention:1:30"
 		applycontexttoworld
-	},
-
-	{
-		name = "C5M5BridgeDestroyed2Trevor",
-		criteria ConceptC5M5BridgeDestroyed2 IsTrevor IsNotIncapacitated IsEveryoneAlive CanSpeakC5M5SurvivorOutro
-		Response C5M5BridgeDestroyed2Mechanic
 	},
 
 	{
-		name = "C5M5SafeRoomTrevor",
-		criteria ConceptTalkIdle IsTrevor NotInCombat IsMapc5m5_bridge IsInStartArea IsNotAlone IsNotSaidLeavingSafeArea AutoIsNotScavenge AutoIsNotSurvival _auto_IsSafeRoomStart _auto_NotSafeRoomQuiet IsNotSpeakingWeight0
-		Response C5M5SafeRoomMechanic
-		then gambler C5M5_saferoom001 foo:0 0.1
-		ApplyContext "_auto_SafeRoomStart:2:0"
+		name = "L4D1BotNoteHumanAttentionBetaZoeyRVC",
+		criteria ConceptSurvivorBotNoteHumanAttention IsNotCoughing IsBetazoeyrvc IsNotBotAttention IsTalk IsTalkBetazoeyrvc IsNotIncapacitated IsInSafeSpot IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0
+		Response L4D1BotNoteHumanAttentionTeenGirl
+		ApplyContext "SaidBotAttention:1:30"
 		applycontexttoworld
 	},
 
 	{
-		name = "C5M5_saferoom002Trevor",
-		criteria ConceptC5M5_saferoom002 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C5M5_saferoom002Mechanic
-		then gambler C5M5_saferoom004 foo:0 0.01
+		name = "L4D1BotPlayer_YourWelcomeBetaZoeyRVC",
+		criteria ConceptSurvivorBotYouAreWelcome IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1BotPlayer_YourWelcomeTeenGirl
 	},
 
 	{
-		name = "C5M5_saferoom004Trevor",
-		criteria ConceptC5M5_saferoom004 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C5M5_saferoom004Mechanic
+		name = "L4D1BotReassureComingBetaZoeyRVC",
+		criteria ConceptSurvivorBotReassureComing IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotSpeaking
+		Response L4D1BotReassureComingTeenGirl
 	},
 
 	{
-		name = "C6M1_IntotheparkNoHealthTrevor",
-		criteria ConceptC6M1_IntotheparkNoHealth IsTrevor IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C6M1_IntotheparkNoHealthMechanic
+		name = "L4D1BotReassureNearbyBetaZoeyRVC",
+		criteria ConceptSurvivorBotReassureNearby IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotSpeaking
+		Response L4D1BotReassureNearbyTeenGirl
 	},
 
 	{
-		name = "C6M1Intro_01aTrevor",
-		criteria ConceptC6M1Intro_01a IsTrevor IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		Response C6M1Intro_01aMechanic
-		then Biker C6M1Intro_01b foo:0 -6.365
+		name = "L4D1BotYesReadyBetaZoeyRVC",
+		criteria ConceptSurvivorBotYesReady IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotSpeaking
+		Response L4D1BotYesReadyTeenGirl
 	},
 
 	{
-		name = "C6M1Intro_01Biker02Trevor",
-		criteria ConceptintroC6M1 IsTrevor IsFrancisIntroActor IsNotSaidCXM1Intro IsNotVersus ChanceToFire100Percent AutoIsNotScavenge AutoIsNotSurvival
+		name = "C6M1Intro_01TeenGirl01BetaZoeyRVC",
+		criteria ConceptintroC6M1 IsBetazoeyrvc IsBetazoeyrvcIntroActor IsNotSaidCXM1Intro IsNotVersus ChanceToFire100Percent AutoIsNotScavenge AutoIsNotSurvival
 		// 	forceweight 1
-		Response C6M1Intro_01Biker02Mechanic
-		then Biker C6M1Intro_24b foo:0 -12.798
+		Response C6M1Intro_01TeenGirl01TeenGirl
+		then Mechanic C6M1Intro_11a foo:0 -0.910
 		ApplyContext "CXM1Intro:1:0,Talk:1:0,RemarkWorldC6M1_HistoricTour:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "C6M1Intro_01cTrevor",
-		criteria ConceptC6M1Intro_01c IsTrevor IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		Response C6M1Intro_01cMechanic
-		then Biker C6M1Intro_01d foo:0 -0.982
-	},
-
-	{
-		name = "C6M1Intro_01TeenGirl04Trevor",
-		criteria ConceptintroC6M1 IsTrevor IsZoeyIntroActor IsNotSaidCXM1Intro IsNotVersus ChanceToFire100Percent AutoIsNotScavenge AutoIsNotSurvival
-		// 	forceweight 1
-		Response C6M1Intro_01TeenGirl04Mechanic
-		then TeenGirl C6M1Intro_23a foo:0 -2.512
-		ApplyContext "CXM1Intro:1:0,Talk:1:0,TrevorInLoveC6M1:1:0,RemarkWorldC6M1_HistoricTour:1:0"
+		name = "C6M1Intro_01TeenGirl01GamblerProducerBetaZoeyRVC",
+		criteria ConceptintroC6M1 IsBetazoeyrvc IsBetazoeyrvcIntroActor IsNotSaidCXM1Intro IsGamblerAlive IsProducerAlive ChanceToFire10Percent IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
+		// 	forceweight 9
+		Response C6M1Intro_01TeenGirl01GamblerProducerTeenGirl
+		then Gambler C6M1Intro_15a foo:0 -1.855
+		ApplyContext "CXM1Intro:1:0,Talk:1:0,RemarkWorldC6M1_HistoricTour:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "C6M1Intro_02aTrevor",
-		criteria ConceptC6M1Intro_02a IsTrevor IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		Response C6M1Intro_02aMechanic
-		then Biker C6M1Intro_02b foo:0 -4.221
+		name = "C6M1Intro_01TeenGirl01ProducerBetaZoeyRVC",
+		criteria ConceptintroC6M1 IsBetazoeyrvc IsBetazoeyrvcIntroActor IsNotSaidCXM1Intro IsProducerAlive ChanceToFire20Percent IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
+		// 	forceweight 8
+		Response C6M1Intro_01TeenGirl01ProducerTeenGirl
+		then Producer C6M1Intro_22a foo:0 -1.117
+		ApplyContext "CXM1Intro:1:0,Talk:1:0,RemarkWorldC6M1_HistoricTour:1:0"
+		applycontexttoworld
 	},
 
 	{
-		name = "C6M1Intro_11aTrevor",
-		criteria ConceptC6M1Intro_11a IsTrevor IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		Response C6M1Intro_11aMechanic
-		then TeenGirl C6M1Intro_11b foo:0 -5.419
+		name = "C6M1Intro_01TeenGirl01MechanicProducerBetaZoeyRVC",
+		criteria ConceptintroC6M1 IsBetazoeyrvc IsBetazoeyrvcIntroActor IsNotSaidCXM1Intro IsMechanicAlive IsProducerAlive ChanceToFire30Percent IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
+		// 	forceweight 7
+		Response C6M1Intro_01TeenGirl01MechanicProducerTeenGirl
+		then Producer C6M1Intro_12a foo:0 -9.087
+		ApplyContext "CXM1Intro:1:0,Talk:1:0,EllisInLoveC6M1:1:0,RemarkWorldC6M1_HistoricTour:1:0"
+		applycontexttoworld
 	},
 
 	{
-		name = "C6M1Intro_11cTrevor",
-		criteria ConceptC6M1Intro_11c IsTrevor IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		Response C6M1Intro_11cMechanic
+		name = "C6M1Intro_01TeenGirl01MechanicBetaZoeyRVC",
+		criteria ConceptintroC6M1 IsBetazoeyrvc IsBetazoeyrvcIntroActor IsNotSaidCXM1Intro IsMechanicAlive ChanceToFire40Percent IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
+		// 	forceweight 6
+		Response C6M1Intro_01TeenGirl01MechanicTeenGirl
+		then Mechanic C6M1Intro_11a foo:0 -0.910
+		ApplyContext "CXM1Intro:1:0,Talk:1:0,EllisInLoveC6M1:1:0,RemarkWorldC6M1_HistoricTour:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "C6M1Intro_01TeenGirl01MechanicCoachBetaZoeyRVC",
+		criteria ConceptintroC6M1 IsBetazoeyrvc IsBetazoeyrvcIntroActor IsNotSaidCXM1Intro IsMechanicAlive IsCoachAlive ChanceToFire50Percent IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
+		// 	forceweight 5
+		Response C6M1Intro_01TeenGirl01MechanicCoachTeenGirl
+		then Mechanic C6M1Intro_13a foo:0 -4.002
+		ApplyContext "CXM1Intro:1:0,Talk:1:0,EllisInLoveC6M1:1:0,RemarkWorldC6M1_HistoricTour:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "C6M1Intro_03aBetaZoeyRVC",
+		criteria ConceptC6M1Intro_03a IsBetazoeyrvc IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
+		Response C6M1Intro_03aTeenGirl
 		then Any WorldC6M1_HistoricTour foo:0 1
-	},
-
-	{
-		name = "C6M1Intro_11cGamblerTrevor",
-		criteria ConceptC6M1Intro_11c IsTrevor IsGamblerAlive ChanceToFire10Percent IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		Response C6M1Intro_11cGamblerMechanic
-		then Gambler C6M1Intro_11d foo:0 -13.161
-	},
-
-	{
-		name = "C6M1Intro_12bTrevor",
-		criteria ConceptC6M1Intro_12b IsTrevor IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		Response C6M1Intro_12bMechanic
-		then Producer C6M1Intro_12c foo:0 -4.691
-	},
-
-	{
-		name = "C6M1Intro_13aTrevor",
-		criteria ConceptC6M1Intro_13a IsTrevor IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		Response C6M1Intro_13aMechanic
-		then Coach C6M1Intro_13b foo:0 -14.217
-	},
-
-	{
-		name = "C6M1Intro_13cTrevor",
-		criteria ConceptC6M1Intro_13c IsTrevor IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		Response C6M1Intro_13cMechanic
-		then TeenGirl C6M1Intro_13d foo:0 -3.537
-	},
-
-	{
-		name = "C6M1Intro_13fTrevor",
-		criteria ConceptC6M1Intro_13f IsTrevor IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		Response C6M1Intro_13fMechanic
-	},
-
-	{
-		name = "C6M1Intro_23bTrevor",
-		criteria ConceptC6M1Intro_23b IsTrevor IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		Response C6M1Intro_23bMechanic
-		then TeenGirl C6M1Intro_23c foo:0 -7.488
-	},
-
-	{
-		name = "C6M1Intro_23dTrevor",
-		criteria ConceptC6M1Intro_23d IsTrevor IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		Response C6M1Intro_23dMechanic
-		then Any WorldC6M1_HistoricTour foo:0 -4.369
-	},
-
-	{
-		name = "C6M1Intro_24cTrevor",
-		criteria ConceptC6M1Intro_24c IsTrevor IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		Response C6M1Intro_24cMechanic
-		then Biker C6M1Intro_24d foo:0 -2.841
-	},
-
-	{
-		name = "C6M1Intro_24eTrevor",
-		criteria ConceptC6M1Intro_24e IsTrevor IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		Response C6M1Intro_24eMechanic
-	},
-
-	{
-		name = "C6M1Intro_ConfirmObjectiveTrevor",
-		criteria ConceptC6M1Intro_ConfirmObjective IsTrevor IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		Response C6M1Intro_ConfirmObjectiveMechanic
-		then self IntroEnd foo:0 0.1
-	},
-
-	{
-		name = "LeavingC6M1StartTrevor",
-		criteria ConceptSurvivorLeavingCheckpoint IsNotSaidLeavingSafeArea IsTrevor IsNotAlone YesHasFirstAidKit isc6m1_riverbank AutoIsNotScavenge AutoIsNotSurvival IsNotSpeaking
-		Response LeavingC6M1StartMechanic
-		ApplyContext "SaidLeavingSafeArea:1:0,Talk:0:0"
+		ApplyContext "Talk:1:7"
 		applycontexttoworld
 	},
 
 	{
-		name = "LeavingC6M1StartnoHealthTrevor",
-		criteria ConceptSurvivorLeavingCheckpoint IsNotSaidLeavingSafeArea IsTrevor IsNotAlone NoHasFirstAidKit isc6m1_riverbank AutoIsNotScavenge AutoIsNotSurvival
-		Response LeavingC6M1StartnoHealthMechanic
-		then any C6M1_IntotheparkNoHealth foo:0 0.1
-		ApplyContext "SaidLeavingSafeArea:1:0,Talk:0:0"
+		name = "C6M1Intro_04aBetaZoeyRVC",
+		criteria ConceptC6M1Intro_04a IsBetazoeyrvc IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
+		Response C6M1Intro_04aTeenGirl
+		then Coach C6M1Intro_04b foo:0 -1.676
+	},
+
+	{
+		name = "C6M1Intro_04cBetaZoeyRVC",
+		criteria ConceptC6M1Intro_04c IsBetazoeyrvc IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
+		Response C6M1Intro_04cTeenGirl
+		then Any WorldC6M1_HistoricTour foo:0 1
+		ApplyContext "Talk:1:7"
 		applycontexttoworld
 	},
 
 	{
-		name = "C6M1Start2Trevor",
-		criteria ConceptC6M1Start2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C6M1Start2Mechanic
-		then self C6M1Start3 foo:0 1
+		name = "C6M1Intro_11bBetaZoeyRVC",
+		criteria ConceptC6M1Intro_11b IsBetazoeyrvc IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
+		Response C6M1Intro_11bTeenGirl
+		then Mechanic C6M1Intro_11c foo:0 -7.175
 	},
 
 	{
-		name = "C6M1Start3Trevor",
-		criteria ConceptC6M1Start3 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C6M1Start3Mechanic
-		ApplyContext "Talk:1:4"
-		applycontexttoworld
+		name = "C6M1Intro_13dBetaZoeyRVC",
+		criteria ConceptC6M1Intro_13d IsBetazoeyrvc IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
+		Response C6M1Intro_13dTeenGirl
+		then Coach C6M1Intro_13e foo:0 -3.130
 	},
 
 	{
-		name = "RemWorldC6M1_WeddingWarn02Trevor",
-		criteria ConceptRemWorldC6M1_WeddingWarn02 IsTrevor IssuerClose IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response RemWorldC6M1_WeddingWarn02Mechanic
-		ApplyContext "CoachCake:1:0"
-		applycontexttoworld
+		name = "C6M1Intro_15bBetaZoeyRVC",
+		criteria ConceptC6M1Intro_15b IsBetazoeyrvc IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
+		Response C6M1Intro_15bTeenGirl
+		then Producer C6M1Intro_15c foo:0 -4.693
 	},
 
 	{
-		name = "WorldC6M1_WeddingWarn03aTrevor",
-		criteria ConceptWorldC6M1_WeddingWarn03a IsTrevor IssuerClose IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response WorldC6M1_WeddingWarn03aMechanic
-		then Producer WorldC6M1_WeddingWarn03b foo:0 -0.799
+		name = "C6M1Intro_15dBetaZoeyRVC",
+		criteria ConceptC6M1Intro_15d IsBetazoeyrvc IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
+		Response C6M1Intro_15dTeenGirl
+		then Gambler C6M1Intro_15e foo:0 -2.385
 	},
 
 	{
-		name = "WorldC6M1_WeddingWarn03bTrevor",
-		criteria ConceptWorldC6M1_WeddingWarn03b IsTrevor IssuerClose IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response WorldC6M1_WeddingWarn03aMechanic
-		then Producer WorldC6M1_WeddingWarn03b foo:0 -0.799
+		name = "C6M1Intro_17aBetaZoeyRVC",
+		criteria ConceptC6M1Intro_17a IsBetazoeyrvc IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
+		Response C6M1Intro_17aTeenGirl
+		then Producer C6M1Intro_17b foo:0 -9.916
 	},
 
 	{
-		name = "WorldC6M1_WeddingWarn03cTrevor",
-		criteria ConceptWorldC6M1_WeddingWarn03c IsTrevor IssuerClose IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response WorldC6M1_WeddingWarn03cMechanic
+		name = "C6M1Intro_17cBetaZoeyRVC",
+		criteria ConceptC6M1Intro_17c IsBetazoeyrvc IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
+		Response C6M1Intro_17cTeenGirl
+		then Producer C6M1Intro_17d foo:0 -2.035
 	},
 
 	{
-		name = "WorldC6M1_WeddingWarn03dTrevor",
-		criteria ConceptWorldC6M1_WeddingWarn03d IsTrevor IssuerClose IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response WorldC6M1_WeddingWarn03dMechanic
+		name = "C6M1Intro_22bBetaZoeyRVC",
+		criteria ConceptC6M1Intro_22b IsBetazoeyrvc IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
+		Response C6M1Intro_22bTeenGirl
+		then Producer C6M1Intro_22c foo:0 -1.387
 	},
 
 	{
-		name = "C6M2_OpenGate1Trevor",
-		criteria ConceptC6M2_OpenGate1 IsTrevor
-		Response C6M2_OpenGate1Mechanic
-		ApplyContext "SaidOpenedGate1:1:0,WarnMegaMob:1:300,SaidSpecialWarn:1:30"
-		applycontexttoworld
+		name = "C6M1Intro_22dBetaZoeyRVC",
+		criteria ConceptC6M1Intro_22d IsBetazoeyrvc IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
+		Response C6M1Intro_22dTeenGirl
+		then Producer C6M1Intro_22f foo:0 -7.980
 	},
 
 	{
-		name = "C6M2_OpenGate1bTrevor",
-		criteria ConceptC6M2_OpenGate1b IsTrevor
-		Response C6M2_OpenGate1bMechanic
+		name = "C6M1Intro_22gBetaZoeyRVC",
+		criteria ConceptC6M1Intro_22g IsBetazoeyrvc IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
+		Response C6M1Intro_22gTeenGirl
+		then Producer C6M1Intro_22h foo:0 -0.623
 	},
 
 	{
-		name = "C6M2_OpenGate1BlameTrevor",
-		criteria ConceptC6M2_OpenGate1 IsTrevor IsGamblerNear400 ChanceToFire30Percent
-		Response C6M2_OpenGate1BlameMechanic
-		then Gambler C6M2_OpenGate1a foo:0 0.01
-		ApplyContext "SaidOpenedGate1:1:0,WarnMegaMob:1:300,SaidSpecialWarn:1:30,SaidOpenedGate1BlameTrevor:1:0"
-		applycontexttoworld
+		name = "C6M1Intro_23aBetaZoeyRVC",
+		criteria ConceptC6M1Intro_23a IsBetazoeyrvc IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
+		Response C6M1Intro_23aTeenGirl
+		then Mechanic C6M1Intro_23b foo:0 -1.285
 	},
 
 	{
-		name = "C6M2_OpenGate2Trevor",
-		criteria ConceptC6M2_OpenGate2 IsTrevor
-		Response C6M2_OpenGate2Mechanic
-		ApplyContext "SaidOpenedGate2:1:0"
-		applycontexttoworld
+		name = "C6M1Intro_23cBetaZoeyRVC",
+		criteria ConceptC6M1Intro_23c IsBetazoeyrvc IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
+		Response C6M1Intro_23cTeenGirl
+		then Mechanic C6M1Intro_23d foo:0 -9.236
 	},
 
 	{
-		name = "C6M2LeavingSafeRoomTrevor",
-		criteria ConceptSurvivorLeavingInitialCheckpoint IsTrevor IsNotSaidLeavingSafeArea isc6m2_bedlam AutoIsNotScavenge AutoIsNotSurvival
-		Response C6M2LeavingSafeRoomMechanic
-		ApplyContext "SaidLeavingSafeArea:1:0,Talk:1:3"
-		applycontexttoworld
+		name = "C6M3_BridgeDownBetaZoeyRVC",
+		criteria ConceptC6M3_BridgeDown IsBetazoeyrvc
+		Response C6M3_BridgeDownTeenGirl
 	},
 
 	{
-		name = "DLC1_C6M2_SafeRoomConvo02aTrevor",
-		criteria ConceptDLC1_C6M2_SafeRoomConvo02a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response DLC1_C6M2_SafeRoomConvo02aMechanic
-		then Gambler DLC1_C6M2_SafeRoomConvo02b foo:0 -3.509
-	},
-
-	{
-		name = "DLC1_C6M2_SafeRoomConvoProducerStartTrevor",
-		criteria ConceptTalkIdle IsTrevor NotInCombat Isc6m2_bedlam IsInStartArea IsNotAlone IsNotSaidLeavingSafeArea AutoIsNotScavenge AutoIsNotSurvival IsProducerAlive ChanceToFire50Percent _auto_IsSafeRoomStart _auto_NotSafeRoomQuiet IsNotSpeakingWeight0
-		Response DLC1_C6M2_SafeRoomConvoProducerStartMechanic
-		then Producer DLC1_C6M2_SafeRoomConvo03a foo:0 -3.330
-		ApplyContext "_auto_SafeRoomStart:2:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "DLC1_C6M2_SafeRoomConvo03bTrevor",
-		criteria ConceptDLC1_C6M2_SafeRoomConvo03b IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response DLC1_C6M2_SafeRoomConvo03bMechanic
-		then Producer DLC1_C6M2_SafeRoomConvo03c foo:0 -16.180
-	},
-
-	{
-		name = "DLC1_C6M2_SafeRoomConvoZoeyStartTrevor",
-		criteria ConceptTalkIdle IsTrevor NotInCombat Isc6m2_bedlam IsInStartArea IsNotAlone IsNotSaidLeavingSafeArea AutoIsNotScavenge AutoIsNotSurvival IsZoeyIntroActor IsProducerAlive ChanceToFire50Percent _auto_IsSafeRoomStart _auto_NotSafeRoomQuiet IsNotSpeakingWeight0
-		Response DLC1_C6M2_SafeRoomConvoZoeyStartMechanic
-		then Any DLC1_C6M2_SafeRoomConvo07a foo:0 -6.763
-		ApplyContext "_auto_SafeRoomStart:2:0,MentionedZoeyC6M2:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "DLC1_C6M2_SafeRoomConvo08Trevor",
-		criteria ConceptTalkIdle IsTrevor NotInCombat Isc6m2_bedlam IsInStartArea IsNotAlone IsNotSaidLeavingSafeArea AutoIsNotScavenge AutoIsNotSurvival _auto_IsSafeRoomStart _auto_NotSafeRoomQuiet IsNotSpeakingWeight0
-		Response DLC1_C6M2_SafeRoomConvo08Mechanic
-		then Producer DLC1_C6M2_SafeRoomConvo15a foo:0 -4.114
-		ApplyContext "_auto_SafeRoomStart:2:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "DLC1_C6M2_SafeRoomConvo11aTrevor",
-		criteria ConceptDLC1_C6M2_SafeRoomConvo11a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response DLC1_C6M2_SafeRoomConvo11aMechanic
-		then Gambler DLC1_C6M2_SafeRoomConvo11b foo:0 -4.069
-	},
-
-	{
-		name = "DLC1_C6M2_SafeRoomConvo14bTrevor",
-		criteria ConceptDLC1_C6M2_SafeRoomConvo14b IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response DLC1_C6M2_SafeRoomConvo14bMechanic
-		then Producer DLC1_C6M2_SafeRoomConvo14c foo:0 -2.922
-	},
-
-	{
-		name = "DLC1_C6M2_SafeRoomConvo16bTrevor",
-		criteria ConceptDLC1_C6M2_SafeRoomConvo16b IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response DLC1_C6M2_SafeRoomConvo16bMechanic
-		then Producer DLC1_C6M2_SafeRoomConvo16c foo:0 -1.763
-	},
-
-	{
-		name = "DLC1_C6M2_SafeRoomConvo16dRochelleTrevor",
-		criteria ConceptDLC1_C6M2_SafeRoomConvo16d IsTrevor FromIsProducer AutoIsNotScavenge AutoIsNotSurvival
-		Response DLC1_C6M2_SafeRoomConvo16dRochelleMechanic
-		then self IntroEnd foo:0 0.1
-	},
-
-	{
-		name = "DLC1_C6M2_SafeRoomConvo16dCoachTrevor",
-		criteria ConceptDLC1_C6M2_SafeRoomConvo16d IsTrevor FromIsCoach AutoIsNotScavenge AutoIsNotSurvival
-		Response DLC1_C6M2_SafeRoomConvo16dCoachMechanic
-		then self IntroEnd foo:0 0.1
-	},
-
-	{
-		name = "DLC1_C6M2_SafeRoomConvo17aTrevor",
-		criteria ConceptDLC1_C6M2_SafeRoomConvo17a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response DLC1_C6M2_SafeRoomConvo17aMechanic
-		then Producer DLC1_C6M2_SafeRoomConvo17b foo:0 -7.751
-	},
-
-	{
-		name = "DLC1_C6M2_SafeRoomConvo18bTrevor",
-		criteria ConceptDLC1_C6M2_SafeRoomConvo18b IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response DLC1_C6M2_SafeRoomConvo18bMechanic
-		then Coach DLC1_C6M2_SafeRoomConvo18c foo:0 -2.705
-	},
-
-	{
-		name = "DLC1_C6M2_SafeRoomConvo19aTrevor",
-		criteria ConceptDLC1_C6M2_SafeRoomConvo19a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response DLC1_C6M2_SafeRoomConvo19aMechanic
-		then Coach DLC1_C6M2_SafeRoomConvo19b foo:0 -2.249
-	},
-
-	{
-		name = "DLC1_C6M2_SafeRoomConvo19cTrevor",
-		criteria ConceptDLC1_C6M2_SafeRoomConvo19c IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response DLC1_C6M2_SafeRoomConvo19cMechanic
-		then Coach DLC1_C6M2_SafeRoomConvo19d foo:0 -6.193
-	},
-
-	{
-		name = "DLC1_C6M2_SafeRoomConvo19eTrevor",
-		criteria ConceptDLC1_C6M2_SafeRoomConvo19e IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response DLC1_C6M2_SafeRoomConvo19eMechanic
-	},
-
-	{
-		name = "DLC1_C6M2_SafeRoomConvo19gTrevor",
-		criteria ConceptDLC1_C6M2_SafeRoomConvo19g IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response DLC1_C6M2_SafeRoomConvo19gMechanic
-		then self IntroEnd foo:0 0.1
-	},
-
-	{
-		name = "DLC1_C6M2_SafeRoomConvo21bTrevor",
-		criteria ConceptDLC1_C6M2_SafeRoomConvo21b IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response DLC1_C6M2_SafeRoomConvo21bMechanic
-	},
-
-	{
-		name = "WorldC6M2_FinalWater01bTrevor",
-		criteria ConceptWorldC6M2_FinalWater01b IsTrevor IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response WorldC6M2_FinalWater01bMechanic
-	},
-
-	{
-		name = "WorldC6M2_InSewer101aTrevor",
-		criteria ConceptWorldC6M2_InSewer101a IsTrevor IssuerClose IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response WorldC6M2_InSewer101aMechanic
-		then Gambler WorldC6M2_InSewer101c foo:0 -0.999
-	},
-
-	{
-		name = "WorldC6M2_OnTourWalk102bTrevor",
-		criteria ConceptWorldC6M2_OnTourWalk102b IsTrevor IssuerClose IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response WorldC6M2_OnTourWalk102bMechanic
-	},
-
-	{
-		name = "WorldC6M2_Tattoo03bTrevor",
-		criteria ConceptWorldC6M2_Tattoo03b IsTrevor IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response WorldC6M2_Tattoo03bMechanic
-	},
-
-	{
-		name = "C6M3_BridgeDownTrevor",
-		criteria ConceptC6M3_BridgeDown IsTrevor
-		Response C6M3_BridgeDownMechanic
-	},
-
-	{
-		name = "C6M3_BridgeGettoCarTrevor",
-		criteria ConceptGetToVehicle IsTrevor Isc6m3_port IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsNotInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockTrevor IsNotSpeakingWeight0
-		Response C6M3_BridgeGettoCarMechanic
-		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockTrevor:1:30"
-		applycontexttoworld
-	},
-
-	{
-		name = "C6M3_elevatorCancelTrevor",
-		criteria ConceptC6M3_ElevatorCancel IsTrevor IsC6M3_port AutoIsNotScavenge AutoIsNotSurvival
+		name = "c6m3_outroL4D1BetaZoeyRVC",
+		criteria Conceptc6m3_outro3 IsBetazoeyrvc isC6m3_port IsNotVersus IsNotIncapacitated ChanceToFire100Percent
 		// 	forceweight 1
-		Response _PlayerInfoRemarkableBlankMechanic
+		Response c6m3_outroL4D1TeenGirl
 	},
 
 	{
-		name = "C6M3_elevatorTrevor",
-		criteria Conceptc6m3_elevator IsTrevor IsC6M3_port IsNotSaidC6M3Elevator AutoIsNotScavenge AutoIsNotSurvival
-		Response C6M3_elevatorMechanic
-		ApplyContext "SaidC6M3Elevator:1:0,Talk:1:10"
+		name = "c6m3_outroL4D101aBetaZoeyRVC",
+		criteria Conceptc6m3_outroL4D101a IsBetazoeyrvc
+		Response c6m3_outroL4D101aTeenGirl
+	},
+
+	{
+		name = "c6m3_outroL4D102bBetaZoeyRVC",
+		criteria Conceptc6m3_outroL4D102b IsBetazoeyrvc
+		Response c6m3_outroL4D102bTeenGirl
+	},
+
+	{
+		name = "c6m3_outroL4D103aBetaZoeyRVC",
+		criteria Conceptc6m3_outroL4D103a IsBetazoeyrvc
+		Response c6m3_outroL4D103aTeenGirl
+	},
+
+	{
+		name = "c6m3_outroL4D104aBetaZoeyRVC",
+		criteria Conceptc6m3_outroL4D104a IsBetazoeyrvc
+		Response c6m3_outroL4D104aTeenGirl
+		then Biker c6m3_outroL4D104b foo:0 -4.872
+	},
+
+	{
+		name = "c6m3_outroL4D105aBetaZoeyRVC",
+		criteria Conceptc6m3_outroL4D105a IsBetazoeyrvc
+		Response c6m3_outroL4D105aTeenGirl
+	},
+
+	{
+		name = "c6m3_outroL4D107aBetaZoeyRVC",
+		criteria Conceptc6m3_outroL4D107a IsBetazoeyrvc
+		Response c6m3_outroL4D107aTeenGirl
+	},
+
+	{
+		name = "c6m3_outroL4D109aBetaZoeyRVC",
+		criteria Conceptc6m3_outroL4D109a IsBetazoeyrvc
+		Response c6m3_outroL4D109aTeenGirl
+	},
+
+	{
+		name = "c6m3_outroL4D1AllBetaZoeyRVC",
+		criteria Conceptc6m3_outro3 IsBetazoeyrvc isC6m3_port IsEveryoneAlive ChanceToFire20Percent IsNotVersus IsNotIncapacitated
+		// 	forceweight 8
+		Response c6m3_outroL4D1AllTeenGirl
+	},
+
+	{
+		name = "c6m3_outroL4D1MechanicBetaZoeyRVC",
+		criteria Conceptc6m3_outro3 IsBetazoeyrvc isC6m3_port IsMechanicAlive ChanceToFire30Percent IsNotVersus IsNotIncapacitated
+		// 	forceweight 7
+		Response c6m3_outroL4D1MechanicTeenGirl
+		then Biker c6m3_outroL4D108a foo:0 -5.788
+	},
+
+	{
+		name = "c6m3_outroL4D1MechanicZoeyBetaZoeyRVC",
+		criteria Conceptc6m3_outro3 IsBetazoeyrvc isC6m3_port IsBetazoeyrvcIntroActor ChanceToFire100Percent IsMechanicAlive IsNotVersus IsNotIncapacitated
+		// 	forceweight 2
+		Response c6m3_outroL4D1MechanicZoeyTeenGirl
+		then Biker c6m3_outroL4D1010a foo:0 -1.261
+	},
+
+	{
+		name = "IncapBounce2BetaZoeyRVC",
+		criteria ConceptIncapBounce2 IsBetazoeyrvc isC6m3_port
+		Response IncapBounce2TeenGirl
+	},
+
+	{
+		name = "L4D1_NiceJobPourBetaZoeyRVC",
+		criteria ConceptL4D1_NiceJobPour IsBetazoeyrvc
+		Response L4D1_NiceJobPourTeenGirl
+	},
+
+	{
+		name = "L4D1_AttractPlayerForThrowBetaZoeyRVC",
+		criteria ConceptL4D1_AttractPlayerForThrow IsBetazoeyrvc
+		Response L4D1_AttractPlayerForThrowTeenGirl
+	},
+
+	{
+		name = "L4D1_SurvivorBotTakeThisItemBetaZoeyRVC",
+		criteria ConceptL4D1_SurvivorBotTakeThisItem IsBetazoeyrvc
+		Response L4D1_SurvivorBotTakeThisItemTeenGirl
+	},
+
+	{
+		name = "WorldC6M3_ByBridge01BetaZoeyRVC",
+		criteria ConceptWorldC6M3_ByBridge01 IsBetazoeyrvc
+		Response WorldC6M3_ByBridge01TeenGirl
+	},
+
+	{
+		name = "WorldC6M3_ByBridge01EllisBetaZoeyRVC",
+		criteria ConceptWorldC6M3_ByBridge01 IsBetazoeyrvc FromIsMechanic ChanceToFire100Percent
+		Response WorldC6M3_ByBridge01EllisTeenGirl
+	},
+
+	{
+		name = "C7M1_saferoom02BetaZoeyRVC",
+		criteria ConceptC7M1_saferoom02 IsBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response C7M1_saferoom02TeenGirl
+	},
+
+	{
+		name = "C7M1_saferoom09bBetaZoeyRVC",
+		criteria ConceptC7M1_saferoom09b IsBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response C7M1_saferoom09bTeenGirl
+	},
+
+	{
+		name = "C7M1_saferoom10aBetaZoeyRVC",
+		criteria ConceptC7M1_saferoom10a IsBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response C7M1_saferoom10aTeenGirl
+		then Any C7M1_saferoom10b foo:0 .1
+	},
+
+	{
+		name = "C7M1_saferoom11BetaZoeyRVC",
+		criteria ConceptC7M1_saferoom11 IsBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response C7M1_saferoom11TeenGirl
+		then Any C7M1_saferoom11a foo:0 .1
+	},
+
+	{
+		name = "C7M1_saferoom15aBetaZoeyRVC",
+		criteria ConceptC7M1_saferoom15a IsBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response C7M1_saferoom15aTeenGirl
+		then Any C7M1_saferoom15b foo:0 .1
+	},
+
+	{
+		name = "C7M1_saferoom18BetaZoeyRVC",
+		criteria ConceptC7M1_saferoom18 IsBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response C7M1_saferoom18TeenGirl
+		then Any C7M1_saferoom18a foo:0 .1
+	},
+
+	{
+		name = "C7M1_saferoom19aBetaZoeyRVC",
+		criteria ConceptC7M1_saferoom19a IsBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response C7M1_saferoom19aTeenGirl
+		then Any C7M1_saferoom19b foo:0 .1
+	},
+
+	{
+		name = "C7M1_saferoom20aBetaZoeyRVC",
+		criteria ConceptC7M1_saferoom20a IsBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response C7M1_saferoom20aTeenGirl
+		then Any C7M1_saferoom20b foo:0 .1
+	},
+
+	{
+		name = "C7M1_saferoom23BetaZoeyRVC",
+		criteria ConceptC7M1_saferoom23 IsBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response C7M1_saferoom23TeenGirl
+		then Any C7M1_saferoom23a foo:0 .1
+	},
+
+	{
+		name = "C7M1OpenTankDoorBetaZoeyRVC",
+		criteria ConceptC7M1OpenTankDoorSpeak IsBetazoeyrvc
+		Response C7M1OpenTankDoorTeenGirl
+	},
+
+	{
+		name = "C7M1IntroBetaZoeyRVC",
+		criteria ConceptIntroSacrifice IsBetazoeyrvc IsNotSaidCXM1Intro IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
+		Response C7M1IntroTeenGirl
+		then Any C7M1_saferoom05 foo:0 .1
+		ApplyContext "CXM1Intro:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "C6M3_elevatorZoeyTrevor",
-		criteria Conceptc6m3_elevator IsTrevor IsC6M3_port IsNotSaidC6M3Elevator IsZoeyIntroActor IsNotVersus AutoIsNotScavenge AutoIsNotSurvival
-		Response C6M3_elevatorZoeyMechanic
-		ApplyContext "SaidC6M3Elevator:1:0,Talk:1:10"
-		applycontexttoworld
+		name = "C7M2_saferoom01BetaZoeyRVC",
+		criteria ConceptC7M2_saferoom01 IsBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response C7M2_saferoom01TeenGirl
+		then Any C7M2_saferoom01a foo:0 .1
 	},
 
 	{
-		name = "C6M3_GivenItemBikerTrevor",
-		criteria ConceptPlayerPickup IsTrevor IsDonorBiker Isc6m3_port
-		Response C6M3_GivenItemBikerMechanic
+		name = "C7M2_saferoom01bBetaZoeyRVC",
+		criteria ConceptC7M2_saferoom01b IsBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response C7M2_saferoom01bTeenGirl
 	},
 
 	{
-		name = "C6M3_GivenItemTeenGirlTrevor",
-		criteria ConceptPlayerPickup IsTrevor IsDonorTeenGirl Isc6m3_port
-		Response C6M3_GivenItemTeenGirlMechanic
+		name = "C7M2_saferoom05bBetaZoeyRVC",
+		criteria ConceptC7M2_saferoom05b IsBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response C7M2_saferoom05bTeenGirl
+		then Any C7M2_saferoom05c foo:0 .1
 	},
 
 	{
-		name = "C6M3_GivenItemTeenGirlIntroTrevor",
-		criteria ConceptPlayerPickup IsTrevor IsDonorTeenGirl Isc6m3_port IsZoeyIntroActor
-		Response C6M3_GivenItemTeenGirlIntroMechanic
-	},
-
-	{
-		name = "DLC1_C6M3_SafeRoomConvo01aTrevor",
-		criteria ConceptDLC1_C6M3_SafeRoomConvo01a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response DLC1_C6M3_SafeRoomConvo01aMechanic
-		then Producer DLC1_C6M3_SafeRoomConvo01b foo:0 -7.373
-	},
-
-	{
-		name = "DLC1_C6M3_SafeRoomConvo01cTrevor",
-		criteria ConceptDLC1_C6M3_SafeRoomConvo01c IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response DLC1_C6M3_SafeRoomConvo01cMechanic
-	},
-
-	{
-		name = "DLC1_C6M3_SafeRoomConvo02eTrevor",
-		criteria ConceptDLC1_C6M3_SafeRoomConvo02e IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response DLC1_C6M3_SafeRoomConvo02eMechanic
-	},
-
-	{
-		name = "DLC1_C6M3_SafeRoomConvo03aTrevor",
-		criteria ConceptDLC1_C6M3_SafeRoomConvo03a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response DLC1_C6M3_SafeRoomConvo03aMechanic
-		then Gambler DLC1_C6M3_SafeRoomConvo03b foo:0 -1.144
-	},
-
-	{
-		name = "DLC1_C6M3_SafeRoomConvo03cTrevor",
-		criteria ConceptDLC1_C6M3_SafeRoomConvo03c IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response DLC1_C6M3_SafeRoomConvo03cMechanic
-		then Gambler DLC1_C6M3_SafeRoomConvo03d foo:0 -1.799
-	},
-
-	{
-		name = "DLC1_C6M3_SafeRoomConvo04aTrevor",
-		criteria ConceptDLC1_C6M3_SafeRoomConvo04a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response DLC1_C6M3_SafeRoomConvo04aMechanic
-		then Producer DLC1_C6M3_SafeRoomConvo04b foo:0 -3.659
-	},
-
-	{
-		name = "DLC1_C6M3_SafeRoomConvo04dTrevor",
-		criteria ConceptDLC1_C6M3_SafeRoomConvo04d IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response DLC1_C6M3_SafeRoomConvo04dMechanic
-	},
-
-	{
-		name = "DLC1_C6M3_SafeRoomConvo05aTrevor",
-		criteria ConceptDLC1_C6M3_SafeRoomConvo05a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response DLC1_C6M3_SafeRoomConvo05aMechanic
-		then Gambler DLC1_C6M3_SafeRoomConvo05b foo:0 -2.546
-	},
-
-	{
-		name = "DLC1_C6M3_SafeRoomConvoFrancisStartTrevor",
-		criteria ConceptTalkIdle IsTrevor NotInCombat isC6m3_port IsInStartArea IsNotAlone IsNotSaidLeavingSafeArea AutoIsNotScavenge AutoIsNotSurvival IsFrancisIntroActor IsProducerAlive _auto_IsSafeRoomStart _auto_NotSafeRoomQuiet IsNotSpeakingWeight0
-		Response DLC1_C6M3_SafeRoomConvoFrancisStartMechanic
-		then Producer DLC1_C6M3_SafeRoomConvo06a foo:0 -5.805
+		name = "C7M2SafeRoomBetaZoeyRVC",
+		criteria ConceptTalkIdle IsBetazoeyrvc NotInCombat IsMapc7m2_barge IsInStartArea IsNotAlone AutoIsNotScavenge AutoIsNotSurvival _auto_IsSafeRoomStart _auto_NotSafeRoomQuiet IsNotSaidLeavingSafeArea IsNotSpeakingWeight0
+		Response C7M2SafeRoomTeenGirl
+		then Any C7M2_saferoom06 foo:0 .1
 		ApplyContext "_auto_SafeRoomStart:2:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "DLC1_C6M3_SafeRoomConvo06bTrevor",
-		criteria ConceptDLC1_C6M3_SafeRoomConvo06b IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response DLC1_C6M3_SafeRoomConvo06bMechanic
-	},
-
-	{
-		name = "DLC1_C6M3_SafeRoomConvo07aTrevor",
-		criteria ConceptDLC1_C6M3_SafeRoomConvo07a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response DLC1_C6M3_SafeRoomConvo07aMechanic
-		then Producer DLC1_C6M3_SafeRoomConvo07b foo:0 -2.804
-	},
-
-	{
-		name = "DLC1_C6M3_SafeRoomConvo07cTrevor",
-		criteria ConceptDLC1_C6M3_SafeRoomConvo07c IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response DLC1_C6M3_SafeRoomConvo07cMechanic
-	},
-
-	{
-		name = "DLC1_C6M3_SafeRoomConvo08aTrevor",
-		criteria ConceptDLC1_C6M3_SafeRoomConvo08a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response DLC1_C6M3_SafeRoomConvo08aMechanic
-		then Coach DLC1_C6M3_SafeRoomConvo08b foo:0 -1.669
-	},
-
-	{
-		name = "DLC1_C6M3_SafeRoomConvo08cTrevor",
-		criteria ConceptDLC1_C6M3_SafeRoomConvo08c IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response DLC1_C6M3_SafeRoomConvo08cMechanic
-		then Trevor DLC1_C6M3_SafeRoomConvo08d foo:0 -0.936
-	},
-
-	{
-		name = "DLC1_C6M3_SafeRoomConvo08dTrevor",
-		criteria ConceptDLC1_C6M3_SafeRoomConvo08d IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response DLC1_C6M3_SafeRoomConvo08dMechanic
-		then Trevor DLC1_C6M3_SafeRoomConvo08f foo:0 -1.479
-	},
-
-	{
-		name = "DLC1_C6M3_SafeRoomConvo08eTrevor",
-		criteria ConceptDLC1_C6M3_SafeRoomConvo08e IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response DLC1_C6M3_SafeRoomConvo08eMechanic
-		then Trevor DLC1_C6M3_SafeRoomConvo08f foo:0 -2.608
-	},
-
-	{
-		name = "DLC1_C6M3_SafeRoomConvo08fTrevor",
-		criteria ConceptDLC1_C6M3_SafeRoomConvo08f IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response DLC1_C6M3_SafeRoomConvo08fMechanic
-		then Producer DLC1_C6M3_SafeRoomConvo08g foo:0 -5.514
-	},
-
-	{
-		name = "DLC1_C6M3_SafeRoomConvo09aTrevor",
-		criteria ConceptDLC1_C6M3_SafeRoomConvo09a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response DLC1_C6M3_SafeRoomConvo09aMechanic
-		then Producer DLC1_C6M3_SafeRoomConvo09b foo:0 -13.536
-	},
-
-	{
-		name = "IncapBounceTrevor",
-		criteria ConceptSurvivorIncapacitated IsTrevor IsNotSaidInCapBounce isC6m3_port
-		Response IncapBounceMechanic
-		then Biker InCapBounce2 foo:0 0
-		ApplyContext "SaidInCapBounce:1:30"
+		name = "Player_WarnMegaMobc7m201BetaZoeyRVC",
+		criteria ConceptPlayer_WarnMegaMobc7m201 IsBetazoeyrvc
+		Response Player_WarnMegaMobc7m201TeenGirl
+		ApplyContext "WarnMegaMob:1:300,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerCallForRescueTrevor",
-		criteria ConceptCallForRescue IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor HasNotCalledForRescue
-		Response PlayerCallForRescueMechanic
+		name = "C7M3_saferoom004bBetaZoeyRVC",
+		criteria ConceptC7M3_saferoom004b IsBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response C7M3_saferoom004bTeenGirl
+	},
+
+	{
+		name = "C7M3_saferoom005BetaZoeyRVC",
+		criteria ConceptC7M3_saferoom005 IsBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response C7M3_saferoom005TeenGirl
+	},
+
+	{
+		name = "C7M3_saferoom006cBetaZoeyRVC",
+		criteria ConceptC7M3_saferoom006c IsBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response C7M3_saferoom006cTeenGirl
+	},
+
+	{
+		name = "C7M3_saferoom007BetaZoeyRVC",
+		criteria ConceptC7M3_saferoom007 IsBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response C7M3_saferoom007TeenGirl
+		then Any C7M3_saferoom007a foo:0 .1
+	},
+
+	{
+		name = "C7M3_saferoom007bBetaZoeyRVC",
+		criteria ConceptC7M3_saferoom007b IsBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response C7M3_saferoom007bTeenGirl
+		then Any C7M3_saferoom007c foo:0 .1
+	},
+
+	{
+		name = "C7M3_saferoom016BetaZoeyRVC",
+		criteria ConceptC7M3_saferoom016 IsBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response C7M3_saferoom016TeenGirl
+		then Any C7M3_saferoom016a foo:0 .1
+	},
+
+	{
+		name = "C7M3_saferoom016cBetaZoeyRVC",
+		criteria ConceptC7M3_saferoom016c IsBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response C7M3_saferoom016cTeenGirl
+	},
+
+	{
+		name = "C7M3BridgeBreaksBetaZoeyRVC",
+		criteria conceptC7M3BridgeBreaks IsBetazoeyrvc _auto_NotSaidC7M3BridgeLeap
+		Response C7M3BridgeBreaksTeenGirl
+	},
+
+	{
+		name = "C7M3FinalPressBikerBetaZoeyRVC",
+		criteria ConceptC7M3FinalSpeakBiker IsBetazoeyrvc IsLastGenerator IsNotIncapacitated
+		Response C7M3FinalPressBikerTeenGirl
+	},
+
+	{
+		name = "C7M3FinalPressManagerBetaZoeyRVC",
+		criteria ConceptC7M3FinalSpeakManager IsBetazoeyrvc IsLastGenerator IsNotIncapacitated
+		Response C7M3FinalPressManagerTeenGirl
+	},
+
+	{
+		name = "C7M3FinalPressNamVetBetaZoeyRVC",
+		criteria ConceptC7M3FinalSpeakNamVet IsBetazoeyrvc IsLastGenerator IsNotIncapacitated
+		Response C7M3FinalPressNamVetTeenGirl
+	},
+
+	{
+		name = "C7M3GeneratorPress01BetaZoeyRVC",
+		criteria ConceptC7M3GeneratorSpeak IsBetazoeyrvc IsFirstGenerator _auto_NotTimerLockBetazoeyrvc
+		Response C7M3GeneratorPress01TeenGirl
+		ApplyContext "_auto_TimerLockBetazoeyrvc:1:6,_auto_NoLostCall:1:0,SaidCreshendoStartNear:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "C7M3GeneratorPress02BetaZoeyRVC",
+		criteria ConceptC7M3GeneratorSpeak IsBetazoeyrvc IsSecondGenerator _auto_NotTimerLockBetazoeyrvc
+		Response C7M3GeneratorPress02TeenGirl
+		ApplyContext "_auto_TimerLockBetazoeyrvc:1:6,SaidCreshendoStartNear:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "C7M3GeneratorPress03BetaZoeyRVC",
+		criteria ConceptC7M3GeneratorSpeak IsBetazoeyrvc IsThirdGenerator _auto_NotTimerLockBetazoeyrvc
+		Response C7M3GeneratorPress03TeenGirl
+		ApplyContext "_auto_TimerLockBetazoeyrvc:1:6,SaidCreshendoStartNear:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "C7M3PlayerGetToRescueVehicleBetaZoeyRVC",
+		criteria ConceptFinalVehicleSpotted IsBetazoeyrvc ismapc7m3_port IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_IsFinaleStarted
+		Response C7M3PlayerGetToRescueVehicleTeenGirl
+		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockBetazoeyrvc:1:30,_auto_Finale:2:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "C7M3PlayerGetToRescueVehicleLouisBetaZoeyRVC",
+		criteria ConceptFinalVehicleSpotted IsBetazoeyrvc ismapc7m3_port IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsManagerAlive ChanceToFire20Percent _auto_IsFinaleStarted
+		Response C7M3PlayerGetToRescueVehicleLouisTeenGirl
+		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockBetazoeyrvc:1:30,_auto_Finale:2:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "C7M3PlayerIsOnRescueVehicleNagBetaZoeyRVC",
+		criteria ConceptGetToVehicle IsBetazoeyrvc ismapc7m3_port IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockBetazoeyrvc _auto_NotC7M3BridgeReady IsNotSpeakingWeight0
+		Response C7M3PlayerIsOnRescueVehicleNagTeenGirl
+		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockBetazoeyrvc:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "C7M3PlayerRaiseBridgeNagBetaZoeyRVC",
+		criteria ConceptGetToVehicle IsBetazoeyrvc ismapc7m3_port IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockBetazoeyrvc _auto_IsC7M3BridgeReady _auto_NotPressedC7M3BridgeButton IsNotSpeakingWeight0
+		Response C7M3PlayerRaiseBridgeNagTeenGirl
+		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockBetazoeyrvc:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "C7M3BridgeButtonSpeakBetaZoeyRVC",
+		criteria ConceptC7M3BridgeButtonSpeak IsBetazoeyrvc
+		Response C7M3BridgeButtonSpeakTeenGirl
+	},
+
+	{
+		name = "C7M3WaveOverGen1BetaZoeyRVC",
+		criteria ConceptC7M3WaveOverSpeak IsBetazoeyrvc IsSecondGenerator
+		Response C7M3WaveOverGen1TeenGirl
+	},
+
+	{
+		name = "C7M3WaveOverGen2BetaZoeyRVC",
+		criteria ConceptC7M3WaveOverSpeak IsBetazoeyrvc IsThirdGenerator
+		Response C7M3WaveOverGen2TeenGirl
+	},
+
+	{
+		name = "L4D1PlayerCallForRescueBetaZoeyRVC",
+		criteria ConceptCallForRescue IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc HasNotCalledForRescue
+		Response L4D1PlayerCallForRescueTeenGirl
 		ApplyContext "CalledForRescue:1:5"
 		applycontexttoworld
 	},
 
 	{
-		name = "C1M2EllisStoryTrevor",
-		criteria ConceptTalkIdle IsTrevor IsInStartArea IsNotSaidLeavingSafeArea IsNotSpeaking ismap_c1m2_streets IsACoopMode ChanceToFire10Percent IsNotSrcGrp_TREVORSTORY _auto_IsStoryWait _auto_NotStoryGate
-		// 	forceweight 1
-		Response C1M2EllisStoryMechanic
-		then any TrevorInterrupt foo:0 -19.75
-		ApplyContext "_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C1M3EllisStoryTrevor",
-		criteria ConceptTalkIdle IsTrevor IsInStartArea IsNotSaidLeavingSafeArea IsNotSpeaking ismap_c1m3_mall IsACoopMode ChanceToFire10Percent IsNotSrcGrp_TREVORSTORY _auto_IsStoryWait _auto_NotStoryGate
-		// 	forceweight 1
-		Response C1M3EllisStoryMechanic
-		then any TrevorInterrupt foo:0 -7.93
-		ApplyContext "_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C1M4EllisStoryTrevor",
-		criteria ConceptTalkIdle IsTrevor IsInStartArea IsNotSaidLeavingSafeArea IsNotSpeaking ismap_c1m4_atrium IsACoopMode ChanceToFire10Percent IsNotSrcGrp_TREVORSTORY _auto_IsStoryWait _auto_NotStoryGate
-		// 	forceweight 1
-		Response C1M4EllisStoryMechanic
-		then any TrevorInterrupt foo:0 -12.29
-		ApplyContext "_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C2M2EllisStoryTrevor",
-		criteria ConceptTalkIdle IsTrevor IsInStartArea IsNotSaidLeavingSafeArea IsNotSpeaking ismap_c2m2 IsACoopMode ChanceToFire10Percent IsNotSrcGrp_TREVORSTORY _auto_IsStoryWait _auto_NotStoryGate
-		// 	forceweight 1
-		Response C2M2EllisStoryMechanic
-		then any TrevorInterrupt foo:0 -13.43
-		ApplyContext "_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C2M3EllisStoryTrevor",
-		criteria ConceptTalkIdle IsTrevor IsInStartArea IsNotSaidLeavingSafeArea IsNotSpeaking ismap_c2m3 IsACoopMode ChanceToFire10Percent IsNotSrcGrp_TREVORSTORY _auto_IsStoryWait _auto_NotStoryGate
-		// 	forceweight 1
-		Response C2M3EllisStoryMechanic
-		then any TrevorInterrupt foo:0 -15.02
-		ApplyContext "_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C2M4EllisStoryTrevor",
-		criteria ConceptTalkIdle IsTrevor IsInStartArea IsNotSaidLeavingSafeArea IsNotSpeaking ismap_c2m4 IsACoopMode ChanceToFire10Percent IsNotSrcGrp_TREVORSTORY _auto_IsStoryWait _auto_NotStoryGate
-		// 	forceweight 1
-		Response C2M4EllisStoryMechanic
-		then any TrevorInterrupt foo:0 -10.17
-		ApplyContext "_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C2M5EllisStoryTrevor",
-		criteria ConceptTalkIdle IsTrevor IsInStartArea IsNotSaidLeavingSafeArea IsNotSpeaking ismap_c2m5 IsACoopMode ChanceToFire10Percent IsNotSrcGrp_TREVORSTORY _auto_IsStoryWait _auto_NotStoryGate
-		// 	forceweight 1
-		Response C2M5EllisStoryMechanic
-		then any TrevorInterrupt foo:0 -14.33
-		ApplyContext "_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C3M2EllisStoryTrevor",
-		criteria ConceptTalkIdle IsTrevor IsInStartArea IsNotSaidLeavingSafeArea IsNotSpeaking ismapc3m2_swamp IsACoopMode ChanceToFire10Percent IsNotSrcGrp_TREVORSTORY _auto_IsStoryWait _auto_NotStoryGate
-		// 	forceweight 1
-		Response C3M2EllisStoryMechanic
-		then any TrevorInterrupt foo:0 -13.34
-		ApplyContext "_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C3M3EllisStoryTrevor",
-		criteria ConceptTalkIdle IsTrevor IsInStartArea IsNotSaidLeavingSafeArea IsNotSpeaking ismapc3m3_shantytown IsACoopMode ChanceToFire10Percent IsNotSrcGrp_TREVORSTORY _auto_IsStoryWait _auto_NotStoryGate
-		// 	forceweight 1
-		Response C3M3EllisStoryMechanic
-		then any TrevorInterrupt foo:0 -23.98
-		ApplyContext "_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C3M4EllisStoryTrevor",
-		criteria ConceptTalkIdle IsTrevor IsInStartArea IsNotSaidLeavingSafeArea IsNotSpeaking ismapc3m4_plantation IsACoopMode ChanceToFire10Percent IsNotSrcGrp_TREVORSTORY _auto_IsStoryWait _auto_NotStoryGate
-		// 	forceweight 1
-		Response C3M4EllisStoryMechanic
-		then any TrevorInterrupt foo:0 -15.53
-		ApplyContext "_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C4M2EllisStoryTrevor",
-		criteria ConceptTalkIdle IsTrevor IsInStartArea IsNotSaidLeavingSafeArea IsNotSpeaking ismap_c4m2_sugarmill_a IsACoopMode ChanceToFire10Percent IsNotSrcGrp_TREVORSTORY _auto_IsStoryWait _auto_NotStoryGate
-		// 	forceweight 1
-		Response C4M2EllisStoryMechanic
-		then any TrevorInterrupt foo:0 -16.69
-		ApplyContext "_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C4M3EllisStoryTrevor",
-		criteria ConceptTalkIdle IsTrevor IsInStartArea IsNotSaidLeavingSafeArea IsNotSpeaking isc4m3 IsACoopMode ChanceToFire10Percent IsNotSrcGrp_TREVORSTORY _auto_IsStoryWait _auto_NotStoryGate
-		// 	forceweight 1
-		Response C4M3EllisStoryMechanic
-		then any TrevorInterrupt foo:0 -9.99
-		ApplyContext "_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C4M4EllisStoryTrevor",
-		criteria ConceptTalkIdle IsTrevor IsInStartArea IsNotSaidLeavingSafeArea IsNotSpeaking isc4m4 IsACoopMode ChanceToFire10Percent IsNotSrcGrp_TREVORSTORY _auto_IsStoryWait _auto_NotStoryGate
-		// 	forceweight 1
-		Response C4M4EllisStoryMechanic
-		then any TrevorInterrupt foo:0 -15.21
-		ApplyContext "_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C5M2EllisStoryTrevor",
-		criteria ConceptTalkIdle IsTrevor IsInStartArea IsNotSaidLeavingSafeArea IsNotSpeaking IsMapc5m2_park IsACoopMode ChanceToFire10Percent IsNotSrcGrp_TREVORSTORY _auto_IsStoryWait _auto_NotStoryGate
-		// 	forceweight 1
-		Response C5M2EllisStoryMechanic
-		then any TrevorInterrupt foo:0 -8.54
-		ApplyContext "_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C5M3EllisStoryTrevor",
-		criteria ConceptTalkIdle IsTrevor IsInStartArea IsNotSaidLeavingSafeArea IsNotSpeaking IsMapc5m3_cemetery IsACoopMode ChanceToFire10Percent IsNotSrcGrp_TREVORSTORY _auto_IsStoryWait _auto_NotStoryGate
-		// 	forceweight 1
-		Response C5M3EllisStoryMechanic
-		then any TrevorInterrupt foo:0 -3.46
-		ApplyContext "_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C5M4EllisStoryTrevor",
-		criteria ConceptTalkIdle IsTrevor IsInStartArea IsNotSaidLeavingSafeArea IsNotSpeaking IsMapc5m4_quarter IsACoopMode ChanceToFire10Percent IsNotSrcGrp_TREVORSTORY _auto_IsStoryWait _auto_NotStoryGate
-		// 	forceweight 1
-		Response C5M4EllisStoryMechanic
-		then any TrevorInterrupt foo:0 -17.96
-		ApplyContext "_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C5M5EllisStoryTrevor",
-		criteria ConceptTalkIdle IsTrevor IsInStartArea IsNotSaidLeavingSafeArea IsNotSpeaking IsMapc5m5_bridge IsACoopMode ChanceToFire10Percent IsNotSrcGrp_TREVORSTORY _auto_IsStoryWait _auto_NotStoryGate
-		// 	forceweight 1
-		Response C5M5EllisStoryMechanic
-		then any TrevorInterrupt foo:0 -18.21
-		ApplyContext "_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C6M2EllisStoryTrevor",
-		criteria ConceptTalkIdle IsTrevor IsInStartArea IsNotSaidLeavingSafeArea IsNotSpeaking isc6m2_bedlam IsACoopMode ChanceToFire20Percent IsNotSrcGrp_TREVORSTORY _auto_IsStoryWait _auto_NotStoryGate
-		Response C6M2EllisStoryMechanic
-		then any TrevorInterrupt foo:0 0.1
-		ApplyContext "_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C6M2EllisStoryStart1Trevor",
-		criteria ConceptC6M2TrevorStoryStart1 IsTrevor _auto_NotDidInterrupt
-		Response C6M2EllisStoryStart1Mechanic
-		then any TrevorInterrupt foo:0 -26.93
-	},
-
-	{
-		name = "C6M3EllisBridgeStoryTrevor",
-		criteria ConceptTalkIdle IsTrevor IsNotSpeaking isc6m3_port IsACoopMode IsNotInStartArea ChanceToFire20Percent IsSaidFinaleExchange IsEndTrevorBridgeStoryStart IsNotSaidTrevorBridgeStoryStart IsNotSaidC6M3Elevator
-		// 	forceweight 1
-		Response C6M3EllisBridgeStoryMechanic
-		then any TrevorInterrupt foo:0 0.1
-		ApplyContext "Talk:1:0,_auto_TellingStory:1:0,SrcGrp_TREVORSTORY:1:0,SaidTrevorBridgeStoryStart:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C6M3EllisBridgeStory1Trevor",
-		criteria ConceptC6M3TrevorBridgeStory1 IsTrevor IsNotSaidC6M3Elevator _auto_NotDidInterrupt
-		Response C6M3EllisBridgeStory1Mechanic
-		then self C6M3TrevorBridgeStory1a foo:0 -24.62
-	},
-
-	{
-		name = "C6M3EllisBridgeStory1aTrevor",
-		criteria ConceptC6M3TrevorBridgeStory1a IsTrevor IsNotSaidC6M3Elevator _auto_NotDidInterrupt
-		Response C6M3EllisBridgeStory1aMechanic
-		then any TrevorInterrupt foo:0 0.1
-	},
-
-	{
-		name = "EllisStoryReac01Trevor",
-		criteria ConceptTrevorStoryReac01 IsTrevor
-		Response EllisStoryReac01Mechanic
-	},
-
-	{
-		name = "EllisStoryReac01GoatTrevor",
-		criteria ConceptTrevorStoryReac01 IsTrevor ismap_c1m4_atrium
-		// 	forceweight 100
-		Response EllisStoryReac01GoatMechanic
-	},
-
-	{
-		name = "c6m3_outroTrevor",
-		criteria Conceptc6m3_outro3 IsTrevor isC6m3_port IsNotVersus IsNotIncapacitated ChanceToFire100Percent FromIsBiker
-		// 	forceweight 1
-		Response c6m3_outroMechanic
-	},
-
-	{
-		name = "c6m3_outroZoeyOutroTrevor",
-		criteria Conceptc6m3_outro3 IsTrevor isC6m3_port IsZoeyIntroActor IsNotVersus IsNotIncapacitated ChanceToFire100Percent FromIsBiker
-		// 	forceweight 2
-		Response c6m3_outroZoeyOutroMechanic
-		then gambler c6m3_outroL4D1011a foo:0 0.1
-	},
-
-	{
-		name = "c6m3_outroRochelleOutroTrevor",
-		criteria Conceptc6m3_outroL4D1012a IsTrevor IsNotIncapacitated FromIsProducer
-		Response c6m3_outroRochelleOutroMechanic
-	},
-
-	{
-		name = "SurvivorSpotFirstWeaponsTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotPickedUpFirstAidKit ismap_c1m1_hotel IsNotSaidFirstWeapon IsNotSaidWorldC1M1First IsWorldTalkTrevor
-		Response SurvivorSpotFirstWeaponsMechanic
-		ApplyContext "SaidFirstWeapon:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedAdrenalineTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto IsAdrenaline IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response SurvivorSpottedAdrenalineMechanic
-		ApplyContext "SaidSpotAdrenaline:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedAdrenalineAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotAdrenaline IsNotSaidSpot IsAdrenaline IsWorldTalkTrevor IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedAdrenalineMechanic
-		ApplyContext "SaidSpotAdrenaline:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedAmmoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsAmmo IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response SurvivorSpottedAmmoMechanic
-		ApplyContext "SaidSpotAmmo:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedAmmoAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsAmmo IsTrevor IsTalk IsTalkTrevor IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotAmmo IsNotSaidSpot IsWorldTalkTrevor IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedAmmoMechanic
-		ApplyContext "SaidSpotAmmo:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedAmmo2Trevor",
-		criteria ConceptPlayerSpotAmmo IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotInSafeSpot IsNotAlone IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response SurvivorSpottedAmmo2Mechanic
-	},
-
-	{
-		name = "SurvivorSpottedCoachCloseTrevor",
-		criteria ConceptPlayerLookHere IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsCoach IsCoachNear400 IsWorldTalkTrevor
-		Response SurvivorSpottedCoachCloseMechanic
-	},
-
-	{
-		name = "SurvivorSpottedCoachClose2Trevor",
-		criteria ConceptPlayerLook IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsCoach IsCoachNear400 IsWorldTalkTrevor
-		Response SurvivorSpottedCoachCloseMechanic
-	},
-
-	{
-		name = "SurvivorSpottedCoachClose2C1Trevor",
-		criteria ConceptPlayerLook IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsCoach IsCoachNear400 IsWorldTalkTrevor ismap_c1m1_hotel NoKnowNames
-		Response SurvivorSpottedCoachClose2C1Mechanic
-	},
-
-	{
-		name = "SurvivorSpottedCoachCloseC1Trevor",
-		criteria ConceptPlayerLookHere IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsCoach IsCoachNear400 IsWorldTalkTrevor ismap_c1m1_hotel NoKnowNames
-		Response SurvivorSpottedCoachClose2C1Mechanic
-	},
-
-	{
-		name = "SurvivorSpottedCoachFarTrevor",
-		criteria ConceptPlayerLook IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsCoach IsCoachFar400 IsWorldTalkTrevor
-		Response SurvivorSpottedCoachFarMechanic
-	},
-
-	{
-		name = "SurvivorSpottedDefibrillatorTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto IsDefibrillator IsWorldTalkTrevor
-		Response SurvivorSpottedDefibrillatorMechanic
-		ApplyContext "SaidSpotDefibrillator:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedDefibrillatorAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidDefibrillator IsNotSaidSpot IsDefibrillator IsWorldTalkTrevor IsNotSpeakingWeight0
-		Response SurvivorSpottedDefibrillatorMechanic
-		ApplyContext "SaidSpotDefibrillator:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedGamblerCloseTrevor",
-		criteria ConceptPlayerLookHere IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsGambler IsGamblerNear400 IsWorldTalkTrevor
-		Response SurvivorSpottedGamblerCloseMechanic
-	},
-
-	{
-		name = "SurvivorSpottedGamblerClose2Trevor",
-		criteria ConceptPlayerLook IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsGambler IsGamblerNear400 IsWorldTalkTrevor
-		Response SurvivorSpottedGamblerClose2Mechanic
-	},
-
-	{
-		name = "SurvivorSpottedGamblerClose2C1Trevor",
-		criteria ConceptPlayerLook IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsGambler IsGamblerNear400 IsWorldTalkTrevor ismap_c1m1_hotel NoKnowNames
-		Response SurvivorSpottedGamblerClose2C1Mechanic
-	},
-
-	{
-		name = "SurvivorSpottedGamblerCloseC1Trevor",
-		criteria ConceptPlayerLookHere IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsGambler IsGamblerNear400 IsWorldTalkTrevor ismap_c1m1_hotel NoKnowNames
-		Response SurvivorSpottedGamblerClose2C1Mechanic
-	},
-
-	{
-		name = "SurvivorSpottedGamblerFarTrevor",
-		criteria ConceptPlayerLook IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsGambler IsGamblerFar400 IsWorldTalkTrevor
-		Response SurvivorSpottedGamblerFarMechanic
-	},
-
-	{
-		name = "SurvivorSpottedGamblerFarC1Trevor",
-		criteria ConceptPlayerLook IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsGambler IsGamblerFar400 IsWorldTalkTrevor ismap_c1m1_hotel NoKnowNames
-		Response SurvivorSpottedGamblerFarC1Mechanic
-	},
-
-	{
-		name = "SurvivorSpottedGrenadeTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto IsPipeBomb IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response SurvivorSpottedGrenadeMechanic
-		ApplyContext "SaidSpotGrenade:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedGrenadeAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotGrenade IsNotSaidSpot IsPipeBomb IsWorldTalkTrevor YesHasGrenade IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedGrenadeMechanic
-		ApplyContext "SaidSpotGrenade:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedGrenadeLauncherTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto Isgrenade_launcher IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response SurvivorSpottedGrenadeLauncherMechanic
-		ApplyContext "SaidSpotgrenade_launcher:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedGrenadeLauncherAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotgrenade_launcher IsNotSaidSpot Isgrenade_launcher IsWorldTalkTrevor IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedGrenadeLauncherMechanic
-		ApplyContext "SaidSpotgrenade_launcher:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedHealthTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto IsFirstAidKit IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response SurvivorSpottedHealthMechanic
-		ApplyContext "SaidSpotHealth:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedHealthAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotHealth IsNotSaidSpot IsFirstAidKit IsWorldTalkTrevor IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedHealthMechanic
-		ApplyContext "SaidSpotHealth:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedMolotovTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto IsMolotov IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response SurvivorSpottedMolotovMechanic
-		ApplyContext "SaidSpotMolotov:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedMolotovAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotMolotov IsNotSaidSpot IsMolotov IsWorldTalkTrevor IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedMolotovMechanic
-		ApplyContext "SaidSpotMolotov:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedPillsTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto IsPainPills IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response SurvivorSpottedPillsMechanic
-		ApplyContext "SaidSpotPills:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedPillsAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotPills IsNotSaidSpot IsPainPills IsWorldTalkTrevor IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedPillsMechanic
-		ApplyContext "SaidSpotPills:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedProducerCloseTrevor",
-		criteria ConceptPlayerLookHere IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsProducer IsProducerNear400 IsWorldTalkTrevor
-		Response SurvivorSpottedProducerCloseMechanic
-	},
-
-	{
-		name = "SurvivorSpottedProducerClose2Trevor",
-		criteria ConceptPlayerLook IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsProducer IsProducerNear400 IsWorldTalkTrevor
-		Response SurvivorSpottedProducerClose2Mechanic
-	},
-
-	{
-		name = "SurvivorSpottedProducerClose2C1Trevor",
-		criteria ConceptPlayerLook IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsProducer IsProducerNear400 IsWorldTalkTrevor ismap_c1m1_hotel NoKnowNames
-		Response SurvivorSpottedProducerClose2C1Mechanic
-	},
-
-	{
-		name = "SurvivorSpottedProducerCloseC1Trevor",
-		criteria ConceptPlayerLookHere IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsProducer IsProducerNear400 IsWorldTalkTrevor ismap_c1m1_hotel NoKnowNames
-		Response SurvivorSpottedProducerClose2C1Mechanic
-	},
-
-	{
-		name = "SurvivorSpottedProducerFarTrevor",
-		criteria ConceptPlayerLook IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsProducer IsProducerFar400 IsWorldTalkTrevor
-		Response SurvivorSpottedProducerFarMechanic
-	},
-
-	{
-		name = "SurvivorSpottedProducerFarC1Trevor",
-		criteria ConceptPlayerLook IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsProducer IsProducerFar400 IsWorldTalkTrevor ismap_c1m1_hotel NoKnowNames
-		Response SurvivorSpottedProducerFarC1Mechanic
-	},
-
-	{
-		name = "SurvivorSpottedUpPack_ExplosiveTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto IsUpgradePack_Explosive IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response SurvivorSpottedUpPack_ExplosiveMechanic
-		ApplyContext "SaidSpotUpgradePack_Explosive:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedUpPack_ExplosiveAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsSmartLookAuto IsNotAlone IsNotSaidSpotUpgradePack_Explosive IsNotSaidSpot IsUpgradePack_Explosive IsWorldTalkTrevor IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedUpPack_ExplosiveMechanic
-		ApplyContext "SaidSpotUpgradePack_Explosive:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedUpPack_IncendiaryTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto IsUpgradePack_Incendiary IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response SurvivorSpottedUpPack_IncendiaryMechanic
-		ApplyContext "SaidSpotUpgradePack_Incendiary:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedUpPack_IncendiAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsSmartLookAuto IsNotAlone IsNotSaidSpotUpgradePack_Incendiary IsNotSaidSpot IsUpgradePack_Incendiary IsWorldTalkTrevor IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedUpPack_IncendiaryMechanic
-		ApplyContext "SaidSpotUpgradePack_Incendiary:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedVomitJarTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto IsVomitJar IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response SurvivorSpottedVomitJarMechanic
-		ApplyContext "SaidSpotVomitJar:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedVomitJarAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotVomitJar IsNotSaidSpot IsVomitJar IsWorldTalkTrevor IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedVomitJarMechanic
-		ApplyContext "SaidSpotVomitJar:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedVomitJarAutoC1Trevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotVomitJar IsNotSaidSpot IsVomitJar IsWorldTalkTrevor ismap_c1m1_hotel IsNotSpeakingWeight0
-		Response SurvivorSpottedVomitJarAutoC1Mechanic
-		ApplyContext "SaidSpotVomitJar:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedVomitJarC1Trevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto IsVomitJar IsWorldTalkTrevor ismap_c1m1_hotel
-		Response SurvivorSpottedVomitJarAutoC1Mechanic
-		ApplyContext "SaidSpotVomitJar:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedWorldCloseTrevor",
-		criteria ConceptPlayerLookHere IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto IsWorldTalkTrevor
-		Response SurvivorSpottedWorldCloseMechanic
-	},
-
-	{
-		name = "SurvivorSpottedArmoredTrevor",
-		criteria ConceptPlayerWarnSpecial IsSpecialTypeArmored IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSaidArmoredWarn IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedArmoredMechanic
-		ApplyContext "SaidArmoredWarn:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedArmoredC5M1Trevor",
-		criteria ConceptPlayerWarnSpecial IsSpecialTypeArmored IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSaidArmoredWarn ismap_c5m1_waterfront IsNotSpeakingWeight0
-		Response SurvivorSpottedArmoredC5M1Mechanic
-		ApplyContext "SaidArmoredWarn:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedBoomerTrevor",
-		criteria ConceptPlayerWarnSpecial IsSpecialTypeBoomer IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedBoomerMechanic
-		ApplyContext "SaidBoomerWarn:1:20,SaidSpecialWarn:1:30"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedBoomerAlsoTrevor",
-		criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeBoomer IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated _auto_NotSpottedVehicle
-		Response SurvivorSpottedBoomerMechanic
-		ApplyContext "SaidBoomerWarn:1:20,SaidSpecialWarn:1:30,TrevorAlsoWarn:1:30"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedBoomer2Trevor",
-		criteria ConceptPlayerWarnBoomer IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated _auto_NotSpottedVehicle
-		Response SurvivorSpottedBoomerMechanic
-	},
-
-	{
-		name = "SurvivorSpottedBoomerC1M1Trevor",
-		criteria ConceptPlayerWarnSpecial IsSpecialTypeBoomer IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated ismap_c1m1_hotel IsNotSpeakingWeight0
-		Response SurvivorSpottedBoomerC1M1Mechanic
-		ApplyContext "SaidBoomerWarn:1:20,SaidSpecialWarn:1:30"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedBoomerAlsoC1M1Trevor",
-		criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeBoomer IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated ismap_c1m1_hotel
-		Response SurvivorSpottedBoomerC1M1Mechanic
-		ApplyContext "SaidBoomerWarn:1:20,SaidSpecialWarn:1:30"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedBoomer2C1Trevor",
-		criteria ConceptPlayerWarnBoomer IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated C1M1orC1M2 NoKnowBoomer IsNotSurvival
-		Response SurvivorSpottedBoomerC1M1Mechanic
-	},
-
-	{
-		name = "SurvivorSpottedBoomerC1M2Trevor",
-		criteria ConceptPlayerWarnSpecial IsSpecialTypeBoomer IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated ismap_c1m2_streets NoKnowBoomer IsNotSpeakingWeight0 IsNotSurvival
-		Response SurvivorSpottedBoomerC1M2Mechanic
-		then any Player.KnowBoomer foo:0 0.1
-		ApplyContext "SaidBoomerWarn:1:20,SaidSpecialWarn:1:30,KnowBoomer:1:0,Talk:1:6"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedBoomerAlsoC1M2Trevor",
-		criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeBoomer IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated ismap_c1m2_streets NoKnowBoomer IsNotSurvival
-		Response SurvivorSpottedBoomerC1M1Mechanic
-		ApplyContext "SaidBoomerWarn:1:20,SaidSpecialWarn:1:30"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedCedaTrevor",
-		criteria ConceptPlayerWarnSpecial IsSpecialTypeCeda IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSaidCedaWarn IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedCedaMechanic
-		ApplyContext "SaidCedaWarn:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedCedaC1M1Trevor",
-		criteria ConceptPlayerWarnSpecial IsSpecialTypeCeda IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSaidCedaWarn ismap_c1m1_hotel IsNotSpeakingWeight0
-		Response SurvivorSpottedCedaC1M1Mechanic
-		ApplyContext "SaidCedaWarn:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedChargerTrevor",
-		criteria ConceptPlayerWarnSpecial IsSpecialTypeCharger IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedChargerMechanic
-		ApplyContext "SaidChargerWarn:1:20,SaidSpecialWarn:1:30"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedChargerAlsoTrevor",
-		criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeCharger IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated _auto_NotSpottedVehicle
-		Response SurvivorSpottedChargerMechanic
-		ApplyContext "SaidChargerWarn:1:20,SaidSpecialWarn:1:30,TrevorAlsoWarn:1:30"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedCharger2Trevor",
-		criteria ConceptPlayerWarnCharger IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated _auto_NotSpottedVehicle
-		Response SurvivorSpottedChargerMechanic
-	},
-
-	{
-		name = "SurvivorSpottedChargerC1Trevor",
-		criteria ConceptPlayerWarnSpecial IsSpecialTypeCharger IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated C1M1orC1M2 NoKnowCharger IsNotSpeakingWeight0 IsNotSurvival
-		Response SurvivorSpottedChargerC1Mechanic
-		ApplyContext "SaidChargerWarn:1:20,SaidSpecialWarn:1:30"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedChargerAlsoC1Trevor",
-		criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeCharger IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated C1M1orC1M2 NoKnowCharger IsNotSurvival
-		Response SurvivorSpottedChargerC1Mechanic
-		ApplyContext "SaidChargerWarn:1:20,SaidSpecialWarn:1:30"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedCharger2C1Trevor",
-		criteria ConceptPlayerWarnCharger IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated C1M1orC1M2 NoKnowCharger IsNotSurvival
-		Response SurvivorSpottedChargerC1Mechanic
-	},
-
-	{
-		name = "SurvivorSpottedClownTrevor",
-		criteria ConceptPlayerWarnSpecial IsSpecialTypeClown IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSaidClownWarn IsNotSpeakingWeight0 _auto_ConcertNotLive _auto_NotSpottedVehicle
-		Response SurvivorSpottedClownMechanic
-		ApplyContext "SaidClownWarn:1:20,SawClowns:++1"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedFallenTrevor",
-		criteria ConceptPlayerWarnSpecial IsSpecialTypeFallen IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSaidFallenWarn IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedFallenMechanic
-		ApplyContext "SaidFallenWarn:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedFirstClownTrevor",
-		criteria ConceptPlayerWarnSpecial IsSpecialTypeClown IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSaidClownWarn ismap_c2m2 IsNotSpeakingWeight0
-		Response SurvivorSpottedFirstClownMechanic
-		ApplyContext "SaidClownWarn:1:0,SawClowns:++1"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedHunterTrevor",
-		criteria ConceptPlayerWarnSpecial IsSpecialTypeHunter IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedHunterMechanic
-		ApplyContext "SaidHunterWarn:1:20,SaidSpecialWarn:1:30"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedHunterAlsoTrevor",
-		criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeHunter IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated _auto_NotSpottedVehicle
-		Response SurvivorSpottedHunterMechanic
-		ApplyContext "SaidHunterWarn:1:20,SaidSpecialWarn:1:30,TrevorAlsoWarn:1:30"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedHunter2Trevor",
-		criteria ConceptPlayerWarnHunter IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated _auto_NotSpottedVehicle
-		Response SurvivorSpottedHunterMechanic
-	},
-
-	{
-		name = "SurvivorSpottedHunterC1Trevor",
-		criteria ConceptPlayerWarnSpecial IsSpecialTypeHunter IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated C1M1orC1M2 NoKnowHunter IsNotSpeakingWeight0 IsNotSurvival
-		Response SurvivorSpottedHunterC1Mechanic
-		ApplyContext "SaidHunterWarn:1:20,SaidSpecialWarn:1:30"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedHunterAlsoC1Trevor",
-		criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeHunter IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated C1M1orC1M2 NoKnowHunter IsNotSurvival
-		Response SurvivorSpottedHunterC1Mechanic
-		ApplyContext "SaidHunterWarn:1:20,SaidSpecialWarn:1:30"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedHunter2C1Trevor",
-		criteria ConceptPlayerWarnHunter IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated C1M1orC1M2 NoKnowHunter IsNotSurvival
-		Response SurvivorSpottedHunterC1Mechanic
-	},
-
-	{
-		name = "SurvivorSpottedInfectedTrevor",
-		criteria ConceptPlayerIncoming IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated _auto_NotSpottedVehicle
-		Response SurvivorSpottedInfectedMechanic
-	},
-
-	{
-		name = "SurvivorSpottedJimmyTrevor",
-		criteria ConceptPlayerWarnSpecial IsSpecialTypeJimmy IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSaidJimmyWarn IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedJimmyMechanic
-		ApplyContext "SaidJimmyWarn:1:3"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedJockeyTrevor",
-		criteria ConceptPlayerWarnSpecial IsSpecialTypeJockey IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedJockeyMechanic
-		ApplyContext "SaidJockeyWarn:1:20,SaidSpecialWarn:1:30"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedJockeyAlsoTrevor",
-		criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeJockey IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated _auto_NotSpottedVehicle
-		Response SurvivorSpottedJockeyMechanic
-		ApplyContext "SaidJockeyWarn:1:20,SaidSpecialWarn:1:30,TrevorAlsoWarn:1:30"
-		applycontexttoworld
+		name = "HowitzerBurnEnd00BetaZoeyRVC",
+		criteria ConceptHowitzerBurnEnd00 IsBetazoeyrvc NotCrash01ThroughBridge AutoIsNotScavenge AutoIsNotSurvival
+		Response HowitzerBurnEnd00TeenGirl
+		then self HowitzerBurnEnd02 foo:0 0.1
 	},
 
 	{
-		name = "SurvivorSpottedJockey2Trevor",
-		criteria ConceptPlayerWarnJockey IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated _auto_NotSpottedVehicle
-		Response SurvivorSpottedJockeyMechanic
+		name = "HowitzerBurnEnd01BetaZoeyRVC",
+		criteria ConceptHowitzerBurnEnd01 IsBetazoeyrvc
+		Response HowitzerBurnEnd01TeenGirl
 	},
 
 	{
-		name = "SurvivorSpottedJockeyC1Trevor",
-		criteria ConceptPlayerWarnSpecial IsSpecialTypeJockey IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated C1M1orC1M2 NoKnowJockey IsNotSpeakingWeight0 IsNotSurvival
-		Response SurvivorSpottedJockeyC1Mechanic
-		ApplyContext "SaidJockeyWarn:1:20,SaidSpecialWarn:1:30"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedJockeyAlsoC1Trevor",
-		criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeJockey IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated C1M1orC1M2 NoKnowJockey IsNotSurvival
-		Response SurvivorSpottedJockeyC1Mechanic
-		ApplyContext "SaidJockeyWarn:1:20,SaidSpecialWarn:1:30"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedJockey2C1Trevor",
-		criteria ConceptPlayerWarnJockey IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated C1M1orC1M2 NoKnowJockey IsNotSurvival
-		Response SurvivorSpottedJockeyC1Mechanic
-	},
-
-	{
-		name = "SurvivorSpottedMudmenC3M2Trevor",
-		criteria ConceptPlayerWarnSpecial IsSpecialTypeMudmen IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSaidMudmenWarn ismapc3m2_swamp IsNotSpeakingWeight0
-		Response SurvivorSpottedMudmenC3M2Mechanic
-		ApplyContext "SaidMudmenWarn:1:0,SawMudMen:++1"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedMudmenTrevor",
-		criteria ConceptPlayerWarnSpecial IsSpecialTypeMudmen IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSaidMudmenWarn IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedMudmenMechanic
-		ApplyContext "SaidMudmenWarn:1:20,SawMudMen:++1"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedMudmen2Trevor",
-		criteria ConceptPlayerWarnSpecial IsSpecialTypeMudmen IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSaidMudmenWarn SawManyMudMen IntensityUnder50 IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedMudmen2Mechanic
-		then gambler Player.SeeMudmen2a foo:0 -2.938
-		ApplyContext "SaidMudmenWarn:1:20,SawMudMen:++1"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedSmokerTrevor",
-		criteria ConceptPlayerWarnSpecial IsSpecialTypeSmoker IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedSmokerMechanic
-		ApplyContext "SaidSmokerWarn:1:20,SaidSpecialWarn:1:30"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedSmokerAlsoTrevor",
-		criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeSmoker IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated _auto_NotSpottedVehicle
-		Response SurvivorSpottedSmokerMechanic
-		ApplyContext "SaidSmokerWarn:1:20,SaidSpecialWarn:1:30,TrevorAlsoWarn:1:30"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedSmoker2Trevor",
-		criteria ConceptPlayerWarnSmoker IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated _auto_NotSpottedVehicle
-		Response SurvivorSpottedSmokerMechanic
-	},
-
-	{
-		name = "SurvivorSpottedSmokerC1Trevor",
-		criteria ConceptPlayerWarnSpecial IsSpecialTypeSmoker IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated C1M1orC1M2 NoKnowSmoker IsNotSpeakingWeight0 IsNotSurvival
-		Response SurvivorSpottedSmokerC1Mechanic
-		ApplyContext "SaidSmokerWarn:1:20,SaidSpecialWarn:1:30"
-		applycontexttoworld
+		name = "L4D1CrashCourseR14BetaZoeyRVC",
+		criteria ConceptCrashCourseR14 IsBetazoeyrvc
+		Response L4D1CrashCourseR14TeenGirl
 	},
 
 	{
-		name = "SurvivorSpottedSmokerAlsoC1Trevor",
-		criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeSmoker IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated C1M1orC1M2 NoKnowSmoker IsNotSurvival
-		Response SurvivorSpottedSmokerC1Mechanic
-		ApplyContext "SaidSmokerWarn:1:20,SaidSpecialWarn:1:30"
+		name = "L4D1crashHowitzerNagBetaZoeyRVC",
+		criteria ConceptTalkIdle IsBetazoeyrvc IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc NotHowitzerFired IsHowitzerSeen ChanceToFire80Percent IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival _auto_NotTimerLockA _auto_NotTimerLockBetazoeyrvc
+		Response L4D1crashHowitzerNagTeenGirl
+		ApplyContext "_auto_TimerLockA:1:15,_auto_TimerLockBetazoeyrvc:1:30"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedSmoker2C1Trevor",
-		criteria ConceptPlayerWarnSmoker IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated C1M1orC1M2 NoKnowSmoker IsNotSurvival
-		Response SurvivorSpottedSmokerC1Mechanic
+		name = "L4D1HowitzerFiredBetaZoeyRVC",
+		criteria ConceptHowitzerFiredResponse IsBetazoeyrvc ChanceToFire50Percent AutoIsNotScavenge
+		Response L4D1HowitzerFiredTeenGirl
 	},
 
 	{
-		name = "SurvivorSpottedSpitterTrevor",
-		criteria ConceptPlayerWarnSpecial IsSpecialTypeSpitter IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedSpitterMechanic
-		ApplyContext "SaidSpitterWarn:1:20,SaidSpecialWarn:1:30"
-		applycontexttoworld
+		name = "CrashFinaleGenerator2OnSpkBetaZoeyRVC",
+		criteria ConceptCrashFinaleGenerator2OnSpk IsBetazoeyrvc
+		Response CrashFinaleGenerator2OnSpkTeenGirl
 	},
 
 	{
-		name = "SurvivorSpottedSpitterAlsoTrevor",
-		criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeSpitter IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated _auto_NotSpottedVehicle
-		Response SurvivorSpottedSpitterMechanic
-		ApplyContext "SaidSpitterWarn:1:20,SaidSpecialWarn:1:30,TrevorAlsoWarn:1:30"
-		applycontexttoworld
+		name = "CrashFinaleGenerator2SpeakBetaZoeyRVC",
+		criteria ConceptCrashFinaleGenerator2Speak IsBetazoeyrvc
+		Response CrashFinaleGenerator2SpeakTeenGirl
 	},
 
 	{
-		name = "SurvivorSpottedSpitter2Trevor",
-		criteria ConceptPlayerWarnSpitter IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated _auto_NotSpottedVehicle
-		Response SurvivorSpottedSpitterMechanic
+		name = "CrashFinaleGeneratorBreakSpkBetaZoeyRVC",
+		criteria ConceptCrashFinaleGeneratorBreakSpk IsBetazoeyrvc AutoIsNotSurvival
+		Response CrashFinaleGeneratorBreakSpkTeenGirl
 	},
 
 	{
-		name = "SurvivorSpottedSpitterC1Trevor",
-		criteria ConceptPlayerWarnSpecial IsSpecialTypeSpitter IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated C1M1orC1M2 NoKnowSpitter IsNotSpeakingWeight0 IsNotSurvival
-		Response SurvivorSpottedSpitterC1Mechanic
-		ApplyContext "SaidSpitterWarn:1:20,SaidSpecialWarn:1:30"
-		applycontexttoworld
+		name = "CrashFinaleGeneratorSpeakBetaZoeyRVC",
+		criteria ConceptCrashFinaleGeneratorSpeak IsBetazoeyrvc IsNotAlone
+		Response CrashFinaleGeneratorSpeakTeenGirl
 	},
 
 	{
-		name = "SurvivorSpottedSpitterAlsoC1Trevor",
-		criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeSpitter IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated C1M1orC1M2 NoKnowSpitter IsNotSurvival
-		Response SurvivorSpottedSpitterC1Mechanic
-		ApplyContext "SaidSpitterWarn:1:20,SaidSpecialWarn:1:30"
+		name = "CrashFinaleGenerator1NagBetaZoeyRVC",
+		criteria ConceptTalkIdle IsBetazoeyrvc IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsCrashCourse2 IsCrashGenerator1Nag ChanceToFire80Percent IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival _auto_NotFinaleStarted _auto_NotTimerLockA _auto_NotTimerLockBetazoeyrvc
+		Response CrashFinaleGenerator1NagTeenGirl
+		ApplyContext "_auto_TimerLockA:1:15,_auto_TimerLockBetazoeyrvc:1:30"
 		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedSpitter2C1Trevor",
-		criteria ConceptPlayerWarnSpitter IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated C1M1orC1M2 NoKnowSpitter IsNotSurvival
-		Response SurvivorSpottedSpitterC1Mechanic
 	},
 
 	{
-		name = "SurvivorSpottedTankTrevor",
-		criteria ConceptPlayerWarnSpecial IsSpecialTypeTank IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedTankMechanic
-		ApplyContext "SaidTankWarn:1:20,SaidTankWarn2:1:60"
+		name = "CrashFinaleTruckNagBetaZoeyRVC",
+		criteria ConceptGetToVehicle IsBetazoeyrvc IsCrashCourse2 IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsNotInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockBetazoeyrvc IsNotSpeakingWeight0
+		Response CrashFinaleTruckNagTeenGirl
+		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockBetazoeyrvc:1:30"
 		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedTank2Trevor",
-		criteria ConceptPlayerWarnTank IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated _auto_NotSpottedVehicle
-		Response SurvivorSpottedTankMechanic
 	},
 
 	{
-		name = "SurvivorSpottedTankC1Trevor",
-		criteria ConceptPlayerWarnSpecial IsSpecialTypeTank IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated C1M1orC1M2 IsNotSpeakingWeight0 IsNotSurvival
-		Response SurvivorSpottedTankC1Mechanic
-		ApplyContext "SaidTankWarn:1:20,SaidTankWarn2:1:60"
+		name = "CrashFinaleInsideTruckNagBetaZoeyRVC",
+		criteria ConceptGetToVehicle IsBetazoeyrvc IsCrashCourse2 IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockBetazoeyrvc IsNotSpeakingWeight0
+		Response CrashFinaleInsideTruckNagTeenGirl
+		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockBetazoeyrvc:1:30"
 		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorAlsoSpottedTankC1Trevor",
-		criteria ConceptPlayerWarnTank IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated C1M1orC1M2 IsNotSurvival
-		Response SurvivorSpottedTankC1Mechanic
 	},
 
 	{
-		name = "L4D1SpottedTankTrevor",
-		criteria ConceptPlayerWarnSpecial IsSpecialTypeTank IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated Isc6m3_port IsNotSpeakingWeight0 IsNotVersus IsNotSurvival _auto_NotSpottedVehicle
-		Response L4D1SpottedTankMechanic
-		ApplyContext "SaidTankWarn:1:20,SaidTankWarn2:1:60"
+		name = "CrashFinaleTruckResp01BetaZoeyRVC",
+		criteria ConceptCrashFinaleTruckResp01 IsBetazoeyrvc
+		Response CrashFinaleTruckResp01TeenGirl
+		ApplyContext "_auto_TimerLockA:1:10,CrashGenerator1Nag:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "L4D1SpottedTank2Trevor",
-		criteria ConceptPlayerWarnTank IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated Isc6m3_port IsNotVersus IsNotSurvival _auto_NotSpottedVehicle
-		Response L4D1SpottedTankMechanic
+		name = "CrashFinaleTruckResp02BetaZoeyRVC",
+		criteria ConceptCrashFinaleTruckResp02 IsBetazoeyrvc
+		Response CrashFinaleTruckResp02TeenGirl
+		then any CrashFinaleTruckResp01 foo:0 0.05
 	},
 
 	{
-		name = "SurvivorSpottedWitchTrevor",
-		criteria ConceptPlayerWarnSpecial IsSpecialTypeWitch IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSaidWitchStartAttack IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedWitchMechanic
-		ApplyContext "SaidWitchWarn:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedWitch2Trevor",
-		criteria ConceptPlayerWarnWitch IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSaidWitchStartAttack _auto_NotSpottedVehicle
-		Response SurvivorSpottedWitchMechanic
+		name = "CrashFinaleTruckRespZombie2BetaZoeyRVC",
+		criteria ConceptCrashFinaleTruckRespZombie2 IsBetazoeyrvc
+		Response CrashFinaleTruckRespZombie2TeenGirl
 	},
 
 	{
-		name = "SurvivorSpottedWitchC1Trevor",
-		criteria ConceptPlayerWarnSpecial IsSpecialTypeWitch IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSaidWitchStartAttack C1M1orC1M2 IsNotSpeakingWeight0
-		Response SurvivorSpottedWitchC1Mechanic
-		ApplyContext "SaidWitchWarn:1:20"
+		name = "L4D1CrashFinaleGeneratorNagBetaZoeyRVC",
+		criteria ConceptTalkIdle IsBetazoeyrvc IsNotCoughing IsCrashCourse2 IsTalk IsTalkBetazoeyrvc ChanceToFire60Percent IsCrashFinaleGeneratorBroken _auto_NotTimerLockA _auto_NotTimerLockBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotSurvival
+		Response L4D1CrashFinaleGeneratorNagTeenGirl
+		ApplyContext "_auto_TimerLockA:1:15,_auto_TimerLockBetazoeyrvc:1:25"
 		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedWitch2C1Trevor",
-		criteria ConceptPlayerWarnWitch IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotIncapacitated IsNotSaidWitchStartAttack C1M1orC1M2 IsNotSurvival
-		Response SurvivorSpottedWitch2C1Mechanic
 	},
 
 	{
-		name = "PlayerAlertGiveItemTrevor",
-		criteria ConceptPlayerAlertGiveItem IsNotCoughing IsTrevor IsTalk IsTalkTrevor NotInIntenseCombat IsWorldTalkTrevor
-		Response PlayerAlertGiveItemMechanic
+		name = "L4D1CrashFinaleGenUnPressSpeakBetaZoeyRVC",
+		criteria ConceptCrashFinaleGeneratorUnPressSpeak IsBetazoeyrvc
+		Response L4D1CrashFinaleGenUnPressSpeakTeenGirl
 	},
 
 	{
-		name = "PlayerAlertGiveItemCombatTrevor",
-		criteria ConceptPlayerAlertGiveItem IsNotCoughing IsTrevor IsTalk IsTalkTrevor InIntenseCombat IsWorldTalkTrevor
-		Response PlayerAlertGiveItemCombatMechanic
+		name = "L4D1CrashFinaleGen2UnPressSpeakBetaZoeyRVC",
+		criteria ConceptCrashFinaleGenerator2UnPressSpeak IsBetazoeyrvc
+		Response L4D1CrashFinaleGen2UnPressSpeakTeenGirl
 	},
 
 	{
-		name = "PlayerFaultFriendlyFireTrevor",
-		criteria IsFaultConcept IsFaultFriendlyFire IsTrevor
+		name = "L4D1SacrificeFinaleGenUnPressSpeakBetaZoeyRVC",
+		criteria ConceptCrashFinaleGeneratorUnPressSpeak IsBetazoeyrvc IsMapc7m3_port
 		Response NoResponse
-		ApplyContext "SaidFaultFriendlyFire:1:0.1,SaidFaultFriendlyFireTrevor:1:0.1,ShotTeammateTrevor:1:6"
+	},
+
+	{
+		name = "L4D1CrashFinaleTruckReadySpkBetaZoeyRVC",
+		criteria ConceptCrashFinaleTruckReadySpk IsBetazoeyrvc IsNotCoughing AutoIsNotSurvival
+		Response L4D1CrashFinaleTruckReadySpkTeenGirl
+		then any CrashFinaleTruckReadyResp foo:0 0.1
+	},
+
+	{
+		name = "L4D1CrashFinaleTruckReadyRespBetaZoeyRVC",
+		criteria ConceptCrashFinaleTruckReadyResp IsBetazoeyrvc IsNotCoughing
+		Response L4D1CrashFinaleTruckReadyRespTeenGirl
+	},
+
+	{
+		name = "L4D1PlayerRemarkcrashcourse02_path14BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse02_path14 IsNotSaidcrashcourse02_path14 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300 _auto_NotFinaleStarted IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkcrashcourse02_path14TeenGirl
+		then any CrashFinaleTruckResp01 foo:0 -2.954
+		ApplyContext "Saidcrashcourse02_path14:1:0,_auto_NoLostCall:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerFriendlyFireTrevor",
-		criteria ConceptPlayerFriendlyFire IsNotCoughing IsTrevor IsNotFriendlyFire IsNotIncapacitated IsNotOnThirdStrike IsDamageTypeBullet IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotZombiePresentTank
-		Response PlayerFriendlyFireMechanic
+		name = "CrashCourseR01BetaZoeyRVC",
+		criteria ConceptCrashCourseR01 IsBetazoeyrvc IssuerClose IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response CrashCourseR01TeenGirl
+	},
+
+	{
+		name = "CrashCourseR03BetaZoeyRVC",
+		criteria ConceptCrashCourseR03 IsBetazoeyrvc IssuerClose IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response CrashCourseR03TeenGirl
+	},
+
+	{
+		name = "CrashCourseR10BetaZoeyRVC",
+		criteria ConceptCrashCourseR10 IsBetazoeyrvc IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response CrashCourseR10TeenGirl
+	},
+
+	{
+		name = "CrashCourseR11BetaZoeyRVC",
+		criteria ConceptCrashCourseR11 IsBetazoeyrvc IssuerReallyClose IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response CrashCourseR11TeenGirl
+	},
+
+	{
+		name = "CrashCourseR12BetaZoeyRVC",
+		criteria ConceptCrashCourseR12 IsBetazoeyrvc IssuerReallyClose IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response CrashCourseR12TeenGirl
+		then biker CrashCourseR13 foo:0 0
+	},
+
+	{
+		name = "L4D1PlayerRemarkcrashcourse01_path05BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse01_path05 IsNotSaidcrashcourse01_path05 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear500 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkcrashcourse01_path05TeenGirl
+		ApplyContext "Saidcrashcourse01_path05:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkcrashcourse01_path06BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse01_path06 IsNotSaidcrashcourse01_path06 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkcrashcourse01_path06TeenGirl
+		ApplyContext "Saidcrashcourse01_path06:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkcrashcourse01_path10BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse01_path10 IsNotSaidcrashcourse01_path10 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear100 IsBikerAlive IsBikerNear400 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkcrashcourse01_path10TeenGirl
+		then Biker CrashCourseR02 foo:0 -4.193
+		ApplyContext "Saidcrashcourse01_path10:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "AUTOBLANK_L4D1PlayerRemarkcrashcourse01_path10BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse01_path10 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear100 IsBikerAlive IsBikerNear400 IsTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response _PlayerInfoRemarkableBlankTeenGirl
+		ApplyContext "Saidcrashcourse01_path10:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkcrashcourse01_path13BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse01_path13 IsNotSaidcrashcourse01_path13 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear400 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkcrashcourse01_path13TeenGirl
+		ApplyContext "Saidcrashcourse01_path13:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkcrashcourse01_path14BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse01_path14 IsNotSaidcrashcourse01_path14 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear400 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkcrashcourse01_path14TeenGirl
+		ApplyContext "Saidcrashcourse01_path14:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkcrashcourse01_path17BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse01_path17 IsNotSaidcrashcourse01_path17 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300 NotHowitzerFired IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkcrashcourse01_path17TeenGirl
+		ApplyContext "Saidcrashcourse01_path17:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkcrashcourse01_path18BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse01_path18 IsNotSaidcrashcourse01_path18 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300 NotHowitzerFired IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkcrashcourse01_path18TeenGirl
+		ApplyContext "Saidcrashcourse01_path18:1:0,HowitzerSeen:1:0,_auto_TimerLockA:1:15,_auto_TimerLockBetazoeyrvc:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkcrashcourse01_path24BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse01_path24 IsNotSaidSafeSpotAhead IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkcrashcourse01_path24TeenGirl
+		ApplyContext "SaidSafeSpotAhead:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkcrashcourse02_path02BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse02_path02 IsNotSaidcrashcourse02_path02 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear1000 ChanceToFire20Percent IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkcrashcourse02_path02TeenGirl
+		ApplyContext "Saidcrashcourse02_path02:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "AUTOBLANK_L4D1PlayerRemarkcrashcourse02_path02BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse02_path02 IsNotSaidcrashcourse02_path02 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear1000 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response _PlayerInfoRemarkableBlankTeenGirl
+		ApplyContext "Saidcrashcourse02_path02:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkcrashcourse02_path05BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse02_path05 IsNotSaidcrashcourse02_path05 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkcrashcourse02_path05TeenGirl
+		ApplyContext "Saidcrashcourse02_path05:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkcrashcourse02_path06BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse02_path06 IsNotSaidcrashcourse02_path06 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkcrashcourse02_path06TeenGirl
+		then Biker CrashCourseR10 foo:0 -3.614
+		ApplyContext "Saidcrashcourse02_path06:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkcrashcourse01_path26BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse01_path26 IsNotSaidcrashcourse01_path26 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear100 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkcrashcourse01_path26TeenGirl
+		ApplyContext "Saidcrashcourse01_path26:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkcrashcourse01_path27BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse01_path27 IsNotSaidcrashcourse01_path27 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear100 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkcrashcourse01_path27TeenGirl
+		ApplyContext "Saidcrashcourse02_path09:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkcrashcourse02_path10BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse02_path10 IsNotSaidcrashcourse02_path10 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear500 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkcrashcourse02_path10TeenGirl
+		ApplyContext "Saidcrashcourse02_path10:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkcrashcourse02_path12BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse02_path12 IsNotSaidcrashcourse02_path12 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkcrashcourse02_path12TeenGirl
+		ApplyContext "Saidcrashcourse02_path12:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "IntroCrashR01BetaZoeyRVC",
+		criteria ConceptIntroCrashR01 IsBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response IntroCrashR01TeenGirl
+		then Biker IntroCrashR02 foo:0 0.05
+	},
+
+	{
+		name = "IntroCrashR04BetaZoeyRVC",
+		criteria ConceptIntroCrashR04 IsBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response IntroCrashR04TeenGirl
+		then self IntroEnd foo:0 0.1
+	},
+
+	{
+		name = "IntroCrashR07BetaZoeyRVC",
+		criteria ConceptIntroCrashR07 IsBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response IntroCrashR07TeenGirl
+		then Biker IntroCrashR08 foo:0 0.05
+	},
+
+	{
+		name = "IntroCrashR09BetaZoeyRVC",
+		criteria ConceptIntroCrashR09 IsBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response IntroCrashR09TeenGirl
+		then any IntroCrashR10 foo:0 0.05
+	},
+
+	{
+		name = "IntroCrashR10BetaZoeyRVC",
+		criteria ConceptIntroCrashR10 IsBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response IntroCrashR10TeenGirl
+	},
+
+	{
+		name = "IntroCrashR11BetaZoeyRVC",
+		criteria ConceptIntroCrashR11 IsBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response IntroCrashR11TeenGirl
+		then Biker IntroCrashR12 foo:0 -1.1
+	},
+
+	{
+		name = "IntroCrashR19BetaZoeyRVC",
+		criteria ConceptIntroCrashR19 IsBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response IntroCrashR19TeenGirl
+		then Biker IntroCrashR20 foo:0 0.05
+	},
+
+	{
+		name = "IntroCrashR28BetaZoeyRVC",
+		criteria ConceptIntroCrashR28 IsBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response IntroCrashR28TeenGirl
+	},
+
+	{
+		name = "L4D1PlayerCrashCourseIntroBetaZoeyRVC",
+		criteria ConceptIntroCrash IsBetazoeyrvc IsNotSaidCXM1Intro IsNotAlone AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerCrashCourseIntroTeenGirl
+		then Biker IntroCrashR27 foo:0 -2.147
+		ApplyContext "CXM1Intro:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "CrashCourseI01BetaZoeyRVC",
+		criteria ConceptCrashCourseI01 IsBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response CrashCourseI01TeenGirl
+	},
+
+	{
+		name = "CrashCourseB01BetaZoeyRVC",
+		criteria ConceptCrashCourseB01 IsBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response CrashCourseB01TeenGirl
+		then biker CrashCourseB02 foo:0 -3.052
+		ApplyContext "CanadaBikerHate:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1C9M2SafeRoomBetaZoeyRVC",
+		criteria ConceptTalkIdle IsBetazoeyrvc NotInCombat IsInStartArea IsNotAlone IsNotSaidLeavingSafeArea IsCrashCourse2 AutoIsNotScavenge AutoIsNotSurvival _auto_NotSafeRoomQuiet _auto_IsSafeRoomStart IsNotSpeakingWeight0
+		Response L4D1C9M2SafeRoomTeenGirl
+		then any CrashCourseI01 foo:0 0.1
+		ApplyContext "_auto_SafeRoomStart:2:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1IntroFarm4BetaZoeyRVC",
+		criteria ConceptIntroFarm4 IsBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1IntroFarm4TeenGirl
+		then self IntroEnd foo:0 0.1
+	},
+
+	{
+		name = "L4D1SurvivorBoomerBlunderBetaZoeyRVC",
+		criteria IsFaultConcept IsFaultBoomerBlunder IsNotCoughing IsBetazoeyrvc IsHealthy IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1SurvivorBoomerBlunderTeenGirl
+	},
+
+	{
+		name = "L4D1SurvivorFinaleTriggeredBoatBetaZoeyRVC",
+		criteria ConceptFinaleTriggered IsTriggeredByBetazoeyrvc IsDeathToll5 _auto_NotFinaleStarted IsTalk IsTalkBetazoeyrvc IsBetazoeyrvc IsNotIncapacitated IsWorldTalkBetazoeyrvc
+		Response L4D1SurvivorFinaleTriggeredBoatTeenGirl
+		ApplyContext "_auto_Finale:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SurvivorFinaleTriggeredC11M5BetaZoeyRVC",
+		criteria ConceptFinaleTriggered IsTriggeredByBetazoeyrvc IsDeadAir5 _auto_NotFinaleStarted IsBetazoeyrvc AutoIsNotSurvival
+		Response L4D1SurvivorFinaleTriggeredC11M5TeenGirl
+		then orator_plane_radio ConceptBlock570 foo:0 0
+		ApplyContext "_auto_Finale:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SurvivorFinaleTriggeredFarmBetaZoeyRVC",
+		criteria ConceptFinaleTriggered IsTriggeredByBetazoeyrvc IsBloodHarvest5 _auto_NotFinaleStarted IsTalk IsTalkBetazoeyrvc IsBetazoeyrvc IsNotIncapacitated IsWorldTalkBetazoeyrvc
+		Response L4D1SurvivorFinaleTriggeredFarmTeenGirl
+		ApplyContext "_auto_Finale:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SurvivorFinaleTriggeredRooftopBetaZoeyRVC",
+		criteria ConceptFinaleTriggered IsTriggeredByBetazoeyrvc IsNoMercy5 _auto_NotFinaleStarted IsTalk IsTalkBetazoeyrvc IsBetazoeyrvc IsNotIncapacitated IsWorldTalkBetazoeyrvc
+		Response L4D1SurvivorFinaleTriggeredRooftopTeenGirl
+		ApplyContext "_auto_Finale:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SurvivorFinalVehicleBoatBetaZoeyRVC",
+		criteria ConceptGetToVehicle IsBetazoeyrvc IsDeathToll5 IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsNotInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockBetazoeyrvc IsNotSpeakingWeight0
+		Response L4D1SurvivorFinalVehicleBoatTeenGirl
+		then any EmphaticArriveRun foo:0 -1.569
+		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockBetazoeyrvc:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SurvivorFinalVehicleInsideBoatBetaZoeyRVC",
+		criteria ConceptGetToVehicle IsBetazoeyrvc IsDeathToll5 IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockBetazoeyrvc IsNotSpeakingWeight0
+		Response L4D1SurvivorFinalVehicleInsideBoatTeenGirl
+		then any EmphaticArriveRun foo:0 -1.344
+		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockBetazoeyrvc:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SurvivorFinalVehicleFarmBetaZoeyRVC",
+		criteria ConceptGetToVehicle IsBetazoeyrvc IsBloodHarvest5 IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsNotInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockBetazoeyrvc IsNotSpeakingWeight0
+		Response L4D1SurvivorFinalVehicleFarmTeenGirl
+		then any EmphaticArriveRun foo:0 -1.776
+		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockBetazoeyrvc:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SurvivorFinalVehicleInsideFarmBetaZoeyRVC",
+		criteria ConceptGetToVehicle IsBetazoeyrvc IsBloodHarvest5 IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockBetazoeyrvc IsNotSpeakingWeight0
+		Response L4D1SurvivorFinalVehicleInsideFarmTeenGirl
+		then any EmphaticArriveRun foo:0 -1.225
+		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockBetazoeyrvc:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SurvivorFinalVehicleFarmSpottedBetaZoeyRVC",
+		criteria ConceptFinalVehicleSpotted IsBetazoeyrvc IsBloodHarvest5 _auto_IsFinaleStarted
+		Response L4D1SurvivorFinalVehicleFarmSpottedTeenGirl
+		then any EmphaticArriveRunFarm foo:0 -1.615
+		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockBetazoeyrvc:1:30,_auto_Finale:2:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SurvivorFinalVehicleRooftopBetaZoeyRVC",
+		criteria ConceptGetToVehicle IsBetazoeyrvc IsNoMercy5 IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsNotInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockBetazoeyrvc IsNotSpeakingWeight0
+		Response L4D1SurvivorFinalVehicleRooftopTeenGirl
+		then any EmphaticArriveRun foo:0 -1.318
+		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockBetazoeyrvc:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SurvivorFinalVehicleInsideRooftopBetaZoeyRVC",
+		criteria ConceptGetToVehicle IsBetazoeyrvc IsNoMercy5 IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockBetazoeyrvc IsNotSpeakingWeight0
+		Response L4D1SurvivorFinalVehicleInsideRooftopTeenGirl
+		then any EmphaticArriveRun foo:0 -1.303
+		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockBetazoeyrvc:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SurvivorFinalVehicleRunwayBetaZoeyRVC",
+		criteria ConceptGetToVehicle IsBetazoeyrvc IsDeadAir5 IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsNotInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockBetazoeyrvc IsNotSpeakingWeight0
+		Response L4D1SurvivorFinalVehicleRunwayTeenGirl
+		then any EmphaticArriveRun foo:0 -1.644
+		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockBetazoeyrvc:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SurvivorFinalVehicleInsideRunwayBetaZoeyRVC",
+		criteria ConceptGetToVehicle IsBetazoeyrvc IsDeadAir5 IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockBetazoeyrvc IsNotSpeakingWeight0
+		Response L4D1SurvivorFinalVehicleInsideRunwayTeenGirl
+		then any EmphaticArriveRun foo:0 0.1
+		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockBetazoeyrvc:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SurvivorFinalVehicleSpottedBoatBetaZoeyRVC",
+		criteria ConceptFinalVehicleSpotted IsBetazoeyrvc IsDeathToll5 _auto_IsFinaleStarted
+		Response L4D1SurvivorFinalVehicleSpottedBoatTeenGirl
+		then any EmphaticArriveRun foo:0 -1.984
+		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockBetazoeyrvc:1:30,_auto_Finale:2:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SurvivorFinalVehicleSpottedRooftopBetaZoeyRVC",
+		criteria ConceptFinalVehicleSpotted IsBetazoeyrvc IsNoMercy5 _auto_IsFinaleStarted
+		Response L4D1SurvivorFinalVehicleSpottedRooftopTeenGirl
+		then any EmphaticArriveRun foo:0 -2.255
+		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockBetazoeyrvc:1:30,_auto_Finale:2:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SurvivorFinalVehicleSpottedRunwayBetaZoeyRVC",
+		criteria ConceptFinalVehicleSpotted IsBetazoeyrvc IsDeadAir5 _auto_IsFinaleStarted
+		Response L4D1SurvivorFinalVehicleSpottedRunwayTeenGirl
+		then orator_plane_radio ConceptBlockPlaneFull foo:0 0
+		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockBetazoeyrvc:1:30,_auto_Finale:2:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerShotCarNotBetaZoeyRVC",
+		criteria ConceptPanicEvent IsBetazoeyrvc IsNotCoughing IsTalk IsTalkBetazoeyrvc SubjectIsNotBetazoeyrvc ChanceToFire60Percent IsCarAlarm IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerShotCarNotTeenGirl
+		ApplyContext "Saidremark_caralarm:1:300"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerShotCarBetaZoeyRVC",
+		criteria ConceptPanicEvent IsBetazoeyrvc IsNotCoughing IsTalk IsTalkBetazoeyrvc SubjectIsBetazoeyrvc IsCarAlarm IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerShotCarTeenGirl
+		ApplyContext "Saidremark_caralarm:1:300"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1ResponseSoftDispleasureSwearBetaZoeyRVC",
+		criteria ConceptResponseSoftDispleasureSwear IsBetazoeyrvc IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IssuerMediumClose IsWorldTalkBetazoeyrvc
+		Response L4D1ResponseSoftDispleasureSwearTeenGirl
+	},
+
+	{
+		name = "L4D1SurvivorAskBillForHealthBetaZoeyRVC",
+		criteria ConceptAskForHealth2 IsBetazoeyrvc SubjectIsNamVet IsSubjectNear400
+		Response L4D1SurvivorAskBillForHealthTeenGirl
+	},
+
+	{
+		name = "L4D1SurvivorAskForHealthBetaZoeyRVC",
+		criteria ConceptPlayerLookHere IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsSubjectNear400 NoHasPainPills NoHasFirstAidKit IsNotHealthy NotInCombat IsNotSaidAskForHealth IsWorldTalkBetazoeyrvc
+		Response L4D1SurvivorAskForHealthTeenGirl
+		then Subject AskForHealth foo:0 0
+		ApplyContext "SaidAskForHealth:1:10"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SurvivorAskFrancisForHealthBetaZoeyRVC",
+		criteria ConceptAskForHealth2 IsBetazoeyrvc SubjectIsBiker IsSubjectNear400
+		Response L4D1SurvivorAskFrancisForHealthTeenGirl
+	},
+
+	{
+		name = "L4D1SurvivorAskLouisForHealthBetaZoeyRVC",
+		criteria ConceptAskForHealth2 IsBetazoeyrvc SubjectIsManager IsSubjectNear400
+		Response L4D1SurvivorAskLouisForHealthTeenGirl
+	},
+
+	{
+		name = "L4D1SurvivorFrancisHealthHereBetaZoeyRVC",
+		criteria ConceptAskForHealth IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc YesHasFirstAidKit IsHealthyHalf IsWorldTalkBetazoeyrvc
+		Response L4D1SurvivorFrancisHealthHereTeenGirl
+		then From AskForHealth2 foo:0 0
+	},
+
+	{
+		name = "L4D1SurvivorSpottedBillCloseBetaZoeyRVC",
+		criteria ConceptPlayerLookHere IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto SubjectIsNamVet IsNamVetNear400 IsWorldTalkBetazoeyrvc
+		Response L4D1SurvivorSpottedBillCloseTeenGirl
+	},
+
+	{
+		name = "L4D1SurvivorSpottedBillClose2BetaZoeyRVC",
+		criteria ConceptPlayerLook IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto SubjectIsNamVet IsNamVetNear400 IsWorldTalkBetazoeyrvc
+		Response L4D1SurvivorSpottedBillCloseTeenGirl
+	},
+
+	{
+		name = "L4D1SurvivorSpottedBillFarBetaZoeyRVC",
+		criteria ConceptPlayerLook IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto SubjectIsNamVet IsNamVetFar400 IsWorldTalkBetazoeyrvc
+		Response L4D1SurvivorSpottedBillFarTeenGirl
+	},
+
+	{
+		name = "L4D1SurvivorSpottedFrancisCloseBetaZoeyRVC",
+		criteria ConceptPlayerLookHere IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto SubjectIsBiker IsBikerNear400 IsWorldTalkBetazoeyrvc
+		Response L4D1SurvivorSpottedFrancisCloseTeenGirl
+	},
+
+	{
+		name = "L4D1SurvivorSpottedFrancisClose2BetaZoeyRVC",
+		criteria ConceptPlayerLook IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto SubjectIsBiker IsBikerNear400 IsWorldTalkBetazoeyrvc
+		Response L4D1SurvivorSpottedFrancisCloseTeenGirl
+	},
+
+	{
+		name = "L4D1SurvivorSpottedFrancisFarBetaZoeyRVC",
+		criteria ConceptPlayerLook IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto SubjectIsBiker IsBikerFar400 IsWorldTalkBetazoeyrvc
+		Response L4D1SurvivorSpottedFrancisFarTeenGirl
+	},
+
+	{
+		name = "L4D1SurvivorSpottedLouisCloseBetaZoeyRVC",
+		criteria ConceptPlayerLookHere IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto SubjectIsManager IsManagerNear400 IsWorldTalkBetazoeyrvc
+		Response L4D1SurvivorSpottedLouisCloseTeenGirl
+	},
+
+	{
+		name = "L4D1SurvivorSpottedLouisClose2BetaZoeyRVC",
+		criteria ConceptPlayerLook IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto SubjectIsManager IsManagerNear400 IsWorldTalkBetazoeyrvc
+		Response L4D1SurvivorSpottedLouisCloseTeenGirl
+	},
+
+	{
+		name = "L4D1SurvivorSpottedLouisFarBetaZoeyRVC",
+		criteria ConceptPlayerLook IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto SubjectIsManager IsManagerFar400 IsWorldTalkBetazoeyrvc
+		Response L4D1SurvivorSpottedLouisFarTeenGirl
+	},
+
+	{
+		name = "L4D1SurvivorSpottedWorldCloseBetaZoeyRVC",
+		criteria ConceptPlayerLookHere IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsWorldTalkBetazoeyrvc
+		Response L4D1SurvivorSpottedWorldCloseTeenGirl
+	},
+
+	{
+		name = "SurvivorSpottedAmmoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsAmmo IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedAmmoTeenGirl
+		ApplyContext "SaidSpotAmmo:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedAmmoAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsAmmo IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotAmmo IsNotSaidSpot IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedAmmoTeenGirl
+		ApplyContext "SaidSpotAmmo:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedAmmo2BetaZoeyRVC",
+		criteria ConceptPlayerSpotAmmo IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotInSafeSpot IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedAmmoTeenGirl
+	},
+
+	{
+		name = "SurvivorSpottedGrenadeBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsPipeBomb IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedGrenadeTeenGirl
+		ApplyContext "SaidSpotGrenade:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedGrenadeAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotGrenade IsNotSaidSpot IsPipeBomb IsWorldTalkBetazoeyrvc YesHasGrenade IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedGrenadeTeenGirl
+		ApplyContext "SaidSpotGrenade:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedHealthBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsFirstAidKit IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedHealthTeenGirl
+		ApplyContext "SaidSpotHealth:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedHealthAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotHealth IsNotSaidSpot IsFirstAidKit IsWorldTalkBetazoeyrvc YesHasFirstAidKit IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedHealthTeenGirl
+		ApplyContext "SaidSpotHealth:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedMolotovBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsMolotov IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedMolotovTeenGirl
+		ApplyContext "SaidSpotMolotov:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedMolotovAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotMolotov IsNotSaidSpot IsMolotov IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedMolotovTeenGirl
+		ApplyContext "SaidSpotMolotov:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedVomitJarBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsVomitjar IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedVomitJarTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotVomitJar:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedVomitJarAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotMolotov IsNotSaidSpot IsVomitjar IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedVomitJarTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotVomitJar:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedPillsBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsPainPills IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedPillsTeenGirl
+		ApplyContext "SaidSpotPills:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedPillsAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotPills IsNotSaidSpot IsPainPills IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedPillsTeenGirl
+		ApplyContext "SaidSpotPills:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedAdrenalineBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsAdrenaline IsNotAlone IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedAdrenalineTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotAdrenaline:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedAdrenalineAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotAdrenaline IsNotSaidSpot IsAdrenaline IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedAdrenalineTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotAdrenaline:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedDefibrillatorBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsDefibrillator IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedAdrenalineTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotDefibrillator:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedDefibrillatorAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidDefibrillator IsNotSaidSpot IsDefibrillator IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedAdrenalineTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotDefibrillator:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedIncendiaryAmmoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsUpgradePack_Incendiary IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedAdrenalineTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotUpgradePack_Incendiary:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedIncendiaryAmmoAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotUpgradePack_Incendiary IsNotSaidSpot IsUpgradePack_Incendiary IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedAdrenalineTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotUpgradePack_Incendiary:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedExplosiveAmmoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsUpgradePack_Explosive IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedAdrenalineTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotUpgradePack_Explosive:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedExplosiveAmmoAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotUpgradePack_Explosive IsNotSaidSpot IsUpgradePack_Explosive IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedAdrenalineTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotUpgradePack_Explosive:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedLaserSightsBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsLaserSights IsWorldTalkBetazoeyrvc
+		Response SurvivorSpottedAdrenalineTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedLaserSightsAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsLaserSights IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0
+		Response SurvivorSpottedAdrenalineTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorBotPickupLaserSightsSpottedBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpLaserSights IsNotSpeaking IsBotIsAvailable IsNotInStartArea IsNotInCheckpoint IsNotInSafeSpot IsNotSaidSpotWeapons IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedAdrenalineTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SurvivorMovingToBattleStationBetaZoeyRVC",
+		criteria ConceptBotMovingToBattleStation IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSaidCreshendoStartNear IsNotSaidBattleStations IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotFinaleStarted AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1SurvivorMovingToBattleStationTeenGirl
+		ApplyContext "SaidBattleStations:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SurvivorSpottedCreshendoBetaZoeyRVC",
+		criteria ConceptPlayerLookHere IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotSaidCreshendoStartNear IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0
+		Response L4D1SurvivorSpottedCreshendoTeenGirl
+		ApplyContext "SaidCreshendoStartNear:1:10"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SpottedBoomerBetaZoeyRVC",
+		criteria ConceptPlayerWarnSpecial IsSpecialTypeBoomer IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotIncapacitated IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response L4D1SpottedBoomerTeenGirl
+		ApplyContext "SaidBoomerWarn:1:20,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SpottedBoomerAlsoBetaZoeyRVC",
+		criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeBoomer IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotIncapacitated _auto_NotSpottedVehicle
+		Response L4D1SpottedBoomerTeenGirl
+		ApplyContext "SaidBoomerWarn:1:20,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SpottedBoomer2BetaZoeyRVC",
+		criteria ConceptPlayerWarnBoomer IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotIncapacitated _auto_NotSpottedVehicle
+		Response L4D1SpottedBoomerTeenGirl
+	},
+
+	{
+		name = "L4D1SpottedHunterBetaZoeyRVC",
+		criteria ConceptPlayerWarnSpecial IsSpecialTypeHunter IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotIncapacitated IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response L4D1SpottedHunterTeenGirl
+		ApplyContext "SaidHunterWarn:1:20,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SpottedHunterAlsoBetaZoeyRVC",
+		criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeHunter IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotIncapacitated _auto_NotSpottedVehicle
+		Response L4D1SpottedHunterTeenGirl
+		ApplyContext "SaidHunterWarn:1:20,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SpottedHunter2BetaZoeyRVC",
+		criteria ConceptPlayerWarnHunter IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotIncapacitated _auto_NotSpottedVehicle
+		Response L4D1SpottedHunterTeenGirl
+	},
+
+	{
+		name = "L4D1SpottedSmokerBetaZoeyRVC",
+		criteria ConceptPlayerWarnSpecial IsSpecialTypeSmoker IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotIncapacitated IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response L4D1SpottedSmokerTeenGirl
+		ApplyContext "SaidSmokerWarn:1:20,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SpottedSmokerAlsoBetaZoeyRVC",
+		criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeSmoker IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotIncapacitated _auto_NotSpottedVehicle
+		Response L4D1SpottedSmokerTeenGirl
+		ApplyContext "SaidSmokerWarn:1:20,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SpottedSmoker2BetaZoeyRVC",
+		criteria ConceptPlayerWarnSmoker IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotIncapacitated _auto_NotSpottedVehicle
+		Response L4D1SpottedSmokerTeenGirl
+	},
+
+	{
+		name = "L4D1SpottedChargerBetaZoeyRVC",
+		criteria ConceptPlayerWarnSpecial IsSpecialTypeCharger IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotIncapacitated IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response L4D1SpottedChargerTeenGirl
+		ApplyContext "SaidChargerWarn:1:20,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SpottedChargerAlsoBetaZoeyRVC",
+		criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeCharger IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotIncapacitated _auto_NotSpottedVehicle
+		Response L4D1SpottedChargerTeenGirl
+		ApplyContext "SaidChargerWarn:1:20,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SpottedCharger2BetaZoeyRVC",
+		criteria ConceptPlayerWarnCharger IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotIncapacitated _auto_NotSpottedVehicle
+		Response L4D1SpottedChargerTeenGirl
+	},
+
+	{
+		name = "L4D1SpottedJockeyBetaZoeyRVC",
+		criteria ConceptPlayerWarnSpecial IsSpecialTypeJockey IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotIncapacitated IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response L4D1SpottedJockeyTeenGirl
+		ApplyContext "SaidJockeyWarn:1:20,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SpottedJockeyAlsoBetaZoeyRVC",
+		criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeJockey IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotIncapacitated _auto_NotSpottedVehicle
+		Response L4D1SpottedJockeyTeenGirl
+		ApplyContext "SaidJockeyWarn:1:20,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SpottedJockey2BetaZoeyRVC",
+		criteria ConceptPlayerWarnJockey IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotIncapacitated _auto_NotSpottedVehicle
+		Response L4D1SpottedJockeyTeenGirl
+	},
+
+	{
+		name = "L4D1SpottedSpitterBetaZoeyRVC",
+		criteria ConceptPlayerWarnSpecial IsSpecialTypeSpitter IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotIncapacitated IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response L4D1SpottedSpitterTeenGirl
+		ApplyContext "SaidSpitterWarn:1:20,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SpottedSpitterAlsoBetaZoeyRVC",
+		criteria ConceptPlayerAlsoWarnSpecial IsSpecialTypeSpitter IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotIncapacitated _auto_NotSpottedVehicle
+		Response L4D1SpottedSpitterTeenGirl
+		ApplyContext "SaidSpitterWarn:1:20,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SpottedSpitter2BetaZoeyRVC",
+		criteria ConceptPlayerWarnSpitter IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotIncapacitated _auto_NotSpottedVehicle
+		Response L4D1SpottedSpitterTeenGirl
+	},
+
+	{
+		name = "L4D1SurvivorSpottedInfectedBetaZoeyRVC",
+		criteria ConceptPlayerIncoming IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotIncapacitated _auto_NotSpottedVehicle
+		Response L4D1SurvivorSpottedInfectedTeenGirl
+	},
+
+	{
+		name = "SurvivorSpottedTankBetaZoeyRVC",
+		criteria ConceptPlayerWarnSpecial IsSpecialTypeTank IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotIncapacitated IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedTankTeenGirl
+		ApplyContext "SaidTankWarn:1:20,SaidTankWarn2:1:60"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedTank2BetaZoeyRVC",
+		criteria ConceptPlayerWarnTank IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotIncapacitated _auto_NotSpottedVehicle
+		Response SurvivorSpottedTankTeenGirl
+	},
+
+	{
+		name = "L4D1SpottedTankBetaZoeyRVC",
+		criteria ConceptPlayerWarnSpecial IsSpecialTypeTank IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotIncapacitated Isc6m3_port IsNotSpeakingWeight0 IsNotVersus IsNotSurvival _auto_NotSpottedVehicle
+		Response L4D1SpottedTankTeenGirl
+		ApplyContext "SaidTankWarn:1:20,SaidTankWarn2:1:60"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SpottedTank2BetaZoeyRVC",
+		criteria ConceptPlayerWarnTank IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotIncapacitated Isc6m3_port IsNotVersus IsNotSurvival _auto_NotSpottedVehicle
+		Response L4D1SpottedTankTeenGirl
+	},
+
+	{
+		name = "SurvivorSpottedWitchBetaZoeyRVC",
+		criteria ConceptPlayerWarnSpecial IsSpecialTypeWitch IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotIncapacitated IsNotSaidWitchStartAttack IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedWitchTeenGirl
+		ApplyContext "SaidWitchWarn:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedWitch2BetaZoeyRVC",
+		criteria ConceptPlayerWarnWitch IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotIncapacitated IsNotSaidWitchStartAttack _auto_NotSpottedVehicle
+		Response SurvivorSpottedWitchTeenGirl
+	},
+
+	{
+		name = "L4D1EmphaticArriveRunBetaZoeyRVC",
+		criteria ConceptEmphaticArriveRun IsNotCoughing IsBetazoeyrvc IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1EmphaticArriveRunTeenGirl
+	},
+
+	{
+		name = "L4D1PlayerAlertGiveItemBetaZoeyRVC",
+		criteria ConceptPlayerAlertGiveItem IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerAlertGiveItemTeenGirl
+	},
+
+	{
+		name = "L4D1PlayerFaultFriendlyFireBetaZoeyRVC",
+		criteria IsFaultConcept IsFaultFriendlyFire IsBetazoeyrvc
+		Response NoResponse
+		ApplyContext "SaidFaultFriendlyFireBetazoeyrvc:1:0.1,SaidFaultFriendlyFire:1:0.1,ShotTeammateBetazoeyrvc:1:6"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerFriendlyFireBetaZoeyRVC",
+		criteria ConceptPlayerFriendlyFire IsNotCoughing IsBetazoeyrvc IsNotFriendlyFire IsNotIncapacitated IsDamageTypeBullet IsNotOnThirdStrike IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotZombiePresentTank
+		Response L4D1PlayerFriendlyFireTeenGirl
 		ApplyContext "FriendlyFire:1:10"
 	},
 
 	{
-		name = "PlayerFriendlyFire2Trevor",
-		criteria ConceptPlayerFriendlyFire IsNotCoughing IsTrevor IsNotFriendlyFire IsNotIncapacitated IsNotDamageTypeExplosive IsOnThirdStrike IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotZombiePresentTank
-		Response PlayerFriendlyFire2Mechanic
+		name = "L4D1PlayerFriendlyFire2BetaZoeyRVC",
+		criteria ConceptPlayerFriendlyFire IsNotCoughing IsBetazoeyrvc IsNotFriendlyFire IsNotIncapacitated IsNotDamageTypeExplosive IsOnThirdStrike IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotZombiePresentTank
+		Response L4D1PlayerFriendlyFire2TeenGirl
 		ApplyContext "FriendlyFire:1:10"
 	},
 
 	{
-		name = "PlayerFriendlyFireC1Trevor",
-		criteria ConceptPlayerFriendlyFire IsNotCoughing IsTrevor IsNotFriendlyFire IsNotIncapacitated IsNotOnThirdStrike IsDamageTypeBullet IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotZombiePresentTank ismap_c1m1_hotel NoKnowNames
-		Response PlayerFriendlyFireC1Mechanic
+		name = "L4D1PlayerFriendlyFireFromBillBetaZoeyRVC",
+		criteria ConceptPlayerFriendlyFire IsNotCoughing IsBetazoeyrvc IsNotFriendlyFire IsNotIncapacitated IsDamageTypeBullet IsNotOnThirdStrike IsTalk IsTalkBetazoeyrvc SubjectIsNamVet ChanceToFire30Percent IsWorldTalkBetazoeyrvc IsNotZombiePresentTank
+		Response L4D1PlayerFriendlyFireFromBillTeenGirl
 		ApplyContext "FriendlyFire:1:10"
 	},
 
 	{
-		name = "PlayerFriendlyFireFromCoachTrevor",
-		criteria ConceptPlayerFriendlyFire IsNotCoughing IsTrevor IsNotFriendlyFire IsNotIncapacitated IsNotOnThirdStrike IsDamageTypeBullet IsTalk IsTalkTrevor SubjectIsCoach ChanceToFire30Percent IsWorldTalkTrevor IsNotZombiePresentTank isNotmap_c1m1_hotel
-		Response PlayerFriendlyFireFromCoachMechanic
+		name = "L4D1PlayerFriendlyFireFromFrancisBetaZoeyRVC",
+		criteria ConceptPlayerFriendlyFire IsNotCoughing IsBetazoeyrvc IsNotFriendlyFire IsNotIncapacitated IsDamageTypeBullet IsNotOnThirdStrike IsTalk IsTalkBetazoeyrvc SubjectIsBiker ChanceToFire30Percent IsWorldTalkBetazoeyrvc IsNotZombiePresentTank
+		Response L4D1PlayerFriendlyFireFromFrancisTeenGirl
 		ApplyContext "FriendlyFire:1:10"
 	},
 
 	{
-		name = "PlayerFriendlyFireFromCoachC1Trevor",
-		criteria ConceptPlayerFriendlyFire IsNotCoughing IsTrevor IsNotFriendlyFire IsNotIncapacitated IsNotOnThirdStrike IsDamageTypeBullet IsTalk IsTalkTrevor SubjectIsCoach ChanceToFire50Percent IsWorldTalkTrevor IsNotZombiePresentTank ismap_c1m1_hotel NoKnowNames
-		Response PlayerFriendlyFireFromCoachC1Mechanic
+		name = "L4D1PlayerFriendlyFireFromLouisBetaZoeyRVC",
+		criteria ConceptPlayerFriendlyFire IsNotCoughing IsBetazoeyrvc IsNotFriendlyFire IsNotIncapacitated IsDamageTypeBullet IsNotOnThirdStrike IsTalk IsTalkBetazoeyrvc SubjectIsManager ChanceToFire30Percent IsWorldTalkBetazoeyrvc IsNotZombiePresentTank
+		Response L4D1PlayerFriendlyFireFromLouisTeenGirl
 		ApplyContext "FriendlyFire:1:10"
 	},
 
 	{
-		name = "PlayerFriendlyFireFromGamblerTrevor",
-		criteria ConceptPlayerFriendlyFire IsNotCoughing IsTrevor IsNotFriendlyFire IsNotIncapacitated IsNotOnThirdStrike IsDamageTypeBullet IsTalk IsTalkTrevor SubjectIsGambler ChanceToFire50Percent IsWorldTalkTrevor IsNotZombiePresentTank isNotmap_c1m1_hotel
-		Response PlayerFriendlyFireFromGamblerMechanic
+		name = "L4D1PlayerFriendlyFireNoBulletBetaZoeyRVC",
+		criteria ConceptPlayerFriendlyFire IsNotCoughing IsBetazoeyrvc IsNotFriendlyFire IsNotIncapacitated IsNotOnThirdStrike IsNotDamageTypeBullet IsNotDamageTypeExplosive IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotZombiePresentTank
+		Response L4D1PlayerFriendlyFireNoBulletTeenGirl
 		ApplyContext "FriendlyFire:1:10"
 	},
 
 	{
-		name = "PlayerFriendlyFireFromProducerTrevor",
-		criteria ConceptPlayerFriendlyFire IsNotCoughing IsTrevor IsNotFriendlyFire IsNotIncapacitated IsNotOnThirdStrike IsDamageTypeBullet IsTalk IsTalkTrevor SubjectIsProducer ChanceToFire30Percent IsWorldTalkTrevor IsNotZombiePresentTank isNotmap_c1m1_hotel
-		Response PlayerFriendlyFireFromProducerMechanic
-		ApplyContext "FriendlyFire:1:10"
-	},
-
-	{
-		name = "PlayerFriendlyFireFromProducerC1Trevor",
-		criteria ConceptPlayerFriendlyFire IsNotCoughing IsTrevor IsNotFriendlyFire IsNotIncapacitated IsNotOnThirdStrike IsDamageTypeBullet IsTalk IsTalkTrevor SubjectIsProducer ChanceToFire50Percent IsWorldTalkTrevor IsNotZombiePresentTank ismap_c1m1_hotel NoKnowNames
-		Response PlayerFriendlyFireFromProducerC1Mechanic
-		ApplyContext "FriendlyFire:1:10"
-	},
-
-	{
-		name = "PlayerFriendlyFireNoBulletTrevor",
-		criteria ConceptPlayerFriendlyFire IsNotCoughing IsTrevor IsNotFriendlyFire IsNotIncapacitated IsNotOnThirdStrike IsNotDamageTypeBullet IsNotDamageTypeExplosive IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotZombiePresentTank
-		Response PlayerFriendlyFireNoBulletMechanic
-		ApplyContext "FriendlyFire:1:10"
-	},
-
-	{
-		name = "PlayerFriendlyFireNoBulletC1Trevor",
-		criteria ConceptPlayerFriendlyFire IsNotCoughing IsTrevor IsNotFriendlyFire IsNotIncapacitated IsNotOnThirdStrike IsNotDamageTypeBullet IsNotDamageTypeExplosive IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotZombiePresentTank ismap_c1m1_hotel NoKnowNames
-		Response PlayerFriendlyFireNoBulletC1Mechanic
-		ApplyContext "FriendlyFire:1:10"
-	},
-
-	{
-		name = "PlayerFriendlyFireTankTrevor",
-		criteria ConceptPlayerFriendlyFire IsNotCoughing IsTrevor IsNotFriendlyFire IsNotIncapacitated IsDamageTypeBullet IsTalk IsTalkTrevor IsZombiePresentTank IsSaidTankWarn2 IsNotIncapacitated IsWorldTalkTrevor isNotmap_c1m1_hotel isNotmap_c1m2_streets
-		Response PlayerFriendlyFireTankMechanic
-		ApplyContext "FriendlyFire:1:10"
-	},
-
-	{
-		name = "PlayerFriendlyFireTankCoachTrevor",
-		criteria ConceptPlayerFriendlyFire IsNotCoughing IsTrevor IsNotFriendlyFire IsNotIncapacitated IsDamageTypeBullet IsTalk IsTalkTrevor IsZombiePresentTank IsSaidTankWarn2 ChanceToFire30Percent IsNotIncapacitated SubjectIsCoach IsWorldTalkTrevor isNotmap_c1m1_hotel isNotmap_c1m2_streets
-		Response PlayerFriendlyFireTankCoachMechanic
-		ApplyContext "FriendlyFire:1:10"
-	},
-
-	{
-		name = "PlayerFriendlyFireTankGamblerTrevor",
-		criteria ConceptPlayerFriendlyFire IsNotCoughing IsTrevor IsNotFriendlyFire IsNotIncapacitated IsDamageTypeBullet IsTalk IsTalkTrevor IsZombiePresentTank IsSaidTankWarn2 ChanceToFire30Percent IsNotIncapacitated SubjectIsGambler IsWorldTalkTrevor isNotmap_c1m1_hotel isNotmap_c1m2_streets
-		Response PlayerFriendlyFireTankGamblerMechanic
-		ApplyContext "FriendlyFire:1:10"
-	},
-
-	{
-		name = "PlayerFriendlyFireTankProducerTrevor",
-		criteria ConceptPlayerFriendlyFire IsNotCoughing IsTrevor IsNotFriendlyFire IsNotIncapacitated IsDamageTypeBullet IsTalk IsTalkTrevor IsZombiePresentTank IsSaidTankWarn2 ChanceToFire30Percent IsNotIncapacitated SubjectIsProducer IsWorldTalkTrevor isNotmap_c1m1_hotel isNotmap_c1m2_streets
-		Response PlayerFriendlyFireTankProducerMechanic
-		ApplyContext "FriendlyFire:1:10"
-	},
-
-	{
-		name = "PlayerToTheRescueTrevor",
-		criteria ConceptSurvivorBotMovingToReviveFriend IsNotCoughing IsTrevor IsTalk IsTalkTrevor NotInCombat IsNotSaidRescueComing IsDistanceSubjectO600 IsWorldTalkTrevor
-		Response PlayerToTheRescueMechanic
+		name = "L4D1PlayerToTheRescueBetaZoeyRVC",
+		criteria ConceptSurvivorBotMovingToReviveFriend IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc NotInCombat IsNotSaidRescueComing IsDistanceSubjectO600 IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerToTheRescueTeenGirl
 		ApplyContext "SaidRescueComing:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerToTheRescueRosTrevor",
-		criteria ConceptPlayerToTheRescue IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerToTheRescueRosMechanic
+		name = "L4D1SurvivorTauntResponseBetaZoeyRVC",
+		criteria ConceptPlayerTaunt IsSurvivor IsNotSpeaking IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotVersus
+		Response L4D1SurvivorTauntResponseTeenGirl
 	},
 
 	{
-		name = "SurvivorTauntResponseTrevor",
-		criteria ConceptPlayerTaunt IsSurvivor IsNotSpeaking IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotVersus
-		Response SurvivorTauntResponseMechanic
+		name = "PlayerToTheRescueRosBetaZoeyRVC",
+		criteria ConceptPlayerToTheRescue IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response PlayerToTheRescueRosTeenGirl
 	},
 
 	{
-		name = "C4M1IdleComment01Trevor",
-		criteria ConceptTalkIdle ChanceToFire40Percent IsSurvivor ismap_c4m1_milltown_a IsSaidc4m1_nogas IsNotSpeaking IsTrevor IsNotIncapacitated IsTalk IsTalkTrevor NotInCombat IsWorldTalkTrevor TimeSinceGroupInCombat02 AutoIsNotScavenge AutoIsNotSurvival _auto_NotNoGasGate
-		Response C4M1IdleComment01Mechanic
-		ApplyContext "Talk:1:4.299,_auto_NoGasGate:2:0"
-		applycontexttoworld
+		name = "L4D1PlayerChokeResponseBetaZoeyRVC",
+		criteria ConceptPlayerChoke IsSurvivor IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerChokeResponseTeenGirl
+		ApplyContext "TalkBetazoeyrvc:1:5"
 	},
 
 	{
-		name = "C4M2IdleCommentCane01Trevor",
-		criteria ConceptTalkIdle ChanceToFire60Percent IsSurvivor ismap_c4m2_sugarmill_a IsNotSpeaking IsTrevor IsNotIncapacitated IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival _auto_IsTrevorInCane _auto_NotCaneYellGated _auto_NotLastSurvivorTalkedTrevor
-		Response C4M2IdleCommentCane01Mechanic
-		then any _c4m2_caneyell01 foo:0 0.01
-		ApplyContext "_auto_CaneYellGated:1:10,_auto_LastSurvivorTalkedTrevor:1:15"
-		applycontexttoworld
+		name = "L4D1SurvivorCriticalHurtBetaZoeyRVC",
+		criteria IsSurvivor InPain IsCriticalPain IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1SurvivorCriticalHurtTeenGirl
 	},
 
 	{
-		name = "PlayerChokeResponseTrevor",
-		criteria ConceptPlayerChoke IsSurvivor IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerChokeResponseMechanic
-		ApplyContext "TalkTrevor:1:5"
-	},
-
-	{
-		name = "PlayerChokeResponseC1Trevor",
-		criteria ConceptPlayerChoke IsSurvivor IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2 NoKNowSmoker IsNotSurvival
-		Response PlayerChokeResponseC1Mechanic
-		ApplyContext "TalkTrevor:1:5"
-	},
-
-	{
-		name = "PlayerReloadingC502RunTrevor",
-		criteria ConceptPlayerReloading IsSurvivor IsNotSpeaking IsTrevor IsNotIncapacitated IsMapc5m2_park IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotZombiePresentTank ChanceToFire50Percent _auto_IsAlarm
-		Response PlayerReloadingC502RunMechanic
-	},
-
-	{
-		name = "PlayerReloadingTankTrevor",
-		criteria ConceptPlayerReloading IsSurvivor IsNotSpeaking IsTrevor IsNotIncapacitated IsTalk IsTalkTrevor IsNotSaidReloadingTank IsZombiePresentTank IsSaidTankWarn2 IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response PlayerReloadingTankMechanic
-		ApplyContext "SaidReloadingTank:1:10,SaidTankWarn2:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerReloadingTankC1Trevor",
-		criteria ConceptPlayerReloading IsSurvivor IsNotSpeaking IsTrevor IsNotIncapacitated IsTalk IsTalkTrevor IsNotSaidReloadingTank IsZombiePresentTank IsSaidTankWarn2 IsWorldTalkTrevor C1M1orC1M2 IsNotSurvival
-		Response PlayerReloadingTankC1Mechanic
-		ApplyContext "SaidReloadingTank:1:10,SaidTankWarn2:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerWitchChasingTrevor",
-		criteria ConceptPlayerExertionMinor IsTrevor IsWitchPresent SubjectIsNotWitch IsNotSaidWitchChasing IsSaidWitchAttacking IsTalkTrevor IsNotmap_c4m2 IsNotc6m1_riverbank IsWitchAggro
-		Response PlayerWitchChasingMechanic
-		ApplyContext "SaidWitchChasing:1:5,TalkTrevor:1:2"
-	},
-
-	{
-		name = "PlayerWitchChasingC6M1Trevor",
-		criteria ConceptPlayerExertionMinor IsTrevor IsWitchPresent SubjectIsNotWitch IsNotSaidWitchChasing IsSaidWitchAttacking IsTalkTrevor isc6m1_riverbank IsWitchAggro
-		// 	forceweight 20
-		Response PlayerWitchChasingC6M1Mechanic
-		ApplyContext "SaidWitchChasing:1:15,TalkTrevor:1:2,SaidWitchStartAttack:1:15"
-	},
-
-	{
-		name = "PlayerWitchStartAttackC6M1Trevor",
-		criteria IsFaultConcept IsTrevor IsFaultWitchHarassment Isc6m1_riverbank
-		Response PlayerWitchStartAttackC6M1Mechanic
-		ApplyContext "SaidWitchAttacking:1:15,TalkTrevor:1:4,SaidWitchStartAttack:1:15"
-	},
-
-	{
-		name = "PlayerWitchStartAttackTrevor",
-		criteria IsFaultConcept IsTrevor IsFaultWitchHarassment
-		Response PlayerWitchStartAttackMechanic
-		ApplyContext "SaidWitchAttacking:1:15,TalkTrevor:1:2,SaidWitchStartAttack:1:15"
-	},
-
-	{
-		name = "WitchAggroTrevor",
-		criteria ConceptWitchStartAttack IsTrevor Iswitch_aggro_onTrevor
+		name = "L4D1SurvivorCriticalHurtC7M3BetaZoeyRVC",
+		criteria IsSurvivor InPain IsCriticalPain IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc Ismapc7m3_port _auto_IsSaidC7M3BridgeLeap IsWorldTalkBetazoeyrvc
 		Response NoResponse
-		ApplyContext "WitchAggro:++1"
-		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorCriticalHurtTrevor",
-		criteria IsSurvivor InPain IsCriticalPain IsTrevor IsTalk IsTalkTrevor SubjectIsNotJockey IsWorldTalkTrevor
-		Response SurvivorCriticalHurtMechanic
+		name = "L4D1SurvivorIncapacitatedHurtBetaZoeyRVC",
+		criteria IsSurvivor InPain IsNotSpeaking IsIncapacitatedPain IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1SurvivorIncapacitatedHurtTeenGirl
 	},
 
 	{
-		name = "SurvivorIncapacitatedHurtTrevor",
-		criteria IsSurvivor InPain IsNotSpeaking IsIncapacitatedPain IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response SurvivorIncapacitatedHurtMechanic
+		name = "L4D1SurvivorMajorHurtBetaZoeyRVC",
+		criteria IsSurvivor InPain IsMajorPain IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1SurvivorMajorHurtTeenGirl
 	},
 
 	{
-		name = "SurvivorJockeyHurtMajorTrevor",
-		criteria IsSurvivor InPain IsMajorPain IsTrevor IsTalk IsTalkTrevor SubjectIsJockey IsNotSaidBeenJockeyedTrevor IsWorldTalkTrevor IsBeingJockeyed
-		Response SurvivorJockeyHurtMajorMechanic
+		name = "L4D1SurvivorMajorHurtC7M3BetaZoeyRVC",
+		criteria IsSurvivor InPain IsMajorPain IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc Ismapc7m3_port _auto_IsSaidC7M3BridgeLeap IsWorldTalkBetazoeyrvc
+		Response NoResponse
+	},
+
+	{
+		name = "L4D1SurvivorMinorHurtBetaZoeyRVC",
+		criteria IsSurvivor InPain IsMinorPain IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1SurvivorMinorHurtTeenGirl
+	},
+
+	{
+		name = "L4D1SurvivorMinorHurtC7M3BetaZoeyRVC",
+		criteria IsSurvivor InPain IsMinorPain IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc Ismapc7m3_port _auto_IsSaidC7M3BridgeLeap IsWorldTalkBetazoeyrvc
+		Response NoResponse
+	},
+
+	{
+		name = "L4D1SurvivorReloadingBetaZoeyRVC",
+		criteria ConceptPlayerReloading IsASurvivor IsNotSpeaking IsBetazoeyrvc IsNotIncapacitated IsTalk IsTalkBetazoeyrvc RecentGroupInCombat10 HasNotgrenadelauncher IsWorldTalkBetazoeyrvc IsNotZombiePresentTank ChanceToFire50Percent _auto_NotSpottedVehicle
+		Response L4D1SurvivorReloadingTeenGirl
+	},
+
+	{
+		name = "SurvivorJockeyHurtMajorBetaZoeyRVC",
+		criteria IsSurvivor InPain IsMajorPain IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc SubjectIsJockey IsNotSaidBeenJockeyedBetazoeyrvc IsWorldTalkBetazoeyrvc IsBeingJockeyed
+		Response SurvivorJockeyHurtMajorTeenGirl
 		then all commentjockey foo:0 -1.739
-		ApplyContext "SaidBeenJockeyedTrevor:1:6,TalkTrevor:1:6"
+		ApplyContext "SaidBeenJockeyedBetazoeyrvc:1:6,TalkBetazoeyrvc:1:6"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorJockeyHurtMinorTrevor",
-		criteria IsSurvivor InPain IsMinorPain IsTrevor IsTalk IsTalkTrevor SubjectIsJockey IsNotSaidBeenJockeyedTrevor IsWorldTalkTrevor IsBeingJockeyed
-		Response SurvivorJockeyHurtMajorMechanic
+		name = "SurvivorJockeyHurtMinorBetaZoeyRVC",
+		criteria IsSurvivor InPain IsMinorPain IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc SubjectIsJockey IsNotSaidBeenJockeyedBetazoeyrvc IsWorldTalkBetazoeyrvc IsBeingJockeyed
+		Response SurvivorJockeyHurtMajorTeenGirl
 		then all commentjockey foo:0 -1.739
-		ApplyContext "SaidBeenJockeyedTrevor:1:6,TalkTrevor:1:6"
+		ApplyContext "SaidBeenJockeyedBetazoeyrvc:1:6,TalkBetazoeyrvc:1:6"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorJockeyHurtMajorC1Trevor",
-		criteria IsSurvivor InPain IsMajorPain IsTrevor IsTalk IsTalkTrevor SubjectIsJockey IsNotSaidBeenJockeyedTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowJockey IsBeingJockeyed IsNotSurvival
-		Response SurvivorJockeyHurtMajorC1Mechanic
-		ApplyContext "SaidBeenJockeyedTrevor:1:6,TalkTrevor:1:6"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorJockeyHurtMinorC1Trevor",
-		criteria IsSurvivor InPain IsMinorPain IsTrevor IsTalk IsTalkTrevor SubjectIsJockey IsNotSaidBeenJockeyedTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowJockey IsBeingJockeyed IsNotSurvival
-		Response SurvivorJockeyHurtMajorC1Mechanic
-		ApplyContext "SaidBeenJockeyedTrevor:1:6,TalkTrevor:1:6"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorMajorHurtTrevor",
-		criteria IsSurvivor InPain IsMajorPain IsTrevor IsTalk IsTalkTrevor SubjectIsNotJockey IsWorldTalkTrevor
-		Response SurvivorMajorHurtMechanic
-	},
-
-	{
-		name = "SurvivorMinorHurtTrevor",
-		criteria IsSurvivor InPain IsMinorPain IsTrevor IsTalk IsTalkTrevor SubjectIsNotJockey IsWorldTalkTrevor
-		Response SurvivorMinorHurtMechanic
-	},
-
-	{
-		name = "SurvivorReloadingTrevor",
-		criteria ConceptPlayerReloading IsSurvivor IsNotSpeaking IsTrevor IsNotIncapacitated IsTalk IsTalkTrevor RecentGroupInCombat10 HasNotgrenadelauncher IsWorldTalkTrevor IsNotZombiePresentTank NotInIntenseCombat _auto_NotTrevorInWitchville _auto_NotAlarmV2 _auto_ConcertNotLive _auto_NotSpottedVehicle
-		Response SurvivorReloadingMechanic
-	},
-
-	{
-		name = "SurvivorReloadingIntenseTrevor",
-		criteria ConceptPlayerReloading IsSurvivor IsNotSpeaking IsTrevor IsNotIncapacitated IsTalk IsTalkTrevor RecentGroupInCombat10 HasNotgrenadelauncher IsWorldTalkTrevor IsNotZombiePresentTank InIntenseCombat _auto_NotTrevorInWitchville _auto_NotAlarmV2 _auto_ConcertNotLive _auto_NotSpottedVehicle
-		Response SurvivorReloadingIntenseMechanic
-	},
-
-	{
-		name = "SurvivorReloadingC4M2Trevor",
-		criteria ConceptPlayerReloading IsSurvivor IsNotSpeaking IsTrevor IsNotIncapacitated IsTalk IsTalkTrevor RecentGroupInCombat10 HasNotgrenadelauncher IsWorldTalkTrevor ismap_c4m2_sugarmill_a IsNotSaidSafeSpotAhead IsNotZombiePresentTank _auto_IsTrevorInWitchville
-		Response SurvivorReloadingC4M2Mechanic
-	},
-
-	{
-		name = "PlayerHelpIncappedTrevor",
-		criteria ConceptPlayerHelp IsTrevor IsNotCoughing IsTalk IsTalkTrevor IsIncappedStarted IsIncappedStarted2 IsIncapacitated NotCalledForHelpRecently IsWorldTalkTrevor
-		Response PlayerHelpIncappedMechanic
+		name = "L4D1PlayerHelpIncappedBetaZoeyRVC",
+		criteria ConceptPlayerHelp IsBetazoeyrvc IsNotCoughing IsTalk IsTalkBetazoeyrvc IsIncapacitated IsIncappedStarted IsIncappedStarted2 NotCalledForHelpRecently IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerHelpIncappedTeenGirl
 		ApplyContext "CalledForHelp:1:7.5"
 	},
 
 	{
-		name = "PlayerHelpIncappedBleeingTrevor",
-		criteria ConceptPlayerHelp IsTrevor IsNotCoughing IsTalk IsTalkTrevor IsIncappedBleeding1 IsIncappedBleeding2 IsIncapacitated NotCalledForHelpRecently IsWorldTalkTrevor
-		Response PlayerHelpIncappedBleeingMechanic
+		name = "L4D1PlayerHelpIncappedBleedingBetaZoeyRVC",
+		criteria ConceptPlayerHelp IsBetazoeyrvc IsNotCoughing IsTalk IsTalkBetazoeyrvc IsIncapacitated IsIncappedBleeding1 IsIncappedBleeding2 NotCalledForHelpRecently IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerHelpIncappedBleedingTeenGirl
+		then any FriendNeedsHelp foo:0 0
 		ApplyContext "CalledForHelp:1:15"
 	},
 
 	{
-		name = "PlayerHelpIncappedLethargicTrevor",
-		criteria ConceptPlayerHelp IsTrevor IsNotCoughing IsTalk IsTalkTrevor IsIncappedLethargic IsIncapacitated NotCalledForHelpRecently IsWorldTalkTrevor
-		Response PlayerHelpIncappedLethargicMechanic
+		name = "L4D1PlayerHelpIncappedLethargicBetaZoeyRVC",
+		criteria ConceptPlayerHelp IsBetazoeyrvc IsNotCoughing IsTalk IsTalkBetazoeyrvc IsIncapacitated IsIncappedLethargic NotCalledForHelpRecently IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerHelpIncappedLethargicTeenGirl
+		then any FriendNeedsHelp foo:0 0
 		ApplyContext "CalledForHelp:1:30"
 	},
 
 	{
-		name = "C2M1DoneFallingTrevor",
-		criteria ConceptC2M1DoneFalling IsTrevor NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotCoughing AutoIsNotScavenge AutoIsNotSurvival _auto_NotDoneFalling
-		Response C2M1DoneFallingMechanic
-		then gambler _C2M1_Fall03 foo:0 0.01
-		ApplyContext "Talk:1:3.351,_auto_DoneFalling:1:0"
+		name = "L4D1HelpResponseBillBetaZoeyRVC",
+		criteria ConceptFriendNeedsHelp IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotIncapacitated IsInSafeSpot FromIsNamVet IsNotInStartArea NotAloneInSafeSpot IsWorldTalkBetazoeyrvc
+		Response L4D1HelpResponseBillTeenGirl
+	},
+
+	{
+		name = "L4D1HelpResponseBillBBetaZoeyRVC",
+		criteria ConceptFriendNeedsHelp IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotIncapacitated IsInSafeSpot FromIsNamVet IsNotInStartArea IsManagerAlive IsManagerNear200 ChanceToFire10Percent IsWorldTalkBetazoeyrvc
+		Response L4D1HelpResponseBillBTeenGirl
+	},
+
+	{
+		name = "L4D1HelpResponseFrancisBetaZoeyRVC",
+		criteria ConceptFriendNeedsHelp IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotIncapacitated IsInSafeSpot FromIsBiker IsNotInStartArea NotAloneInSafeSpot IsWorldTalkBetazoeyrvc
+		Response L4D1HelpResponseFrancisTeenGirl
+	},
+
+	{
+		name = "L4D1HelpResponseFrancisBBetaZoeyRVC",
+		criteria ConceptFriendNeedsHelp IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotIncapacitated IsInSafeSpot FromIsBiker IsNotInStartArea IsManagerAlive IsManagerNear200 ChanceToFire10Percent IsWorldTalkBetazoeyrvc
+		Response L4D1HelpResponseFrancisBTeenGirl
+	},
+
+	{
+		name = "L4D1HelpResponseLouisBetaZoeyRVC",
+		criteria ConceptFriendNeedsHelp IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotIncapacitated IsInSafeSpot FromIsManager IsNotInStartArea NotAloneInSafeSpot IsWorldTalkBetazoeyrvc
+		Response L4D1HelpResponseLouisTeenGirl
+	},
+
+	{
+		name = "L4D1crashcourse01_path01zrBetaZoeyRVC",
+		criteria Conceptcrashcourse01_path01zresp IsNotCoughing NotInCombat IsTalkBetazoeyrvc IsBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1crashcourse01_path01zrTeenGirl
+	},
+
+	{
+		name = "L4D1L4D1PlayerRemarkSmalltown04_path03BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown04_path03 IsNotSaidSmalltown04_path03 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 IsSmalltownBarricadeBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1L4D1PlayerRemarkSmalltown04_path03TeenGirl
+		ApplyContext "SaidSmalltown04_path03:1:0,SmallTownBarricadeBetazoeyrvc:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "C2M1DoneFalling2Trevor",
-		criteria ConceptC2M1DoneFalling IsTrevor NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotCoughing IsCoachAlive IsCoachNear200 ChanceToFire50Percent AutoIsNotScavenge AutoIsNotSurvival _auto_NotDoneFalling
-		Response C2M1DoneFalling2Mechanic
-		then coach _C2M1_Fall01 foo:0 0.01
-		ApplyContext "Talk:1:2.044,_auto_DoneFalling:1:0"
+		name = "L4D1PlayerAirport02CraneStartedBetaZoeyRVC",
+		criteria Conceptairport02_creshendoCrane IsBetazoeyrvc
+		Response L4D1PlayerAirport02CraneStartedTeenGirl
+		ApplyContext "Airport02CraneStarted:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "C2M1FallingTrevor",
-		criteria ConceptC2M1Falling IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C2M1FallingMechanic
-		then self EndOfWavWindow5 foo:0 0.01
-		ApplyContext "Talk:1:1.353"
+		name = "L4D1PlayerAirport02DumpsterDownBetaZoeyRVC",
+		criteria Conceptairport02_creshendo03 IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerAirport02DumpsterDownTeenGirl
+	},
+
+	{
+		name = "L4D1Playerairport03_barrieraBetaZoeyRVC",
+		criteria Conceptairport03_barriera IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IssuerClose IsWorldTalkBetazoeyrvc IsNotSaidAirport03FireStarted AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1Playerairport03_barrieraTeenGirl
+	},
+
+	{
+		name = "L4D1PlayerAirport03FirePathClearaBetaZoeyRVC",
+		criteria ConceptAirport03FirePathCleara IsBetazoeyrvc IsNotCoughing IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerAirport03FirePathClearaTeenGirl
+	},
+
+	{
+		name = "L4D1PlayerAirport03FirePathClearXBetaZoeyRVC",
+		criteria ConceptAirport03FirePathClearX IsBetazoeyrvc IsNotCoughing IsTalk IsTalkBetazoeyrvc IsNotSaidAirport03FirePathClear IsWorldTalkBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerAirport03FirePathClearXTeenGirl
+		then any Airport03FirePathCleara foo:0 -1.072
+		ApplyContext "SaidAirport03FirePathClear:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "C2M2CarouselOffTrevor",
-		criteria Conceptc2m2CarouselEnd IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C2M2CarouselOffMechanic
-		ApplyContext "Talk:1:0.756,_auto_Alarm:2:0"
+		name = "L4D1PlayerAirport03FireStartedXBetaZoeyRVC",
+		criteria ConceptAirport03FireStartedX IsBetazoeyrvc IsNotCoughing IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerAirport03FireStartedXTeenGirl
+	},
+
+	{
+		name = "L4D1Playerairport04_08bBetaZoeyRVC",
+		criteria Conceptairport04_08b IsBetazoeyrvc IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear400 IsWorldTalkBetazoeyrvc
+		Response L4D1Playerairport04_08bTeenGirl
+	},
+
+	{
+		name = "L4D1Playerairport04_08cBetaZoeyRVC",
+		criteria Conceptairport04_08c IsBetazoeyrvc IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear400 IsWorldTalkBetazoeyrvc
+		Response L4D1Playerairport04_08cTeenGirl
+	},
+
+	{
+		name = "L4D1Playerairport04_08dBetaZoeyRVC",
+		criteria Conceptairport04_08d IsBetazoeyrvc IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear400 IsWorldTalkBetazoeyrvc
+		Response L4D1Playerairport04_08dTeenGirl
+	},
+
+	{
+		name = "L4D1PlayerFrancisSuggestsCraneBetaZoeyRVC",
+		criteria ConceptFrancisSuggestsCrane IsBetazoeyrvc IsNotSaidFrancisSuggestsCrane IsTalk IsTalkBetazoeyrvc IsSubjectNear800 IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerFrancisSuggestsCraneTeenGirl
+		ApplyContext "SaidFrancisSuggestsCrane:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "C2M2CarouselOnTrevor",
-		criteria Conceptc2m2CarouselStart IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C2M2CarouselOnMechanic
-		then any _C2M2_CaroStart03 foo:0 2.0
-		ApplyContext "_auto_Alarm:1:0,_auto_TimerLockA:1:6,WarnMegaMob:1:300,SaidSpecialWarn:1:30"
+		name = "L4D1PlayerLaughFrancisBetaZoeyRVC",
+		criteria ConceptLaughFrancis IsBetazoeyrvc IsNotSaidLaughFrancis IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300 IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerLaughFrancisTeenGirl
+		ApplyContext "SaidLaughFrancis:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "C3M3BridgeButtonTrevor",
-		criteria ConceptC3M3BridgeButton IsNotSaidC3M3BridgeButton IsTrevor IsNotSaidC3M3BridgeButton AutoIsNotScavenge AutoIsNotSurvival
-		Response C3M3BridgeButtonMechanic
-		ApplyContext "SaidC3M3BridgeButton:1:0,WarnMegaMob:1:300,SaidSpecialWarn:1:30"
+		name = "L4D1PlayerRemarkairport02_creshendo01bBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport02_creshendo01b IsNotSaidairport02_creshendo01a NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear1000 IsNotAirport02CraneStarted IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkairport02_creshendo01aTeenGirl
+		then Any BetazoeyrvcSuggestsCrane foo:0 -1.923
+		ApplyContext "Saidairport02_creshendo01a:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "EndOfWavWindow5Trevor",
-		criteria ConceptEndOfWavWindow5 IsTrevor
-		Response EndOfWavWindow5Mechanic
-		ApplyContext "_auto_TrevorWavWindow:1:0"
+		name = "L4D1PlayerRemarkairport02_path01BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport02_path01 IsNotSaidairport02_path01 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear1500 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkairport02_path01TeenGirl
+		ApplyContext "Saidairport02_path01:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerChainSawUsedTrevor",
-		criteria ConceptChainsawUsed IsNotSaidChainSawUsed IsTrevor IsTalk IsTalkTrevor IntensityOver25 IsWorldTalkTrevor
-		Response PlayerChainSawUsedMechanic
-		ApplyContext "SaidChainSawUsed:1:90"
+		name = "L4D1PlayerRemarkairport02_path02BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport02_path02 IsNotSaidairport02_path02 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 ChanceToFire10Percent IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkairport02_path02TeenGirl
+		ApplyContext "Saidairport02_path02:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkC1M1AroundFireTrevor",
-		criteria ConceptRemark IsTrevor IsC1M1AroundFire IsNotSaidC1M1AroundFire IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkC1M1AroundFireMechanic
-		then any C1M1Cough foo:0 -1.348
-		ApplyContext "SaidC1M1AroundFire:1:0"
+		name = "AUTOBLANK_L4D1PlayerRemarkairport02_path02BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport02_path02 IsNotSaidairport02_path02 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response _PlayerInfoRemarkableBlankTeenGirl
+		ApplyContext "Saidairport02_path02:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkC1M1OverTableTrevor",
-		criteria ConceptRemark IsTrevor IsC1M1OverTable IsNotSaidC1M1OverTable IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkC1M1OverTableMechanic
-		then any C1M1Cough foo:0 -0.627
-		ApplyContext "SaidC1M1OverTable:1:0"
+		name = "L4D1PlayerRemarkairport02_path03BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport02_path03 IsNotSaidairport02_path03 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear500 ChanceToFire20Percent IsManagerAlive IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkairport02_path03TeenGirl
+		ApplyContext "Saidairport02_path03:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkC1M1SearchRoomsTrevor",
-		criteria ConceptRemark IsTrevor IsC1M1SearchRooms IsNotSaidC1M1SearchRooms IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkC1M1SearchRoomsMechanic
-		then any C1M1Cough foo:0 -3.339
-		ApplyContext "SaidC1M1SearchRooms:1:0"
+		name = "AUTOBLANK_L4D1PlayerRemarkairport02_path03BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport02_path03 IsNotSaidairport02_path03 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear500 IsManagerAlive IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response _PlayerInfoRemarkableBlankTeenGirl
+		ApplyContext "Saidairport02_path03:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkC1M1ThroughThisDoorTrevor",
-		criteria ConceptRemark IsTrevor IsC1M1ThroughThisDoor IsNotSaidC1M1ThroughThisDoor IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkC1M1ThroughThisDoorMechanic
-		then any C1M1Cough foo:0 -0.618
-		ApplyContext "SaidC1M1ThroughThisDoor:1:0"
+		name = "L4D1PlayerRemarkairport02_path04BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport02_path04 IsNotSaidairport02_path04 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsNamvetAlive IsSubjectNear200 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkairport02_path04TeenGirl
+		ApplyContext "Saidairport02_path04:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkC1M2SpotGunStoreTrevor",
-		criteria ConceptRemark IsTrevor IsRemarkWorldC1M2SpotGunStore IsNotSaidRemarkWorldC1M2SpotGunStore IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear800 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkC1M2SpotGunStoreMechanic
-		ApplyContext "SaidRemarkWorldC1M2SpotGunStore:1:0"
+		name = "L4D1PlayerRemarkairport02_path06BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport02_path06 IsNotSaidairport02_path06 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkairport02_path06TeenGirl
+		ApplyContext "Saidairport02_path06:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkC1M3AlarmDoorsTrevor",
-		criteria ConceptRemark IsTrevor IsC1M3AlarmDoors IsNotSaidC1M3AlarmDoors IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 _auto_NotAlarm AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkC1M3AlarmDoorsMechanic
-		ApplyContext "SaidC1M3AlarmDoors:1:0"
+		name = "L4D1PlayerRemarkairport03_01BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport03_01 IsNotSaidairport03_01 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkairport03_01TeenGirl
+		ApplyContext "Saidairport03_01:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkC1M3CarefulWindowsTrevor",
-		criteria ConceptRemark IsTrevor IsC1M3CarefulWindows IsNotSaidC1M3CarefulWindows IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 _auto_NotAlarm AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkC1M3CarefulWindowsMechanic
-		ApplyContext "SaidC1M3CarefulWindows:1:0"
+		name = "L4D1PlayerRemarkairport03_02BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport03_02 IsNotSaidairport03_02 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkairport03_02TeenGirl
+		ApplyContext "Saidairport03_02:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkC1M3CEDAGoneTrevor",
-		criteria ConceptRemark IsTrevor IsC1M3CEDAGone IsNotSaidC1M3CEDAGone IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkC1M3CEDAGoneMechanic
-		ApplyContext "SaidC1M3CEDAGone:1:0"
+		name = "L4D1PlayerRemarkairport03_03BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport03_03 IsNotSaidairport03_03 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkairport03_03TeenGirl
+		ApplyContext "Saidairport03_03:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkC1M3DownHereTrevor",
-		criteria ConceptRemark IsTrevor IsC1M3DownHere IsNotSaidC1M3DownHere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkC1M3DownHereMechanic
-		ApplyContext "SaidC1M3DownHere:1:0"
+		name = "L4D1PlayerRemarkairport03_04BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport03_04 IsNotSaidairport03_04 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear1500 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkairport03_04TeenGirl
+		ApplyContext "Saidairport03_04:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkC1M3DownHere2Trevor",
-		criteria ConceptRemark IsTrevor IsC1M3DownHere2 IsNotSaidC1M3DownHere2 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkC1M3DownHereMechanic
-		ApplyContext "SaidC1M3DownHere2:1:0"
+		name = "L4D1PlayerRemarkairport03_06BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport03_06 IsNotSaidairport03_06 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear500 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkairport03_06TeenGirl
+		then Any LaughBetazoeyrvc foo:0 -2.784
+		ApplyContext "Saidairport03_06:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkC1M3DownTheEscalatorTrevor",
-		criteria ConceptRemark IsTrevor IsC1M3DownTheEscalator IsNotSaidC1M3DownTheEscalator IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkC1M3DownTheEscalatorMechanic
-		ApplyContext "SaidC1M3DownTheEscalator:1:0"
+		name = "L4D1PlayerRemarkairport03_barrierBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport03_barrier IsNotSaidairport03_barrier IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear800 IsNotSaidAirport03FireStarted IsNotSaidAirport03FirePathClear IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkairport03_barrierTeenGirl
+		then Any airport03_barriera foo:0 -1.664
+		ApplyContext "Saidairport03_barrier:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkC1M3OverHereTrevor",
-		criteria ConceptRemark IsTrevor IsC1M3OverHere IsNotSaidC1M3OverHere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkC1M3OverHereMechanic
-		ApplyContext "SaidC1M3OverHere:1:0"
+		name = "L4D1PlayerRemarkairport04_01BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport04_01 IsNotSaidairport04_01 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear500 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkairport04_01TeenGirl
+		ApplyContext "Saidairport04_01:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkC1M3SearchRoomsTrevor",
-		criteria ConceptRemark IsTrevor IsC1M3SearchRooms IsNotSaidC1M3SearchRooms IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkC1M3SearchRoomsMechanic
-		then any C1M1Cough foo:0 -3.339
-		ApplyContext "SaidC1M3SearchRooms:1:0"
+		name = "L4D1PlayerRemarkairport04_03BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport04_03 IsNotSaidairport04_03 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 ChanceToFire20Percent IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkairport04_03TeenGirl
+		ApplyContext "Saidairport04_03:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkC1M3ThisWayTrevor",
-		criteria ConceptRemark IsTrevor IsC1M3ThisWay IsNotSaidC1M3ThisWay IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkC1M3ThisWayMechanic
-		ApplyContext "SaidC1M3ThisWay:1:0"
+		name = "AUTOBLANK_L4D1PlayerRemarkairport04_03BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport04_03 IsNotSaidairport04_03 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response _PlayerInfoRemarkableBlankTeenGirl
+		ApplyContext "Saidairport04_03:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkC1M3ThroughHereTrevor",
-		criteria ConceptRemark IsTrevor IsC1M3ThroughHere IsNotSaidC1M3ThroughHere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkC1M3ThroughHereMechanic
-		ApplyContext "SaidC1M3ThroughHere:1:0"
+		name = "L4D1PlayerRemarkairport04_04BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport04_04 IsNotSaidairport04_04 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear400 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkairport04_04TeenGirl
+		ApplyContext "Saidairport04_04:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkC1M3TurnOffAlarm1Trevor",
-		criteria ConceptRemark IsTrevor IsC1M3TurnOffAlarm1 IsNotSaidC1M3TurnOffAlarm1 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_IsAlarm IsNotSpeakingWeight0
-		Response PlayerRemarkC1M3TurnOffAlarm1Mechanic
-		ApplyContext "SaidC1M3TurnOffAlarm1:1:0"
+		name = "L4D1PlayerRemarkairport04_05BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport04_05 IsNotSaidairport04_05 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300 ChanceToFire20Percent TimeSinceGroupInCombat10 IsManagerAlive IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkairport04_05TeenGirl
+		then All airport04_05a foo:0 -1.764
+		ApplyContext "Saidairport04_05:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkC1M3TurnOffAlarm2Trevor",
-		criteria ConceptRemark IsTrevor IsC1M3TurnOffAlarm2 IsNotSaidC1M3TurnOffAlarm2 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_IsAlarm IsNotSpeakingWeight0
-		Response PlayerRemarkC1M3TurnOffAlarm2Mechanic
-		ApplyContext "SaidC1M3TurnOffAlarm2:1:0"
+		name = "AUTOBLANK_L4D1PlayerRemarkairport04_05BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport04_05 IsNotSaidairport04_05 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300 TimeSinceGroupInCombat10 IsManagerAlive IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response _PlayerInfoRemarkableBlankTeenGirl
+		ApplyContext "Saidairport04_05:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkC1M3TurnOffAlarm3Trevor",
-		criteria ConceptRemark IsTrevor IsC1M3TurnOffAlarm3 IsNotSaidC1M3TurnOffAlarm3 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_IsAlarm IsNotSpeakingWeight0
-		Response PlayerRemarkC1M3TurnOffAlarm3Mechanic
-		ApplyContext "SaidC1M3TurnOffAlarm3:1:0"
+		name = "L4D1PlayerRemarkairport04_06BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport04_06 IsNotSaidairport04_06 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300 ChanceToFire10Percent IsBikerAlive IsBikerNear400 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkairport04_06TeenGirl
+		ApplyContext "Saidairport04_06:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkC1M3UpEscalator1Trevor",
-		criteria ConceptRemark IsTrevor IsC1M3UpEscalator1 IsNotSaidC1M3UpEscalator1 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkC1M3UpEscalator1Mechanic
-		ApplyContext "SaidC1M3UpEscalator1:1:0"
+		name = "AUTOBLANK_L4D1PlayerRemarkairport04_06BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport04_06 IsNotSaidairport04_06 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300 IsBikerAlive IsBikerNear400 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response _PlayerInfoRemarkableBlankTeenGirl
+		ApplyContext "Saidairport04_06:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkC1M3UpEscalator2Trevor",
-		criteria ConceptRemark IsTrevor IsC1M3UpEscalator2 IsNotSaidC1M3UpEscalator2 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkC1M3UpEscalator1Mechanic
-		ApplyContext "SaidC1M3UpEscalator2:1:0"
+		name = "L4D1PlayerRemarkairport04_07BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport04_07 IsNotSaidairport04_07 IsNotCoughing IsTalk IsTalkBetazoeyrvc IsSubjectNear300 ChanceToFire10Percent IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkairport04_07TeenGirl
+		then biker AynRandResponse foo:0 -2.679
+		ApplyContext "Saidairport04_07:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkC1M3UpEscalator3Trevor",
-		criteria ConceptRemark IsTrevor IsC1M3UpEscalator3 IsNotSaidC1M3UpEscalator3 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkC1M3UpEscalator1Mechanic
-		ApplyContext "SaidC1M3UpEscalator3:1:0"
+		name = "AUTOBLANK_L4D1PlayerRemarkairport04_07BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport04_07 IsNotSaidairport04_07 IsNotCoughing IsTalk IsTalkBetazoeyrvc IsSubjectNear300 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response _PlayerInfoRemarkableBlankTeenGirl
+		ApplyContext "Saidairport04_07:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkc2m1_busblockTrevor",
-		criteria ConceptRemark IsTrevor Isc2m1_busblock IsNotSaidc2m1_busblock IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc2m1_busblockMechanic
-		then producer _C2M1MonsterTruck foo:0 0.02
-		ApplyContext "Saidc2m1_busblock:1:0,Talk:1:1.499"
+		name = "L4D1PlayerRemarkairport04_08BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport04_08 IsNotSaidairport04_08 IsNotCoughing IsTalk IsTalkBetazoeyrvc IsSubjectNear200 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkairport04_08TeenGirl
+		then Any airport04_08a foo:0 -3.701
+		ApplyContext "Saidairport04_08:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkc2m1_checkroomsTrevor",
-		criteria ConceptRemark IsTrevor Isc2m1_checkrooms IsNotSaidc2m1_checkrooms IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc2m1_checkroomsMechanic
-		ApplyContext "Saidc2m1_checkrooms:1:0,Talk:1:1.459"
+		name = "L4D1PlayerRemarkairport04_vanBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport04_van IsNotSaidairport04_van IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear400 IsNotSaidPathClearVan IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkairport04_vanTeenGirl
+		then Biker airport04_vana foo:0 -1.224
+		ApplyContext "Saidairport04_van:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkc2m1_cliffTrevor",
-		criteria ConceptRemark IsTrevor Isc2m1_cliff IsNotSaidc2m1_cliff IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc2m1_cliffMechanic
-		ApplyContext "Saidc2m1_cliff:1:0,Talk:1:3.248"
+		name = "L4D1PlayerRemarkcrashcourse01_path01BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse01_path01 IsNotSaidcrashcourse01_path01 IsNotCoughing NotInCombat IsTalkBetazoeyrvc IsSubjectNear200 IsNotSaidLeavingSafeArea IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkcrashcourse01_path01TeenGirl
+		ApplyContext "Saidcrashcourse01_path01:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkc2m1_downstairsTrevor",
-		criteria ConceptRemark IsTrevor Isc2m1_downstairs IsNotSaidc2m1_downstairs IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc2m1_downstairsMechanic
-		ApplyContext "Saidc2m1_downstairs:1:0,Talk:1:1.547"
+		name = "L4D1PlayerRemarkFarm01_path01BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm01_path01 IsNotSaidFarm01_path01 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkFarm01_path01TeenGirl
+		ApplyContext "SaidFarm01_path01:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkc2m1_motelsignTrevor",
-		criteria ConceptRemark IsTrevor Isc2m1_motelsign IsNotSaidc2m1_motelsign IsNotSaidc2m1_throughmotel IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectFar100 ChanceToFire20Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc2m1_motelsignMechanic
-		ApplyContext "Saidc2m1_motelsign:1:0,Talk:1:1.428"
+		name = "L4D1PlayerRemarkFarm01_path02BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm01_path02 IsNotSaidFarm01_path02 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkFarm01_path02TeenGirl
+		ApplyContext "SaidFarm01_path02:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "AUTOBLANK_PlayerRemarkc2m1_motelsignTrevor",
-		criteria ConceptRemark IsTrevor Isc2m1_motelsign IsNotSaidc2m1_motelsign IsNotSaidc2m1_throughmotel IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectFar100 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response _PlayerInfoRemarkableBlankMechanic
-		ApplyContext "Saidc2m1_motelsign:1:0"
+		name = "L4D1PlayerRemarkFarm01_path03BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm01_path03 IsNotSaidFarm01_path03 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkFarm01_path03TeenGirl
+		ApplyContext "SaidFarm01_path03:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkc2m1_offrampTrevor",
-		criteria ConceptRemark IsTrevor Isc2m1_offramp IsNotSaidc2m1_offramp IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc2m1_offrampMechanic
-		ApplyContext "Saidc2m1_offramp:1:0,Talk:1:1.167"
+		name = "L4D1PlayerRemarkFarm02_path01BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm02_path01 IsNotSaidFarm02_path01 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkFarm02_path01TeenGirl
+		ApplyContext "SaidFarm02_path01:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkc2m1_parkTrevor",
-		criteria ConceptRemark IsTrevor Isc2m1_park IsNotSaidc2m1_park IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc2m1_parkMechanic
-		ApplyContext "Saidc2m1_park:1:0,Talk:1:2.273"
+		name = "L4D1PlayerRemarkFarm02_path02BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm02_path02 IsNotSaidFarm02_path02 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 NotSaidFarm02_TracksBelow IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkFarm02_path02TeenGirl
+		then Biker Farm02_path02b foo:0 0
+		ApplyContext "SaidFarm02_path02:1:0,SaidFarm02_TracksBelow:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkc2m1_poolTrevor",
-		criteria ConceptRemark IsTrevor Isc2m1_pool IsNotSaidc2m1_pool IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc2m1_poolMechanic
-		ApplyContext "Saidc2m1_pool:1:0,Talk:1:3.694"
+		name = "L4D1PlayerRemarkFarm02_path06BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm02_path06 IsNotSaidFarm02_path06 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkFarm02_path06TeenGirl
+		ApplyContext "SaidFarm02_path06:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkc2m1_searchlightsTrevor",
-		criteria ConceptRemark IsTrevor Isc2m1_searchlights IsNotSaidc2m1_searchlights IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectFar100 ChanceToFire100Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		name = "L4D1PlayerRemarkFarm02_path09BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm02_path09 IsNotSaidFarm02_path09 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkFarm02_path09TeenGirl
+		then any RespondAffirmative foo:0 -1.547
+		ApplyContext "SaidFarm02_path09:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkFarm03_path03BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm03_path03 IsNotSaidFarm03_path03 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkFarm03_path03TeenGirl
+		ApplyContext "SaidFarm03_path03:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkFarm03_path06BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm03_path06 IsNotSaidFarm03_path06 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkFarm03_path06TeenGirl
+		then any ResponseSoftDispleasureSwear foo:0 -1.116
+		ApplyContext "SaidFarm03_path06:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkFarm03_path07BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm03_path07 IsNotSaidFarm03_path07 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear100 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkFarm03_path07TeenGirl
+		ApplyContext "SaidFarm03_path07:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkFarm03_path10BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm03_path10 Farm03BridgeDown IsNotSaidFarm03_path10 IsTalk IsTalkBetazoeyrvc IsSubjectNear300 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkFarm03_path10TeenGirl
+		then any RespondAffirmative foo:0 -0.817
+		ApplyContext "SaidFarm03_path10:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkFarm04_path01aBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm04_path01 IsNotSaidFarm04_path01 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkFarm04_path01aTeenGirl
+		ApplyContext "SaidFarm04_path01:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkFarm04_path04BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm04_path04 IsNotSaidFarm04_path04 IsSubjectNear1000 IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkFarm04_path04TeenGirl
+		ApplyContext "SaidFarm04_path04:1:0,SaidFarm04_path02:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkFarm04_path06BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm04_path06 IsNotSaidFarm04_path06 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear500 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkFarm04_path06TeenGirl
+		ApplyContext "SaidFarm04_path06:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkFarm04_path07BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm04_path07 IsNotSaidFarm04_path07 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkFarm04_path07TeenGirl
+		ApplyContext "SaidFarm04_path07:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkFarm04_path08BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm04_path08 IsNotSaidFarm04_path08 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkFarm04_path08TeenGirl
+		ApplyContext "SaidFarm04_path08:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkFarm04_path10BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm04_path10 IsNotSaidFarm04_path10 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear100 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkFarm04_path10TeenGirl
+		ApplyContext "SaidFarm04_path10:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkFarm05_path06BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm05_path06 IsNotSaidFarm05_path06 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear1000 FinaleAttract IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkFarm05_path06TeenGirl
+		ApplyContext "SaidFarm05_path06:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkFarm05_path08BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm05_path08 IsNotSaidFarm05_path09 IsNotSaidFarm05_path08 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear500 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkFarm05_path08TeenGirl
+		ApplyContext "SaidFarm05_path08:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkFarm05_path10BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm05_path10 IsNotSaidFarm05_path09 IsNotSaidFarm05_path08 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear500 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkFarm05_path08TeenGirl
+		ApplyContext "SaidFarm05_path08:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkhospital03_path04BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Ishospital03_path04 IsNotSaidhospital03_path04 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkhospital03_path04TeenGirl
+		ApplyContext "Saidhospital03_path04:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkhospital03_path08BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Ishospital03_path08 IsNotSaidhospital03_path08 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear400 ChanceToFire50Percent IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkhospital03_path08TeenGirl
+		ApplyContext "Saidhospital03_path08:1:0"
+	},
+
+	{
+		name = "AUTOBLANK_L4D1PlayerRemarkhospital03_path08BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Ishospital03_path08 IsNotSaidhospital03_path08 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear400 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response _PlayerInfoRemarkableBlankTeenGirl
+		ApplyContext "Saidhospital03_path08:1:0"
+	},
+
+	{
+		name = "L4D1PlayerRemarkhospital04_path03BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Ishospital04_path03 IsNotSaidhospital04_path03 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear400 ChanceToFire30Percent IsManagerNear200 IsManagerAlive IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkhospital04_path03TeenGirl
+		ApplyContext "Saidhospital04_path03:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "AUTOBLANK_L4D1PlayerRemarkhospital04_path03BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Ishospital04_path03 IsNotSaidhospital04_path03 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear400 IsManagerNear200 IsManagerAlive IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response _PlayerInfoRemarkableBlankTeenGirl
+		ApplyContext "Saidhospital04_path03:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkhospital05_path01BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Ishospital05_path01 NotInCombat IsSubjectNear200 IsNotSpeakingWeight0 IsInStartArea IsNotAlone IsNotSaidLeavingSafeArea _auto_IsSafeRoomStart _auto_NotSafeRoomQuiet AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkhospital05_path01TeenGirl
+		then Biker hospital05_path01a foo:0 -1.864
+		ApplyContext "_auto_SafeRoomStart:2:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkhospital05_path02BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Ishospital05_path02 IsNotSaidhospital05_path02 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear400 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkhospital05_path02TeenGirl
+		ApplyContext "Saidhospital05_path02:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerAirport04VanStartedXBetaZoeyRVC",
+		criteria ConceptAirport04VanStartedX IsBetazoeyrvc IsNotCoughing IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerAirport04VanStartedXTeenGirl
+		ApplyContext "SaidAirport04VanStarted:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkPathClearVanBetaZoeyRVC",
+		criteria ConceptPathClearVan IsBetazoeyrvc IsNotSaidPathClearVan IsNotCoughing IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkPathClearVanTeenGirl
+		ApplyContext "SaidPathClearVan:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkSmalltown01_path01BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown01_path01 IsNotSaidSmalltown01_path01 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkSmalltown01_path01TeenGirl
+		then any ResponseSoftDispleasureSwear foo:0 -2.289
+		ApplyContext "SaidSmalltown01_path01:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkSmalltown01_path02BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown01_path02 IsNotSaidSmalltown01_path02 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 IsNotSaidSmalltown01_path04 IsSaidSmalltown01_path01 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkSmalltown01_path02TeenGirl
+		ApplyContext "SaidSmalltown01_path02:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkSmalltown01_path03BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown01_path03 IsNotSaidSmalltown01_path03 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkSmalltown01_path03TeenGirl
+		ApplyContext "SaidSmalltown01_path03:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkSmalltown01_path07BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown01_path07 IsNotSaidSmalltown01_path07 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear1000 IsNotSaidSmalltown01_path08 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkSmalltown01_path07TeenGirl
+		ApplyContext "SaidSmalltown01_path07:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkSmalltown01_path08BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown01_path08 IsNotSaidSmalltown01_path08 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkSmalltown01_path08TeenGirl
+		ApplyContext "SaidSmalltown01_path08:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarksmalltown02_path02BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Issmalltown02_path02 IsNotSaidsmalltown02_path02 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarksmalltown02_path02TeenGirl
+		ApplyContext "Saidsmalltown02_path02:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarksmalltown02_path03BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Issmalltown02_path03 IsNotSaidsmalltown02_path03 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarksmalltown02_path02TeenGirl
+		ApplyContext "Saidsmalltown02_path03:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarksmalltown02_path04BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Issmalltown02_path04 IsNotSaidsmalltown02_path04 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarksmalltown02_path02TeenGirl
+		ApplyContext "Saidsmalltown02_path04:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarksmalltown02_path05BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Issmalltown02_path05 IsNotSaidsmalltown02_path05 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear100 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarksmalltown02_path05TeenGirl
+		ApplyContext "Saidsmalltown02_path05:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarksmalltown02_path06BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Issmalltown02_path06 IsNotSaidsmalltown02_path06 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear700 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarksmalltown02_path06TeenGirl
+		ApplyContext "Saidsmalltown02_path06:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarksmalltown02_path08BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Issmalltown02_path08 IsNotSaidsmalltown02_path08 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear100 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarksmalltown02_path08TeenGirl
+		then manager smalltown02_path08a foo:0 -0.554
+		ApplyContext "Saidsmalltown02_path08:1:0,Saidsmalltown02_path06:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkSmalltown03_path01BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown03_path01 IsNotSaidSmalltown03_path01 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkSmalltown03_path01TeenGirl
+		ApplyContext "SaidSmalltown03_path01:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkSmalltown03_path02BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown03_path02 IsNotSaidSmalltown03_path01 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkSmalltown03_path01TeenGirl
+		ApplyContext "SaidSmalltown03_path01:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkSmalltown03_path03BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown03_path03 IsNotSaidSmalltown03_path03 IsNotSaidSmalltown03_path04 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkSmalltown03_path03TeenGirl
+		ApplyContext "SaidSmalltown03_path03:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkSmalltown03_path04BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown03_path04 IsNotSaidSmalltown03_path04 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkSmalltown03_path04TeenGirl
+		ApplyContext "SaidSmalltown03_path04:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkSmalltown03_path05BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown03_path05 IsNotSaidSmalltown03_path04 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkSmalltown03_path04TeenGirl
+		ApplyContext "SaidSmalltown03_path04:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkSmalltown03_path06BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown03_path06 IsNotSaidSmalltown03_path06 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear400 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkSmalltown03_path06TeenGirl
+		ApplyContext "SaidSmalltown03_path06:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkSmalltown03_path07BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown03_path07 IsNotSaidSmalltown03_path07 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkSmalltown03_path07TeenGirl
+		ApplyContext "SaidSmalltown03_path07:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkSmalltown03_path08BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown03_path08 IsNotSaidSmalltown03_path08 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkSmalltown03_path08TeenGirl
+		ApplyContext "SaidSmalltown03_path08:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkSmalltown03_path10BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown03_path10 IsNotSaidSmalltown03_path10 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear800 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkSmalltown03_path10TeenGirl
+		ApplyContext "SaidSmalltown03_path10:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkSmalltown03_path11BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown03_path11 IsNotSaidSmalltown03_path11 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear800 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkSmalltown03_path11TeenGirl
+		ApplyContext "SaidSmalltown03_path11:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkSmalltown03_path12BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown03_path12 IsNotSaidSmalltown03_path12 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear400 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkSmalltown03_path12TeenGirl
+		ApplyContext "SaidSmalltown03_path12:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkSmalltown03_path13BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown03_path13 IsNotSaidSmalltown03_path12 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear400 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkSmalltown03_path12TeenGirl
+		ApplyContext "SaidSmalltown03_path12:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkSmalltown04_path01BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown04_path01 IsNotSaidSmalltown04_path01 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkSmalltown04_path01TeenGirl
+		then any RiversideIsDeadB foo:0 -1.776
+		ApplyContext "SaidSmalltown04_path01:1:0,Talk:1:12"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkSmalltown04_path02BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown04_path02 IsNotSaidSmalltown04_path01 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkSmalltown04_path01TeenGirl
+		then any RiversideIsDeadB foo:0 -1.776
+		ApplyContext "SaidSmalltown04_path01:1:0,Talk:1:12"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkSmalltown04_path04BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown04_path04 IsNotSaidSmalltown04_path04 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 IsSmalltownBarricadeBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkSmalltown04_path04TeenGirl
+		ApplyContext "SaidSmalltown04_path04:1:0,SmallTownBarricadeBetazoeyrvc:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkSmalltown04_path09BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown04_path09 IsNotSaidSmalltown04_path09 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 IsSmalltownBarricadeBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkSmalltown04_path04TeenGirl
+		ApplyContext "SaidSmalltown04_path09:1:0,SmallTownBarricadeBetazoeyrvc:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkSmalltown04_path05BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown04_path05 IsNotSaidSmalltown04_path05 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkSmalltown04_path05TeenGirl
+		ApplyContext "SaidSmalltown04_path05:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkSmalltown04_path07BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown04_path07 IsNotSaidSmalltown04_path07 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear800 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkSmalltown04_path07TeenGirl
+		then Manager Smalltown04_path07A foo:0 -3.039
+		ApplyContext "SaidSmalltown04_path07:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkSmalltown04_path10BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown04_path10 IsNotSaidSmalltown04_path10 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkSmalltown04_path10TeenGirl
+		ApplyContext "SaidSmalltown04_path10:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkSmalltown05_path01BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown05_path01 IsNotSaidSmalltown05_path01 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear1000 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkSmalltown05_path01TeenGirl
+		ApplyContext "SaidSmalltown05_path01:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkSmalltown05_path03BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown05_path03 IsNotSaidSmalltown05_path03 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkSmalltown05_path03TeenGirl
+		then biker Smalltown05_path03a foo:0 -1.461
+		ApplyContext "SaidSmalltown05_path03:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkSmalltown05_path06BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown05_path06 IsNotSaidSmalltown05_path06 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkSmalltown05_path06TeenGirl
+		ApplyContext "SaidSmalltown05_path06:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkThroughHereBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsThroughHere IsNotSaidThroughHere IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear400 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkThroughHereTeenGirl
+		ApplyContext "SaidThroughHere:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkUpThatLadderBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsUpThatLadder IsNotSaidUpThatLadder IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear400 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkUpThatLadderTeenGirl
+		ApplyContext "SaidUpThatLadder:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1RespondAffirmativeBetaZoeyRVC",
+		criteria ConceptRespondAffirmative IssuerMediumClose IsNotCoughing NotInCombat isBetazoeyrvc IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1RespondAffirmativeTeenGirl
+	},
+
+	{
+		name = "L4D1RiversideIsDeadPlanBetaZoeyRVC",
+		criteria ConceptRiversideIsDeadPlan IsBetazoeyrvc IsNotCoughing IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1RiversideIsDeadPlanTeenGirl
+	},
+
+	{
+		name = "PlayerRemarkc7m1_bricktopBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isc7m1_bricktop IsNotSaidc7m1_bricktop IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsSubjectNear100 IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response PlayerRemarkc7m1_bricktopTeenGirl
+		ApplyContext "Saidc7m1_bricktop:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkc7m1_pastbricksBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isc7m1_pastbricks IsNotSaidc7m1_pastbricks IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsSubjectNear700 IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response PlayerRemarkc7m1_pastbricksTeenGirl
+		ApplyContext "Saidc7m1_pastbricks:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkc7m1_pretankBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isc7m1_pretank IsNotSaidc7m1_pretank IsNotCoughing NotInCombat IsTalk IsNotAlone IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc ChanceToFire100Percent IsSubjectNear200 IsNotSpeakingWeight0 _auto_NotSaidC7M1OpenTankDoor AutoIsNotScavenge AutoIsNotSurvival
 		// 	forceweight 1
-		Response PlayerRemarkc2m1_searchlightsMechanic
-		then any _c2m1_searchlights01 foo:0 0.01
-		ApplyContext "Saidc2m1_searchlights:1:0,Talk:1:3.371"
+		Response PlayerRemarkc7m1_pretankTeenGirl
+		then Any InfoRemc7m1_pretank03 foo:0 0.000
+		ApplyContext "Saidc7m1_pretank:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkc2m1_throughhereTrevor",
-		criteria ConceptRemark IsTrevor Isc2m1_throughhere IsNotSaidc2m1_throughhere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc2m1_throughhereMechanic
-		ApplyContext "Saidc2m1_throughhere:1:0,Talk:1:0.718"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc2m1_throughmotelTrevor",
-		criteria ConceptRemark IsTrevor Isc2m1_throughmotel IsNotSaidc2m1_throughmotel IsNotSaidc2m1_motelsign IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc2m1_throughmotelMechanic
-		ApplyContext "Saidc2m1_throughmotel:1:0,Talk:1:1.976"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc2m1_throughwindowTrevor",
-		criteria ConceptRemark IsTrevor Isc2m1_throughwindow IsNotSaidc2m1_throughwindow IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc2m1_throughwindowMechanic
-		ApplyContext "Saidc2m1_throughwindow:1:0,Talk:1:1.042"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc2m1_uphillTrevor",
-		criteria ConceptRemark IsTrevor Isc2m1_uphill IsNotSaidc2m1_uphill IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc2m1_uphillMechanic
-		ApplyContext "Saidc2m1_uphill:1:0,Talk:1:0.630"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc2m1_upstairsTrevor",
-		criteria ConceptRemark IsTrevor Isc2m1_upstairs IsNotSaidc2m1_upstairs IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc2m1_upstairsMechanic
-		ApplyContext "Saidc2m1_upstairs:1:0,Talk:1:1.269"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc2m2_cottoncandyTrevor",
-		criteria ConceptRemark IsTrevor Isc2m2_cottoncandy IsNotSaidc2m2_cottoncandy IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_NotCoachFoodBreak _auto_NotAlarm IsNotSpeakingWeight0
-		Response PlayerRemarkc2m2_cottoncandyMechanic
-		then coach _C2M2_CottonCandy01 foo:0 0.01
-		ApplyContext "Saidc2m2_cottoncandy:1:0,Talk:1:2.708,_auto_CoachFoodBreak:1:15"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc2m2_cottoncandy2Trevor",
-		criteria ConceptRemark IsTrevor Isc2m2_cottoncandy2 IsNotSaidc2m2_cottoncandy IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival _auto_NotCoachFoodBreak _auto_NotAlarmV2 IsNotSpeakingWeight0
-		Response PlayerRemarkc2m2_cottoncandyMechanic
-		then coach _C2M2_CottonCandy01 foo:0 0.01
-		ApplyContext "Saidc2m2_cottoncandy:1:0,Talk:1:2.708,_auto_CoachFoodBreak:1:15"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc2m2_entrancesignTrevor",
-		criteria ConceptRemark IsTrevor Isc2m2_entrancesign IsNotSaidc2m2_entrancesign IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear600 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc2m2_entrancesignMechanic
-		ApplyContext "Saidc2m2_entrancesign:1:0,Talk:1:3.331"
-		applycontexttoworld
-	},
-
-	{
-		name = "_C2M2_CottonCandy01Trevor",
-		criteria Concept_C2M2_CottonCandy01 IsTrevor NotInCombat ChanceToFire50Percent AutoIsNotScavenge AutoIsNotSurvival
-		Response _C2M2_CottonCandy01Mechanic
-		then coach _C2M2_CottonCandy01 foo:0 0.01
-		ApplyContext "Talk:1:10.109"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc2m2_kiddielandTrevor",
-		criteria ConceptRemark IsTrevor Isc2m2_kiddieland IsNotSaidc2m2_kiddieland IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear800 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc2m2_kiddielandMechanic
-		then any _C2M2_Kiddie01 foo:0 0.01
-		ApplyContext "Saidc2m2_kiddieland:1:0,Talk:1:3.403,_auto_CoachFoodBreak:1:15"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc2m2_topofslideTrevor",
-		criteria ConceptRemark IsTrevor Isc2m2_topofslide IsNotSaidc2m2_topofslide IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear150 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc2m2_topofslideMechanic
-		ApplyContext "Saidc2m2_topofslide:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc2m3_coasteroffTrevor",
-		criteria ConceptRemark IsTrevor Isc2m3_coasteroff IsNotSaidc2m3_coasteroff IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival _auto_IsAlarm _auto_IsTracksOK IsNotSpeakingWeight0
-		Response PlayerRemarkc2m3_coasteroffMechanic
-		ApplyContext "Saidc2m3_coasteroff:1:0,_auto_TimerLockA:1:8"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc2m3_coollightTrevor",
-		criteria ConceptRemark IsTrevor Isc2m3_coollight IsNotSaidc2m3_coollight IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc2m3_coollightMechanic
-		ApplyContext "Saidc2m3_coollight:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc2m3_coollightNickTrevor",
-		criteria ConceptRemark IsTrevor Isc2m3_coollight IsNotSaidc2m3_coollight IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsGamblerNear200 IsGamblerAlive ChanceToFire50Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc2m3_coollightNickMechanic
-		then gambler _c2m3_coollight foo:0 0.1
-		ApplyContext "Saidc2m3_coollight:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc2m3_holeTrevor",
-		criteria ConceptRemark IsTrevor Isc2m3_hole IsNotSaidc2m3_hole IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc2m3_holeMechanic
-		then any _c2m3_hole01 foo:0 0.1
-		ApplyContext "Saidc2m3_hole:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc2m3_overfenceTrevor",
-		criteria ConceptRemark IsTrevor Isc2m3_overfence IsNotSaidc2m3_overfence IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc2m3_overfenceMechanic
-		ApplyContext "Saidc2m3_overfence:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc2m3_screamingoakTrevor",
-		criteria ConceptRemark IsTrevor Isc2m3_screamingoak IsNotSaidc2m3_screamingoak IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear800 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc2m3_screamingoakMechanic
-		ApplyContext "Saidc2m3_screamingoak:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc2m3_swanpileupTrevor",
-		criteria ConceptRemark IsTrevor Isc2m3_swanpileup IsNotSaidc2m3_swanpileup IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear150 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc2m3_swanpileupMechanic
-		ApplyContext "Saidc2m3_swanpileup:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc2m3_swanroomTrevor",
-		criteria ConceptRemark IsTrevor Isc2m3_swanroom IsNotSaidc2m3_swanroom IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc2m3_swanroomMechanic
-		ApplyContext "Saidc2m3_swanroom:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc2m3_tracks01Trevor",
-		criteria ConceptRemark IsTrevor Isc2m3_tracks01 IsNotSaidc2m3_tracks01 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_IsTracksOK IsNotSpeakingWeight0
-		Response PlayerRemarkc2m3_tracks01Mechanic
-		ApplyContext "Saidc2m3_tracks01:1:0,_auto_TimerLockA:1:8"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc2m3_tracks02Trevor",
-		criteria ConceptRemark IsTrevor Isc2m3_tracks02 IsNotSaidc2m3_tracks02 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_IsTracksOK IsNotSpeakingWeight0
-		Response PlayerRemarkc2m3_tracks01Mechanic
-		ApplyContext "Saidc2m3_tracks02:1:0,_auto_TimerLockA:1:8"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc2m3_tracks03Trevor",
-		criteria ConceptRemark IsTrevor Isc2m3_tracks03 IsNotSaidc2m3_tracks03 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_IsTracksOK IsNotSpeakingWeight0
-		Response PlayerRemarkc2m3_tracks01Mechanic
-		ApplyContext "Saidc2m3_tracks03:1:0,_auto_TimerLockA:1:8"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc2m3_tracks04Trevor",
-		criteria ConceptRemark IsTrevor Isc2m3_tracks04 IsNotSaidc2m3_tracks04 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_IsTracksOK IsNotSpeakingWeight0
-		Response PlayerRemarkc2m3_tracks01Mechanic
-		ApplyContext "Saidc2m3_tracks04:1:0,_auto_TimerLockA:1:8"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc2m3_tracks05Trevor",
-		criteria ConceptRemark IsTrevor Isc2m3_tracks05 IsNotSaidc2m3_tracks05 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_IsTracksOK IsNotSpeakingWeight0
-		Response PlayerRemarkc2m3_tracks01Mechanic
-		ApplyContext "Saidc2m3_tracks05:1:0,_auto_TimerLockA:1:8"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc2m3_tracks06Trevor",
-		criteria ConceptRemark IsTrevor Isc2m3_tracks06 IsNotSaidc2m3_tracks06 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_IsTracksOK IsNotSpeakingWeight0
-		Response PlayerRemarkc2m3_tracks01Mechanic
-		ApplyContext "Saidc2m3_tracks06:1:0,_auto_TimerLockA:1:8"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc2m3_tracks07Trevor",
-		criteria ConceptRemark IsTrevor Isc2m3_tracks07 IsNotSaidc2m3_tracks07 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_IsTracksOK IsNotSpeakingWeight0
-		Response PlayerRemarkc2m3_tracks01Mechanic
-		ApplyContext "Saidc2m3_tracks07:1:0,_auto_TimerLockA:1:8"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc2m3_tracks08Trevor",
-		criteria ConceptRemark IsTrevor Isc2m3_tracks08 IsNotSaidc2m3_tracks08 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival _auto_IsTracksOK IsNotSpeakingWeight0
-		Response PlayerRemarkc2m3_tracks01Mechanic
-		ApplyContext "Saidc2m3_tracks08:1:0,_auto_TimerLockA:1:8"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc2m3_ventTrevor",
-		criteria ConceptRemark IsTrevor Isc2m3_vent IsNotSaidc2m3_vent IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear150 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc2m3_ventMechanic
-		ApplyContext "Saidc2m3_vent:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc2m3_waterTrevor",
-		criteria ConceptRemark IsTrevor Isc2m3_water IsNotSaidc2m3_water IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear150 ChanceToFire60Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc2m3_waterMechanic
-		then any _c2m3_water01 foo:0 0.1
-		ApplyContext "Saidc2m3_water:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "AUTOBLANK_PlayerRemarkc2m3_waterTrevor",
-		criteria ConceptRemark IsTrevor Isc2m3_water IsNotSaidc2m3_water IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear150 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response _PlayerInfoRemarkableBlankMechanic
-		ApplyContext "Saidc2m3_water:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc2m3_wayblockedTrevor",
-		criteria ConceptRemark IsTrevor Isc2m3_wayblocked IsNotSaidc2m3_wayblocked IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc2m3_wayblockedMechanic
-		ApplyContext "Saidc2m3_wayblocked:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc2m4_barnentryTrevor",
-		criteria ConceptRemark IsTrevor Isc2m4_barnentry IsNotSaidc2m4_barnentry IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc2m4_barnentryMechanic
-		ApplyContext "Saidc2m4_barnentry:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc2m4_bumpercarsTrevor",
-		criteria ConceptRemark IsTrevor Isc2m4_bumpercars IsNotSaidc2m4_bumpercars IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear800 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc2m4_bumpercarsMechanic
-		ApplyContext "Saidc2m4_bumpercars:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc2m4_pendoorTrevor",
-		criteria ConceptRemark IsTrevor Isc2m4_pendoor IsNotSaidc2m4_pendoor IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc2m4_pendoorMechanic
-		ApplyContext "Saidc2m4_pendoor:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc2m4_moustachioTrevor",
-		criteria ConceptRemark IsTrevor Isc2m4_moustachio IsNotSaidc2m4_moustachio IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc2m4_moustachioMechanic
-		ApplyContext "Saidc2m4_moustachio:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc2m4_stadiumTrevor",
-		criteria ConceptRemark IsTrevor Isc2m4_stadium IsNotSaidc2m4_stadium IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc2m4_stadiumMechanic
-		ApplyContext "Saidc2m4_stadium:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc2m4_upbarnTrevor",
-		criteria ConceptRemark IsTrevor Isc2m4_upbarn IsNotSaidc2m4_upbarn IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc2m4_upbarnMechanic
-		ApplyContext "Saidc2m4_upbarn:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc2m5_button2Trevor",
-		criteria ConceptRemark IsTrevor Isc2m5_button2 IsNotSaidc2m5_button2 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear75 TimeSinceGroupInCombat02 AutoIsNotScavenge AutoIsNotSurvival _auto_IsButton1 _auto_NotButton2 IsNotSpeakingWeight0
-		Response PlayerRemarkc2m5_button2Mechanic
-		ApplyContext "Saidc2m5_button2:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkC3M3BridgeDownTrevor",
-		criteria ConceptRemark IsTrevor IsC3M3BridgeDown IsNotSaidC3M3BridgeDown IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsSaidC3M3BridgeButton AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkC3M3BridgeDownMechanic
-		ApplyContext "SaidC3M3BridgeDown:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkC3M1NoSwimmingTrevor",
-		criteria ConceptRemark IsTrevor IsC3M1NoSwimming IsNotSaidC3M1NoSwimming IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkC3M1NoSwimmingMechanic
-		ApplyContext "SaidC3M1NoSwimming:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc3m2_parachutistTrevor",
-		criteria ConceptRemark IsTrevor Isc3m2_parachutist IsNotSaidc3m2_parachutist IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		// 	forceweight 10
-		Response PlayerRemarkc3m2_parachutistMechanic
-		ApplyContext "Saidc3m2_parachutist:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc3m2_overtreeTrevor",
-		criteria ConceptRemark IsTrevor IsC3M2OverTree IsNotSaidC3M2OverTree IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc3m2_overtreeMechanic
-		then any _C3M2Pirogue foo:0 0.1
-		ApplyContext "SaidC3M2OverTree:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkC3M2PlaneCrashTrevor",
-		criteria ConceptRemark IsTrevor IsC3M2PlaneCrash IsNotSaidC3M2PlaneCrash IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear600 IsNotSaidC3M2OpenDoor IsWorldTalkTrevor ChanceToFire100Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		// 	forceweight 1
-		Response PlayerRemarkC3M2PlaneCrashMechanic
-		ApplyContext "SaidC3M2PlaneCrash:1:0,Talk:1:3.419"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkC3M2PlaneDoorNagTrevor",
-		criteria ConceptRemark IsTrevor IsC3M2PlaneDoorNag IsNotSaidC3M2PlaneDoorNag IsNotCoughing IsTalk IsTalkTrevor IsSubjectNear500 IsNotSaidC3M2OpenDoor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkC3M2PlaneDoorNagMechanic
-		ApplyContext "SaidC3M2PlaneDoorNag:1:0,_auto_TimerLockA:1:15,Talk:1:2.270"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkC3M2PlaneDoorNagaTrevor",
-		criteria ConceptTalkIdle IsTrevor IsSaidC3M2PlaneDoorNag IsNotSaidC3M2OpenDoor ismapc3m2_swamp IsNotCoughing IsTalk IsTalkTrevor IsNotZombiePresentTank AutoIsNotScavenge AutoIsNotSurvival IsWorldTalkTrevor IsNotSpeakingWeight0 _auto_NotTimerLockA _auto_NotTimerLockTrevor
-		Response PlayerRemarkC3M2PlaneDoorNagaMechanic
-		ApplyContext "_auto_TimerLockA:1:20,_auto_TimerLockTrevor:1:40,Talk:1:1.660"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkC3M2RoadTrevor",
-		criteria ConceptRemark IsTrevor IsC3M2Road IsNotSaidC3M2Road IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear300 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkC3M2RoadMechanic
-		ApplyContext "SaidC3M2Road:1:0,Talk:1:1.154"
-		applycontexttoworld
-	},
-
-	{
-		name = "C3M2LeavingSafeRoomTrevor",
-		criteria ConceptSurvivorLeavingInitialCheckpoint IsTrevor IsNotSaidLeavingSafeArea ismapc3m2_swamp _auto_NotTellingStory
-		Response PlayerRemarkC3M2StartMechanic
-		ApplyContext "SaidLeavingSafeArea:1:0,Talk:1:1.547"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkC3M2StartDryTrevor",
-		criteria ConceptRemark IsTrevor IsC3M2StartDry IsNotSaidC3M2StartDry IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear200 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkC3M2StartDryMechanic
-		ApplyContext "SaidC3M2StartDry:1:0,Talk:1:1.497"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkC3M2UnderWaterShackTrevor",
-		criteria ConceptRemark IsTrevor IsC3M2UnderWaterShack IsNotSaidC3M2UnderWaterShack IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear300 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkC3M2UnderWaterShackMechanic
-		ApplyContext "SaidC3M2UnderWaterShack:1:0,Talk:1:4.380"
-		applycontexttoworld
-	},
-
-	{
-		name = "_C3M2UnderwaterShackTrevor",
-		criteria Concept_C3M2UnderwaterShack IsTrevor IsNotCoughing NotInCombat IssuerClose AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response _C3M2UnderwaterShackMechanic
-	},
-
-	{
-		name = "PlayerRemarkC3M2Village1Trevor",
-		criteria ConceptRemark IsTrevor IsC3M2Village1 IsNotSaidC3M2Village1 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear800 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkC3M2Village1Mechanic
-		ApplyContext "SaidC3M2Village1:1:0,Talk:1:1.848"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkC3M3LowerGateTrevor",
-		criteria ConceptRemark IsTrevor IsC3M3LowerGate IsNotSaidC3M3BridgeButton IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkC3M3LowerGateMechanic
-		then any InfoRemC3M3LowerGatea foo:0 10
-		ApplyContext "SaidC3M3LowerGate:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkC3M3SearchHousesTrevor",
-		criteria ConceptRemark IsTrevor IsC3M3SearchHouses IsNotSaidC3M3SearchHouses IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkC3M3SearchHousesMechanic
-		ApplyContext "SaidC3M3SearchHouses:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkC3M3StairsTrevor",
-		criteria ConceptRemark IsTrevor IsC3M3Stairs IsNotSaidC3M3Stairs IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkC3M3StairsMechanic
-		ApplyContext "SaidC3M3Stairs:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkC3M3StayUpHereTrevor",
-		criteria ConceptRemark IsTrevor IsC3M3StayUpHere IsNotSaidC3M3StayUpHere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 ChanceToFire30Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkC3M3StayUpHereMechanic
-		ApplyContext "SaidC3M3StayUpHere:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "AUTOBLANK_PlayerRemarkC3M3StayUpHereTrevor",
-		criteria ConceptRemark IsTrevor IsC3M3StayUpHere IsNotSaidC3M3StayUpHere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear100 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response _PlayerInfoRemarkableBlankMechanic
-		ApplyContext "SaidC3M3StayUpHere:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkC3M3ThisWayTrevor",
-		criteria ConceptRemark IsTrevor IsC3M3ThisWay IsNotSaidC3M3ThisWay IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 ChanceToFire50Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkC3M3ThisWayMechanic
-		ApplyContext "SaidC3M3ThisWay:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "AUTOBLANK_PlayerRemarkC3M3ThisWayTrevor",
-		criteria ConceptRemark IsTrevor IsC3M3ThisWay IsNotSaidC3M3ThisWay IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response _PlayerInfoRemarkableBlankMechanic
-		ApplyContext "SaidC3M3ThisWay:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkC3M3ThroughHereTrevor",
-		criteria ConceptRemark IsTrevor IsC3M3ThroughHere IsNotSaidC3M3ThroughHere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkC3M3ThroughHereMechanic
-		ApplyContext "SaidC3M3ThroughHere:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkC3M3ThroughThisHouseTrevor",
-		criteria ConceptRemark IsTrevor IsC3M3ThroughThisHouse IsNotSaidC3M3ThroughThisHouse IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkC3M3ThroughThisHouseMechanic
-		ApplyContext "SaidC3M3ThroughThisHouse:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkC3M3UpHereTrevor",
-		criteria ConceptRemark IsTrevor IsC3M3UpHere IsNotSaidC3M3UpHere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear100 IsNotSaidC3M3BridgeButton AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkC3M3UpHereMechanic
-		ApplyContext "SaidC3M3UpHere:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkC3M3UsePlanksTrevor",
-		criteria ConceptRemark IsTrevor IsC3M3UsePlanks IsNotSaidC3M3UsePlanks IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 ChanceToFire30Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkC3M3UsePlanksMechanic
-		ApplyContext "SaidC3M3UsePlanks:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "AUTOBLANK_PlayerRemarkC3M3UsePlanksTrevor",
-		criteria ConceptRemark IsTrevor IsC3M3UsePlanks IsNotSaidC3M3UsePlanks IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response _PlayerInfoRemarkableBlankMechanic
-		ApplyContext "SaidC3M3UsePlanks:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc3m4downroadTrevor",
-		criteria ConceptRemark IsTrevor Isc3m4downroad IsNotSaidc3m4downroad IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc3m4downroadMechanic
-		ApplyContext "Saidc3m4downroad:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc3m4radioTrevor",
-		criteria ConceptRemark IsTrevor Isc3m4radio IsNotSaidc3m4radio IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival _auto_NotButton1 IsNotSpeakingWeight0
-		Response PlayerRemarkc3m4radioMechanic
-		ApplyContext "Saidc3m4radio:1:0,Talk:1:1.228"
-		applycontexttoworld
-	},
-
-	{
-		name = "_C3M4_RadioTrevor",
-		criteria Concept_C3M4_Radio IsTrevor IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IssuerClose AutoIsNotScavenge AutoIsNotSurvival _auto_NotButton1
-		Response _C3M4_RadioMechanic
-		ApplyContext "Talk:1:1.507"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc3m4scaffoldTrevor",
-		criteria ConceptRemark IsTrevor Isc3m4scaffold IsNotSaidc3m4scaffold IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc3m4scaffoldMechanic
-		ApplyContext "Saidc3m4scaffold:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc3m4shacksTrevor",
-		criteria ConceptRemark IsTrevor Isc3m4shacks IsNotSaidc3m4shacks IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc3m4shacksMechanic
-		ApplyContext "Saidc3m4shacks:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc4m1_carcrashTrevor",
-		criteria ConceptRemark IsTrevor Isc4m1_carcrash IsNotSaidc4m1_carcrash IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear500 IsWorldTalkTrevor ChanceToFire50Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc4m1_carcrashMechanic
-		then any c4m1_wreck01 foo:0 0.01
-		ApplyContext "Saidc4m1_carcrash:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "AUTOBLANK_PlayerRemarkc4m1_carcrashTrevor",
-		criteria ConceptRemark IsTrevor Isc4m1_carcrash IsNotSaidc4m1_carcrash IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear300 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response _PlayerInfoRemarkableBlankMechanic
-		ApplyContext "Saidc4m1_carcrash:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc4m1_garagesaleTrevor",
-		criteria ConceptRemark IsTrevor Isc4m1_garagesale IsNotSaidc4m1_garagesale IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear400 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc4m1_garagesaleMechanic
-		ApplyContext "Saidc4m1_garagesale:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc4m1_nogasTrevor",
-		criteria ConceptRemark IsTrevor Isc4m1_nogas IsNotSaidc4m1_nogas IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear300 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc4m1_nogasMechanic
-		then any c4m1_nogas01 foo:0 0.01
-		ApplyContext "Saidc4m1_nogas:1:0,Talk:1:0.929,_auto_NoGasGate:1:25"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc4m1_playgroundfarTrevor",
-		criteria ConceptRemark IsTrevor Isc4m1_playground IsNotSaidc4m1_playground IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear1000 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc4m1_playgroundfarMechanic
-		ApplyContext "Saidc4m1_playground:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc4m1_playgroundnearTrevor",
-		criteria ConceptRemark IsTrevor Isc4m1_playground IsNotSaidc4m1_playground IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear300 IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc4m1_playgroundnearMechanic
-		ApplyContext "Saidc4m1_playground:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc4m1_throughhereATrevor",
-		criteria ConceptRemark IsTrevor Isc4m1_throughhereA IsNotSaidc4m1_throughhereA IsNotCoughing IsTalk IsTalkTrevor IsSubjectNear400 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc4m1_throughhereAMechanic
-		ApplyContext "Saidc4m1_throughhereA:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc4m2_gasinsidesignTrevor",
-		criteria ConceptRemark IsTrevor Isc4m2_gasinsidesign IsNotSaidc4m2_gasinsidesign IsNotSaidSafeSpotAhead IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear350 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc4m2_gasinsidesignMechanic
-		then any _c4m2_gasinside01 foo:0 0.01
-		ApplyContext "Saidc4m2_gasinsidesign:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc4m2_millentranceTrevor",
-		criteria ConceptRemark IsTrevor Isc4m2_millentrance IsNotSaidc4m2_millentrance IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc4m2_millentranceMechanic
-		ApplyContext "Saidc4m2_millentrance:1:0,c4m2_PastStart:1:0,_auto_InsideMill:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc4m2_millentranceexitTrevor",
-		criteria ConceptRemark IsTrevor Isc4m2_millentranceexit IsNotSaidc4m2_millentranceexit IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc4m2_millentranceexitMechanic
-		ApplyContext "Saidc4m2_millentranceexit:1:0,c4m2_PastStart:1:0,_auto_InsideMill:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc4m2_seegasstationTrevor",
-		criteria ConceptRemark IsTrevor Isc4m2_seegasstation IsNotSaidc4m2_seegasstation IsNotSaidActivatedC4M2Elevator IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear150 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc4m2_seegasstationMechanic
-		then self _c4m2_seestation01 foo:0 0.01
-		ApplyContext "Talk:1:3,Saidc4m2_seegasstation:1:0,_auto_InsideMill:0:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc4m2_streetblockedTrevor",
-		criteria ConceptRemark IsTrevor Isc4m2_streetblocked IsNotSaidc4m2_streetblocked IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc4m2_streetblockedMechanic
-		then any _c4m2_streetblocked01 foo:0 0.01
-		ApplyContext "Saidc4m2_streetblocked:1:0,c4m2_PastStart:1:0,_auto_InsideMill:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc4m2_uprampTrevor",
-		criteria ConceptRemark IsTrevor Isc4m2_upramp IsNotSaidc4m2_upramp IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear600 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc4m2_uprampMechanic
-		ApplyContext "Saidc4m2_upramp:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc4m2_upthestairsTrevor",
-		criteria ConceptRemark IsTrevor Isc4m2_upthestairs IsNotSaidc4m2_upthestairs IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc4m2_upthestairsMechanic
-		ApplyContext "Saidc4m2_upthestairs:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc4m2_useelevatorTrevor",
-		criteria ConceptRemark IsTrevor Isc4m2_useelevator IsNotSaidc4m2_useelevator IsNotSaidActivatedC4M2Elevator IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 IsSaidc4m2_seegasstation AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc4m2_useelevatorMechanic
-		ApplyContext "Saidc4m2_useelevator:1:0,_auto_InsideMill:0:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc4m2_waterpoolTrevor",
-		criteria ConceptRemark IsTrevor Isc4m2_waterpool IsNotSaidc4m2_waterpool IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc4m2_waterpoolMechanic
-		then any _c4m2_waterpool02 foo:0 0.01
-		ApplyContext "Saidc4m2_waterpool:1:0,c4m2_PastPuddle:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc4m2_weatherTrevor",
-		criteria ConceptRemark IsTrevor Isc4m2_weather IsNotSaidc4m2_weather IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear600 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc4m2_weatherMechanic
-		ApplyContext "Saidc4m2_weather:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc4m3_caneTrevor",
-		criteria ConceptRemark IsTrevor Isc4m3_cane IsNotSaidc4m3_cane IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc4m3_caneMechanic
-		ApplyContext "Saidc4m3_cane:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc4m3_crosshereTrevor",
-		criteria ConceptRemark IsTrevor Isc4m3_crosshere IsNotSaidc4m3_crosshere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear150 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc4m3_crosshereMechanic
-		ApplyContext "Saidc4m3_crosshere:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc4m3_downhereTrevor",
-		criteria ConceptRemark IsTrevor Isc4m3_downhere IsNotSaidc4m3_downhere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear150 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc4m3_downhereMechanic
-		ApplyContext "Saidc4m3_downhere:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc4m3_downstairsTrevor",
-		criteria ConceptRemark IsTrevor Isc4m3_downstairs IsNotSaidc4m3_downstairs IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc4m3_downstairsMechanic
-		ApplyContext "Saidc4m3_downstairs:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc4m3_ducatelsignTrevor",
-		criteria ConceptRemark IsTrevor Isc4m3_ducatelsign IsNotSaidc4m3_ducatelsign IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc4m3_ducatelsignMechanic
-		ApplyContext "Saidc4m3_ducatelsign:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc4m3_elevatorTrevor",
-		criteria ConceptRemark IsTrevor Isc4m3_elevator IsNotSaidc4m3_elevator IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear600 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc4m3_elevatorMechanic
-		ApplyContext "Saidc4m3_elevator:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc4m3_overtankTrevor",
-		criteria ConceptRemark IsTrevor Isc4m3_overtank IsNotSaidc4m3_overtank IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc4m3_overtankMechanic
-		ApplyContext "Saidc4m3_overtank:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc4m3_rainTrevor",
-		criteria ConceptRemark IsTrevor Isc4m3_rain IsNotSaidc4m3_rain IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc4m3_rainMechanic
-		then any _c4m3_rain01 foo:0 0.02
-		ApplyContext "Saidc4m3_rain:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc4m3_thiswayTrevor",
-		criteria ConceptRemark IsTrevor Isc4m3_thisway IsNotSaidc4m3_thisway IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear150 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc4m2_millentranceexitMechanic
-		ApplyContext "Saidc4m3_thisway:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc4m3_uppipesTrevor",
-		criteria ConceptRemark IsTrevor Isc4m3_uppipes IsNotSaidc4m3_uppipes IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc4m3_uppipesMechanic
-		ApplyContext "Saidc4m3_uppipes:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc4m4_floodedTrevor",
-		criteria ConceptRemark IsTrevor Isc4m4_flooded NotInCombat IsSubjectNear150 AutoIsNotScavenge AutoIsNotSurvival _auto_IsSafeRoomStart _auto_NotSafeRoomQuiet IsNotSpeakingWeight0
-		Response PlayerRemarkc4m4_floodedMechanic
-		ApplyContext "SaidSaferoomRemarkIntro:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc4m4_garagesaleTrevor",
-		criteria ConceptRemark IsTrevor Isc4m4_garagesale IsNotSaidc4m4_garagesale IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear1000 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc4m4_garagesaleMechanic
-		ApplyContext "Saidc4m4_garagesale:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc4m4_garagesale2Trevor",
-		criteria ConceptRemark IsTrevor Isc4m4_garagesale2 IsNotSaidc4m4_garagesale IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear100 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc4m4_garagesaleMechanic
-		ApplyContext "Saidc4m4_garagesale:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc4m4_playgroundTrevor",
-		criteria ConceptRemark IsTrevor Isc4m4_playground IsNotSaidc4m4_playground IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear800 AutoIsNotScavenge AutoIsNotSurvival _auto_NotLockA IsNotSpeakingWeight0
-		Response PlayerRemarkc4m4_playgroundMechanic
-		ApplyContext "Saidc4m4_playground:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc4m4_porchlightTrevor",
-		criteria ConceptRemark IsTrevor Isc4m4_porchlight IsNotSaidc4m4_porchlight IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear800 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc4m4_porchlightMechanic
-		ApplyContext "Saidc4m4_porchlight:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc4m4_truckwreckTrevor",
-		criteria ConceptRemark IsTrevor Isc4m4_truckwreck IsNotSaidc4m4_truckwreck IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear800 AutoIsNotScavenge AutoIsNotSurvival _auto_NotLockA IsNotSpeakingWeight0
-		Response PlayerRemarkc4m4_truckwreckMechanic
-		ApplyContext "Saidc4m4_truckwreck:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkc4m4_useroofsTrevor",
-		criteria ConceptRemark IsTrevor Isc4m4_useroofs IsNotSaidc4m4_useroofs IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc4m4_useroofsMechanic
-		ApplyContext "Saidc4m4_useroofs:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkpathc2m1_billboardTrevor",
-		criteria ConceptRemark IsTrevor Ispathc2m1_billboard IsNotSaidpathc2m1_billboard IsNotCoughing NotInCombat IsTalkTrevor IsSubjectNear1000 IsWorldTalkTrevor IsNotSaidLeavingSafeArea AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkpathc2m1_billboardMechanic
-		then Coach _C2M1Billboard foo:0 0.01
-		ApplyContext "Saidpathc2m1_billboard:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkremark_caralarmTrevor",
-		criteria ConceptRemark IsTrevor Isremark_caralarm IsNotSaidremark_caralarm IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear700 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkremark_caralarmMechanic
-		ApplyContext "Saidremark_caralarm:1:300"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkremark_MidnightRidersBusTrevor",
-		criteria ConceptRemark IsTrevor Isremark_MidnightRidersBus IsNotSaidremark_MidnightRidersBus IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear1500 IsNotSpeakingWeight0
-		Response PlayerRemarkremark_MidnightRidersBusMechanic
-		ApplyContext "Saidremark_MidnightRidersBus:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC1M1CedaMapsTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC1M1CedaMaps IsNotSaidWorldC1M1CedaMaps IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC1M1CedaMapsMechanic
-		ApplyContext "SaidWorldC1M1CedaMaps:1:0,Talk:1:5.579"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC1M1DownHereTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC1M1DownHere IsNotSaidWorldC1M1DownHere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear600 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC1M1DownHereMechanic
-		ApplyContext "SaidWorldC1M1DownHere:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC1M1DownStairsTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC1M1DownStairs IsNotSaidWorldC1M1DownStairs IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsWorldTalkTrevor IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC1M1DownStairsMechanic
-		ApplyContext "SaidWorldC1M1DownStairs:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC1M1ElevatorBrokenTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC1M1ElevatorBroken IsNotSaidWorldC1M1ElevatorBroken IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsWorldTalkTrevor IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC1M1ElevatorBrokenMechanic
-		ApplyContext "SaidWorldC1M1ElevatorBroken:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC1M1FireSpreadingTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC1M1FireSpreading IsNotSaidWorldC1M1FireSpreading IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC1M1FireSpreadingMechanic
-		ApplyContext "SaidWorldC1M1FireSpreading:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC1M1FirstTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC1M1First IsNotSaidWorldC1M1First IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsWorldTalkTrevor IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC1M1FirstMechanic
-		ApplyContext "SaidWorldC1M1First:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC1M1LedgeTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC1M1Ledge IsNotSaidWorldC1M1Ledge IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsWorldTalkTrevor IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC1M1LedgeMechanic
-		ApplyContext "SaidWorldC1M1Ledge:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC1M1StairsSignTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC1M1StairsSign IsNotSaidWorldC1M1StairsSign IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsWorldTalkTrevor IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC1M1StairsSignMechanic
-		ApplyContext "SaidWorldC1M1StairsSign:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC1M2CloseTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC1M2Close IsNotSaidWorldC1M2Close IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC1M2CloseMechanic
-		ApplyContext "SaidWorldC1M2Close:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC1M2DownStairsTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC1M2DownStairs IsNotSaidWorldC1M2DownStairs IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 TimeSinceGroupInCombat05 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC1M2DownStairsMechanic
-		ApplyContext "SaidWorldC1M2DownStairs:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC1M2AbandonedTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC1M2Abandoned IsNotSaidWorldC1M2Abandoned IsNotCoughing NotInCombat IntensityZero IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC1M2AbandonedMechanic
-		ApplyContext "SaidWorldC1M2Abandoned:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC1M2DumpsterTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC1M2Dumpster IsNotSaidWorldC1M2Dumpster IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC1M2DumpsterMechanic
-		ApplyContext "SaidWorldC1M2Dumpster:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC1M2GunStoreCloseTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC1M2GunStoreClose IsNotSaidWorldC1M2GunStoreClose IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC1M2GunStoreCloseMechanic
-		ApplyContext "SaidWorldC1M2GunStoreClose:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC1M2InHereTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC1M2InHere IsNotSaidWorldC1M2InHere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC1M2InHereMechanic
-		ApplyContext "SaidWorldC1M2InHere:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC1M2JumpTruckTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC1M2JumpTruck IsNotSaidWorldC1M2JumpTruck IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC1M2JumpTruckMechanic
-		ApplyContext "SaidWorldC1M2JumpTruck:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC1M2MallSignHereTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC1M2MallSignHere IsNotSaidWorldC1M2MallSignHere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear800 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC1M2MallSignHereMechanic
-		ApplyContext "SaidWorldC1M2MallSignHere:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC1M2MallThisWayTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC1M2MallThisWay IsNotSaidWorldC1M2MallThisWay IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear600 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC1M2MallThisWayMechanic
-		ApplyContext "SaidWorldC1M2MallThisWay:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC1M2UpStairsTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC1M2UpStairs IsNotSaidWorldC1M2UpStairs IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear600 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC1M2UpStairsMechanic
-		ApplyContext "SaidWorldC1M2UpStairs:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC3M1AmmoUpTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC3M1AmmoUp IsNotSaidWorldC3M1AmmoUp IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear400 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC3M1AmmoUpMechanic
-		ApplyContext "SaidWorldC3M1AmmoUp:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC3M1CheckingHousesTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC3M1CheckingHouses IsNotSaidWorldC3M1CheckingHouses IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear200 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC3M1CheckingHousesMechanic
-		ApplyContext "SaidWorldC3M1CheckingHouses:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC3M1FeedGatorTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC3M1FeedGator IsNotSaidWorldC3M1FeedGator IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear400 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC3M1FeedGatorMechanic
-		ApplyContext "SaidWorldC3M1FeedGator:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC3M1FerryCrossingTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC3M1FerryCrossing IsNotSaidWorldC3M1FerryCrossing IsNotCoughing NotInCombat IsTalkTrevor IsSubjectNear200 IsWorldTalkTrevor ChanceToFire100Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		// 	forceweight 1
-		Response PlayerRemarkWorldC3M1FerryCrossingMechanic
-		then producer WorldC3M1FerryCrossingE01 foo:0 -6.143
-		ApplyContext "SaidWorldC3M1FerryCrossing:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC3M1FerryCrossingCoachTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC3M1FerryCrossing IsNotSaidWorldC3M1FerryCrossing IsNotCoughing NotInCombat IsTalkTrevor IsSubjectNear200 IsCoachAlive IsWorldTalkTrevor ChanceToFire75Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		// 	forceweight 2
-		Response PlayerRemarkWorldC3M1FerryCrossingCoachMechanic
-		then coach WorldC3M1FerryCrossingG01 foo:0 -4.268
-		ApplyContext "SaidWorldC3M1FerryCrossing:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC3M1FerryCrossingNickTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC3M1FerryCrossing IsNotSaidWorldC3M1FerryCrossing IsNotCoughing NotInCombat IsTalkTrevor IsSubjectNear200 IsGamblerAlive IsWorldTalkTrevor ChanceToFire50Percent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		name = "PlayerRemarkc7m1_pretankLouisBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isc7m1_pretank IsNotSaidc7m1_pretank IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc ChanceToFire25Percent IsManagerAlive IsManagerNear400 IsSubjectNear200 IsNotSpeakingWeight0 _auto_NotSaidC7M1OpenTankDoor AutoIsNotScavenge AutoIsNotSurvival
 		// 	forceweight 3
-		Response PlayerRemarkWorldC3M1FerryCrossingNickMechanic
-		then gambler WorldC3M1FerryCrossingI01 foo:0 -2.234
-		ApplyContext "SaidWorldC3M1FerryCrossing:1:0"
+		Response PlayerRemarkc7m1_pretankLouisTeenGirl
+		then manager InfoRemc7m1_pretank02 foo:0 0.1
+		ApplyContext "Saidc7m1_pretank:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC3M1FerryNagTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC3M1FerryNag IsNotSaidWorldC3M1FerryNag IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear600 IsNotSaidC3M1CallFerry2 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC3M1FerryNagMechanic
-		ApplyContext "SaidWorldC3M1FerryNag:1:0,_auto_TimerLockA:1:15"
+		name = "PlayerRemarkc7m1_pretankFrancisBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isc7m1_pretank IsNotSaidc7m1_pretank IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsBikerAlive IsBikerNear400 ChanceToFire50Percent IsSubjectNear200 IsNotSpeakingWeight0 _auto_NotSaidC7M1OpenTankDoor AutoIsNotScavenge AutoIsNotSurvival
+		// 	forceweight 2
+		Response PlayerRemarkc7m1_pretankFrancisTeenGirl
+		then Any InfoRemc7m1_pretank03 foo:0 -2.051
+		ApplyContext "Saidc7m1_pretank:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "_C3M1CrazyMilitantsTrevor",
-		criteria Concept_C3M1CrazyMilitants IsTrevor
-		Response _C3M1CrazyMilitantsMechanic
-	},
-
-	{
-		name = "PlayerRemarkWorldC3M1FerryNagaTrevor",
-		criteria ConceptTalkIdle IsTrevor IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSaidWorldC3M1FerryNag IsNotSaidC3M1CallFerry2 AutoIsNotScavenge AutoIsNotSurvival IsWorldTalkTrevor IsNotSpeakingWeight0 _auto_NotTimerLockA _auto_NotTimerLockTrevor
-		Response PlayerRemarkWorldC3M1FerryNagaMechanic
-		ApplyContext "_auto_TimerLockA:1:20,_auto_TimerLockTrevor:1:40"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC3M1GetBackUpTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC3M1WeShouldGetBackUp IsNotSaidWorldC3M1WeShouldGetBackUp IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear300 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC3M1GetBackUpMechanic
-		ApplyContext "SaidWorldC3M1WeShouldGetBackUp:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC3M1LitterTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC3M1Litter IsNotSaidWorldC3M1Litter IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear300 ChanceToFire20Percent IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC3M1LitterMechanic
-		ApplyContext "SaidWorldC3M1Litter:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "AUTOBLANK_PlayerRemarkWorldC3M1LitterTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC3M1Litter IsNotSaidWorldC3M1Litter IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear300 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response _PlayerInfoRemarkableBlankMechanic
-		ApplyContext "SaidWorldC3M1Litter:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC3M1Path01Trevor",
-		criteria ConceptRemark IsTrevor IsWorldC3M1Path01 IsNotSaidWorldC3M1Path01 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear400 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC3M1Path01Mechanic
-		ApplyContext "SaidWorldC3M1Path01:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC3M1PlanksRightTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC3M1PlanksRight IsNotSaidWorldC3M1PlanksRight IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear300 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC3M1PlanksRightMechanic
-		ApplyContext "SaidWorldC3M1PlanksRight:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC3M1StairsTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC3M1Stairs IsNotSaidWorldC3M1Stairs IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear300 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC3M1StairsMechanic
-		ApplyContext "SaidWorldC3M1Stairs:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC3M1StayOnTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC3M1StayOn IsNotSaidWorldC3M1StayOn IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear200 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC3M1StayOnMechanic
-		ApplyContext "SaidWorldC3M1StayOn:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC3M1WalkwaysTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC3M1Walkways IsNotSaidWorldC3M1Walkways IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear600 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC3M1WalkwaysMechanic
-		ApplyContext "SaidWorldC3M1Walkways:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC3M1WhichWayTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC3M1WhichWay IsNotSaidWorldC3M1WhichWay IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear400 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC3M1WhichWayMechanic
-		ApplyContext "SaidWorldC3M1WhichWay:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC502AlarmButtonTrevor",
-		criteria ConceptWorldC502AlarmButton IsTrevor IsNotCoughing IsNotScavenge
-		Response PlayerRemarkWorldC502AlarmButtonMechanic
-	},
-
-	{
-		name = "PlayerRemarkWorldC502AlarmStoppedTrevor",
-		criteria ConceptWorldC502AlarmStopped IsTrevor IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerRemarkWorldC502AlarmStoppedMechanic
-	},
-
-	{
-		name = "PlayerRemarkWorldC502AlarmStopped2Trevor",
-		criteria ConceptWorldC502AlarmStopped2 IsTrevor IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerRemarkWorldC502AlarmStopped2Mechanic
-	},
-
-	{
-		name = "PlayerRemarkWorldC502AlleyTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC502Alley IsNotSaidWorldC502Alley IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear300 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC502AlleyMechanic
-		ApplyContext "SaidWorldC52Alley:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC502BusStoryTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC502BusStory IsNotSaidWorldC502BusStory IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear400 IsGamblerNear200 ChanceToFire50Percent IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival TimeSinceGroupInCombat02 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC502BusStoryMechanic
-		then Gambler WorldC502BusStory2 foo:0 -4.418
-		ApplyContext "SaidWorldC502BusStory:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "AUTOBLANK_PlayerRemarkWorldC502BusStoryTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC502BusStory IsNotSaidWorldC502BusStory IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear400 IsGamblerNear200 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival TimeSinceGroupInCombat02 IsNotSpeakingWeight0
-		Response _PlayerInfoRemarkableBlankMechanic
-		ApplyContext "SaidWorldC502BusStory:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC502BusStory2bTrevor",
-		criteria ConceptWorldC502BusStory2b IsTrevor IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerRemarkWorldC502BusStory2bMechanic
-		then self WorldC502BusStory2c foo:0 -2.060
-	},
-
-	{
-		name = "PlayerRemarkWorldC502BusStory2cTrevor",
-		criteria ConceptWorldC502BusStory2c IsTrevor IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerRemarkWorldC502BusStory2cMechanic
-	},
-
-	{
-		name = "PlayerRemarkWorldC502NotZombies2Trevor",
-		criteria ConceptWorldC502NotZombies2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerRemarkWorldC502NotZombies2Mechanic
-	},
-
-	{
-		name = "PlayerRemarkWorldC502Run1Trevor",
-		criteria ConceptWorldC502AlarmButtonRun IsTrevor IsNotCoughing
-		Response PlayerRemarkWorldC502Run1Mechanic
-	},
-
-	{
-		name = "PlayerRemarkWorldSignReportUnusualTrevor",
-		criteria ConceptWorldSignReportUnusual2 IsTrevor IsNotCoughing NotInCombat IssuerClose IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerRemarkWorldSignReportUnusualMechanic
-	},
-
-	{
-		name = "PlayerRemarkWorldSignOfficialInstructionsTrevor",
-		criteria ConceptWorldC502OfficialInstructions IsTrevor IsNotCoughing NotInCombat AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerRemarkWorldSignOfficialInstructionsMechanic
-	},
-
-	{
-		name = "PlayerRemarkWorldSignQuarantineZoneTrevor",
-		criteria ConceptWorldC502QuarantineZone IsTrevor IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerRemarkWorldSignQuarantineZoneMechanic
-	},
-
-	{
-		name = "PlayerRemarkWorldC502SmellTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC502Smell IsNotSaidWorldC502Smell IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear600 IsNotSaidSmell ChanceToFire50Percent IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC502SmellMechanic
-		ApplyContext "SaidWorldC502Smell:1:0,SaidSmell:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "AUTOBLANK_PlayerRemarkWorldC502SmellTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC502Smell IsNotSaidWorldC502Smell IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear600 IsNotSaidSmell IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response _PlayerInfoRemarkableBlankMechanic
-		ApplyContext "SaidWorldC502Smell:1:0,SaidSmell:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC502Smell2Trevor",
-		criteria ConceptWorldC502Smell2 IsTrevor IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear300 IsWorldTalkTrevor IsNotScavenge
-		Response PlayerRemarkWorldC502Smell2Mechanic
-	},
-
-	{
-		name = "PlayerRemarkWorldC502SmellBath2Trevor",
-		criteria ConceptWorldC502SmellBath2 IsTrevor IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear300 IsWorldTalkTrevor IsNotScavenge
-		Response PlayerRemarkWorldC502SmellBath2Mechanic
-		then Gambler WorldC502SmellBath3 foo:0 -2.916
-	},
-
-	{
-		name = "PlayerRemarkWorldC6M1_AcrossHereTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M1_AcrossHere IsNotSaidWorldC6M1_AcrossHere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M1_AcrossHereMechanic
-		ApplyContext "SaidWorldC6M1_AcrossHere:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC6M1_AlleyBelowTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M1_AlleyBelow IsNotSaidWorldC6M1_AlleyBelow IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M1_AlleyBelowMechanic
-		ApplyContext "SaidWorldC6M1_AlleyBelow:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC6M1_AlleyIntoBuildingTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M1_AlleyIntoBuilding IsNotSaidWorldC6M1_AlleyIntoBuilding IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M1_AlleyIntoBuildingMechanic
-		ApplyContext "SaidWorldC6M1_AlleyIntoBuilding:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC6M1_InAptsTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M1_InApts IsNotSaidWorldC6M1_InApts IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M1_InAptsMechanic
-		ApplyContext "SaidWorldC6M1_InApts:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC6M1_IntoThePark2Trevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M1_IntoThePark2 IsNotSaidWorldC6M1_IntoThePark2 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M1_IntoThePark2Mechanic
-		ApplyContext "SaidWorldC6M1_IntoThePark2:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC6M1_IntoTheStoreTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M1_IntoTheStore IsNotSaidWorldC6M1_IntoTheStore IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M1_IntoTheStoreMechanic
-		ApplyContext "SaidWorldC6M1_IntoTheStore:1:0,JustSaidWorldC6M1_IntoTheStore:1:30"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC6M1_PostWeddingTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M1_PostWedding IsNotSaidWorldC6M1_PostWedding IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear600 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M1_PostWeddingMechanic
-		ApplyContext "SaidWorldC6M1_PostWedding:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC6M1_PostWeddingZTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M1_PostWedding IsNotSaidWorldC6M1_PostWedding IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear600 IsZoeyIntroActor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M1_PostWeddingZMechanic
-		then Any WorldC6M1_PostWedding02a foo:0 -3.481
-		ApplyContext "SaidWorldC6M1_PostWedding:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC6M1_PostWeddingZCTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M1_PostWedding IsNotSaidWorldC6M1_PostWedding IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear600 IsZoeyIntroActor ChanceToFire20Percent IsCoachAlive IsCoachNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M1_PostWeddingZCMechanic
-		then Coach WorldC6M1_PostWedding01a foo:0 -2.761
-		ApplyContext "SaidWorldC6M1_PostWedding:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC6M1_SafeRoomAlleyTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M1_SafeRoomAlley IsNotSaidWorldC6M1_SafeRoomAlley IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear600 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M1_SafeRoomAlleyMechanic
-		ApplyContext "SaidWorldC6M1_SafeRoomAlley:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC6M1_ThroughBarTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M1_ThroughBar IsNotSaidWorldC6M1_ThroughBar IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M1_ThroughBarMechanic
-		ApplyContext "SaidWorldC6M1_ThroughBar:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC6M1_UpHereTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M1_UpHere IsNotSaidWorldC6M1_UpHere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M1_UpHereMechanic
-		ApplyContext "SaidWorldC6M1_UpHere:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC6M1_UpTheStairsTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M1_UpTheStairs IsNotSaidWorldC6M1_UpTheStairs IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M1_UpTheStairsMechanic
-		ApplyContext "SaidWorldC6M1_UpTheStairs:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC6M1_UpTheStairs2Trevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M1_UpTheStairs2 IsNotSaidWorldC6M1_UpTheStairs2 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M1_UpTheStairs2Mechanic
-		ApplyContext "SaidWorldC6M1_UpTheStairs2:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC6M1_WeddingWarnTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M1_WeddingWarn IsNotSaidWorldC6M1_WeddingWarn IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsWitchPresent AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M1_WeddingWarnMechanic
-		ApplyContext "SaidWorldC6M1_WeddingWarn:1:0,AtWedding:1:60"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC6M2_AcrossPlankTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_AcrossPlank IsNotSaidWorldC6M2_AcrossPlank IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear250 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_AcrossPlankMechanic
-		ApplyContext "SaidWorldC6M2_AcrossPlank:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC6M2_AfterGate1Trevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_AfterGate1 IsNotSaidWorldC6M2_AfterGate1 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_AfterGate1Mechanic
-		ApplyContext "SaidWorldC6M2_AfterGate1:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC6M2_AfterGate2Trevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_AfterGate2 IsNotSaidWorldC6M2_AfterGate2 IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_AfterGate2Mechanic
-		then Gambler WorldC6M2_AfterGate201a foo:0 -1.968
-		ApplyContext "SaidWorldC6M2_AfterGate2:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC6M2_AfterGateNickTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_AfterGate2 IsNotSaidWorldC6M2_AfterGate2 IsNotCoughing IsTalk IsTalkTrevor IsGamblerNear400 ChanceToFire50Percent IsWorldTalkTrevor IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_AfterGateNickMechanic
-		then Gambler WorldC6M2_AfterGate201a foo:0 -1.968
-		ApplyContext "SaidWorldC6M2_AfterGate2:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC6M2_DownHereTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_DownHere IsNotSaidWorldC6M2_DownHere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_DownHereMechanic
-		ApplyContext "SaidWorldC6M2_DownHere:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC6M2_DownIntoBuildingTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_DownIntoBuilding IsNotSaidWorldC6M2_DownIntoBuilding IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_DownIntoBuildingMechanic
-		ApplyContext "SaidWorldC6M2_DownIntoBuilding:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC6M2_FinalLadderTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_FinalLadder IsNotSaidWorldC6M2_FinalLadder IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_FinalLadderMechanic
-		ApplyContext "SaidWorldC6M2_FinalLadder:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC6M2_FinalWaterTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_FinalWater IsNotSaidWorldC6M2_FinalWater IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_FinalWaterMechanic
-		then Gambler WorldC6M2_FinalWater01a foo:0 -1.706
-		ApplyContext "SaidWorldC6M2_FinalWater:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC6M2_FinalWaterNickTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_FinalWater IsNotSaidWorldC6M2_FinalWater IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor IsGamblerNear400 ChanceToFire50Percent IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_FinalWaterNickMechanic
-		then Gambler WorldC6M2_FinalWater01a foo:0 -1.706
-		ApplyContext "SaidWorldC6M2_FinalWater:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC6M2_FinalWaterGoGoTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_FinalWaterGoGo IsNotSaidWorldC6M2_FinalWaterGoGo IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_FinalWaterGoGoMechanic
-		ApplyContext "SaidWorldC6M2_FinalWaterGoGo:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC6M2_InJazzClubTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_InJazzClub IsNotSaidWorldC6M2_InJazzClub IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear1000 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_InJazzClubMechanic
-		ApplyContext "SaidWorldC6M2_InJazzClub:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC6M2_InSewer2Trevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_InSewer2 IsNotSaidWorldC6M2_InSewer2 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsSaidWorldC6M2_InSewer1 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_InSewer2Mechanic
-		then Producer WorldC6M2_InSewer202a foo:0 -4.622
-		ApplyContext "SaidWorldC6M2_InSewer2:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC6M2_InSewerLadder1Trevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_InSewerLadder1 IsNotSaidWorldC6M2_InSewerLadder1 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_InSewerLadder1Mechanic
-		then Any WorldC6M2_InSewerLadder101a foo:0 -2.795
-		ApplyContext "SaidWorldC6M2_InSewerLadder1:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC6M2_IntoConstructionTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_IntoConstruction IsNotSaidWorldC6M2_IntoConstruction IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear150 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_IntoConstructionMechanic
-		ApplyContext "SaidWorldC6M2_IntoConstruction:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC6M2_IntoPoolHallTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_IntoPoolHall IsNotSaidWorldC6M2_IntoPoolHall IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_IntoPoolHallMechanic
-		ApplyContext "SaidWorldC6M2_IntoPoolHall:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC6M2_JukeBoxTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_JukeBox IsNotSaidWorldC6M2_JukeBox IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear150 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_JukeBoxMechanic
-		ApplyContext "SaidWorldC6M2_JukeBox:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC6M2_JumpDownTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_JumpDown IsNotSaidWorldC6M2_JumpDown IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_JumpDownMechanic
-		ApplyContext "SaidWorldC6M2_JumpDown:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C6M2FallingTrevor",
-		criteria ConceptC2M1Falling IsTrevor isc6m2_bedlam AutoIsNotScavenge AutoIsNotSurvival
-		Response C6M2FallingMechanic
-	},
-
-	{
-		name = "PlayerRemarkWorldC6M2_OnTourWalk2Trevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_OnTourWalk2 IsNotSaidWorldC6M2_OnTourWalk2 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_OnTourWalk2Mechanic
-		ApplyContext "SaidWorldC6M2_OnTourWalk2:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC6M2_OnTourWalk3Trevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_OnTourWalk3 IsNotSaidWorldC6M2_OnTourWalk3 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_OnTourWalk3Mechanic
-		ApplyContext "SaidWorldC6M2_OnTourWalk3:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC6M2_OpenGate1Trevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_OpenGate1 IsNotSaidWorldC6M2_OpenGate1 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsNotSaidOpenedGate1 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_OpenGate1Mechanic
-		ApplyContext "SaidWorldC6M2_OpenGate1:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldC6M2_OpenGate2Trevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_OpenGate2 IsNotSaidWorldC6M2_OpenGate2 IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsNotSaidOpenedGate2 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_OpenGate2Mechanic
-		ApplyContext "SaidWorldC6M2_OpenGate2:1:0"
+		name = "PlayerRemarkc7m1_tankcarBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isc7m1_tankcar IsNotSaidc7m1_tankcar IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsSubjectNear400 IsNotZombiePresentTank _auto_SaidC7M1OpenTankDoor IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response PlayerRemarkc7m1_tankcarTeenGirl
+		ApplyContext "Saidc7m1_tankcar:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_Phase2Trevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_Phase2 IsNotSaidWorldC6M2_Phase2 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_Phase2Mechanic
-		then Producer WorldC6M2_Phase201a foo:0 -1.792
-		ApplyContext "SaidWorldC6M2_Phase2:1:0"
+		name = "PlayerRemarkc7m2_climbupcrapBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isc7m2_climbupcrap IsNotSaidc7m2_climbupcrap IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsSubjectNear400 IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response PlayerRemarkc7m2_climbupcrapTeenGirl
+		ApplyContext "Saidc7m2_climbupcrap:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_Phase2DownTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_Phase2Down IsNotSaidWorldC6M2_Phase2Down IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_Phase2DownMechanic
-		ApplyContext "SaidWorldC6M2_Phase2Down:1:0"
+		name = "PlayerRemarkc7m2_gravelhillBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isc7m2_gravelhill IsNotSaidc7m2_gravelhill IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsSubjectNear200 IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response PlayerRemarkc7m2_gravelhillTeenGirl
+		ApplyContext "Saidc7m2_gravelhill:1:0,WarnMegaMob:1:300,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_Phase2DownIntenseTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_Phase2Down IsNotSaidWorldC6M2_Phase2Down IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IntensityOver75 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_Phase2DownIntenseMechanic
-		ApplyContext "SaidWorldC6M2_Phase2Down:1:0"
+		name = "PlayerRemarkc7m2_overboatBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isc7m2_overboat IsNotSaidc7m2_overboat IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsSubjectNear200 IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response PlayerRemarkc7m2_overboatTeenGirl
+		ApplyContext "Saidc7m2_overboat:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_PostGate1xTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_PostGate1 IsNotSaidWorldC6M2_PostGate1 IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsSaidOpenedGate1 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_PostGate1xMechanic
-		ApplyContext "SaidWorldC6M2_PostGate1:1:0"
+		name = "PlayerRemarkc7m2_throughhereBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isc7m2_throughhere IsNotSaidc7m2_throughhere IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsSubjectNear200 IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response PlayerRemarkc7m2_throughhereTeenGirl
+		ApplyContext "Saidc7m2_throughhere:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_TattooTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_Tattoo IsNotSaidWorldC6M2_Tattoo IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_TattooMechanic
-		ApplyContext "SaidWorldC6M2_Tattoo:1:0"
+		name = "PlayerRemarkc7m3_seesailboatBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isc7m3_seesailboat IsNotSaidc7m3_seesailboat IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsFirstGenerator IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response PlayerRemarkc7m3_seesailboatTeenGirl
+		ApplyContext "Saidc7m3_seesailboat:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_TattooStoryTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_Tattoo IsNotSaidWorldC6M2_Tattoo ExtraWeight10 ChanceToFire10Percent IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_TattooStoryMechanic
-		then any TrevorInterrupt foo:0 -13.10
-		ApplyContext "SaidWorldC6M2_Tattoo:1:0,_auto_TellingStory:1:14"
+		name = "L4D1SurvivorNearFinaleBetaZoeyRVC",
+		criteria ConceptPlayerNearFinale IsNotCoughing IsBetazoeyrvc IsNotSaidFinaleAhead NotInCombat IsTalk IsTalkBetazoeyrvc IsNotIncapacitated IsWorldTalkBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1SurvivorNearFinaleTeenGirl
+		ApplyContext "SaidFinaleAhead:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_TourEntranceTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_TourEntrance IsNotSaidWorldC6M2_TourEntrance IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_TourEntranceMechanic
-		ApplyContext "SaidWorldC6M2_TourEntrance:1:0"
+		name = "L4D1PlayerNearFinaleC7M3BetaZoeyRVC",
+		criteria ConceptPlayerNearFinale IsNotCoughing IsBetazoeyrvc IsNotSaidFinaleAhead NotInCombat IsTalk IsTalkBetazoeyrvc IsNotIncapacitated IsWorldTalkBetazoeyrvc Ismapc7m3_port AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerNearFinaleC7M3TeenGirl
+		ApplyContext "SaidFinaleAhead:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_UpCatWalkTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_UpCatWalk IsNotSaidWorldC6M2_UpCatWalk IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_UpCatWalkMechanic
-		ApplyContext "SaidWorldC6M2_UpCatWalk:1:0"
+		name = "L4D1SurvivorFinaleAheadC9M2BetaZoeyRVC",
+		criteria ConceptPlayerNearFinale IsNotCoughing IsBetazoeyrvc IsNotSaidFinaleAhead NotInCombat IsTalk IsTalkBetazoeyrvc IsNotIncapacitated IsWorldTalkBetazoeyrvc IsCrashCourse2 AutoIsNotScavenge AutoIsNotSurvival
+		Response NoResponse
+		ApplyContext "SaidFinaleAhead:1:0,SaidCreshendoStartNear:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_UpStairsTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_UpStairs IsNotSaidWorldC6M2_UpStairs IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_UpStairsMechanic
-		ApplyContext "SaidWorldC6M2_UpStairs:1:0"
+		name = "L4D1SurvivorNearFinaleC11M5BetaZoeyRVC",
+		criteria ConceptPlayerNearFinale IsNotCoughing IsBetazoeyrvc IsNotSaidFinaleAhead NotInCombat IsTalk IsTalkBetazoeyrvc IsNotIncapacitated IsWorldTalkBetazoeyrvc IsDeadAir5 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1SurvivorNearFinaleC11M5TeenGirl
+		then any C11M5NearFinale2 foo:0 12
+		ApplyContext "SaidFinaleAhead:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_UpStairs2Trevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_UpStairs2 IsNotSaidWorldC6M2_UpStairs2 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_UpStairs2Mechanic
-		ApplyContext "SaidWorldC6M2_UpStairs2:1:0"
+		name = "L4D1PlayerNearFinaleC12M5BetaZoeyRVC",
+		criteria ConceptPlayerNearFinale IsNotCoughing IsBetazoeyrvc IsNotSaidFinaleAhead NotInCombat IsTalk IsTalkBetazoeyrvc IsNotIncapacitated IsBloodHarvest5 IsWorldTalkBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerNearFinaleC12M5TeenGirl
+		ApplyContext "SaidFinaleAhead:1:0,WarnMegaMob:1:60,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M3_BridgeRunTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M3_BridgeRun IsNotSaidWorldC6M3_BridgeRun IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M3_BridgeRunMechanic
-		then any WorldC6M3_ByBridge01 foo:0 -1.803
-		ApplyContext "SaidWorldC6M3_BridgeRun:1:0"
+		name = "L4D1PlayerNearFinaleC14M2BetaZoeyRVC",
+		criteria ConceptPlayerNearFinale IsNotCoughing IsBetazoeyrvc IsNotSaidFinaleAhead NotInCombat IsTalk IsTalkBetazoeyrvc IsNotIncapacitated IsLastStand2 IsWorldTalkBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response NoResponse
+		ApplyContext "SaidFinaleAhead:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M3_ByBridgeFrancisTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M3_ByBridge IsNotSaidWorldC6M3_ByBridge IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 IsFrancisIntroActor AutoIsNotScavenge AutoIsNotSurvival _auto_C6M3BridgeDown IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M3_ByBridgeFrancisMechanic
-		then biker WorldC6M3_ByBridge01 foo:0 0.3
-		ApplyContext "SaidWorldC6M3_ByBridge:1:0"
-		applycontexttoworld
+		name = "L4D1C11M5NearFinale2BetaZoeyRVC",
+		criteria ConceptC11M5NearFinale2 IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotIncapacitated IsWorldTalkBetazoeyrvc
+		Response L4D1C11M5NearFinale2TeenGirl
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M3_ByBridgeZoeyTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M3_ByBridge IsNotSaidWorldC6M3_ByBridge IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 IsZoeyIntroActor AutoIsNotScavenge AutoIsNotSurvival _auto_C6M3BridgeDown IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M3_ByBridgeZoeyMechanic
-		then teengirl WorldC6M3_ByBridge01 foo:0 0.3
-		ApplyContext "SaidWorldC6M3_ByBridge:1:0"
+		name = "SurvivorNearCheckpointBetaZoeyRVC",
+		criteria ConceptPlayerNearCheckpoint IsNotCoughing IsBetazoeyrvc IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response SurvivorNearCheckpointTeenGirl
+		then any SafeSpotAheadResponse foo:0 -1.480
+		ApplyContext "SaidSafeSpotAhead:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldFootLockerTrevor",
-		criteria ConceptRemark IsTrevor IsWorldFootLocker IsNotSaidWorldFootLocker IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldFootLockerMechanic
-		ApplyContext "SaidWorldFootLocker:1:0"
+		name = "SurvivorNearCheckpointC8M3BetaZoeyRVC",
+		criteria ConceptPlayerNearCheckpoint IsNotCoughing IsBetazoeyrvc IsNoMercy3 IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response SurvivorNearCheckpointC8M3TeenGirl
+		ApplyContext "SaidSafeSpotAhead:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M3_BillTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M3_Bill IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear100 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0 _auto_NotC6M3Bill
-		Response PlayerRemarkWorldC6M3_BillMechanic
-		ApplyContext "_auto_TrevorC6M3Bill:1:0,_auto_C6M3Bill:1:0,SaidSomeoneDied:1:10"
+		name = "SurvivorNearCheckpointC10M2BetaZoeyRVC",
+		criteria ConceptPlayerNearCheckpoint IsNotCoughing IsBetazoeyrvc IsDeathToll2 IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response SurvivorNearCheckpointC10M2TeenGirl
+		then biker smalltown02_path07a foo:0 -1.056
+		ApplyContext "SaidSafeSpotAhead:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "WorldC6M3LossLouisTrevor",
-		criteria ConceptPlayerLook IsNotCoughing IsTrevor IsTalk IsTalkTrevor Isc6m3_port IsNotSmartLookAuto IsSubjectNone IsManagerNear500 IsWorldTalkTrevor _auto_SawC6M3Bill _auto_TrevorSawC6M3Bill
-		Response WorldC6M3LossMechanic
-		then Manager c6m3_loss foo:0 0.1
-		ApplyContext "_auto_C6M3Bill:2:0,Talk:1:15"
+		name = "SurvivorNearCheckpointC11M2BetaZoeyRVC",
+		criteria ConceptPlayerNearCheckpoint IsNotCoughing IsBetazoeyrvc IsDeadAir2 IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response SurvivorNearCheckpointC11M2TeenGirl
+		ApplyContext "SaidSafeSpotAhead:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "WorldC6M3LossLouis2Trevor",
-		criteria ConceptPlayerLookHere IsNotCoughing IsTrevor IsTalk IsTalkTrevor Isc6m3_port IsNotSmartLookAuto IsSubjectNone IsManagerNear500 IsWorldTalkTrevor _auto_SawC6M3Bill _auto_TrevorSawC6M3Bill
-		Response WorldC6M3LossMechanic
-		then Manager c6m3_loss foo:0 0.1
-		ApplyContext "_auto_C6M3Bill:2:0,Talk:1:15"
+		name = "SurvivorNearCheckpointC11M3BetaZoeyRVC",
+		criteria ConceptPlayerNearCheckpoint IsNotCoughing IsBetazoeyrvc IsDeadAir3 IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response SurvivorNearCheckpointC11M3TeenGirl
+		ApplyContext "SaidSafeSpotAhead:1:0"
 		applycontexttoworld
-	},
-
-	{
-		name = "WorldC6M3Loss2Trevor",
-		criteria Conceptc6m3_loss IsNotCoughing IsTrevor
-		Response WorldC6M3Loss2Mechanic
-		then from c6m3_loss2 foo:0 -0.7
 	},
 
 	{
-		name = "WorldC6M3Loss3Trevor",
-		criteria Conceptc6m3_loss2 IsNotCoughing IsTrevor
-		Response WorldC6M3Loss3Mechanic
-		then from c6m3_loss3 foo:0 0.3
-	},
-
-	{
-		name = "PlayerRemarkWorldSignColdBeerTrevor",
-		criteria ConceptRemark IsTrevor IsWorldSignColdBeer IsNotSaidWorldSignColdBeer IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsSubjectNear200 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldSignColdBeerMechanic
-		then Any WorldSignColdBeer2 foo:0 -2.701
-		ApplyContext "SaidWorldSignColdBeer:1:0"
+		name = "SurvivorNearCheckpointC11M4LouisBetaZoeyRVC",
+		criteria ConceptPlayerNearCheckpoint IsNotCoughing IsBetazoeyrvc IsDeadAir4 IsNotSaidSafeSpotAhead IsNotAlone IsManagerAlive IsNotInCheckpoint IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response SurvivorNearCheckpointC11M4LouisTeenGirl
+		ApplyContext "SaidSafeSpotAhead:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldSignPhotography2Trevor",
-		criteria ConceptWorldSignPhotography2 IsTrevor IsNotCoughing NotInCombat IsTalk IsTalkTrevor IssuerClose IsWorldTalkTrevor IsNotScavenge
-		Response PlayerRemarkWorldSignPhotography2Mechanic
-		ApplyContext "Talk:1:1.763"
+		name = "SurvivorNearCheckpointC10M4BetaZoeyRVC",
+		criteria ConceptPlayerNearCheckpoint IsNotCoughing IsBetazoeyrvc IsDeathToll4 IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response SurvivorNearCheckpointC10M4TeenGirl
+		ApplyContext "SaidSafeSpotAhead:1:0"
 		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkWorldSignReportSick2Trevor",
-		criteria ConceptWorldSignReportSick2 IsTrevor IsNotCoughing NotInCombat IsTalk IsTalkTrevor IssuerClose IsWorldTalkTrevor IsNotScavenge AutoIsNotSurvival
-		Response PlayerRemarkWorldSignReportSick2Mechanic
-		then Producer WorldSignReportSick3 foo:0 -1.323
 	},
 
 	{
-		name = "PlayerWorldSignC5AlarmWillSoundTrevor",
-		criteria ConceptRemark IsTrevor IsWorldSignC5AlarmWillSound IsNotSaidWorldSignC5AlarmWillSound IsNotCoughing IsTalk IsTalkTrevor IsSubjectNear200 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerWorldSignC5AlarmWillSoundMechanic
-		then any WorldSignC5AlarmWillSound3 foo:0 0.1
-		ApplyContext "SaidWorldSignC5AlarmWillSound:1:0"
+		name = "SurvivorNearCheckpointC11M4BetaZoeyRVC",
+		criteria ConceptPlayerNearCheckpoint IsNotCoughing IsBetazoeyrvc IsDeadAir4 IsNotSaidSafeSpotAhead IsNotAlone NotManagerAlive IsNotInCheckpoint IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response SurvivorNearCheckpointC10M4TeenGirl
+		ApplyContext "SaidSafeSpotAhead:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerWorldSignC5AlarmWillSound3Trevor",
-		criteria ConceptWorldSignC5AlarmWillSound3 IsTrevor IsNotCoughing NotInCombat _auto_NotAlarm
-		Response PlayerWorldSignC5AlarmWillSound3Mechanic
-		then Gambler WorldSignC5AlarmWillSound3c foo:0 -1.502
-		ApplyContext "Talk:1:2"
+		name = "SurvivorNearCheckpointC12M3BetaZoeyRVC",
+		criteria ConceptPlayerNearCheckpoint IsNotCoughing IsBetazoeyrvc IsBloodHarvest3 IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response SurvivorNearCheckpointC10M4TeenGirl
+		ApplyContext "SaidSafeSpotAhead:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerWorldSignC5AlarmWillSound3dTrevor",
-		criteria ConceptWorldSignC5AlarmWillSound3d IsTrevor IsNotCoughing NotInCombat _auto_NotAlarm
-		Response PlayerWorldSignC5AlarmWillSound3dMechanic
-		ApplyContext "Talk:1:2"
+		name = "SurvivorNearCheckpointC12M4BetaZoeyRVC",
+		criteria ConceptPlayerNearCheckpoint IsNotCoughing IsBetazoeyrvc IsBloodHarvest4 IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response SurvivorNearCheckpointC10M4TeenGirl
+		ApplyContext "SaidSafeSpotAhead:1:0"
 		applycontexttoworld
-	},
-
-	{
-		name = "RespondAffirmativeTrevor",
-		criteria ConceptRespondAffirmative IssuerMediumClose IsNotCoughing NotInCombat isTrevor IsTalkTrevor IsWorldTalkTrevor
-		Response RespondAffirmativeMechanic
-	},
-
-	{
-		name = "PlayerFollowMeTrevor",
-		criteria ConceptPlayerFollowMe IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerFollowMeMechanic
-	},
-
-	{
-		name = "PlayerHelpTrevor",
-		criteria ConceptPlayerHelp IsTrevor IsNotCoughing IsTalk IsNotIncapacitated IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerHelpMechanic
-	},
-
-	{
-		name = "PlayerHurryUpTrevor",
-		criteria ConceptPlayerHurryUp IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerHurryUpMechanic
-	},
-
-	{
-		name = "PlayerHurryUpC4M2Trevor",
-		criteria ConceptPlayerHurryUp IsTrevor IsNotInSafeSpot IsNotInCheckpoint IsTalk IsTalkTrevor IsNotSaidSafeSpotAhead ismap_c4m2_sugarmill_a IsNotZombiePresentTank IsWorldTalkTrevor _auto_IsTrevorInWitchville
-		Response PlayerHurryUpC4M2Mechanic
-	},
-
-	{
-		name = "PlayerKillThatLightTrevor",
-		criteria ConceptPlayerKillThatLight IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerKillThatLightMechanic
-	},
-
-	{
-		name = "PlayerLeadOnTrevor",
-		criteria ConceptPlayerLeadOn IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerLeadOnMechanic
-	},
-
-	{
-		name = "PlayerMoveOnTrevor",
-		criteria ConceptPlayerMoveOn IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerMoveOnMechanic
-	},
-
-	{
-		name = "PlayerStayTogetherTrevor",
-		criteria ConceptPlayerStayTogether IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerStayTogetherMechanic
-	},
-
-	{
-		name = "PlayerWatchOutBehindTrevor",
-		criteria ConceptPlayerWatchOutBehind IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerWatchOutBehindMechanic
-	},
-
-	{
-		name = "PlayerAskReadyTrevor",
-		criteria ConceptPlayerAskReady IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerAskReadyMechanic
-	},
-
-	{
-		name = "PlayerImWithYouTrevor",
-		criteria ConceptPlayerImWithYou IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerImWithYouMechanic
-	},
-
-	{
-		name = "PlayerLaughTrevor",
-		criteria ConceptPlayerLaugh IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotVersus
-		Response PlayerLaughMechanic
-	},
-
-	{
-		name = "PlayerLostCallTrevor",
-		criteria ConceptPlayerLostCall IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerLostCallMechanic
-	},
-
-	{
-		name = "PlayerNiceJobResponseTrevor",
-		criteria ConceptPlayerNiceJob IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerNiceJobResponseMechanic
-	},
-
-	{
-		name = "PlayerNoTrevor",
-		criteria ConceptPlayerNo IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerNoMechanic
-	},
-
-	{
-		name = "PlayerAnswerLostCallTrevor",
-		criteria ConceptPlayerAnswerLostCall IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerAnswerLostCallMechanic
-	},
-
-	{
-		name = "PlayerSorryTrevor",
-		criteria ConceptPlayerSorry IsNotCoughing IsNotShotTeammateTrevor IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerSorryMechanic
-	},
-
-	{
-		name = "PlayerSorryFFTrevor",
-		criteria ConceptPlayerSorry IsNotCoughing IsShotTeammateTrevor IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerSorryFFMechanic
-	},
-
-	{
-		name = "PlayerThanksTrevor",
-		criteria ConceptPlayerThanks IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerThanksMechanic
-	},
-
-	{
-		name = "PlayerYellRunTrevor",
-		criteria ConceptPlayerYellRun IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerYellRunMechanic
-	},
-
-	{
-		name = "PlayerYesTrevor",
-		criteria ConceptPlayerYes IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerYesMechanic
 	},
 
 	{
-		name = "PlayerYouAreWelcomeTrevor",
-		criteria ConceptPlayerYouAreWelcome IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerYouAreWelcomeMechanic
+		name = "SafeSpotAheadResponseBetaZoeyRVC",
+		criteria IsBetazoeyrvc IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IssuerClose ConceptSafeSpotAheadResponse ChanceToFire30Percent IsWorldTalkBetazoeyrvc
+		Response SafeSpotAheadResponseTeenGirl
 	},
 
 	{
-		name = "YouAreWelcomeTrevor",
-		criteria ConceptYouAreWelcome IsNotCoughing IsTrevor IsTalk IsTalkTrevor TimeSinceGroupInCombat05 IsNotSpeaking IsWorldTalkTrevor
-		Response PlayerYouAreWelcomeMechanic
+		name = "L4D1PlayerCoverMeBetaZoeyRVC",
+		criteria ConceptPlayerCoverMe IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerCoverMeTeenGirl
 	},
 
 	{
-		name = "YouAreWelcomeCoachTrevor",
-		criteria ConceptYouAreWelcome IsNotCoughing IsNotSpeaking IsTrevor IsTalk IsTalkTrevor FromIsCoach ChanceToFire30Percent TimeSinceGroupInCombat05 IsWorldTalkTrevor
-		Response YouAreWelcomeCoachMechanic
+		name = "L4D1PlayerFollowMeBetaZoeyRVC",
+		criteria ConceptPlayerFollowMe IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerFollowMeTeenGirl
 	},
 
 	{
-		name = "YouAreWelcomeCoachC1Trevor",
-		criteria ConceptYouAreWelcome IsNotCoughing IsNotSpeaking IsTrevor IsTalk IsTalkTrevor FromIsCoach ChanceToFire30Percent IsWorldTalkTrevor TimeSinceGroupInCombat05 ismap_c1m1_hotel NoKnowNames
-		Response YouAreWelcomeCoachC1Mechanic
+		name = "L4D1PlayerHelpBetaZoeyRVC",
+		criteria ConceptPlayerHelp IsBetazoeyrvc IsNotCoughing IsNotIncapacitated IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerHelpTeenGirl
 	},
 
 	{
-		name = "YouAreWelcomeGamblerTrevor",
-		criteria ConceptYouAreWelcome IsNotCoughing IsNotSpeaking IsTrevor IsTalk IsTalkTrevor FromIsGambler ChanceToFire30Percent TimeSinceGroupInCombat05 IsWorldTalkTrevor
-		Response YouAreWelcomeGamblerMechanic
+		name = "L4D1PlayerHurryUpBetaZoeyRVC",
+		criteria ConceptPlayerHurryUp IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerHurryUpTeenGirl
 	},
 
 	{
-		name = "YouAreWelcomeGamblerC1Trevor",
-		criteria ConceptYouAreWelcome IsNotCoughing IsNotSpeaking IsTrevor IsTalk IsTalkTrevor FromIsGambler ChanceToFire30Percent TimeSinceGroupInCombat05 IsWorldTalkTrevor ismap_c1m1_hotel NoKnowNames
-		Response YouAreWelcomeGamblerC1Mechanic
+		name = "L4D1PlayerKillThatLightBetaZoeyRVC",
+		criteria ConceptPlayerKillThatLight IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerKillThatLightTeenGirl
 	},
 
 	{
-		name = "YouAreWelcomeProducerTrevor",
-		criteria ConceptYouAreWelcome IsNotCoughing IsNotSpeaking IsTrevor IsTalk IsTalkTrevor FromIsProducer ChanceToFire30Percent TimeSinceGroupInCombat05 IsWorldTalkTrevor
-		Response YouAreWelcomeProducerMechanic
+		name = "L4D1PlayerLeadOnBetaZoeyRVC",
+		criteria ConceptPlayerLeadOn IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerLeadOnTeenGirl
 	},
 
 	{
-		name = "YouAreWelcomeProducerC1Trevor",
-		criteria ConceptYouAreWelcome IsNotCoughing IsNotSpeaking IsTrevor IsTalk IsTalkTrevor FromIsProducer ChanceToFire30Percent TimeSinceGroupInCombat05 IsWorldTalkTrevor ismap_c1m1_hotel NoKnowNames
-		Response YouAreWelcomeProducerC1Mechanic
+		name = "L4D1PlayerMoveOnBetaZoeyRVC",
+		criteria ConceptPlayerMoveOn IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerMoveOnTeenGirl
 	},
 
 	{
-		name = "BotAttentionBattleTrevor",
-		criteria ConceptSurvivorBotNoteHumanAttention IsNotCoughing IsTrevor IsNotBotAttention IsTalk IsTalkTrevor IsNotIncapacitated IsInBattlefield TimeSinceGroupInCombat20 IsWorldTalkTrevor IsNotSpeakingWeight0
-		Response BotAttentionBattleMechanic
-		ApplyContext "SaidBotAttention:1:30"
-		applycontexttoworld
+		name = "L4D1PlayerStayTogetherBetaZoeyRVC",
+		criteria ConceptPlayerStayTogether IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerStayTogetherTeenGirl
 	},
 
 	{
-		name = "BotNoteHumanAttentionTrevor",
-		criteria ConceptSurvivorBotNoteHumanAttention IsNotCoughing IsTrevor IsNotBotAttention IsTalk IsTalkTrevor IsNotIncapacitated IsInStartArea IsWorldTalkTrevor IsNotSpeakingWeight0
-		Response BotNoteHumanAttentionMechanic
-		ApplyContext "SaidBotAttention:1:30"
-		applycontexttoworld
+		name = "L4D1PlayerWatchOutBehindBetaZoeyRVC",
+		criteria ConceptPlayerWatchOutBehind IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerWatchOutBehindTeenGirl
 	},
 
 	{
-		name = "PlayerNegativeTrevor",
-		criteria ConceptPlayerNegative IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerNegativeMechanic
+		name = "L4D1PlayerAskReadyBetaZoeyRVC",
+		criteria ConceptPlayerAskReady IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerAskReadyTeenGirl
 	},
 
 	{
-		name = "PlayerShootCarNotTrevor",
-		criteria ConceptPanicEvent IsTrevor IsNotCoughing SubjectIsNotTrevor IsNotc5m3_cemetery IsTalk IsTalkTrevor IsCarAlarm ChanceToFire60Percent IsWorldTalkTrevor
-		Response PlayerShootCarNotMechanic
-		ApplyContext "Saidremark_caralarm:1:300"
-		applycontexttoworld
+		name = "L4D1PlayerImWithYouBetaZoeyRVC",
+		criteria ConceptPlayerImWithYou IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerImWithYouTeenGirl
 	},
 
 	{
-		name = "PlayerShootCarTrevor",
-		criteria ConceptPanicEvent IsTrevor IsNotCoughing SubjectIsTrevor IsNotc5m3_cemetery IsTalk IsTalkTrevor IsCarAlarm IsWorldTalkTrevor
-		Response PlayerShootCarMechanic
-		ApplyContext "Saidremark_caralarm:1:300"
-		applycontexttoworld
+		name = "L4D1PlayerLaughBetaZoeyRVC",
+		criteria ConceptPlayerLaugh IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotVersus
+		Response L4D1PlayerLaughTeenGirl
 	},
 
 	{
-		name = "PlayerHeardBoomerTrevor",
-		criteria ConceptPlayerHeardBoomer IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response PlayerHeardBoomerMechanic
+		name = "L4D1PlayerLostCallBetaZoeyRVC",
+		criteria ConceptPlayerLostCall IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerLostCallTeenGirl
 	},
 
 	{
-		name = "PlayerHeardHunterTrevor",
-		criteria ConceptPlayerHeardHunter IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response PlayerHeardHunterMechanic
+		name = "L4D1PlayerNiceJobResponseBetaZoeyRVC",
+		criteria ConceptPlayerNiceJob IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerNiceJobResponseTeenGirl
 	},
 
 	{
-		name = "PlayerHeardSmokerTrevor",
-		criteria ConceptPlayerHeardSmoker IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response PlayerHeardSmokerMechanic
+		name = "L4D1PlayerNiceJobResponseBetaZoeyRVC",
+		criteria ConceptPlayerNiceJob IsNotCoughing IsBetazoeyrvc IsTalk IsManagerNear200 ChanceToFire5Percent IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerNiceJobResponseTeenGirl
 	},
 
 	{
-		name = "PlayerHeardChargerTrevor",
-		criteria ConceptPlayerHeardCharger IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response PlayerHeardChargerMechanic
+		name = "L4D1PlayerNoBetaZoeyRVC",
+		criteria ConceptPlayerNo IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerNoTeenGirl
 	},
 
 	{
-		name = "PlayerHeardSpitterTrevor",
-		criteria ConceptPlayerHeardSpitter IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response PlayerHeardSpitterMechanic
+		name = "L4D1PlayerAnswerLostCallBetaZoeyRVC",
+		criteria ConceptPlayerAnswerLostCall IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerAnswerLostCallTeenGirl
 	},
 
 	{
-		name = "PlayerHeardJockeyTrevor",
-		criteria ConceptPlayerHeardJockey IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response PlayerHeardJockeyMechanic
+		name = "L4D1PlayerNegativeBetaZoeyRVC",
+		criteria ConceptPlayerNegative IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerNegativeTeenGirl
 	},
 
 	{
-		name = "PlayerHeardBoomerC1Trevor",
-		criteria ConceptPlayerHeardBoomer IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowBoomer
-		Response PlayerHeardBoomerC1Mechanic
+		name = "L4D1PlayerSorryBetaZoeyRVC",
+		criteria ConceptPlayerSorry IsNotCoughing IsNotShotTeammateBetazoeyrvc IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerSorryTeenGirl
 	},
 
 	{
-		name = "PlayerHeardHunterC1Trevor",
-		criteria ConceptPlayerHeardHunter IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowHunter
-		Response PlayerHeardBoomerC1Mechanic
+		name = "L4D1PlayerSorryFFBetaZoeyRVC",
+		criteria ConceptPlayerSorry IsNotCoughing IsShotTeammateBetazoeyrvc IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerSorryFFTeenGirl
 	},
 
 	{
-		name = "PlayerHeardSmokerC1Trevor",
-		criteria ConceptPlayerHeardSmoker IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowSmoker
-		Response PlayerHeardBoomerC1Mechanic
+		name = "L4D1PlayerThanksBetaZoeyRVC",
+		criteria ConceptPlayerThanks IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerThanksTeenGirl
 	},
 
 	{
-		name = "PlayerHeardChargerC1Trevor",
-		criteria ConceptPlayerHeardCharger IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowCharger
-		Response PlayerHeardBoomerC1Mechanic
+		name = "L4D1PlayerThanksLouisBetaZoeyRVC",
+		criteria ConceptPlayerThanks IsNotCoughing IsBetazoeyrvc IsTalk IsManagerNear200 ChanceToFire2Percent IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerThanksLouisTeenGirl
 	},
 
 	{
-		name = "PlayerHeardSpitterC1Trevor",
-		criteria ConceptPlayerHeardSpitter IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowSpitter
-		Response PlayerHeardBoomerC1Mechanic
+		name = "L4D1PlayerYesBetaZoeyRVC",
+		criteria ConceptPlayerYes IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerYesTeenGirl
 	},
 
 	{
-		name = "PlayerHeardJockeyC1Trevor",
-		criteria ConceptPlayerHeardJockey IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowJockey
-		Response PlayerHeardJockeyC1Mechanic
+		name = "L4D1PlayerYouAreWelcomeBetaZoeyRVC",
+		criteria ConceptPlayerYouAreWelcome IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerYouAreWelcomeTeenGirl
 	},
 
 	{
-		name = "PlayerHeardTankTrevor",
-		criteria ConceptPlayerHeardTank IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response PlayerHeardTankMechanic
+		name = "PlayerYellRunBetaZoeyRVC",
+		criteria ConceptPlayerYellRun IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response PlayerYellRunTeenGirl
 	},
 
 	{
-		name = "PlayerHeardWitchTrevor",
-		criteria ConceptPlayerHeardWitch IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response PlayerHeardWitchMechanic
+		name = "L4D1PlayerAreaClearBetaZoeyRVC",
+		criteria ConceptPlayerAreaClear IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerAreaClearTeenGirl
 	},
 
 	{
-		name = "PlayerHurrahTrevor",
-		criteria ConceptPlayerHurrah IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerHurrahMechanic
+		name = "L4D1SurvivorSpottedWorldFarBetaZoeyRVC",
+		criteria ConceptPlayerLook IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsWorldTalkBetazoeyrvc
+		Response L4D1SurvivorSpottedWorldFarTeenGirl
 	},
 
 	{
-		name = "PlayerWarnCarefulTrevor",
-		criteria ConceptPlayerWarnCareful IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerWarnCarefulMechanic
+		name = "PlayerHurrahBetaZoeyRVC",
+		criteria ConceptPlayerHurrah IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response PlayerHurrahTeenGirl
+		then Any HurrahAlso foo:0 0
 	},
 
 	{
-		name = "SurvivorSpottedWorldFarTrevor",
-		criteria ConceptPlayerLook IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto IsWorldTalkTrevor
-		Response SurvivorSpottedWorldFarMechanic
+		name = "PlayerWarnCarefulBetaZoeyRVC",
+		criteria ConceptPlayerWarnCareful IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response PlayerWarnCarefulTeenGirl
 	},
 
 	{
-		name = "C6M3_PourFinishedTrevor",
-		criteria ConceptPlayerPourFinished IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsL4D1Alive Isc6m3_port ChanceToFire20Percent
-		Response C6M3_PourFinishedMechanic
-		then Manager L4D1_NiceJobPour foo:0 0
+		name = "GasPourDoneSCBetaZoeyRVC",
+		criteria ConceptPlayerPourFinished IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsScavenge ScoreDoneSC
+		Response GasPourDoneSCTeenGirl
 		ApplyContext "Talk:1:3"
-		applycontexttoworld
 	},
 
 	{
-		name = "GasPour20MoreSCTrevor",
-		criteria ConceptPlayerPourFinished IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor Score20MoreSC
-		Response GasPour20MoreSCMechanic
-		then self GasPour20More foo:0 0.01
-		ApplyContext "_auto_GasCountOK:1:4"
-		applycontexttoworld
+		name = "GasPourSCBetaZoeyRVC",
+		criteria ConceptPlayerPourStarted IsBetazoeyrvc IsTalk IsNotAlone IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotNoGasPourLine
+		Response GasPourSCTeenGirl
+		ApplyContext "TalkBetazoeyrvc:1:2"
 	},
 
 	{
-		name = "GasPour20MoreWaitTrevor",
-		criteria ConceptGasPour20More IsTrevor IsSpeaking _auto_IsGasCountOK
-		Response GasPour20MoreWaitMechanic
-		then self GasPour20More foo:0 0.1
-	},
-
-	{
-		name = "GasPour10MoreSCTrevor",
-		criteria ConceptPlayerPourFinished IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor Score10MoreSC
-		Response GasPour10MoreSCMechanic
-		then self GasPour10More foo:0 0.01
-		ApplyContext "_auto_GasCountOK:1:4"
-		applycontexttoworld
-	},
-
-	{
-		name = "GasPour10MoreWaitTrevor",
-		criteria ConceptGasPour10More IsTrevor IsSpeaking _auto_IsGasCountOK
-		Response GasPour10MoreWaitMechanic
-		then self GasPour10More foo:0 0.1
-	},
-
-	{
-		name = "GasPour1MoreSCTrevor",
-		criteria ConceptPlayerPourFinished IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor Score1MoreSC
-		Response GasPour1MoreSCMechanic
-		then self GasPour1More foo:0 0.01
-		ApplyContext "_auto_GasCountOK:1:4,_auto_NoGasPourLine:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "GasPour1MoreWaitTrevor",
-		criteria ConceptGasPour1More IsTrevor IsSpeaking _auto_IsGasCountOK
-		Response GasPour1MoreWaitMechanic
-		then self GasPour1More foo:0 0.1
-	},
-
-	{
-		name = "GasPour2MoreSCTrevor",
-		criteria ConceptPlayerPourFinished IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor Score2MoreSC
-		Response GasPour2MoreSCMechanic
-		then self GasPour2More foo:0 0.01
-		ApplyContext "_auto_GasCountOK:1:4"
-		applycontexttoworld
-	},
-
-	{
-		name = "GasPour2MoreWaitTrevor",
-		criteria ConceptGasPour2More IsTrevor IsSpeaking _auto_IsGasCountOK
-		Response GasPour2MoreWaitMechanic
-		then self GasPour2More foo:0 0.1
-	},
-
-	{
-		name = "GasPour3MoreSCTrevor",
-		criteria ConceptPlayerPourFinished IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor Score3MoreSC
-		Response GasPour3MoreSCMechanic
-		then self GasPour3More foo:0 0.01
-		ApplyContext "_auto_GasCountOK:1:4"
-		applycontexttoworld
-	},
-
-	{
-		name = "GasPour3MoreWaitTrevor",
-		criteria ConceptGasPour3More IsTrevor IsSpeaking _auto_IsGasCountOK
-		Response GasPour3MoreWaitMechanic
-		then self GasPour3More foo:0 0.1
-	},
-
-	{
-		name = "GasPour5MoreSCTrevor",
-		criteria ConceptPlayerPourFinished IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor Score5MoreSC
-		Response GasPour5MoreSCMechanic
-		then self GasPour5More foo:0 0.01
-		ApplyContext "_auto_GasCountOK:1:4"
-		applycontexttoworld
-	},
-
-	{
-		name = "GasPour5MoreWaitTrevor",
-		criteria ConceptGasPour5More IsTrevor IsSpeaking _auto_IsGasCountOK
-		Response GasPour5MoreWaitMechanic
-		then self GasPour5More foo:0 0.1
-	},
-
-	{
-		name = "GasPourDoneSCTrevor",
-		criteria ConceptPlayerPourFinished IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsScavenge ScoreDoneSC
-		Response GasPourDoneSCMechanic
-		ApplyContext "Talk:1:3"
-		applycontexttoworld
-	},
-
-	{
-		name = "GasPourSCTrevor",
-		criteria ConceptPlayerPourStarted IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsScavenge ChanceToFire50Percent _auto_NotNoGasPourLine
-		Response GasPourSCMechanic
-		ApplyContext "TalkTrevor:1:2"
-	},
-
-	{
-		name = "GasPourSCSoloTrevor",
-		criteria ConceptPlayerPourStarted IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsScavenge ChanceToFire50Percent _auto_NotNoGasPourLine
-		Response GasPourSCSoloMechanic
-		ApplyContext "TalkTrevor:1:2"
-	},
-
-	{
-		name = "GasPourAloneTrevor",
-		criteria ConceptPlayerPourStarted IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotScavenge ChanceToFire50Percent _auto_NotNoGasPourLine
-		Response GasPourSCSoloMechanic
-		ApplyContext "TalkTrevor:1:2"
-	},
-
-	{
-		name = "GrabbingGasSCTrevor",
-		criteria ConceptPlayerEquippedScavengeItem IsTrevor IsTalk IsNotAlone IsClosestSurvivorNear500 IsTalkTrevor IsWorldTalkTrevor NotSaidGrabbingCan
-		Response GrabbingGasSCMechanic
+		name = "GrabbingGasSCBetaZoeyRVC",
+		criteria ConceptPlayerEquippedScavengeItem IsBetazoeyrvc IsNotAlone IsClosestSurvivorNear500 IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc NotSaidGrabbingCan
+		Response GrabbingGasSCTeenGirl
 		ApplyContext "SaidGrabbingCan:1:8"
 	},
 
 	{
-		name = "PlayerShotGasCanTrevor",
-		criteria ConceptPlayerShotGasCan IsTrevor IsNotSaidPlayerShotGasCan IsScavenge
-		Response PlayerShotGasCanMechanic
+		name = "PlayerShotGasCanBetaZoeyRVC",
+		criteria ConceptPlayerShotGasCan IsBetazoeyrvc IsNotSaidPlayerShotGasCan IsScavenge
+		Response PlayerShotGasCanTeenGirl
 		ApplyContext "SaidPlayerShotGasCan:1:10"
 		applycontexttoworld
 	},
 
 	{
-		name = "ScavengeStartTrevor",
-		criteria ConceptSurvivorLeavingCheckpoint IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsScavenge IsNotSaidLeavingSafeArea
-		Response ScavengeStartMechanic
+		name = "ScavengeStartBetaZoeyRVC",
+		criteria ConceptSurvivorLeavingCheckpoint IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsScavenge IsNotSaidLeavingSafeArea
+		Response ScavengeStartTeenGirl
 		ApplyContext "SaidLeavingSafeArea:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "ScavengeStartC1M4Trevor",
-		criteria ConceptSurvivorLeavingCheckpoint IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor ismap_c1m4_atrium IsScavenge IsNotSaidLeavingSafeArea
-		Response ScavengeStartC1M4Mechanic
-		ApplyContext "SaidLeavingSafeArea:1:0"
+		name = "L4D1IntroSmalltownBetaZoeyRVC",
+		criteria ConceptIntroSmalltown IsBetazoeyrvc IsNotSaidCXM1Intro IsNotAlone AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1IntroSmalltownTeenGirl
+		then betazoeyrvc IntroSmallTown2 foo:0 -2.288
+		ApplyContext "CXM1Intro:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerCommentJockeyTrevor",
-		criteria ConceptCommentJockey IsTrevor IssuerCloseEnough IsNotIncapacitated IntensityUnder50 IsNotSaidCommentJockey IsNotSaidBeenJockeyedTrevor IsNotBeingJockeyed
-		Response PlayerCommentJockeyMechanic
-		then gambler commentjockey2 foo:0 0.1
+		name = "L4D1IntroSmalltownEasterEggBetaZoeyRVC",
+		criteria ConceptIntroSmalltown IsBetazoeyrvc IsEveryoneAlive IsNotSaidCXM1Intro IsNotAlone ChanceToFire1Percent AutoIsNotScavenge AutoIsNotSurvival
+		// 	forceweight 100
+		Response L4D1IntroSmalltownEasterEggTeenGirl
+		then betazoeyrvc IntroSmallTownEasterEgg foo:0 -2.288
+		ApplyContext "CXM1Intro:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1IntroSmalltown2BetaZoeyRVC",
+		criteria ConceptIntroSmalltown2 IsBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1IntroSmalltown2TeenGirl
+		then any IntroSmallTown3 foo:0 -3.193
+	},
+
+	{
+		name = "L4D1IntroSmalltown2EasterEggBetaZoeyRVC",
+		criteria ConceptIntroSmalltownEasterEgg IsBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1IntroSmalltown2EasterEggTeenGirl
+		then NamVet IntroSmallTownEasterEgg foo:0 -3.193
+	},
+
+	{
+		name = "L4D1IntroSmalltown2EasterEgg3BetaZoeyRVC",
+		criteria ConceptIntroSmalltownEasterEgg3 IsBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1IntroSmalltown2EasterEgg3TeenGirl
+		then self IntroEnd foo:0 0.1
+	},
+
+	{
+		name = "L4D1SurvivorSpawnBetaZoeyRVC",
+		criteria ConceptPlayerScenarioJoin IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1SurvivorSpawnTeenGirl
+	},
+
+	{
+		name = "PlayerCommentJockeyBetaZoeyRVC",
+		criteria ConceptCommentJockey IsBetazoeyrvc IssuerCloseEnough IsNotIncapacitated IntensityUnder50 IsNotSaidCommentJockey
+		Response PlayerCommentJockeyTeenGirl
 		ApplyContext "SaidCommentJockey:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerCommentJockeyMaleTrevor",
-		criteria ConceptCommentJockey IsTrevor IssuerCloseEnough IsNotIncapacitated FromIsNotProducer FromIsNotTeenGirl ChanceToFire25Percent IntensityUnder50 IsNotSaidCommentJockey IsNotSaidBeenJockeyedTrevor IsNotBeingJockeyed
-		Response PlayerCommentJockeyMaleMechanic
-		ApplyContext "SaidCommentJockey:1:0"
+		name = "L4D1PlayerBillPouncedBetaZoeyRVC",
+		criteria ConceptSurvivorWasPounced ChanceToFire30Percent IsNotCoughing SubjectIsNamVet IsNotSaidBillPounced IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerBillPouncedTeenGirl
+		ApplyContext "SaidBillPounced:1:60"
 		applycontexttoworld
 	},
 
 	{
-		name = "C4M2LockTheDoorCheckPointTrevor",
-		criteria ConceptPlayerLockTheDoorCheckPoint IsNotCoughing IsTrevor IsInSafeSpot IsTalk IsTalkTrevor IsWorldTalkTrevor ismap_c4m2_sugarmill_a AutoIsNotScavenge AutoIsNotSurvival
-		Response C4M2LockTheDoorCheckPointMechanic
+		name = "L4D1PlayerBounceReactionBetaZoeyRVC",
+		criteria ConceptBounceReaction IsBetazoeyrvc IsNotCoughing NotInCombat IsSubjectAlmostNear IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerBounceReactionTeenGirl
 	},
 
 	{
-		name = "GoingToDieCoachCoachTrevor",
-		criteria ConceptPlayerGoingToDie IsNotSpeaking IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotComplainBlock IsCoachAlive IsCoachNear200 ChanceToFire30Percent IsWorldTalkTrevor IsNotInStartArea IsNotInCheckpoint _auto_NotSpottedVehicle
-		Response GoingToDieCoachCoachMechanic
-		then coach coachcoaches foo:0 .5
-		ApplyContext "IsComplain:1:25"
+		name = "L4D1PlayerEatPillsBetaZoeyRVC",
+		criteria ConceptEatPills IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerEatPillsTeenGirl
 	},
 
 	{
-		name = "PlayerAlertGiveItemStopTrevor",
-		criteria ConceptAlertGiveItemStop IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidAlertGiveItemStop IsWorldTalkTrevor
-		Response PlayerAlertGiveItemStopMechanic
-		ApplyContext "SaidAlertGiveItemStop:1:10"
-	},
-
-	{
-		name = "PlayerAlertGiveItemStopAnFirstAidTrevor",
-		criteria ConceptAlertGiveItemStopFirstAidA IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidAlertGiveItemStopFirstAid NoHasFirstAidKit IsWorldTalkTrevor
-		Response PlayerAlertGiveItemStopAnFirstAidMechanic
-		then subject AlertGiveItemStop foo:0 0
-	},
-
-	{
-		name = "PlayerAlertGiveItemStopC1Trevor",
-		criteria ConceptAlertGiveItemStop IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidAlertGiveItemStop IsWorldTalkTrevor ismap_c1m1_hotel NoKnowNames
-		Response PlayerAlertGiveItemStopC1Mechanic
-		ApplyContext "SaidAlertGiveItemStop:1:10"
-	},
-
-	{
-		name = "PlayerAlertGiveItemStopQnFirstAidTrevor",
-		criteria ConceptBashWithItem IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsItemFirstAidKit IsNotSaidAlertGiveItemStopFirstAid IsWorldTalkTrevor
-		Response PlayerAlertGiveItemStopQnFirstAidMechanic
-		then subject AlertGiveItemStopFirstAidA foo:0 0
-		ApplyContext "SaidAlertGiveItemStopFirstAid:1:10"
-	},
-
-	{
-		name = "PlayerCoachPouncedTrevor",
-		criteria ConceptSurvivorWasPounced ChanceToFire30Percent IsNotCoughing SubjectIsCoach IsNotSaidCoachPounced IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerCoachPouncedMechanic
-		ApplyContext "CoachPounced:1:60"
+		name = "L4D1PlayerFrancisPouncedBetaZoeyRVC",
+		criteria ConceptSurvivorWasPounced ChanceToFire30Percent IsNotCoughing SubjectIsBiker IsNotSaidFrancisPounced IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerFrancisPouncedTeenGirl
+		ApplyContext "SaidFrancisPounced:1:60"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerCoachPouncedC1Trevor",
-		criteria ConceptSurvivorWasPounced ChanceToFire30Percent IsNotCoughing SubjectIsCoach IsNotSaidCoachPounced IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowHunter IsNotSurvival
-		Response PlayerCoachPouncedC1Mechanic
-		ApplyContext "SaidCoachPounced:1:60"
+		name = "L4D1PlayerGetInsideCheckPointBetaZoeyRVC",
+		criteria ConceptPlayerGetInsideCheckPoint IsNotCoughing IsBetazoeyrvc IsInSafeSpot IsTalk IsTalkBetazoeyrvc SomeoneOutsideSafeSpot IsWorldTalkBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerGetInsideCheckPointTeenGirl
+	},
+
+	{
+		name = "L4D1PlayerStayTogetherSaferoomBetaZoeyRVC",
+		criteria ConceptPlayerStayTogether IsNotCoughing IsBetazoeyrvc IsInSafeSpot IsTalk IsTalkBetazoeyrvc SomeoneOutsideSafeSpot IsWorldTalkBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerGetInsideCheckPointTeenGirl
+	},
+
+	{
+		name = "L4D1PlayerGrenadeBetaZoeyRVC",
+		criteria ConceptThrewGrenade IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1PlayerGrenadeTeenGirl
+		then Any GrenadeCareful foo:0 -0.994
+	},
+
+	{
+		name = "L4D1PlayerIncapacitatedInitialBetaZoeyRVC",
+		criteria ConceptPlayerIncapacitated IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerIncapacitatedInitialTeenGirl
+		ApplyContext "TalkBetazoeyrvc:1:2"
+	},
+
+	{
+		name = "L4D1PlayerKillConfirmationBetaZoeyRVC",
+		criteria ConceptKilledZombie IsNotCoughing IsBetazoeyrvc SubjectIsNotTank SubjectIsNotAWitch IsTalk IsTalkBetazoeyrvc IsSubjectFar300 ChanceToFire40Percent IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response L4D1PlayerKillConfirmationTeenGirl
+		then Any L4D1PlayerNiceShot foo:0 -0.802
+	},
+
+	{
+		name = "L4D1PlayerKillTankConfirmationBetaZoeyRVC",
+		criteria ConceptKilledZombie IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc SubjectIsTank IsNotSaidTankDead IsNotAlone IsNotIncapacitated IsRocking IsWorldTalkBetazoeyrvc _auto_NotFinaleStarted
+		Response L4D1PlayerKillTankConfirmationTeenGirl
+		ApplyContext "SaidTankDead:1:60,TalkBetazoeyrvc:1:5"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerGamblerPouncedC1Trevor",
-		criteria ConceptSurvivorWasPounced ChanceToFire30Percent IsNotCoughing SubjectIsGambler IsNotSaidGamblerPounced IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowHunter IsNotSurvival
-		Response PlayerCoachPouncedC1Mechanic
-		ApplyContext "SaidGamblerPounced:1:60"
+		name = "L4D1PlayerKillTankNotHealthyBetaZoeyRVC",
+		criteria ConceptKilledZombie IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc SubjectIsTank IsNotSaidTankDead IsNotAlone IsNotIncapacitated IsNotHealthy IsWorldTalkBetazoeyrvc _auto_NotFinaleStarted
+		Response L4D1PlayerKillTankNotHealthyTeenGirl
+		ApplyContext "SaidTankDead:1:60,TalkBetazoeyrvc:1:5"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerEatPillsTrevor",
-		criteria ConceptEatPills IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerEatPillsMechanic
-	},
-
-	{
-		name = "PlayerGamblerPouncedTrevor",
-		criteria ConceptSurvivorWasPounced ChanceToFire30Percent IsNotCoughing SubjectIsGambler IsNotSaidGamblerPounced IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerGamblerPouncedMechanic
-		ApplyContext "GamblerPounced:1:60"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerGetInsideCheckPointTrevor",
-		criteria ConceptPlayerGetInsideCheckPoint IsNotCoughing IsTrevor IsInSafeSpot IsTalk IsTalkTrevor SomeoneOutsideSafeSpot IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerGetInsideCheckPointMechanic
-		then any StayTogetherInsideReponse foo:0 -1.898
-	},
-
-	{
-		name = "PlayerStayTogetherSaferoomTrevor",
-		criteria ConceptPlayerStayTogether IsNotCoughing IsTrevor IsInSafeSpot IsTalk IsTalkTrevor SomeoneOutsideSafeSpot IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerStayTogetherSaferoomMechanic
-	},
-
-	{
-		name = "PlayerGetInsideCheckPointC2M2Trevor",
-		criteria ConceptPlayerGetInsideCheckPoint ismap_c2m2 IsNotCoughing IsTrevor IsInSafeSpot IsTalk IsTalkTrevor SomeoneOutsideSafeSpot IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerGetInsideCheckPointC2M2Mechanic
-		then any StayTogetherInsideReponse foo:0 0.3
-	},
-
-	{
-		name = "PlayerGrabbedByJockeyTrevor",
-		criteria ConceptSurvivorJockeyed IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidBeenJockeyedTrevor IsWorldTalkTrevor
-		Response PlayerGrabbedByJockeyMechanic
-		ApplyContext "SaidBeenJockeyedTrevor:1:6,TalkTrevor:1:6"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerGrabbedByJockeyC1Trevor",
-		criteria ConceptSurvivorJockeyed IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidBeenJockeyedTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowJockey IsNotSurvival
-		Response PlayerGrabbedByJockeyC1Mechanic
-		ApplyContext "SaidBeenJockeyedTrevor:1:6,TalkTrevor:1:6"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerGrenadeMolotovTrevor",
-		criteria ConceptThrewGrenade IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsGrenadeMolotov IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response PlayerGrenadeMolotovMechanic
-		then Any GrenadeCareful foo:0 -0.821
-	},
-
-	{
-		name = "PlayerGrenadeMolotovTankTrevor",
-		criteria ConceptThrewGrenade IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsGrenadeMolotov IsZombiePresentTank IsSaidTankWarn2 IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response PlayerGrenadeMolotovTankMechanic
-	},
-
-	{
-		name = "PlayerGrenadePipeBombTrevor",
-		criteria ConceptThrewGrenade IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsGrenadePipeBomb IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response PlayerGrenadePipeBombMechanic
-		then Any GrenadeCareful foo:0 -0.579
-	},
-
-	{
-		name = "PlayerGrenadeVomitJarTrevor",
-		criteria ConceptThrewGrenade IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsGrenadeVomitJar IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response PlayerGrenadeVomitJarMechanic
-		then Any GrenadeCareful foo:0 -1.598
-	},
-
-	{
-		name = "PlayerGrenadeVomitJarTankTrevor",
-		criteria ConceptThrewGrenade IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsGrenadeVomitJar IsZombiePresentTank IsSaidTankWarn2 isNotmap_c1m1_hotel isNotmap_c1m2_streets IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response PlayerGrenadeVomitJarTankMechanic
-	},
-
-	{
-		name = "PlayerGrenadeVomitJarC1Trevor",
-		criteria ConceptThrewGrenade IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsGrenadeVomitJar IsWorldTalkTrevor ismap_c1m1_hotel
-		Response PlayerGrenadeVomitJarC1Mechanic
-		then Any GrenadeCareful foo:0 -1.517
-	},
-
-	{
-		name = "PlayerIncapacitatedInitialTrevor",
-		criteria ConceptPlayerIncapacitated IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerIncapacitatedInitialMechanic
-		ApplyContext "TalkTrevor:1:2"
-	},
-
-	{
-		name = "PlayerIncapacitatedInitialC1M2Trevor",
-		criteria ConceptPlayerIncapacitated IsTrevor ismap_c1m2_streets IsC1M2WhitakerErrand
-		Response PlayerIncapacitatedInitialC1M2Mechanic
-		then orator C1M2SurvivorDown foo:0 0.1
-		ApplyContext "TalkTrevor:1:2"
-	},
-
-	{
-		name = "PlayerKillConfirmationTrevor",
-		criteria ConceptKilledZombie IsNotCoughing IsTrevor SubjectIsNotTank SubjectIsNotAWitch IsTalk IsTalkTrevor IsSubjectFar300 ChanceToFire40Percent isNotmap_c1m1_hotel IsWorldTalkTrevor IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response PlayerKillConfirmationMechanic
-		then Any PlayerNiceShot foo:0 -0.399
-	},
-
-	{
-		name = "PlayerKillConfirmationC1M1Trevor",
-		criteria ConceptKilledZombie IsNotCoughing IsTrevor SubjectIsNotTank IsTalk IsTalkTrevor IsUsingFirearm IsSubjectFar300 ismap_c1m1_hotel IsNotFirstKillC1 IsWorldTalkTrevor
-		Response PlayerKillConfirmationC1M1Mechanic
-		ApplyContext "Talk:1:5,FirstKill:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerKillConfirmationC1M1MeleeTrevor",
-		criteria ConceptKilledZombie IsNotCoughing IsTrevor SubjectIsNotTank SubjectIsNotBoomer SubjectIsNotSmoker IsTalk IsTalkTrevor EquippedMeleeWeapon ismap_c1m1_hotel IsNotFirstKillC1 IsWorldTalkTrevor
-		Response PlayerKillConfirmationC1M1MeleeMechanic
-		ApplyContext "Talk:1:5,FirstKill:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "KillStealTrevor",
-		criteria ConceptKillSteal IsNotCoughing IsTrevor IssuerReallyClose IsTrevorAlsoWarn IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotSpeakingWeight0
-		Response KillStealMechanic
-		then From RightfulKiller foo:0 -0.953
-	},
-
-	{
-		name = "InsistMineTrevor",
-		criteria ConceptInsistMine IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response InsistMineMechanic
-		then From KillStealCalledOut foo:0 -1.545
-		ApplyContext "TalkTrevor:1:1.1"
-	},
-
-	{
-		name = "PlayerKillSpitterConfirmationTrevor",
-		criteria ConceptKilledZombie IsNotCoughing IsTrevor IsTalk IsTalkTrevor SubjectIsSpitter IsSubjectNear250 ChanceToFire20Percent IsWorldTalkTrevor IsNotSpeakingWeight0
-		Response PlayerKillSpitterConfirmationMechanic
-	},
-
-	{
-		name = "PlayerKillSpitterGamblerTrevor",
-		criteria ConceptKilledZombie IsNotCoughing IsTrevor IsTalk IsTalkTrevor SubjectIsSpitter IsGamblerNear400 ChanceToFire20Percent IsWorldTalkTrevor IsNotSpeakingWeight0
-		Response PlayerKillSpitterGamblerMechanic
-	},
-
-	{
-		name = "PlayerKillTankConfirmationTrevor",
-		criteria ConceptKilledZombie IsNotCoughing IsTrevor IsTalk IsTalkTrevor SubjectIsTank IsNotSaidTankDead IsNotAlone IsNotIncapacitated IsRocking IsWorldTalkTrevor _auto_NotFinaleStarted _auto_NotSpottedVehicle
-		Response PlayerKillTankConfirmationMechanic
-		ApplyContext "SaidTankDead:1:60,TalkTrevor:1:5"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerKillTankNotHealthyTrevor",
-		criteria ConceptKilledZombie IsNotCoughing IsTrevor IsTalk IsTalkTrevor SubjectIsTank IsNotSaidTankDead IsNotAlone IsNotIncapacitated IsNotHealthy IsWorldTalkTrevor _auto_NotFinaleStarted _auto_NotSpottedVehicle
-		Response PlayerKillTankNotHealthyMechanic
-		ApplyContext "SaidTankDead:1:60,TalkTrevor:1:5"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerKillTankConfirmationC1M2Trevor",
-		criteria ConceptKilledZombie IsNotCoughing IsTrevor IsTalk IsTalkTrevor SubjectIsTank IsNotSaidTankDead IsNotIncapacitated IsWorldTalkTrevor ismap_c1m2_streets IsEveryoneAlive IsNotSurvival
-		Response PlayerKillTankConfirmationC1M2Mechanic
-		then trevor C1M2TankInfo foo:0 0.1
-		ApplyContext "SaidTankDead:1:0,Talk:1:12"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerCr0wnedWitchTrevor",
-		criteria ConceptKilledZombie IsTrevor SubjectIsAWitch IsNotWitchAggro
+		name = "PlayerCr0wnedWitchBetaZoeyRVC",
+		criteria ConceptKilledZombie IsBetazoeyrvc SubjectIsAWitch IsNotWitchAggro
 		Response NoResponse
 	},
 
 	{
-		name = "PlayerKilledStartledWitchTrevor",
-		criteria ConceptKilledZombie IsTrevor SubjectIsAWitch IsWitchAggro
+		name = "PlayerKilledStartledWitchBetaZoeyRVC",
+		criteria ConceptKilledZombie IsBetazoeyrvc SubjectIsAWitch IsWitchAggro
 		Response NoResponse
 		ApplyContext "WitchAggro:--1"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerLockTheDoorCheckPointTrevor",
-		criteria ConceptPlayerLockTheDoorCheckPoint IsNotCoughing IsTrevor IsInSafeSpot IsNotAlone IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerLockTheDoorCheckPointMechanic
-	},
-
-	{
-		name = "PlayerLockTheDoorCheckPointC1Trevor",
-		criteria ConceptPlayerLockTheDoorCheckPoint IsNotCoughing IsTrevor IsInSafeSpot IsNotAlone ismap_c1m1_hotel IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerLockTheDoorCheckPointC1Mechanic
-	},
-
-	{
-		name = "PlayerProducerPouncedTrevor",
-		criteria ConceptSurvivorWasPounced ChanceToFire30Percent IsNotCoughing SubjectIsProducer IsNotSaidProducerPounced IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerProducerPouncedMechanic
-		ApplyContext "SaidProducerPounced:1:60"
+		name = "PlayerRemarkremark_caralarmBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isremark_caralarm IsNotSaidremark_caralarm IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear700 IsWorldTalkBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		Response PlayerRemarkremark_caralarmTeenGirl
+		ApplyContext "Saidremark_caralarm:1:300"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerProducerPouncedC1Trevor",
-		criteria ConceptSurvivorWasPounced ChanceToFire30Percent IsNotCoughing SubjectIsProducer IsNotSaidProducerPounced IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowHunter IsNotSurvival
-		Response PlayerProducerPouncedC1Mechanic
-		ApplyContext "SaidProducerPounced:1:60"
+		name = "L4D1C9M2KillTankBetaZoeyRVC",
+		criteria ConceptKilledZombie IsBetazoeyrvc IsCrashCourse2 SubjectIsTank IsTalk IsTalkBetazoeyrvc IsNotSaidTankDead IsWorldTalkBetazoeyrvc _auto_IsFinaleStarted
+		Response L4D1C9M2KillTankTeenGirl
+		ApplyContext "SaidTankDead:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRevivedByDefibrillatorTrevor",
-		criteria ConceptRevivedByDefibrillator IsNotCoughing IsTrevor
-		Response PlayerRevivedByDefibrillatorMechanic
-		ApplyContext "TalkTrevor:1:3"
+		name = "L4D1PlayerLockTheDoorCheckPointBetaZoeyRVC",
+		criteria ConceptPlayerLockTheDoorCheckPoint IsNotCoughing IsBetazoeyrvc IsInSafeSpot IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerLockTheDoorCheckPointTeenGirl
+	},
+
+	{
+		name = "L4D1PlayerLouisPouncedBetaZoeyRVC",
+		criteria ConceptSurvivorWasPounced ChanceToFire30Percent IsNotCoughing SubjectIsManager IsNotSaidLouisPounced IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerLouisPouncedTeenGirl
+		ApplyContext "SaidLouisPounced:1:60"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRevivedByDefibrillator2Trevor",
-		criteria ConceptRevivedByDefibrillatorDelayed IsTrevor
-		Response PlayerRevivedByDefibrillator2Mechanic
-		ApplyContext "TalkTrevor:1:3"
+		name = "L4D1PlayerRemarkairport01_burningBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport01_burning IsNotSaidairport01_burning IsNotCoughing NotInCombat IsSubjectReallyNear ChanceToFire40Percent IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerRemarkairport01_burningTeenGirl
+		ApplyContext "Saidairport01_burning:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerSuggestMeHealthTrevor",
-		criteria ConceptTalkIdle IsNotHealthy TimeSinceGroupInCombat20 ChanceToFire50Percent IsNotIncapacitated IsNotSuggestedHealth YesHasFirstAidKit IsTrevor IsNotBeingHealed IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerSuggestMeHealthMechanic
+		name = "AUTOBLANK_L4D1PlayerRemarkairport01_burningBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport01_burning IsNotSaidairport01_burning IsNotCoughing NotInCombat IsSubjectReallyNear IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response _PlayerInfoRemarkableBlankTeenGirl
+		ApplyContext "Saidairport01_burning:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "C11M1LeavingSafeBetaZoeyRVC",
+		criteria ConceptSurvivorLeavingCheckpoint IsBetazoeyrvc IsNotSaidLeavingSafeArea IsNotSaidairport01_path01 IsDeadAir1 AutoIsNotScavenge AutoIsNotSurvival
+		Response C11M1LeavingSafeTeenGirl
+		ApplyContext "SaidLeavingSafeArea:1:0,Talk:0:0,Saidairport01_path01:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerRemarkairport01_path01BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport01_path01 IsNotSaidairport01_path01 IsNotCoughing NotInCombat IsSubjectReallyNear ChanceToFire40Percent IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 AutoIsNotScavenge AutoIsNotSurvival
+		Response C11M1LeavingSafeTeenGirl
+		ApplyContext "Saidairport01_path01:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerSuggestHealthBetaZoeyRVC",
+		criteria ConceptPlayerSuggestHealth IsBetazoeyrvc IssuerReallyClose IsNotBeingHealed IsTalk IsTalkBetazoeyrvc IsNotIncapacitated TimeSinceGroupInCombat20 IsNotSpeakingWeight0 IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerSuggestHealthTeenGirl
+		ApplyContext "SuggestedHealth:1:120"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerSuggestHealthBillBetaZoeyRVC",
+		criteria ConceptPlayerSuggestHealth IsBetazoeyrvc IssuerReallyClose IsNotBeingHealed IsTalk IsTalkBetazoeyrvc IsNotIncapacitated TimeSinceGroupInCombat20 IsNotSpeakingWeight0 FromIsNamVet ChanceToFire50Percent IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerSuggestHealthBillTeenGirl
+		ApplyContext "SuggestedHealth:1:120"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerSuggestHealthFrancisBetaZoeyRVC",
+		criteria ConceptPlayerSuggestHealth IsBetazoeyrvc IssuerReallyClose IsNotBeingHealed IsTalk IsTalkBetazoeyrvc IsNotIncapacitated TimeSinceGroupInCombat20 IsNotSpeakingWeight0 FromIsBiker ChanceToFire50Percent IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerSuggestHealthFrancisTeenGirl
+		ApplyContext "SuggestedHealth:1:120"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerSuggestHealthLouisBetaZoeyRVC",
+		criteria ConceptPlayerSuggestHealth IsBetazoeyrvc IssuerReallyClose IsNotBeingHealed IsTalk IsTalkBetazoeyrvc IsNotIncapacitated TimeSinceGroupInCombat20 IsNotSpeakingWeight0 FromIsManager ChanceToFire50Percent IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerSuggestHealthLouisTeenGirl
+		ApplyContext "SuggestedHealth:1:120"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerSuggestMeHealthBetaZoeyRVC",
+		criteria ConceptTalkIdle IsNotHealthy TimeSinceGroupInCombat20 ChanceToFire50Percent YesHasFirstAidKit IsBetazoeyrvc IsNotSuggestedHealth IsNotIncapacitated IsNotBeingHealed IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerSuggestMeHealthTeenGirl
 		then Any PlayerSuggestHealth foo:0 0
 	},
 
 	{
-		name = "PlayerSuggestHealthGenericTrevor",
-		criteria ConceptPlayerSuggestHealth IsTrevor IssuerReallyClose IsNotBeingHealed IsTalk IsTalkTrevor IsNotIncapacitated TimeSinceGroupInCombat20 IsNotSpeakingWeight0 IsWorldTalkTrevor
-		Response PlayerSuggestHealthGenericMechanic
-		ApplyContext "SuggestedHealth:1:120"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerSuggestHealthC1Trevor",
-		criteria ConceptPlayerSuggestHealth IsTrevor IssuerReallyClose IsNotBeingHealed IsTalk IsTalkTrevor IsNotIncapacitated TimeSinceGroupInCombat20 IsNotSpeakingWeight0 IsWorldTalkTrevor ismap_c1m1_hotel NoKnowNames
-		Response PlayerSuggestHealthC1Mechanic
-		ApplyContext "SuggestedHealth:1:120"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerSuggestHealthCoachTrevor",
-		criteria ConceptPlayerSuggestHealth IsTrevor IssuerReallyClose IsNotBeingHealed IsTalk IsTalkTrevor IsNotIncapacitated TimeSinceGroupInCombat20 IsNotSpeakingWeight0 FromIsCoach ChanceToFire50Percent IsWorldTalkTrevor isNotmap_c1m1_hotel
-		Response PlayerSuggestHealthCoachMechanic
-		ApplyContext "SuggestedHealth:1:120"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerSuggestHealthGamblerTrevor",
-		criteria ConceptPlayerSuggestHealth IsTrevor IssuerReallyClose IsNotBeingHealed IsTalk IsTalkTrevor IsNotIncapacitated TimeSinceGroupInCombat20 IsNotSpeakingWeight0 FromIsGambler ChanceToFire50Percent IsWorldTalkTrevor isNotmap_c1m1_hotel
-		Response PlayerSuggestHealthGamblerMechanic
-		ApplyContext "SuggestedHealth:1:120"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerSuggestHealthProducerTrevor",
-		criteria ConceptPlayerSuggestHealth IsTrevor IssuerReallyClose IsNotBeingHealed IsTalk IsTalkTrevor IsNotIncapacitated TimeSinceGroupInCombat20 IsNotSpeakingWeight0 FromIsProducer ChanceToFire50Percent IsWorldTalkTrevor isNotmap_c1m1_hotel
-		Response PlayerSuggestHealthProducerMechanic
-		ApplyContext "SuggestedHealth:1:120"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerTransitionTrevor",
-		criteria ConceptPlayerTransition IsNotCoughing IsTrevor IsNotSaidPlayerTransition IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotSomeoneDied isNotmap_c1m1_hotel AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerTransitionMechanic
+		name = "L4D1PlayerTransitionBetaZoeyRVC",
+		criteria ConceptPlayerTransition IsNotCoughing IsBetazoeyrvc IsNotSaidPlayerTransition IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotSomeoneDied AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerTransitionTeenGirl
 		ApplyContext "SaidPlayerTransition:1:90"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerTransitionCloseTrevor",
-		criteria ConceptPlayerTransition IsNotCoughing IsTrevor IsNotSaidPlayerTransition IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotAlone IsSomeoneDied isNotmap_c1m1_hotel AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerTransitionCloseMechanic
+		name = "L4D1PlayerTransitionCloseBetaZoeyRVC",
+		criteria ConceptPlayerTransition IsNotCoughing IsBetazoeyrvc IsNotSaidPlayerTransition IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotAlone IsSomeoneDied AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerTransitionCloseTeenGirl
 		ApplyContext "SaidPlayerTransition:1:90"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerTransitionC1M2Trevor",
-		criteria ConceptPlayerTransition IsNotCoughing IsTrevor IsNotSaidPlayerTransition IsTalk IsTalkTrevor IsWorldTalkTrevor ismap_c1m2_streets IsNotAlone IsNotSomeoneDied AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerTransitionC1M2Mechanic
-		ApplyContext "SaidPlayerTransition:1:90"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerTransitionCloseC1M2Trevor",
-		criteria ConceptPlayerTransition IsNotCoughing IsTrevor IsNotSaidPlayerTransition IsTalk IsTalkTrevor IsWorldTalkTrevor ismap_c1m2_streets IsNotAlone IsSomeoneDied AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerTransitionCloseC1M2Mechanic
-		ApplyContext "SaidPlayerTransition:1:90"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerTransitionC1M3Trevor",
-		criteria ConceptPlayerTransition IsNotCoughing IsTrevor IsNotSaidPlayerTransition IsTalk IsTalkTrevor IsWorldTalkTrevor ismap_c1m3_mall IsNotAlone IsNotSomeoneDied AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerTransitionC1M3Mechanic
-		ApplyContext "SaidPlayerTransition:1:90"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerTransitionC2M1Trevor",
-		criteria ConceptPlayerTransition IsNotCoughing IsTrevor IsNotSaidPlayerTransition IsTalk IsTalkTrevor IsWorldTalkTrevor ismap_c2m1 IsNotAlone IsNotSomeoneDied AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerTransitionC2M1Mechanic
-		ApplyContext "SaidPlayerTransition:1:90"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerTransitionC5M4Trevor",
-		criteria ConceptPlayerTransition IsNotCoughing IsTrevor IsNotSaidPlayerTransition IsTalk IsTalkTrevor IsWorldTalkTrevor IsMapc5m4_quarter IsNotAlone IsNotSomeoneDied AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerTransitionC5M4Mechanic
-		ApplyContext "SaidPlayerTransition:1:90"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerTransitionC6M2Trevor",
-		criteria ConceptPlayerTransition IsNotCoughing IsTrevor IsNotSaidPlayerTransition IsTalk IsTalkTrevor IsWorldTalkTrevor Isc6m2_bedlam IsZoeyIntroActor IsNotAlone IsNotSomeoneDied AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerTransitionC6M2Mechanic
-		ApplyContext "SaidPlayerTransition:1:90"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerUsingDefibrillatorTrevor",
-		criteria ConceptPlayerUsingDefibrillator IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerUsingDefibrillatorMechanic
-	},
-
-	{
-		name = "PlayerWarnHeardBoomerTrevor",
-		criteria ConceptPlayerWarnHearZombie IsBoomerClass IsNotCoughing IsTrevor IsNotAlone IsClosestSurvivorNear1200 IsNotInCheckpoint IsNotInSafeSpot IsNotWarnHeardBoomer NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response PlayerWarnHeardBoomerMechanic
+		name = "L4D1PlayerWarnHeardBoomerBetaZoeyRVC",
+		criteria ConceptPlayerWarnHearZombie IsBoomerClass IsNotCoughing IsNotAlone IsClosestSurvivorNear1200 IsNotInCheckpoint IsNotInSafeSpot IsBetazoeyrvc IsNotWarnHeardBoomer NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1PlayerWarnHeardBoomerTeenGirl
 		ApplyContext "WarnHeardBoomer:1:300,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerWarnHeardChargerTrevor",
-		criteria ConceptPlayerWarnHearZombie IsChargerClass IsNotCoughing IsTrevor IsNotAlone IsClosestSurvivorNear1200 IsNotInCheckpoint IsNotInSafeSpot IsNotWarnHeardCharger NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response PlayerWarnHeardChargerMechanic
-		ApplyContext "WarnHeardCharger:1:300,SaidSpecialWarn:1:30"
-		applycontexttoworld
+		name = "PlayerHeardBoomerBetaZoeyRVC",
+		criteria ConceptPlayerHeardBoomer IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1PlayerWarnHeardBoomerTeenGirl
 	},
 
 	{
-		name = "PlayerWarnHeardHunterTrevor",
-		criteria ConceptPlayerWarnHearZombie IsHunterClass IsNotCoughing IsTrevor IsNotAlone IsClosestSurvivorNear1200 IsNotInCheckpoint IsNotInSafeSpot IsNotWarnHeardHunter NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response PlayerWarnHeardHunterMechanic
+		name = "L4D1PlayerWarnHeardHunterBetaZoeyRVC",
+		criteria ConceptPlayerWarnHearZombie IsHunterClass IsNotCoughing IsNotAlone IsClosestSurvivorNear1200 IsNotInCheckpoint IsNotInSafeSpot IsBetazoeyrvc IsNotWarnHeardHunter NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1PlayerWarnHeardHunterTeenGirl
 		ApplyContext "WarnHeardHunter:1:300,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerWarnHeardJockeyTrevor",
-		criteria ConceptPlayerWarnHearZombie IsJockeyClass IsNotCoughing IsTrevor IsNotAlone IsClosestSurvivorNear1200 IsNotInCheckpoint IsNotInSafeSpot IsNotWarnHeardJockey NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response PlayerWarnHeardJockeyMechanic
-		ApplyContext "WarnHeardJockey:1:300,SaidSpecialWarn:1:30"
-		applycontexttoworld
+		name = "PlayerHeardHunterBetaZoeyRVC",
+		criteria ConceptPlayerHeardHunter IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1PlayerWarnHeardHunterTeenGirl
 	},
 
 	{
-		name = "PlayerWarnHeardJockeyC1Trevor",
-		criteria ConceptPlayerWarnHearZombie IsJockeyClass IsNotCoughing IsTrevor IsNotAlone IsClosestSurvivorNear1200 IsNotInCheckpoint IsNotInSafeSpot IsNotWarnHeardJockey NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowJockey IsNotSurvival
-		Response PlayerWarnHeardJockeyC1Mechanic
-		ApplyContext "WarnHeardJockey:1:300,SaidSpecialWarn:1:30"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerWarnHeardSmokerTrevor",
-		criteria ConceptPlayerWarnHearZombie IsSmokerClass IsNotCoughing IsTrevor IsNotAlone IsClosestSurvivorNear1200 IsNotInCheckpoint IsNotInSafeSpot IsNotWarnHeardSmoker NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response PlayerWarnHeardSmokerMechanic
+		name = "L4D1PlayerWarnHeardSmokerBetaZoeyRVC",
+		criteria ConceptPlayerWarnHearZombie IsSmokerClass IsNotCoughing IsNotAlone IsClosestSurvivorNear1200 IsNotInCheckpoint IsNotInSafeSpot IsBetazoeyrvc IsNotWarnHeardSmoker NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1PlayerWarnHeardSmokerTeenGirl
 		ApplyContext "WarnHeardSmoker:1:300,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerWarnHeardSpitterTrevor",
-		criteria ConceptPlayerWarnHearZombie IsSpitterClass IsNotCoughing IsTrevor IsNotAlone IsClosestSurvivorNear1200 IsNotInCheckpoint IsNotInSafeSpot IsNotWarnHeardSpitter NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response PlayerWarnHeardSpitterMechanic
-		ApplyContext "WarnHeardSpitter:1:300,SaidSpecialWarn:1:30"
-		applycontexttoworld
+		name = "PlayerHeardSmokerBetaZoeyRVC",
+		criteria ConceptPlayerHeardSmoker IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1PlayerWarnHeardSmokerTeenGirl
 	},
 
 	{
-		name = "PlayerWarnHeardBoomerC1Trevor",
-		criteria ConceptPlayerWarnHearZombie IsBoomerClass IsNotCoughing IsTrevor IsNotAlone IsClosestSurvivorNear1200 IsNotInCheckpoint IsNotInSafeSpot IsNotWarnHeardBoomer NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowBoomer IsNotSurvival
-		Response PlayerWarnHeardBoomerC1Mechanic
-		ApplyContext "WarnHeardBoomer:1:300,SaidSpecialWarn:1:30"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerWarnHeardChargerC1Trevor",
-		criteria ConceptPlayerWarnHearZombie IsChargerClass IsNotCoughing IsTrevor IsNotAlone IsClosestSurvivorNear1200 IsNotInCheckpoint IsNotInSafeSpot IsNotWarnHeardCharger NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowCharger IsNotSurvival
-		Response PlayerWarnHeardBoomerC1Mechanic
-		ApplyContext "WarnHeardCharger:1:300,SaidSpecialWarn:1:30"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerWarnHeardHunterC1Trevor",
-		criteria ConceptPlayerWarnHearZombie IsHunterClass IsNotCoughing IsTrevor IsNotAlone IsClosestSurvivorNear1200 IsNotInCheckpoint IsNotInSafeSpot IsNotWarnHeardHunter NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowHunter IsNotSurvival
-		Response PlayerWarnHeardBoomerC1Mechanic
-		ApplyContext "WarnHeardHunter:1:300,SaidSpecialWarn:1:30"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerWarnHeardSmokerC1Trevor",
-		criteria ConceptPlayerWarnHearZombie IsSmokerClass IsNotCoughing IsTrevor IsNotAlone IsClosestSurvivorNear1200 IsNotInCheckpoint IsNotInSafeSpot IsNotWarnHeardSmoker NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowSmoker IsNotSurvival
-		Response PlayerWarnHeardBoomerC1Mechanic
-		ApplyContext "WarnHeardSmoker:1:300,SaidSpecialWarn:1:30"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerWarnHeardSpitterC1Trevor",
-		criteria ConceptPlayerWarnHearZombie IsSpitterClass IsNotCoughing IsTrevor IsNotAlone IsClosestSurvivorNear1200 IsNotInCheckpoint IsNotInSafeSpot IsNotWarnHeardSpitter NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowSpitter IsNotSurvival
-		Response PlayerWarnHeardBoomerC1Mechanic
-		ApplyContext "WarnHeardSpitter:1:300,SaidSpecialWarn:1:30"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerWarnHeardWitchTrevor",
-		criteria ConceptPlayerWarnHearZombie IsWitchClass IsNotCoughing IsNotAlone IsClosestSurvivorNear1200 IsTrevor IsNotInCheckpoint IsNotInSafeSpot IsNotWarnHeardWitch NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotmap_c4m2 IsNotc6m1_riverbank _auto_NotAlarmV2 _auto_NotFinaleStarted
-		Response PlayerWarnHeardWitchMechanic
-		then any PlayerKillThatLight foo:0 -1.652
+		name = "L4D1PlayerWarnHeardWitchBetaZoeyRVC",
+		criteria ConceptPlayerWarnHearZombie IsWitchClass IsNotCoughing IsClosestSurvivorNear1200 IsBetazoeyrvc IsNotInCheckpoint IsNotInSafeSpot IsNotWarnHeardWitch IsNotAlone NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotFinaleStarted
+		Response L4D1PlayerWarnHeardWitchTeenGirl
+		then Any PlayerKillThatLight foo:0 -1.472
 		ApplyContext "WarnHeardWitch:1:300,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerWarnHeardWitchC1Trevor",
-		criteria ConceptPlayerWarnHearZombie IsWitchClass IsNotCoughing IsNotAlone IsClosestSurvivorNear1200 IsTrevor IsNotInCheckpoint IsNotInSafeSpot IsNotWarnHeardWitch NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2
-		Response PlayerWarnHeardWitchC1Mechanic
-		ApplyContext "WarnHeardWitch:1:300,SaidSpecialWarn:1:30"
-		applycontexttoworld
+		name = "PlayerHeardWitchBetaZoeyRVC",
+		criteria ConceptPlayerHeardWitch IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response PlayerHeardWitchTeenGirl
 	},
 
 	{
-		name = "PlayerHeardWitchC1Trevor",
-		criteria ConceptPlayerHeardWitch IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2 IsNotSurvival
-		Response PlayerWarnHeardWitchC1Mechanic
-	},
-
-	{
-		name = "Player_C1WorseThanZombiesTrevor",
-		criteria ConceptPlayer_C1WorseThanZombies IsTrevor IssuerClose IsNotSpeakingWeight0
-		Response Player_C1WorseThanZombiesMechanic
-	},
-
-	{
-		name = "PlayerWarnMegaMobTrevor",
-		criteria ConceptPlayerWarnMegaMob IsNotCoughing IsTrevor IsNotInCheckpoint IsNotInSafeSpot IsNotWarnMegaMob IsTalk IsTalkTrevor IsNotSpeaking IsWorldTalkTrevor IsNotScavenge _auto_NotSpottedVehicle
-		Response PlayerWarnMegaMobMechanic
+		name = "L4D1PlayerWarnMegaMobBetaZoeyRVC",
+		criteria ConceptPlayerWarnMegaMob IsNotCoughing IsBetazoeyrvc IsNotInCheckpoint IsNotInSafeSpot IsNotWarnMegaMob IsTalk IsTalkBetazoeyrvc IsNotSpeaking IsWorldTalkBetazoeyrvc IsNotScavenge _auto_NotSpottedVehicle
+		Response L4D1PlayerWarnMegaMobTeenGirl
 		ApplyContext "WarnMegaMob:1:300,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerWarnWitchAngryTrevor",
-		criteria ConceptWitchGettingAngry IsNotCoughing IsTrevor IsNotWarnAngryWitch IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotmap_c4m2 IsNotc6m1_riverbank
-		Response PlayerWarnWitchAngryMechanic
+		name = "L4D1PlayerWarnMegaMobC11M5FinaleFirstWaveBetaZoeyRVC",
+		criteria ConceptPlayerWarnMegaMob IsDeadAir5 IsBetazoeyrvc _auto_IsFinaleStarted FinaleFirstHalf IsNotWarnMegaMob IsTalk IsTalkBetazoeyrvc IsNotSpeaking IsWorldTalkBetazoeyrvc IsNotSurvival _auto_NotSpottedVehicle
+		Response L4D1PlayerWarnMegaMobTeenGirl
+		ApplyContext "WarnMegaMob:1:60,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerWarnMegaMobC11M5FinaleBetaZoeyRVC",
+		criteria ConceptPlayerWarnMegaMob IsBetazoeyrvc IsDeadAir5 _auto_IsFinaleStarted FinaleSecondHalf IsNotWarnMegaMob _auto_NotSpottedVehicle
+		Response L4D1PlayerWarnMegaMobC11M5FinaleTeenGirl
+		then orator_plane_radio AirportRadioMegaMob foo:0 3.5
+		ApplyContext "WarnMegaMob:1:300,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1PlayerWarnWitchAngryBetaZoeyRVC",
+		criteria ConceptWitchGettingAngry IsNotCoughing IsBetazoeyrvc IsNotWarnAngryWitch IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerWarnWitchAngryTeenGirl
 		ApplyContext "WarnAngryWitch:1:5,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerWorldIntroC31BlankTrevor",
-		criteria ConceptintroC3M1 IsTrevor IsNotSaidCXM1Intro IsNotAlone AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerWorldIntroC31BlankMechanic
-		then any WorldIntroC31 foo:0 5
-		ApplyContext "CXM1Intro:1:0"
-		applycontexttoworld
+		name = "L4D1SurvivorCaughtVomitBetaZoeyRVC",
+		criteria ConceptPlayerVomitInFace IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1SurvivorCaughtVomitTeenGirl
+		ApplyContext "TalkBetazoeyrvc:1:10"
 	},
 
 	{
-		name = "PlayerWorldIntroC51Trevor",
-		criteria ConceptintroC5M1 IsTrevor IsNotSaidCXM1Intro AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerWorldIntroC51Mechanic
-		then orator C5M1_intro001 foo:0 0.01
-		ApplyContext "CXM1Intro:1:0"
-		applycontexttoworld
+		name = "L4D1SurvivorCoughingBetaZoeyRVC",
+		criteria ConceptSurvivorCoughing IsCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1SurvivorCoughingTeenGirl
 	},
 
 	{
-		name = "SurvivorCaughtVomitTrevor",
-		criteria ConceptPlayerVomitInFace IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response SurvivorCaughtVomitMechanic
-		ApplyContext "TalkTrevor:1:10"
+		name = "L4D1SurvivorCoughingDeathBetaZoeyRVC",
+		criteria ConceptPlayerDeath IsCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotVersus
+		Response L4D1SurvivorCoughingTeenGirl
 	},
 
 	{
-		name = "SurvivorchargerpoundTrevor",
-		criteria Conceptchargerpound IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidchargerpound IsWorldTalkTrevor
-		Response SurvivorchargerpoundMechanic
-		ApplyContext "Saidchargerpound:1:5,TalkTrevor:1:5"
+		name = "L4D1SurvivorDeathBetaZoeyRVC",
+		criteria ConceptPlayerDeath IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotVersus
+		Response L4D1SurvivorDeathTeenGirl
 	},
 
 	{
-		name = "SurvivorchargerpoundC1Trevor",
-		criteria Conceptchargerpound IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidchargerpound IsWorldTalkTrevor C1M1orC1M2 NoKnowCharger IsNotSurvival
-		Response SurvivorchargerpoundC1Mechanic
-		ApplyContext "Saidchargerpound:1:5,TalkTrevor:1:5"
+		name = "L4D1SurvivorGrabbedByTongueBetaZoeyRVC",
+		criteria ConceptPlayerGrabbedByTongue IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1SurvivorGrabbedByTongueTeenGirl
 	},
 
 	{
-		name = "SurvivorCoughingTrevor",
-		criteria ConceptSurvivorCoughing IsCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response SurvivorCoughingMechanic
+		name = "L4D1PlayerWitchChasingBetaZoeyRVC",
+		criteria ConceptPlayerExertionMinor IsBetazoeyrvc IsNotSpeaking IsWitchPresent SubjectIsNotWitch IsNotSaidWitchChasing IsTalkBetazoeyrvc IsSaidWitchAttacking IsWitchAggro
+		Response L4D1PlayerWitchChasingTeenGirl
+		ApplyContext "SaidWitchChasing:1:5,TalkBetazoeyrvc:1:2"
 	},
 
 	{
-		name = "SurvivorCoughingDeathTrevor",
-		criteria ConceptPlayerDeath IsCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotVersus
-		Response SurvivorCoughingMechanic
+		name = "L4D1PlayerWitchStartAttackBetaZoeyRVC",
+		criteria IsFaultConcept IsBetazoeyrvc IsFaultWitchHarassment
+		Response L4D1PlayerWitchStartAttackTeenGirl
+		ApplyContext "SaidWitchAttacking:1:15,TalkBetazoeyrvc:1:2,SaidWitchStartAttack:1:15"
 	},
 
 	{
-		name = "SurvivorDeathTrevor",
-		criteria ConceptPlayerDeath IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotVersus
-		Response SurvivorDeathMechanic
-	},
-
-	{
-		name = "SurvivorGooedBySpitterTrevor",
-		criteria ConceptGooedBySpitter IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidGooedBySpitter IsWorldTalkTrevor IsNotIncapacitated
-		Response SurvivorGooedBySpitterMechanic
-		ApplyContext "SaidGooedBySpitter:1:20,TalkTrevor:1:3"
-	},
-
-	{
-		name = "SurvivorGooedBySpitterC1Trevor",
-		criteria ConceptGooedBySpitter IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidGooedBySpitter IsWorldTalkTrevor C1M1orC1M2 NoKnowSpitter IsNotSurvival IsNotIncapacitated
-		Response SurvivorGooedBySpitterC1Mechanic
-		then trevor Player.GooedBySpitterC1R foo:0 -2.951
-		ApplyContext "SaidGooedBySpitter:1:20,TalkTrevor:1:3"
-	},
-
-	{
-		name = "SurvivorGrabbedByTongueTrevor",
-		criteria ConceptPlayerGrabbedByTongue IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response SurvivorGrabbedByTongueMechanic
-	},
-
-	{
-		name = "SurvivorGrabbedByTongueC1Trevor",
-		criteria ConceptPlayerGrabbedByTongue IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor C1M1orC1M2 NoKnowSmoker IsNotSurvival
-		Response SurvivorGrabbedByTongueC1Mechanic
-	},
-
-	{
-		name = "SurvivorNearCheckpointTrevor",
-		criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response SurvivorNearCheckpointMechanic
-		ApplyContext "SaidSafeSpotAhead:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorNearCheckpointC1M1Trevor",
-		criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor ismap_c1m1_hotel IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response SurvivorNearCheckpointC1M1Mechanic
-		ApplyContext "SaidSafeSpotAhead:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorNearCheckpointC1M2Trevor",
-		criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor ismap_c1m2_streets IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response SurvivorNearCheckpointC1M2Mechanic
-		ApplyContext "SaidSafeSpotAhead:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorNearCheckpointC1M3Trevor",
-		criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor ismap_c1m3_mall IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response SurvivorNearCheckpointC1M3Mechanic
-		ApplyContext "SaidSafeSpotAhead:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorNearCheckpointC2M1Trevor",
-		criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor ismap_c2m1 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response SurvivorNearCheckpointC2M1Mechanic
-		ApplyContext "SaidSafeSpotAhead:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorNearCheckpointC2M2Trevor",
-		criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor ismap_c2m2 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response SurvivorNearCheckpointC2M2Mechanic
-		then any _C2M2_SeeSafehouse01 foo:0 0.1
-		ApplyContext "SaidSafeSpotAhead:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorNearCheckpointC2M3Trevor",
-		criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor ismap_c2m3 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response SurvivorNearCheckpointC2M3Mechanic
-		ApplyContext "SaidSafeSpotAhead:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorNearCheckpointC2M4Trevor",
-		criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor ismap_c2m4 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response SurvivorNearCheckpointC2M4Mechanic
-		ApplyContext "SaidSafeSpotAhead:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorNearCheckpointC3M1Trevor",
-		criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor ismap_c3m1_plankcountry IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response SurvivorNearCheckpointC3M1Mechanic
-		ApplyContext "SaidSafeSpotAhead:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorNearCheckpointC3M2Trevor",
-		criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor ismapc3m2_swamp IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response SurvivorNearCheckpointC3M2Mechanic
-		ApplyContext "SaidSafeSpotAhead:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "PlayerRemarkC3M3SafeHouseAheadTrevor",
-		criteria ConceptRemark IsTrevor IsC3M3SafeHouseAhead IsNotSaidSafeSpotAhead IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response SurvivorNearCheckpointC3M3Mechanic
-		ApplyContext "SaidSafeSpotAhead:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorNearCheckpointC4M1Trevor",
-		criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor ismap_c4m1_milltown_a IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response SurvivorNearCheckpointC4M1Mechanic
-		ApplyContext "SaidSafeSpotAhead:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorNearCheckpointC4M2Trevor",
-		criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor ismap_c4m2_sugarmill_a IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response SurvivorNearCheckpointC4M2Mechanic
-		ApplyContext "SaidSafeSpotAhead:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorNearCheckpointC4M3Trevor",
-		criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor isc4m3 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response SurvivorNearCheckpointC4M3Mechanic
-		ApplyContext "SaidSafeSpotAhead:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorNearCheckpointC4M4Trevor",
-		criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor isc4m4 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response SurvivorNearCheckpointC4M4Mechanic
-		ApplyContext "SaidSafeSpotAhead:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorNearCheckpointC5M2Trevor",
-		criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor IsMapc5m2_park IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response SurvivorNearCheckpointC5M2Mechanic
-		ApplyContext "SaidSafeSpotAhead:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorNearCheckpointC5M3Trevor",
-		criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor IsMapc5m3_cemetery IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response SurvivorNearCheckpointC5M3Mechanic
-		ApplyContext "SaidSafeSpotAhead:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorNearCheckpointC5M4Trevor",
-		criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor IsMapc5m4_quarter IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response SurvivorNearCheckpointC5M4Mechanic
-		ApplyContext "SaidSafeSpotAhead:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorNearCheckpointC6M1Trevor",
-		criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor Isc6m1_riverbank IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response SurvivorNearCheckpointC6M1Mechanic
-		ApplyContext "SaidSafeSpotAhead:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorNearCheckpointC6M2Trevor",
-		criteria ConceptPlayerNearCheckpoint IsNotCoughing IsTrevor IsNotSaidSafeSpotAhead IsNotAlone IsNotInCheckpoint IsTalk IsTalkTrevor Isc6m2_bedlam IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response SurvivorNearCheckpointC6M2Mechanic
-		ApplyContext "SaidSafeSpotAhead:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorNearFinaleTrevor",
-		criteria ConceptPlayerNearFinale IsNotCoughing IsTrevor IsNotSaidFinaleAhead NotInCombat IsTalk IsTalkTrevor IsNotIncapacitated IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response SurvivorNearFinaleMechanic
-		ApplyContext "SaidFinaleAhead:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorNearFinaleC1M4Trevor",
-		criteria ConceptPlayerNearFinale IsNotCoughing IsTrevor IsNotSaidFinaleAhead NotInCombat IsTalk IsTalkTrevor IsNotIncapacitated IsWorldTalkTrevor ismap_c1m4_atrium AutoIsNotScavenge AutoIsNotSurvival
+		name = "WitchAggroBetaZoeyRVC",
+		criteria ConceptWitchStartAttack IsBetazoeyrvc Iswitch_aggro_onBetazoeyrvc
 		Response NoResponse
-		ApplyContext "SaidFinaleAhead:1:0"
+		ApplyContext "WitchAggro:++1"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorNearFinaleC2M5Trevor",
-		criteria ConceptPlayerNearFinale IsNotCoughing IsTrevor IsNotSaidFinaleAhead NotInCombat IsTalk IsTalkTrevor IsNotIncapacitated IsWorldTalkTrevor ismap_c2m5 AutoIsNotScavenge AutoIsNotSurvival
-		Response SurvivorNearFinaleC2M5Mechanic
-		ApplyContext "SaidFinaleAhead:1:0"
-		applycontexttoworld
+		name = "L4D1SurvivorTankPoundBetaZoeyRVC",
+		criteria ConceptPlayerGroundPoundedByTank IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1SurvivorTankPoundTeenGirl
+		ApplyContext "TalkBetazoeyrvc:1:5"
 	},
 
 	{
-		name = "SurvivorNearFinaleC3M4Trevor",
-		criteria ConceptPlayerNearFinale IsNotCoughing IsTrevor IsNotSaidFinaleAhead NotInCombat IsTalk IsTalkTrevor IsNotIncapacitated IsWorldTalkTrevor ismapc3m4_plantation AutoIsNotScavenge AutoIsNotSurvival
-		Response SurvivorNearFinaleC3M4Mechanic
-		ApplyContext "SaidFinaleAhead:1:0"
-		applycontexttoworld
+		name = "L4D1SurvivorVocalizeBackUpBetaZoeyRVC",
+		criteria ConceptPlayerBackUp IsBetazoeyrvc IsNotCoughing IsNotInSafeSpot IsNotInCheckpoint IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1SurvivorVocalizeBackUpTeenGirl
 	},
 
 	{
-		name = "SurvivorNearFinaleC4M5Trevor",
-		criteria ConceptPlayerNearFinale IsNotCoughing IsTrevor IsNotSaidFinaleAhead NotInCombat IsTalk IsTalkTrevor IsNotIncapacitated IsWorldTalkTrevor isc4m5 AutoIsNotScavenge AutoIsNotSurvival
-		Response NoResponse
-		ApplyContext "SaidFinaleAhead:1:0"
-		applycontexttoworld
+		name = "L4D1SurvivorVocalizeEmphaticGoBetaZoeyRVC",
+		criteria ConceptPlayerEmphaticGo IsBetazoeyrvc IsNotCoughing IsNotInSafeSpot IsNotInCheckpoint IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1SurvivorVocalizeEmphaticGoTeenGirl
 	},
 
 	{
-		name = "SurvivorNearFinaleC5M5Trevor",
-		criteria ConceptPlayerNearFinale IsNotCoughing IsTrevor IsNotSaidFinaleAhead NotInCombat IsTalk IsTalkTrevor IsNotIncapacitated IsWorldTalkTrevor IsMapc5m5_bridge AutoIsNotScavenge AutoIsNotSurvival
-		Response NoResponse
-		ApplyContext "SaidFinaleAhead:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorNearFinaleC6M3Trevor",
-		criteria ConceptPlayerNearFinale IsNotCoughing IsTrevor IsNotSaidFinaleAhead NotInCombat IsTalk IsTalkTrevor IsNotIncapacitated IsWorldTalkTrevor Isc6m3_port AutoIsNotScavenge AutoIsNotSurvival
-		Response NoResponse
-		ApplyContext "SaidFinaleAhead:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorPouncedByHunterTrevor",
-		criteria ConceptScreamWhilePounced IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response SurvivorPouncedByHunterMechanic
-		ApplyContext "TalkTrevor:1:5"
-	},
-
-	{
-		name = "SurvivorTankPoundTrevor",
-		criteria ConceptPlayerGroundPoundedByTank IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response SurvivorTankPoundMechanic
-		ApplyContext "TalkTrevor:1:5"
-	},
-
-	{
-		name = "SurvivorVocalizeBackUpTrevor",
-		criteria ConceptPlayerBackUp IsTrevor IsNotCoughing IsNotInSafeSpot IsNotInCheckpoint IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response SurvivorVocalizeBackUpMechanic
-	},
-
-	{
-		name = "SurvivorVocalizeEmphaticGoTrevor",
-		criteria ConceptPlayerEmphaticGo IsTrevor IsNotCoughing IsNotInSafeSpot IsNotInCheckpoint IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response SurvivorVocalizeEmphaticGoMechanic
-	},
-
-	{
-		name = "SurvivorVocalizeGoingToDieTrevor",
-		criteria ConceptPlayerGoingToDie IsNotSpeaking IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotComplainBlock IsWorldTalkTrevor IsNotInStartArea IsNotInCheckpoint _auto_NotSpottedVehicle
-		Response SurvivorVocalizeGoingToDieMechanic
+		name = "L4D1SurvivorVocalizeGoingToDieBetaZoeyRVC",
+		criteria ConceptPlayerGoingToDie IsNotSpeaking IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotComplainBlock IsWorldTalkBetazoeyrvc IsNotInStartArea IsNotInCheckpoint _auto_NotSpottedVehicle
+		Response L4D1SurvivorVocalizeGoingToDieTeenGirl
 		ApplyContext "IsComplain:1:25"
 	},
 
 	{
-		name = "SurvivorVocalizeGoingToDie3Trevor",
-		criteria ConceptPlayerGoingToDie IsNotSpeaking IsNotCoughing IsTrevor IsOnThirdStrike IsTalk IsTalkTrevor IsNotComplainBlock IsWorldTalkTrevor IsNotInStartArea IsNotInCheckpoint _auto_NotSpottedVehicle
-		Response SurvivorVocalizeGoingToDie3Mechanic
+		name = "L4D1SurvivorVocalizeGoingToDie3BetaZoeyRVC",
+		criteria ConceptPlayerGoingToDie IsNotSpeaking IsNotCoughing IsBetazoeyrvc IsOnThirdStrike IsTalk IsTalkBetazoeyrvc IsNotComplainBlock IsWorldTalkBetazoeyrvc IsNotInStartArea IsNotInCheckpoint _auto_NotSpottedVehicle
+		Response L4D1SurvivorVocalizeGoingToDie3TeenGirl
 		ApplyContext "IsComplain:1:25"
 	},
 
 	{
-		name = "SurvivorVocalizeLookOutTrevor",
-		criteria ConceptPlayerLookOut IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response SurvivorVocalizeLookOutMechanic
+		name = "L4D1SurvivorVocalizeGoingToDieAloneBetaZoeyRVC",
+		criteria ConceptPlayerGoingToDie IsNotSpeaking IsNotCoughing IsBetazoeyrvc IsOnThirdStrike IsAlone NotInCombat IsNotSaidNervous IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotInStartArea IsNotInCheckpoint _auto_NotSpottedVehicle
+		Response L4D1SurvivorVocalizeGoingToDieAloneTeenGirl
+		ApplyContext "SaidNervous:1:0"
 	},
 
 	{
-		name = "SurvivorVocalizeThisWayTrevor",
-		criteria ConceptPlayerThisWay IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response SurvivorVocalizeThisWayMechanic
+		name = "L4D1SurvivorVocalizeLookOutBetaZoeyRVC",
+		criteria ConceptPlayerLookOut IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorVocalizeLookOutTeenGirl
 	},
 
 	{
-		name = "SurvivorVocalizeWaitHereTrevor",
-		criteria ConceptPlayerWaitHere IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response SurvivorVocalizeWaitHereMechanic
+		name = "SurvivorVocalizeLookOutCoachBetaZoeyRVC",
+		criteria ConceptPlayerLookOut IsNotCoughing IsBetazoeyrvc SubjectIsCoach IsTalk IsTalkBetazoeyrvc ChanceToFire30Percent IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorVocalizeLookOutCoachTeenGirl
 	},
 
 	{
-		name = "SurvivorWarnSpitterIncomingTrevor",
-		criteria ConceptWarnSpitterIncoming IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidWarnSpitterIncoming IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response SurvivorWarnSpitterIncomingMechanic
+		name = "SurvivorVocalizeLookOutNickBetaZoeyRVC",
+		criteria ConceptPlayerLookOut IsNotCoughing IsBetazoeyrvc SubjectIsGambler IsTalk IsTalkBetazoeyrvc ChanceToFire30Percent IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorVocalizeLookOutNickTeenGirl
+	},
+
+	{
+		name = "SurvivorVocalizeLookOutEllisBetaZoeyRVC",
+		criteria ConceptPlayerLookOut IsNotCoughing IsBetazoeyrvc SubjectIsMechanic IsTalk IsTalkBetazoeyrvc ChanceToFire30Percent IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorVocalizeLookOutEllisTeenGirl
+	},
+
+	{
+		name = "SurvivorVocalizeLookOutRochelleBetaZoeyRVC",
+		criteria ConceptPlayerLookOut IsNotCoughing IsBetazoeyrvc SubjectIsProducer IsTalk IsTalkBetazoeyrvc ChanceToFire30Percent IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorVocalizeLookOutRochelleTeenGirl
+	},
+
+	{
+		name = "L4D1SurvivorVocalizeThisWayBetaZoeyRVC",
+		criteria ConceptPlayerThisWay IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1SurvivorVocalizeThisWayTeenGirl
+	},
+
+	{
+		name = "L4D1SurvivorVocalizeWaitHereBetaZoeyRVC",
+		criteria ConceptPlayerWaitHere IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1SurvivorVocalizeWaitHereTeenGirl
+	},
+
+	{
+		name = "Player_C7M2CrowsFlyBetaZoeyRVC",
+		criteria ConceptC7M2CrowsFlySpeak IsBetazoeyrvc
+		Response Player_C7M2CrowsFlyTeenGirl
+		then Any Player.WarnMegaMobc7m201 3 1
+	},
+
+	{
+		name = "Player_C7M3BridgeLeapBetaZoeyRVC",
+		criteria ConceptC7M3BridgeLeapSpeak IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsLastGenerator ismapc7m3_port IsWorldTalkBetazoeyrvc IsNotScavenge
+		Response Player_C7M3BridgeLeapTeenGirl
+	},
+
+	{
+		name = "Player_C7M3BridgeLeapLouisBetaZoeyRVC",
+		criteria ConceptC7M3BridgeLeapSpeak IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsLastGenerator IsManagerAlive ChanceToFire10Percent ismapc7m3_port IsWorldTalkBetazoeyrvc IsNotScavenge
+		Response Player_C7M3BridgeLeapLouisTeenGirl
+	},
+
+	{
+		name = "SacrificeSuccessfulNotBetaZoeyRVC",
+		criteria ConceptPlayerIncapacitated IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsLastGenerator NotSacrificedBetazoeyrvc ismapc7m3_port _auto_IsSaidC7M3BridgeLeap _auto_IsC7M3FinalPress
+		Response NoResponse
+	},
+
+	{
+		name = "SacrificeSuccessfulBetaZoeyRVC",
+		criteria ConceptPlayerIncapacitated IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsLastGenerator SacrificedBetazoeyrvc ismapc7m3_port _auto_IsSaidC7M3BridgeLeap _auto_IsC7M3FinalPress
+		Response SacrificeSuccessfulTeenGirl
+		ApplyContext "Talk:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "SacrificeFinaleGenerator2OnSpkBetaZoeyRVC",
+		criteria ConceptCrashFinaleGenerator2OnSpk IsBetazoeyrvc IsLastGenerator IsMapc7m3_port
+		Response NoResponse
+	},
+
+	{
+		name = "CrashFinaleGenerator2SpeakBetaZoeyRVC",
+		criteria ConceptCrashFinaleGenerator2Speak IsBetazoeyrvc IsLastGenerator IsMapc7m3_port
+		Response NoResponse
+	},
+
+	{
+		name = "SacrificeFailedBetaZoeyRVC",
+		criteria ConceptPlayerIncapacitated IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsLastGenerator ismapc7m3_port IsNotInRescueVehicle _auto_IsSaidC7M3BridgeLeap _auto_NotC7M3FinalPress
+		Response SacrificeFailedTeenGirl
+		ApplyContext "TalkBetazoeyrvc:1:2"
+	},
+
+	{
+		name = "PlayerHelpSacrificeBetaZoeyRVC",
+		criteria ConceptPlayerHelp ismapc7m3_port IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_IsSaidC7M3BridgeLeap
+		Response NoResponse
+	},
+
+	{
+		name = "PlayerGrabbedByJockeyBetaZoeyRVC",
+		criteria ConceptSurvivorJockeyed IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidBeenJockeyedBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response PlayerGrabbedByJockeyTeenGirl
+		ApplyContext "SaidBeenJockeyedBetazoeyrvc:1:6,TalkBetazoeyrvc:1:6"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRevivedByDefibrillatorBetaZoeyRVC",
+		criteria ConceptRevivedByDefibrillator IsNotCoughing IsBetazoeyrvc
+		Response PlayerRevivedByDefibrillatorTeenGirl
+		ApplyContext "TalkBetazoeyrvc:1:3"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRevivedByDefibrillator2BetaZoeyRVC",
+		criteria ConceptRevivedByDefibrillatorDelayed IsBetazoeyrvc
+		Response PlayerRevivedByDefibrillator2TeenGirl
+		ApplyContext "TalkBetazoeyrvc:1:3"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerUsingDefibrillatorBetaZoeyRVC",
+		criteria ConceptPlayerUsingDefibrillator IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response PlayerUsingDefibrillatorTeenGirl
+	},
+
+	{
+		name = "SurvivorchargerpoundBetaZoeyRVC",
+		criteria Conceptchargerpound IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidchargerpound IsWorldTalkBetazoeyrvc
+		Response SurvivorchargerpoundTeenGirl
+		ApplyContext "Saidchargerpound:1:5,TalkBetazoeyrvc:1:5"
+	},
+
+	{
+		name = "SurvivorGooedBySpitterBetaZoeyRVC",
+		criteria ConceptGooedBySpitter IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidGooedBySpitter IsWorldTalkBetazoeyrvc IsNotIncapacitated
+		Response SurvivorGooedBySpitterTeenGirl
+		ApplyContext "SaidGooedBySpitter:1:20,TalkBetazoeyrvc:1:3"
+	},
+
+	{
+		name = "SurvivorWarnSpitterIncomingBetaZoeyRVC",
+		criteria ConceptWarnSpitterIncoming IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidWarnSpitterIncoming IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorWarnSpitterIncomingTeenGirl
 		ApplyContext "SaidWarnSpitterIncoming:1:10"
 	},
 
 	{
-		name = "SurvivorWarnSpitterIncomingC1Trevor",
-		criteria ConceptWarnSpitterIncoming IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidWarnSpitterIncoming C1M1orC1M2 IsWorldTalkTrevor NoKnowSpitter IsNotSurvival
-		Response SurvivorWarnSpitterIncomingC1Mechanic
-		ApplyContext "SaidWarnSpitterIncoming:1:10"
+		name = "SurvivorPouncedByHunterBetaZoeyRVC",
+		criteria ConceptScreamWhilePounced IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response SurvivorPouncedByHunterTeenGirl
+		ApplyContext "TalkBetazoeyrvc:1:5"
 	},
 
 	{
-		name = "PlayerLedgeHangEndTrevor",
-		criteria ConceptPlayerLedgeHangEnd IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerLedgeHangEndMechanic
-		ApplyContext "TalkTrevor:1:5"
+		name = "ChargerBeatsNickBetaZoeyRVC",
+		criteria ConceptChargerBeatsNick IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response ChargerBeatsNickTeenGirl
 	},
 
 	{
-		name = "PlayerLedgeHangMiddleTrevor",
-		criteria ConceptPlayerLedgeHangMiddle IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerLedgeHangMiddleMechanic
-		ApplyContext "TalkTrevor:1:5"
+		name = "L4D1PlayerLedgeHangEndBetaZoeyRVC",
+		criteria ConceptPlayerLedgeHangEnd IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerLedgeHangEndTeenGirl
+		ApplyContext "TalkBetazoeyrvc:1:5"
 	},
 
 	{
-		name = "PlayerLedgeHangStartTrevor",
-		criteria ConceptPlayerLedgeHangStart IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerLedgeHangStartMechanic
-		ApplyContext "TalkTrevor:1:5"
+		name = "L4D1PlayerLedgeHangMiddleBetaZoeyRVC",
+		criteria ConceptPlayerLedgeHangMiddle IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerLedgeHangMiddleTeenGirl
+		ApplyContext "TalkBetazoeyrvc:1:5"
 	},
 
 	{
-		name = "SurvivorFirstDeathTrevor",
-		criteria ConceptSurvivorDied IsNotCoughing SurvivorDiedNearEnough IsTrevor IsEveryoneAlive IsNotSaidSomeoneDied IsTalk IsTalkTrevor IsNotSaidFaultFriendlyFireGeneral IsWorldTalkTrevor
-		Response SurvivorFirstDeathMechanic
+		name = "L4D1PlayerLedgeHangStartBetaZoeyRVC",
+		criteria ConceptPlayerLedgeHangStart IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerLedgeHangStartTeenGirl
+		ApplyContext "TalkBetazoeyrvc:1:5"
+	},
+
+	{
+		name = "L4D1SurvivorFirstDeathBetaZoeyRVC",
+		criteria ConceptSurvivorDied IsNotCoughing SurvivorDiedNearEnough IsSurvivor IsBetazoeyrvc IsEveryoneAlive IsNotSaidSomeoneDied IsNotSaidFaultFriendlyFireGeneral IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1SurvivorFirstDeathTeenGirl
 		ApplyContext "SaidSomeoneDied:1:10"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorFirstDeathC1Trevor",
-		criteria ConceptSurvivorDied IsNotCoughing SurvivorDiedNearEnough IsTrevor IsEveryoneAlive IsNotSaidSomeoneDied ismap_c1m1_hotel IsTalk IsTalkTrevor IsNotSaidFaultFriendlyFireGeneral IsWorldTalkTrevor NoKnowNames
-		Response SurvivorFirstDeathC1Mechanic
+		name = "L4D1DoubleDeathBetaZoeyRVC",
+		criteria ConceptSurvivorDied IsNotCoughing SurvivorDiedNearEnough IsSurvivor IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsNotSaidFaultFriendlyFireGeneral IsWithOnlyThree IsNotIncapacitated IsWorldTalkBetazoeyrvc
+		Response L4D1DoubleDeathTeenGirl
 		ApplyContext "SaidSomeoneDied:1:10"
 		applycontexttoworld
 	},
 
 	{
-		name = "DeathOneTrevor",
-		criteria ConceptSurvivorDied IsNotCoughing SurvivorDiedNearEnough IsTrevor IsWithTwo IsNotSaidSomeoneDied IsTalk IsTalkTrevor IsNotSaidFaultFriendlyFireGeneral IsWorldTalkTrevor
-		Response DeathOneMechanic
+		name = "L4D1DeathOneBetaZoeyRVC",
+		criteria ConceptSurvivorDied IsNotCoughing SurvivorDiedNearEnough IsSurvivor IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidFaultFriendlyFireGeneral IsWithTwo IsNotIncapacitated IsWorldTalkBetazoeyrvc
+		Response L4D1DeathOneTeenGirl
+	},
+
+	{
+		name = "L4D1TeamKillBetaZoeyRVC",
+		criteria ConceptSurvivorDied IsNotCoughing SurvivorDiedReallyClose IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsSaidFaultFriendlyFireGeneral IsNotSaidFaultFriendlyFireBetazoeyrvc IsNotIncapacitated IsWorldTalkBetazoeyrvc
+		Response L4D1TeamKillTeenGirl
 		ApplyContext "SaidSomeoneDied:1:10"
 		applycontexttoworld
 	},
 
 	{
-		name = "DoubleDeathTrevor",
-		criteria ConceptSurvivorDied IsNotCoughing SurvivorDiedNearEnough IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsClosestSurvivorNear400 IsWithOnlyThree IsNotIncapacitated IsNotSaidFaultFriendlyFireGeneral IsWorldTalkTrevor
-		Response DoubleDeathMechanic
-		ApplyContext "SaidSomeoneDied:1:10"
-		applycontexttoworld
+		name = "L4D1SurvivorPickupAutoShotgunBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpAutoShotgun IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupAutoShotgunTeenGirl
+		ApplyContext "PickedUpItem:1:30"
 	},
 
 	{
-		name = "DoubleDeathProducerTrevor",
-		criteria ConceptSurvivorDied IsNotCoughing SurvivorDiedNearEnough IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsProducerAlive IsProducerNear400 IsWithOnlyThree ChanceToFire100Percent IsNotIncapacitated IsNotDeadProducer IsNotSaidFaultFriendlyFireGeneral IsWorldTalkTrevor isNotmap_c1m1_hotel
-		Response DoubleDeathProducerMechanic
-		ApplyContext "SaidSomeoneDied:1:10"
-		applycontexttoworld
+		name = "L4D1SurvivorPickupSpasShotgunBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpShotgun_Spas IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupAutoShotgunTeenGirl
+		ApplyContext "PickedUpItem:1:30"
 	},
 
 	{
-		name = "TeamKillTrevor",
-		criteria ConceptSurvivorDied IsNotCoughing SurvivorDiedReallyClose IsTrevor IsTalk IsTalkTrevor IsSaidFaultFriendlyFireGeneral IsNotSaidFaultFriendlyFireTrevor IsWorldTalkTrevor
-		Response TeamKillMechanic
-		ApplyContext "SaidSomeoneDied:1:10,TalkTrevor:1:4"
-		applycontexttoworld
+		name = "L4D1SurvivorPickupFirstAidKitBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpFirstAidKit IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupFirstAidKitTeenGirl
+		ApplyContext "PickedUpItem:1:30"
 	},
 
 	{
-		name = "TeamKillFromCoachTrevor",
-		criteria ConceptSurvivorDied IsNotCoughing SurvivorDiedReallyClose IsTrevor IsTalk IsTalkTrevor IsSaidFaultFriendlyFireGeneral IsSaidFaultFriendlyFireCoach ChanceToFire50Percent IsWorldTalkTrevor
-		Response TeamKillFromCoachMechanic
-		ApplyContext "SaidSomeoneDied:1:10,TalkTrevor:1:3"
-		applycontexttoworld
+		name = "L4D1SurvivorPickupHuntingRifleBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpHuntingRifle IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupHuntingRifleTeenGirl
+		ApplyContext "PickedUpItem:1:30"
 	},
 
 	{
-		name = "TeamKillFromGamblerTrevor",
-		criteria ConceptSurvivorDied IsNotCoughing SurvivorDiedReallyClose IsTrevor IsTalk IsTalkTrevor IsSaidFaultFriendlyFireGeneral IsSaidFaultFriendlyFireGambler ChanceToFire50Percent IsWorldTalkTrevor
-		Response TeamKillFromGamblerMechanic
-		ApplyContext "SaidSomeoneDied:1:10,TalkTrevor:1:2"
-		applycontexttoworld
+		name = "L4D1SurvivorPickupMilitarySniperBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpSniper_Military IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupMilitarySniperTeenGirl
+		ApplyContext "PickedUpItem:1:30"
 	},
 
 	{
-		name = "TeamKillFromProducerTrevor",
-		criteria ConceptSurvivorDied IsNotCoughing SurvivorDiedReallyClose IsTrevor IsTalk IsTalkTrevor IsSaidFaultFriendlyFireGeneral IsSaidFaultFriendlyFireProducer ChanceToFire50Percent IsWorldTalkTrevor
-		Response TeamKillFromProducerMechanic
-		ApplyContext "SaidSomeoneDied:1:10,TalkTrevor:1:2"
-		applycontexttoworld
+		name = "L4D1SurvivorPickupScoutSniperBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpSniper_scout IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupMilitarySniperTeenGirl
+		ApplyContext "PickedUpItem:1:30"
 	},
 
 	{
-		name = "C6M1TakeSubMachineGunTrevor",
-		criteria ConceptPlayerPickup IsTrevor IsPickedUpSMG IsTalk IsTalkTrevor IsWorldTalkTrevor isc6m1_riverbank IsJustSaidWorldC6M1_IntoTheStore
-		Response C6M1TakeSubMachineGunMechanic
-		ApplyContext "JustSaidWorldC6M1_IntoTheStore:2:0"
-		applycontexttoworld
+		name = "L4D1SurvivorPickupScoutAWPBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpSniper_awp IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupMilitarySniperTeenGirl
+		ApplyContext "PickedUpItem:1:30"
 	},
 
 	{
-		name = "C6M1TakeSubMachineGunSilencedTrevor",
-		criteria ConceptPlayerPickup IsTrevor IsPickedUpSmg_silenced IsTalk IsTalkTrevor IsWorldTalkTrevor isc6m1_riverbank IsJustSaidWorldC6M1_IntoTheStore
-		Response C6M1TakeSubMachineGunMechanic
-		ApplyContext "JustSaidWorldC6M1_IntoTheStore:2:0"
-		applycontexttoworld
+		name = "L4D1SurvivorPickupLaserSightsBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpLaserSights IsNotSpeaking IsBotNotAvailable ChanceToFire50Percent NotPickedUpItem IsNotInSafeSpot IsNotInCheckpoint IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotInStartArea _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupLaserSightsTeenGirl
+		ApplyContext "PickedUpItem:1:30"
 	},
 
 	{
-		name = "C6M1TakePumpShotgunTrevor",
-		criteria ConceptPlayerPickup IsTrevor IsPickedUpPumpShotgun IsTalk IsTalkTrevor IsWorldTalkTrevor isc6m1_riverbank IsJustSaidWorldC6M1_IntoTheStore
-		Response C6M1TakeSubMachineGunMechanic
-		ApplyContext "JustSaidWorldC6M1_IntoTheStore:2:0"
-		applycontexttoworld
+		name = "L4D1SurvivorPickupUpIncendiaryAmmoBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsPickedUpIncendiaryAmmo IsNotSpeaking IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupLaserSightsTeenGirl
+		ApplyContext "PickedUpItem:1:30"
 	},
 
 	{
-		name = "C6M1TakeChromeShotgunTrevor",
-		criteria ConceptPlayerPickup IsTrevor IsPickedUpShotgun_Chrome IsTalk IsTalkTrevor IsWorldTalkTrevor isc6m1_riverbank IsJustSaidWorldC6M1_IntoTheStore
-		Response C6M1TakeSubMachineGunMechanic
-		ApplyContext "JustSaidWorldC6M1_IntoTheStore:2:0"
-		applycontexttoworld
+		name = "L4D1SurvivorPickupUpExplosiveAmmoBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsPickedUpExplosiveAmmo IsNotSpeaking IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupLaserSightsTeenGirl
+		ApplyContext "PickedUpItem:1:30"
 	},
 
 	{
-		name = "C6M1TakeCSSMP5Trevor",
-		criteria ConceptPlayerPickup IsTrevor IsPickedUpSmg_mp5 IsTalk IsTalkTrevor IsWorldTalkTrevor isc6m1_riverbank IsJustSaidWorldC6M1_IntoTheStore
-		Response C6M1TakeSubMachineGunMechanic
-		ApplyContext "JustSaidWorldC6M1_IntoTheStore:2:0"
-		applycontexttoworld
+		name = "L4D1SurvivorPickupMolotovBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpMolotov IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupMolotovTeenGirl
+		ApplyContext "PickedUpItem:1:30"
 	},
 
 	{
-		name = "SurvivorDeployUpExplosivesTrevor",
-		criteria ConceptPlayerDeployingUpgradeAmmo IsNotCoughing IsTrevor IsNotSpeaking IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotSaidDeployUpgradePack_Explosive HasUpgradePack_Explosive IsNotInStartArea _auto_NotSpottedVehicle
-		Response SurvivorDeployUpExplosivesMechanic
+		name = "L4D1SurvivorPickupPainPillsBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpPainPills IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupPainPillsTeenGirl
+		ApplyContext "PickedUpItem:1:30"
+	},
+
+	{
+		name = "L4D1SurvivorPickupAdrenalineBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpAdrenaline IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupAdrenalineTeenGirl
+		ApplyContext "PickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupDefibrillatorBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpDefibrillator IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupAdrenalineTeenGirl
+		ApplyContext "PickedUpItem:1:30"
+	},
+
+	{
+		name = "L4D1SurvivorPickupPipeBombBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpPipeBomb IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupPipeBombTeenGirl
+		ApplyContext "PickedUpItem:1:30"
+	},
+
+	{
+		name = "L4D1SurvivorPickupVomitJarBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpVomitJar IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupVomitJarTeenGirl
+		ApplyContext "PickedUpItem:1:30"
+	},
+
+	{
+		name = "L4D1SurvivorPickupPumpShotgunBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpPumpShotgun IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupPumpShotgunTeenGirl
+		ApplyContext "PickedUpItem:1:30"
+	},
+
+	{
+		name = "L4D1SurvivorPickupChromeShotgunBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpShotgun_Chrome IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupPumpShotgunTeenGirl
+		ApplyContext "PickedUpItem:1:30"
+	},
+
+	{
+		name = "L4D1SurvivorPickupRifleBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpRifle IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupRifleTeenGirl
+		ApplyContext "PickedUpItem:1:30"
+	},
+
+	{
+		name = "L4D1SurvivorPickupDesertRifleBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpRifle_Desert IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupRifleTeenGirl
+		ApplyContext "PickedUpItem:1:30"
+	},
+
+	{
+		name = "L4D1SurvivorPickupAK47RifleBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpRifle_AK47 IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupRifleTeenGirl
+		ApplyContext "PickedUpItem:1:30"
+	},
+
+	{
+		name = "L4D1SurvivorPickupSG552RifleBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpRifle_sg552 IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupRifleTeenGirl
+		ApplyContext "PickedUpItem:1:30"
+	},
+
+	{
+		name = "L4D1SurvivorPickupSMGBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpSMG IsNotSpeaking ChanceToFire30Percent IsNotInSafeSpot IsNotInStartArea NotPickedUpItem IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupSMGTeenGirl
+		ApplyContext "PickedUpItem:1:30"
+	},
+
+	{
+		name = "L4D1SurvivorPickupSilencedSMGBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpSmg_silenced IsNotSpeaking ChanceToFire30Percent IsNotInSafeSpot IsNotInStartArea NotPickedUpItem IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupSMGTeenGirl
+		ApplyContext "PickedUpItem:1:30"
+	},
+
+	{
+		name = "L4D1SurvivorPickupMP5BetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpSmg_mp5 IsNotSpeaking ChanceToFire30Percent IsNotInSafeSpot IsNotInStartArea NotPickedUpItem IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupSMGTeenGirl
+		ApplyContext "PickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorDeployUpExplosivesBetaZoeyRVC",
+		criteria ConceptPlayerDeployingUpgradeAmmo IsNotCoughing IsBetazoeyrvc IsNotSpeaking IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotInStartArea IsNotSaidDeployUpgradePack_Explosive HasUpgradePack_Explosive _auto_NotSpottedVehicle
+		Response SurvivorDeployUpExplosivesTeenGirl
 		ApplyContext "SaidDeployUpgradePack_Explosive:1:30"
 	},
 
 	{
-		name = "SurvivorDeployUpIncendiaryTrevor",
-		criteria ConceptPlayerDeployingUpgradeAmmo IsNotCoughing IsTrevor IsNotSpeaking IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotSaidDeployUpgradePack_Incendiary HasUpgradePack_Incendiary IsNotInStartArea _auto_NotSpottedVehicle
-		Response SurvivorDeployUpIncendiaryMechanic
+		name = "SurvivorDeployUpIncendiaryBetaZoeyRVC",
+		criteria ConceptPlayerDeployingUpgradeAmmo IsNotCoughing IsBetazoeyrvc IsNotSpeaking IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotInStartArea IsNotSaidDeployUpgradePack_Incendiary HasUpgradePack_Incendiary _auto_NotSpottedVehicle
+		Response SurvivorDeployUpIncendiaryTeenGirl
 		ApplyContext "SaidDeployUpgradePack_Incendiary:1:30"
 	},
 
 	{
-		name = "SurvivorPickupAdrenalineTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpAdrenaline IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response SurvivorPickupAdrenalineMechanic
+		name = "SurvivorPickupSecondPistolBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpSecondPistol IsNotSpeaking ChanceToFire30Percent IsNotInSafeSpot NotPickedUpItem IsNotInStartArea IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorPickupSecondPistolTeenGirl
 		ApplyContext "PickedUpItem:1:30"
 	},
 
 	{
-		name = "SurvivorPickupAutoShotgunTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpAutoShotgun IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupAutoShotgunMechanic
+		name = "L4D1SurvivorPickupGolfClubBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpGolfClub IsNotSpeaking NotPickedUpItem IsNotInSafeSpot IsNotInStartArea ChanceToFire30Percent IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupMeleeTeenGirl
 		ApplyContext "PickedUpItem:1:30"
 	},
 
 	{
-		name = "SurvivorPickupSpasShotgunTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpShotgun_spas IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupAutoShotgunMechanic
+		name = "L4D1SurvivorPickupFireAxeBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpFireAxe IsNotSpeaking NotPickedUpItem IsNotInSafeSpot IsNotInStartArea ChanceToFire30Percent IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupMeleeTeenGirl
 		ApplyContext "PickedUpItem:1:30"
 	},
 
 	{
-		name = "SurvivorPickupbaseball_batTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpbaseball_bat IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupbaseball_batMechanic
+		name = "L4D1SurvivorPickupCrowbarBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpCrowBar IsNotSpeaking NotPickedUpItem IsNotInSafeSpot IsNotInStartArea ChanceToFire30Percent IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupMeleeTeenGirl
 		ApplyContext "PickedUpItem:1:30"
 	},
 
 	{
-		name = "SurvivorPickupShovelTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpShovel IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupShovelMechanic
+		name = "L4D1SurvivorPickupGuitarBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpelectric_guitar IsNotSpeaking NotPickedUpItem IsNotInSafeSpot IsNotInStartArea ChanceToFire30Percent IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupMeleeTeenGirl
 		ApplyContext "PickedUpItem:1:30"
 	},
 
 	{
-		name = "SurvivorPickupchainsawTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpchainsaw IsNotSpeaking NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupchainsawMechanic
-		then All AskWhat foo:0 0
+		name = "L4D1SurvivorPickupKatanaBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpKatana IsNotSpeaking NotPickedUpItem IsNotInSafeSpot IsNotInStartArea ChanceToFire30Percent IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupMeleeTeenGirl
 		ApplyContext "PickedUpItem:1:30"
 	},
 
 	{
-		name = "SurvivorPickupKnifeTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpKnife IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupKnifeMechanic
+		name = "L4D1SurvivorPickupMacheteBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpMachete IsNotSpeaking NotPickedUpItem IsNotInSafeSpot IsNotInStartArea ChanceToFire30Percent IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupMeleeTeenGirl
 		ApplyContext "PickedUpItem:1:30"
 	},
 
 	{
-		name = "SurvivorPickupcricket_batTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpcricket_bat IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupcricket_batMechanic
+		name = "L4D1SurvivorPickupFryingPanBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpFryingPan IsNotSpeaking NotPickedUpItem IsNotInSafeSpot IsNotInStartArea ChanceToFire30Percent IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupMeleeTeenGirl
 		ApplyContext "PickedUpItem:1:30"
 	},
 
 	{
-		name = "SurvivorPickupPitchforkTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpPitchfork IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupPitchforkMechanic
+		name = "L4D1SurvivorPickupTonfaBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUptonfa IsNotSpeaking NotPickedUpItem IsNotInSafeSpot IsNotInStartArea ChanceToFire30Percent IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupMeleeTeenGirl
 		ApplyContext "PickedUpItem:1:30"
 	},
 
 	{
-		name = "SurvivorPickupCrowBarTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpCrowBar IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupCrowBarMechanic
+		name = "L4D1SurvivorPickupCricketBatBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpcricket_bat IsNotSpeaking NotPickedUpItem IsNotInSafeSpot IsNotInStartArea ChanceToFire30Percent IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupMeleeTeenGirl
 		ApplyContext "PickedUpItem:1:30"
 	},
 
 	{
-		name = "SurvivorPickupDefibrillatorTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpDefibrillator ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotSpeaking IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea _auto_NotSpottedVehicle
-		Response SurvivorPickupDefibrillatorMechanic
+		name = "L4D1SurvivorPickupBaseballBatBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpbaseball_bat IsNotSpeaking NotPickedUpItem IsNotInSafeSpot IsNotInStartArea ChanceToFire30Percent IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupMeleeTeenGirl
 		ApplyContext "PickedUpItem:1:30"
 	},
 
 	{
-		name = "SurvivorPickupelectric_guitarTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpelectric_guitar IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupelectric_guitarMechanic
+		name = "L4D1SurvivorPickupKnifeBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpKnife IsNotSpeaking NotPickedUpItem IsNotInSafeSpot IsNotInStartArea ChanceToFire30Percent IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupMeleeTeenGirl
 		ApplyContext "PickedUpItem:1:30"
 	},
 
 	{
-		name = "SurvivorPickupFireAxeTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpFireAxe ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotSpeaking IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupFireAxeMechanic
+		name = "L4D1SurvivorPickupShovelBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpShovel IsNotSpeaking NotPickedUpItem IsNotInSafeSpot IsNotInStartArea ChanceToFire30Percent IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupMeleeTeenGirl
 		ApplyContext "PickedUpItem:1:30"
 	},
 
 	{
-		name = "SurvivorPickupFirstAidKitTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpFirstAidKit IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea IsNotScavenge _auto_NotSpottedVehicle
-		Response SurvivorPickupFirstAidKitMechanic
+		name = "L4D1SurvivorPickupPitchforkBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpPitchfork IsNotSpeaking NotPickedUpItem IsNotInSafeSpot IsNotInStartArea ChanceToFire30Percent IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupMeleeTeenGirl
 		ApplyContext "PickedUpItem:1:30"
 	},
 
 	{
-		name = "SurvivorPickupFirstSMGTrevor",
-		criteria ConceptPlayerPickup IsTrevor IsPickedUpSmg_silenced IsTalk IsTalkTrevor IsNotSaidPickupFirstSMG IsSaidC1M1OpenDoor ExtraWeight10 IsWorldTalkTrevor
-		Response SurvivorPickupFirstSMGMechanic
-		ApplyContext "SaidPickupFirstSMG:1:0"
+		name = "SurvivorPickupChainSawGroovyBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpChainSaw IsNotSpeaking NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorPickupChainSawGroovyTeenGirl
+		ApplyContext "PickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupM60BetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpM60 IsNotSpeaking NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorPickupM60TeenGirl
+		ApplyContext "PickedUpItem:1:30"
+	},
+
+	{
+		name = "L4D1SurvivorPickupGrenadeLauncherBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpGrenadeLauncher IsNotSpeaking NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorPickupM60TeenGirl
+		ApplyContext "PickedUpItem:1:30"
+	},
+
+	{
+		name = "L4D1PlayerChainSawUsedBetaZoeyRVC",
+		criteria ConceptChainsawUsed IsNotSaidChainSawUsed IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IntensityOver25 IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1PlayerChainSawUsedTeenGirl
+		ApplyContext "SaidChainSawUsed:1:90"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorPickupFryingPanTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpFryingPan IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupFryingPanMechanic
+		name = "L4D1SurvivorPickupUpIncendiaryBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpUpgradePack_Incendiary NotPickedUpItem IsNotInSafeSpot IsNotSpeaking IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotInStartArea _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupMeleeTeenGirl
 		ApplyContext "PickedUpItem:1:30"
 	},
 
 	{
-		name = "SurvivorPickupGolfCLubTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpGolfClub IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupGolfCLubMechanic
+		name = "L4D1SurvivorPickupUpExplosivesBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpUpgradePack_Explosive NotPickedUpItem IsNotInSafeSpot IsNotSpeaking IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotInStartArea _auto_NotSpottedVehicle
+		Response L4D1SurvivorPickupUpExplosivesTeenGirl
 		ApplyContext "PickedUpItem:1:30"
 	},
 
 	{
-		name = "SurvivorPickupGrenadeLauncherTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpGrenadeLauncher NotPickedUpItem IsNotInSafeSpot IsNotSpeaking IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupGrenadeLauncherMechanic
-		ApplyContext "PickedUpItem:1:30"
+		name = "L4D1PlayerGettingRevivedBetaZoeyRVC",
+		criteria ConceptReviveFriendDown IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerGettingRevivedTeenGirl
+		then From ReviveFriendDownFinal foo:0 -0.672
 	},
 
 	{
-		name = "SurvivorPickupGunC1M2Trevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsNotSpeaking IsTalk IsSaidC1M2InsideGunShop IsNotPickedUpFirstAidKit IsNotPickedUpAmmo IsNotPickedUpVomitJar IsNotPickedUpLaserSights IsNotPickedUpAdrenaline IsNotPickedUpPainPills IsNotPickedUpMolotov IsNotPickedUpPipeBomb IsWorldTalkTrevor IsNotSaidC1M2InsideGunShopPickUp ChanceToFire50Percent _auto_NotButton1
-		Response SurvivorPickupGunC1M2Mechanic
-		ApplyContext "SaidC1M2InsideGunShopPickUp:1:0"
-		applycontexttoworld
+		name = "L4D1PlayerHealOtherBetaZoeyRVC",
+		criteria ConceptPlayerHealingOther IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc NotInIntenseCombat IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerHealOtherTeenGirl
+		ApplyContext "TalkBetazoeyrvc:1:5"
 	},
 
 	{
-		name = "SurvivorPickupHuntingRifleTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpHuntingRifle IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupHuntingRifleMechanic
-		ApplyContext "PickedUpItem:1:30"
+		name = "L4D1PlayerHealOtherCombatBetaZoeyRVC",
+		criteria ConceptPlayerHealingOther IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc InIntenseCombat IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerHealOtherCombatTeenGirl
+		ApplyContext "TalkBetazoeyrvc:1:5"
 	},
 
 	{
-		name = "SurvivorPickupMilitarySniperTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpSniper_Military IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupHuntingRifleMechanic
-		ApplyContext "PickedUpItem:1:30"
-	},
-
-	{
-		name = "SurvivorPickupScoutSniperTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpSniper_scout IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupHuntingRifleMechanic
-		ApplyContext "PickedUpItem:1:30"
-	},
-
-	{
-		name = "SurvivorPickupAWPSniperTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpSniper_awp IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupHuntingRifleMechanic
-		ApplyContext "PickedUpItem:1:30"
-	},
-
-	{
-		name = "SurvivorPickupIncendiaryAmmoTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpIncendiaryAmmo IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupIncendiaryAmmoMechanic
-		ApplyContext "PickedUpItem:1:30"
-	},
-
-	{
-		name = "SurvivorPickupKatanaTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpKatana IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupKatanaMechanic
-		ApplyContext "PickedUpItem:1:30"
-	},
-
-	{
-		name = "SurvivorPickupLaserSightsAlwaysTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpLaserSights IsNotSpeaking IsBotNotAvailable ChanceToFire50Percent NotPickedUpItem IsNotInStartArea IsNotInCheckpoint IsNotInSafeSpot IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response SurvivorPickupLaserSightsAlwaysMechanic
-		ApplyContext "PickedUpItem:1:30"
-	},
-
-	{
-		name = "SurvivorPickupM60Trevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpM60 IsNotSpeaking NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupM60Mechanic
-		ApplyContext "PickedUpItem:1:30"
-	},
-
-	{
-		name = "SurvivorPickupMacheteTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpMachete IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupMacheteMechanic
-		ApplyContext "PickedUpItem:1:30"
-	},
-
-	{
-		name = "SurvivorPickupMagnumTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpMagnum IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupMagnumMechanic
-		ApplyContext "PickedUpItem:1:30"
-	},
-
-	{
-		name = "SurvivorPickupMolotovTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpMolotov IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupMolotovMechanic
-		ApplyContext "PickedUpItem:1:30"
-	},
-
-	{
-		name = "SurvivorPickupPainPillsTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpPainPills ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotSpeaking IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotScavenge _auto_NotSpottedVehicle
-		Response SurvivorPickupPainPillsMechanic
-		ApplyContext "PickedUpItem:1:30"
-	},
-
-	{
-		name = "SurvivorPickupPipeBombTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpPipeBomb IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupPipeBombMechanic
-		ApplyContext "PickedUpItem:1:30"
-	},
-
-	{
-		name = "SurvivorPickupPumpShotgunTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpPumpShotgun IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupPumpShotgunMechanic
-		ApplyContext "PickedUpItem:1:30"
-	},
-
-	{
-		name = "SurvivorPickupChromeShotgunTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpShotgun_Chrome IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupPumpShotgunMechanic
-		ApplyContext "PickedUpItem:1:30"
-	},
-
-	{
-		name = "SurvivorPickupRifleTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpRifle IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupRifleMechanic
-		ApplyContext "PickedUpItem:1:30"
-	},
-
-	{
-		name = "SurvivorPickupDesertRifleTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpRifle_Desert IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupDesertRifleMechanic
-		ApplyContext "PickedUpItem:1:30"
-	},
-
-	{
-		name = "SurvivorPickupAK47RifleTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpRifle_AK47 IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupDesertRifleMechanic
-		ApplyContext "PickedUpItem:1:30"
-	},
-
-	{
-		name = "SurvivorPickupSG552RifleTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpRifle_sg552 IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupDesertRifleMechanic
-		ApplyContext "PickedUpItem:1:30"
-	},
-
-	{
-		name = "SurvivorPickupSecondPistolTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpSecondPistol IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupSecondPistolMechanic
-		ApplyContext "PickedUpItem:1:30"
-	},
-
-	{
-		name = "SurvivorPickupSMGTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpSMG IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupSMGMechanic
-		ApplyContext "PickedUpItem:1:30"
-	},
-
-	{
-		name = "SurvivorPickupSilencedSMGTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpSMG_silenced IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupSMGMechanic
-		ApplyContext "PickedUpItem:1:30"
-	},
-
-	{
-		name = "SurvivorPickupMP5SMGTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpSMG_mp5 IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupSMGMechanic
-		ApplyContext "PickedUpItem:1:30"
-	},
-
-	{
-		name = "SurvivorPickuptonfaTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUptonfa IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickuptonfaMechanic
-		ApplyContext "PickedUpItem:1:30"
-	},
-
-	{
-		name = "SurvivorPickupUpExplosiveAmmoTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpExplosiveAmmo ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotSpeaking IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupUpExplosiveAmmoMechanic
-		ApplyContext "PickedUpItem:1:30"
-	},
-
-	{
-		name = "SurvivorPickupUpExplosivesTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpUpgradePack_Explosive NotPickedUpItem IsNotInSafeSpot IsNotSpeaking IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupUpExplosivesMechanic
-		ApplyContext "PickedUpItem:1:30"
-	},
-
-	{
-		name = "SurvivorPickupUpIncendiaryTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpUpgradePack_Incendiary IsNotSpeaking NotPickedUpItem IsNotInSafeSpot IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotInStartArea isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorPickupUpIncendiaryMechanic
-		ApplyContext "PickedUpItem:1:30"
-	},
-
-	{
-		name = "SurvivorPickupVomitJarTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpVomitJar IsNotSpeaking ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotInStartArea IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response SurvivorPickupVomitJarMechanic
-		ApplyContext "PickedUpItem:1:30"
-	},
-
-	{
-		name = "SurvivorPickupVomitJarAlwaysC1Trevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpVomitJar ChanceToFire30Percent NotPickedUpItem IsNotInSafeSpot IsNotSpeaking IsTalk IsTalkTrevor IsWorldTalkTrevor ismap_c1m1_hotel
-		Response SurvivorPickupVomitJarAlwaysC1Mechanic
-		ApplyContext "PickedUpItem:1:30"
-	},
-
-	{
-		name = "PlayerGettingRevivedTrevor",
-		criteria ConceptReviveFriendDown IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerGettingRevivedMechanic
-		then From ReviveFriendDownFinal foo:0 -0.608
-	},
-
-	{
-		name = "PlayerGettingRevivedCrybabyTrevor",
-		criteria ConceptReviveFriendDown IsNotCoughing IsTrevor IsTrevorCrybaby FromIsProducer IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response PlayerGettingRevivedCrybabyMechanic
-		then From ReviveFriendDownFinal foo:0 -1.447
-	},
-
-	{
-		name = "PlayerHealOtherTrevor",
-		criteria ConceptPlayerHealingOther IsNotCoughing IsTrevor IsTalk IsTalkTrevor NotInIntenseCombat IsWorldTalkTrevor
-		Response PlayerHealOtherMechanic
-		ApplyContext "TalkTrevor:1:5"
-	},
-
-	{
-		name = "PlayerHealOtherC1Trevor",
-		criteria ConceptPlayerHealingOther IsNotCoughing IsTrevor IsTalk IsTalkTrevor NotInIntenseCombat IsWorldTalkTrevor ismap_c1m1_hotel
-		Response PlayerHealOtherC1Mechanic
-		ApplyContext "TalkTrevor:1:5"
-	},
-
-	{
-		name = "PlayerHealOtherCombatTrevor",
-		criteria ConceptPlayerHealingOther IsNotCoughing IsTrevor IsTalk IsTalkTrevor InIntenseCombat IsWorldTalkTrevor
-		Response PlayerHealOtherCombatMechanic
-		ApplyContext "TalkTrevor:1:5"
-	},
-
-	{
-		name = "PlayerHealOtherTankTrevor",
-		criteria ConceptPlayerHealingOther IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsZombiePresentTank IsSaidTankWarn2 IsWorldTalkTrevor
+		name = "L4D1PlayerHealOtherTankBetaZoeyRVC",
+		criteria ConceptPlayerHealingOther IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsZombiePresentTank IsSaidTankWarn2 IsWorldTalkBetazoeyrvc
 		// 	forceweight 30
-		Response PlayerHealOtherCombatMechanic
-		ApplyContext "TalkTrevor:1:5"
+		Response L4D1PlayerHealOtherCombatTeenGirl
+		ApplyContext "TalkBetazoeyrvc:1:5"
 	},
 
 	{
-		name = "PlayerLedgeSaveTrevor",
-		criteria ConceptPlayerLedgeSave IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response PlayerLedgeSaveMechanic
-		ApplyContext "TalkTrevor:1:5"
+		name = "L4D1PlayerLedgeSaveLouisBetaZoeyRVC",
+		criteria ConceptPlayerLedgeSave IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc SubjectIsManager ChanceToFire10Percent IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1PlayerLedgeSaveLouisTeenGirl
+		ApplyContext "TalkBetazoeyrvc:1:5"
 	},
 
 	{
-		name = "PlayerReviveFriendTrevor",
-		criteria ConceptPlayerReviveFriend IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor NotInIntenseCombat _auto_NotSpottedVehicle
-		Response PlayerReviveFriendMechanic
-		then Subject ReviveFriendDown foo:0 -0.664
-		ApplyContext "TalkTrevor:1:2"
+		name = "L4D1PlayerReviveFriendBetaZoeyRVC",
+		criteria ConceptPlayerReviveFriend IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc NotInIntenseCombat _auto_NotSpottedVehicle
+		Response L4D1PlayerReviveFriendTeenGirl
+		then subject ReviveFriendDown foo:0 -0.981
+		ApplyContext "TalkBetazoeyrvc:1:2"
 	},
 
 	{
-		name = "PlayerReviveFriendBTrevor",
-		criteria ConceptReviveFriendDownFinal IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotReviveInterrupt
-		Response PlayerReviveFriendBMechanic
+		name = "L4D1PlayerReviveFriendCriticalBetaZoeyRVC",
+		criteria ConceptPlayerReviveFriendCritical IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc NotInIntenseCombat _auto_NotSpottedVehicle
+		Response L4D1PlayerReviveFriendCriticalTeenGirl
+		ApplyContext "TalkBetazoeyrvc:1:5"
 	},
 
 	{
-		name = "PlayerReviveFriendCriticalTrevor",
-		criteria ConceptPlayerReviveFriendCritical IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor NotInIntenseCombat _auto_NotSpottedVehicle
-		Response PlayerReviveFriendCriticalMechanic
-		ApplyContext "TalkTrevor:1:5"
+		name = "L4D1PlayerReviveFriendLoudBetaZoeyRVC",
+		criteria ConceptPlayerReviveFriend IsNotCoughing IsBetazoeyrvc InIntenseCombat IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1PlayerReviveFriendLoudTeenGirl
+		ApplyContext "TalkBetazoeyrvc:1:5"
 	},
 
 	{
-		name = "PlayerReviveFriendLoudTrevor",
-		criteria ConceptPlayerReviveFriend IsNotCoughing IsTrevor IsZombiePresentTank IsSaidTankWarn2 IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
+		name = "L4D1PlayerReviveFriendLoud2BetaZoeyRVC",
+		criteria ConceptPlayerReviveFriend IsNotCoughing IsBetazoeyrvc IsZombiePresentTank IsSaidTankWarn2 IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
 		// 	forceweight 30
-		Response PlayerReviveFriendLoudMechanic
-		ApplyContext "TalkTrevor:1:5"
+		Response L4D1PlayerReviveFriendLoudTeenGirl
+		ApplyContext "TalkBetazoeyrvc:1:5"
 	},
 
 	{
-		name = "PlayerLedgeSaveCriticalTrevor",
-		criteria ConceptPlayerLedgeSaveCritical IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response PlayerLedgeSaveMechanic
-		ApplyContext "TalkTrevor:1:5"
+		name = "L4D1PlayerReviveFriendLoudCritBetaZoeyRVC",
+		criteria ConceptPlayerReviveFriendCritical IsNotCoughing IsBetazoeyrvc InIntenseCombat IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1PlayerReviveFriendLoudTeenGirl
+		ApplyContext "TalkBetazoeyrvc:1:5"
 	},
 
 	{
-		name = "PlayerReviveFriendLoud2Trevor",
-		criteria ConceptPlayerReviveFriend IsNotCoughing IsTrevor InIntenseCombat IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response PlayerReviveFriendLoudMechanic
-		ApplyContext "TalkTrevor:1:5"
-	},
-
-	{
-		name = "PlayerReviveFriendLoudCritTrevor",
-		criteria ConceptPlayerReviveFriendCritical IsNotCoughing IsTrevor InIntenseCombat IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response PlayerReviveFriendLoudMechanic
-		ApplyContext "TalkTrevor:1:5"
-	},
-
-	{
-		name = "PlayerReviveFriendLoudCrit2Trevor",
-		criteria ConceptPlayerReviveFriendCritical IsNotCoughing IsTrevor IsZombiePresentTank IsSaidTankWarn2 IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
+		name = "L4D1PlayerReviveFriendLoudCrit2BetaZoeyRVC",
+		criteria ConceptPlayerReviveFriendCritical IsNotCoughing IsBetazoeyrvc IsZombiePresentTank IsSaidTankWarn2 IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
 		// 	forceweight 30
-		Response PlayerReviveFriendLoudMechanic
-		ApplyContext "TalkTrevor:1:5"
+		Response L4D1PlayerReviveFriendLoudTeenGirl
+		ApplyContext "TalkBetazoeyrvc:1:5"
 	},
 
 	{
-		name = "_C1M1_ElevatorHelloTrevor",
-		criteria Concept_C1M1_ElevatorHello IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _C1M1_ElevatorHelloMechanic
+		name = "L4D1PlayerReviveFriendLoudBillBetaZoeyRVC",
+		criteria ConceptPlayerReviveFriend IsNotCoughing IsBetazoeyrvc InIntenseCombat IsTalk IsTalkBetazoeyrvc ChanceToFire30Percent SubjectIsNamVet IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1PlayerReviveFriendLoudBillTeenGirl
+		ApplyContext "TalkBetazoeyrvc:1:5"
 	},
 
 	{
-		name = "_C1M1_ElevatorHello02cTrevor",
-		criteria Concept_C1M1_ElevatorHello02c IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _C1M1_ElevatorHello02cMechanic
-		then producer _C1M1_ElevatorHello03c foo:0 -1.856
+		name = "L4D1PlayerReviveFriendLoudFrancisBetaZoeyRVC",
+		criteria ConceptPlayerReviveFriend IsNotCoughing IsBetazoeyrvc InIntenseCombat IsTalk IsTalkBetazoeyrvc ChanceToFire30Percent SubjectIsBiker IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1PlayerReviveFriendLoudFrancisTeenGirl
+		ApplyContext "TalkBetazoeyrvc:1:5"
 	},
 
 	{
-		name = "_C1M1_ElevatorHello03aTrevor",
-		criteria Concept_C1M1_ElevatorHello03a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _C1M1_ElevatorHello03aMechanic
-		then self _C1M1_ElevatorHello03e foo:0 -8.671
+		name = "L4D1PlayerReviveFriendLoudLouisBetaZoeyRVC",
+		criteria ConceptPlayerReviveFriend IsNotCoughing IsBetazoeyrvc InIntenseCombat IsTalk IsTalkBetazoeyrvc ChanceToFire30Percent SubjectIsManager IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response L4D1PlayerReviveFriendLoudLouisTeenGirl
+		ApplyContext "TalkBetazoeyrvc:1:5"
 	},
 
 	{
-		name = "_C1M1_ElevatorHello03eTrevor",
-		criteria Concept_C1M1_ElevatorHello03e IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _C1M1_ElevatorHello03eMechanic
+		name = "L4D1ReviveFriendDownFinalBetaZoeyRVC",
+		criteria ConceptReviveFriendDownFinal IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotReviveInterrupt
+		Response L4D1ReviveFriendDownFinalTeenGirl
 	},
 
 	{
-		name = "_C1M1_ElevatorHello03dTrevor",
-		criteria Concept_C1M1_ElevatorHello03d IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _C1M1_ElevatorHello03dMechanic
-		then gambler _C1M1_ElevatorHello04d foo:0 -0.479
+		name = "L4D1ReviveFriendDownFinalManagerBetaZoeyRVC",
+		criteria ConceptReviveFriendDownFinal IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc FromIsManager ChanceToFire10Percent IsNotReviveInterrupt
+		Response L4D1ReviveFriendDownFinalManagerTeenGirl
 	},
 
 	{
-		name = "_C1M1_ElevatorHello05bTrevor",
-		criteria Concept_C1M1_ElevatorHello05b IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _C1M1_ElevatorHello05bMechanic
+		name = "L4D1ReviveFriendDownFinalNamVetBetaZoeyRVC",
+		criteria ConceptReviveFriendDownFinal IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc FromIsNamVet ChanceToFire10Percent IsNotReviveInterrupt
+		Response L4D1ReviveFriendDownFinalNamVetTeenGirl
 	},
 
 	{
-		name = "_C1M1_ElevatorHello05cRochelleTrevor",
-		criteria Concept_C1M1_ElevatorHello05c IsTrevor FromIsProducer AutoIsNotScavenge AutoIsNotSurvival
-		Response _C1M1_ElevatorHello05cRochelleMechanic
-		then coach _C1M1_ElevatorHello03c foo:0 0.1
+		name = "PlayerLedgeSaveBetaZoeyRVC",
+		criteria ConceptPlayerLedgeSave IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response PlayerLedgeSaveTeenGirl
+		ApplyContext "TalkBetazoeyrvc:1:5"
 	},
 
 	{
-		name = "_C1M1_ElevatorHello05cCoachTrevor",
-		criteria Concept_C1M1_ElevatorHello05c IsTrevor FromIsCoach AutoIsNotScavenge AutoIsNotSurvival
-		Response _C1M1_ElevatorHello05cCoachMechanic
-		then Producer _C1M1_ElevatorHello03c foo:0 0.1
+		name = "L4D1PlayerLedgeSaveCriticalBetaZoeyRVC",
+		criteria ConceptPlayerLedgeSaveCritical IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response PlayerLedgeSaveTeenGirl
+		ApplyContext "TalkBetazoeyrvc:1:5"
 	},
 
 	{
-		name = "_C1M1_ElevatorHello05cNickTrevor",
-		criteria Concept_C1M1_ElevatorHello05c IsTrevor FromIsGambler AutoIsNotScavenge AutoIsNotSurvival
-		Response _C1M1_ElevatorHello05cNickMechanic
-		then Producer _C1M1_ElevatorHello11a foo:0 0.1
-	},
-
-	{
-		name = "_C1M1_ElevatorHello07bTrevor",
-		criteria Concept_C1M1_ElevatorHello07b IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _C1M1_ElevatorHello07bMechanic
-		then producer _C1M1_ElevatorHello07c foo:0 0.1
-	},
-
-	{
-		name = "_C1M1_ElevatorHello07dTrevor",
-		criteria Concept_C1M1_ElevatorHello07d IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _C1M1_ElevatorHello07dMechanic
-		then coach _C1M1_ElevatorHello07g foo:0 0.1
-	},
-
-	{
-		name = "_C1M1_ElevatorHello07fTrevor",
-		criteria Concept_C1M1_ElevatorHello07f IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _C1M1_ElevatorHello07fMechanic
-		then any c1m1_elevator_ready2 foo:0 0.1
-		ApplyContext "LongElevatorIntro:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "_C1M1_ElevatorHello08aTrevor",
-		criteria Concept_C1M1_ElevatorHello08a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _C1M1_ElevatorHello08aMechanic
-		then producer _C1M1_ElevatorHello08b foo:0 0.1
-	},
-
-	{
-		name = "_C1M1_ElevatorHello08cTrevor",
-		criteria Concept_C1M1_ElevatorHello08c IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _C1M1_ElevatorHello08cMechanic
-		then producer _C1M1_ElevatorHello08d foo:0 0.1
-	},
-
-	{
-		name = "_C1M1_ElevatorHello08eTrevor",
-		criteria Concept_C1M1_ElevatorHello08e IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _C1M1_ElevatorHello08eMechanic
-		then coach _C1M1_ElevatorHello07g foo:0 0.1
-	},
-
-	{
-		name = "_C1M1_ElevatorHello09aTrevor",
-		criteria Concept_C1M1_ElevatorHello09a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _C1M1_ElevatorHello09aMechanic
-		then producer _C1M1_ElevatorHello09a foo:0 0.1
-	},
-
-	{
-		name = "_C1M1_ElevatorHello12aTrevor",
-		criteria Concept_C1M1_ElevatorHello12a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _C1M1_ElevatorHello12aMechanic
-		then Coach _C1M1_ElevatorHello07g foo:0 0.1
-	},
-
-	{
-		name = "_C1M1_ElevatorHello13aTrevor",
-		criteria Concept_C1M1_ElevatorHello13a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _C1M1_ElevatorHello13aMechanic
-		then from _C1M1_ElevatorHello13a foo:0 -2.554
-	},
-
-	{
-		name = "_c1m4startelevator2Trevor",
-		criteria Concept_c1m4startelevator2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _c1m4startelevator2Mechanic
-		then any _c1m4startelevator5a foo:0 -8.777
-	},
-
-	{
-		name = "_c1m4startelevator2aTrevor",
-		criteria Concept_c1m4startelevator2a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _c1m4startelevator2aMechanic
-		then trevor _c1m4startelevator3e foo:0 -2.084
-	},
-
-	{
-		name = "_c1m4startelevator2bTrevor",
-		criteria Concept_c1m4startelevator2b IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _c1m4startelevator2bMechanic
-		then trevor _c1m4startelevator3c foo:0 -1.250
-	},
-
-	{
-		name = "_c1m4startelevator2cTrevor",
-		criteria Concept_c1m4startelevator2c IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _c1m4startelevator2cMechanic
-		then producer _c1m4startelevator5a foo:0 -12.096
-	},
-
-	{
-		name = "_c1m4startelevator3Trevor",
-		criteria Concept_c1m4startelevator3 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _c1m4startelevator3Mechanic
-		then producer _c1m4startelevator3a foo:0 0.2
-	},
-
-	{
-		name = "_c1m4startelevator3bTrevor",
-		criteria Concept_c1m4startelevator3b IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _c1m4startelevator3bMechanic
-		then producer _c1m4startelevator3c foo:0 0.2
-	},
-
-	{
-		name = "_c1m4startelevator3cTrevor",
-		criteria Concept_c1m4startelevator3c IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _c1m4startelevator3cMechanic
-		then coach _c1m4startelevator5a foo:0 -4.225
-	},
-
-	{
-		name = "_c1m4startelevator3dTrevor",
-		criteria Concept_c1m4startelevator3d IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _c1m4startelevator3dMechanic
-		then gambler _c1m4startelevator5a foo:0 -4.225
-	},
-
-	{
-		name = "_c1m4startelevator3eTrevor",
-		criteria Concept_c1m4startelevator3e IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _c1m4startelevator3eMechanic
-		then gambler _c1m4startelevator5a foo:0 -8.562
-	},
-
-	{
-		name = "_c1m4startelevator5aTrevor",
-		criteria Concept_c1m4startelevator5a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _c1m4startelevator5aMechanic
-		then any _c1m4startelevatorLast foo:0 -4.282
-	},
-
-	{
-		name = "_c1m4startelevator5a1Trevor",
-		criteria Concept_c1m4startelevator5a1 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _c1m4startelevator5a1Mechanic
-		then gambler _c1m4startelevator6a1 foo:0 -4.779
-	},
-
-	{
-		name = "_c1m4startelevator5bTrevor",
-		criteria Concept_c1m4startelevator5b IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _c1m4startelevator5bMechanic
-		then trevor _c1m4startelevator5a foo:0 -2.936
-	},
-
-	{
-		name = "_c1m4startelevatorLastTrevor",
-		criteria Concept_c1m4startelevatorLast IsTrevor ElevatorTimeNotUp AutoIsNotScavenge AutoIsNotSurvival
-		Response _c1m4startelevatorLastMechanic
-		ApplyContext "Talk:1:5"
-		applycontexttoworld
-	},
-
-	{
-		name = "_c1m4startelevatorLastTimeUpTrevor",
-		criteria Concept_c1m4startelevatorLast IsTrevor ElevatorTimeUp AutoIsNotScavenge AutoIsNotSurvival
-		Response NoResponse
-		ApplyContext "Talk:0:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "_c2m1_searchlights01Trevor",
-		criteria Concept_c2m1_searchlights01 IsTrevor NotInCombat IssuerClose AutoIsNotScavenge AutoIsNotSurvival
-		Response _c2m1_searchlights01Mechanic
-		ApplyContext "Talk:1:2.662"
-		applycontexttoworld
-	},
-
-	{
-		name = "_c2m1_searchlights04Trevor",
-		criteria Concept_c2m1_searchlights04 IsTrevor NotInCombat IssuerClose AutoIsNotScavenge AutoIsNotSurvival
-		Response _c2m1_searchlights04Mechanic
-		then from _c2m1_searchlights04 foo:0 0.1
-		ApplyContext "Talk:1:2.662"
-		applycontexttoworld
-	},
-
-	{
-		name = "_C2M2_Bathroom01Trevor",
-		criteria Concept_C2M2_Bathroom01 IsTrevor NotInCombat IsSubjectDistNear200 AutoIsNotScavenge AutoIsNotSurvival
-		Response _C2M2_Bathroom01Mechanic
-	},
-
-	{
-		name = "_C2M2_CaroStart03Trevor",
-		criteria Concept_C2M2_CaroStart03 IsTrevor IsNotIncapacitated AutoIsNotScavenge AutoIsNotSurvival
-		Response _C2M2_CaroStart03Mechanic
-		then self _C2M2_CaroStart04 foo:0 0.2
-	},
-
-	{
-		name = "_C2M2_CaroStart04Trevor",
-		criteria Concept_C2M2_CaroStart04 IsTrevor IsNotIncapacitated AutoIsNotScavenge AutoIsNotSurvival
-		Response _C2M2_CaroStart04Mechanic
-	},
-
-	{
-		name = "_C2M2_Kiddie03Trevor",
-		criteria Concept_C2M2_Kiddie03 IsTrevor NotInCombat IsSubjectDistNear500 ChanceToFire80Percent AutoIsNotScavenge AutoIsNotSurvival
-		Response _C2M2_Kiddie03Mechanic
-		then any _C2M2_Kiddie04 foo:0 0.1
-		ApplyContext "Talk:1:5.572"
-		applycontexttoworld
-	},
-
-	{
-		name = "_C2M2_Peanut01Trevor",
-		criteria Concept_C2M2_Peanut01 IsTrevor NotInCombat IsSubjectDistNear800 ChanceToFire80Percent AutoIsNotScavenge AutoIsNotSurvival
-		Response _C2M2_Peanut01Mechanic
-		ApplyContext "Talk:1:6.681"
-		applycontexttoworld
-	},
-
-	{
-		name = "_C2M2_Slide01Trevor",
-		criteria Concept_C2M2_Slide01 IsTrevor NotInCombat IsSubjectDistNear400 ChanceToFire80Percent AutoIsNotScavenge AutoIsNotSurvival
-		Response _C2M2_Slide01Mechanic
-		ApplyContext "Talk:1:2.922"
-		applycontexttoworld
-	},
-
-	{
-		name = "_C2M2_ThisTall02Trevor",
-		criteria Concept_C2M2_ThisTall02 IsTrevor NotInCombat IssuerClose ChanceToFire80Percent AutoIsNotScavenge AutoIsNotSurvival
-		Response _C2M2_ThisTall02Mechanic
-		ApplyContext "Talk:1:2.201"
-		applycontexttoworld
-	},
-
-	{
-		name = "_C2M2_ThisTall02NickTrevor",
-		criteria Concept_C2M2_ThisTall02 IsTrevor NotInCombat IssuerClose FromIsGambler TrevorNotTall AutoIsNotScavenge AutoIsNotSurvival
-		// 	forceweight 100
-		Response _C2M2_ThisTall02NickMechanic
-		then Gambler _C2M2_ThisTall02 foo:0 0.1
-		ApplyContext "Talk:1:2.201"
-		applycontexttoworld
-	},
-
-	{
-		name = "_C2M2_LikeTatersTrevor",
-		criteria Concept_C2M2_LikeTaters IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response _C2M2_LikeTatersMechanic
-		ApplyContext "TalkTrevor:1:4.435"
-	},
-
-	{
-		name = "_C2M2_Kiddie06Trevor",
-		criteria Concept_C2M2_Kiddie06 IsTrevor NotInCombat AutoIsNotScavenge AutoIsNotSurvival
-		Response _C2M2_ThisTall02Mechanic
-		ApplyContext "Talk:1:2.201,TrevorTallJoke:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "_c2m3_cement01Trevor",
-		criteria Concept_c2m3_cement01 IsTrevor NotInCombat IsNotIncapacitated IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotSurvival AutoIsNotScavenge
-		Response _c2m3_cement01Mechanic
-	},
-
-	{
-		name = "_c2m3_coaster01Trevor",
-		criteria Concept_c2m3_coaster01 IsTrevor AutoIsNotScavenge AutoIsNotSurvival _auto_NotAlarm
-		Response _c2m3_coaster01Mechanic
-		then self _c2m3_coaster07 foo:0 0.3
-		ApplyContext "Talk:1:2.653"
-		applycontexttoworld
-	},
-
-	{
-		name = "_c2m3_coaster03Trevor",
-		criteria Concept_c2m3_coaster03 IsTrevor AutoIsNotScavenge AutoIsNotSurvival _auto_NotAlarm
-		Response _c2m3_coaster03Mechanic
-		ApplyContext "Talk:1:2.171"
-		applycontexttoworld
-	},
-
-	{
-		name = "_c2m3_coaster06Trevor",
-		criteria Concept_c2m3_coaster06 IsTrevor AutoIsNotScavenge AutoIsNotSurvival _auto_NotAlarm
-		Response _c2m3_coaster06Mechanic
-		then self _c2m3_coaster07 foo:0 0.3
-		ApplyContext "Talk:1:2.653"
-		applycontexttoworld
-	},
-
-	{
-		name = "_c2m3_coaster07Trevor",
-		criteria Concept_c2m3_coaster07 IsTrevor AutoIsNotScavenge AutoIsNotSurvival _auto_NotAlarm
-		Response _c2m3_coaster07Mechanic
-		then any _c2m3_coaster05 foo:0 0.01
-		ApplyContext "Talk:1:2.194"
-		applycontexttoworld
-	},
-
-	{
-		name = "_c2m3_coaster08Trevor",
-		criteria Concept_c2m3_coaster08 IsTrevor AutoIsNotScavenge AutoIsNotSurvival _auto_NotAlarm
-		Response _c2m3_coaster08Mechanic
-		then self _c2m3_coaster07 foo:0 0.3
-		ApplyContext "Talk:1:2.653"
-		applycontexttoworld
-	},
-
-	{
-		name = "_c2m3_coollight01Trevor",
-		criteria Concept_c2m3_coollight01 IsTrevor IssuerClose IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _c2m3_coollight01Mechanic
-	},
-
-	{
-		name = "_c2m3_howcoolTrevor",
-		criteria Concept_c2m3_howcool IsTrevor ChanceToFire50Percent NotInCombat AutoIsNotScavenge AutoIsNotSurvival
-		Response _c2m3_howcoolMechanic
-	},
-
-	{
-		name = "_C2M4_GateOpen001Trevor",
-		criteria Concept_C2M4_GateOpen001 IsTrevor IsNotIncapacitated AutoIsNotScavenge AutoIsNotSurvival
-		Response _C2M4_GateOpen001Mechanic
-	},
-
-	{
-		name = "_C4_BigStormHits01Trevor",
-		criteria Concept_C4_BigStormHits01 IsTrevor _auto_NotC4TrevorInCover _auto_IsTimerA FromIsAnOrator
-		Response _C4_BigStormHits01Mechanic
-		then any _C4_BigStormHits02 foo:0 0.04
-		ApplyContext "Talk:1:1.139"
-		applycontexttoworld
-	},
-
-	{
-		name = "_C4_BigStormHits02Trevor",
-		criteria Concept_C4_BigStormHits02 IsTrevor IsNotCoughing IssuerClose IsNotIncapacitated _auto_NotC4TrevorInCover
-		Response _C4_BigStormHits02Mechanic
-		ApplyContext "Talk:1:1.845"
-		applycontexttoworld
-	},
-
-	{
-		name = "_c4m1_rainresponseTrevor",
-		criteria Concept_c4m1_rainresponse IsTrevor NotInCombat IsTalkTrevor IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSaidc4m1_rainresponse
-		Response _c4m1_rainresponseMechanic
-		ApplyContext "Saidc4m1_rainresponse:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C4M1IntroTrevor",
-		criteria ConceptIntroC4M1 IsTrevor IsNotSaidCXM1Intro AutoIsNotScavenge AutoIsNotSurvival
-		Response C4M1IntroMechanic
-		then orator _c4m1Intro01 foo:0 0.01
-		ApplyContext "CXM1Intro:1:0,Saidremark_caralarm:1:400"
-		applycontexttoworld
-	},
-
-	{
-		name = "_c4m1Intro05Trevor",
-		criteria Concept_c4m1Intro05 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _c4m1Intro05Mechanic
-		then coach _c4m1Intro05 foo:0 0.01
-	},
-
-	{
-		name = "_c4m1Intro07Trevor",
-		criteria Concept_c4m1Intro07 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _c4m1Intro07Mechanic
-		then any _c4m1Intro07 foo:0 0.01
-	},
-
-	{
-		name = "_c4m1Intro08Trevor",
-		criteria Concept_c4m1Intro08 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _c4m1Intro08Mechanic
-		then any _c4m1Intro09 foo:0 -1.0
-	},
-
-	{
-		name = "_c4m1Intro12Trevor",
-		criteria Concept_c4m1Intro12 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _c4m1Intro12Mechanic
-		then coach _c4m1Intro14 foo:0 -0.30
-	},
-
-	{
-		name = "_c4m1Intro16Trevor",
-		criteria Concept_c4m1Intro16 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _c4m1Intro16Mechanic
-		then gambler _c4m1Intro07 foo:0 0.01
-	},
-
-	{
-		name = "_c4m2_caneyell01Trevor",
-		criteria Concept_c4m2_caneyell01 IsTrevor ChanceToFire50Percent AutoIsNotScavenge AutoIsNotSurvival _auto_IsTrevorInCane
-		Response _c4m2_caneyell01Mechanic
-	},
-
-	{
-		name = "_c4m2_ElevatorHere01Trevor",
-		criteria Concept_c4m2_ElevatorHere01 IsTrevor IsNotIncapacitated IsNotCoughing AutoIsNotScavenge AutoIsNotSurvival
-		Response _c4m2_ElevatorHere01Mechanic
-	},
-
-	{
-		name = "_c4m2_gasinside01Trevor",
-		criteria Concept_c4m2_gasinside01 IsTrevor NotInCombat IsSubjectDistNear400 AutoIsNotScavenge AutoIsNotSurvival _auto_NotTrevorInCane
-		Response _c4m2_gasinside01Mechanic
-	},
-
-	{
-		name = "_c4m2_seestation01Trevor",
-		criteria Concept_c4m2_seestation01 IsTrevor IsSubjectDistNear200 IsNotSaidActivatedC4M2Elevator NotInCombat AutoIsNotScavenge AutoIsNotSurvival
-		Response _c4m2_seestation01Mechanic
-		ApplyContext "Talk:1:2"
-		applycontexttoworld
-	},
-
-	{
-		name = "_c4m2_seestation02NTrevor",
-		criteria Concept_c4m2_seestation02 IsTrevor IsSubjectDistNear400 IsNotSaidActivatedC4M2Elevator FromIsGambler NotInCombat AutoIsNotScavenge AutoIsNotSurvival
-		Response _c4m2_seestation02NMechanic
-		then from _c4m2_seestation03 foo:0 0.01
-		ApplyContext "Talk:1:2"
-		applycontexttoworld
-	},
-
-	{
-		name = "_c4m2_seestation02RTrevor",
-		criteria Concept_c4m2_seestation02 IsTrevor IsSubjectDistNear400 IsNotSaidActivatedC4M2Elevator FromIsProducer NotInCombat AutoIsNotScavenge AutoIsNotSurvival
-		Response _c4m2_seestation02RMechanic
-		then from _c4m2_seestation03 foo:0 0.01
-		ApplyContext "Talk:1:2"
-		applycontexttoworld
-	},
-
-	{
-		name = "_c4m2_streetblocked01Trevor",
-		criteria Concept_c4m2_streetblocked01 IsTrevor IsSubjectDistNear400 AutoIsNotScavenge AutoIsNotSurvival
-		Response _c4m2_streetblocked01Mechanic
-	},
-
-	{
-		name = "_c4m2_streetblocked01bTrevor",
-		criteria Concept_c4m2_streetblocked01 IsTrevor IsSubjectDistFar400 AutoIsNotScavenge AutoIsNotSurvival
-		Response _c4m2_streetblocked01bMechanic
-		then subject _c4m2_streetblocked02 foo:0 0.01
-	},
-
-	{
-		name = "_c4m2_streetblocked02Trevor",
-		criteria Concept_c4m2_streetblocked02 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _c4m2_streetblocked01Mechanic
-	},
-
-	{
-		name = "_c4m2_waterpool01Trevor",
-		criteria Concept_c4m2_waterpool01 IsTrevor IsSubjectDistNear400 NotInCombat AutoIsNotScavenge AutoIsNotSurvival
-		Response _c4m2_waterpool01Mechanic
-	},
-
-	{
-		name = "_c4m2_Witchville05Trevor",
-		criteria Concept_c4m2_Witchville05 IsTrevor IssuerClose NotInCombat AutoIsNotScavenge AutoIsNotSurvival
-		Response _c4m2_Witchville05Mechanic
-	},
-
-	{
-		name = "_c4m3_rain02Trevor",
-		criteria Concept_c4m3_rain02 IsTrevor NotInCombat IsSubjectDistNear400 AutoIsNotScavenge AutoIsNotSurvival
-		Response _c4m3_rain02Mechanic
-	},
-
-	{
-		name = "_c4m3_startsafe02Trevor",
-		criteria Concept_c4m3_startsafe02 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _c4m3_startsafe02Mechanic
-		then any _c4m3_startsafe03 foo:0 0.2
-	},
-
-	{
-		name = "_c4m3_startsafe03Trevor",
-		criteria Concept_c4m3_startsafe03 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _c4m3_startsafe03Mechanic
+		name = "L4D1PlayerAirportIntroBetaZoeyRVC",
+		criteria ConceptIntroAirport IsBetazoeyrvc IsNotSaidCXM1Intro IsNotAlone AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerAirportIntroTeenGirl
 		then self IntroEnd foo:0 0.1
-	},
-
-	{
-		name = "_C4M4_FLOODED01Trevor",
-		criteria Concept_C4M4_FLOODED01 IsTrevor ChanceToFire50Percent AutoIsNotScavenge AutoIsNotSurvival
-		Response _C4M4_FLOODED01Mechanic
-	},
-
-	{
-		name = "_C4M4_garagesale01Trevor",
-		criteria Concept_C4M4_garagesale01 IsTrevor IssuerClose AutoIsNotScavenge AutoIsNotSurvival
-		Response _C4M4_garagesale01Mechanic
-	},
-
-	{
-		name = "_C4M5_BoatComing01Trevor",
-		criteria Concept_C4M5_BoatComing01 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _C4M5_BoatComing01Mechanic
-	},
-
-	{
-		name = "_C4M5_Intro03Trevor",
-		criteria Concept_C4M5_Intro03 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _C4M5_Intro03Mechanic
-		then any _C4M5_Intro04 foo:0 0.1
-	},
-
-	{
-		name = "_C4M5_Intro04Trevor",
-		criteria Concept_C4M5_Intro04 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _C4M5_Intro04Mechanic
-		then self IntroEnd foo:0 0.1
-	},
-
-	{
-		name = "PlayerRemarkc4m5_BurgerTankTrevor",
-		criteria ConceptRemark IsTrevor Isc4m5_burgertank IsNotSaidc4m5_burgertank IsNotCoughing IsTalk IsTalkTrevor IsSubjectNear1000 IsWorldTalkTrevor AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc4m5_BurgerTankMechanic
-		ApplyContext "Saidc4m5_burgertank:1:0,Talk:1:2"
-		applycontexttoworld
-	},
-
-	{
-		name = "_introc1m1Trevor",
-		criteria Concept_introc1m1 IsTrevor IsNotAlone AutoIsNotScavenge AutoIsNotSurvival
-		Response _introc1m1Mechanic
-		then any _introc1m1a01 foo:0 -1
-	},
-
-	{
-		name = "_introc1m1AloneTrevor",
-		criteria Concept_introc1m1 IsTrevor IsAlone AutoIsNotScavenge AutoIsNotSurvival
-		Response _introc1m1AloneMechanic
-	},
-
-	{
-		name = "_introc1m1MovieIntroTrevor",
-		criteria Concept_introc1m1 IsTrevor IsNotAlone ExtraWeight10 ChanceToFire5Percent AutoIsNotScavenge AutoIsNotSurvival
-		Response _introc1m1MovieIntroMechanic
-		then self _introc1m1MovieIntro foo:0 0.5
-	},
-
-	{
-		name = "_introc1m1MovieIntro2Trevor",
-		criteria Concept_introc1m1MovieIntro IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _introc1m1MovieIntro2Mechanic
-		then producer _introc1m1MovieIntro foo:0 -1.5
-	},
-
-	{
-		name = "_introc1m1a04Trevor",
-		criteria Concept_introc1m1a04 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _introc1m1a04Mechanic
-		then gambler _introc1m1b03 foo:0 -1.120
-	},
-
-	{
-		name = "_introc1m1a05Trevor",
-		criteria Concept_introc1m1a05 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _introc1m1a05Mechanic
-		then gambler _introc1m1b10 foo:0 0.1
-	},
-
-	{
-		name = "_introc1m1b02Trevor",
-		criteria Concept_introc1m1b02 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _introc1m1b02Mechanic
-		then gambler _introc1m1b03 foo:0 -1.120
-	},
-
-	{
-		name = "_introc1m1b03Trevor",
-		criteria Concept_introc1m1b03 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _introc1m1b03Mechanic
-		then gambler _introc1m1b06 foo:0 0.1
-	},
-
-	{
-		name = "_introc1m1lastTrevor",
-		criteria Concept_introc1m1last IsTrevor FromIsNotCoach ChanceToFire30Percent AutoIsNotScavenge AutoIsNotSurvival
-		Response _introc1m1lastMechanic
-		then self IntroEnd foo:0 0.1
-	},
-
-	{
-		name = "_introc1m1lastCoachTrevor",
-		criteria Concept_introc1m1last IsTrevor FromIsCoach ChanceToFire30Percent AutoIsNotScavenge AutoIsNotSurvival
-		Response _introc1m1lastCoachMechanic
-		then self IntroEnd foo:0 0.1
-	},
-
-	{
-		name = "_introc1m1b05Trevor",
-		criteria Concept_introc1m1b05 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _introc1m1b05Mechanic
-		then any _introc1m1b08 foo:0 0.1
-	},
-
-	{
-		name = "_introc1m1b06Trevor",
-		criteria Concept_introc1m1b06 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _introc1m1b06Mechanic
-		then any _introc1m1last foo:0 -5.084
-	},
-
-	{
-		name = "_introc1m1b08Trevor",
-		criteria Concept_introc1m1b08 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _introc1m1b08Mechanic
-		then any _introc1m1last foo:0 -5.084
-	},
-
-	{
-		name = "_introc1m1firealertTrevor",
-		criteria Concept_introc1m1firealert IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _introc1m1firealertMechanic
-		then coach _introc1m1b08 foo:0 0.1
-	},
-
-	{
-		name = "BlankTestoTrevor",
-		criteria ConceptBlankTesto IsTrevor
-		Response NoResponse
-		ApplyContext "_auto_BlankTesto:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "c1m1_elevator_door_openTrevor",
-		criteria Conceptc1m1_elevator_door_open2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response c1m1_elevator_door_openMechanic
-		then all C1M1Cough foo:0 -1.399
-	},
-
-	{
-		name = "c1m1_elevator_ready2Trevor",
-		criteria Conceptc1m1_elevator_ready2 IsTrevor IsNotSaidC1M1OpenDoor AutoIsNotScavenge AutoIsNotSurvival
-		Response c1m1_elevator_ready2Mechanic
-		then Trevor C1M1Cough foo:0 -0.618
-		ApplyContext "SaidC1M1OpenDoor:1:30"
-		applycontexttoworld
-	},
-
-	{
-		name = "_C1M1_ElevatorHello2AliveName1Trevor",
-		criteria Concept_C1M1_ElevatorHello2AliveName1 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _C1M1_ElevatorHello2AliveName1Mechanic
-		then any _C1M1_ElevatorHello2AliveName2 foo:0 -0.911
-	},
-
-	{
-		name = "_C1M1_ElevatorHello2AliveName2Trevor",
-		criteria Concept_C1M1_ElevatorHello2AliveName2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _C1M1_ElevatorHello2AliveName2Mechanic
-		then any _C1M1_ElevatorHello2AliveExtra1 foo:0 -0.911
-	},
-
-	{
-		name = "_C1M1_ElevatorHello2AliveExtra1Trevor",
-		criteria Concept_C1M1_ElevatorHello2AliveExtra1 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _C1M1_ElevatorHello2AliveExtra1Mechanic
-		then any _C1M1_ElevatorHello2AliveExtra2 foo:0 0.1
-	},
-
-	{
-		name = "_C1M1_ElevatorHello2AliveExtra2Trevor",
-		criteria Concept_C1M1_ElevatorHello2AliveExtra2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _C1M1_ElevatorHello2AliveExtra2Mechanic
-	},
-
-	{
-		name = "_C1M1_ElevatorHello3AliveName1Trevor",
-		criteria Concept_C1M1_ElevatorHello3AliveName1 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _C1M1_ElevatorHello3AliveName1Mechanic
-		then any _C1M1_ElevatorHello3AliveName2 foo:0 -1.856
-	},
-
-	{
-		name = "_C1M1_ElevatorHello3AliveName1RTrevor",
-		criteria Concept_C1M1_ElevatorHello3AliveName1 FromIsProducer ChanceToFire100Percent IsRochelleElevatorIntro IsNotTrevorIntroduced IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _C1M1_ElevatorHello3AliveName1RMechanic
-		then from _C1M1_ElevatorHello3AliveExtra2 foo:0 -1.856
-		ApplyContext "TrevorIntroduced:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "_C1M1_ElevatorHello3AliveName2RTrevor",
-		criteria Concept_C1M1_ElevatorHello3AliveName2 FromIsProducer IsRochelleElevatorIntro ChanceToFire100Percent IsNotTrevorIntroduced IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _C1M1_ElevatorHello3AliveName2RMechanic
-		then from _C1M1_ElevatorHello3AliveName2 foo:0 -1.856
-		ApplyContext "TrevorIntroduced:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "_C1M1_ElevatorHello3AliveName2Trevor",
-		criteria Concept_C1M1_ElevatorHello3AliveName2 IsTrevor IsNotTrevorIntroduced AutoIsNotScavenge AutoIsNotSurvival
-		Response _C1M1_ElevatorHello3AliveName2Mechanic
-		then any _C1M1_ElevatorHello3WhoIsDead foo:0 -0.911
-		ApplyContext "TrevorIntroduced:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "_C1M1_ElevatorHello3AliveWhoIsDeadTrevor",
-		criteria Concept_C1M1_ElevatorHello3AliveWhoIsDead IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _C1M1_ElevatorHello3AliveWhoIsDeadMechanic
-		then any _C1M1_ElevatorHello3NameDead foo:0 -0.671
-	},
-
-	{
-		name = "_C1M1_ElevatorHello3AliveNameDeadRTrevor",
-		criteria Concept_C1M1_ElevatorHello3AliveNameDead IsProducerNotAlive IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _C1M1_ElevatorHello3AliveNameDeadRMechanic
-	},
-
-	{
-		name = "_C1M1_ElevatorHello3AliveNameDeadCTrevor",
-		criteria Concept_C1M1_ElevatorHello3AliveNameDead IsCoachNotAlive IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _C1M1_ElevatorHello3AliveNameDeadCMechanic
-		then any _C1M1_ElevatorHello3NameDead foo:0 -0.671
-	},
-
-	{
-		name = "_C1M1_ElevatorHello3AliveNameDeadNTrevor",
-		criteria Concept_C1M1_ElevatorHello3AliveNameDead IsGamblerNotAlive IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response _C1M1_ElevatorHello3AliveNameDeadNMechanic
-	},
-
-	{
-		name = "Concept_C1M1_ElevatorHello3AliveNameDeadSelfTrevor",
-		criteria Concept_C1M1_ElevatorHello3AliveNameDead IsTrevor IsCoachAlive ChanceToFire30Percent AutoIsNotScavenge AutoIsNotSurvival
-		Response Concept_C1M1_ElevatorHello3AliveNameDeadSelfMechanic
-		then coach _C1M1_ElevatorHello3AliveNameDead2 foo:0 0.1
-	},
-
-	{
-		name = "C1M1CoughTrevor",
-		criteria ConceptC1M1Cough IsTrevor ismap_c1m1_hotel AutoIsNotScavenge AutoIsNotSurvival
-		Response C1M1CoughMechanic
-	},
-
-	{
-		name = "C1M2SafeRoomTrevor",
-		criteria ConceptTalkIdle IsTrevor NotInCombat ismap_c1m2_streets IsInStartArea IsNotAlone AutoIsNotScavenge AutoIsNotSurvival _auto_IsSafeRoomStart _auto_NotSafeRoomQuiet IsNotSaidLeavingSafeArea IsNotSpeakingWeight0
-		Response C1M2SafeRoomMechanic
-		then gambler C1M2SafeRoomb1 foo:0 -3.584
-		ApplyContext "_auto_SafeRoomStart:2:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C1M2SafeRooma4Trevor",
-		criteria ConceptC1M2SafeRooma4 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C1M2SafeRooma4Mechanic
-		then producer C1M2SafeRooma3 foo:0 0.1
-	},
-
-	{
-		name = "C1M2SafeRooma3Trevor",
-		criteria ConceptC1M2SafeRooma3 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C1M2SafeRooma3Mechanic
-		then producer C1M2SafeRooma4 foo:0 0.1
-	},
-
-	{
-		name = "C1M3AlarmOffaTrevor",
-		criteria ConceptC1M3AlarmOffa IsTrevor IsSubjectDistNear600 AutoIsNotScavenge AutoIsNotSurvival
-		Response C1M3AlarmOffaMechanic
-	},
-
-	{
-		name = "C1M3SafeRoomTrevor",
-		criteria ConceptTalkIdle IsTrevor NotInCombat IsInStartArea IsNotAlone IsNotSaidLeavingSafeArea ismap_c1m3_mall AutoIsNotScavenge AutoIsNotSurvival _auto_NotSafeRoomQuiet _auto_IsSafeRoomStart IsNotSpeakingWeight0
-		Response C1M3SafeRoomMechanic
-		then self IntroEnd foo:0 0.1
-		ApplyContext "_auto_SafeRoomStart:2:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C1M3SafeRoom2eTrevor",
-		criteria ConceptC1M3SafeRoom2e IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C1M3SafeRoom2eMechanic
-		then self IntroEnd foo:0 0.1
-	},
-
-	{
-		name = "C1M4NearFinale03cTrevor",
-		criteria ConceptC1M4NearFinale03c IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C1M4NearFinale03cMechanic
-	},
-
-	{
-		name = "c1m4NearFinale1Trevor",
-		criteria Conceptc1m4NearFinale1 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response c1m4NearFinale1Mechanic
-	},
-
-	{
-		name = "C1M4SafeRoomTrevor",
-		criteria ConceptTalkIdle IsTrevor NotInCombat IsInStartArea IsNotAlone IsNotSaidLeavingSafeArea ismap_c1m4_atrium AutoIsNotScavenge AutoIsNotSurvival _auto_NotSafeRoomQuiet _auto_IsSafeRoomStart IsNotSpeakingWeight0
-		Response C1M4SafeRoomMechanic
-		then trevor C1M4SafeRoom2c1 foo:0 1.250
-		ApplyContext "_auto_SafeRoomStart:2:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C1M4SafeRoom2a1Trevor",
-		criteria ConceptC1M4SafeRoom2a1 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C1M4SafeRoom2a1Mechanic
-		then gambler C1M4SafeRoom2a2 foo:0 -5.969
-	},
-
-	{
-		name = "C1M4SafeRoom2b1Trevor",
-		criteria ConceptC1M4SafeRoom2b1 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C1M4SafeRoom2b1Mechanic
-		then producer C1M4SafeRoom2b2 foo:0 -5.969
-	},
-
-	{
-		name = "C1M4SafeRoom2b3Trevor",
-		criteria ConceptC1M4SafeRoom2b3 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C1M4SafeRoom2b3Mechanic
-		then trevor C1M4SafeRoom2b4 foo:0 -1.539
-	},
-
-	{
-		name = "C1M4SafeRoom2b4Trevor",
-		criteria ConceptC1M4SafeRoom2b4 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C1M4SafeRoom2b4Mechanic
-		then coach C1M4SafeRoom2b5 foo:0 -1.719
-	},
-
-	{
-		name = "C1M4SafeRoom2a5Trevor",
-		criteria ConceptC1M4SafeRoom2a5 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C1M4SafeRoom2a5Mechanic
-		then self IntroEnd foo:0 0.1
-	},
-
-	{
-		name = "C1M4SafeRoom2c1Trevor",
-		criteria ConceptC1M4SafeRoom2c1 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C1M4SafeRoom2c1Mechanic
-		then self IntroEnd foo:0 0.1
-	},
-
-	{
-		name = "C1M4SafeRoomEndTrevor",
-		criteria ConceptSurvivorLeavingInitialCheckpoint ismap_c1m4_atrium IsTrevor IsNotSaidLeavingSafeArea _auto_NotTellingStory
-		Response C1M4SafeRoomEndMechanic
-		ApplyContext "SaidLeavingSafeArea:1:0,Talk:0:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C1M4FinaleStartResponseTrevor",
-		criteria ConceptC1M4FinaleStartResponse IsTrevor
-		Response C1M4FinaleStartResponseMechanic
-	},
-
-	{
-		name = "C2M1IntroStartTrevor",
-		criteria ConceptIntroC2M1 IsTrevor IsNotSaidCXM1Intro IsNotAlone AutoIsNotScavenge AutoIsNotSurvival
-		Response C2M1IntroStartMechanic
-		then Any C2M1Intro002 foo:0 0.01
 		ApplyContext "CXM1Intro:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "C2M1Intro002Trevor",
-		criteria ConceptC2M1Intro002 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C2M1Intro002Mechanic
-		then Any C2M1Intro002 foo:0 0.02
-	},
-
-	{
-		name = "C2M1Intro003Trevor",
-		criteria ConceptC2M1Intro003 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C2M1Intro003Mechanic
-		then Any C2M1Intro002 foo:0 0.02
-	},
-
-	{
-		name = "C2M1Intro005Trevor",
-		criteria ConceptC2M1Intro005 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C2M1Intro005Mechanic
-		then any C2M1Intro_400 foo:0 0.5
-		ApplyContext "Talk:1:10"
-		applycontexttoworld
-	},
-
-	{
-		name = "C2M1Intro008Trevor",
-		criteria ConceptC2M1Intro008 IsTrevor AutoIsNotScavenge AutoIsNotSurvival IsInStartArea
-		Response C2M1Intro008Mechanic
-	},
-
-	{
-		name = "C2M1Intro009Trevor",
-		criteria ConceptC2M1Intro009 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C2M1Intro009Mechanic
+		name = "L4D1PlayerAirportIntrozbBetaZoeyRVC",
+		criteria ConceptIntroAirport01zb IsBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerAirportIntrozbTeenGirl
 		then self IntroEnd foo:0 0.1
 	},
 
 	{
-		name = "C2M4PenSmell001Trevor",
-		criteria ConceptC2M4PenSmell001 IsTrevor IsTalk NotInCombat IsGamblerNear400 IsNotCoughing AutoIsNotScavenge AutoIsNotSurvival
-		Response C2M4PenSmell001Mechanic
-	},
-
-	{
-		name = "C2M5_lipsync001Trevor",
-		criteria ConceptC2M5_lipsync001 IsTrevor TimeSinceGroupInCombat02 NotInCombat IsNotSpeaking IsGamblerNear400 AutoIsNotScavenge AutoIsNotSurvival _auto_NotButton2
-		Response C2M5_lipsync001Mechanic
-	},
-
-	{
-		name = "C2M5_lipsync002Trevor",
-		criteria ConceptC2M5_lipsync002 IsTrevor TimeSinceGroupInCombat02 NotInCombat IsNotSpeaking IsCoachAlive IsCoachNear400 AutoIsNotScavenge AutoIsNotSurvival _auto_NotButton2
-		Response C2M5_lipsync002Mechanic
-	},
-
-	{
-		name = "C4EnterCoverTrevor",
-		criteria ConceptC4EnterCover IsTrevor
-		Response NoResponse
-		ApplyContext "_auto_C4TrevorInCover:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C4ExitCoverTrevor",
-		criteria ConceptC4ExitCover IsTrevor
-		Response NoResponse
-		ApplyContext "_auto_C4TrevorInCover:0:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C4FinaleStartTrevor",
-		criteria ConceptC4FinaleStart IsTrevor
-		Response C4FinaleStartMechanic
-		then any _C4M5_FinaleStart01 foo:0 0.01
-		ApplyContext "_auto_NoLostCall:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "c4m1_nogas01Trevor",
-		criteria Conceptc4m1_nogas01 IsTrevor NotInCombat IsSubjectDistNear500 AutoIsNotScavenge AutoIsNotSurvival
-		Response c4m1_nogas01Mechanic
-		then any c4m1_nogas02 foo:0 0.01
-		ApplyContext "Talk:1:3.179"
-		applycontexttoworld
-	},
-
-	{
-		name = "c4m1_nogas10Trevor",
-		criteria Conceptc4m1_nogas10 IsTrevor NotInCombat IsSubjectDistNear300 AutoIsNotScavenge AutoIsNotSurvival
-		Response c4m1_nogas10Mechanic
-		then any c4m1_nogas02 foo:0 0.01
-		ApplyContext "Talk:1:3.179"
-		applycontexttoworld
-	},
-
-	{
-		name = "c4m1_wreck01Trevor",
-		criteria Conceptc4m1_wreck01 IsTrevor NotInCombat AutoIsNotScavenge AutoIsNotSurvival
-		Response c4m1_wreck01Mechanic
-		then self c4m1_wreck02 foo:0 0.03
-	},
-
-	{
-		name = "c4m1_wreck02Trevor",
-		criteria Conceptc4m1_wreck02 IsTrevor NotInCombat ChanceToFire60Percent AutoIsNotScavenge AutoIsNotSurvival
-		Response c4m1_wreck02Mechanic
-	},
-
-	{
-		name = "GasPour20MoreTrevor",
-		criteria ConceptGasPour20More IsTrevor IsNotSpeaking _auto_IsGasCountOK
-		Response GasPour20MoreMechanic
-	},
-
-	{
-		name = "GasPour10MoreTalkTrevor",
-		criteria ConceptGasPour10More IsTrevor IsNotSpeaking _auto_IsGasCountOK
-		Response GasPour10MoreTalkMechanic
-	},
-
-	{
-		name = "GasPour1MoreTrevor",
-		criteria ConceptGasPour1More IsTrevor IsNotSpeaking _auto_IsGasCountOK
-		Response GasPour1MoreMechanic
-	},
-
-	{
-		name = "GasPour2MoreTrevor",
-		criteria ConceptGasPour2More IsTrevor IsNotSpeaking _auto_IsGasCountOK
-		Response GasPour2MoreMechanic
-	},
-
-	{
-		name = "GasPour3MoreTrevor",
-		criteria ConceptGasPour3More IsTrevor IsNotSpeaking _auto_IsGasCountOK
-		Response GasPour3MoreMechanic
-	},
-
-	{
-		name = "GasPour5MoreTrevor",
-		criteria ConceptGasPour5More IsTrevor IsNotSpeaking _auto_IsGasCountOK
-		Response GasPour5MoreMechanic
-	},
-
-	{
-		name = "Player_CoverMeC1RTrevor",
-		criteria ConceptPlayer_CoverMeC1R IsTrevor ChanceToFire20Percent
-		Response Player_CoverMeC1RMechanic
-	},
-
-	{
-		name = "Player_CoverMeC1RCoach1Trevor",
-		criteria ConceptPlayer_CoverMeC1RCoach1 IsTrevor ChanceToFire20Percent
-		Response Player_CoverMeC1RCoach1Mechanic
-		then coach Player.CoverMeC1RCoach2 foo:0 -2.261
-		ApplyContext "TalkCoach:1:3"
-		applycontexttoworld
-	},
-
-	{
-		name = "Player_GooedBySpitterC1RTrevor",
-		criteria ConceptPlayer_GooedBySpitterC1R IsTrevor IsNotIncapacitated IsTalkTrevor IsWorldTalkTrevor
-		Response Player_GooedBySpitterC1RMechanic
-	},
-
-	{
-		name = "Player_KnowHunterC1Trevor",
-		criteria ConceptPlayer_KnowHunter IsTrevor IssuerClose IsNotIncapacitated IsTalkTrevor IsWorldTalkTrevor IsNotSpeakingWeight0
-		Response Player_KnowHunterC1Mechanic
-		then from Player.KnowHunter2 foo:0 0.1
-	},
-
-	{
-		name = "Player_KnowBoomerC1Trevor",
-		criteria ConceptPlayer_KnowBoomer IsTrevor IssuerClose IsNotIncapacitated IsTalkTrevor IsWorldTalkTrevor IsNotSpeakingWeight0
-		Response Player_KnowBoomerC1Mechanic
-	},
-
-	{
-		name = "Player_KnowChargerC1Trevor",
-		criteria ConceptPlayer_KnowCharger IsTrevor IssuerClose IsNotIncapacitated IsTalkTrevor IsWorldTalkTrevor IsNotSpeakingWeight0
-		Response Player_KnowChargerC1Mechanic
-	},
-
-	{
-		name = "Player_KnowJockeyC1Trevor",
-		criteria ConceptPlayer_KnowJockey IsTrevor IssuerClose IsNotIncapacitated IsTalkTrevor IsWorldTalkTrevor IsNotSpeakingWeight0
-		Response Player_KnowJockeyC1Mechanic
-	},
-
-	{
-		name = "C1M2TankInfoTrevor",
-		criteria ConceptC1M2TankInfo IsTrevor
-		Response C1M2TankInfoMechanic
-		then producer C1M2TankInfo foo:0 0.1
-	},
-
-	{
-		name = "Player_KnowSpitterC1Trevor",
-		criteria ConceptPlayer_KnowSpitter IsTrevor IssuerClose IsNotIncapacitated IsTalkTrevor IsWorldTalkTrevor IsNotSpeakingWeight0
-		Response Player_KnowSpitterC1Mechanic
-	},
-
-	{
-		name = "PlayerCr0wnedBrideTrevor",
-		criteria ConceptKilledZombie IsNotCoughing IsTrevor SubjectIsAWitch KilledByCr0wn IsNotWitchAggro ChanceToFire100Percent IsTalk IsTalkTrevor isc6m1_riverbank IsWorldTalkTrevor
-		// 	forceweight 101
-		Response PlayerCr0wnedBrideMechanic
-		then any WeddingWitchDead02 foo:0 3.1
-	},
-
-	{
-		name = "WeddingWitchDead02Trevor",
-		criteria ConceptWeddingWitchDead02 IsTrevor
-		Response WeddingWitchDead02Mechanic
-		then producer WeddingWitchDead02a foo:0 0.1
-	},
-
-	{
-		name = "WorldIntroC31a2Trevor",
-		criteria ConceptWorldIntroC31a2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response WorldIntroC31a2Mechanic
-		then gambler WorldIntroC31a3 foo:0 -3.934
-	},
-
-	{
-		name = "WorldIntroC31c1Trevor",
-		criteria ConceptWorldIntroC31c1 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response WorldIntroC31c1Mechanic
-		then gambler WorldIntroC31c2 foo:0 -7.301
-	},
-
-	{
-		name = "WorldIntroC31d2Trevor",
-		criteria ConceptWorldIntroC31d2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response WorldIntroC31d2Mechanic
+		name = "L4D1PlayerHospitalIntro02BetaZoeyRVC",
+		criteria ConceptIntroHospital02 IsBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerHospitalIntro02TeenGirl
 		then self IntroEnd foo:0 0.1
 	},
 
 	{
-		name = "WorldIntroC31e2aTrevor",
-		criteria ConceptWorldIntroC31e2a IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response WorldIntroC31e2aMechanic
-		then gambler WorldIntroC31e3a foo:0 -1.367
+		name = "InfoReminfo_powerboat4BetaZoeyRVC",
+		criteria ConceptInfoReminfo_powerboat4 IsBetazoeyrvc IssuerClose IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response InfoReminfo_powerboat4TeenGirl
+		then Any InfoReminfo_powerboat4a foo:0 -2.953
 	},
 
 	{
-		name = "WorldIntroC3f2Trevor",
-		criteria ConceptWorldIntroC3f2 IsTrevor IssuerClose AutoIsNotScavenge AutoIsNotSurvival
-		Response WorldIntroC3f2Mechanic
-		then self IntroEnd foo:0 0.1
+		name = "PlayerShotGasCanBetaZoeyRVC",
+		criteria ConceptPlayerShotGasCan IsBetazoeyrvc IsNotSaidPlayerShotGasCan IsScavenge
+		Response PlayerShotGasCanTeenGirl
+		ApplyContext "SaidPlayerShotGasCan:1:10"
+		applycontexttoworld
 	},
 
 	{
-		name = "WorldIntroC31g1Trevor",
-		criteria ConceptWorldIntroC31g1 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response WorldIntroC31g1Mechanic
-		then coach WorldIntroC31g2 foo:0 -3.349
-	},
-
-	{
-		name = "PlayerCoverMeHealTrevor",
-		criteria ConceptPlayerHealing IsNotCoughing IsTrevor IsNotAskedForCover IsTalk IsTalkTrevor IsNotAlone IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response PlayerCoverMeHealMechanic
+		name = "L4D1PlayerCoverMeHealBetaZoeyRVC",
+		criteria ConceptPlayerHealing IsNotCoughing IsBetazoeyrvc IsNotAskedForCover IsTalk IsTalkBetazoeyrvc IsNotAlone IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerCoverMeHealTeenGirl
 		ApplyContext "AskForCover:1:30"
 	},
 
 	{
-		name = "PlayerCoverMeHealC1Trevor",
-		criteria ConceptPlayerHealing IsNotCoughing IsTrevor IsNotAskedForCover IsTalk IsTalkTrevor IsNotAlone IsWorldTalkTrevor ismap_c1m1_hotel
-		Response PlayerCoverMeHealC1Mechanic
-		ApplyContext "AskForCover:1:30"
-	},
-
-	{
-		name = "Player_LostCallC6M3Trevor",
-		criteria ConceptTalkIdle IsTrevor IsClosestSurvivorFar3000 IsNotAlone IsNotSaidPlayerLostCall Isc6m3_port ChanceToFire100Percent IsNotSpeakingWeight0
-		Response Player_LostCallC6M3Mechanic
+		name = "AutoPlayerLostCallBetaZoeyRVC",
+		criteria ConceptTalkIdle IsBetazoeyrvc IsClosestSurvivorFar3000 IsNotAlone IsNotSaidPlayerLostCall _auto_NotNoLostCall IsNotSpeakingWeight0
+		Response AutoPlayerLostCallTeenGirl
 		ApplyContext "SaidPlayerLostCall:1:50"
 		applycontexttoworld
 	},
 
 	{
-		name = "AutoPlayerLostCallTrevor",
-		criteria ConceptTalkIdle IsTrevor IsClosestSurvivorFar3000 IsNotAlone IsNotSaidPlayerLostCall _auto_NotNoLostCall IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response AutoPlayerLostCallMechanic
-		ApplyContext "SaidPlayerLostCall:1:50"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedChainsawTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsChainsaw IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorSpottedChainsawMechanic
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedChainsawAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsChainsaw IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedChainsawMechanic
-		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "SurvivorSpottedcricket_batTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto Iscricket_bat IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorSpottedcricket_batMechanic
+		name = "SurvivorSpottedM60BetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsM60 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedM60TeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedcricket_batAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot Iscricket_bat IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedcricket_batMechanic
+		name = "SurvivorSpottedM60AutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsNotSmartLookAuto IsM60 IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedM60TeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedcrowbarTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto Iscrowbar IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorSpottedcrowbarMechanic
+		name = "SurvivorSpottedMagnumBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsNotSmartLookAuto IsMagnum IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedWeaponsTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedcrowbarAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot Iscrowbar IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedcrowbarMechanic
+		name = "SurvivorSpottedMagnumAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsMagnum IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedWeaponsTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedGolfClubTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsGolfClub IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedGolfClubMechanic
+		name = "SurvivorSpottedSecondPistolBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsNotSmartLookAuto IsSecondPistol IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedWeaponsTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedGolfClubAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsGolfClub IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorSpottedGolfClubMechanic
+		name = "SurvivorSpottedSecondPistolAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsSecondPistol IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedWeaponsTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedGuitarTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsGuitar IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorSpottedGuitarMechanic
+		name = "SurvivorSpottedAutoShotgunBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsNotSmartLookAuto IsAutoShotgun IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedWeaponsTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedGuitarAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsGuitar IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedGuitarMechanic
+		name = "SurvivorSpottedAutoShotgunAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsAutoShotgun IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedWeaponsTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedKatanaTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsKatana IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorSpottedKatanaMechanic
+		name = "SurvivorSpottedPumpShotgunBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsNotSmartLookAuto IsPumpShotgun IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedWeaponsTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedKatanaAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsKatana IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedKatanaMechanic
+		name = "SurvivorSpottedPumpShotgunAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsSmartLookAuto IsPumpShotgun IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsSmg_silenced IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedWeaponsTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedLaserSightsTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsLaserSights IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response SurvivorSpottedLaserSightsMechanic
+		name = "SurvivorSpottedShotgun_ChromeBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsNotSmartLookAuto IsShotgun_Chrome IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedWeaponsTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedLaserSightsAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsLaserSights IsWorldTalkTrevor IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedLaserSightsMechanic
+		name = "SurvivorSpottedShotgun_ChromeAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsSmartLookAuto IsShotgun_Chrome IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsSmg_silenced IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedWeaponsTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorBotPickupLaserSightsSpottedTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpLaserSights IsNotSpeaking IsBotIsAvailable IsNotInSafeSpot IsNotInCheckpoint IsNotInStartArea IsNotSaidSpotWeapons IsTalk IsTalkTrevor IsWorldTalkTrevor _auto_NotSpottedVehicle
-		Response SurvivorSpottedLaserSightsMechanic
+		name = "SurvivorSpottedShotgun_spasBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsNotSmartLookAuto IsShotgun_spas IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedWeaponsTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedM60Trevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsM60 IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedM60Mechanic
+		name = "SurvivorSpottedShotgun_spasAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsShotgun_spas IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedWeaponsTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedM60AutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsM60 IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorSpottedM60Mechanic
+		name = "SurvivorSpottedRifleBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsNotSmartLookAuto IsRifle IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedWeaponsTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedMacheteTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsMachete IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorSpottedMacheteMechanic
+		name = "SurvivorSpottedRifleAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsRifle IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedWeaponsTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedMacheteAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsMachete IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedMacheteMechanic
+		name = "SurvivorSpottedRifle_AK47BetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsNotSmartLookAuto IsRifle_AK47 IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedWeaponsTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedMagnumTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsMagnum IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorSpottedMagnumMechanic
+		name = "SurvivorSpottedRifle_AK47AutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsRifle_AK47 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedWeaponsTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedMagnumAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsMagnum IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedMagnumMechanic
+		name = "SurvivorSpottedRifle_desertBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsNotSmartLookAuto IsRifle_desert IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedWeaponsTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedSecondPistolTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsSecondPistol IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorSpottedMagnumMechanic
+		name = "SurvivorSpottedRifle_desertAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsRifle_desert IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedWeaponsTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedSecondPistolAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsSecondPistol IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedMagnumMechanic
+		name = "SurvivorSpottedRifle_sg552BetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsNotSmartLookAuto IsRifle_sg552 IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedWeaponsTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedtonfaTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto Istonfa IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorSpottedtonfaMechanic
+		name = "SurvivorSpottedRifle_sg552AutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsRifle_sg552 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedWeaponsTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedtonfaAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot Istonfa IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedtonfaMechanic
+		name = "SurvivorSpottedSMGBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsNotSmartLookAuto IsSMG IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedWeaponsTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedAutoShotgunTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsAutoShotgun IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorSpottedShotgunMechanic
+		name = "SurvivorSpottedSMGAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsSMG IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedWeaponsTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedAutoShotgunAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsAutoShotgun IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedShotgunMechanic
+		name = "SurvivorSpottedSMG_silencedBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsNotSmartLookAuto IsSmg_silenced IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedWeaponsTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedPumpShotgunTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsPumpShotgun IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorSpottedShotgunMechanic
+		name = "SurvivorSpottedSMG_silencedAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsSmg_silenced IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedWeaponsTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedPumpShotgunAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsPumpShotgun IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedShotgunMechanic
+		name = "SurvivorSpottedMP5SMGBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsNotSmartLookAuto IsSmg_mp5 IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedWeaponsTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedShotgun_ChromeTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsShotgun_Chrome IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorSpottedShotgunMechanic
+		name = "SurvivorSpottedMP5SMGAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsSmg_mp5 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedWeaponsTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedShotgun_spasTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsShotgun_spas IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedShotgunMechanic
+		name = "SurvivorSpottedHuntingRifleBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsNotSmartLookAuto IsHuntingRifle IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedWeaponsTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedShotgun_spasAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsShotgun_spas IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorSpottedShotgunMechanic
+		name = "SurvivorSpottedHuntingRifleAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsHuntingRifle IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedWeaponsTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedSMGTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsSMG IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorSpottedSMGMechanic
+		name = "SurvivorSpottedMilitarySniperBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsNotSmartLookAuto IsSniper_military IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedWeaponsTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedSMGAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsSMG IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedSMGMechanic
+		name = "SurvivorSpottedMilitarySniperAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsSniper_military IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedWeaponsTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedSMG_silencedTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsSmg_silenced IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorSpottedSMGMechanic
+		name = "SurvivorSpottedScoutSniperBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsNotSmartLookAuto IsSniper_scout IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedWeaponsTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedSMG_silencedAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsSmg_silenced IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedSMGMechanic
+		name = "SurvivorSpottedScoutSniperAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsSniper_scout IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedWeaponsTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedMP5SMGTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsSMG_mp5 IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorSpottedSMGMechanic
+		name = "SurvivorSpottedAWPSniperBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsNotSmartLookAuto IsSniper_awp IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedWeaponsTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedMP5SMGAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsSMG_mp5 IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedSMGMechanic
+		name = "SurvivorSpottedAWPSniperAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsSniper_awp IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedWeaponsTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedHuntingRifleTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsHuntingRifle IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorSpottedHuntingRifleMechanic
+		name = "SurvivorSpottedGolfClubBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsNotSmartLookAuto IsGolfClub IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedMeleeWeaponTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedHuntingRifleAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsHuntingRifle IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedHuntingRifleMechanic
+		name = "SurvivorSpottedGolfClubAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsGolfClub IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedMeleeWeaponTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedRifleTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsRifle IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorSpottedWeaponMechanic
+		name = "SurvivorSpottedCrowbarBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsNotSmartLookAuto Iscrowbar IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedMeleeWeaponTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedRifleAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsRifle IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedWeaponMechanic
+		name = "SurvivorSpottedCrowbarAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot Iscrowbar IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedMeleeWeaponTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedRifle_AK47Trevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsRifle_AK47 IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorSpottedWeaponMechanic
+		name = "SurvivorSpottedGuitarBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsNotSmartLookAuto IsGuitar IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedMeleeWeaponTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedRifle_AK47AutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsRifle_AK47 IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedWeaponMechanic
+		name = "SurvivorSpottedGuitarAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsGuitar IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedMeleeWeaponTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedRifle_desertTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsRifle_desert IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorSpottedWeaponMechanic
+		name = "SurvivorSpottedTonfaBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsNotSmartLookAuto Istonfa IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedMeleeWeaponTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedRifle_desertAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsRifle_desert IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedWeaponMechanic
+		name = "SurvivorSpottedTonfaAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot Istonfa IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedMeleeWeaponTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedRifle_SG552Trevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsRifle_sg552 IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorSpottedWeaponMechanic
+		name = "SurvivorSpottedFryingPanBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsNotSmartLookAuto IsFryingPan IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedMeleeWeaponTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedRifle_SG552AutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsRifle_sg552 IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedWeaponMechanic
+		name = "SurvivorSpottedFryingPanAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsFryingPan IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedMeleeWeaponTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedMilitarySniperTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsSniper_military IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorSpottedWeaponMechanic
+		name = "SurvivorSpottedKatanaBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsNotSmartLookAuto IsKatana IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedMeleeWeaponTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedMilitarySniperAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsSniper_military IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedWeaponMechanic
+		name = "SurvivorSpottedKatanaAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsKatana IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedMeleeWeaponTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedScoutSniperTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsSniper_scout IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorSpottedWeaponMechanic
+		name = "SurvivorSpottedMacheteBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsNotSmartLookAuto IsMachete IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedMeleeWeaponTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedScoutSniperAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsSniper_scout IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedWeaponMechanic
+		name = "SurvivorSpottedMacheteAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsMachete IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedMeleeWeaponTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedAWPSniperTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsSniper_awp IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorSpottedWeaponMechanic
+		name = "SurvivorSpottedCricketBatBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsNotSmartLookAuto Iscricket_bat IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedMeleeWeaponTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedAWPSniperAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsSniper_awp IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedWeaponMechanic
+		name = "SurvivorSpottedCricketBatAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot Iscricket_bat IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedMeleeWeaponTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedBaseBallBatTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto Isbaseball_bat IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorSpottedMeleeWeaponMechanic
+		name = "SurvivorSpottedBaseballBatBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsNotSmartLookAuto Isbaseball_bat IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedMeleeWeaponTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedBaseBallBatAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot Isbaseball_bat IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedMeleeWeaponMechanic
+		name = "SurvivorSpottedBaseballBatAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot Isbaseball_bat IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedMeleeWeaponTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedFryingPanTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsFryingPan IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorSpottedMeleeWeaponMechanic
+		name = "SurvivorSpottedFireAxeBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsNotSmartLookAuto IsFireAxe IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedMeleeWeaponTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedFryingPanAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsFryingPan IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedMeleeWeaponMechanic
+		name = "SurvivorSpottedFireAxeAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsFireAxe IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedMeleeWeaponTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedAxeTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsFireAxe IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorSpottedMeleeWeaponMechanic
+		name = "SurvivorSpottedChainsawBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsNotSmartLookAuto IsChainsaw IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedM60TeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedAxeAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsFireAxe IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedMeleeWeaponMechanic
+		name = "SurvivorSpottedChainsawAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsChainsaw IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedM60TeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedShovelTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsShovel IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorSpottedMeleeWeaponMechanic
+		name = "SurvivorSpottedShovelBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsNotSmartLookAuto IsShovel IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedMeleeWeaponTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedShovelAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsShovel IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedMeleeWeaponMechanic
+		name = "SurvivorSpottedShovelAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsShovel IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedMeleeWeaponTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedPitchforkTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsPitchfork IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorSpottedMeleeWeaponMechanic
+		name = "SurvivorSpottedPitchforkBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsNotSmartLookAuto IsPitchfork IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedMeleeWeaponTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedPitchforkAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsPitchfork IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedMeleeWeaponMechanic
+		name = "SurvivorSpottedPitchforkAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsPitchfork IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedMeleeWeaponTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedKnifeTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsKnife IsNotSmartLookAuto IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorSpottedMeleeWeaponMechanic
+		name = "SurvivorSpottedKnifeBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsKnife IsNotSmartLookAuto IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedMeleeWeaponTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedKnifeAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsKnife IsWorldTalkTrevor isNotmap_c1m1_hotel IsNotSpeakingWeight0 _auto_NotSpottedVehicle
-		Response SurvivorSpottedMeleeWeaponMechanic
+		name = "SurvivorSpottedKnifeAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsKnife IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0 _auto_NotSpottedVehicle
+		Response SurvivorSpottedMeleeWeaponTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedOtherWeaponTrevor",
-		criteria ConceptPlayerSpotOtherWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorSpottedWeaponMechanic
+		name = "SurvivorSpottedWeaponPistolBetaZoeyRVC",
+		criteria ConceptPlayerSpotPistol IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsNotSmartLookAuto IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedWeaponsTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedWeaponPistolTrevor",
-		criteria ConceptPlayerSpotPistol IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorSpottedMagnumMechanic
+		name = "SurvivorSpottedShotgunBetaZoeyRVC",
+		criteria ConceptPlayerSpotShotgun IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsNotSmartLookAuto IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedWeaponsTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedShotgunTrevor",
-		criteria ConceptPlayerSpotShotgun IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSaidSomeoneDied IsNotSmartLookAuto IsWorldTalkTrevor isNotmap_c1m1_hotel _auto_NotSpottedVehicle
-		Response SurvivorSpottedShotgunMechanic
+		name = "SurvivorSpottedOtherWeaponBetaZoeyRVC",
+		criteria ConceptPlayerSpotOtherWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDied IsNotSmartLookAuto IsNotAlone IsWorldTalkBetazoeyrvc _auto_NotSpottedVehicle
+		Response SurvivorSpottedWeaponsTeenGirl
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "C2M3AlarmOffNagTrevor",
-		criteria ConceptTalkIdle IsTrevor ChanceToFire50Percent IsNotIncapacitated ismap_c2m3 AutoIsNotScavenge AutoIsNotSurvival _auto_IsAlarm _auto_IsTracksOK _auto_NotTimerLockA _auto_NotTimerLockTrevor IsNotSpeakingWeight0
-		Response PlayerRemarkc2m3_coasteroffMechanic
-		ApplyContext "_auto_TimerLockA:1:8,_auto_TimerLockTrevor:1:11"
 		applycontexttoworld
-	},
-
-	{
-		name = "C2M3Chopper001Trevor",
-		criteria ConceptC2M3Chopper001 IsTrevor IsTalk IsSubjectDistNear400 AutoIsNotScavenge AutoIsNotSurvival
-		Response C2M3Chopper001Mechanic
-	},
-
-	{
-		name = "SurvivorSpottedBikerCloseTrevor",
-		criteria ConceptPlayerLookHere IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsBiker IsSubjectDistNear400 IsWorldTalkTrevor
-		Response SurvivorSpottedBikerCloseMechanic
-	},
-
-	{
-		name = "SurvivorSpottedBikerClose2Trevor",
-		criteria ConceptPlayerLook IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsBiker IsSubjectDistNear400 IsWorldTalkTrevor
-		Response SurvivorSpottedBikerCloseMechanic
-	},
-
-	{
-		name = "SurvivorSpottedManagerCloseTrevor",
-		criteria ConceptPlayerLookHere IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsManager IsSubjectDistNear400 IsWorldTalkTrevor
-		Response SurvivorSpottedManagerCloseMechanic
-	},
-
-	{
-		name = "SurvivorSpottedManagerClose2Trevor",
-		criteria ConceptPlayerLook IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsManager IsSubjectDistNear400 IsWorldTalkTrevor
-		Response SurvivorSpottedManagerCloseMechanic
-	},
-
-	{
-		name = "SurvivorSpottedNamVetClose2Trevor",
-		criteria ConceptPlayerLook IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsNamVet IsSubjectDistNear400 IsWorldTalkTrevor
-		Response SurvivorSpottedNamVetClose2Mechanic
-	},
-
-	{
-		name = "SurvivorSpottedNamVetCloseTrevor",
-		criteria ConceptPlayerLookHere IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsNamVet IsSubjectDistNear400 IsWorldTalkTrevor
-		Response SurvivorSpottedNamVetClose2Mechanic
-	},
-
-	{
-		name = "SurvivorSpottedNamVetFarTrevor",
-		criteria ConceptPlayerLook IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsNamVet IsSubjectDistFar400 IsWorldTalkTrevor
-		Response SurvivorSpottedNamVetFarMechanic
-	},
-
-	{
-		name = "SurvivorSpottedTeenGirlCloseTrevor",
-		criteria ConceptPlayerLookHere IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsTeenGirl IsSubjectDistNear400 IsWorldTalkTrevor
-		Response SurvivorSpottedTeenGirlCloseMechanic
-	},
-
-	{
-		name = "SurvivorSpottedTeenGirlClose2Trevor",
-		criteria ConceptPlayerLook IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto SubjectIsTeenGirl IsSubjectDistNear400 IsWorldTalkTrevor
-		Response SurvivorSpottedTeenGirlCloseMechanic
 	},
 
 	{
-		name = "C13M1IntroStartTrevor",
-		criteria ConceptIntroC13M1 IsTrevor IsNotSaidCXM1Intro AutoIsNotScavenge AutoIsNotSurvival
-		Response C13M1IntroStartMechanic
-		then any C13M1Intro2 foo:0 0.1
+		name = "L4D1PlayerLighthouseIntroBetaZoeyRVC",
+		criteria ConceptintroLighthouse IsBetazoeyrvc IsNotSaidCXM1Intro IsNotAlone AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerLighthouseIntroTeenGirl
+		then any C14M1Intro1 foo:0 0.1
 		ApplyContext "CXM1Intro:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "C13M1Intro2Trevor",
-		criteria ConceptC13M1Intro2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival C13M1TrevorNotPanicking
-		Response C13M1Intro2Mechanic
-		then any C13M1Intro3 foo:0 0.1
-	},
-
-	{
-		name = "C13M1Intro3Trevor",
-		criteria ConceptC13M1Intro3 IsTrevor AutoIsNotScavenge AutoIsNotSurvival C13M1TrevorNotPanicking
-		Response C13M1Intro3Mechanic
-		then any C13M1IntroLast foo:0 0.1
-	},
-
-	{
-		name = "C13M1IntroLastTrevor",
-		criteria ConceptC13M1IntroLast IsTrevor AutoIsNotScavenge AutoIsNotSurvival C13M1TrevorNotPanicking
-		Response C13M1IntroLastMechanic
+		name = "L4D1PlayerLighthouseIntro01aBetaZoeyRVC",
+		criteria ConceptC14M1Intro1a IsBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1PlayerLighthouseIntro01aTeenGirl
 		then self IntroEnd foo:0 0.1
 	},
 
 	{
-		name = "C13M1IntroLocationLastTrevor",
-		criteria ConceptC13M1IntroLocationLast IsTrevor C13M1TrevorNotPanicking AutoIsNotScavenge AutoIsNotSurvival
-		Response C13M1IntroLocationLastMechanic
-		then self IntroEnd foo:0 0.1
-	},
-
-	{
-		name = "RemarkC13M1UpHillTrevor",
-		criteria ConceptRemark IsTrevor IsC13M1UpHill IsNotRemarkedC13M1UpHill NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear100 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc2m1_uphillMechanic
-		ApplyContext "RemarkedC13M1UpHill:1:0"
+		name = "L4D1RemarkC14M1HumveeBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsC14M1Humvee IsNotRemarkedC14M1Humvee NotInCombat IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		Response L4D1RemarkC14M1HumveeTeenGirl
+		ApplyContext "RemarkedC14M1Humvee:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "RemarkC13M1DownHereTrevor",
-		criteria ConceptRemark IsTrevor IsC13M1DownHere IsNotRemarkedC13M1DownHere NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkC1M3DownHereMechanic
-		ApplyContext "RemarkedC13M1DownHere:1:0"
+		name = "L4D1C14M1PlaneFlyByBetaZoeyRVC",
+		criteria ConceptC14M1PlaneFlyBy IsBetazoeyrvc IsNotIncapacitated IsNotSpottedC14M1Plane IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1C14M1PlaneFlyByTeenGirl
+		then self C14M1PlaneEngine foo:0 5.5
+		ApplyContext "SpottedC14M1Plane:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "RemarkC13M1ThroughHereTrevor",
-		criteria ConceptRemark IsTrevor IsC13M1ThroughHere IsNotRemarkedC13M1ThroughHere NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response RemarkC13M1ThroughHereMechanic
-		ApplyContext "RemarkedC13M1ThroughHere:1:0"
+		name = "L4D1C14M1EngineBrokeBetaZoeyRVC",
+		criteria ConceptC14M1EngineBroke IsBetazoeyrvc IsNotIncapacitated IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1C14M1EngineBrokeTeenGirl
+	},
+
+	{
+		name = "L4D1RemarkC14M1CabinUpstairsBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsC14M1CabinUpstairs IsNotRemarkedC14M1CabinUpstairs NotInCombat IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		Response L4D1RemarkC14M1CabinUpstairsTeenGirl
+		ApplyContext "RemarkedC14M1CabinUpstairs:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "RemarkC13M1ThroughWindowTrevor",
-		criteria ConceptRemark IsTrevor IsC13M1ThroughWindow IsNotRemarkedC13M1ThroughWindow NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc2m1_throughwindowMechanic
-		ApplyContext "RemarkedC13M1ThroughWindow:1:0"
+		name = "L4D1RemarkC14M1JunkyardEntranceBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsC14M1JunkyardEntrance IsNotRemarkedC14M1JunkyardEntrance NotInCombat IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsSubjectNear400 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		Response L4D1RemarkC14M1JunkyardEntranceTeenGirl
+		ApplyContext "RemarkedC14M1JunkyardEntrance:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "RemarkC13M1UpStepsTrevor",
-		criteria ConceptRemark IsTrevor IsC13M1UpSteps IsNotRemarkedC13M1UpSteps NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M1_UpTheStairs2Mechanic
-		ApplyContext "RemarkedC13M1UpSteps:1:0"
+		name = "L4D1RemarkC14M1TraincarBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsC14M1Traincar IsNotRemarkedC14M1Traincar NotInCombat IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		Response L4D1RemarkC14M1TraincarTeenGirl
+		ApplyContext "RemarkedC14M1Traincar:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "RemarkC13M1CrossHereTrevor",
-		criteria ConceptRemark IsTrevor IsC13M1CrossHere IsNotRemarkedC13M1CrossHere NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear150 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M1_AcrossHereMechanic
-		ApplyContext "RemarkedC13M1CrossHere:1:0"
+		name = "L4D1RemarkC14M1PrePanicBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsC14M1PrePanic IsNotRemarkedC14M1PrePanic NotInCombat IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsSubjectNear100 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		Response L4D1RemarkC14M1PrePanicTeenGirl
+		ApplyContext "RemarkedC14M1PrePanic:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "RemarkC13M1PreBunkerOpenTrevor",
-		criteria ConceptRemark IsTrevor IsC13M1PreBunkerOpen IsNotRemarkedC13M1PreBunkerOpen NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response RemarkC13M1PreBunkerOpenMechanic
-		ApplyContext "RemarkedC13M1PreBunkerOpen:1:0"
+		name = "L4D1C14M1PanicSpeakQuickReadyBetaZoeyRVC",
+		criteria ConceptC14M1PanicSpeak IsBetazoeyrvc IsNotRemarkedC14M1PrePanic AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1C14M1PanicSpeakQuickReadyTeenGirl
+		ApplyContext "RemarkedC14M1PrePanic:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "C13M1OpeningBunkerTrevor",
-		criteria ConceptC13M1OpeningBunker IsTrevor IsNotC13M1OpeningBunker AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerC3M2OpenDoor2Mechanic
-		ApplyContext "C13M1OpeningBunker:1:0,RemarkedC13M1PreBunkerOpen:1:0"
+		name = "L4D1C14M1PanicSpeakBetaZoeyRVC",
+		criteria ConceptC14M1PanicSpeak IsBetazoeyrvc IsRemarkedC14M1PrePanic AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1C14M1PanicSpeakTeenGirl
+	},
+
+	{
+		name = "L4D1C14M1PowerOutBetaZoeyRVC",
+		criteria ConceptC14M1PowerOutSpeak IsBetazoeyrvc IsNotIncapacitated IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1C14M1PowerOutTeenGirl
+	},
+
+	{
+		name = "L4D1C14M1GeneratorActivatedSpeakBetaZoeyRVC",
+		criteria ConceptC14M1GeneratorActivatedSpeak IsBetazoeyrvc C14M1GeneratorTask AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1C14M1GeneratorActivatedSpeakTeenGirl
+	},
+
+	{
+		name = "L4D1C14M1ThirdGeneratorActivatedSpeakBetaZoeyRVC",
+		criteria ConceptC14M1GeneratorActivatedSpeak IsBetazoeyrvc C14M1LastGenerator AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1C14M1ThirdGeneratorActivatedSpeakTeenGirl
+	},
+
+	{
+		name = "L4D1C14M1LastGeneratorActivatedSpeakBetaZoeyRVC",
+		criteria ConceptC14M1GeneratorActivatedSpeak IsBetazoeyrvc C14M1AllGenerators AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1C14M1LastGeneratorActivatedSpeakTeenGirl
+	},
+
+	{
+		name = "L4D1C14M1CraneDropBlankBetaZoeyRVC",
+		criteria ConceptC14M1CraneDropBlank IsBetazoeyrvc IsNotIncapacitated IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response _PlayerInfoRemarkableBlankTeenGirl
+	},
+
+	{
+		name = "L4D1C14M1PathClearBetaZoeyRVC",
+		criteria ConceptC14M1PathClearSpeak IsBetazoeyrvc IsNotIncapacitated IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1C14M1PathClearTeenGirl
+	},
+
+	{
+		name = "L4D1RemarkC14M1DownCliffBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsC14M1DownCliff IsNotRemarkedC14M1DownCliff NotInCombat IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		Response L4D1RemarkC14M1DownCliffTeenGirl
+		ApplyContext "RemarkedC14M1DownCliff:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "RemarkC13M2UpHillTrevor",
-		criteria ConceptRemark IsTrevor IsC13M2UpHill IsNotRemarkedC13M2UpHill NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear100 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response RemarkC13M2UpHillMechanic
-		ApplyContext "RemarkedC13M2UpHill:1:0"
+		name = "L4D1RemarkC14M2GateBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsC14M2Gate IsNotRemarkedC14M2Gate NotInCombat IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		Response L4D1RemarkC14M2GateTeenGirl
+		ApplyContext "RemarkedC14M2Gate:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "RemarkC13M2DownHereTrevor",
-		criteria ConceptRemark IsTrevor IsC13M2DownHere IsNotRemarkedC13M2DownHere NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkC1M3DownHereMechanic
-		ApplyContext "RemarkedC13M2DownHere:1:0"
+		name = "L4D1C14M2RadioSpeakBetaZoeyRVC",
+		criteria ConceptC14M2RadioSpeak IsBetazoeyrvc IsNotIncapacitated IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival _auto_IsTalkingBetazoeyrvc
+		Response L4D1C14M2RadioSpeakTeenGirl
+	},
+
+	{
+		name = "L4D1C14M2RadioDestroyedBetaZoeyRVC",
+		criteria ConceptC14M2RadioDestroyed IsBetazoeyrvc IsNotIncapacitated IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival _auto_IsTalkingBetazoeyrvc
+		Response L4D1C14M2RadioDestroyedTeenGirl
+	},
+
+	{
+		name = "L4D1RemarkC14M2DropBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsC14M2Drop IsNotRemarkedC14M2Drop NotInCombat IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsSubjectNear50 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
+		Response L4D1RemarkC14M2DropTeenGirl
+		ApplyContext "RemarkedC14M2Drop:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "RemarkC13M2UpLadderTrevor",
-		criteria ConceptRemark IsTrevor IsC13M2UpLadder IsNotRemarkedC13M2UpLadder NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkc5m3upladderMechanic
-		ApplyContext "RemarkedC13M2UpStairs:1:0"
+		name = "L4D1RemarkC14M2NoteLighthouseBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsC14M2NoteLighthouse IsNotRemarkedC14M2NoteLighthouse NotInCombat IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsSubjectNear1500 AutoIsNotScavenge AutoIsNotSurvival _auto_NotFinaleStarted IsNotSpeakingWeight0
+		Response L4D1RemarkC14M2NoteLighthouseTeenGirl
+		then any C14M2NoteLighthouse2 foo:0 0.1
+		ApplyContext "RemarkedC14M2NoteLighthouse:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "RemarkC13M2UpStairsTrevor",
-		criteria ConceptRemark IsTrevor IsC13M2UpStairs IsNotRemarkedC13M2UpStairs NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M1_UpTheStairs2Mechanic
-		ApplyContext "RemarkedC13M2UpStairs:1:0"
+		name = "L4D1C14M2NoteLighthouse2BetaZoeyRVC",
+		criteria ConceptC14M2NoteLighthouse2 IsBetazoeyrvc IssuerClose IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1C14M2NoteLighthouse2TeenGirl
+	},
+
+	{
+		name = "L4D1C14M2PowerOutAgainBetaZoeyRVC",
+		criteria ConceptC14M2PowerOutAgainSpeak IsBetazoeyrvc IsNotIncapacitated IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival
+		Response L4D1C14M2PowerOutAgainTeenGirl
+	},
+
+	{
+		name = "L4D1SurvivorFinalVehicleSpottedBoatC14M2BetaZoeyRVC",
+		criteria ConceptFinalVehicleSpotted IsBetazoeyrvc IsLastStand2 _auto_IsFinaleStarted
+		Response L4D1SurvivorFinalVehicleSpottedBoatC14M2TeenGirl
+		then any EmphaticArriveRun foo:0 -13.984
+		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockBetazoeyrvc:1:30,_auto_Finale:2:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "C13M2TankApproachingTrevor",
-		criteria ConceptC13M2TankApproaching IsTrevor IsNotNoticedC13M2ShakingGround AutoIsNotScavenge AutoIsNotSurvival
-		Response C13M2TankApproachingMechanic
-		ApplyContext "NoticedC13M2ShakingGround:1:0"
+		name = "L4D1SurvivorFinalVehicleBoatC14M2BetaZoeyRVC",
+		criteria ConceptGetToVehicle IsBetazoeyrvc IsLastStand2 IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsNotInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockBetazoeyrvc IsNotSpeakingWeight0
+		Response L4D1SurvivorFinalVehicleBoatTeenGirl
+		then any EmphaticArriveRun foo:0 -1.569
+		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockBetazoeyrvc:1:30"
 		applycontexttoworld
 	},
 
 	{
-		name = "C13M2BarrelsIgnitedTrevor",
-		criteria ConceptC13M2BarrelsIgnited IsTrevor IsNotC13M2IgnitedBarrels AutoIsNotScavenge AutoIsNotSurvival
-		Response C13M2BarrelsIgnitedMechanic
-		then any C13M2Barrels1 foo:0 5
-		ApplyContext "C13M2IgnitedBarrels:1:0"
+		name = "L4D1SurvivorFinalVehicleInsideBoatC14M2BetaZoeyRVC",
+		criteria ConceptGetToVehicle IsBetazoeyrvc IsLastStand2 IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockBetazoeyrvc IsNotSpeakingWeight0
+		Response L4D1SurvivorFinalVehicleInsideBoatTeenGirl
+		then any EmphaticArriveRun foo:0 -1.344
+		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockBetazoeyrvc:1:30"
 		applycontexttoworld
 	},
 
 	{
-		name = "C13M2Barrels1Trevor",
-		criteria ConceptC13M2Barrels1 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C13M2Barrels1Mechanic
-		then any C13M2Barrels2 foo:0 0.1
-		ApplyContext "Talk:1:3"
-		applycontexttoworld
-	},
-
-	{
-		name = "C13M2Barrels2Trevor",
-		criteria ConceptC13M2Barrels2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C13M2Barrels2Mechanic
-		ApplyContext "Talk:1:3"
-		applycontexttoworld
-	},
-
-	{
-		name = "RemarkC13M3DownHereTrevor",
-		criteria ConceptRemark IsTrevor IsC13M3DownHere IsNotRemarkedC13M3DownHere NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 AutoIsNotScavenge AutoIsNotSurvival IsNotSpeakingWeight0
-		Response PlayerRemarkC1M3DownHereMechanic
-		ApplyContext "RemarkedC13M3DownHere:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C13M3ApproachingTankerTrevor",
-		criteria ConceptC13M3ApproachingTanker IsTrevor IsNotSawC13M3Tanker AutoIsNotScavenge AutoIsNotSurvival
-		Response C13M3ApproachingTankerMechanic
-		then any C13M3Tanker1 foo:0 3
-		ApplyContext "SawC13M3Tanker:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C13M3Tanker1Trevor",
-		criteria ConceptC13M3Tanker1 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C13M3Tanker1Mechanic
-		then any C13M3Tanker2 foo:0 -0.3
-		ApplyContext "Talk:1:3"
-		applycontexttoworld
-	},
-
-	{
-		name = "C13M3Tanker2Trevor",
-		criteria ConceptC13M3Tanker2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C13M3Tanker2Mechanic
-		then any C13M3Tanker3 foo:0 3
-		ApplyContext "Talk:1:3"
-		applycontexttoworld
-	},
-
-	{
-		name = "C13M3Tanker3Trevor",
-		criteria ConceptC13M3Tanker3 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C13M3Tanker3Mechanic
-		ApplyContext "Talk:1:3"
-		applycontexttoworld
-	},
-
-	{
-		name = "C13M3OnScaffoldTrevor",
-		criteria ConceptC13M3OnScaffold IsTrevor IsNotOnC13M3Scaffold AutoIsNotScavenge AutoIsNotSurvival
-		Response PlayerRemarkWorldC1M2DownStairsMechanic
-		ApplyContext "OnC13M3Scaffold:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C13M3AirstrikeTrevor",
-		criteria ConceptC13M3Airstrike IsTrevor IsNotWitnissedC13M3Airstrike AutoIsNotScavenge AutoIsNotSurvival
-		Response C13M3AirstrikeMechanic
-		then any C13M3Airstrike2 foo:0 0.01
-		ApplyContext "WitnissedC13M3Airstrike:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C13M3Airstrike2Trevor",
-		criteria ConceptC13M3Airstrike2 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C13M3Airstrike2Mechanic
-		ApplyContext "Talk:1:3"
-		applycontexttoworld
-	},
-
-	{
-		name = "C13M4Button1Trevor",
-		criteria ConceptC13M4Button1 IsTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C13M4Button1Mechanic
-		then orator C13M4FinaleBrief foo:0 0.3
-		ApplyContext "Talk:1:3"
-		applycontexttoworld
-	},
-
-	{
-		name = "C13M4FinaleTriggeredTrevor",
-		criteria ConceptFinaleTriggered IsTrevor ismapc13m4_cutthroatcreek IsTriggeredByTrevor _auto_NotFinaleStarted
-		Response C13M4FinaleTriggeredMechanic
-		then orator C13M4FinaleStart foo:0 0.01
-		ApplyContext "_auto_Finale:1:0,_auto_TalkingTrevor:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C13M4FinaleStart2Trevor",
-		criteria ConceptC13M4FinaleStart2 IsTrevor _auto_IsTalkingTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C13M4FinaleStart2Mechanic
-		ApplyContext "Talk:1:3"
-		applycontexttoworld
-	},
-
-	{
-		name = "C13M4DownCreekTrevor",
-		criteria ConceptC13M4DownCreek IsTrevor IsNotInC13M4Creek AutoIsNotScavenge AutoIsNotSurvival
-		Response C13M4DownCreekMechanic
-		ApplyContext "Talk:1:3,InC13M4Creek:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C13M4InSmokeTrevor",
-		criteria ConceptC13M4InSmoke IsTrevor IsNotInC13M4Smoke AutoIsNotScavenge AutoIsNotSurvival
-		Response SurvivorCoughingMechanic
-		ApplyContext "TalkTrevor:1:3,InC13M4Smoke:1:0"
-	},
-
-	{
-		name = "C13M4NoticedHelicopterTrevor",
-		criteria ConceptC13M4NoticedHelicopter IsTrevor IsNotNoticedC13M4Helicopter AutoIsNotScavenge AutoIsNotSurvival
-		Response C13M4NoticedHelicopterMechanic
-		ApplyContext "Talk:1:3,NoticedC13M4Helicopter:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C13M4AlmostThereTrevor",
-		criteria ConceptC13M4AlmostThere IsTrevor IsNotC13M4AlmostThere AutoIsNotScavenge AutoIsNotSurvival
-		Response C13M4AlmostThereMechanic
-		ApplyContext "Talk:1:3,C13M4AlmostThere:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C13M4SpottedVehicleTrevor",
-		criteria ConceptFinalVehicleSpotted IsTrevor ismapc13m4_cutthroatcreek _auto_IsFinaleStarted
-		Response C13M4SpottedVehicleMechanic
-		then pilot C13M4PilotEscapeNag foo:0 2
-		ApplyContext "_auto_Finale:2:0,_auto_TimerLockA:1:5"
-		applycontexttoworld
-	},
-
-	{
-		name = "C13M4GetToVehicleTrevor",
-		criteria ConceptGetToVehicle IsTrevor ismapc13m4_cutthroatcreek IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsNotInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockTrevor IsNotSpeakingWeight0
-		Response C13M4GetToVehicleMechanic
-		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockTrevor:1:30"
-		applycontexttoworld
-	},
-
-	{
-		name = "C13M4InsideVehicleTrevor",
-		criteria ConceptGetToVehicle IsTrevor ismapc13m4_cutthroatcreek IsNotCoughing IsNotIncapacitated IsNotAlone IsTalk AutoIsNotScavenge AutoIsNotSurvival IsInRescueVehicle _auto_IsEscapeReady _auto_NotTimerLockA _auto_NotTimerLockTrevor IsNotSpeakingWeight0
-		Response C13M4InsideVehicleMechanic
-		ApplyContext "_auto_TimerLockA:1:10,_auto_TimerLockTrevor:1:30"
-		applycontexttoworld
-	},
-
-	{
-		name = "EllisStoryStartTrevor",
-		criteria ConceptTalkIdle IsTrevor IsNotSpeaking AutoIsNotScavenge AutoIsNotSurvival IsNotSrcGrp_TREVORSTORYINIT
-		// 	forceweight 1
-		Response NoResponse
-		ApplyContext "_auto_StoryWait:1:0,_auto_StoryGate:1:60,SrcGrp_TREVORSTORYINIT:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "SafeRoomStartTrevor",
-		criteria ConceptTalkIdle IsTrevor IsInStartArea AutoIsNotScavenge AutoIsNotSurvival _auto_NotSafeRoomStart
+		name = "SafeRoomStartBetaZoeyRVC",
+		criteria ConceptTalkIdle IsBetazoeyrvc IsInStartArea AutoIsNotScavenge AutoIsNotSurvival _auto_NotSafeRoomStart
 		Response NoResponse
 		ApplyContext "Talk:1:45,_auto_SafeRoomStart:1:0,_auto_SafeRoomQuiet:1:5"
 		applycontexttoworld
 	},
 
 	{
-		name = "IntroEndTrevor",
-		criteria ConceptIntroEnd IsTrevor FromIsTrevor IsNotSaidLeavingSafeArea AutoIsNotScavenge AutoIsNotSurvival
+		name = "IntroEndBetaZoeyRVC",
+		criteria ConceptIntroEnd IsBetazoeyrvc FromIsBetazoeyrvc IsNotSaidLeavingSafeArea AutoIsNotScavenge AutoIsNotSurvival
 		Response NoResponse
 		ApplyContext "Talk:0:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "LeavingSafeAreaTrevor",
-		criteria ConceptSurvivorLeavingCheckpoint IsTrevor IsNotSaidLeavingSafeArea
+		name = "LeavingSafeAreaBetaZoeyRVC",
+		criteria ConceptSurvivorLeavingCheckpoint IsBetazoeyrvc IsNotSaidLeavingSafeArea AutoIsNotScavenge AutoIsNotSurvival
 		Response NoResponse
 		ApplyContext "SaidLeavingSafeArea:1:0,Talk:0:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "LeavingSafeRoomTrevor",
-		criteria ConceptSurvivorLeavingInitialCheckpoint IsTrevor IsNotSaidLeavingSafeArea
+		name = "LeavingSafeRoomBetaZoeyRVC",
+		criteria ConceptSurvivorLeavingInitialCheckpoint IsBetazoeyrvc IsNotSaidLeavingSafeArea
 		Response NoResponse
 		ApplyContext "SaidLeavingSafeArea:1:0,Talk:0:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "FinaleTriggeredTrevor",
-		criteria ConceptFinaleTriggered IsTrevor IsTriggeredByTrevor AutoIsNotScavenge AutoIsNotSurvival _auto_NotFinaleStarted
+		name = "FinaleTriggeredBetaZoeyRVC",
+		criteria ConceptFinaleTriggered IsBetazoeyrvc IsTriggeredByBetazoeyrvc AutoIsNotScavenge AutoIsNotSurvival _auto_NotFinaleStarted
 		Response NoResponse
 		ApplyContext "_auto_Finale:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "FinalVehicleSpottedTrevor",
-		criteria ConceptFinalVehicleSpotted IsTrevor _auto_IsFinaleStarted _auto_NotEscapeReady
+		name = "FinalVehicleSpottedBetaZoeyRVC",
+		criteria ConceptFinalVehicleSpotted IsBetazoeyrvc _auto_IsFinaleStarted _auto_NotEscapeReady
 		Response NoResponse
 		ApplyContext "_auto_Finale:2:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "FinalVehicleArrivedTrevor",
-		criteria ConceptFinalVehicleArrived IsTrevor _auto_HasSpottedVehicle _auto_NotEscapeReady
+		name = "FinalVehicleArrivedBetaZoeyRVC",
+		criteria ConceptFinalVehicleArrived IsBetazoeyrvc _auto_HasSpottedVehicle _auto_NotEscapeReady
 		Response NoResponse
 		ApplyContext "_auto_Escape:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "L4D1PlayerNiceShotTrevor",
-		criteria ConceptL4D1PlayerNiceShot IsNotCoughing IsTrevor IsSubjectDistNear1500 IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotSpeaking ChanceToFire70Percent
-		Response L4D1PlayerNiceShotMechanic
+		name = "L4D1PlayerNiceShotBetaZoeyRVC",
+		criteria ConceptL4D1PlayerNiceShot IsNotCoughing IsBetazoeyrvc IsSubjectDistNear1500 IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotSpeaking ChanceToFire70Percent
+		Response L4D1PlayerNiceShotTeenGirl
 	},
 
 	{
-		name = "L4D1PlayerNiceShotFrancisTrevor",
-		criteria ConceptL4D1PlayerNiceShot IsNotCoughing IsTrevor IsSubjectDistNear1500 IsTalk IsTalkTrevor IsWorldTalkTrevor SubjectIsBiker ChanceToFire70Percent IsNotSpeaking
-		Response L4D1PlayerNiceShotFrancisMechanic
-	},
-
-	{
-		name = "L4D1PlayerNiceShotLouisTrevor",
-		criteria ConceptL4D1PlayerNiceShot IsNotCoughing IsTrevor IsSubjectDistNear1500 IsTalk IsTalkTrevor IsWorldTalkTrevor SubjectIsManager ChanceToFire70Percent IsNotSpeaking
-		Response L4D1PlayerNiceShotLouisMechanic
-	},
-
-	{
-		name = "L4D1PlayerNiceShotZoeyTrevor",
-		criteria ConceptL4D1PlayerNiceShot IsNotCoughing IsTrevor IsSubjectDistNear1500 IsTalk IsTalkTrevor IsWorldTalkTrevor SubjectIsTeenGirl ChanceToFire70Percent IsNotSpeaking
-		Response L4D1PlayerNiceShotZoeyMechanic
-	},
-
-	{
-		name = "C6M3GasPourTrevor",
-		criteria ConceptPlayerPourStarted IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotScavenge isC6M3_Port ChanceToFire70Percent
-		Response C6M3GasPourMechanic
-		ApplyContext "TalkTrevor:1:2"
-	},
-
-	{
-		name = "C6M1_IntotheparkNoHealthTrevor",
-		criteria ConceptC6M1_IntotheparkNoHealth IsTrevor
-		Response C6M1_IntotheparkNoHealthMechanic
-	},
-
-	{
-		name = "C6M1Intro_01aTrevor",
-		criteria ConceptC6M1Intro_01a IsTrevor IsNotVersus
-		Response C6M1Intro_01aMechanic
-		then Biker C6M1Intro_01b foo:0 -6.365
-	},
-
-	{
-		name = "C6M1Intro_01Biker02Trevor",
-		criteria ConceptintroC6M1 IsTrevor IsFrancisIntroActor IsNotSaidIntroScene FrancisGroup2 IsNotVersus
-		Response C6M1Intro_01Biker02Mechanic
-		then Biker C6M1Intro_24b foo:0 -12.798
+		name = "C6M1Intro_01TeenGirl01BetaZoeyRVC",
+		criteria ConceptintroC6M1 IsBetazoeyrvc IsBetazoeyrvcIntroActor IsNotSaidIntroScene MoreThan0 LessThan30 IsNotVersus
+		Response C6M1Intro_01TeenGirl01TeenGirl
+		then Mechanic C6M1Intro_11a foo:0 -0.910
 		ApplyContext "SaidIntroScene:1:0,Talk:1:30"
 		applycontexttoworld
 	},
 
 	{
-		name = "C6M1Intro_01cTrevor",
-		criteria ConceptC6M1Intro_01c IsTrevor IsNotVersus
-		Response C6M1Intro_01cMechanic
-		then Biker C6M1Intro_01d foo:0 -0.982
-	},
-
-	{
-		name = "C6M1Intro_01TeenGirl04Trevor",
-		criteria ConceptintroC6M1 IsTrevor IsZoeyIntroActor IsNotSaidIntroScene MoreThan60 LessThan100 IsNotVersus
-		Response C6M1Intro_01TeenGirl04Mechanic
-		then TeenGirl C6M1Intro_23a foo:0 -2.512
+		name = "C6M1Intro_01TeenGirl02BetaZoeyRVC",
+		criteria ConceptintroC6M1 IsBetazoeyrvc IsBetazoeyrvcIntroActor IsNotSaidIntroScene MoreThan30 LessThan40 IsNotVersus
+		Response C6M1Intro_01TeenGirl02TeenGirl
+		then Mechanic C6M1Intro_13a foo:0 -4.002
 		ApplyContext "SaidIntroScene:1:0,Talk:1:30"
 		applycontexttoworld
 	},
 
 	{
-		name = "C6M1Intro_02aTrevor",
-		criteria ConceptC6M1Intro_02a IsTrevor
-		Response C6M1Intro_02aMechanic
-		then Biker C6M1Intro_02b foo:0 -4.221
+		name = "C6M1Intro_01TeenGirl03BetaZoeyRVC",
+		criteria ConceptintroC6M1 IsBetazoeyrvc IsBetazoeyrvcIntroActor IsNotSaidIntroScene MoreThan40 LessThan60 IsNotVersus
+		Response C6M1Intro_01TeenGirl03TeenGirl
+		then Producer C6M1Intro_22a foo:0 -1.117
+		ApplyContext "SaidIntroScene:1:0,Talk:1:30"
+		applycontexttoworld
 	},
 
 	{
-		name = "C6M1Intro_11aTrevor",
-		criteria ConceptC6M1Intro_11a IsTrevor
-		Response C6M1Intro_11aMechanic
-		then TeenGirl C6M1Intro_11b foo:0 -5.419
+		name = "C6M1Intro_01TeenGirl04BetaZoeyRVC",
+		criteria ConceptintroC6M1 IsBetazoeyrvc IsBetazoeyrvcIntroActor IsNotSaidIntroScene MoreThan60 LessThan100 IsNotVersus
+		Response C6M1Intro_01TeenGirl04TeenGirl
+		then Coach C6M1Intro_08a foo:0 -5.459
+		ApplyContext "SaidIntroScene:1:0,Talk:1:30"
+		applycontexttoworld
 	},
 
 	{
-		name = "C6M1Intro_11cTrevor",
-		criteria ConceptC6M1Intro_11c IsTrevor
-		Response C6M1Intro_11cMechanic
+		name = "C6M1Intro_03aBetaZoeyRVC",
+		criteria ConceptC6M1Intro_03a IsBetazoeyrvc
+		Response C6M1Intro_03aTeenGirl
 		then Any WorldC6M1_HistoricTour foo:0 1
 	},
 
 	{
-		name = "C6M1Intro_12bTrevor",
-		criteria ConceptC6M1Intro_12b IsTrevor
-		Response C6M1Intro_12bMechanic
-		then Producer C6M1Intro_12c foo:0 -4.691
+		name = "C6M1Intro_04aBetaZoeyRVC",
+		criteria ConceptC6M1Intro_04a IsBetazoeyrvc
+		Response C6M1Intro_04aTeenGirl
+		then Coach C6M1Intro_04b foo:0 -1.676
 	},
 
 	{
-		name = "C6M1Intro_13aTrevor",
-		criteria ConceptC6M1Intro_13a IsTrevor
-		Response C6M1Intro_13aMechanic
-		then Coach C6M1Intro_13b foo:0 -14.217
-	},
-
-	{
-		name = "C6M1Intro_13cTrevor",
-		criteria ConceptC6M1Intro_13c IsTrevor
-		Response C6M1Intro_13cMechanic
-		then TeenGirl C6M1Intro_13d foo:0 -3.537
-	},
-
-	{
-		name = "C6M1Intro_13fTrevor",
-		criteria ConceptC6M1Intro_13f IsTrevor
-		Response C6M1Intro_13fMechanic
+		name = "C6M1Intro_04cBetaZoeyRVC",
+		criteria ConceptC6M1Intro_04c IsBetazoeyrvc
+		Response C6M1Intro_04cTeenGirl
+		then Any WorldC6M1_HistoricTour foo:0 1
 		ApplyContext "Talk:0:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "C6M1Intro_23bTrevor",
-		criteria ConceptC6M1Intro_23b IsTrevor
-		Response C6M1Intro_23bMechanic
-		then TeenGirl C6M1Intro_23c foo:0 -7.488
+		name = "C6M1Intro_11bBetaZoeyRVC",
+		criteria ConceptC6M1Intro_11b IsBetazoeyrvc
+		Response C6M1Intro_11bTeenGirl
+		then Mechanic C6M1Intro_11c foo:0 -7.175
 	},
 
 	{
-		name = "C6M1Intro_23dTrevor",
-		criteria ConceptC6M1Intro_23d IsTrevor
-		Response C6M1Intro_23dMechanic
-		then Any WorldC6M1_HistoricTour foo:0 -4.369
-		ApplyContext "Talk:0:0"
-		applycontexttoworld
+		name = "C6M1Intro_13dBetaZoeyRVC",
+		criteria ConceptC6M1Intro_13d IsBetazoeyrvc
+		Response C6M1Intro_13dTeenGirl
+		then Coach C6M1Intro_13e foo:0 -3.130
 	},
 
 	{
-		name = "C6M1Intro_24cTrevor",
-		criteria ConceptC6M1Intro_24c IsTrevor
-		Response C6M1Intro_24cMechanic
-		then Biker C6M1Intro_24d foo:0 -2.841
+		name = "C6M1Intro_15bBetaZoeyRVC",
+		criteria ConceptC6M1Intro_15b IsBetazoeyrvc
+		Response C6M1Intro_15bTeenGirl
+		then Producer C6M1Intro_15c foo:0 -4.693
 	},
 
 	{
-		name = "C6M1Intro_24eTrevor",
-		criteria ConceptC6M1Intro_24e IsTrevor
-		Response C6M1Intro_24eMechanic
-		ApplyContext "Talk:0:0"
-		applycontexttoworld
+		name = "C6M1Intro_15dBetaZoeyRVC",
+		criteria ConceptC6M1Intro_15d IsBetazoeyrvc
+		Response C6M1Intro_15dTeenGirl
+		then Gambler C6M1Intro_15e foo:0 -2.385
 	},
 
 	{
-		name = "LeavingC6M1StartTrevor",
-		criteria ConceptSurvivorLeavingCheckpoint IsTrevor
-		Response LeavingC6M1StartMechanic
-		ApplyContext "LeftC6M1Start:1:0"
-		applycontexttoworld
+		name = "C6M1Intro_17aBetaZoeyRVC",
+		criteria ConceptC6M1Intro_17a IsBetazoeyrvc
+		Response C6M1Intro_17aTeenGirl
+		then Producer C6M1Intro_17b foo:0 -9.916
 	},
 
 	{
-		name = "RemWorldC6M1_WeddingWarn02Trevor",
-		criteria ConceptRemWorldC6M1_WeddingWarn02 IsTrevor IsSubjectDistNear800
-		Response RemWorldC6M1_WeddingWarn02Mechanic
-		ApplyContext "AtWedding:1:60, CoachCake:1:0"
-		applycontexttoworld
+		name = "C6M1Intro_17cBetaZoeyRVC",
+		criteria ConceptC6M1Intro_17c IsBetazoeyrvc
+		Response C6M1Intro_17cTeenGirl
+		then Producer C6M1Intro_17d foo:0 -2.035
 	},
 
 	{
-		name = "WorldC6M1_WeddingWarn03aTrevor",
-		criteria ConceptWorldC6M1_WeddingWarn03a IsTrevor
-		Response WorldC6M1_WeddingWarn03aMechanic
-		then Producer WorldC6M1_WeddingWarn03b foo:0 -0.799
-		ApplyContext "AtWedding:1:60"
-		applycontexttoworld
+		name = "C6M1Intro_22bBetaZoeyRVC",
+		criteria ConceptC6M1Intro_22b IsBetazoeyrvc
+		Response C6M1Intro_22bTeenGirl
+		then Producer C6M1Intro_22c foo:0 -1.387
 	},
 
 	{
-		name = "C6M2_OpenGate1Trevor",
-		criteria ConceptC6M2_OpenGate1 IsTrevor
-		Response C6M2_OpenGate1Mechanic
-		ApplyContext "SaidOpenedGate1:1:0"
-		applycontexttoworld
+		name = "C6M1Intro_22dBetaZoeyRVC",
+		criteria ConceptC6M1Intro_22d IsBetazoeyrvc
+		Response C6M1Intro_22dTeenGirl
+		then Producer C6M1Intro_22f foo:0 -7.980
 	},
 
 	{
-		name = "C6M2_OpenGate1bTrevor",
-		criteria ConceptC6M2_OpenGate1b IsTrevor
-		Response C6M2_OpenGate1bMechanic
+		name = "C6M1Intro_22gBetaZoeyRVC",
+		criteria ConceptC6M1Intro_22g IsBetazoeyrvc
+		Response C6M1Intro_22gTeenGirl
+		then Producer C6M1Intro_22h foo:0 -0.623
 	},
 
 	{
-		name = "C6M2_OpenGate1BlameTrevor",
-		criteria ConceptC6M2_OpenGate1 IsTrevor IsGamblerNear800Weight0
-		Response C6M2_OpenGate1BlameMechanic
-		then Gambler C6M2_OpenGate1a foo:0 0.01
-		ApplyContext "SaidOpenedGate1:1:0"
-		applycontexttoworld
+		name = "C6M1Intro_23aBetaZoeyRVC",
+		criteria ConceptC6M1Intro_23a IsBetazoeyrvc
+		Response C6M1Intro_23aTeenGirl
+		then Mechanic C6M1Intro_23b foo:0 -1.285
 	},
 
 	{
-		name = "C6M2_OpenGate2Trevor",
-		criteria ConceptC6M2_OpenGate2 IsTrevor
-		Response C6M2_OpenGate2Mechanic
-		ApplyContext "Said:OpenedGate2:1:0"
-		applycontexttoworld
+		name = "C6M1Intro_23cBetaZoeyRVC",
+		criteria ConceptC6M1Intro_23c IsBetazoeyrvc
+		Response C6M1Intro_23cTeenGirl
+		then Mechanic C6M1Intro_23d foo:0 -9.236
 	},
 
 	{
-		name = "C6M2LeavingSafeRoomTrevor",
-		criteria ConceptSurvivorLeavingInitialCheckpoint IsTrevor IsNotSaidC6M2LeavingSafeRoom isc6m2_bedlam ChanceToFire70Percent
-		Response C6M2LeavingSafeRoomMechanic
-		ApplyContext "SaidC6M2LeavingSafeRoom:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "C6M2SafeRoomTrevor",
-		criteria ConceptTalkIdle Joined3 IsTrevor isC6m2_bedlam IsInStartArea AutoIsNotScavenge AutoIsNotSurvival IsNotSaidC6M2SafeRoom IsNotSpeakingWeight0
-		Response C6M2SafeRoomMechanic
-		then any C6M2SafeRoom2 foo:0 3
-		ApplyContext "SaidC6M2SafeRoom:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "DLC1_C6M2_SafeRoomConvo02aTrevor",
-		criteria ConceptDLC1_C6M2_SafeRoomConvo02a IsTrevor
-		Response DLC1_C6M2_SafeRoomConvo02aMechanic
-		then Gambler DLC1_C6M2_SafeRoomConvo02b foo:0 -3.509
-	},
-
-	{
-		name = "DLC1_C6M2_SafeRoomConvo03Trevor",
-		criteria ConceptC6M2SafeRoom2 IsTrevor IsFrancisIntroActor FrancisGroup1 IsNotSaidC6M2SafeRoom2
-		Response DLC1_C6M2_SafeRoomConvo03Mechanic
-		then Producer DLC1_C6M2_SafeRoomConvo03a foo:0 -3.330
-		ApplyContext "SaidC6M2SafeRoom2:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "DLC1_C6M2_SafeRoomConvo03bTrevor",
-		criteria ConceptDLC1_C6M2_SafeRoomConvo03b IsTrevor
-		Response DLC1_C6M2_SafeRoomConvo03bMechanic
-		then Producer DLC1_C6M2_SafeRoomConvo03c foo:0 -16.180
-	},
-
-	{
-		name = "DLC1_C6M2_SafeRoomConvo06Trevor",
-		criteria ConceptC6M2SafeRoom2 IsTrevor IsZoeyIntroActor ZoeyGroup1 IsNotSaidC6M2SafeRoom2
-		Response DLC1_C6M2_SafeRoomConvo06Mechanic
-		then Any DLC1_C6M2_SafeRoomConvo07a foo:0 -6.763
-		ApplyContext "SaidC6M2SafeRoom2:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "DLC1_C6M2_SafeRoomConvo08Trevor",
-		criteria ConceptC6M2SafeRoom2 IsTrevor IsNotSaidC6M2SafeRoom2
-		Response DLC1_C6M2_SafeRoomConvo08Mechanic
-		then Producer DLC1_C6M2_SafeRoomConvo15a foo:0 -4.114
-		ApplyContext "SaidC6M2SafeRoom2:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "DLC1_C6M2_SafeRoomConvo11aTrevor",
-		criteria ConceptDLC1_C6M2_SafeRoomConvo11a IsTrevor
-		Response DLC1_C6M2_SafeRoomConvo11aMechanic
-		then Gambler DLC1_C6M2_SafeRoomConvo11b foo:0 -4.069
-	},
-
-	{
-		name = "DLC1_C6M2_SafeRoomConvo14bTrevor",
-		criteria ConceptDLC1_C6M2_SafeRoomConvo14b IsTrevor
-		Response DLC1_C6M2_SafeRoomConvo14bMechanic
-		then Producer DLC1_C6M2_SafeRoomConvo14c foo:0 -2.922
-	},
-
-	{
-		name = "DLC1_C6M2_SafeRoomConvo15Trevor",
-		criteria ConceptC6M2SafeRoom2 IsTrevor IsNotSaidC6M2SafeRoom2
-		Response DLC1_C6M2_SafeRoomConvo15Mechanic
-		then Coach DLC1_C6M2_SafeRoomConvo16a1 foo:0 -3.684
-		ApplyContext "SaidC6M2SafeRoom2:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "DLC1_C6M2_SafeRoomConvo16bTrevor",
-		criteria ConceptDLC1_C6M2_SafeRoomConvo16b IsTrevor
-		Response DLC1_C6M2_SafeRoomConvo16bMechanic
-		then Producer DLC1_C6M2_SafeRoomConvo16c foo:0 -1.763
-	},
-
-	{
-		name = "DLC1_C6M2_SafeRoomConvo16b1Trevor",
-		criteria ConceptDLC1_C6M2_SafeRoomConvo16b1 IsTrevor
-		Response DLC1_C6M2_SafeRoomConvo16b1Mechanic
-		then Coach DLC1_C6M2_SafeRoomConvo16e foo:0 -1.763
-	},
-
-	{
-		name = "DLC1_C6M2_SafeRoomConvo16dTrevor",
-		criteria ConceptDLC1_C6M2_SafeRoomConvo16d IsTrevor
-		Response DLC1_C6M2_SafeRoomConvo16dMechanic
-	},
-
-	{
-		name = "DLC1_C6M2_SafeRoomConvo16fTrevor",
-		criteria ConceptDLC1_C6M2_SafeRoomConvo16f IsTrevor
-		Response DLC1_C6M2_SafeRoomConvo16fMechanic
-	},
-
-	{
-		name = "DLC1_C6M2_SafeRoomConvo17Trevor",
-		criteria ConceptC6M2SafeRoom2 IsTrevor IsZoeyIntroActor IsNotSaidC6M2SafeRoom2
-		Response DLC1_C6M2_SafeRoomConvo17Mechanic
-		then Producer DLC1_C6M2_SafeRoomConvo18a foo:0 -3.626
-		ApplyContext "SaidC6M2SafeRoom2:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "DLC1_C6M2_SafeRoomConvo17aTrevor",
-		criteria ConceptDLC1_C6M2_SafeRoomConvo17a IsTrevor
-		Response DLC1_C6M2_SafeRoomConvo17aMechanic
-		then Producer DLC1_C6M2_SafeRoomConvo17b foo:0 -7.751
-	},
-
-	{
-		name = "DLC1_C6M2_SafeRoomConvo18bTrevor",
-		criteria ConceptDLC1_C6M2_SafeRoomConvo18b IsTrevor
-		Response DLC1_C6M2_SafeRoomConvo18bMechanic
-		then Coach DLC1_C6M2_SafeRoomConvo18c foo:0 -2.705
-	},
-
-	{
-		name = "DLC1_C6M2_SafeRoomConvo19aTrevor",
-		criteria ConceptDLC1_C6M2_SafeRoomConvo19a IsTrevor
-		Response DLC1_C6M2_SafeRoomConvo19aMechanic
-		then Coach DLC1_C6M2_SafeRoomConvo19b foo:0 -2.249
-	},
-
-	{
-		name = "DLC1_C6M2_SafeRoomConvo19cTrevor",
-		criteria ConceptDLC1_C6M2_SafeRoomConvo19c IsTrevor
-		Response DLC1_C6M2_SafeRoomConvo19cMechanic
-		then Coach DLC1_C6M2_SafeRoomConvo19d foo:0 -6.193
-	},
-
-	{
-		name = "DLC1_C6M2_SafeRoomConvo19eTrevor",
-		criteria ConceptDLC1_C6M2_SafeRoomConvo19e IsTrevor
-		Response DLC1_C6M2_SafeRoomConvo19eMechanic
-	},
-
-	{
-		name = "DLC1_C6M2_SafeRoomConvo20Trevor",
-		criteria ConceptC6M2SafeRoom2 IsTrevor IsNotSaidC6M2SafeRoom2
-		Response DLC1_C6M2_SafeRoomConvo20Mechanic
-		then Producer DLC1_C6M2_SafeRoomConvo21a foo:0 -12.293
-		ApplyContext "SaidC6M2SafeRoom2:1:0"
-		applycontexttoworld
-	},
-
-	{
-		name = "DLC1_C6M2_SafeRoomConvo21bTrevor",
-		criteria ConceptDLC1_C6M2_SafeRoomConvo21b IsTrevor
-		Response DLC1_C6M2_SafeRoomConvo21bMechanic
-	},
-
-	{
-		name = "WorldC6M2_FinalWater01bTrevor",
-		criteria ConceptWorldC6M2_FinalWater01b IsTrevor
-		Response WorldC6M2_FinalWater01bMechanic
-	},
-
-	{
-		name = "WorldC6M2_InSewer101aTrevor",
-		criteria ConceptWorldC6M2_InSewer101a IsTrevor
-		Response WorldC6M2_InSewer101aMechanic
-		then Gambler WorldC6M2_InSewer101c foo:0 -0.999
-	},
-
-	{
-		name = "WorldC6M2_OnTourWalk102bTrevor",
-		criteria ConceptWorldC6M2_OnTourWalk102b IsTrevor
-		Response WorldC6M2_OnTourWalk102bMechanic
-	},
-
-	{
-		name = "WorldC6M2_Tattoo03b_Trevor",
-		criteria ConceptWorldC6M2_Tattoo03b_ IsTrevor
-		Response WorldC6M2_Tattoo03b_Mechanic
-	},
-
-	{
-		name = "C6M3_BridgeDownTrevor",
-		criteria ConceptC6M3_BridgeDown IsTrevor
-		Response C6M3_BridgeDownMechanic
-		ApplyContext "SaidGetToCar:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "C6M3_BridgeGettoCarTrevor",
-		criteria ConceptGetToVehicle IsTrevor IsNotSaidGetToCar Isc6m3_port
-		Response C6M3_BridgeGettoCarMechanic
-		ApplyContext "SaidGetToCar:1:20"
-		applycontexttoworld
-	},
-
-	{
-		name = "C6M3_elevatorTrevor",
-		criteria Conceptc6m3_elevatorCancel IsTrevor IsNotSaidC6M3Elevator IsC6M3_port
+		name = "c6m3_outroL4D1BetaZoeyRVC",
+		criteria Conceptc6m3_outro3 IsBetazoeyrvc isC6m3_port IsNotVersus IsNotSaidc6m3_outro3
 		// 	forceweight 1
-		Response C6M3_elevatorMechanic
-		ApplyContext "SaidC6M3Elevator:1:0,Talk:0:0"
+		Response c6m3_outroL4D1TeenGirl
+		ApplyContext "Saidc6m3_outro3:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "C6M3_elevatorZoeyTrevor",
-		criteria Conceptc6m3_elevatorCancel IsTrevor IsNotSaidC6M3Elevator IsC6M3_port IsZoeyIntroActor IsNotVersus ZoeyGroup1
+		name = "c6m3_outroL4D101aBetaZoeyRVC",
+		criteria Conceptc6m3_outroL4D101a IsBetazoeyrvc
+		Response c6m3_outroL4D101aTeenGirl
+	},
+
+	{
+		name = "c6m3_outroL4D102bBetaZoeyRVC",
+		criteria Conceptc6m3_outroL4D102b IsBetazoeyrvc
+		Response c6m3_outroL4D102bTeenGirl
+	},
+
+	{
+		name = "c6m3_outroL4D103aBetaZoeyRVC",
+		criteria Conceptc6m3_outroL4D103a IsBetazoeyrvc
+		Response c6m3_outroL4D103aTeenGirl
+	},
+
+	{
+		name = "c6m3_outroL4D104aBetaZoeyRVC",
+		criteria Conceptc6m3_outroL4D104a IsBetazoeyrvc
+		Response c6m3_outroL4D104aTeenGirl
+		then Biker c6m3_outroL4D104b foo:0 -4.872
+	},
+
+	{
+		name = "c6m3_outroL4D105aBetaZoeyRVC",
+		criteria Conceptc6m3_outroL4D105a IsBetazoeyrvc
+		Response c6m3_outroL4D105aTeenGirl
+	},
+
+	{
+		name = "c6m3_outroL4D107aBetaZoeyRVC",
+		criteria Conceptc6m3_outroL4D107a IsBetazoeyrvc
+		Response c6m3_outroL4D107aTeenGirl
+	},
+
+	{
+		name = "c6m3_outroL4D109aBetaZoeyRVC",
+		criteria Conceptc6m3_outroL4D109a IsBetazoeyrvc
+		Response c6m3_outroL4D109aTeenGirl
+	},
+
+	{
+		name = "c6m3_outroL4D1AllBetaZoeyRVC",
+		criteria Conceptc6m3_outro3 IsBetazoeyrvc isC6m3_port IsEveryoneAliveWeight0 IsNotVersus IsNotSaidc6m3_outro3
 		// 	forceweight 1
-		Response C6M3_elevatorZoeyMechanic
-		ApplyContext "SaidC6M3Elevator:1:0,Talk:0:0"
+		Response c6m3_outroL4D1AllTeenGirl
+		ApplyContext "Saidc6m3_outro3:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "C6M3_GivenItemBikerTrevor",
-		criteria ConceptPlayerPickup IsTrevor IsDonorBiker Isc6m3_portHeavy
-		Response C6M3_GivenItemBikerMechanic
-	},
-
-	{
-		name = "C6M3_GivenItemTeenGirlTrevor",
-		criteria ConceptPlayerPickup IsTrevor IsDonorTeenGirl Isc6m3_portHeavy
-		Response C6M3_GivenItemTeenGirlMechanic
-	},
-
-	{
-		name = "C6M3SafeRoomTrevor",
-		criteria ConceptTalkIdle Joined3 IsTrevor isC6m3_port IsInStartArea AutoIsNotScavenge AutoIsNotSurvival IsNotSaidC6M3SafeRoom IsNotSpeakingWeight0
-		Response C6M3SafeRoomMechanic
-		then any C6M3SafeRoom2 foo:0 3
-		ApplyContext "SaidC6M3SafeRoom:1:0"
+		name = "c6m3_outroL4D1MechanicBetaZoeyRVC",
+		criteria Conceptc6m3_outro3 IsBetazoeyrvc isC6m3_port IsMechanicAlive IsNotVersus IsNotSaidc6m3_outro3
+		// 	forceweight 1
+		Response c6m3_outroL4D1MechanicTeenGirl
+		then Biker c6m3_outroL4D108a foo:0 -5.788
+		ApplyContext "Saidc6m3_outro3:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "DLC1_C6M3_SafeRoomConvo01aTrevor",
-		criteria ConceptDLC1_C6M3_SafeRoomConvo01a IsTrevor IsInStartArea
-		Response DLC1_C6M3_SafeRoomConvo01aMechanic
-		then Producer DLC1_C6M3_SafeRoomConvo01b foo:0 -7.373
-	},
-
-	{
-		name = "DLC1_C6M3_SafeRoomConvo01cTrevor",
-		criteria ConceptDLC1_C6M3_SafeRoomConvo01c IsTrevor
-		Response DLC1_C6M3_SafeRoomConvo01cMechanic
-	},
-
-	{
-		name = "DLC1_C6M3_SafeRoomConvo02eTrevor",
-		criteria ConceptDLC1_C6M3_SafeRoomConvo02e IsTrevor IsInStartArea
-		Response DLC1_C6M3_SafeRoomConvo02eMechanic
-	},
-
-	{
-		name = "DLC1_C6M3_SafeRoomConvo03aTrevor",
-		criteria ConceptDLC1_C6M3_SafeRoomConvo03a IsTrevor IsInStartArea
-		Response DLC1_C6M3_SafeRoomConvo03aMechanic
-		then Gambler DLC1_C6M3_SafeRoomConvo03b foo:0 -1.144
-	},
-
-	{
-		name = "DLC1_C6M3_SafeRoomConvo03cTrevor",
-		criteria ConceptDLC1_C6M3_SafeRoomConvo03c IsTrevor IsInStartArea
-		Response DLC1_C6M3_SafeRoomConvo03cMechanic
-		then Gambler DLC1_C6M3_SafeRoomConvo03d foo:0 -1.799
-	},
-
-	{
-		name = "DLC1_C6M3_SafeRoomConvo04aTrevor",
-		criteria ConceptDLC1_C6M3_SafeRoomConvo04a IsTrevor IsInStartArea
-		Response DLC1_C6M3_SafeRoomConvo04aMechanic
-		then Producer DLC1_C6M3_SafeRoomConvo04b foo:0 -3.659
-	},
-
-	{
-		name = "DLC1_C6M3_SafeRoomConvo04dTrevor",
-		criteria ConceptDLC1_C6M3_SafeRoomConvo04d IsTrevor IsInStartArea
-		Response DLC1_C6M3_SafeRoomConvo04dMechanic
-	},
-
-	{
-		name = "DLC1_C6M3_SafeRoomConvo05aTrevor",
-		criteria ConceptDLC1_C6M3_SafeRoomConvo05a IsTrevor IsInStartArea
-		Response DLC1_C6M3_SafeRoomConvo05aMechanic
-		then Gambler DLC1_C6M3_SafeRoomConvo05b foo:0 -2.546
-	},
-
-	{
-		name = "DLC1_C6M3_SafeRoomConvo06Trevor",
-		criteria ConceptC6M3SafeRoom2 IsTrevor IsNotSaidC6M3SafeRoom2 IsFrancisIntroActor FrancisGroup4 IsInStartArea
-		Response DLC1_C6M3_SafeRoomConvo06Mechanic
-		then Producer DLC1_C6M3_SafeRoomConvo06a foo:0 -5.805
-		ApplyContext "SaidC6M3SafeRoom2:1:0"
+		name = "c6m3_outroL4D1MechanicZoeyBetaZoeyRVC",
+		criteria Conceptc6m3_outro3 IsBetazoeyrvc isC6m3_port IsBetazoeyrvcIntroActor BetazoeyrvcGroup1 IsMechanicAlive IsNotVersus IsNotSaidc6m3_outro3
+		// 	forceweight 1
+		Response c6m3_outroL4D1MechanicZoeyTeenGirl
+		then Biker c6m3_outroL4D1010a foo:0 -1.261
+		ApplyContext "Saidc6m3_outro3:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "DLC1_C6M3_SafeRoomConvo06bTrevor",
-		criteria ConceptDLC1_C6M3_SafeRoomConvo06b IsTrevor IsInStartArea
-		Response DLC1_C6M3_SafeRoomConvo06bMechanic
-	},
-
-	{
-		name = "DLC1_C6M3_SafeRoomConvo07aTrevor",
-		criteria ConceptDLC1_C6M3_SafeRoomConvo07a IsTrevor IsInStartArea
-		Response DLC1_C6M3_SafeRoomConvo07aMechanic
-		then Producer DLC1_C6M3_SafeRoomConvo07b foo:0 -2.804
-	},
-
-	{
-		name = "DLC1_C6M3_SafeRoomConvo07cTrevor",
-		criteria ConceptDLC1_C6M3_SafeRoomConvo07c IsTrevor IsInStartArea
-		Response DLC1_C6M3_SafeRoomConvo07cMechanic
-	},
-
-	{
-		name = "DLC1_C6M3_SafeRoomConvo08aTrevor",
-		criteria ConceptDLC1_C6M3_SafeRoomConvo08a IsTrevor IsInStartArea
-		Response DLC1_C6M3_SafeRoomConvo08aMechanic
-		then Coach DLC1_C6M3_SafeRoomConvo08b foo:0 -1.669
-	},
-
-	{
-		name = "DLC1_C6M3_SafeRoomConvo08cTrevor",
-		criteria ConceptDLC1_C6M3_SafeRoomConvo08c IsTrevor IsInStartArea
-		Response DLC1_C6M3_SafeRoomConvo08cMechanic
-		then Trevor DLC1_C6M3_SafeRoomConvo08d foo:0 -0.936
-	},
-
-	{
-		name = "DLC1_C6M3_SafeRoomConvo08dTrevor",
-		criteria ConceptDLC1_C6M3_SafeRoomConvo08d IsTrevor IsInStartArea
-		Response DLC1_C6M3_SafeRoomConvo08dMechanic
-		then Trevor DLC1_C6M3_SafeRoomConvo08f foo:0 -1.479
-	},
-
-	{
-		name = "DLC1_C6M3_SafeRoomConvo08eTrevor",
-		criteria ConceptDLC1_C6M3_SafeRoomConvo08e IsTrevor IsInStartArea
-		Response DLC1_C6M3_SafeRoomConvo08eMechanic
-		then Trevor DLC1_C6M3_SafeRoomConvo08f foo:0 -2.608
-	},
-
-	{
-		name = "DLC1_C6M3_SafeRoomConvo08fTrevor",
-		criteria ConceptDLC1_C6M3_SafeRoomConvo08f IsTrevor IsInStartArea
-		Response DLC1_C6M3_SafeRoomConvo08fMechanic
-		then Producer DLC1_C6M3_SafeRoomConvo08g foo:0 -5.514
-	},
-
-	{
-		name = "DLC1_C6M3_SafeRoomConvo09aTrevor",
-		criteria ConceptDLC1_C6M3_SafeRoomConvo09a IsTrevor IsInStartArea
-		Response DLC1_C6M3_SafeRoomConvo09aMechanic
-		then Producer DLC1_C6M3_SafeRoomConvo09b foo:0 -13.536
-	},
-
-	{
-		name = "IncapBounceTrevor",
-		criteria ConceptSurvivorIncapacitated IsTrevor IsNotSaidInCapBounce isC6m3_port
-		Response IncapBounceMechanic
-		then Biker InCapBounce2 foo:0 0
-		ApplyContext "SaidInCapBounce:1:0"
+		name = "c6m3_outroL4D1MechanicZoey2BetaZoeyRVC",
+		criteria Conceptc6m3_outro3 IsBetazoeyrvc isC6m3_port IsBetazoeyrvcIntroActor BetazoeyrvcGroup2 IsMechanicAlive IsNotVersus IsNotSaidc6m3_outro3
+		// 	forceweight 1
+		Response c6m3_outroL4D1MechanicZoey2TeenGirl
+		then Biker c6m3_outroL4D1010a foo:0 -1.261
+		ApplyContext "Saidc6m3_outro3:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "C6M3_CansDoneTrevor",
-		criteria Conceptc6m3escapeready IsTrevor IsC6M3_Port IsNotSaidc6m3escapeready
-		Response C6M3_CansDoneMechanic
-		then any EmphaticArriveRun foo:0 -1.830
-		ApplyContext "Saidc6m3escapeready:1:0,Talk:1:5"
+		name = "C6M3VocalizeLookOutBetaZoeyRVC",
+		criteria ConceptPlayerLookOut IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response C6M3VocalizeLookOutTeenGirl
+	},
+
+	{
+		name = "L4D1_AttractPlayerForThrowBetaZoeyRVC",
+		criteria ConceptL4D1_AttractPlayerForThrow IsBetazoeyrvc
+		Response L4D1_AttractPlayerForThrowTeenGirl
+	},
+
+	{
+		name = "L4D1_SurvivorBotTakeThisItemBetaZoeyRVC",
+		criteria ConceptL4D1_SurvivorBotTakeThisItem IsBetazoeyrvc
+		Response L4D1_SurvivorBotTakeThisItemTeenGirl
+	},
+
+	{
+		name = "WorldC6M3_ByBridge01BetaZoeyRVC",
+		criteria ConceptWorldC6M3_ByBridge01 IsBetazoeyrvc
+		Response WorldC6M3_ByBridge01TeenGirl
+	},
+
+	{
+		name = "WorldC6M3_ByBridge01EllisBetaZoeyRVC",
+		criteria ConceptWorldC6M3_ByBridge01Ellis IsBetazoeyrvc
+		Response WorldC6M3_ByBridge01EllisTeenGirl
+	},
+
+	{
+		name = "L4D1AlsoSpottedBoomerBetaZoeyRVC",
+		criteria ConceptPlayerAlsoWarnBoomer IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1AlsoSpottedBoomerTeenGirl
+		ApplyContext "SaidBoomerWarn:1:20,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 
 	{
-		name = "L4D1AlsoSpottedTankTrevor",
-		criteria ConceptPlayerAlsoWarnTank IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor Isc6m3_port
-		Response L4D1AlsoSpottedTankMechanic
+		name = "L4D1AlsoSpottedHunterBetaZoeyRVC",
+		criteria ConceptPlayerAlsoWarnHunter IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1AlsoSpottedHunterTeenGirl
+		ApplyContext "SaidHunterWarn:1:20,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1AlsoSpottedSmokerBetaZoeyRVC",
+		criteria ConceptPlayerAlsoWarnSmoker IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1AlsoSpottedSmokerTeenGirl
+		ApplyContext "SaidSmokerWarn:1:20,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1AlsoSpottedTankBetaZoeyRVC",
+		criteria ConceptPlayerAlsoWarnTank IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc Isc6m3_port
+		Response L4D1AlsoSpottedTankTeenGirl
 		ApplyContext "SaidTankWarn:1:20,SaidSpecialWarn:1:30,SaidTankWarn2:1:60"
 		applycontexttoworld
 	},
 
 	{
-		name = "L4D1SpottedTankTrevor",
-		criteria ConceptPlayerWarnSpecial IsSpecialTypeTank IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor Isc6m3_port IsNotSpeakingWeight0
-		Response L4D1SpottedTankMechanic
+		name = "L4D1SpottedBoomerBetaZoeyRVC",
+		criteria ConceptPlayerWarnSpecial IsSpecialTypeBoomer IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotSpeaking
+		Response L4D1SpottedBoomerTeenGirl
+		ApplyContext "SaidBoomerWarn:1:20,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SpottedChargerBetaZoeyRVC",
+		criteria ConceptPlayerWarnSpecial IsSpecialTypeCharger IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0
+		Response L4D1SpottedChargerTeenGirl
+		ApplyContext "SaidChargerWarn:1:20,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SpottedHunterBetaZoeyRVC",
+		criteria ConceptPlayerWarnSpecial IsSpecialTypeHunter IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0
+		Response L4D1SpottedHunterTeenGirl
+		ApplyContext "SaidHunterWarn:1:20,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SpottedJockeyBetaZoeyRVC",
+		criteria ConceptPlayerWarnSpecial IsSpecialTypeJockey IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0
+		Response L4D1SpottedJockeyTeenGirl
+		ApplyContext "SaidJockeyWarn:1:20,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SpottedSmokerBetaZoeyRVC",
+		criteria ConceptPlayerWarnSpecial IsSpecialTypeSmoker IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0
+		Response L4D1SpottedSmokerTeenGirl
+		ApplyContext "SaidSmokerWarn:1:20,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SpottedSpitterBetaZoeyRVC",
+		criteria ConceptPlayerWarnSpecial IsSpecialTypeSpitter IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0
+		Response L4D1SpottedSpitterTeenGirl
+		ApplyContext "SaidSpitterWarn:1:20,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "L4D1SpottedTankBetaZoeyRVC",
+		criteria ConceptPlayerWarnSpecial IsSpecialTypeTank IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc Isc6m3_port IsNotSpeakingWeight0
+		Response L4D1SpottedTankTeenGirl
 		ApplyContext "SaidTankWarn:1:20,SaidSpecialWarn:1:30,SaidTankWarn2:1:60"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedFallenTrevor",
-		criteria ConceptPlayerWarnSpecial IsSpecialTypeFallen IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor IsNotSaidFallenWarn IsNotSpeakingWeight0
-		Response SurvivorSpottedFallenMechanic
-		ApplyContext "SaidFallenWarn:1:20"
+		name = "L4D1_ReloadingBetaZoeyRVC",
+		criteria ConceptPlayerReloading IsNotSpeaking IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response L4D1_ReloadingTeenGirl
+	},
+
+	{
+		name = "L4D1PlayerKillConfirmationBetaZoeyRVC",
+		criteria ConceptKilledZombie IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSubjectFar300 ChanceToFire80Percent IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerKillConfirmationTeenGirl
+		then Any L4D1PlayerNiceShot foo:0 -0.802
+	},
+
+	{
+		name = "L4D1PlayerWarnMegaMobBetaZoeyRVC",
+		criteria ConceptPlayerWarnMegaMob IsNotCoughing IsBetazoeyrvc IsNotWarnMegaMob IsTalk IsTalkBetazoeyrvc IsNotSpeaking IsWorldTalkBetazoeyrvc
+		Response L4D1PlayerWarnMegaMobTeenGirl
+		ApplyContext "WarnMegaMob:1:300,SaidSpecialWarn:1:30"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerWitchChasingC6M1Trevor",
-		criteria ConceptPlayerExertionMinor IsTrevor IsWitchPresent SubjectIsNotWitch IsNotSaidTrevorWitchChasing IsSaidTrevorWitchAttacking isc6m1_riverbank
-		// 	forceweight 20
-		Response PlayerWitchChasingC6M1Mechanic
-		ApplyContext "SaidTrevorWitchChasing:1:15,TalkTrevor:1:2"
+		name = "PlayerNiceShotBetaZoeyRVC",
+		criteria ConceptPlayerNiceShot IsNotCoughing IsBetazoeyrvc IssuerClose IsTalk IsTalkBetazoeyrvc ChanceToFire30Percent
+		Response PlayerNiceShotTeenGirl
 	},
 
 	{
-		name = "PlayerRemarkremark_MidnightRidersBusTrevor",
-		criteria ConceptRemark IsTrevor Isremark_MidnightRidersBus IsNotSaidremark_MidnightRidersBus IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear1500 IsNotSpeakingWeight0
-		Response PlayerRemarkremark_MidnightRidersBusMechanic
-		ApplyContext "Saidremark_MidnightRidersBus:1:0"
+		name = "ReviveMeINterruptedBetaZoeyRVC",
+		criteria ConceptReviveMeInterrupted IsBetazoeyrvc
+		Response ReviveMeINterruptedTeenGirl
+		ApplyContext "ReviveInterrupt:1:2"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M1_AcrossHereTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M1_AcrossHere IsNotSaidWorldC6M1_AcrossHere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M1_AcrossHereMechanic
-		ApplyContext "SaidWorldC6M1_AcrossHere:1:0"
+		name = "SurvivorMournBillBetaZoeyRVC",
+		criteria ConceptPlayerSeeDeadPlayer IsNotCoughing IsBetazoeyrvc IsDeadNamVet IsNotSaidSomeoneDied IsTalk IsTalkBetazoeyrvc IsNotIncapacitated
+		Response SurvivorMournBillTeenGirl
+	},
+
+	{
+		name = "SurvivorMournFrancisBetaZoeyRVC",
+		criteria ConceptPlayerSeeDeadPlayer IsNotCoughing IsBetazoeyrvc IsDeadBiker IsNotSaidSomeoneDied IsTalk IsTalkBetazoeyrvc IsNotIncapacitated
+		Response SurvivorMournFrancisTeenGirl
+	},
+
+	{
+		name = "SurvivorMournLouisBetaZoeyRVC",
+		criteria ConceptPlayerSeeDeadPlayer IsNotCoughing IsBetazoeyrvc IsDeadManager IsNotSaidSomeoneDied IsTalk IsTalkBetazoeyrvc IsNotIncapacitated
+		Response SurvivorMournLouisTeenGirl
+	},
+
+	{
+		name = "PlayerRemarkFarm01_path09BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm01_path09 IsNotSaidFarm01_path09 IsNotCoughing IsTalk IsTalkBetazoeyrvc IsSubjectNear1500
+		Response PlayerRemarkFarm01_path09TeenGirl
+		then any SafeSpotAheadResponse foo:0 0
+		ApplyContext "SaidFarm01_path09:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M1_AlleyBelowTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M1_AlleyBelow IsNotSaidWorldC6M1_AlleyBelow IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M1_AlleyBelowMechanic
-		ApplyContext "SaidWorldC6M1_AlleyBelow:1:0"
+		name = "PlayerRemarkSmalltown03_path14BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown03_path14 IsNotSaidSmalltown03_path14 IsNotCoughing IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarkSmalltown03_path14TeenGirl
+		then any SafeSpotAheadResponse foo:0 0
+		ApplyContext "SaidSmalltown03_path14:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M1_AlleyIntoBuildingTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M1_AlleyIntoBuilding IsNotSaidWorldC6M1_AlleyIntoBuilding IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M1_AlleyIntoBuildingMechanic
-		ApplyContext "SaidWorldC6M1_AlleyIntoBuilding:1:0"
+		name = "ThanksGotItemBetaZoeyRVC",
+		criteria IsAwardConcept IsSharingSubject IsNotCoughing SubjectIsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response ThanksGotItemTeenGirl
+	},
+
+	{
+		name = "HealThanksBetaZoeyRVC",
+		criteria ConceptHealedByFriend IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc SubjectIsNotBetazoeyrvc
+		Response HealThanksTeenGirl
+		then Subject YouWelcome foo:0 0
+		ApplyContext "TalkBetazoeyrvc:1:2"
+	},
+
+	{
+		name = "ReviveThanksBetaZoeyRVC",
+		criteria ConceptRevivedByFriend IsNotCoughing IsBetazoeyrvc
+		Response ReviveThanksTeenGirl
+		then Subject YouWelcome foo:0 0
+		ApplyContext "TalkBetazoeyrvc:1:2"
+	},
+
+	{
+		name = "ReviveThanksBillBetaZoeyRVC",
+		criteria ConceptRevivedByFriend IsNotCoughing IsBetazoeyrvc SubjectIsNamVet ChanceToFire30Percent
+		Response ReviveThanksBillTeenGirl
+		ApplyContext "TalkBetazoeyrvc:1:2"
+	},
+
+	{
+		name = "ReviveThanksFrancisBetaZoeyRVC",
+		criteria ConceptRevivedByFriend IsNotCoughing IsBetazoeyrvc SubjectIsBiker ChanceToFire30Percent
+		Response ReviveThanksFrancisTeenGirl
+		ApplyContext "TalkBetazoeyrvc:1:2"
+	},
+
+	{
+		name = "ReviveThanksLouisBetaZoeyRVC",
+		criteria ConceptRevivedByFriend IsNotCoughing IsBetazoeyrvc SubjectIsManager ChanceToFire30Percent
+		Response ReviveThanksLouisTeenGirl
+		ApplyContext "TalkBetazoeyrvc:1:2"
+	},
+
+	{
+		name = "AutoYouAreWelcomeBetaZoeyRVC",
+		criteria ConceptYouWelcome IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc TimeSinceGroupInCombat05 IsNotSpeaking
+		Response AutoYouAreWelcomeTeenGirl
+	},
+
+	{
+		name = "BotAttentionBattleBetaZoeyRVC",
+		criteria ConceptSurvivorBotNoteHumanAttention IsNotCoughing IsBetazoeyrvc IsNotBotAttention IsTalk IsTalkBetazoeyrvc IsNotIncapacitated IsInBattlefield TimeSinceGroupInCombat20
+		Response BotAttentionBattleTeenGirl
+		ApplyContext "SaidBotAttention:1:30"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M1_InAptsTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M1_InApts IsNotSaidWorldC6M1_InApts IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M1_InAptsMechanic
-		ApplyContext "SaidWorldC6M1_InApts:1:0"
+		name = "BotHurrahAlsoBetaZoeyRVC",
+		criteria ConceptHurrahAlso IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidHurrahAlso IsBotIsAvailable
+		Response BotHurrahAlsoTeenGirl
+		ApplyContext "SaidHurrahAlso:1:5"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M1_IntotheparkTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M1_Intothepark IsNotSaidWorldC6M1_Intothepark IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M1_IntotheparkMechanic
-		ApplyContext "SaidWorldC6M1_Intothepark:1:0"
+		name = "BotPlayer_YourWelcomeBetaZoeyRVC",
+		criteria ConceptSurvivorBotYouAreWelcome IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response BotPlayer_YourWelcomeTeenGirl
+	},
+
+	{
+		name = "BotReassureComingBetaZoeyRVC",
+		criteria ConceptSurvivorBotReassureComing IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response BotReassureComingTeenGirl
+	},
+
+	{
+		name = "BotReassureNearbyBetaZoeyRVC",
+		criteria ConceptSurvivorBotReassureNearby IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response BotReassureNearbyTeenGirl
+	},
+
+	{
+		name = "BotYesReadyBetaZoeyRVC",
+		criteria ConceptSurvivorBotYesReady IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response BotYesReadyTeenGirl
+	},
+
+	{
+		name = "PlayerCallForRescueBetaZoeyRVC",
+		criteria ConceptCallForRescue IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerCallForRescueTeenGirl
+	},
+
+	{
+		name = "CrashCourseR14BetaZoeyRVC",
+		criteria ConceptCrashCourseR14 IsBetazoeyrvc
+		Response CrashCourseR14TeenGirl
+	},
+
+	{
+		name = "crashHowitzerNagBetaZoeyRVC",
+		criteria ConceptTalkIdle IsBetazoeyrvc IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc NotHowitzerFired IsHowitzerNag IsHowitzerSeen NotNagCrashBetazoeyrvc ChanceToFire80Percent NotSurvivalMode
+		Response crashHowitzerNagTeenGirl
+		ApplyContext "NagHowitzer:1:30,NagCrashBetazoeyrvc:1:32"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M1_IntoThePark2Trevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M1_IntoThePark2 IsNotSaidWorldC6M1_IntoThePark2 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M1_IntoThePark2Mechanic
-		ApplyContext "SaidWorldC6M1_IntoThePark2:1:0"
+		name = "HowitzerBurnEnd00BetaZoeyRVC",
+		criteria ConceptHowitzerBurnEnd00 IsBetazoeyrvc NotCrash01ThroughBridge NotSurvivalMode
+		Response HowitzerBurnEnd00TeenGirl
+		then self HowitzerBurnEnd02 foo:0 0.1
+	},
+
+	{
+		name = "HowitzerBurnEnd02BetaZoeyRVC",
+		criteria ConceptHowitzerBurnEnd02 IsBetazoeyrvc NotSurvivalMode
+		Response HowitzerBurnEnd02TeenGirl
+	},
+
+	{
+		name = "CrashFinaleGenerator2OnSpkBetaZoeyRVC",
+		criteria ConceptCrashFinaleGenerator2OnSpk IsBetazoeyrvc
+		Response CrashFinaleGenerator2OnSpkTeenGirl
+	},
+
+	{
+		name = "CrashFinaleGenerator2SpeakBetaZoeyRVC",
+		criteria ConceptCrashFinaleGenerator2Speak IsBetazoeyrvc
+		Response CrashFinaleGenerator2SpeakTeenGirl
+	},
+
+	{
+		name = "CrashFinaleGeneratorBreakSpkBetaZoeyRVC",
+		criteria ConceptCrashFinaleGeneratorBreakSpk IsBetazoeyrvc NotSurvivalMode
+		Response CrashFinaleGeneratorBreakSpkTeenGirl
+	},
+
+	{
+		name = "CrashFinaleGeneratorNagBetaZoeyRVC",
+		criteria ConceptTalkIdle IsBetazoeyrvc IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc ChanceToFire60Percent IsCrashFinaleGeneratorBroken NotCrashFinaleSaidGeneratorBroken NotNagCrashBetazoeyrvc NotSurvivalMode
+		Response CrashFinaleGeneratorNagTeenGirl
+		ApplyContext "CrashFinaleSaidGeneratorBroken:1:15,NagCrashBetazoeyrvc:1:25"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M1_IntoTheStoreTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M1_IntoTheStore IsNotSaidWorldC6M1_IntoTheStore IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M1_IntoTheStoreMechanic
-		ApplyContext "SaidWorldC6M1_IntoTheStore:1:0,JustSaidWorldC6M1_IntoTheStore:1:30"
+		name = "CrashFinaleGeneratorSpeakBetaZoeyRVC",
+		criteria ConceptCrashFinaleGeneratorSpeak IsBetazoeyrvc
+		Response CrashFinaleGeneratorSpeakTeenGirl
+	},
+
+	{
+		name = "CrashFinaleGenUnPressSpeakBetaZoeyRVC",
+		criteria ConceptCrashFinaleGeneratorUnPressSpeak IsBetazoeyrvc
+		Response CrashFinaleGenUnPressSpeakTeenGirl
+	},
+
+	{
+		name = "CrashFinaleTruckNagBetaZoeyRVC",
+		criteria ConceptTalkIdle IsBetazoeyrvc IsNotCoughing IsCrashFinaleTruckReady NotCrashFinaleTruckNagPaused ChanceToFire60Percent NotNagCrashBetazoeyrvc NotSurvivalMode
+		Response CrashFinaleTruckNagTeenGirl
+		ApplyContext "CrashFinaleTruckNagPaused:1:6,NagCrashBetazoeyrvc:1:11"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M1_PostWeddingTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M1_PostWedding IsNotSaidWorldC6M1_PostWedding IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear600 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M1_PostWeddingMechanic
-		ApplyContext "SaidWorldC6M1_PostWedding:1:0"
+		name = "CrashFinaleTruckReadySpkBetaZoeyRVC",
+		criteria ConceptCrashFinaleTruckReadySpk IsBetazoeyrvc IsNotCoughing NotSurvivalMode
+		Response CrashFinaleTruckReadySpkTeenGirl
+	},
+
+	{
+		name = "CrashFinaleTruckResp01BetaZoeyRVC",
+		criteria ConceptCrashFinaleTruckResp01 IsBetazoeyrvc
+		Response CrashFinaleTruckResp01TeenGirl
+	},
+
+	{
+		name = "CrashFinaleTruckResp02BetaZoeyRVC",
+		criteria ConceptCrashFinaleTruckResp02 IsBetazoeyrvc
+		Response CrashFinaleTruckResp02TeenGirl
+		then any CrashFinaleTruckResp01 foo:0 0.05
+	},
+
+	{
+		name = "IntroCrashWalkingBetaZoeyRVC",
+		criteria ConceptIntroCrashWalking IsBetazoeyrvc
+		Response IntroCrashWalkingTeenGirl
+		then Manager IntroCrashWalkingB foo:0 0.05
+	},
+
+	{
+		name = "PlayerRemarkcrashcourse02_path14BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse02_path14 IsNotSaidcrashcourse02_path14 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300 NotCrash02FinaleStarted NotSurvivalMode
+		Response PlayerRemarkcrashcourse02_path14TeenGirl
+		then any CrashFinaleTruckResp01 foo:0 0.05
+		ApplyContext "Saidcrashcourse02_path14:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M1_PostWeddingZTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M1_PostWedding IsNotSaidWorldC6M1_PostWedding IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear600 IsZoeyIntroActor ZoeyGroup1 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M1_PostWeddingZMechanic
-		then Any WorldC6M1_PostWedding02a foo:0 -3.481
-		ApplyContext "SaidWorldC6M1_PostWedding:1:0"
+		name = "CrashCourseR01BetaZoeyRVC",
+		criteria ConceptCrashCourseR01 IsBetazoeyrvc IsBikerNear800
+		Response CrashCourseR01TeenGirl
+	},
+
+	{
+		name = "CrashCourseR03BetaZoeyRVC",
+		criteria ConceptCrashCourseR03 IsBetazoeyrvc IsBikerNear500
+		Response CrashCourseR03TeenGirl
+	},
+
+	{
+		name = "CrashCourseR06BetaZoeyRVC",
+		criteria ConceptCrashCourseR06 IsBetazoeyrvc
+		Response CrashCourseR06TeenGirl
+		then biker CrashCourseR07 foo:0 0.05
+	},
+
+	{
+		name = "CrashCourseR10BetaZoeyRVC",
+		criteria ConceptCrashCourseR10 IsBetazoeyrvc
+		Response CrashCourseR10TeenGirl
+	},
+
+	{
+		name = "CrashCourseR11BetaZoeyRVC",
+		criteria ConceptCrashCourseR11 IsBetazoeyrvc IsBikerNear200
+		Response CrashCourseR11TeenGirl
+	},
+
+	{
+		name = "CrashCourseR12BetaZoeyRVC",
+		criteria ConceptCrashCourseR12 IsBetazoeyrvc
+		Response CrashCourseR12TeenGirl
+		then biker CrashCourseR13 foo:0 0
+	},
+
+	{
+		name = "PlayerRemarkcrashcourse01_path05BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse01_path05 IsNotSaidcrashcourse01_path05 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarkcrashcourse01_path05TeenGirl
+		ApplyContext "Saidcrashcourse01_path05:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M1_PostWeddingZCTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M1_PostWedding IsNotSaidWorldC6M1_PostWedding IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear600 IsZoeyIntroActor ZoeyGroup2 IsCoachNear800Weight0 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M1_PostWeddingZCMechanic
-		then Coach WorldC6M1_PostWedding01a foo:0 -2.761
-		ApplyContext "SaidWorldC6M1_PostWedding:1:0"
+		name = "PlayerRemarkcrashcourse01_path06BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse01_path06 IsNotSaidcrashcourse01_path06 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarkcrashcourse01_path06TeenGirl
+		ApplyContext "Saidcrashcourse01_path06:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M1_SafeRoomAlleyTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M1_SafeRoomAlley IsNotSaidWorldC6M1_SafeRoomAlley IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear600 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M1_SafeRoomAlleyMechanic
-		ApplyContext "SaidWorldC6M1_SafeRoomAlley:1:0"
+		name = "PlayerRemarkcrashcourse01_path10BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse01_path10 IsNotSaidcrashcourse01_path10 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear100 IsBikerAlive IsBikerNear400
+		Response PlayerRemarkcrashcourse01_path10TeenGirl
+		then Biker CrashCourseR02 foo:0 0.05
+		ApplyContext "Saidcrashcourse01_path10:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M1_ThroughBarTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M1_ThroughBar IsNotSaidWorldC6M1_ThroughBar IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M1_ThroughBarMechanic
-		ApplyContext "SaidWorldC6M1_ThroughBar:1:0"
+		name = "PlayerRemarkcrashcourse01_path13BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse01_path13 IsNotSaidcrashcourse01_path13 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear400 NotSurvivalMode
+		Response PlayerRemarkcrashcourse01_path13TeenGirl
+		ApplyContext "Saidcrashcourse01_path13:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M1_UpHereTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M1_UpHere IsNotSaidWorldC6M1_UpHere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M1_UpHereMechanic
-		ApplyContext "SaidWorldC6M1_UpHere:1:0"
+		name = "PlayerRemarkcrashcourse01_path14BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse01_path14 IsNotSaidcrashcourse01_path14 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear400 NotSurvivalMode
+		Response PlayerRemarkcrashcourse01_path14TeenGirl
+		ApplyContext "Saidcrashcourse01_path14:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M1_UpTheStairsTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M1_UpTheStairs IsNotSaidWorldC6M1_UpTheStairs IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M1_UpTheStairsMechanic
-		ApplyContext "SaidWorldC6M1_UpTheStairs:1:0"
+		name = "PlayerRemarkcrashcourse01_path17BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse01_path17 IsNotSaidcrashcourse01_path17 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300 NotHowitzerFired NotSurvivalMode
+		Response PlayerRemarkcrashcourse01_path17TeenGirl
+		ApplyContext "Saidcrashcourse01_path17:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M1_UpTheStairs2Trevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M1_UpTheStairs2 IsNotSaidWorldC6M1_UpTheStairs2 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M1_UpTheStairs2Mechanic
-		ApplyContext "SaidWorldC6M1_UpTheStairs2:1:0"
+		name = "PlayerRemarkcrashcourse01_path18BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse01_path18 IsNotSaidcrashcourse01_path18 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300 NotHowitzerFired NotSurvivalMode
+		Response PlayerRemarkcrashcourse01_path18TeenGirl
+		ApplyContext "Saidcrashcourse01_path18:1:0,HowitzerSeen:1:0,NagHowitzer:1:30"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M1_WeddingWarnTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M1_WeddingWarn IsNotSaidWorldC6M1_WeddingWarn IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M1_WeddingWarnMechanic
-		ApplyContext "SaidWorldC6M1_WeddingWarn:1:0"
+		name = "PlayerRemarkcrashcourse01_path20BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse01_path20 IsNotSaidcrashcourse01_path20 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300
+		Response PlayerRemarkcrashcourse01_path20TeenGirl
+		ApplyContext "Saidcrashcourse01_path20:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M1_WeddingWarn1Trevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M1_WeddingWarn1 IsNotSaidWorldC6M1_WeddingWarn IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M1_WeddingWarn1Mechanic
-		ApplyContext "SaidWorldC6M1_WeddingWarn:1:0,AtWedding:1:60"
+		name = "PlayerRemarkcrashcourse01_path24BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse01_path24 IsNotSaidcrashcourse01_path24 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 NotSaidCrash01SafeHouse
+		Response PlayerRemarkcrashcourse01_path24TeenGirl
+		ApplyContext "Saidcrashcourse01_path24:1:0,SaidCrash01Safehouse:1:250"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M1_WeddingWarn2Trevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M1_WeddingWarn2 IsNotSaidWorldC6M1_WeddingWarn IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M1_WeddingWarn2Mechanic
-		ApplyContext "SaidWorldC6M1_WeddingWarn:1:0,AtWedding:1:60"
+		name = "PlayerRemarkcrashcourse01_path25BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse01_path25 IsNotSaidcrashcourse01_path25 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300 NotSaidCrash01SafeHouse
+		Response PlayerRemarkcrashcourse01_path25TeenGirl
+		ApplyContext "Saidcrashcourse01_path25:1:0,SaidCrash01SafeHouse:1:250"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M1_WeddingWarn3Trevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M1_WeddingWarn3 IsNotSaidWorldC6M1_WeddingWarn IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M1_WeddingWarn3Mechanic
-		ApplyContext "SaidWorldC6M1_WeddingWarn:1:0,AtWedding:1:60"
+		name = "PlayerRemarkcrashcourse02_path02BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse02_path02 IsNotSaidcrashcourse02_path02 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear1000 ChanceToFire20Percent
+		Response PlayerRemarkcrashcourse02_path02TeenGirl
+		ApplyContext "Saidcrashcourse02_path02:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_AcrossPlankTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_AcrossPlank IsNotSaidWorldC6M2_AcrossPlank IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear250 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_AcrossPlankMechanic
-		ApplyContext "SaidWorldC6M2_AcrossPlank:1:0"
+		name = "AUTOBLANK_PlayerRemarkcrashcourse02_path02BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse02_path02 IsNotSaidcrashcourse02_path02 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear1000
+		Response _PlayerInfoRemarkableBlankTeenGirl
+		ApplyContext "Saidcrashcourse02_path02:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_AfterGate1Trevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_AfterGate1 IsNotSaidWorldC6M2_AfterGate1 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_AfterGate1Mechanic
-		ApplyContext "SaidWorldC6M2_AfterGate1:1:0"
+		name = "PlayerRemarkcrashcourse02_path05BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse02_path05 IsNotSaidcrashcourse02_path05 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300
+		Response PlayerRemarkcrashcourse02_path05TeenGirl
+		ApplyContext "Saidcrashcourse02_path05:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_AfterGate2Trevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_AfterGate2 IsNotSaidWorldC6M2_AfterGate2 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_AfterGate2Mechanic
-		then Gambler WorldC6M2_AfterGate201a foo:0 -1.968
-		ApplyContext "SaidWorldC6M2_AfterGate2:1:0"
+		name = "PlayerRemarkcrashcourse02_path06BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse02_path06 IsNotSaidcrashcourse02_path06 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300
+		Response PlayerRemarkcrashcourse02_path06TeenGirl
+		then Biker CrashCourseR10 foo:0 0.05
+		ApplyContext "Saidcrashcourse02_path06:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_DownHereTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_DownHere IsNotSaidWorldC6M2_DownHere IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_DownHereMechanic
-		ApplyContext "SaidWorldC6M2_DownHere:1:0"
+		name = "PlayerRemarkcrashcourse02_path07BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse02_path07 IsNotSaidcrashcourse02_path07 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear100
+		Response PlayerRemarkcrashcourse02_path07TeenGirl
+		ApplyContext "Saidcrashcourse02_path07:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_DownIntoBuildingTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_DownIntoBuilding IsNotSaidWorldC6M2_DownIntoBuilding IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear400 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_DownIntoBuildingMechanic
-		ApplyContext "SaidWorldC6M2_DownIntoBuilding:1:0"
+		name = "PlayerRemarkcrashcourse02_path09BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse02_path09 IsNotSaidcrashcourse02_path09 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear100
+		Response PlayerRemarkcrashcourse02_path09TeenGirl
+		ApplyContext "Saidcrashcourse02_path09:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_FinalLadderTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_FinalLadder IsNotSaidWorldC6M2_FinalLadder IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_FinalLadderMechanic
-		ApplyContext "SaidWorldC6M2_FinalLadder:1:0"
+		name = "PlayerRemarkcrashcourse02_path10BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse02_path10 IsNotSaidcrashcourse02_path10 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear500
+		Response PlayerRemarkcrashcourse02_path10TeenGirl
+		ApplyContext "Saidcrashcourse02_path10:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_FinalWaterTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_FinalWater IsNotSaidWorldC6M2_FinalWater IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_FinalWaterMechanic
-		then Gambler WorldC6M2_FinalWater01a foo:0 -1.706
-		ApplyContext "SaidWorldC6M2_FinalWater:1:0"
+		name = "PlayerRemarkcrashcourse02_path12BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse02_path12 IsNotSaidcrashcourse02_path12 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarkcrashcourse02_path12TeenGirl
+		ApplyContext "Saidcrashcourse02_path12:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_FinalWaterGoGoTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_FinalWaterGoGo IsNotSaidWorldC6M2_FinalWaterGoGo IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_FinalWaterGoGoMechanic
-		ApplyContext "SaidWorldC6M2_FinalWaterGoGo:1:0"
+		name = "IntroCrashR01BetaZoeyRVC",
+		criteria ConceptIntroCrashR01 IsBetazoeyrvc
+		Response IntroCrashR01TeenGirl
+		then Biker IntroCrashR02 foo:0 0.05
+	},
+
+	{
+		name = "IntroCrashR07BetaZoeyRVC",
+		criteria ConceptIntroCrashR07 IsBetazoeyrvc
+		Response IntroCrashR07TeenGirl
+		then Biker IntroCrashR08 foo:0 0.05
+	},
+
+	{
+		name = "IntroCrashR09BetaZoeyRVC",
+		criteria ConceptIntroCrashR09 IsBetazoeyrvc
+		Response IntroCrashR09TeenGirl
+		then any IntroCrashR10 foo:0 0.05
+	},
+
+	{
+		name = "IntroCrashR10BetaZoeyRVC",
+		criteria ConceptIntroCrashR10 IsBetazoeyrvc
+		Response IntroCrashR10TeenGirl
+	},
+
+	{
+		name = "IntroCrashR11BetaZoeyRVC",
+		criteria ConceptIntroCrashR11 IsBetazoeyrvc
+		Response IntroCrashR11TeenGirl
+		then Biker IntroCrashR12 foo:0 -1.1
+	},
+
+	{
+		name = "IntroCrashR19BetaZoeyRVC",
+		criteria ConceptIntroCrashR19 IsBetazoeyrvc
+		Response IntroCrashR19TeenGirl
+		then Biker IntroCrashR20 foo:0 0.05
+	},
+
+	{
+		name = "IntroCrashR28BetaZoeyRVC",
+		criteria ConceptIntroCrashR28 IsBetazoeyrvc
+		Response IntroCrashR28TeenGirl
+	},
+
+	{
+		name = "IntroCrashR33BetaZoeyRVC",
+		criteria ConceptIntroCrashR33 IsBetazoeyrvc
+		Response IntroCrashR33TeenGirl
+		then Biker IntroCrashR27 foo:0 0.05
+	},
+
+	{
+		name = "IntroCrashR34BetaZoeyRVC",
+		criteria ConceptIntroCrashR34 IsBetazoeyrvc
+		Response IntroCrashR34TeenGirl
+		then Biker IntroCrashR29 foo:0 0.05
+	},
+
+	{
+		name = "IntroCrashR35BetaZoeyRVC",
+		criteria ConceptIntroCrashR35 IsBetazoeyrvc
+		Response IntroCrashR35TeenGirl
+		then any IntroCrashR31 foo:0 0.05
+	},
+
+	{
+		name = "IntroCrashR39BetaZoeyRVC",
+		criteria ConceptIntroCrashR39 IsBetazoeyrvc
+		Response IntroCrashR39TeenGirl
+	},
+
+	{
+		name = "CrashCourseI01BetaZoeyRVC",
+		criteria ConceptCrashCourseI01 IsBetazoeyrvc
+		Response CrashCourseI01TeenGirl
+	},
+
+	{
+		name = "PlayerRemarkcrashcourse02_introBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse02_intro IsNotSaidcrashcourse02_intro IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear400 IsCrash02IntroReady NotCrash02IntroPaused
+		Response PlayerRemarkcrashcourse02_introTeenGirl
+		then any CrashCourseI01 foo:0 0.05
+		ApplyContext "Saidcrashcourse02_intro:1:0,SaidCreshendoStartNear:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_InJazzClubTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_InJazzClub IsNotSaidWorldC6M2_InJazzClub IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear1000 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_InJazzClubMechanic
-		ApplyContext "SaidWorldC6M2_InJazzClub:1:0"
+		name = "PlayerRemarkcrashcourse02_startaBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse02_starta NotCrash02IntroReady IsSubjectNear400
+		Response PlayerRemarkcrashcourse02_startaTeenGirl
+		ApplyContext "Crash02IntroReady:1:0,Crash02IntroPaused:1:7,SaidFinaleAhead:1:0,SaidCreshendoStartNear:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_InSewer2Trevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_InSewer2 IsNotSaidWorldC6M2_InSewer2 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsSaidWorldC6M2_InSewer1 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_InSewer2Mechanic
-		then Producer WorldC6M2_InSewer202a foo:0 -4.622
-		ApplyContext "SaidWorldC6M2_InSewer2:1:0"
+		name = "PlayerRemarkcrashcourse02_startbBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse02_startb NotCrash02IntroReady IsSubjectNear400
+		Response PlayerRemarkcrashcourse02_startaTeenGirl
+		ApplyContext "Crash02IntroReady:1:0,Crash02IntroPaused:1:7,SaidFinaleAhead:1:0,SaidCreshendoStartNear:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_InSewerLadder1Trevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_InSewerLadder1 IsNotSaidWorldC6M2_InSewerLadder1 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_InSewerLadder1Mechanic
-		then Any WorldC6M2_InSewerLadder101a foo:0 -2.795
-		ApplyContext "SaidWorldC6M2_InSewerLadder1:1:0"
+		name = "PlayerRemarkcrashcourse02_startcBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse02_startc NotCrash02IntroReady IsSubjectNear400
+		Response PlayerRemarkcrashcourse02_startaTeenGirl
+		ApplyContext "Crash02IntroReady:1:0,Crash02IntroPaused:1:7,SaidFinaleAhead:1:0,SaidCreshendoStartNear:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_IntoConstructionTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_IntoConstruction IsNotSaidWorldC6M2_IntoConstruction IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear150 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_IntoConstructionMechanic
-		ApplyContext "SaidWorldC6M2_IntoConstruction:1:0"
+		name = "PlayerRemarkcrashcourse02_startdBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse02_startd NotCrash02IntroReady IsSubjectNear400
+		Response PlayerRemarkcrashcourse02_startaTeenGirl
+		ApplyContext "Crash02IntroReady:1:0,Crash02IntroPaused:1:7,SaidFinaleAhead:1:0,SaidCreshendoStartNear:1:0"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_IntoPoolHallTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_IntoPoolHall IsNotSaidWorldC6M2_IntoPoolHall IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_IntoPoolHallMechanic
-		ApplyContext "SaidWorldC6M2_IntoPoolHall:1:0"
+		name = "IntroFarm4BetaZoeyRVC",
+		criteria ConceptIntroFarm4 IsBetazoeyrvc
+		Response IntroFarm4TeenGirl
+		ApplyContext "talk:1:4"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_JukeBoxTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_JukeBox IsNotSaidWorldC6M2_JukeBox IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear150 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_JukeBoxMechanic
-		ApplyContext "SaidWorldC6M2_JukeBox:1:0"
+		name = "SurvivorBoomerBlunderBetaZoeyRVC",
+		criteria IsFaultConcept IsFaultBoomerBlunder IsNotCoughing IsBetazoeyrvc IsHealthy IsTalk IsTalkBetazoeyrvc
+		Response SurvivorBoomerBlunderTeenGirl
+	},
+
+	{
+		name = "SurvivorFinaleTriggeredBoatBetaZoeyRVC",
+		criteria ConceptFinaleTriggered IsTriggeredByBetazoeyrvc ismap_l4d_smalltown05_houseboat IsNotSaidRadioTriggered IsTalk IsTalkBetazoeyrvc IsBetazoeyrvc IsNotIncapacitated
+		Response SurvivorFinaleTriggeredBoatTeenGirl
+		ApplyContext "SaidRadioTriggered:1:30"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_JumpDownTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_JumpDown IsNotSaidWorldC6M2_JumpDown IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_JumpDownMechanic
-		ApplyContext "SaidWorldC6M2_JumpDown:1:0"
+		name = "SurvivorFinaleTriggeredFarmBetaZoeyRVC",
+		criteria ConceptFinaleTriggered IsTriggeredByBetazoeyrvc ismap_l4d_farm05_cornfield IsNotSaidRadioTriggered IsTalk IsTalkBetazoeyrvc IsBetazoeyrvc IsNotIncapacitated
+		Response SurvivorFinaleTriggeredFarmTeenGirl
+		ApplyContext "SaidRadioTriggered:1:30"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_OnTourWalk2Trevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_OnTourWalk2 IsNotSaidWorldC6M2_OnTourWalk2 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_OnTourWalk2Mechanic
-		ApplyContext "SaidWorldC6M2_OnTourWalk2:1:0"
+		name = "SurvivorFinaleTriggeredRooftopBetaZoeyRVC",
+		criteria ConceptFinaleTriggered IsTriggeredByBetazoeyrvc ismap_l4d_hospital05_rooftop IsNotSaidRadioTriggered IsTalk IsTalkBetazoeyrvc IsBetazoeyrvc IsNotIncapacitated
+		Response SurvivorFinaleTriggeredRooftopTeenGirl
+		ApplyContext "SaidRadioTriggered:1:30"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_OnTourWalk3Trevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_OnTourWalk3 IsNotSaidWorldC6M2_OnTourWalk3 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_OnTourWalk3Mechanic
-		ApplyContext "SaidWorldC6M2_OnTourWalk3:1:0"
+		name = "SurvivorFinalVehicleBoatBetaZoeyRVC",
+		criteria ConceptGetToVehicle IsBetazoeyrvc ismap_l4d_smalltown05_houseboat IsNotSaidFinalVehicleArrived
+		Response SurvivorFinalVehicleBoatTeenGirl
+		then any EmphaticArriveRun foo:0 0
+		ApplyContext "SaidFinalVehicleArrived:1:20,Talk:1:3"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_OpenGate1Trevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_OpenGate1 IsNotSaidWorldC6M2_OpenGate1 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsNotSaidOpenedGate1 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_OpenGate1Mechanic
-		ApplyContext "SaidWorldC6M2_OpenGate1:1:0"
+		name = "SurvivorFinalVehicleFarmBetaZoeyRVC",
+		criteria ConceptGetToVehicle IsBetazoeyrvc ismap_l4d_farm05_cornfield IsNotSaidFinalVehicleArrived
+		Response SurvivorFinalVehicleFarmTeenGirl
+		then any EmphaticArriveRun foo:0 0
+		ApplyContext "SaidFinalVehicleArrived:1:20,Talk:1:6"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_OpenGate2Trevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_OpenGate2 IsNotSaidWorldC6M2_OpenGate2 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsNotSaidOpenedGate2 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_OpenGate2Mechanic
-		ApplyContext "SaidWorldC6M2_OpenGate2:1:0"
+		name = "SurvivorFinalVehicleFarmSpottedBetaZoeyRVC",
+		criteria ConceptFinalVehicleSpotted IsBetazoeyrvc ismap_l4d_farm05_cornfield IsNotSaidFinalVehicleSpotted
+		Response SurvivorFinalVehicleFarmSpottedTeenGirl
+		then any EmphaticArriveRunFarm foo:0 0
+		ApplyContext "SaidFinalVehicleSpotted:1:20,Talk:1:6"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_Phase2Trevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_Phase2 IsNotSaidWorldC6M2_Phase2 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_Phase2Mechanic
-		then Producer WorldC6M2_Phase201a foo:0 -1.792
-		ApplyContext "SaidWorldC6M2_Phase2:1:0"
+		name = "SurvivorFinalVehicleRooftopBetaZoeyRVC",
+		criteria ConceptGetToVehicle IsBetazoeyrvc ismap_l4d_hospital05_rooftop IsNotSaidFinalVehicleArrived
+		Response SurvivorFinalVehicleRooftopTeenGirl
+		then any EmphaticArriveRun foo:0 0
+		ApplyContext "SaidFinalVehicleArrived:1:20,Talk:1:5"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_Phase2DownTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_Phase2Down IsNotSaidWorldC6M2_Phase2Down IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_Phase2DownMechanic
-		ApplyContext "SaidWorldC6M2_Phase2Down:1:0"
+		name = "SurvivorFinalVehicleRunwayBetaZoeyRVC",
+		criteria ConceptGetToVehicle IsBetazoeyrvc isrunway IsNotSaidFinalVehicleArrived
+		Response SurvivorFinalVehicleRunwayTeenGirl
+		then any EmphaticArriveRun foo:0 0
+		ApplyContext "SaidFinalVehicleArrived:1:20,Talk:1:6"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_Phase2DownIntenseTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_Phase2Down IsNotSaidWorldC6M2_Phase2Down IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IntensityOver75 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_Phase2DownIntenseMechanic
-		ApplyContext "SaidWorldC6M2_Phase2Down:1:0"
+		name = "SurvivorFinalVehicleSpottedBoatBetaZoeyRVC",
+		criteria ConceptFinalVehicleSpotted IsBetazoeyrvc ismap_l4d_smalltown05_houseboat IsNotSaidFinalVehicleSpotted
+		Response SurvivorFinalVehicleSpottedBoatTeenGirl
+		then any EmphaticArriveRun foo:0 0
+		ApplyContext "SaidFinalVehicleSpotted:1:20,Talk:1:6"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_PostGate1xTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_PostGate1 IsNotSaidWorldC6M2_PostGate1 IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsSaidOpenedGate1 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_PostGate1xMechanic
-		ApplyContext "SaidWorldC6M2_PostGate1:1:0"
+		name = "SurvivorFinalVehicleSpottedRooftopBetaZoeyRVC",
+		criteria ConceptFinalVehicleSpotted IsBetazoeyrvc ismap_l4d_hospital05_rooftop IsNotSaidFinalVehicleSpotted
+		Response SurvivorFinalVehicleSpottedRooftopTeenGirl
+		then any EmphaticArriveRun foo:0 0
+		ApplyContext "SaidFinalVehicleSpotted:1:20,Talk:1:6"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_SafeRoomTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_SafeRoom IsNotSaidWorldC6M2_SafeRoom IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear800 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_SafeRoomMechanic
-		ApplyContext "SaidWorldC6M2_SafeRoom:1:0"
+		name = "SurvivorFinalVehicleSpottedRunwayBetaZoeyRVC",
+		criteria ConceptFinalVehicleSpotted IsBetazoeyrvc ismap_urban05a_finale_runway IsNotSaidFinalVehicleSpotted
+		Response SurvivorFinalVehicleSpottedRunwayTeenGirl
+		then any EmphaticArriveRun foo:0 0
+		ApplyContext "SaidFinalVehicleSpotted:1:20,Talk:1:6"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_TattooTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_Tattoo IsNotSaidWorldC6M2_Tattoo IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_TattooMechanic
-		ApplyContext "SaidWorldC6M2_Tattoo:1:0"
+		name = "ResponseLoudDispleasureSwearBetaZoeyRVC",
+		criteria ConceptPanicEvent IsBetazoeyrvc IsNotCoughing IsTalk IsTalkBetazoeyrvc ChanceToFire60Percent
+		Response ResponseLoudDispleasureSwearTeenGirl
+	},
+
+	{
+		name = "ResponseSoftDispleasureSwearBetaZoeyRVC",
+		criteria ConceptResponseSoftDispleasureSwear IsBetazoeyrvc IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IssuerMediumClose
+		Response ResponseSoftDispleasureSwearTeenGirl
+	},
+
+	{
+		name = "SurvivorAskBillForHealthBetaZoeyRVC",
+		criteria ConceptAskForHealth2 IsBetazoeyrvc SubjectIsNamVet IsSubjectNear400
+		Response SurvivorAskBillForHealthTeenGirl
+	},
+
+	{
+		name = "SurvivorAskForHealthBetaZoeyRVC",
+		criteria ConceptPlayerLookHere IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsSubjectNear400 NoHasPainPills NoHasFirstAidKit IsNotHealthyHalf NotInCombat IsNotSaidAskForHealth
+		Response SurvivorAskForHealthTeenGirl
+		then Subject AskForHealth foo:0 0
+		ApplyContext "SaidAskForHealth:1:10"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_TourEntranceTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_TourEntrance IsNotSaidWorldC6M2_TourEntrance IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_TourEntranceMechanic
-		ApplyContext "SaidWorldC6M2_TourEntrance:1:0"
+		name = "SurvivorAskFrancisForHealthBetaZoeyRVC",
+		criteria ConceptAskForHealth2 IsBetazoeyrvc SubjectIsBiker IsSubjectNear400
+		Response SurvivorAskFrancisForHealthTeenGirl
+	},
+
+	{
+		name = "SurvivorAskLouisForHealthBetaZoeyRVC",
+		criteria ConceptAskForHealth2 IsBetazoeyrvc SubjectIsManager IsSubjectNear400
+		Response SurvivorAskLouisForHealthTeenGirl
+	},
+
+	{
+		name = "SurvivorFrancisHealthHereBetaZoeyRVC",
+		criteria ConceptAskForHealth IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc YesHasFirstAidKit IsHealthyHalf
+		Response SurvivorFrancisHealthHereTeenGirl
+		then From AskForHealth2 foo:0 0
+	},
+
+	{
+		name = "SurvivorSpottedAmmoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsWorldTalkBetazoeyrvc IsAmmo
+		Response SurvivorSpottedAmmoTeenGirl
+		ApplyContext "SaidSpotAmmo:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_UpCatWalkTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_UpCatWalk IsNotSaidWorldC6M2_UpCatWalk IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_UpCatWalkMechanic
-		ApplyContext "SaidWorldC6M2_UpCatWalk:1:0"
+		name = "SurvivorSpottedBillCloseBetaZoeyRVC",
+		criteria ConceptPlayerLookHere IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto SubjectIsNamVet IsNamVetNear400
+		Response SurvivorSpottedBillCloseTeenGirl
+	},
+
+	{
+		name = "SurvivorSpottedBillClose2BetaZoeyRVC",
+		criteria ConceptPlayerLook IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto SubjectIsNamVet IsNamVetNear400
+		Response SurvivorSpottedBillClose2TeenGirl
+	},
+
+	{
+		name = "SurvivorSpottedBillFarBetaZoeyRVC",
+		criteria ConceptPlayerLook IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto SubjectIsNamVet IsNamVetFar400
+		Response SurvivorSpottedBillFarTeenGirl
+	},
+
+	{
+		name = "SurvivorSpottedFrancisCloseBetaZoeyRVC",
+		criteria ConceptPlayerLookHere IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto SubjectIsBiker IsBikerNear400
+		Response SurvivorSpottedFrancisCloseTeenGirl
+	},
+
+	{
+		name = "SurvivorSpottedFrancisClose2BetaZoeyRVC",
+		criteria ConceptPlayerLook IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto SubjectIsBiker IsBikerNear400
+		Response SurvivorSpottedFrancisClose2TeenGirl
+	},
+
+	{
+		name = "SurvivorSpottedFrancisFarBetaZoeyRVC",
+		criteria ConceptPlayerLook IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto SubjectIsBiker IsBikerFar400
+		Response SurvivorSpottedFrancisFarTeenGirl
+	},
+
+	{
+		name = "SurvivorSpottedGrenadeBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsPipeBomb
+		Response SurvivorSpottedGrenadeTeenGirl
+		ApplyContext "SaidSpotGrenade:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_UpStairsTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_UpStairs IsNotSaidWorldC6M2_UpStairs IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_UpStairsMechanic
-		ApplyContext "SaidWorldC6M2_UpStairs:1:0"
+		name = "SurvivorSpottedGrenadeAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsPipeBomb IsNotInSafeSpot IsNotAlone IsNotSaidSpotGrenade IsNotSaidSpot
+		Response SurvivorSpottedGrenadeAutoTeenGirl
+		ApplyContext "SaidSpotGrenade:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M2_UpStairs2Trevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M2_UpStairs2 IsNotSaidWorldC6M2_UpStairs2 IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear200 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M2_UpStairs2Mechanic
-		ApplyContext "SaidWorldC6M2_UpStairs2:1:0"
+		name = "SurvivorSpottedHealthBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsFirstAidKit
+		Response SurvivorSpottedHealthTeenGirl
+		ApplyContext "SaidSpotHealth:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M3_BridgeRunTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M3_BridgeRun IsNotSaidWorldC6M3_BridgeRun IsNotCoughing IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M3_BridgeRunMechanic
-		then any WorldC6M3_ByBridge01 foo:0 -1.803
-		ApplyContext "SaidWorldC6M3_BridgeRun:1:0"
+		name = "SurvivorSpottedHealthAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsFirstAidKit IsNotInSafeSpot IsNotAlone IsNotSaidSpotHealth IsNotSaidSpot
+		Response SurvivorSpottedHealthAutoTeenGirl
+		ApplyContext "SaidSpotHealth:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldC6M3_ByBridgeTrevor",
-		criteria ConceptRemark IsTrevor IsWorldC6M3_ByBridge IsNotSaidWorldC6M3_ByBridge IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear300 IsSaidFinalVehicleArrived IsNotSpeakingWeight0
-		Response PlayerRemarkWorldC6M3_ByBridgeMechanic
-		ApplyContext "SaidWorldC6M3_ByBridge:1:0"
+		name = "SurvivorSpottedLouisCloseBetaZoeyRVC",
+		criteria ConceptPlayerLookHere IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto SubjectIsManager IsManagerNear400
+		Response SurvivorSpottedLouisCloseTeenGirl
+	},
+
+	{
+		name = "SurvivorSpottedLouisClose2BetaZoeyRVC",
+		criteria ConceptPlayerLook IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto SubjectIsManager IsManagerNear400
+		Response SurvivorSpottedLouisClose2TeenGirl
+	},
+
+	{
+		name = "SurvivorSpottedLouisFarBetaZoeyRVC",
+		criteria ConceptPlayerLook IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto SubjectIsManager IsManagerFar400
+		Response SurvivorSpottedLouisFarTeenGirl
+	},
+
+	{
+		name = "SurvivorSpottedMolotovBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsMolotov
+		Response SurvivorSpottedMolotovTeenGirl
+		ApplyContext "SaidSpotMolotov:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "PlayerRemarkWorldFootLockerTrevor",
-		criteria ConceptRemark IsTrevor IsWorldFootLocker IsNotSaidWorldFootLocker IsNotCoughing NotInCombat IsTalk IsTalkTrevor IsWorldTalkTrevor IsSubjectNear500 IsNotSpeakingWeight0
-		Response PlayerRemarkWorldFootLockerMechanic
-		ApplyContext "SaidWorldFootLocker:1:0"
+		name = "SurvivorSpottedMolotovAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsMolotov IsNotInSafeSpot IsNotAlone IsNotSaidSpotMolotov IsNotSaidSpot
+		Response SurvivorSpottedMolotovAutoTeenGirl
+		ApplyContext "SaidSpotMolotov:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "C6M3_PourFinishedTrevor",
-		criteria ConceptPlayerPourFinished IsTrevor IsTalk IsTalkTrevor IsWorldTalkTrevor Isc6m3_port ChanceToFire20Percent
-		Response C6M3_PourFinishedMechanic
-		then Manager L4D1_NiceJobPour foo:0 0
+		name = "SurvivorSpottedPillsBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsPainPills
+		Response SurvivorSpottedPillsTeenGirl
+		ApplyContext "SaidSpotPIlls:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedPillsAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsPainPills IsNotInSafeSpot IsNotAlone IsNotSaidSpotPills IsNotSaidSpot
+		Response SurvivorSpottedPillsAutoTeenGirl
+		ApplyContext "SaidSpotPills:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedWorldCloseBetaZoeyRVC",
+		criteria ConceptPlayerLookHere IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto
+		Response SurvivorSpottedWorldCloseTeenGirl
+	},
+
+	{
+		name = "SurvivorSpottedAmmoAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsAmmo IsWorldTalkBetazoeyrvc IsNotInSafeSpot IsNotAlone IsNotSaidSpotAmmo IsNotSaidSpot
+		Response SurvivorSpottedAmmoTeenGirl
+		ApplyContext "SaidSpotAmmo:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorMovingToBattleStationBetaZoeyRVC",
+		criteria ConceptBotMovingToBattleStation IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSaidCreshendoStartNear IsNotSaidBattleStationsBetazoeyrvc
+		Response SurvivorMovingToBattleStationTeenGirl
+		ApplyContext "SaidBattleStationsBetazoeyrvc:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedBoomerBetaZoeyRVC",
+		criteria ConceptPlayerWarnBoomer IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response SurvivorSpottedBoomerTeenGirl
+		ApplyContext "SaidBoomerWarn:1:20,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedHunterBetaZoeyRVC",
+		criteria ConceptPlayerWarnHunter IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response SurvivorSpottedHunterTeenGirl
+		ApplyContext "SaidHunterWarn:1:20,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedInfectedBetaZoeyRVC",
+		criteria ConceptPlayerIncoming IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response SurvivorSpottedInfectedTeenGirl
+	},
+
+	{
+		name = "SurvivorSpottedSmokerBetaZoeyRVC",
+		criteria ConceptPlayerWarnSmoker IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response SurvivorSpottedSmokerTeenGirl
+		ApplyContext "SaidSmokerWarn:1:20,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedTankBetaZoeyRVC",
+		criteria ConceptPlayerWarnSpecial IsSpecialTypeTank IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0
+		Response SurvivorSpottedTankTeenGirl
+		ApplyContext "SaidTankWarn:1:20,SaidSpecialWarn:1:30,SaidTankWarn2:1:60"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedWitchBetaZoeyRVC",
+		criteria ConceptPlayerWarnSpecial IsSpecialTypeWitch IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0
+		Response SurvivorSpottedWitchTeenGirl
+		ApplyContext "SaidWitchWarn:1:20,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorAlsoSpottedBoomerBetaZoeyRVC",
+		criteria ConceptPlayerAlsoWarnBoomer IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response SurvivorSpottedBoomerTeenGirl
+		ApplyContext "SaidBoomerWarn:1:20,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorAlsoSpottedHunterBetaZoeyRVC",
+		criteria ConceptPlayerAlsoWarnHunter IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response SurvivorSpottedHunterTeenGirl
+		ApplyContext "SaidHunterWarn:1:20,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorAlsoSpottedSmokerBetaZoeyRVC",
+		criteria ConceptPlayerAlsoWarnSmoker IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response SurvivorSpottedSmokerTeenGirl
+		ApplyContext "SaidSmokerWarn:1:20,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorAlsoSpottedTankBetaZoeyRVC",
+		criteria ConceptPlayerAlsoWarnTank IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response SurvivorSpottedTankTeenGirl
+		ApplyContext "SaidTankWarn:1:20,SaidSpecialWarn:1:30,SaidTankWarn2:1:60"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorAlsoSpottedWitchBetaZoeyRVC",
+		criteria ConceptPlayerAlsoWarnWitch IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response SurvivorSpottedWitchTeenGirl
+		ApplyContext "SaidWitchWarn:1:20,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "EmphaticArriveRunBetaZoeyRVC",
+		criteria ConceptEmphaticArriveRun IsNotCoughing IsBetazoeyrvc IsTalkBetazoeyrvc
+		Response EmphaticArriveRunTeenGirl
+	},
+
+	{
+		name = "PlayerAlertGiveItemBetaZoeyRVC",
+		criteria ConceptPlayerAlertGiveItem IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerAlertGiveItemTeenGirl
+	},
+
+	{
+		name = "PlayerFriendlyFireBetaZoeyRVC",
+		criteria ConceptPlayerFriendlyFire IsNotCoughing IsBetazoeyrvc IsNotBetazoeyrvcFriendlyFire IsDamageTypeBullet IsTalk IsTalkBetazoeyrvc
+		Response PlayerFriendlyFireTeenGirl
+		ApplyContext "BetazoeyrvcFriendlyFire:1:10"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerFriendlyFire2BetaZoeyRVC",
+		criteria ConceptPlayerFriendlyFire IsNotCoughing IsBetazoeyrvc IsNotBetazoeyrvcFriendlyFire IsDamageTypeBullet IsBetazoeyrvcFriendlyFire IsTalk IsTalkBetazoeyrvc
+		Response PlayerFriendlyFire2TeenGirl
+		ApplyContext "BetazoeyrvcFriendlyFire:1:3"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerFriendlyFireFromBillBetaZoeyRVC",
+		criteria ConceptPlayerFriendlyFire IsNotCoughing IsBetazoeyrvc IsNotBetazoeyrvcFriendlyFire IsDamageTypeBullet IsTalk IsTalkBetazoeyrvc SubjectIsNamVet ChanceToFire30Percent
+		Response PlayerFriendlyFireFromBillTeenGirl
+		ApplyContext "BetazoeyrvcFriendlyFire:1:10"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerFriendlyFireFromFrancisBetaZoeyRVC",
+		criteria ConceptPlayerFriendlyFire IsNotCoughing IsBetazoeyrvc IsNotBetazoeyrvcFriendlyFire IsDamageTypeBullet IsTalk IsTalkBetazoeyrvc SubjectIsBiker ChanceToFire30Percent
+		Response PlayerFriendlyFireFromFrancisTeenGirl
+		ApplyContext "BetazoeyrvcFriendlyFire:1:10"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerFriendlyFireFromLouisBetaZoeyRVC",
+		criteria ConceptPlayerFriendlyFire IsNotCoughing IsBetazoeyrvc IsNotBetazoeyrvcFriendlyFire IsDamageTypeBullet IsTalk IsTalkBetazoeyrvc SubjectIsManager ChanceToFire30Percent
+		Response PlayerFriendlyFireFromLouisTeenGirl
+		ApplyContext "BetazoeyrvcFriendlyFire:1:10"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerFriendlyFireNoBulletBetaZoeyRVC",
+		criteria ConceptPlayerFriendlyFire IsNotCoughing IsBetazoeyrvc IsNotBetazoeyrvcFriendlyFire IsNotDamageTypeBullet IsTalk IsTalkBetazoeyrvc
+		Response PlayerFriendlyFireNoBulletTeenGirl
+		ApplyContext "BetazoeyrvcFriendlyFire:1:10"
+	},
+
+	{
+		name = "PlayerToTheRescueBetaZoeyRVC",
+		criteria ConceptSurvivorBotMovingToReviveFriend IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc NotInCombat IsNotSaidRescueComing IsDistanceSubjectO600
+		Response PlayerToTheRescueTeenGirl
+		ApplyContext "SaidRescueComing:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorTauntResponseBetaZoeyRVC",
+		criteria ConceptPlayerTaunt IsSurvivor IsNotSpeaking IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response SurvivorTauntResponseTeenGirl
+	},
+
+	{
+		name = "EmphaticArriveRunFarmBetaZoeyRVC",
+		criteria ConceptEmphaticArriveRunFarm IsNotCoughing IsBetazoeyrvc IsTalkBetazoeyrvc
+		Response EmphaticArriveRunTeenGirl
+	},
+
+	{
+		name = "PlayerChokeResponseBetaZoeyRVC",
+		criteria ConceptPlayerChoke IsSurvivor IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerChokeResponseTeenGirl
+	},
+
+	{
+		name = "PlayerTonguePullStartResponseBetaZoeyRVC",
+		criteria ConceptPlayerTonguePullStart IsSurvivor IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerTonguePullStartResponseTeenGirl
+	},
+
+	{
+		name = "SurvivorCriticalHurtBetaZoeyRVC",
+		criteria IsSurvivor InPain IsCriticalPain IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response SurvivorCriticalHurtTeenGirl
+	},
+
+	{
+		name = "SurvivorIncapacitatedHurtBetaZoeyRVC",
+		criteria IsSurvivor InPain IsNotSpeaking IsIncapacitatedPain IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response SurvivorIncapacitatedHurtTeenGirl
+	},
+
+	{
+		name = "SurvivorMajorHurtBetaZoeyRVC",
+		criteria IsSurvivor InPain IsMajorPain IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response SurvivorMajorHurtTeenGirl
+	},
+
+	{
+		name = "SurvivorMinorHurtBetaZoeyRVC",
+		criteria IsSurvivor InPain IsMinorPain IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response SurvivorMinorHurtTeenGirl
+	},
+
+	{
+		name = "SurvivorReloadingBetaZoeyRVC",
+		criteria ConceptPlayerReloading IsSurvivor IsNotSpeaking IsBetazoeyrvc IsNotIncapacitated IsTalk IsTalkBetazoeyrvc RecentGroupInCombat10
+		Response SurvivorReloadingTeenGirl
+	},
+
+	{
+		name = "PlayerHelpIncappedBetaZoeyRVC",
+		criteria ConceptPlayerHelp IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsIncapacitated NotCalledForHelpRecently
+		Response PlayerHelpIncappedTeenGirl
+		then any FriendNeedsHelp foo:0 0
+		ApplyContext "CalledForHelp:1:20"
+	},
+
+	{
+		name = "HelpResponseBillBetaZoeyRVC",
+		criteria ConceptFriendNeedsHelp IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotIncapacitated IsInSafeSpot FromIsNamVet IsNotInStartArea NotAloneInSafeSpot
+		Response HelpResponseBillTeenGirl
+	},
+
+	{
+		name = "HelpResponseBillBBetaZoeyRVC",
+		criteria ConceptFriendNeedsHelp IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotIncapacitated IsInSafeSpot FromIsNamVet IsNotInStartArea IsManagerNear200 ChanceToFire10Percent
+		Response HelpResponseBillBTeenGirl
+	},
+
+	{
+		name = "HelpResponseFrancisBetaZoeyRVC",
+		criteria ConceptFriendNeedsHelp IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotIncapacitated IsInSafeSpot FromIsBiker IsNotInStartArea NotAloneInSafeSpot
+		Response HelpResponseFrancisTeenGirl
+	},
+
+	{
+		name = "HelpResponseFrancisBBetaZoeyRVC",
+		criteria ConceptFriendNeedsHelp IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotIncapacitated IsInSafeSpot FromIsBiker IsNotInStartArea IsManagerNear200 ChanceToFire10Percent
+		Response HelpResponseFrancisBTeenGirl
+	},
+
+	{
+		name = "HelpResponseLouisBetaZoeyRVC",
+		criteria ConceptFriendNeedsHelp IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotIncapacitated IsInSafeSpot FromIsManager IsNotInStartArea NotAloneInSafeSpot
+		Response HelpResponseLouisTeenGirl
+	},
+
+	{
+		name = "crashcourse01_path01zrBetaZoeyRVC",
+		criteria Conceptcrashcourse01_path01zresp IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsBetazoeyrvc
+		Response crashcourse01_path01zrTeenGirl
+	},
+
+	{
+		name = "PlayerAirport02CraneStartedBetaZoeyRVC",
+		criteria Conceptairport02_creshendoCrane IsBetazoeyrvc
+		Response PlayerAirport02CraneStartedTeenGirl
+		ApplyContext "Airport02CraneStarted:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerAirport02DumpsterDownBetaZoeyRVC",
+		criteria Conceptairport02_creshendo03 IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerAirport02DumpsterDownTeenGirl
+	},
+
+	{
+		name = "Playerairport03_barrieraBetaZoeyRVC",
+		criteria Conceptairport03_barriera IsBetazoeyrvc IsNotSaidairport03_barriera IsTalk IsTalkBetazoeyrvc IsSubjectNear800 IsNotSaidairport03_barrier
+		Response Playerairport03_barrieraTeenGirl
+		ApplyContext "Saidairport03_barriera:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerAirport03FirePathClearaBetaZoeyRVC",
+		criteria ConceptAirport03FirePathCleara IsBetazoeyrvc IsNotCoughing IsTalk IsTalkBetazoeyrvc ChanceToFire10Percent RecentGroupInCombat2
+		Response PlayerAirport03FirePathClearaTeenGirl
+		then all Airport03FirePathCleara foo:0 0
+		ApplyContext "SaidAirport03FirePathClear:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerAirport03FirePathClearXBetaZoeyRVC",
+		criteria ConceptAirport03FirePathClearX IsBetazoeyrvc IsNotCoughing IsTalk IsTalkBetazoeyrvc IsNotSaidAirport03FirePathClear
+		Response PlayerAirport03FirePathClearXTeenGirl
+		then all Airport03FirePathCleara foo:0 0
+		ApplyContext "SaidAirport03FirePathClear:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerAirport03FireStartedXBetaZoeyRVC",
+		criteria ConceptAirport03FireStartedX IsBetazoeyrvc IsNotCoughing IsTalk IsTalkBetazoeyrvc
+		Response PlayerAirport03FireStartedXTeenGirl
+		ApplyContext "SaidAirport03FireStarted:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "Playerairport04_08bBetaZoeyRVC",
+		criteria Conceptairport04_08b IsBetazoeyrvc IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear400
+		Response Playerairport04_08bTeenGirl
+	},
+
+	{
+		name = "Playerairport04_08cBetaZoeyRVC",
+		criteria Conceptairport04_08c IsBetazoeyrvc IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear400
+		Response Playerairport04_08cTeenGirl
+	},
+
+	{
+		name = "Playerairport04_08dBetaZoeyRVC",
+		criteria Conceptairport04_08d IsBetazoeyrvc IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear400
+		Response Playerairport04_08dTeenGirl
+	},
+
+	{
+		name = "PlayerFrancisSuggestsCraneBetaZoeyRVC",
+		criteria ConceptFrancisSuggestsCrane IsBetazoeyrvc IsNotSaidFrancisSuggestsCrane IsTalk IsTalkBetazoeyrvc IsSubjectNear800
+		Response PlayerFrancisSuggestsCraneTeenGirl
+		ApplyContext "SaidFrancisSuggestsCrane:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerLaughFrancisBetaZoeyRVC",
+		criteria ConceptLaughFrancis IsBetazoeyrvc IsNotSaidLaughFrancis IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300
+		Response PlayerLaughFrancisTeenGirl
+		ApplyContext "SaidLaughFrancis:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkairport02_creshendo01aBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport02_creshendo01a IsNotSaidairport02_creshendo01a IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc
+		Response PlayerRemarkairport02_creshendo01aTeenGirl
+		ApplyContext "Saidairport02_creshendo01a:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkairport02_creshendo01bBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport02_creshendo01b IsNotSaidairport02_creshendo01a NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear1000 IsNotAirport02CraneStarted
+		Response PlayerRemarkairport02_creshendo01bTeenGirl
+		then Any BetazoeyrvcSuggestsCrane foo:0 0
+		ApplyContext "Saidairport02_creshendo01b:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkairport02_path01BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport02_path01 IsNotSaidairport02_path01 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear1500
+		Response PlayerRemarkairport02_path01TeenGirl
+		ApplyContext "Saidairport02_path01:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkairport02_path02BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport02_path02 IsNotSaidairport02_path02 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 ChanceToFire10Percent
+		Response PlayerRemarkairport02_path02TeenGirl
+		ApplyContext "Saidairport02_path02:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "AUTOBLANK_PlayerRemarkairport02_path02BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport02_path02 IsNotSaidairport02_path02 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response _PlayerInfoRemarkableBlankTeenGirl
+		ApplyContext "Saidairport02_path02:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkairport02_path03BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport02_path03 IsNotSaidairport02_path03 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear500 ChanceToFire20Percent IsManagerAlive
+		Response PlayerRemarkairport02_path03TeenGirl
+		ApplyContext "Saidairport02_path03:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "AUTOBLANK_PlayerRemarkairport02_path03BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport02_path03 IsNotSaidairport02_path03 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear500 IsManagerAlive
+		Response _PlayerInfoRemarkableBlankTeenGirl
+		ApplyContext "Saidairport02_path03:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkairport02_path04BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport02_path04 IsNotSaidairport02_path04 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarkairport02_path04TeenGirl
+		ApplyContext "Saidairport02_path04:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkairport02_path05BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport02_path05 IsNotSaidairport02_path05 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc
+		Response PlayerRemarkairport02_path05TeenGirl
+		ApplyContext "Saidairport02_path05:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkairport02_path06BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport02_path06 IsNotSaidairport02_path06 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300
+		Response PlayerRemarkairport02_path06TeenGirl
+		ApplyContext "Saidairport02_path06:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkairport03_01BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport03_01 IsNotSaidairport03_01 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300
+		Response PlayerRemarkairport03_01TeenGirl
+		ApplyContext "Saidairport03_01:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkairport03_02aBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport03_02a IsNotSaidairport03_02 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc
+		Response PlayerRemarkairport03_02aTeenGirl
+		ApplyContext "Saidairport03_02:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkairport03_02bBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport03_02b IsNotSaidairport03_02 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc
+		Response PlayerRemarkairport03_02bTeenGirl
+		ApplyContext "Saidairport03_02:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkairport03_03aBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport03_03a IsNotSaidairport03_03 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarkairport03_03aTeenGirl
+		ApplyContext "Saidairport03_03:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkairport03_03bBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport03_03b IsNotSaidairport03_03 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarkairport03_03bTeenGirl
+		ApplyContext "Saidairport03_03:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkairport03_03cBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport03_03c IsNotSaidairport03_03 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarkairport03_03cTeenGirl
+		ApplyContext "Saidairport03_03:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkairport03_04BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport03_04 IsNotSaidairport03_04 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear1500
+		Response PlayerRemarkairport03_04TeenGirl
+		ApplyContext "Saidairport03_04:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkairport03_06BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport03_06 IsNotSaidairport03_06 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear500
+		Response PlayerRemarkairport03_06TeenGirl
+		then Any LaughBetazoeyrvc foo:0 0
+		ApplyContext "Saidairport03_06:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkairport03_07BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport03_07 IsNotSaidairport03_07 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsNotSaidSafeSpotAhead
+		Response PlayerRemarkairport03_07TeenGirl
+		ApplyContext "Saidairport03_07:1:0,SaidSafeSpotAhead:1:90"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkairport03_barrierBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport03_barrier IsNotSaidairport03_barrier IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear800 IsNotSaidAirport03FireStarted IsNotSaidAirport03FirePathClear
+		Response PlayerRemarkairport03_barrierTeenGirl
+		then Any airport03_barriera foo:0 0
+		ApplyContext "Saidairport03_barrier:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkairport04_01BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport04_01 IsNotSaidairport04_01 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear500
+		Response PlayerRemarkairport04_01TeenGirl
+		ApplyContext "Saidairport04_01:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkairport04_03BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport04_03 IsNotSaidairport04_03 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 ChanceToFire20Percent TimeSinceGroupInCombat10
+		Response PlayerRemarkairport04_03TeenGirl
+		ApplyContext "Saidairport04_03:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "AUTOBLANK_PlayerRemarkairport04_03BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport04_03 IsNotSaidairport04_03 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 TimeSinceGroupInCombat10
+		Response _PlayerInfoRemarkableBlankTeenGirl
+		ApplyContext "Saidairport04_03:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkairport04_04BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport04_04 IsNotSaidairport04_04 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear400
+		Response PlayerRemarkairport04_04TeenGirl
+		ApplyContext "Saidairport04_04:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkairport04_05BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport04_05 IsNotSaidairport04_05 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300 ChanceToFire20Percent TimeSinceGroupInCombat10 IsManagerAlive
+		Response PlayerRemarkairport04_05TeenGirl
+		then All airport04_05a foo:0 0
+		ApplyContext "Saidairport04_05:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "AUTOBLANK_PlayerRemarkairport04_05BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport04_05 IsNotSaidairport04_05 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300 TimeSinceGroupInCombat10 IsManagerAlive
+		Response _PlayerInfoRemarkableBlankTeenGirl
+		ApplyContext "Saidairport04_05:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkairport04_06BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport04_06 IsNotSaidairport04_06 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300 ChanceToFire10Percent IsBikerAlive IsBikerNear400
+		Response PlayerRemarkairport04_06TeenGirl
+		ApplyContext "Saidairport04_06:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "AUTOBLANK_PlayerRemarkairport04_06BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport04_06 IsNotSaidairport04_06 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300 IsBikerAlive IsBikerNear400
+		Response _PlayerInfoRemarkableBlankTeenGirl
+		ApplyContext "Saidairport04_06:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkairport04_07BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport04_07 IsNotSaidairport04_07 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300 ChanceToFire10Percent
+		Response PlayerRemarkairport04_07TeenGirl
+		then biker AynRandResponse foo:0 0.05
+		ApplyContext "Saidairport04_07:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "AUTOBLANK_PlayerRemarkairport04_07BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport04_07 IsNotSaidairport04_07 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300
+		Response _PlayerInfoRemarkableBlankTeenGirl
+		ApplyContext "Saidairport04_07:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkairport04_08aBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport04_08a IsNotSaidairport04_08 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarkairport04_08aTeenGirl
+		then Any airport04_08a foo:0 0
+		ApplyContext "Saidairport04_08:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkairport04_08bBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport04_08b IsNotSaidairport04_08 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarkairport04_08bTeenGirl
+		then Any airport04_08a foo:0 0
+		ApplyContext "Saidairport04_08:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkairport04_08cBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport04_08c IsNotSaidairport04_08 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarkairport04_08cTeenGirl
+		then Any airport04_08a foo:0 0
+		ApplyContext "Saidairport04_08:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkairport04_08dBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport04_08d IsNotSaidairport04_08 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarkairport04_08dTeenGirl
+		then Any airport04_08a foo:0 0
+	},
+
+	{
+		name = "PlayerRemarkairport04_08eBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport04_08e IsNotSaidairport04_08 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarkairport04_08eTeenGirl
+		then Any airport04_08a foo:0 0
+	},
+
+	{
+		name = "PlayerRemarkairport04_08fBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport04_08f IsNotSaidairport04_08 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarkairport04_08fTeenGirl
+		then Any airport04_08a foo:0 0
+	},
+
+	{
+		name = "PlayerRemarkairport04_09BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport04_09 IsNotSaidairport04_09 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear500 IsManagerAlive
+		Response PlayerRemarkairport04_09TeenGirl
+		ApplyContext "Saidairport04_09:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkairport04_vanBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport04_van IsNotSaidairport04_van IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear800 IsNotSaidPathClearVan
+		Response PlayerRemarkairport04_vanTeenGirl
+		then Biker airport04_vana foo:0 0
+		ApplyContext "Saidairport04_van:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkcrashcourse01_path01BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Iscrashcourse01_path01 IsNotSaidcrashcourse01_path01 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarkcrashcourse01_path01TeenGirl
+		ApplyContext "Saidcrashcourse01_path01:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkFarm01_path01BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm01_path01 IsNotSaidFarm01_path01 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarkFarm01_path01TeenGirl
+		ApplyContext "SaidFarm01_path01:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkFarm01_path02BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm01_path02 IsNotSaidFarm01_path02 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300
+		Response PlayerRemarkFarm01_path02TeenGirl
+		ApplyContext "SaidFarm01_path02:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkFarm01_path03BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm01_path03 IsNotSaidFarm01_path03 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300
+		Response PlayerRemarkFarm01_path03TeenGirl
+		ApplyContext "SaidFarm01_path03:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkFarm01_path09ZoeyBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm01_path09 IsNotSaidFarm01_path09 IsNotCoughing IsTalk NotInCombat IsWithThree IsTalkBetazoeyrvc IsSubjectNear1500
+		Response PlayerRemarkFarm01_path09ZoeyTeenGirl
+		then any SafeSpotAheadResponse foo:0 0
+		ApplyContext "SaidFarm03_path09:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkFarm02_path01BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm02_path01 IsNotSaidFarm02_path01 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarkFarm02_path01TeenGirl
+		ApplyContext "SaidFarm02_path01:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkFarm02_path02BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm02_path02 IsNotSaidFarm02_path02 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 NotSaidFarm02_TracksBelow
+		Response PlayerRemarkFarm02_path02TeenGirl
+		ApplyContext "SaidFarm02_path02:1:0,SaidFarm02_TracksBelow:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkFarm02_path02aBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm02_path02 IsNotSaidFarm02_path02 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 IsBikerNear125 NotSaidFarm02_TracksBelow
+		Response PlayerRemarkFarm02_path02aTeenGirl
+		then Biker Farm02_path02b foo:0 0.05
+		ApplyContext "SaidFarm02_path02:1:0,SaidFarm02_TracksBelow:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkFarm02_path03BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm02_path03 IsNotSaidFarm02_path03 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 NotSaidFarm02_TracksBelow
+		Response PlayerRemarkFarm02_path02TeenGirl
+		ApplyContext "SaidFarm02_path03:1:0,SaidFarm02_TracksBelow:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkFarm02_path03aBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm02_path03 IsNotSaidFarm02_path03 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 NotSaidFarm02_TracksBelow IsBikerNear125
+		Response PlayerRemarkFarm02_path02aTeenGirl
+		then Biker Farm02_path02b foo:0 0.05
+		ApplyContext "SaidFarm02_path03:1:0,SaidFarm02_TracksBelow:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkFarm02_path04BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm02_path04 IsNotSaidFarm02_path04 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 NotSaidFarm02_TracksBelow
+		Response PlayerRemarkFarm02_path02TeenGirl
+		ApplyContext "SaidFarm02_path04:1:0,SaidFarm02_TracksBelow:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkFarm02_path04aBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm02_path04 IsNotSaidFarm02_path04 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 NotSaidFarm02_TracksBelow IsBikerNear125
+		Response PlayerRemarkFarm02_path02aTeenGirl
+		then Biker Farm02_path02b foo:0 0.05
+		ApplyContext "SaidFarm02_path04:1:0,SaidFarm02_TracksBelow:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkFarm02_path05BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm02_path05 IsNotSaidFarm02_path05 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 NotSaidFarm02_TracksBelow
+		Response PlayerRemarkFarm02_path02TeenGirl
+		ApplyContext "SaidFarm02_path05:1:0,SaidFarm02_TracksBelow:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkFarm02_path05aBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm02_path05 IsNotSaidFarm02_path05 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 NotSaidFarm02_TracksBelow IsBikerNear125
+		Response PlayerRemarkFarm02_path02aTeenGirl
+		then Biker Farm02_path02b foo:0 0.05
+		ApplyContext "SaidFarm02_path05:1:0,SaidFarm02_TracksBelow:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkFarm02_path06BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm02_path06 IsNotSaidFarm02_path06 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarkFarm02_path06TeenGirl
+		then any RespondAffirmative foo:0 0
+		ApplyContext "SaidFarm02_path06:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkFarm02_path09BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm02_path09 IsNotSaidFarm02_path09 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarkFarm02_path09TeenGirl
+		then any RespondAffirmative foo:0 0
+		ApplyContext "SaidFarm02_path09:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkFarm02_path10BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm02_path10 IsNotSaidFarm02_path10 IsNotCoughing IsTalk IsTalkBetazoeyrvc IsSubjectNear400
+		Response PlayerRemarkSmalltown03_path14TeenGirl
+		then any SafeSpotAheadResponse foo:0 0
+		ApplyContext "SaidFarm02_path10:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkFarm03_path03BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm03_path03 IsNotSaidFarm03_path03 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarkFarm03_path03TeenGirl
+		ApplyContext "SaidFarm03_path03:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkFarm03_path06BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm03_path06 IsNotSaidFarm03_path06 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300
+		Response PlayerRemarkFarm03_path06TeenGirl
+		then any ResponseSoftDispleasureSwear foo:0 0.05
+		ApplyContext "SaidFarm03_path06:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkFarm03_path07BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm03_path07 IsNotSaidFarm03_path07 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear100
+		Response PlayerRemarkFarm03_path07TeenGirl
+		ApplyContext "SaidFarm03_path07:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkFarm03_path09BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm03_path09 IsNotSaidFarm03_path09 IsNotCoughing IsTalk IsTalkBetazoeyrvc IsSubjectNear400
+		Response PlayerRemarkFarm01_path09TeenGirl
+		then any SafeSpotAheadResponse foo:0 0
+		ApplyContext "SaidFarm03_path09:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkFarm03_path10BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm03_path10 Farm03BridgeDown IsNotSaidFarm03_path10 IsTalk IsTalkBetazoeyrvc IsSubjectNear300
+		Response PlayerRemarkFarm03_path10TeenGirl
+		then any RespondAffirmative foo:0 0.05
+		ApplyContext "SaidFarm03_path10:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkFarm04_path01aBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm04_path01 IsNotSaidFarm04_path01 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarkFarm04_path01aTeenGirl
+		ApplyContext "SaidFarm04_path01:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkFarm04_path04BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm04_path04 IsNotSaidFarm04_path04 IsSubjectNear1000 IsTalkBetazoeyrvc
+		Response PlayerRemarkFarm04_path04TeenGirl
+		ApplyContext "SaidFarm04_path04:1:0,SaidFarm04_path02:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkFarm04_path05BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm04_path05 IsNotSaidFarm04_path05 IsSubjectNear600 IsTalkBetazoeyrvc
+		Response PlayerRemarkFarm04_path04TeenGirl
+		ApplyContext "SaidFarm04_path05:1:0,SaidFarm04_path02:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkFarm04_path06BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm04_path06 IsNotSaidFarm04_path06 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear500
+		Response PlayerRemarkFarm04_path06TeenGirl
+		ApplyContext "SaidFarm04_path06:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkFarm04_path07BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm04_path07 IsNotSaidFarm04_path07 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarkFarm04_path07TeenGirl
+		ApplyContext "SaidFarm04_path07:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkFarm04_path08BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm04_path08 IsNotSaidFarm04_path08 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarkFarm04_path08TeenGirl
+		ApplyContext "SaidFarm04_path08:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkFarm04_path09BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm04_path09 IsNotSaidFarm04_path09 IsNotCoughing IsTalk IsTalkBetazoeyrvc IsSubjectNear1000
+		Response PlayerRemarkFarm04_path09TeenGirl
+		then any SafeSpotAheadResponse foo:0 0.05
+		ApplyContext "SaidFarm04_path09:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkFarm04_path10BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm04_path10 IsNotSaidFarm04_path10 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear100
+		Response PlayerRemarkFarm04_path10TeenGirl
+		ApplyContext "SaidFarm04_path10:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkFarm05_path01BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm05_path01 IsNotSaidFarm05_path01 IsNotSaidFarm05_path02 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarkFarm03_path06TeenGirl
+		then any ResponseSoftDispleasureSwear foo:0 0.05
+		ApplyContext "SaidFarm05_path01:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkFarm05_path02BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm05_path02 IsNotSaidFarm05_path02 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear400
+		Response PlayerRemarkFarm02_path09TeenGirl
+		then any RespondAffirmative foo:0 0
+		ApplyContext "SaidFarm05_path02:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkFarm05_path06BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm05_path06 IsNotSaidFarm05_path06 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear800
+		Response PlayerRemarkFarm05_path06TeenGirl
+		ApplyContext "SaidFarm05_path06:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkFarm05_path08BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm05_path08 IsNotSaidFarm05_path09 IsNotSaidFarm05_path10 IsNotSaidFarm05_path08 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear500
+		Response PlayerRemarkFarm05_path08TeenGirl
+		ApplyContext "SaidFarm05_path08:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkFarm05_path09BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm05_path09 IsNotSaidFarm05_path09 IsNotSaidFarm05_path08 IsNotSaidFarm05_path10 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300
+		Response PlayerRemarkFarm05_path08TeenGirl
+		ApplyContext "SaidFarm05_path09:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkFarm05_path10BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsFarm05_path10 IsNotSaidFarm05_path10 IsNotSaidFarm05_path09 IsNotSaidFarm05_path08 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarkFarm05_path08TeenGirl
+		ApplyContext "SaidFarm05_path10:1:0,SaidFarm05_path08:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkhospital01_path03BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Ishospital01_path03 IsNotSaidhospital01_path03 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear
+		Response PlayerRemarkhospital01_path03TeenGirl
+		then Any SafeSpotAheadResponse foo:0 0
+		ApplyContext "Saidhospital01_path03:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkhospital02_safehouseBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Ishospital02_safehouse IsNotSaidhospital02_safehouse IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear1000
+		Response PlayerRemarkhospital02_safehouseTeenGirl
+		ApplyContext "Saidhospital02_safehouse:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkhospital03_path04BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Ishospital03_path04 IsNotSaidhospital03_path04 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300
+		Response PlayerRemarkhospital03_path04TeenGirl
+		ApplyContext "Saidhospital03_path04:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkhospital03_path08BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Ishospital03_path08 IsNotSaidhospital03_path08 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear400 ChanceToFire50Percent
+		Response PlayerRemarkhospital03_path08TeenGirl
+		ApplyContext "Saidhospital03_path08:1:0"
+	},
+
+	{
+		name = "AUTOBLANK_PlayerRemarkhospital03_path08BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Ishospital03_path08 IsNotSaidhospital03_path08 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear400
+		Response _PlayerInfoRemarkableBlankTeenGirl
+		ApplyContext "Saidhospital03_path08:1:0"
+	},
+
+	{
+		name = "PlayerRemarkhospital03_path11BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Ishospital03_path11 IsNotSaidhospital03_path11 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear1000
+		Response PlayerRemarkhospital03_path11TeenGirl
+		ApplyContext "Saidhospital03_path11:1:0,SaidSafeSpotAhead:1:90"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkhospital04_path03BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Ishospital04_path03 IsNotSaidhospital04_path03 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear400 ChanceToFire30Percent IsManagerNear200 IsManagerAlive
+		Response PlayerRemarkhospital04_path03TeenGirl
+		ApplyContext "Saidhospital04_path03:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "AUTOBLANK_PlayerRemarkhospital04_path03BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Ishospital04_path03 IsNotSaidhospital04_path03 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear400 IsManagerNear200 IsManagerAlive
+		Response _PlayerInfoRemarkableBlankTeenGirl
+		ApplyContext "Saidhospital04_path03:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkhospital05_path01BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Ishospital05_path01 IsNotSaidhospital05_path01 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarkhospital05_path01TeenGirl
+		then Biker hospital05_path01a foo:0 0
+		ApplyContext "Saidhospital05_path01:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkhospital05_path02BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Ishospital05_path02 IsNotSaidhospital05_path02 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear400
+		Response PlayerRemarkhospital05_path02TeenGirl
+		ApplyContext "Saidhospital05_path02:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkPathClearVanBetaZoeyRVC",
+		criteria ConceptPathClearVan IsBetazoeyrvc IsNotSaidPathClearVan IsNotCoughing IsTalk IsTalkBetazoeyrvc
+		Response PlayerRemarkPathClearVanTeenGirl
+		ApplyContext "SaidPathClearVan:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkSmalltown01_path01BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown01_path01 IsNotSaidSmalltown01_path01 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300
+		Response PlayerRemarkSmalltown01_path01TeenGirl
+		then any ResponseSoftDispleasureSwear foo:0 0
+		ApplyContext "SaidSmalltown01_path01:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkSmalltown01_path02BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown01_path02 IsNotSaidSmalltown01_path02 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 IsNotSaidSmalltown01_path04 IsSaidSmalltown01_path01
+		Response PlayerRemarkSmalltown01_path02TeenGirl
+		ApplyContext "SaidSmalltown01_path02:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkSmalltown01_path03BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown01_path03 IsNotSaidSmalltown01_path03 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300
+		Response PlayerRemarkSmalltown01_path03TeenGirl
+		ApplyContext "SaidSmalltown01_path03:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkSmalltown01_path07BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown01_path07 IsNotSaidSmalltown01_path07 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear1000 IsNotSaidSmalltown01_path08
+		Response PlayerRemarkSmalltown01_path07TeenGirl
+		ApplyContext "SaidSmalltown01_path07:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkSmalltown01_path08BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown01_path08 IsNotSaidSmalltown01_path08 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarkSmalltown01_path08TeenGirl
+		ApplyContext "SaidSmalltown01_path08:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkSmalltown01_path09BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown01_path09 IsNotSaidSmalltown01_path09 IsNotCoughing IsTalk IsTalkBetazoeyrvc IsSubjectNear1500
+		Response PlayerRemarkSmalltown01_path09TeenGirl
+		then any SafeSpotAheadResponse foo:0 0
+		ApplyContext "SaidSmalltown01_path09:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarksmalltown02_path02BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Issmalltown02_path02 IsNotSaidsmalltown02_path02 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarksmalltown02_path02TeenGirl
+		ApplyContext "Saidsmalltown02_path02:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarksmalltown02_path03BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Issmalltown02_path03 IsNotSaidsmalltown02_path03 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarksmalltown02_path03TeenGirl
+		ApplyContext "Saidsmalltown02_path03:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarksmalltown02_path04BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Issmalltown02_path04 IsNotSaidsmalltown02_path04 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarksmalltown02_path04TeenGirl
+		ApplyContext "Saidsmalltown02_path04:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarksmalltown02_path05BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Issmalltown02_path05 IsNotSaidsmalltown02_path05 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear100
+		Response PlayerRemarksmalltown02_path05TeenGirl
+		ApplyContext "Saidsmalltown02_path05:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarksmalltown02_path06BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Issmalltown02_path06 IsNotSaidsmalltown02_path06 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear700
+		Response PlayerRemarksmalltown02_path06TeenGirl
+		ApplyContext "Saidsmalltown02_path06:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarksmalltown02_path07BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Issmalltown02_path07 IsNotSaidsmalltown02_path07 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear600
+		Response PlayerRemarksmalltown02_path07TeenGirl
+		then biker smalltown02_path07a foo:0 0
+		ApplyContext "Saidsmalltown02_path07:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarksmalltown02_path08BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Issmalltown02_path08 IsNotSaidsmalltown02_path08 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear100
+		Response PlayerRemarksmalltown02_path08TeenGirl
+		then manager smalltown02_path08a foo:0 0
+		ApplyContext "Saidsmalltown02_path08:1:0,Saidsmalltown02_path06:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkSmalltown02_path09BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown02_path09 IsNotSaidSmalltown02_path09 IsNotCoughing IsTalk IsTalkBetazoeyrvc IsSubjectNear1000
+		Response PlayerRemarkSmalltown02_path09TeenGirl
+		then any SafeSpotAheadResponse foo:0 0
+		ApplyContext "SaidSmalltown02_path09:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkSmalltown03_path01BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown03_path01 IsNotSaidSmalltown03_path01 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarkSmalltown03_path01TeenGirl
+		ApplyContext "SaidSmalltown03_path01:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkSmalltown03_path02BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown03_path02 IsNotSaidSmalltown03_path01 IsNotSaidSmalltown03_path02 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarkSmalltown03_path02TeenGirl
+		ApplyContext "SaidSmalltown03_path02:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkSmalltown03_path03BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown03_path03 IsNotSaidSmalltown03_path03 IsNotSaidSmalltown03_path04 IsNotSaidSmalltown03_path05 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarkSmalltown03_path03TeenGirl
+		ApplyContext "SaidSmalltown03_path03:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkSmalltown03_path04BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown03_path04 IsNotSaidSmalltown03_path04 IsNotSaidSmalltown03_path05 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarkSmalltown03_path04TeenGirl
+		ApplyContext "SaidSmalltown03_path04:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkSmalltown03_path05BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown03_path05 IsNotSaidSmalltown03_path04 IsNotSaidSmalltown03_path05 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarkSmalltown03_path05TeenGirl
+		ApplyContext "SaidSmalltown03_path05:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkSmalltown03_path06BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown03_path06 IsNotSaidSmalltown03_path06 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear400
+		Response PlayerRemarkSmalltown03_path06TeenGirl
+		ApplyContext "SaidSmalltown03_path06:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkSmalltown03_path07BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown03_path07 IsNotSaidSmalltown03_path07 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300
+		Response PlayerRemarkSmalltown03_path07TeenGirl
+		ApplyContext "SaidSmalltown03_path07:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkSmalltown03_path08BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown03_path08 IsNotSaidSmalltown03_path08 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300
+		Response PlayerRemarkSmalltown03_path08TeenGirl
+		ApplyContext "SaidSmalltown03_path08:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkSmalltown03_path10BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown03_path10 IsNotSaidSmalltown03_path10 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear800
+		Response PlayerRemarkSmalltown03_path10TeenGirl
+		ApplyContext "SaidSmalltown03_path10:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkSmalltown03_path11BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown03_path11 IsNotSaidSmalltown03_path11 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear100
+		Response PlayerRemarkSmalltown03_path11TeenGirl
+		ApplyContext "SaidSmalltown03_path11:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkSmalltown03_path12BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown03_path12 IsNotSaidSmalltown03_path12 IsNotSaidSmalltown03_path13 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear400
+		Response PlayerRemarkSmalltown03_path12TeenGirl
+		ApplyContext "SaidSmalltown03_path12:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkSmalltown03_path13BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown03_path13 IsNotSaidSmalltown03_path13 IsNotSaidSmalltown03_path12 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear400
+		Response PlayerRemarkSmalltown03_path13TeenGirl
+		ApplyContext "SaidSmalltown03_path13:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkSmalltown04_path01BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown04_path01 IsNotSaidSmalltown04_path01 IsNotSaidSmalltown04_path02 IsNotCoughing NotInCombat IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarkSmalltown04_path01TeenGirl
+		then any RiversideIsDead foo:0 0
+		ApplyContext "SaidSmalltown04_path01:1:0,Talk:1:12"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkSmalltown04_path02BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown04_path02 IsNotSaidSmalltown04_path02 IsNotSaidSmalltown04_path01 IsNotCoughing NotInCombat IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarkSmalltown04_path02TeenGirl
+		then any RiversideIsDead foo:0 0
+		ApplyContext "SaidSmalltown04_path02:1:0,Talk:1:12"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkSmalltown04_path03BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown04_path03 IsNotSaidSmalltown04_path03 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 IsSmalltownBarricadeBetazoeyrvc
+		Response PlayerRemarkSmalltown04_path03TeenGirl
+		ApplyContext "SaidSmalltown04_path03:1:0,SmallTownBarricadeBetazoeyrvc:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkSmalltown04_path04BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown04_path04 IsNotSaidSmalltown04_path04 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 IsSmalltownBarricadeBetazoeyrvc
+		Response PlayerRemarkSmalltown04_path04TeenGirl
+		ApplyContext "SaidSmalltown04_path04:1:0,SmallTownBarricadeBetazoeyrvc:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkSmalltown04_path05BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown04_path05 IsNotSaidSmalltown04_path05 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300
+		Response PlayerRemarkSmalltown04_path05TeenGirl
+		ApplyContext "SaidSmalltown04_path05:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkSmalltown04_path07BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown04_path07 IsNotSaidSmalltown04_path07 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear800
+		Response PlayerRemarkSmalltown04_path07TeenGirl
+		then Manager Smalltown04_path07A foo:0 0
+		ApplyContext "SaidSmalltown04_path07:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkSmalltown04_path09BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown04_path09 IsNotSaidSmalltown04_path09 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200 IsSmalltownBarricadeBetazoeyrvc
+		Response PlayerRemarkSmalltown04_path09TeenGirl
+		ApplyContext "SaidSmalltown04_path09:1:0,SmallTownBarricadeBetazoeyrvc:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkSmalltown04_path10BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown04_path10 IsNotSaidSmalltown04_path10 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300
+		Response PlayerRemarkSmalltown04_path10TeenGirl
+		ApplyContext "SaidSmalltown04_path10:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkSmalltown04_path11BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown04_path11 IsNotSaidSmalltown04_path11 IsNotCoughing IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarkSmalltown03_path14TeenGirl
+		then any SafeSpotAheadResponse foo:0 0
+		ApplyContext "SaidSmalltown04_path11:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkSmalltown05_path01BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown05_path01 IsNotSaidSmalltown05_path01 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear1000
+		Response PlayerRemarkSmalltown05_path01TeenGirl
+		ApplyContext "SaidSmalltown05_path01:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkSmalltown05_path03BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown05_path03 IsNotSaidSmalltown05_path03 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear300
+		Response PlayerRemarkSmalltown05_path03TeenGirl
+		then biker Smalltown05_path03a foo:0 0
+		ApplyContext "SaidSmalltown05_path03:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkSmalltown05_path06BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsSmalltown05_path06 IsNotSaidSmalltown05_path06 IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear200
+		Response PlayerRemarkSmalltown05_path06TeenGirl
+		ApplyContext "SaidSmalltown05_path06:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkThroughHereBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsThroughHere IsNotSaidThroughHere IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear400
+		Response PlayerRemarkThroughHereTeenGirl
+		ApplyContext "SaidThroughHere:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkUpThatLadderBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc IsUpThatLadder IsNotSaidUpThatLadder IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsSubjectNear400
+		Response PlayerRemarkUpThatLadderTeenGirl
+		ApplyContext "SaidUpThatLadder:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "RespondAffirmativeBetaZoeyRVC",
+		criteria ConceptRespondAffirmative IssuerMediumClose IsNotCoughing NotInCombat isBetazoeyrvc IsTalkBetazoeyrvc
+		Response RespondAffirmativeTeenGirl
+	},
+
+	{
+		name = "RiversideIsDeadBetaZoeyRVC",
+		criteria ConceptRiversideIsDead IsBetazoeyrvc IsNotCoughing IsTalkBetazoeyrvc
+		Response RiversideIsDeadTeenGirl
+		then any RiversideIsDeadB foo:0 0
+		ApplyContext "SaidSmalltown04_path02:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "RiversideIsDeadPlanBetaZoeyRVC",
+		criteria ConceptRiversideIsDeadPlan IsBetazoeyrvc IsNotCoughing IsTalkBetazoeyrvc
+		Response RiversideIsDeadPlanTeenGirl
+		ApplyContext "SaidSmalltown04_path02:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerNearFinaleFarmBetaZoeyRVC",
+		criteria ConceptPlayerNearFinale IsNotCoughing IsBetazoeyrvc IsNotSaidFinaleAhead NotInCombat IsTalk IsTalkBetazoeyrvc IsNotIncapacitated ismap_l4d_farm05_cornfield
+		Response PlayerNearFinaleFarmTeenGirl
+		ApplyContext "SaidFinaleAhead:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerCoverMeBetaZoeyRVC",
+		criteria ConceptPlayerCoverMe IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerCoverMeTeenGirl
+	},
+
+	{
+		name = "PlayerFollowMeBetaZoeyRVC",
+		criteria ConceptPlayerFollowMe IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerFollowMeTeenGirl
+	},
+
+	{
+		name = "PlayerHelpBetaZoeyRVC",
+		criteria ConceptPlayerHelp IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerHelpTeenGirl
+	},
+
+	{
+		name = "PlayerHurryUpBetaZoeyRVC",
+		criteria ConceptPlayerHurryUp IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerHurryUpTeenGirl
+	},
+
+	{
+		name = "PlayerKillThatLightBetaZoeyRVC",
+		criteria ConceptPlayerKillThatLight IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerKillThatLightTeenGirl
+	},
+
+	{
+		name = "PlayerLeadOnBetaZoeyRVC",
+		criteria ConceptPlayerLeadOn IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerLeadOnTeenGirl
+	},
+
+	{
+		name = "PlayerMoveOnBetaZoeyRVC",
+		criteria ConceptPlayerMoveOn IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerMoveOnTeenGirl
+	},
+
+	{
+		name = "PlayerStayTogetherBetaZoeyRVC",
+		criteria ConceptPlayerStayTogether IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerStayTogetherTeenGirl
+	},
+
+	{
+		name = "PlayerWatchOutBehindBetaZoeyRVC",
+		criteria ConceptPlayerWatchOutBehind IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerWatchOutBehindTeenGirl
+	},
+
+	{
+		name = "PlayerAskReadyBetaZoeyRVC",
+		criteria ConceptPlayerAskReady IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerAskReadyTeenGirl
+	},
+
+	{
+		name = "PlayerImWithYouBetaZoeyRVC",
+		criteria ConceptPlayerImWithYou IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerImWithYouTeenGirl
+	},
+
+	{
+		name = "PlayerLaughBetaZoeyRVC",
+		criteria ConceptPlayerLaugh IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerLaughTeenGirl
+	},
+
+	{
+		name = "PlayerLostCallBetaZoeyRVC",
+		criteria ConceptPlayerLostCall IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerLostCallTeenGirl
+	},
+
+	{
+		name = "PlayerNiceJobResponseBetaZoeyRVC",
+		criteria ConceptPlayerNiceJob IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerNiceJobResponseTeenGirl
+	},
+
+	{
+		name = "PlayerNoBetaZoeyRVC",
+		criteria ConceptPlayerNo IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerNoTeenGirl
+	},
+
+	{
+		name = "PlayerProfanityBetaZoeyRVC",
+		criteria ConceptPlayerAnswerLostCall IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerProfanityTeenGirl
+	},
+
+	{
+		name = "PlayerSorryBetaZoeyRVC",
+		criteria ConceptPlayerSorry IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerSorryTeenGirl
+	},
+
+	{
+		name = "PlayerThanksBetaZoeyRVC",
+		criteria ConceptPlayerThanks IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerThanksTeenGirl
+	},
+
+	{
+		name = "PlayerYesBetaZoeyRVC",
+		criteria ConceptPlayerYes IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerYesTeenGirl
+	},
+
+	{
+		name = "PlayerYouAreWelcomeBetaZoeyRVC",
+		criteria ConceptPlayerYouAreWelcome IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSpeaking
+		Response PlayerYouAreWelcomeTeenGirl
+	},
+
+	{
+		name = "PlayerFriendlyFireInflictorBetaZoeyRVC",
+		criteria ConceptPlayerFriendlyFireInflictor IsNotCoughing IsNotSpeaking IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerSorryTeenGirl
+	},
+
+	{
+		name = "PlayerNegativeBetaZoeyRVC",
+		criteria ConceptPlayerNegative IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerNegativeTeenGirl
+	},
+
+	{
+		name = "PlayerAreaClearBetaZoeyRVC",
+		criteria ConceptPlayerAreaClear IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerAreaClearTeenGirl
+	},
+
+	{
+		name = "PlayerHeardBoomerBetaZoeyRVC",
+		criteria ConceptPlayerHeardBoomer IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerHeardBoomerTeenGirl
+	},
+
+	{
+		name = "PlayerHeardHunterBetaZoeyRVC",
+		criteria ConceptPlayerHeardHunter IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerHeardHunterTeenGirl
+	},
+
+	{
+		name = "PlayerHeardSmokerBetaZoeyRVC",
+		criteria ConceptPlayerHeardSmoker IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerHeardSmokerTeenGirl
+	},
+
+	{
+		name = "PlayerHeardTankBetaZoeyRVC",
+		criteria ConceptPlayerHeardTank IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerHeardTankTeenGirl
+	},
+
+	{
+		name = "PlayerHeardWitchBetaZoeyRVC",
+		criteria ConceptPlayerHeardWitch IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerHeardWitchTeenGirl
+	},
+
+	{
+		name = "PlayerHurrahBetaZoeyRVC",
+		criteria ConceptPlayerHurrah IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerHurrahTeenGirl
+		then Any HurrahAlso foo:0 0
+	},
+
+	{
+		name = "PlayerWarnCarefulBetaZoeyRVC",
+		criteria ConceptPlayerWarnCareful IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerWarnCarefulTeenGirl
+	},
+
+	{
+		name = "SurvivorSpottedWorldFarBetaZoeyRVC",
+		criteria ConceptPlayerLook IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto
+		Response SurvivorSpottedWorldFarTeenGirl
+	},
+
+	{
+		name = "IntroSmalltownBetaZoeyRVC",
+		criteria ConceptIntroSmalltown IsBetazoeyrvc
+		Response IntroSmalltownTeenGirl
+		then betazoeyrvc IntroSmallTown2 foo:0 0.05
+		ApplyContext "talk:1:10"
+		applycontexttoworld
+	},
+
+	{
+		name = "IntroSmalltown2BetaZoeyRVC",
+		criteria ConceptIntroSmalltown2 IsBetazoeyrvc
+		Response IntroSmalltown2TeenGirl
+		then any IntroSmallTown3 foo:0 0.05
+		ApplyContext "talk:1:5"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpawnBetaZoeyRVC",
+		criteria ConceptPlayerScenarioJoin IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response SurvivorSpawnTeenGirl
+	},
+
+	{
+		name = "SurvivorSpawnLastMainstreetBetaZoeyRVC",
+		criteria ConceptPlayerScenarioJoinLast IsBetazoeyrvc IsSmalltown04
+		Response SurvivorSpawnLastMainstreetTeenGirl
+		ApplyContext "RemarkableReadyToGo:1:500,RemarkableBlocker:1:5"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerBillPouncedBetaZoeyRVC",
+		criteria ConceptSurvivorWasPounced ChanceToFire30Percent IsNotCoughing SubjectIsNamVet IsNotSaidBillPounced IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerBillPouncedTeenGirl
+		ApplyContext "BillPounced:1:60"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerBounceReactionBetaZoeyRVC",
+		criteria ConceptBounceReaction IsBetazoeyrvc IsNotCoughing NotInCombat IsSubjectAlmostNear IsTalk IsTalkBetazoeyrvc
+		Response PlayerBounceReactionTeenGirl
+	},
+
+	{
+		name = "PlayerEatPillsBetaZoeyRVC",
+		criteria ConceptEatPills IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerEatPillsTeenGirl
+	},
+
+	{
+		name = "PlayerFrancisPouncedBetaZoeyRVC",
+		criteria ConceptSurvivorWasPounced ChanceToFire30Percent IsNotCoughing SubjectIsBiker IsNotSaidFrancisPounced IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerFrancisPouncedTeenGirl
+		ApplyContext "FrancisPounced:1:60"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerGetInsideCheckPointBetaZoeyRVC",
+		criteria ConceptPlayerGetInsideCheckPoint IsNotCoughing IsBetazoeyrvc IsInSafeSpot IsTalk IsTalkBetazoeyrvc SomeoneOutsideSafeSpot
+		Response PlayerGetInsideCheckPointTeenGirl
+	},
+
+	{
+		name = "PlayerGrenadeBetaZoeyRVC",
+		criteria ConceptThrewGrenade IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerGrenadeTeenGirl
+		then Any GrenadeCareful foo:0 0
+	},
+
+	{
+		name = "PlayerGrenadeCarefulBetaZoeyRVC",
+		criteria ConceptGrenadeCareful IsNotCoughing IsBetazoeyrvc IsWitchPresent NotInCombat IssuerClose IsTalk IsTalkBetazoeyrvc
+		Response PlayerGrenadeCarefulTeenGirl
+	},
+
+	{
+		name = "PlayerIncapacitatedInitialBetaZoeyRVC",
+		criteria ConceptPlayerIncapacitated IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerIncapacitatedInitialTeenGirl
+		ApplyContext "TalkBetazoeyrvc:1:2"
+	},
+
+	{
+		name = "PlayerKillConfirmationBetaZoeyRVC",
+		criteria ConceptKilledZombie IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSubjectFar300 ChanceToFire40Percent
+		Response PlayerKillConfirmationTeenGirl
+		then Any PlayerNiceShot foo:0 0
+	},
+
+	{
+		name = "PlayerLockTheDoorCheckPointBetaZoeyRVC",
+		criteria ConceptPlayerLockTheDoorCheckPoint IsNotCoughing IsBetazoeyrvc IsInSafeSpot IsTalk IsTalkBetazoeyrvc
+		Response PlayerLockTheDoorCheckPointTeenGirl
+	},
+
+	{
+		name = "PlayerLouisPouncedBetaZoeyRVC",
+		criteria ConceptSurvivorWasPounced ChanceToFire30Percent IsNotCoughing SubjectIsManager IsNotSaidLouisPounced IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerLouisPouncedTeenGirl
+		ApplyContext "LouisPounced:1:60"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkairport01_burningBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport01_burning IsNotSaidairport01_burning IsNotCoughing NotInCombat IsSubjectReallyNear ChanceToFire40Percent IsTalk IsTalkBetazoeyrvc
+		Response PlayerRemarkairport01_burningTeenGirl
+		ApplyContext "Saidairport01_burning:1:0"
+	},
+
+	{
+		name = "AUTOBLANK_PlayerRemarkairport01_burningBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport01_burning IsNotSaidairport01_burning IsNotCoughing NotInCombat IsSubjectReallyNear IsTalk IsTalkBetazoeyrvc
+		Response _PlayerInfoRemarkableBlankTeenGirl
+		ApplyContext "Saidairport01_burning:1:0"
+	},
+
+	{
+		name = "PlayerRemarkairport01_path01BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport01_path01 IsNotSaidairport01_path01 IsNotCoughing NotInCombat IsSubjectReallyNear ChanceToFire40Percent IsTalk IsTalkBetazoeyrvc
+		Response PlayerRemarkairport01_path01TeenGirl
+		ApplyContext "Saidairport01_path01:1:0"
+	},
+
+	{
+		name = "AUTOBLANK_PlayerRemarkairport01_path01BetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isairport01_path01 IsNotSaidairport01_path01 IsNotCoughing NotInCombat IsSubjectReallyNear IsTalk IsTalkBetazoeyrvc
+		Response _PlayerInfoRemarkableBlankTeenGirl
+		ApplyContext "Saidairport01_path01:1:0"
+	},
+
+	{
+		name = "PlayerStayTogetherInsideBetaZoeyRVC",
+		criteria ConceptPlayerStayTogether IsNotCoughing IsBetazoeyrvc IsInSafeSpot IsTalk IsTalkBetazoeyrvc SomeoneOutsideSafeSpot
+		Response PlayerStayTogetherInsideTeenGirl
+	},
+
+	{
+		name = "PlayerSuggestHealthBillBetaZoeyRVC",
+		criteria ConceptPlayerSuggestHealthNamVet IsBetazoeyrvc IssuerReallyClose IsNotSuggestedHealth IsNotBeingHealed IsTalk IsTalkBetazoeyrvc NotInCombat
+		Response PlayerSuggestHealthBillTeenGirl
+		ApplyContext "SuggestedHealth:1:120"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerSuggestHealthFrancisBetaZoeyRVC",
+		criteria ConceptPlayerSuggestHealthBiker IsBetazoeyrvc IssuerReallyClose IsNotSuggestedHealth IsNotBeingHealed IsTalk IsTalkBetazoeyrvc NotInCombat
+		Response PlayerSuggestHealthFrancisTeenGirl
+		ApplyContext "SuggestedHealth:1:120"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerSuggestHealthLouisBetaZoeyRVC",
+		criteria ConceptPlayerSuggestHealthManager IsBetazoeyrvc IssuerReallyClose IsNotSuggestedHealth IsNotBeingHealed IsTalk IsTalkBetazoeyrvc NotInCombat
+		Response PlayerSuggestHealthLouisTeenGirl
+		ApplyContext "SuggestedHealth:1:120"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerSuggestMeHealthBikerBetaZoeyRVC",
+		criteria ConceptTalkIdle IsNotHealthy NotInCombat YesHasFirstAidKit IsBiker IsNotBeingHealed IsTalk IsTalkBetazoeyrvc
+		Response PlayerSuggestMeHealthBikerTeenGirl
+		then Any PlayerSuggestHealthBiker foo:0 0
+	},
+
+	{
+		name = "PlayerSuggestMeHealthManagerBetaZoeyRVC",
+		criteria ConceptTalkIdle IsNotHealthy NotInCombat YesHasFirstAidKit IsManager IsNotBeingHealed IsTalk IsTalkBetazoeyrvc
+		Response PlayerSuggestMeHealthManagerTeenGirl
+		then Any PlayerSuggestHealthManager foo:0 0
+	},
+
+	{
+		name = "PlayerSuggestMeHealthNamVetBetaZoeyRVC",
+		criteria ConceptTalkIdle IsNotHealthy NotInCombat YesHasFirstAidKit IsNamVet IsNotBeingHealed IsTalk IsTalkBetazoeyrvc
+		Response PlayerSuggestMeHealthNamVetTeenGirl
+		then Any PlayerSuggestHealthNamVet foo:0 0
+	},
+
+	{
+		name = "PlayerSuggestMeHealthTeenGirlBetaZoeyRVC",
+		criteria ConceptTalkIdle IsNotHealthy NotInCombat YesHasFirstAidKit IsBetazoeyrvc IsNotBeingHealed IsTalk IsTalkBetazoeyrvc
+		Response PlayerSuggestMeHealthTeenGirlTeenGirl
+		then Any PlayerSuggestHealthBetazoeyrvc foo:0 0
+	},
+
+	{
+		name = "PlayerTransitionBetaZoeyRVC",
+		criteria ConceptPlayerTransition IsNotCoughing IsBetazoeyrvc IsNotSaidPlayerTransition IsTalk IsTalkBetazoeyrvc
+		Response PlayerTransitionTeenGirl
+		ApplyContext "SaidPlayerTransition:1:90"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerTransitionCloseBetaZoeyRVC",
+		criteria ConceptPlayerTransition IsNotCoughing IsBetazoeyrvc IsNotSaidPlayerTransition IsTalk IsTalkBetazoeyrvc IntensityOver75 RecentGroupInCombat10 IsEveryoneNotAlive
+		Response PlayerTransitionCloseTeenGirl
+		ApplyContext "SaidPlayerTransition:1:90"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerWarnHeardBoomerBetaZoeyRVC",
+		criteria ConceptPlayerWarnHearZombie IsBoomerClass IsNotCoughing IsBetazoeyrvc IsNotWarnHeardBoomer NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkBetazoeyrvc
+		Response PlayerWarnHeardBoomerTeenGirl
+		ApplyContext "WarnHeardBoomer :1:300,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerWarnHeardHunterBetaZoeyRVC",
+		criteria ConceptPlayerWarnHearZombie IsHunterClass IsNotCoughing IsBetazoeyrvc IsNotWarnHeardHunter NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkBetazoeyrvc
+		Response PlayerWarnHeardHunterTeenGirl
+		ApplyContext "WarnHeardHunter :1:300,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerWarnHeardSmokerBetaZoeyRVC",
+		criteria ConceptPlayerWarnHearZombie IsSmokerClass IsNotCoughing IsBetazoeyrvc IsNotWarnHeardSmoker NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkBetazoeyrvc
+		Response PlayerWarnHeardSmokerTeenGirl
+		ApplyContext "WarnHeardSmoker :1:300,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerWarnHeardWitchBetaZoeyRVC",
+		criteria ConceptPlayerWarnHearZombie IsWitchClass IsNotCoughing IsBetazoeyrvc IsNotWarnHeardWitch NotInCombat IsNotSaidSpecialWarn IsTalk IsTalkBetazoeyrvc
+		Response PlayerWarnHeardWitchTeenGirl
+		then Self PlayerKillThatLight foo:0 0
+		ApplyContext "WarnHeardWitch:1:300,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerWarnMegaMobBetaZoeyRVC",
+		criteria ConceptPlayerWarnMegaMob IsNotCoughing IsBetazoeyrvc IsNotWarnMegaMob IsTalk IsTalkBetazoeyrvc IsNotSpeaking
+		Response PlayerWarnMegaMobTeenGirl
+		ApplyContext "WarnMegaMob:1:300,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerWarnWitchAngryBetaZoeyRVC",
+		criteria ConceptWitchGettingAngry IsNotCoughing IsBetazoeyrvc IsNotWarnAngryWitch IsTalk IsTalkBetazoeyrvc
+		Response PlayerWarnWitchAngryTeenGirl
+		ApplyContext "WarnAngryWitch:1:5,SaidSpecialWarn:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorCaughtVomitBetaZoeyRVC",
+		criteria ConceptPlayerVomitInFace IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response SurvivorCaughtVomitTeenGirl
+	},
+
+	{
+		name = "SurvivorCoughingBetaZoeyRVC",
+		criteria ConceptSurvivorCoughing IsCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response SurvivorCoughingTeenGirl
+	},
+
+	{
+		name = "SurvivorCoughingDeathBetaZoeyRVC",
+		criteria ConceptPlayerDeath IsCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response SurvivorCoughingDeathTeenGirl
+	},
+
+	{
+		name = "SurvivorDeathBetaZoeyRVC",
+		criteria ConceptPlayerDeath IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response SurvivorDeathTeenGirl
+	},
+
+	{
+		name = "SurvivorGrabbedByTongueBetaZoeyRVC",
+		criteria ConceptPlayerGrabbedByTongue IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response SurvivorGrabbedByTongueTeenGirl
+	},
+
+	{
+		name = "SurvivorNearFinaleBetaZoeyRVC",
+		criteria ConceptPlayerNearFinale IsNotCoughing IsBetazoeyrvc IsNotSaidFinaleAhead NotInCombat IsTalk IsTalkBetazoeyrvc IsNotIncapacitated
+		Response SurvivorNearFinaleTeenGirl
+		ApplyContext "SaidFinaleAhead:1:30"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorTankPoundBetaZoeyRVC",
+		criteria ConceptPlayerGroundPoundedByTank IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response SurvivorTankPoundTeenGirl
+	},
+
+	{
+		name = "SurvivorVocalizeBackUpBetaZoeyRVC",
+		criteria ConceptPlayerBackUp IsBetazoeyrvc IsNotInSafeSpot IsNotInCheckpoint IsTalk IsTalkBetazoeyrvc
+		Response SurvivorVocalizeBackUpTeenGirl
+	},
+
+	{
+		name = "SurvivorVocalizeEmphaticGoBetaZoeyRVC",
+		criteria ConceptPlayerEmphaticGo IsBetazoeyrvc IsNotInSafeSpot IsNotInCheckpoint IsTalk IsTalkBetazoeyrvc
+		Response SurvivorVocalizeEmphaticGoTeenGirl
+	},
+
+	{
+		name = "SurvivorVocalizeFollowMeBetaZoeyRVC",
+		criteria ConceptPlayerFollowMe IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response SurvivorVocalizeFollowMeTeenGirl
+	},
+
+	{
+		name = "SurvivorVocalizeGoingToDieBetaZoeyRVC",
+		criteria ConceptPlayerGoingToDie IsNotSpeaking IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotComplainBlock
+		Response SurvivorVocalizeGoingToDieTeenGirl
+		ApplyContext "IsComplain:1:25"
+	},
+
+	{
+		name = "SurvivorVocalizeGoingToDie3BetaZoeyRVC",
+		criteria ConceptPlayerGoingToDie IsNotSpeaking IsNotCoughing IsBetazoeyrvc IsOnThirdStrike IsTalk IsTalkBetazoeyrvc IsNotComplainBlock
+		Response SurvivorVocalizeGoingToDie3TeenGirl
+		ApplyContext "IsComplain:1:25"
+	},
+
+	{
+		name = "SurvivorVocalizeGoingToDieAloneBetaZoeyRVC",
+		criteria ConceptPlayerGoingToDie IsNotSpeaking IsNotCoughing IsBetazoeyrvc IsOnThirdStrike IsAlone NotInCombat IsNotSaidNervous IsTalk IsTalkBetazoeyrvc
+		Response SurvivorVocalizeGoingToDieAloneTeenGirl
+		ApplyContext "SaidNervous:1:0"
+	},
+
+	{
+		name = "SurvivorVocalizeLookOutBetaZoeyRVC",
+		criteria ConceptPlayerLookOut IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response SurvivorVocalizeLookOutTeenGirl
+	},
+
+	{
+		name = "SurvivorVocalizeThisWayBetaZoeyRVC",
+		criteria ConceptPlayerThisWay IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response SurvivorVocalizeThisWayTeenGirl
+	},
+
+	{
+		name = "SurvivorVocalizeWaitHereBetaZoeyRVC",
+		criteria ConceptPlayerWaitHere IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response SurvivorVocalizeWaitHereTeenGirl
+	},
+
+	{
+		name = "PlayerLedgeHangEndBetaZoeyRVC",
+		criteria ConceptPlayerLedgeHangEnd IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerLedgeHangEndTeenGirl
+	},
+
+	{
+		name = "PlayerLedgeHangMiddleBetaZoeyRVC",
+		criteria ConceptPlayerLedgeHangMiddle IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerLedgeHangMiddleTeenGirl
+	},
+
+	{
+		name = "PlayerLedgeHangStartBetaZoeyRVC",
+		criteria ConceptPlayerLedgeHangStart IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerLedgeHangStartTeenGirl
+	},
+
+	{
+		name = "DoubleDeathBetaZoeyRVC",
+		criteria ConceptSurvivorDied IsNotCoughing IsBetazoeyrvc IsSaidSomeoneDied IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDiedDouble
+		Response DoubleDeathTeenGirl
+		ApplyContext "SaidSomeoneDied:1:10,SaidSomeoneDiedDouble:1:10,SaidSomeoneDiedKill:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "DoubleDeath2BetaZoeyRVC",
+		criteria ConceptDeath2Left IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidSomeoneDiedDouble2 IsWithTwo IsNotIncapacitated ChanceToFire30Percent
+		Response DoubleDeath2TeenGirl
+		ApplyContext "SaidSomeoneDiedDouble2:1:10"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorDiedBillBetaZoeyRVC",
+		criteria ConceptSurvivorDied IsNotCoughing IsBetazoeyrvc IsDeadNamVet IsNotSaidSomeoneDied IsTalk IsTalkBetazoeyrvc
+		Response SurvivorDiedBillTeenGirl
+		then Any Death2Left foo:0 0
+		ApplyContext "SaidSomeoneDied:1:10,SaidSomeoneDiedKill:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorDiedFrancisBetaZoeyRVC",
+		criteria ConceptSurvivorDied IsNotCoughing IsBetazoeyrvc IsDeadBiker IsNotSaidSomeoneDied IsTalk IsTalkBetazoeyrvc
+		Response SurvivorDiedFrancisTeenGirl
+		then Any Death2Left foo:0 0
+		ApplyContext "SaidSomeoneDied:1:10,SaidSomeoneDiedKill:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorDiedLouisBetaZoeyRVC",
+		criteria ConceptSurvivorDied IsNotCoughing IsBetazoeyrvc IsDeadManager IsNotSaidSomeoneDied IsTalk IsTalkBetazoeyrvc
+		Response SurvivorDiedLouisTeenGirl
+		then Any Death2Left foo:0 0
+		ApplyContext "SaidSomeoneDied:1:10,SaidSomeoneDiedKill:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorPickupAutoShotgunBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpAutoShotgun IsNotSpeaking IsInSafeSpot ChanceToFire30Percent BetazoeyrvcNotPickedUpItem IsNotInStartArea IsTalk IsTalkBetazoeyrvc
+		Response SurvivorPickupAutoShotgunTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupFirstAidKitBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpFirstAidKit IsNotSpeaking IsInSafeSpot ChanceToFire30Percent BetazoeyrvcNotPickedUpItem IsNotInStartArea IsTalk IsTalkBetazoeyrvc
+		Response SurvivorPickupFirstAidKitTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupHuntingRifleBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpHuntingRifle IsNotSpeaking IsInSafeSpot ChanceToFire30Percent BetazoeyrvcNotPickedUpItem IsNotInStartArea IsTalk IsTalkBetazoeyrvc
+		Response SurvivorPickupHuntingRifleTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupMolotovBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpMolotov IsNotSpeaking IsInSafeSpot ChanceToFire30Percent BetazoeyrvcNotPickedUpItem IsNotInStartArea IsTalk IsTalkBetazoeyrvc
+		Response SurvivorPickupMolotovTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupPainPillsBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpPainPills IsNotSpeaking IsInSafeSpot IsNotInStartArea IsTalk IsTalkBetazoeyrvc
+		Response SurvivorPickupPainPillsTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupPipeBombBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpPipeBomb IsNotSpeaking IsInSafeSpot ChanceToFire30Percent BetazoeyrvcNotPickedUpItem IsNotInStartArea IsTalk IsTalkBetazoeyrvc
+		Response SurvivorPickupPipeBombTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupPumpShotgunBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpPumpShotgun IsNotSpeaking IsInSafeSpot ChanceToFire30Percent BetazoeyrvcNotPickedUpItem IsNotInStartArea IsTalk IsTalkBetazoeyrvc
+		Response SurvivorPickupPumpShotgunTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupRifleBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpRifle IsNotSpeaking IsInSafeSpot ChanceToFire30Percent BetazoeyrvcNotPickedUpItem IsNotInStartArea IsTalk IsTalkBetazoeyrvc
+		Response SurvivorPickupRifleTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupSecondPistolBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpSecondPistol IsNotSpeaking IsInSafeSpot ChanceToFire30Percent BetazoeyrvcNotPickedUpItem IsNotInStartArea IsTalk IsTalkBetazoeyrvc
+		Response SurvivorPickupSecondPistolTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupSMGBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpSMG IsNotSpeaking IsInSafeSpot ChanceToFire30Percent BetazoeyrvcNotPickedUpItem IsNotInStartArea IsTalk IsTalkBetazoeyrvc
+		Response SurvivorPickupSMGTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupAutoShotgunAlwaysBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpAutoShotgun IsNotSpeaking IsNotInSafeSpot ChanceToFire30Percent BetazoeyrvcNotPickedUpItem IsTalk IsTalkBetazoeyrvc
+		Response SurvivorPickupAutoShotgunTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupFirstAidKitAlwaysBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpFirstAidKit IsNotSpeaking IsNotInSafeSpot ChanceToFire30Percent BetazoeyrvcNotPickedUpItem IsTalk IsTalkBetazoeyrvc
+		Response SurvivorPickupFirstAidKitTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupHuntingRifleAlwaysBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpHuntingRifle IsNotSpeaking IsNotInSafeSpot ChanceToFire30Percent BetazoeyrvcNotPickedUpItem IsTalk IsTalkBetazoeyrvc
+		Response SurvivorPickupHuntingRifleTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupMolotovAlwaysBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpMolotov IsNotSpeaking IsNotInSafeSpot ChanceToFire30Percent BetazoeyrvcNotPickedUpItem IsTalk IsTalkBetazoeyrvc
+		Response SurvivorPickupMolotovTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupPainPillsAlwaysBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpPainPills IsNotSpeaking IsTalk IsTalkBetazoeyrvc
+		Response SurvivorPickupPainPillsTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupPipeBombAlwaysBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpPipeBomb IsNotSpeaking IsNotInSafeSpot ChanceToFire30Percent BetazoeyrvcNotPickedUpItem IsTalk IsTalkBetazoeyrvc
+		Response SurvivorPickupPipeBombTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupPumpShotgunAlwaysBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpPumpShotgun IsNotSpeaking IsNotInSafeSpot ChanceToFire30Percent BetazoeyrvcNotPickedUpItem IsTalk IsTalkBetazoeyrvc
+		Response SurvivorPickupPumpShotgunTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupRifleAlwaysBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpRifle IsNotSpeaking IsNotInSafeSpot ChanceToFire30Percent BetazoeyrvcNotPickedUpItem IsTalk IsTalkBetazoeyrvc
+		Response SurvivorPickupRifleTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupSecondPistolBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpSecondPistol IsNotSpeaking IsNotInSafeSpot ChanceToFire30Percent BetazoeyrvcNotPickedUpItem IsTalk IsTalkBetazoeyrvc
+		Response SurvivorPickupSecondPistolTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupSMGAlwaysBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpSMG IsNotSpeaking IsNotInSafeSpot ChanceToFire30Percent BetazoeyrvcNotPickedUpItem IsTalk IsTalkBetazoeyrvc
+		Response SurvivorPickupSMGTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "PlayerGettingRevivedBetaZoeyRVC",
+		criteria ConceptReviveFriendDown IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerGettingRevivedTeenGirl
+		then From ReviveFriendDownFinal foo:0 0
+	},
+
+	{
+		name = "PlayerHealOtherBetaZoeyRVC",
+		criteria ConceptPlayerHealingOther IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerHealOtherTeenGirl
+	},
+
+	{
+		name = "PlayerHealOtherCombatBetaZoeyRVC",
+		criteria ConceptPlayerHealingOther IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc InCombat
+		Response PlayerHealOtherCombatTeenGirl
+	},
+
+	{
+		name = "PlayerLedgeSaveBetaZoeyRVC",
+		criteria ConceptPlayerLedgeSave IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerLedgeSaveTeenGirl
+	},
+
+	{
+		name = "PlayerLedgeSaveLouisBetaZoeyRVC",
+		criteria ConceptPlayerLedgeSave IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc SubjectIsManager NotInCombat IsEveryoneAlive ChanceToFire10Percent
+		Response PlayerLedgeSaveLouisTeenGirl
+	},
+
+	{
+		name = "PlayerReviveFriendBetaZoeyRVC",
+		criteria ConceptPlayerReviveFriend IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerReviveFriendTeenGirl
+		ApplyContext "ReviveTalk:1:5,Talk:1:1"
+	},
+
+	{
+		name = "PlayerReviveFriendCriticalBetaZoeyRVC",
+		criteria ConceptPlayerReviveFriendCritical IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerReviveFriendCriticalTeenGirl
+		ApplyContext "ReviveTalk:1:5,Talk:1:1"
+	},
+
+	{
+		name = "PlayerReviveFriendLoudBetaZoeyRVC",
+		criteria ConceptPlayerReviveFriend IsNotCoughing IsBetazoeyrvc IsZombiePresentTank IsTalk IsTalkBetazoeyrvc
+		Response PlayerReviveFriendLoudTeenGirl
+		ApplyContext "ReviveTalk:1:5,Talk:1:1"
+	},
+
+	{
+		name = "PlayerReviveFriendLoudBillBetaZoeyRVC",
+		criteria ConceptPlayerReviveFriend IsNotCoughing IsBetazoeyrvc IsZombiePresentTank IsTalk IsTalkBetazoeyrvc SubjectIsNamVet
+		Response PlayerReviveFriendLoudBillTeenGirl
+		ApplyContext "ReviveTalk:1:5"
+	},
+
+	{
+		name = "PlayerReviveFriendLoudFrancisBetaZoeyRVC",
+		criteria ConceptPlayerReviveFriend IsNotCoughing IsBetazoeyrvc IsZombiePresentTank IsTalk IsTalkBetazoeyrvc SubjectIsBiker
+		Response PlayerReviveFriendLoudFrancisTeenGirl
+		ApplyContext "ReviveTalk:1:5"
+	},
+
+	{
+		name = "PlayerReviveFriendLoudLouisBetaZoeyRVC",
+		criteria ConceptPlayerReviveFriend IsNotCoughing IsBetazoeyrvc IsZombiePresentTank IsTalk IsTalkBetazoeyrvc SubjectIsManager
+		Response PlayerReviveFriendLoudLouisTeenGirl
+		ApplyContext "ReviveTalk:1:5"
+	},
+
+	{
+		name = "PlayerReviveFriendShortBetaZoeyRVC",
+		criteria ConceptPlayerReviveFriend IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsReviveTalk
+		Response PlayerReviveFriendShortTeenGirl
+		ApplyContext "ReviveTalk:1:5"
+	},
+
+	{
+		name = "PlayerLedgeSaveCriticalBetaZoeyRVC",
+		criteria ConceptPlayerLedgeSaveCritical IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc
+		Response PlayerReviveFriendCriticalTeenGirl
+		ApplyContext "ReviveTalk:1:5,Talk:1:1"
+	},
+
+	{
+		name = "PlayerReviveFriendLoud2BetaZoeyRVC",
+		criteria ConceptPlayerReviveFriend IsNotCoughing IsBetazoeyrvc IntensityHigh IsTalk IsTalkBetazoeyrvc
+		Response PlayerReviveFriendLoudTeenGirl
+		ApplyContext "ReviveTalk:1:5,Talk:1:1"
+	},
+
+	{
+		name = "PlayerReviveFriendLoudBill2BetaZoeyRVC",
+		criteria ConceptPlayerReviveFriend IsNotCoughing IsBetazoeyrvc IntensityHigh IsTalkBetazoeyrvc SubjectIsNamVet ChanceToFire15Percent
+		Response PlayerReviveFriendLoudBillTeenGirl
+		ApplyContext "ReviveTalk:1:5,Talk:1:4"
+	},
+
+	{
+		name = "PlayerReviveFriendLoudCritBetaZoeyRVC",
+		criteria ConceptPlayerReviveFriendCritical IsNotCoughing IsBetazoeyrvc IntensityHigh IsTalk IsTalkBetazoeyrvc IntensityHigh
+		Response PlayerReviveFriendLoudTeenGirl
+		ApplyContext "ReviveTalk:1:5,Talk:1:1"
+	},
+
+	{
+		name = "PlayerReviveFriendLoudFrancis2BetaZoeyRVC",
+		criteria ConceptPlayerReviveFriend IsNotCoughing IsBetazoeyrvc IntensityHigh IsTalk IsTalkBetazoeyrvc SubjectIsBiker ChanceToFire15Percent
+		Response PlayerReviveFriendLoudFrancisTeenGirl
+		ApplyContext "ReviveTalk:1:5,Talk:1:4"
+	},
+
+	{
+		name = "PlayerReviveFriendLoudLouis2BetaZoeyRVC",
+		criteria ConceptPlayerReviveFriend IsNotCoughing IsBetazoeyrvc IntensityHigh IsTalk IsTalkBetazoeyrvc SubjectIsManager ChanceToFire15Percent
+		Response PlayerReviveFriendLoudLouisTeenGirl
+		ApplyContext "ReviveTalk:1:5,Talk:1:4"
+	},
+
+	{
+		name = "PlayerAirportIntroBetaZoeyRVC",
+		criteria ConceptIntroAirport IsBetazoeyrvc
+		Response PlayerAirportIntroTeenGirl
+		then NamVet IntroAirport01bb foo:0 0
+		ApplyContext "talk:1:10"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerAirportIntrozbBetaZoeyRVC",
+		criteria ConceptIntroAirport01zb IsBetazoeyrvc
+		Response PlayerAirportIntrozbTeenGirl
+		ApplyContext "talk:1:3"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerHospitalIntro02BetaZoeyRVC",
+		criteria ConceptIntroHospital02 IsBetazoeyrvc
+		Response PlayerHospitalIntro02TeenGirl
+		ApplyContext "talk:1:5"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerCoverMeHealBetaZoeyRVC",
+		criteria ConceptPlayerHealing IsNotCoughing IsBetazoeyrvc IsNotAskedForCoverBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotAlone
+		Response PlayerCoverMeHealTeenGirl
+		ApplyContext "BetazoeyrvcAskForCover:1:30"
+	},
+
+	{
+		name = "SurvivorSpottedWeaponBetaZoeyRVC",
+		criteria ConceptPlayerSpotPistol IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto
+		Response SurvivorSpottedWeaponTeenGirl
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedWeaponPistolAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotPistol IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot
+		Response SurvivorSpottedWeaponPistolAutoTeenGirl
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedRifleBetaZoeyRVC",
+		criteria ConceptPlayerSpotRifle IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto
+		Response SurvivorSpottedWeaponTeenGirl
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedRifleAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotRifle IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot
+		Response SurvivorSpottedWeaponTeenGirl
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedShotgunBetaZoeyRVC",
+		criteria ConceptPlayerSpotShotgun IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto
+		Response SurvivorSpottedWeaponTeenGirl
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedShotgunAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotShotgun IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot
+		Response SurvivorSpottedWeaponTeenGirl
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedSMGBetaZoeyRVC",
+		criteria ConceptPlayerSpotSMG IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto
+		Response SurvivorSpottedWeaponTeenGirl
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedSMGAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotSMG IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot
+		Response SurvivorSpottedWeaponTeenGirl
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedSniperRifleBetaZoeyRVC",
+		criteria ConceptPlayerSpotSniperRifle IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto
+		Response SurvivorSpottedWeaponTeenGirl
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedSniperRifleAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotSniperRifle IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot
+		Response SurvivorSpottedWeaponTeenGirl
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedWeaponBetaZoeyRVC",
+		criteria ConceptPlayerSpotOtherWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto
+		Response SurvivorSpottedWeaponTeenGirl
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedWeaponAShotgunAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotAutoShotgun IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot
+		Response SurvivorSpottedWeaponTeenGirl
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedShotgun_spasBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsShotgun_spas IsWorldTalkBetazoeyrvc _auto_NotNoSpotting IsNotSpeakingWeight0
+		Response SurvivorSpottedWeaponTeenGirl
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedShotgun_spasAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsShotgun_spas IsWorldTalkBetazoeyrvc
+		Response SurvivorSpottedWeaponTeenGirl
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedRifle_desertBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsRifle_desert IsWorldTalkBetazoeyrvc
+		Response SurvivorSpottedWeaponTeenGirl
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedRifle_desertAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsRifle_desert IsWorldTalkBetazoeyrvc _auto_NotNoSpotting IsNotSpeakingWeight0
+		Response SurvivorSpottedWeaponTeenGirl
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRelaxedSighBetaZoeyRVC",
+		criteria ConceptRelaxedSigh IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response PlayerRelaxedSighTeenGirl
+	},
+
+	{
+		name = "PlayerUseAdrenalineBetaZoeyRVC",
+		criteria ConceptUseAdrenaline IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response PlayerUseAdrenalineTeenGirl
+	},
+
+	{
+		name = "PlayerUsingDefibrillatorBetaZoeyRVC",
+		criteria ConceptPlayerUsingDefibrillator IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response PlayerUsingDefibrillatorTeenGirl
+	},
+
+	{
+		name = "PlayerRevivedByDefibrillatorBetaZoeyRVC",
+		criteria ConceptRevivedByDefibrillator IsNotCoughing IsBetazoeyrvc
+		Response PlayerRevivedByDefibrillatorTeenGirl
+		ApplyContext "TalkBetazoeyrvc:1:3"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRevivedByDefibrillator2BetaZoeyRVC",
+		criteria ConceptRevivedByDefibrillatorDelayed IsBetazoeyrvc
+		Response PlayerRevivedByDefibrillator2TeenGirl
+		ApplyContext "TalkBetazoeyrvc:1:3"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorPouncedByHunterBetaZoeyRVC",
+		criteria ConceptScreamWhilePounced IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response SurvivorPouncedByHunterTeenGirl
+	},
+
+	{
+		name = "PlayerGrabbedByJockeyBetaZoeyRVC",
+		criteria ConceptSurvivorJockeyed IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidBeenJockeyedBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response PlayerGrabbedByJockeyTeenGirl
+		ApplyContext "SaidBeenJockeyedBetazoeyrvc:1:6,_auto_NoSpotting:1:4"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorJockeyHurtMajorBetaZoeyRVC",
+		criteria IsSurvivor InPain IsMajorPain IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc SubjectIsJockey IsNotSaidBeenJockeyedBetazoeyrvc IsWorldTalkBetazoeyrvc IsBeingJockeyed
+		Response SurvivorJockeyHurtMajorTeenGirl
+		then all commentjockey foo:0 -1.739
+		ApplyContext "SaidBeenJockeyedBetazoeyrvc:1:6,_auto_NoSpotting:1:4"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorJockeyHurtMinorBetaZoeyRVC",
+		criteria IsSurvivor InPain IsMinorPain IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc SubjectIsJockey IsNotSaidBeenJockeyedBetazoeyrvc IsWorldTalkBetazoeyrvc IsBeingJockeyed
+		Response SurvivorJockeyHurtMinorTeenGirl
+		then all commentjockey foo:0 -1.739
+		ApplyContext "SaidBeenJockeyedBetazoeyrvc:1:6,_auto_NoSpotting:1:4"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerCommentJockeyBetaZoeyRVC",
+		criteria ConceptCommentJockey IsBetazoeyrvc IssuerCloseEnough IsNotIncapacitated IntensityUnder50 IsNotSaidCommentJockey
+		Response PlayerCommentJockeyTeenGirl
+		ApplyContext "SaidCommentJockey:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorchargerpoundBetaZoeyRVC",
+		criteria Conceptchargerpound IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidchargerpound IsWorldTalkBetazoeyrvc
+		Response SurvivorchargerpoundTeenGirl
+		ApplyContext "Saidchargerpound:1:5,TalkBetazoeyrvc:1:5"
+	},
+
+	{
+		name = "SurvivorGooedBySpitterBetaZoeyRVC",
+		criteria ConceptGooedBySpitter IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidGooedBySpitter IsWorldTalkBetazoeyrvc
+		Response SurvivorGooedBySpitterTeenGirl
+		ApplyContext "SaidGooedBySpitter:1:20,TalkBetazoeyrvc:1:3"
+	},
+
+	{
+		name = "SurvivorWarnSpitterIncomingBetaZoeyRVC",
+		criteria ConceptWarnSpitterIncoming IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSaidWarnSpitterIncoming IsWorldTalkBetazoeyrvc
+		Response SurvivorWarnSpitterIncomingTeenGirl
+		ApplyContext "SaidWarnSpitterIncoming:1:10"
+	},
+
+	{
+		name = "SurvivorDeployUpExplosivesBetaZoeyRVC",
+		criteria ConceptPlayerDeployingUpgradeAmmo IsNotCoughing IsBetazoeyrvc IsNotSpeaking IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotSaidDeployUpgradePack_Explosive HasUpgradePack_Explosive
+		Response SurvivorDeployUpExplosivesTeenGirl
+		ApplyContext "SaidDeployUpgradePack_Explosive:1:30"
+	},
+
+	{
+		name = "SurvivorDeployUpIncendiaryBetaZoeyRVC",
+		criteria ConceptPlayerDeployingUpgradeAmmo IsNotCoughing IsBetazoeyrvc IsNotSpeaking IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotSaidDeployUpgradePack_Incendiary HasUpgradePack_Incendiary
+		Response SurvivorDeployUpIncendiaryTeenGirl
+		ApplyContext "SaidDeployUpgradePack_Incendiary:1:30"
+	},
+
+	{
+		name = "SurvivorSpottedM60BetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsM60 IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0
+		Response SurvivorSpottedWeaponTeenGirl
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedM60AutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsM60 IsWorldTalkBetazoeyrvc
+		Response SurvivorSpottedWeaponTeenGirl
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorPickupM60BetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpM60 IsNotSpeaking BetazoeyrvcNotPickedUpItem IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response SurvivorPickupM60TeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "C7M1_saferoom02BetaZoeyRVC",
+		criteria ConceptC7M1_saferoom02 IsBetazoeyrvc
+		Response C7M1_saferoom02TeenGirl
+	},
+
+	{
+		name = "C7M1_saferoom09bBetaZoeyRVC",
+		criteria ConceptC7M1_saferoom09b IsBetazoeyrvc
+		Response C7M1_saferoom09bTeenGirl
+	},
+
+	{
+		name = "C7M1_saferoom10aBetaZoeyRVC",
+		criteria ConceptC7M1_saferoom10a IsBetazoeyrvc
+		Response C7M1_saferoom10aTeenGirl
+		then Any C7M1_saferoom10b foo:0 .1
+	},
+
+	{
+		name = "C7M1_saferoom11BetaZoeyRVC",
+		criteria ConceptC7M1_saferoom11 IsBetazoeyrvc
+		Response C7M1_saferoom11TeenGirl
+		then Any C7M1_saferoom11a foo:0 .1
+	},
+
+	{
+		name = "C7M1_saferoom15aBetaZoeyRVC",
+		criteria ConceptC7M1_saferoom15a IsBetazoeyrvc
+		Response C7M1_saferoom15aTeenGirl
+		then Any C7M1_saferoom15b foo:0 .1
+	},
+
+	{
+		name = "C7M1_saferoom18BetaZoeyRVC",
+		criteria ConceptC7M1_saferoom18 IsBetazoeyrvc
+		Response C7M1_saferoom18TeenGirl
+		then Any C7M1_saferoom18a foo:0 .1
+	},
+
+	{
+		name = "C7M1_saferoom19aBetaZoeyRVC",
+		criteria ConceptC7M1_saferoom19a IsBetazoeyrvc
+		Response C7M1_saferoom19aTeenGirl
+		then Any C7M1_saferoom19b foo:0 .1
+	},
+
+	{
+		name = "C7M1_saferoom20aBetaZoeyRVC",
+		criteria ConceptC7M1_saferoom20a IsBetazoeyrvc
+		Response C7M1_saferoom20aTeenGirl
+		then Any C7M1_saferoom20b foo:0 .1
+	},
+
+	{
+		name = "C7M1_saferoom23BetaZoeyRVC",
+		criteria ConceptC7M1_saferoom23 IsBetazoeyrvc
+		Response C7M1_saferoom23TeenGirl
+		then Any C7M1_saferoom23a foo:0 .1
+	},
+
+	{
+		name = "C7M1OpenTankDoorBetaZoeyRVC",
+		criteria Conceptc7m1opentankdoorspeakBetazoeyrvc IsBetazoeyrvc _auto_NotsaidC7M1OpenTankDoor
+		Response C7M1OpenTankDoorTeenGirl
+		ApplyContext "_auto_saidC7M1OpenTankDoor:1:10,_auto_saidC7M1OpenTankDoorLong:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "C7M1SafeRoomIdleBetaZoeyRVC",
+		criteria ConceptTalkIdle IsBetazoeyrvc IsMapc7m1_docks IsInStartArea AutoIsNotScavenge AutoIsNotSurvival _auto_IsSafeRoomStart _auto_NotSafeRoomQuiet _auto_NotC7M1SafeRoomConvo IsNotSpeakingWeight0
+		Response C7M1SafeRoomIdleTeenGirl
+		then Any C7M1_saferoom05 foo:0 .1
+		ApplyContext "Talk:1:8,_auto_C7M1SafeRoomConvo:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "C7M1SafeRoomStartBetaZoeyRVC",
+		criteria ConceptTalkIdle IsBetazoeyrvc IsMapc7m1_docks IsInStartArea AutoIsNotScavenge AutoIsNotSurvival _auto_NotSafeRoomStart IsNotSpeakingWeight0
+		Response C7M1SafeRoomStartTeenGirl
+		ApplyContext "Talk:1:8,_auto_SafeRoomStart:1:300,_auto_SafeRoomQuiet:1:5"
+		applycontexttoworld
+	},
+
+	{
+		name = "C7M2_saferoom01BetaZoeyRVC",
+		criteria ConceptC7M2_saferoom01 IsBetazoeyrvc
+		Response C7M2_saferoom01TeenGirl
+		then Any C7M2_saferoom01a foo:0 .1
+	},
+
+	{
+		name = "C7M2_saferoom01bBetaZoeyRVC",
+		criteria ConceptC7M2_saferoom01b IsBetazoeyrvc
+		Response C7M2_saferoom01bTeenGirl
+	},
+
+	{
+		name = "C7M2_saferoom05bBetaZoeyRVC",
+		criteria ConceptC7M2_saferoom05b IsBetazoeyrvc
+		Response C7M2_saferoom05bTeenGirl
+		then Any C7M2_saferoom05c foo:0 .1
+	},
+
+	{
+		name = "C7M2SafeRoomIdleBetaZoeyRVC",
+		criteria ConceptTalkIdle IsBetazoeyrvc IsMapc7m2_barge IsInStartArea AutoIsNotScavenge AutoIsNotSurvival _auto_IsSafeRoomStart _auto_NotSafeRoomQuiet _auto_NotC7M2SafeRoomConvo IsNotSpeakingWeight0
+		Response C7M2SafeRoomIdleTeenGirl
+		then Any C7M2_saferoom06 foo:0 .1
+		ApplyContext "Talk:1:8,_auto_C7M2SafeRoomConvo:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "C7M2SafeRoomStartBetaZoeyRVC",
+		criteria ConceptTalkIdle IsBetazoeyrvc IsMapc7m2_barge IsInStartArea AutoIsNotScavenge AutoIsNotSurvival _auto_NotSafeRoomStart IsNotSpeakingWeight0
+		Response C7M2SafeRoomStartTeenGirl
+		ApplyContext "Talk:1:8,_auto_SafeRoomStart:1:300,_auto_SafeRoomQuiet:1:5"
+		applycontexttoworld
+	},
+
+	{
+		name = "Player_WarnMegaMobc7m201BetaZoeyRVC",
+		criteria ConceptPlayer_WarnMegaMobc7m201 IsBetazoeyrvc
+		Response Player_WarnMegaMobc7m201TeenGirl
+	},
+
+	{
+		name = "C7M3_saferoom004bBetaZoeyRVC",
+		criteria ConceptC7M3_saferoom004b IsBetazoeyrvc
+		Response C7M3_saferoom004bTeenGirl
+	},
+
+	{
+		name = "C7M3_saferoom005BetaZoeyRVC",
+		criteria ConceptC7M3_saferoom005 IsBetazoeyrvc
+		Response C7M3_saferoom005TeenGirl
+	},
+
+	{
+		name = "C7M3_saferoom006cBetaZoeyRVC",
+		criteria ConceptC7M3_saferoom006c IsBetazoeyrvc
+		Response C7M3_saferoom006cTeenGirl
+	},
+
+	{
+		name = "C7M3_saferoom007BetaZoeyRVC",
+		criteria ConceptC7M3_saferoom007 IsBetazoeyrvc
+		Response C7M3_saferoom007TeenGirl
+		then Any C7M3_saferoom007a foo:0 .1
+	},
+
+	{
+		name = "C7M3_saferoom007bBetaZoeyRVC",
+		criteria ConceptC7M3_saferoom007b IsBetazoeyrvc
+		Response C7M3_saferoom007bTeenGirl
+		then Any C7M3_saferoom007c foo:0 .1
+	},
+
+	{
+		name = "C7M3_saferoom016BetaZoeyRVC",
+		criteria ConceptC7M3_saferoom016 IsBetazoeyrvc
+		Response C7M3_saferoom016TeenGirl
+		then Any C7M3_saferoom016a foo:0 .1
+	},
+
+	{
+		name = "C7M3_saferoom016cBetaZoeyRVC",
+		criteria ConceptC7M3_saferoom016c IsBetazoeyrvc
+		Response C7M3_saferoom016cTeenGirl
+	},
+
+	{
+		name = "C7M3BridgeBreaksBetaZoeyRVC",
+		criteria conceptC7M3BridgeBreaks IsBetazoeyrvc _auto_NotSaidC7M3BridgeBreaks
+		Response C7M3BridgeBreaksTeenGirl
+		ApplyContext "_auto_SaidC7M3BridgeBreaks:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "C7M3FinalPressBikerBetaZoeyRVC",
+		criteria ConceptC7M3FinalSpeakBiker IsBetazoeyrvc IsLastGenerator IsNotBiker _auto_NotC7M3FinalPress
+		Response C7M3FinalPressBikerTeenGirl
+		ApplyContext "_auto_C7M3FinalPress:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "C7M3FinalPressManagerBetaZoeyRVC",
+		criteria ConceptC7M3FinalSpeakManager IsBetazoeyrvc IsLastGenerator IsNotManager _auto_NotC7M3FinalPress
+		Response C7M3FinalPressManagerTeenGirl
+		ApplyContext "_auto_C7M3FinalPress:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "C7M3FinalPressNamVetBetaZoeyRVC",
+		criteria ConceptC7M3FinalSpeakNamVet IsBetazoeyrvc IsLastGenerator IsNotNamVet _auto_NotC7M3FinalPress
+		Response C7M3FinalPressNamVetTeenGirl
+		ApplyContext "_auto_C7M3FinalPress:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "C7M3GeneratorPress01BetaZoeyRVC",
+		criteria ConceptC7M3GeneratorSpeakBetazoeyrvc IsBetazoeyrvc IsFirstGenerator _auto_NotC7M3PressingBetazoeyrvc
+		Response C7M3GeneratorPress01TeenGirl
+		ApplyContext "_auto_C7M3PressingBetazoeyrvc:1:6,_auto_SaidCreshendoStartNear:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "C7M3GeneratorPress02BetaZoeyRVC",
+		criteria ConceptC7M3GeneratorSpeakBetazoeyrvc IsBetazoeyrvc IsSecondGenerator _auto_NotC7M3PressingBetazoeyrvc
+		Response C7M3GeneratorPress02TeenGirl
+		ApplyContext "_auto_C7M3PressingBetazoeyrvc:1:6,_auto_SaidCreshendoStartNear:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "C7M3GeneratorPress03BetaZoeyRVC",
+		criteria ConceptC7M3GeneratorSpeakBetazoeyrvc IsBetazoeyrvc IsThirdGenerator _auto_NotC7M3PressingBetazoeyrvc
+		Response C7M3GeneratorPress03TeenGirl
+		ApplyContext "_auto_C7M3PressingBetazoeyrvc:1:6,_auto_SaidCreshendoStartNear:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "C7M3PlayerGetToRescueVehicleBetaZoeyRVC",
+		criteria ConceptGetToVehicle IsBetazoeyrvc ismapc7m3_port IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc _auto_NotC7M3ToBridgeBetazoeyrvc
+		Response C7M3PlayerGetToRescueVehicleTeenGirl
+		ApplyContext "_auto_C7M3ToBridgeBetazoeyrvc:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "C7M3SafeRoomStartBetaZoeyRVC",
+		criteria ConceptTalkIdle IsBetazoeyrvc IsMapc7m3_port IsInStartArea AutoIsNotScavenge AutoIsNotSurvival _auto_NotSafeRoomStart IsNotSpeakingWeight0
+		Response C7M3SafeRoomStartTeenGirl
+		ApplyContext "Talk:1:8,_auto_SafeRoomStart:1:300,_auto_SafeRoomQuiet:1:5"
+		applycontexttoworld
+	},
+
+	{
+		name = "C7M3WaveOverGen1BetaZoeyRVC",
+		criteria conceptC7M3WaveOverGen1 IsBetazoeyrvc IsSecondGenerator _auto_NotSaidC7M3WaveOverGen1
+		Response C7M3WaveOverGen1TeenGirl
+		ApplyContext "_auto_SaidC7M3WaveOverGen1:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "C7M3WaveOverGen2BetaZoeyRVC",
+		criteria conceptC7M3WaveOverGen2 IsBetazoeyrvc IsThirdGenerator _auto_NotSaidC7M3WaveOverGen2
+		Response C7M3WaveOverGen2TeenGirl
+		ApplyContext "_auto_SaidC7M3WaveOverGen2:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedAdrenalineBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsAdrenaline IsWorldTalkBetazoeyrvc
+		Response SurvivorSpottedAdrenalineTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotAdrenaline:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedAdrenalineAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotAdrenaline IsNotSaidSpot IsAdrenaline IsWorldTalkBetazoeyrvc _auto_NotNoSpotting IsNotSpeakingWeight0
+		Response SurvivorSpottedAdrenalineAutoTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotAdrenaline:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedGrenadeLauncherBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto Isgrenade_launcher IsWorldTalkBetazoeyrvc
+		Response SurvivorSpottedGrenadeLauncherTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotgrenade_launcher:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedGrenadeLauncherAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotgrenade_launcher IsNotSaidSpot Isgrenade_launcher IsWorldTalkBetazoeyrvc _auto_NotNoSpotting IsNotSpeakingWeight0
+		Response SurvivorSpottedGrenadeLauncherAutoTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotgrenade_launcher:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedUpPack_ExplosiveBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsUpgradePack_Explosive IsWorldTalkBetazoeyrvc
+		Response SurvivorSpottedUpPack_ExplosiveTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotUpgradePack_Explosive:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedUpPack_ExplosiveAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotAlone IsNotSaidSpotUpgradePack_Explosive IsNotSaidSpot IsUpgradePack_Explosive IsWorldTalkBetazoeyrvc _auto_NotNoSpotting IsNotSpeakingWeight0
+		Response SurvivorSpottedUpPack_ExplosiveAutoTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotUpgradePack_Explosive:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedUpPack_IncendiaryBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsUpgradePack_Incendiary IsWorldTalkBetazoeyrvc
+		Response SurvivorSpottedUpPack_IncendiaryTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotUpgradePack_Incendiary:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedUpPack_IncendiAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotAlone IsNotSaidSpotUpgradePack_Incendiary IsNotSaidSpot IsUpgradePack_Incendiary IsWorldTalkBetazoeyrvc _auto_NotNoSpotting IsNotSpeakingWeight0
+		Response SurvivorSpottedUpPack_IncendiAutoTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotUpgradePack_Incendiary:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedVomitJarBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsVomitJar IsWorldTalkBetazoeyrvc
+		Response SurvivorSpottedVomitJarTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpoVomitJar:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedVomitJarAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotVomitJar IsNotSaidSpot IsVomitJar IsWorldTalkBetazoeyrvc _auto_NotNoSpotting IsNotSpeakingWeight0
+		Response SurvivorSpottedVomitJarAutoTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotVomitJar:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerToTheRescueRosBetaZoeyRVC",
+		criteria ConceptPlayerToTheRescue IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response PlayerToTheRescueRosTeenGirl
+		ApplyContext "SaidRescueComing:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorTauntResponseBetaZoeyRVC",
+		criteria ConceptPlayerTaunt IsSurvivor IsNotSpeaking IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response SurvivorTauntResponseTeenGirl
+	},
+
+	{
+		name = "PlayerRemarkc7m1_bricktopBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isc7m1_bricktop IsNotSaidc7m1_bricktop IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsSubjectNear100 IsNotSpeakingWeight0
+		Response PlayerRemarkc7m1_bricktopTeenGirl
+		ApplyContext "Saidc7m1_bricktop:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkc7m1_pastbricksBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isc7m1_pastbricks IsNotSaidc7m1_pastbricks IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsSubjectNear700 IsNotSpeakingWeight0
+		Response PlayerRemarkc7m1_pastbricksTeenGirl
+		ApplyContext "Saidc7m1_pastbricks:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkc7m1_pretankBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isc7m1_pretank IsNotSaidc7m1_pretank IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsSubjectNear200 IsNotSpeakingWeight0 _auto_NotsaidC7M1OpenTankDoorLong
+		Response PlayerRemarkc7m1_pretankTeenGirl
+		then Any InfoRemc7m1_pretank03 foo:0 0.000
+		ApplyContext "Saidc7m1_pretank:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkc7m1_tankcarBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isc7m1_tankcar IsNotSaidc7m1_tankcar IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsSubjectNear400 IsNotSpeakingWeight0
+		Response PlayerRemarkc7m1_tankcarTeenGirl
+		ApplyContext "Saidc7m1_tankcar:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkc7m2_climbupcrapBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isc7m2_climbupcrap IsNotSaidc7m2_climbupcrap IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsSubjectNear400 IsNotSpeakingWeight0
+		Response PlayerRemarkc7m2_climbupcrapTeenGirl
+		ApplyContext "Saidc7m2_climbupcrap:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkc7m2_gravelhillBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isc7m2_gravelhill IsNotSaidc7m2_gravelhill IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsSubjectNear200 IsNotSpeakingWeight0
+		Response PlayerRemarkc7m2_gravelhillTeenGirl
+		ApplyContext "Saidc7m2_gravelhill:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkc7m2_overboatBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isc7m2_overboat IsNotSaidc7m2_overboat IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsSubjectNear200 IsNotSpeakingWeight0
+		Response PlayerRemarkc7m2_overboatTeenGirl
+		ApplyContext "Saidc7m2_overboat:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkc7m2_throughhereBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isc7m2_throughhere IsNotSaidc7m2_throughhere IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsSubjectNear200 IsNotSpeakingWeight0
+		Response PlayerRemarkc7m2_throughhereTeenGirl
+		ApplyContext "Saidc7m2_throughhere:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerRemarkc7m3_seesailboatBetaZoeyRVC",
+		criteria ConceptRemark IsBetazoeyrvc Isc7m3_seesailboat IsNotSaidc7m3_seesailboat IsNotCoughing NotInCombat IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsFirstGenerator IsNotSpeakingWeight0
+		Response PlayerRemarkc7m3_seesailboatTeenGirl
+		ApplyContext "Saidc7m3_seesailboat:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerYellRunBetaZoeyRVC",
+		criteria ConceptPlayerYellRun IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response PlayerYellRunTeenGirl
+	},
+
+	{
+		name = "GrabbingGasSCBetaZoeyRVC",
+		criteria ConceptPlayerEquippedScavengeItem IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc BetazoeyrvcNotSaidGrabbingCan
+		Response GrabbingGasSCTeenGirl
+		ApplyContext "SaidGrabbingCan:1:5"
+		applycontexttoworld
+	},
+
+	{
+		name = "PlayerShotGasCanBetaZoeyRVC",
+		criteria ConceptPlayerShotGasCan IsBetazoeyrvc IsNotSaidPlayerShotGasCan IsScavenge
+		Response PlayerShotGasCanTeenGirl
+		ApplyContext "SaidPlayerShotGasCan:1:10"
+		applycontexttoworld
+	},
+
+	{
+		name = "ScavengeStartBetaZoeyRVC",
+		criteria ConceptSurvivorLeavingCheckpoint IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsScavenge IsNotSaidStartScavenge
+		Response ScavengeStartTeenGirl
+		ApplyContext "SaidStartScavenge:1:4"
+		applycontexttoworld
+	},
+
+	{
+		name = "GasPourSCBetaZoeyRVC",
+		criteria ConceptPlayerPourStarted IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsScavenge ChanceToFire50Percent _auto_NotNoGasPourLine
+		Response GasPourSCTeenGirl
+		ApplyContext "TalkBetazoeyrvc:1:2"
+	},
+
+	{
+		name = "GasPourDoneSCBetaZoeyRVC",
+		criteria ConceptPlayerPourFinished IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsScavenge ScoreDoneSC
+		Response GasPourDoneSCTeenGirl
 		ApplyContext "Talk:1:3"
 	},
 
 	{
-		name = "SurvivorNearFinaleC6M3Trevor",
-		criteria ConceptPlayerNearFinale IsNotCoughing IsTrevor IsNotSaidFinaleAhead NotInCombat IsTalk IsTalkTrevor IsNotIncapacitated IsWorldTalkTrevor Isc6m3_port
-		Response SurvivorNearFinaleC6M3Mechanic
-		ApplyContext "SaidFinaleAhead:1:0"
+		name = "FinaleAheadc7m3BetaZoeyRVC",
+		criteria ConceptPlayerNearFinale IsNotCoughing IsBetazoeyrvc IsNotSaidFinaleAhead NotInCombat IsTalk IsTalkBetazoeyrvc IsNotIncapacitated IsWorldTalkBetazoeyrvc Ismapc7m3_port
+		Response FinaleAheadc7m3TeenGirl
+		ApplyContext "SaidFinaleAhead:1:30"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorPickupGolfCLubTrevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpGolfClub IsNotSpeaking TrevorNotPickedUpItem IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response SurvivorPickupGolfCLubMechanic
-		ApplyContext "TrevorPickedUpItem:1:30"
+		name = "Player_C7M2CrowsFlyBetaZoeyRVC",
+		criteria ConceptC7M2CrowsFlySpeakBetazoeyrvc ismapc7m2_barge IsBetazoeyrvc _auto_NotC7M2CrowsFlySpeak
+		Response Player_C7M2CrowsFlyTeenGirl
+		then Any Player.WarnMegaMobc7m201 3 1
+		ApplyContext "_auto_C7M2CrowsFlySpeak:1:0"
+		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorPickupM60Trevor",
-		criteria ConceptPlayerPickup IsNotCoughing IsTrevor IsPickedUpM60 IsNotSpeaking TrevorNotPickedUpItem IsTalk IsTalkTrevor IsWorldTalkTrevor
-		Response SurvivorPickupM60Mechanic
-		ApplyContext "TrevorPickedUpItem:1:30"
+		name = "Player_C7M3BridgeLeapBetaZoeyRVC",
+		criteria ConceptC7M3BridgeLeapSpeakBetazoeyrvc IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSpeaking ismapc7m3_port IsWorldTalkBetazoeyrvc IsNotScavenge _auto_NotSaidC7M3BridgeLeap
+		Response Player_C7M3BridgeLeapTeenGirl
+		ApplyContext "WarnMegaMob:1:300,SaidSpecialWarn:1:30,_auto_SaidC7M3BridgeLeap:1:0"
+		applycontexttoworld
 	},
 
 	{
-		name = "WeddingWitchDead04Trevor",
-		criteria ConceptWeddingWitchDead04 IsTrevor
-		Response WeddingWitchDead04Mechanic
+		name = "SurvivorPickupAdrenalineBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpAdrenaline IsNotSpeaking IsInSafeSpot IsNotInStartArea IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc ChanceToFire30Percent
+		Response SurvivorPickupAdrenalineTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
 	},
 
 	{
-		name = "Player_LostCallC6M3Trevor",
-		criteria ConceptTalkIdle IsTrevor IsClosestSurvivorFar3000 IsNotSaidPlayerLostCall Isc6m3_port ChanceToFire100Percent IsNotSpeakingWeight0
-		Response Player_LostCallC6M3Mechanic
+		name = "SurvivorPickupAdrenalineAlwaysBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpAdrenaline IsNotSpeaking IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc ChanceToFire30Percent
+		Response SurvivorPickupAdrenalineAlwaysTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupbaseball_batBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpbaseball_bat IsNotSpeaking BetazoeyrvcNotPickedUpItem IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotInStartArea ChanceToFire30Percent
+		Response SurvivorPickupbaseball_batTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupchainsawBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpchainsaw IsNotSpeaking BetazoeyrvcNotPickedUpItem IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotInStartArea ChanceToFire30Percent
+		Response SurvivorPickupchainsawTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupcricket_batBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpcricket_bat IsNotSpeaking BetazoeyrvcNotPickedUpItem IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotInStartArea ChanceToFire30Percent
+		Response SurvivorPickupcricket_batTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupCricketBatBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpcricket_bat IsNotSpeaking BetazoeyrvcNotPickedUpItem IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc ChanceToFire30Percent
+		Response SurvivorPickupCricketBatTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupCrowBarBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpCrowBar IsNotSpeaking BetazoeyrvcNotPickedUpItem IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotInStartArea ChanceToFire30Percent
+		Response SurvivorPickupCrowBarTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupelectric_guitarBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpelectric_guitar IsNotSpeaking BetazoeyrvcNotPickedUpItem IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotInStartArea ChanceToFire30Percent
+		Response SurvivorPickupelectric_guitarTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupFireAxeBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpFireAxe IsNotSpeaking BetazoeyrvcNotPickedUpItem IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc ChanceToFire30Percent
+		Response SurvivorPickupFireAxeTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupFryingPanBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpFryingPan IsNotSpeaking BetazoeyrvcNotPickedUpItem IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc ChanceToFire30Percent
+		Response SurvivorPickupFryingPanTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupGrenadeLauncherBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpGrenadeLauncher IsNotSpeaking IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc ChanceToFire30Percent
+		Response SurvivorPickupGrenadeLauncherTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupIncendiaryAmmoBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpIncendiaryAmmo IsNotSpeaking ChanceToFire40Percent BetazoeyrvcNotPickedUpItem IsNotInStartArea IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc ChanceToFire30Percent
+		Response SurvivorPickupIncendiaryAmmoTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupKatanaBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpKatana IsNotSpeaking BetazoeyrvcNotPickedUpItem IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotInStartArea ChanceToFire30Percent
+		Response SurvivorPickupKatanaTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupLaserSightsAlwaysBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpLaserSights IsNotSpeaking ChanceToFire50Percent BetazoeyrvcNotPickedUpItem IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc ChanceToFire30Percent
+		Response SurvivorPickupLaserSightsAlwaysTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupMacheteBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpMachete IsNotSpeaking BetazoeyrvcNotPickedUpItem IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotInStartArea ChanceToFire30Percent
+		Response SurvivorPickupMacheteTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupMagnumBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpMagnum IsNotSpeaking IsInSafeSpot ChanceToFire30Percent BetazoeyrvcNotPickedUpItem IsNotInStartArea IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc ChanceToFire30Percent
+		Response SurvivorPickupMagnumTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupMagnumAlwaysBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpMagnum IsNotSpeaking IsNotInSafeSpot ChanceToFire30Percent BetazoeyrvcNotPickedUpItem IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc ChanceToFire30Percent
+		Response SurvivorPickupMagnumAlwaysTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickuptonfaBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUptonfa IsNotSpeaking BetazoeyrvcNotPickedUpItem IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotInStartArea ChanceToFire30Percent
+		Response SurvivorPickuptonfaTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupGolfClubBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpGolfClub IsNotSpeaking BetazoeyrvcNotPickedUpItem IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc IsNotInStartArea ChanceToFire30Percent
+		Response SurvivorPickupGolfClubTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupUpExplosiveAmmoBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpExplosiveAmmo IsNotSpeaking IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc ChanceToFire30Percent
+		Response SurvivorPickupUpExplosiveAmmoTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupUpExplosivesBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpUpgradePack_Explosive IsNotSpeaking IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc ChanceToFire30Percent
+		Response SurvivorPickupUpExplosivesTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupUpIncendiaryBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpUpgradePack_Incendiary IsNotSpeaking IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc ChanceToFire30Percent
+		Response SurvivorPickupUpIncendiaryTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupUpIncendiaryAmmoBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpIncendiaryAmmo IsNotSpeaking IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc ChanceToFire30Percent
+		Response SurvivorPickupUpIncendiaryAmmoTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupVomitJarBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpVomitJar IsNotSpeaking IsInSafeSpot IsNotInStartArea IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc ChanceToFire30Percent
+		Response SurvivorPickupVomitJarTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "SurvivorPickupVomitJarAlwaysBetaZoeyRVC",
+		criteria ConceptPlayerPickup AutoIsNotScavenge AutoIsNotSurvival IsNotCoughing IsBetazoeyrvc IsPickedUpVomitJar IsNotSpeaking IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc ChanceToFire30Percent
+		Response SurvivorPickupVomitJarAlwaysTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "InfoReminfo_powerboat4BetaZoeyRVC",
+		criteria ConceptInfoReminfo_powerboat4 IsBetazoeyrvc IsBetazoeyrvcNear800
+		Response InfoReminfo_powerboat4TeenGirl
+		then Any InfoReminfo_powerboat4a foo:0 -2.953
+	},
+
+	{
+		name = "PlayerLostCallBetaZoeyRVC",
+		criteria ConceptTalkIdle IsBetazoeyrvc IsClosestSurvivorFar3000 IsNotSaidPlayerLostCall _auto_NotNoLostCall IsNotSpeakingWeight0
+		Response PlayerLostCallTeenGirl
 		ApplyContext "SaidPlayerLostCall:1:50"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedGolfClubTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsGolfClub IsWorldTalkTrevor IsNotSpeakingWeight0
-		Response SurvivorSpottedGolfClubMechanic
+		name = "SurvivorSpottedChainsawBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsChainsaw IsWorldTalkBetazoeyrvc
+		Response SurvivorSpottedChainsawTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedGolfClubAutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto IsGolfClub IsWorldTalkTrevor
-		Response SurvivorSpottedGolfClubAutoMechanic
+		name = "SurvivorSpottedChainsawAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsChainsaw IsWorldTalkBetazoeyrvc _auto_NotNoSpotting IsNotSpeakingWeight0
+		Response SurvivorSpottedChainsawAutoTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedM60Trevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsM60 IsWorldTalkTrevor IsNotSpeakingWeight0
-		Response SurvivorSpottedM60Mechanic
+		name = "SurvivorSpottedcricket_batBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto Iscricket_bat IsWorldTalkBetazoeyrvc
+		Response SurvivorSpottedcricket_batTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "SurvivorSpottedM60AutoTrevor",
-		criteria ConceptPlayerSpotWeapon IsNotCoughing IsTrevor IsTalk IsTalkTrevor IsNotSmartLookAuto IsM60 IsWorldTalkTrevor
-		Response SurvivorSpottedM60AutoMechanic
+		name = "SurvivorSpottedcricket_batAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot Iscricket_bat IsWorldTalkBetazoeyrvc _auto_NotNoSpotting IsNotSpeakingWeight0
+		Response SurvivorSpottedcricket_batAutoTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
 		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "C1M2InsideGunShopTrevor",
-		criteria ConceptC1M2InsideGunShop PanicEventTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C1M2InsideGunShopMechanic
-		then trevor C1M2InsideGunShop2 foo:0 0
-	},
-
-	{
-		name = "C1M3AlarmOffOratorTrevor",
-		criteria ConceptC1M3AlarmOff PanicEventTrevor AutoIsNotScavenge AutoIsNotSurvival
-		Response C1M3AlarmOffOratorMechanic
-		then trevor C1M3AlarmOff2 foo:0 0
-		ApplyContext "_auto_Alarm:2:0"
+		name = "SurvivorSpottedcrowbarBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto Iscrowbar IsWorldTalkBetazoeyrvc
+		Response SurvivorSpottedcrowbarTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "C1M3BrokeWindowOratorTrevor",
-		criteria ConceptC1M3BrokeWindow PanicEventTrevor AutoIsNotScavenge AutoIsNotSurvival _auto_NotAlarm
-		Response C1M3BrokeWindowOratorMechanic
-		then trevor C1M3AlarmActive foo:0 0
-		ApplyContext "_auto_Alarm:1:0,WarnMegaMob:1:300,SaidSpecialWarn:1:30"
+		name = "SurvivorSpottedcrowbarAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot Iscrowbar IsWorldTalkBetazoeyrvc _auto_NotNoSpotting IsNotSpeakingWeight0
+		Response SurvivorSpottedcrowbarAutoTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "HitCraneButtonTrevor",
-		criteria ConceptAirport02CraneStarted PanicEventTrevor
-		Response HitCraneButtonMechanic
-		then Trevor airport02_creshendoCrane foo:0  .01
-	},
-
-	{
-		name = "Airport03FireStartedTrevor",
-		criteria ConceptAirport03FireStarted PanicEventTrevor
-		Response Airport03FireStartedMechanic
-		then Trevor Airport03FireStartedX foo:0  .01
-	},
-
-	{
-		name = "FinaleSceneTriggerZoeyTrevor",
-		criteria ConceptC6M3Stairs IsTrevor IsNotSaidFinaleExchange Isc6m3_port IsZoeyIntroActor IsNotVersus
-		Response FinaleSceneTriggerZoeyMechanic
-		ApplyContext "SaidFinaleExchange:1:0,Talk:1:28,SaidTrevorBridgeStoryStart:1:60,EndTrevorBridgeStoryStart:1:0"
+		name = "SurvivorSpottedGuitarBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsGuitar IsWorldTalkBetazoeyrvc
+		Response SurvivorSpottedGuitarTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
 	},
 
 	{
-		name = "FinaleSceneTriggerFrancisTrevor",
-		criteria ConceptC6M3Stairs IsTrevor IsNotSaidFinaleExchange Isc6m3_port IsFrancisIntroActor IsNotVersus
-		Response FinaleSceneTriggerFrancisMechanic
-		ApplyContext "SaidFinaleExchange:1:0,Talk:1:29,SaidTrevorBridgeStoryStart:1:60,EndTrevorBridgeStoryStart:1:0"
+		name = "SurvivorSpottedGuitarAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsGuitar IsWorldTalkBetazoeyrvc _auto_NotNoSpotting IsNotSpeakingWeight0
+		Response SurvivorSpottedGuitarAutoTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
 		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedKatanaBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsKatana IsWorldTalkBetazoeyrvc
+		Response SurvivorSpottedKatanaTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedKatanaAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsKatana IsWorldTalkBetazoeyrvc _auto_NotNoSpotting IsNotSpeakingWeight0
+		Response SurvivorSpottedKatanaAutoTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedLaserSightsBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsLaserSights IsWorldTalkBetazoeyrvc
+		Response SurvivorSpottedLaserSightsTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedLaserSightsAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsLaserSights IsWorldTalkBetazoeyrvc _auto_NotNoSpotting IsNotSpeakingWeight0
+		Response SurvivorSpottedLaserSightsAutoTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedMacheteBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsMachete IsWorldTalkBetazoeyrvc
+		Response SurvivorSpottedMacheteTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedMacheteAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsMachete IsWorldTalkBetazoeyrvc _auto_NotNoSpotting IsNotSpeakingWeight0
+		Response SurvivorSpottedMacheteAutoTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedMagnumBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsMagnum IsWorldTalkBetazoeyrvc
+		Response SurvivorSpottedMagnumTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedMagnumAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsMagnum IsWorldTalkBetazoeyrvc _auto_NotNoSpotting IsNotSpeakingWeight0
+		Response SurvivorSpottedMagnumAutoTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedtonfaBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto Istonfa IsWorldTalkBetazoeyrvc
+		Response SurvivorSpottedtonfaTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedtonfaAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot Istonfa IsWorldTalkBetazoeyrvc _auto_NotNoSpotting IsNotSpeakingWeight0
+		Response SurvivorSpottedtonfaAutoTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedGolfClubBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsGolfClub IsWorldTalkBetazoeyrvc IsNotSpeakingWeight0
+		Response SurvivorSpottedGolfClubTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedGolfClubAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsGolfClub IsWorldTalkBetazoeyrvc
+		Response SurvivorSpottedGolfClubAutoTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedAutoShotgunBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsAutoShotgun IsWorldTalkBetazoeyrvc
+		Response SurvivorSpottedWeaponTeenGirl
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedAutoShotgunAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsAutoShotgun IsWorldTalkBetazoeyrvc _auto_NotNoSpotting IsNotSpeakingWeight0
+		Response SurvivorSpottedWeaponTeenGirl
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedHuntingRifleBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsHuntingRifle IsWorldTalkBetazoeyrvc
+		Response SurvivorSpottedWeaponTeenGirl
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedHuntingRifleAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsHuntingRifle IsWorldTalkBetazoeyrvc _auto_NotNoSpotting IsNotSpeakingWeight0
+		Response SurvivorSpottedWeaponTeenGirl
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedPumpShotgunBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsPumpShotgun IsWorldTalkBetazoeyrvc
+		Response SurvivorSpottedWeaponTeenGirl
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedRifleBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsRifle IsWorldTalkBetazoeyrvc
+		Response SurvivorSpottedWeaponTeenGirl
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedRifle_AK47BetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsRifle_AK47 IsWorldTalkBetazoeyrvc
+		Response SurvivorSpottedWeaponTeenGirl
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedRifle_AK47AutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsRifle_AK47 IsWorldTalkBetazoeyrvc _auto_NotNoSpotting IsNotSpeakingWeight0
+		Response SurvivorSpottedWeaponTeenGirl
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedRifleAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidSpotWeapons IsNotSaidSpot IsRifle IsWorldTalkBetazoeyrvc _auto_NotNoSpotting IsNotSpeakingWeight0
+		Response SurvivorSpottedWeaponTeenGirl
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedSecondPistolBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsSecondPistol IsWorldTalkBetazoeyrvc
+		Response SurvivorSpottedWeaponTeenGirl
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedShotgun_ChromeBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsShotgun_Chrome IsWorldTalkBetazoeyrvc
+		Response SurvivorSpottedWeaponTeenGirl
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedSMGBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsSMG IsWorldTalkBetazoeyrvc
+		Response SurvivorSpottedWeaponTeenGirl
+		ApplyContext "SaidSpotWeapons:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedDefibrillatorBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsNotSmartLookAuto IsDefibrillator IsWorldTalkBetazoeyrvc
+		Response SurvivorSpottedDefibrillatorTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotDefibrillator:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorSpottedDefibrillatorAutoBetaZoeyRVC",
+		criteria ConceptPlayerSpotWeapon IsNotCoughing IsBetazoeyrvc IsTalk IsTalkBetazoeyrvc IsSmartLookAuto IsNotInSafeSpot IsNotAlone IsNotSaidDefibrillator IsNotSaidSpot IsDefibrillator IsWorldTalkBetazoeyrvc _auto_NotNoSpotting IsNotSpeakingWeight0
+		Response SurvivorSpottedDefibrillatorAutoTeenGirl
+		then any _SpotStuffResponse foo:0 0.01
+		ApplyContext "SaidSpotDefibrillator:1:5,SaidSpot:1:20"
+		applycontexttoworld
+	},
+
+	{
+		name = "SurvivorPickupDefibrillatorBetaZoeyRVC",
+		criteria ConceptPlayerPickup IsNotCoughing IsBetazoeyrvc IsPickedUpDefibrillator IsNotSpeaking IsTalk IsTalkBetazoeyrvc IsWorldTalkBetazoeyrvc
+		Response SurvivorPickupDefibrillatorTeenGirl
+		ApplyContext "BetazoeyrvcPickedUpItem:1:30"
+	},
+
+	{
+		name = "HitCraneButtonBetaZoeyRVC",
+		criteria ConceptAirport02CraneStarted PanicEventBetazoeyrvc
+		Response HitCraneButtonTeenGirl
+		then Betazoeyrvc airport02_creshendoCrane foo:0  .01
+	},
+
+	{
+		name = "Airport03FireStartedBetaZoeyRVC",
+		criteria ConceptAirport03FireStarted PanicEventBetazoeyrvc
+		Response Airport03FireStartedTeenGirl
+		then Betazoeyrvc Airport03FireStartedX foo:0  .01
+	},
+
+	{
+		name = "HitCraneButtonBetaZoeyRVC",
+		criteria ConceptAirport02CraneStarted PanicEventBetazoeyrvc
+		Response HitCraneButtonTeenGirl
+		then Betazoeyrvc airport02_creshendoCrane foo:0  .01
+	},
+
+	{
+		name = "Airport03FireStartedBetaZoeyRVC",
+		criteria ConceptAirport03FireStarted PanicEventBetazoeyrvc
+		Response Airport03FireStartedTeenGirl
+		then Betazoeyrvc Airport03FireStartedX foo:0  .01
+		ApplyContext "SaidAirport03FireStarted:1:0"
+		applycontexttoworld
+	},
+
+	{
+		name = "Airport04VanStartedBetaZoeyRVC",
+		criteria ConceptAirport04VanStarted PanicEventBetazoeyrvc
+		Response Airport04VanStartedTeenGirl
+		then Betazoeyrvc Airport04VanStartedX foo:0  .01
 	},
 
 ];
 
-rr_ProcessRules(trevor_philips_rules);
+rr_ProcessRules(beta_zoey_rvc_rules);

@@ -2258,6 +2258,162 @@ function IsNotSaidTrevorBridgeStoryStart(query) { return query.worldsaidtrevorbr
 function IsEndTrevorBridgeStoryStart(query) { return query.worldendtrevorbridgestorystart == 1; }
 // function PanicEventDS(query) { return DirectorScript.PanicEventCoach(query) || DirectorScript.PanicEventGambler(query) || DirectorScript.PanicEventTrevor(query) || DirectorScript.PanicEventProducer(query) || DirectorScript.PanicEventBiker(query) || DirectorScript.PanicEventNamVet(query) || DirectorScript.PanicEventManager(query) || DirectorScript.PanicEventTeenGirl(query); }
 
+// betazoey ============================================================================================================================
+
+function ConceptBlockChurchGuyBetazoeyNo(query) { return query.concept == "ConceptBlockChurchGuyBetazoeyNo"; }
+function _auto_NotC4BetazoeyInCover(query) { return query.world_auto_c4betazoeyincover < 1; }
+function _auto_NotLastSurvivorTalkedBetazoey(query) { return query.world_auto_lastsurvivortalkedbetazoey < 1; }
+function _auto_BetazoeyIsPressing(query) { return query.world_auto_betazoeypressing == 1; }
+function _auto_IsTalkingBetazoey(query) { return query.world_auto_talkingbetazoey == 1; }
+function _auto_IsBetazoeyInCane(query) { return query.world_auto_betazoeyincane == 1; }
+function _auto_NotBetazoeyInCane(query) { return query.world_auto_betazoeyincane < 1; }
+function _auto_IsBetazoeyWavWindow(query) { return query.world_auto_betazoeywavwindow == 1; }
+function _auto_NotTimerLockBetazoey(query) { return query.world_auto_timerlockbetazoey < 1; }
+function _auto_NotC7M3PressingBetazoey(query) { return query.world_auto_c7m3pressingbetazoey < 1; }
+function _auto_NotC7M3ToBridgeBetazoey(query) { return query.world_auto_c7m3tobridgebetazoey < 1; }
+function BetazoeyNotPickedUpItem(query) { return query.betazoeypickedupitem != 1; }
+function IsBetazoeyFriendlyFire(query) { return query.worldbetazoeyfriendlyfire == 1; }
+function IsNotBetazoeyFriendlyFire(query) { return query.worldbetazoeyfriendlyfire != 1; }
+function IsNotAskedForCoverBetazoey(query) { return query.betazoeyaskforcover != 1; }
+function IsNotSaidBattleStationsBetazoey(query) { return query.worldsaidbattlestationsbetazoey != 1; }
+function IsNotSaidBeenJockeyedBetazoey(query) { return query.saidbeenjockeyedbetazoey != 1; }
+function BetazoeyNotSaidGrabbingCan(query) { return query.saidgrabbingcan != 1; }
+function IsNotSaidFaultFriendlyFireBetazoey(query) { return query.worldsaidfaultfriendlyfirebetazoey != 1; }
+function IsSaidFaultFriendlyFireBetazoey(query) { return query.worldsaidfaultfriendlyfirebetazoey == 1; }
+function IsShotTeammateBetazoey(query) { return query.worldshotteammatebetazoey == 1; }
+function IsNotShotTeammateBetazoey(query) { return query.worldshotteammatebetazoey != 1; }
+function IsCrashFinalePressingBetazoey(query) { return query.worldcrashfinalepressingbetazoey == 1; }
+function NotNagCrashBetazoey(query) { return query.worldnagcrashbetazoey < 1; }
+function ConceptC7M3FinalSpeakBetazoey(query) { return query.concept == "C7M3FinalSpeakBetazoey"; }
+function NotSacrificedBetazoey(query) { return query.worldsacrificed != "BetaZoey"; }
+function SacrificedBetazoey(query) { return query.worldsacrificed == "BetaZoey"; }
+function IsNotTalkBetazoey(query) { return query.talkbetazoey == 1; }
+function IsTalkBetazoey(query) { return query.talkbetazoey != 1; }
+function IsWorldTalkBetazoey(query) { return query.worldtalkbetazoey != 1; }
+function IsBetazoeyAlive(query) { return query.isbetazoeyalive == 1; }
+// function IsL4D1Alive(query) { return DirectorScript.IsBetazoeyAlive(query) || DirectorScript.IsManagerAlive(query) || DirectorScript.IsBikerAlive(query) || DirectorScript.IsNamVetAlive(query); }
+function NotBetazoeyAlive(query) { return query.isbetazoeyalive == 0; }
+function IsBetazoeyNear200(query) { return query.disttobetazoey < 200; }
+function IsBetazoeyNear400(query) { return query.disttobetazoey < 400; }
+function IsBetazoeyNear500(query) { return query.disttobetazoey < 500; }
+function IsBetazoeyNear800(query) { return query.disttobetazoey < 800; }
+function IsBetazoeyFar400(query) { return query.disttobetazoey >= 400; }
+function IsBetazoeyFar1000(query) { return query.disttobetazoey > 600; }
+function IsBetazoey(query) { return query.who == "BetaZoey"; }
+function IsDeadBetazoey(query) { return query.deadcharacter == "BetaZoey"; }
+function IsTeam4Betazoey(query) { return query.name == "silver_betazoey"; }
+function SubjectIsBetazoey(query) { return query.subject == "BetaZoey"; }
+function SubjectIsNotBetazoey(query) { return query.subject != "BetaZoey"; }
+function FromIsBetazoey(query) { return query.from == "BetaZoey"; }
+function FromIsNotBetazoey(query) { return query.from != "BetaZoey"; }
+function Iswitch_aggro_onBetazoey(query) { return query.witch_aggro_on == "BetaZoey"; }
+function IsNotSaidBeenJockeyedBetazoey(query) { return query.worldsaidbeenjockeyedbetazoey != 1; }
+function IsNotMentionedBetazoeyC6M2(query) { return query.worldmentionedbetazoeyc6m2 != 1; }
+function IsBetazoeyIntroActor(query) { return query.introactor == "BetaZoey"; }
+function IsDonorBetazoey(query) { return query.itemdonor == "BetaZoey"; }
+function IsNotDonorBetazoey(query) { return query.itemdonor != "BetaZoey"; }
+// function HasDonor(query) { return DirectorScript.IsDonorBiker(query) || DirectorScript.IsDonorBetazoey(query) || DirectorScript.IsDonorNamVet(query) || DirectorScript.IsDonorManager(query) || DirectorScript.IsDonorCoach(query) || DirectorScript.IsDonorGambler(query) || DirectorScript.IsDonorMechanic(query) || DirectorScript.IsDonorProducer(query) || DirectorScript.IsDonorUnknown(query); }
+function ConceptPlayerSuggestHealthBetazoey(query) { return query.concept == "PlayerSuggestHealthBetazoey"; }
+function ConceptTakeShotgunGroovyBetazoey(query) { return query.concept == "TakeShotgunGroovyBetazoey"; }
+function ConceptTakeShotgunGroovyBetazoey2Biker(query) { return query.concept == "TakeShotgunGroovyBetazoey2Biker"; }
+function IsSmallTownBarricadeBetazoey(query) { return query.worldsmalltownbarricadebetazoey != 1; }
+function PanicEventBetazoey(query) { return query.whodidit == "BetaZoey"; }
+function IsTriggeredByBetazoey(query) { return query.triggeredby == "BetaZoey"; }
+function IsNotSaidBetazoeyPounced(query) { return query.worldsaidbetazoeypounced != 1; }
+function IsNotSaidLaughBetazoey(query) { return query.worldsaidlaughbetazoey != 1; }
+function IsNotSaidBetazoeySuggestsCrane(query) { return query.worldsaidbetazoeysuggestscrane != 1; }
+function ConceptBetazoeySuggestsCrane(query) { return query.concept == "BetazoeySuggestsCrane"; }
+function ConceptLaughBetazoey(query) { return query.concept == "LaughBetazoey"; }
+function ConceptTakeShotgunGroovyBetazoey(query) { return query.concept == "TakeShotgunGroovyBetazoey"; }
+function ConceptTakeShotgunGroovyBetazoey2Biker(query) { return query.concept == "TakeShotgunGroovyBetazoey2Biker"; }
+function IsSmallTownBarricadeBetazoey(query) { return query.worldsmalltownbarricadebetazoey != 1; }
+function PanicEventBetazoey(query) { return query.whodidit == "BetaZoey"; }
+// function PanicEventDS(query) { return DirectorScript.PanicEventCoach(query) || DirectorScript.PanicEventGambler(query) || DirectorScript.PanicEventMechanic(query) || DirectorScript.PanicEventProducer(query) || DirectorScript.PanicEventBiker(query) || DirectorScript.PanicEventNamVet(query) || DirectorScript.PanicEventManager(query) || DirectorScript.PanicEventBetazoey(query); }
+function IsTriggeredByBetazoey(query) { return query.triggeredby == "BetaZoey"; }
+function IsNotSaidBetazoeyPounced(query) { return query.worldsaidbetazoeypounced != 1; }
+function IsNotSaidLaughBetazoey(query) { return query.worldsaidlaughbetazoey != 1; }
+function IsNotSaidBetazoeySuggestsCrane(query) { return query.worldsaidbetazoeysuggestscrane != 1; }
+function ConceptBetazoeySuggestsCrane(query) { return query.concept == "BetazoeySuggestsCrane"; }
+function ConceptLaughBetazoey(query) { return query.concept == "LaughBetazoey"; }
+
+// betazoeyrvc ============================================================================================================================
+
+function ConceptBlockChurchGuyBetazoeyrvcNo(query) { return query.concept == "ConceptBlockChurchGuyBetazoeyrvcNo"; }
+function _auto_NotC4BetazoeyrvcInCover(query) { return query.world_auto_c4betazoeyrvcincover < 1; }
+function _auto_NotLastSurvivorTalkedBetazoeyrvc(query) { return query.world_auto_lastsurvivortalkedbetazoeyrvc < 1; }
+function _auto_BetazoeyrvcIsPressing(query) { return query.world_auto_betazoeyrvcpressing == 1; }
+function _auto_IsTalkingBetazoeyrvc(query) { return query.world_auto_talkingbetazoeyrvc == 1; }
+function _auto_IsBetazoeyrvcInCane(query) { return query.world_auto_betazoeyrvcincane == 1; }
+function _auto_NotBetazoeyrvcInCane(query) { return query.world_auto_betazoeyrvcincane < 1; }
+function _auto_IsBetazoeyrvcWavWindow(query) { return query.world_auto_betazoeyrvcwavwindow == 1; }
+function _auto_NotTimerLockBetazoeyrvc(query) { return query.world_auto_timerlockbetazoeyrvc < 1; }
+function _auto_NotC7M3PressingBetazoeyrvc(query) { return query.world_auto_c7m3pressingbetazoeyrvc < 1; }
+function _auto_NotC7M3ToBridgeBetazoeyrvc(query) { return query.world_auto_c7m3tobridgebetazoeyrvc < 1; }
+function BetazoeyrvcNotPickedUpItem(query) { return query.betazoeyrvcpickedupitem != 1; }
+function IsBetazoeyrvcFriendlyFire(query) { return query.worldbetazoeyrvcfriendlyfire == 1; }
+function IsNotBetazoeyrvcFriendlyFire(query) { return query.worldbetazoeyrvcfriendlyfire != 1; }
+function IsNotAskedForCoverBetazoeyrvc(query) { return query.betazoeyrvcaskforcover != 1; }
+function IsNotSaidBattleStationsBetazoeyrvc(query) { return query.worldsaidbattlestationsbetazoeyrvc != 1; }
+function IsNotSaidBeenJockeyedBetazoeyrvc(query) { return query.saidbeenjockeyedbetazoeyrvc != 1; }
+function BetazoeyrvcNotSaidGrabbingCan(query) { return query.saidgrabbingcan != 1; }
+function IsNotSaidFaultFriendlyFireBetazoeyrvc(query) { return query.worldsaidfaultfriendlyfirebetazoeyrvc != 1; }
+function IsSaidFaultFriendlyFireBetazoeyrvc(query) { return query.worldsaidfaultfriendlyfirebetazoeyrvc == 1; }
+function IsShotTeammateBetazoeyrvc(query) { return query.worldshotteammatebetazoeyrvc == 1; }
+function IsNotShotTeammateBetazoeyrvc(query) { return query.worldshotteammatebetazoeyrvc != 1; }
+function IsCrashFinalePressingBetazoeyrvc(query) { return query.worldcrashfinalepressingbetazoeyrvc == 1; }
+function NotNagCrashBetazoeyrvc(query) { return query.worldnagcrashbetazoeyrvc < 1; }
+function ConceptC7M3FinalSpeakBetazoeyrvc(query) { return query.concept == "C7M3FinalSpeakBetazoeyrvc"; }
+function NotSacrificedBetazoeyrvc(query) { return query.worldsacrificed != "BetaZoeyRVC"; }
+function SacrificedBetazoeyrvc(query) { return query.worldsacrificed == "BetaZoeyRVC"; }
+function IsNotTalkBetazoeyrvc(query) { return query.talkbetazoeyrvc == 1; }
+function IsTalkBetazoeyrvc(query) { return query.talkbetazoeyrvc != 1; }
+function IsWorldTalkBetazoeyrvc(query) { return query.worldtalkbetazoeyrvc != 1; }
+function IsBetazoeyrvcAlive(query) { return query.isbetazoeyrvcalive == 1; }
+// function IsL4D1Alive(query) { return DirectorScript.IsBetazoeyrvcAlive(query) || DirectorScript.IsManagerAlive(query) || DirectorScript.IsBikerAlive(query) || DirectorScript.IsNamVetAlive(query); }
+function NotBetazoeyrvcAlive(query) { return query.isbetazoeyrvcalive == 0; }
+function IsBetazoeyrvcNear200(query) { return query.disttobetazoeyrvc < 200; }
+function IsBetazoeyrvcNear400(query) { return query.disttobetazoeyrvc < 400; }
+function IsBetazoeyrvcNear500(query) { return query.disttobetazoeyrvc < 500; }
+function IsBetazoeyrvcNear800(query) { return query.disttobetazoeyrvc < 800; }
+function IsBetazoeyrvcFar400(query) { return query.disttobetazoeyrvc >= 400; }
+function IsBetazoeyrvcFar1000(query) { return query.disttobetazoeyrvc > 600; }
+function IsBetazoeyrvc(query) { return query.who == "BetaZoeyRVC"; }
+function IsDeadBetazoeyrvc(query) { return query.deadcharacter == "BetaZoeyRVC"; }
+function IsTeam4Betazoeyrvc(query) { return query.name == "silver_betazoeyrvc"; }
+function SubjectIsBetazoeyrvc(query) { return query.subject == "BetaZoeyRVC"; }
+function SubjectIsNotBetazoeyrvc(query) { return query.subject != "BetaZoeyRVC"; }
+function FromIsBetazoeyrvc(query) { return query.from == "BetaZoeyRVC"; }
+function FromIsNotBetazoeyrvc(query) { return query.from != "BetaZoeyRVC"; }
+function Iswitch_aggro_onBetazoeyrvc(query) { return query.witch_aggro_on == "BetaZoeyRVC"; }
+function IsNotSaidBeenJockeyedBetazoeyrvc(query) { return query.worldsaidbeenjockeyedbetazoeyrvc != 1; }
+function IsNotMentionedBetazoeyrvcC6M2(query) { return query.worldmentionedbetazoeyrvcc6m2 != 1; }
+function IsBetazoeyrvcIntroActor(query) { return query.introactor == "BetaZoeyRVC"; }
+function IsDonorBetazoeyrvc(query) { return query.itemdonor == "BetaZoeyRVC"; }
+function IsNotDonorBetazoeyrvc(query) { return query.itemdonor != "BetaZoeyRVC"; }
+// function HasDonor(query) { return DirectorScript.IsDonorBiker(query) || DirectorScript.IsDonorBetazoeyrvc(query) || DirectorScript.IsDonorNamVet(query) || DirectorScript.IsDonorManager(query) || DirectorScript.IsDonorCoach(query) || DirectorScript.IsDonorGambler(query) || DirectorScript.IsDonorMechanic(query) || DirectorScript.IsDonorProducer(query) || DirectorScript.IsDonorUnknown(query); }
+function ConceptPlayerSuggestHealthBetazoeyrvc(query) { return query.concept == "PlayerSuggestHealthBetazoeyrvc"; }
+function ConceptTakeShotgunGroovyBetazoeyrvc(query) { return query.concept == "TakeShotgunGroovyBetazoeyrvc"; }
+function ConceptTakeShotgunGroovyBetazoeyrvc2Biker(query) { return query.concept == "TakeShotgunGroovyBetazoeyrvc2Biker"; }
+function IsSmallTownBarricadeBetazoeyrvc(query) { return query.worldsmalltownbarricadebetazoeyrvc != 1; }
+function PanicEventBetazoeyrvc(query) { return query.whodidit == "BetaZoeyRVC"; }
+function IsTriggeredByBetazoeyrvc(query) { return query.triggeredby == "BetaZoeyRVC"; }
+function IsNotSaidBetazoeyrvcPounced(query) { return query.worldsaidbetazoeyrvcpounced != 1; }
+function IsNotSaidLaughBetazoeyrvc(query) { return query.worldsaidlaughbetazoeyrvc != 1; }
+function IsNotSaidBetazoeyrvcSuggestsCrane(query) { return query.worldsaidbetazoeyrvcsuggestscrane != 1; }
+function ConceptBetazoeyrvcSuggestsCrane(query) { return query.concept == "BetazoeyrvcSuggestsCrane"; }
+function ConceptLaughBetazoeyrvc(query) { return query.concept == "LaughBetazoeyrvc"; }
+function ConceptTakeShotgunGroovyBetazoeyrvc(query) { return query.concept == "TakeShotgunGroovyBetazoeyrvc"; }
+function ConceptTakeShotgunGroovyBetazoeyrvc2Biker(query) { return query.concept == "TakeShotgunGroovyBetazoeyrvc2Biker"; }
+function IsSmallTownBarricadeBetazoeyrvc(query) { return query.worldsmalltownbarricadebetazoeyrvc != 1; }
+function PanicEventBetazoeyrvc(query) { return query.whodidit == "BetaZoeyRVC"; }
+// function PanicEventDS(query) { return DirectorScript.PanicEventCoach(query) || DirectorScript.PanicEventGambler(query) || DirectorScript.PanicEventMechanic(query) || DirectorScript.PanicEventProducer(query) || DirectorScript.PanicEventBiker(query) || DirectorScript.PanicEventNamVet(query) || DirectorScript.PanicEventManager(query) || DirectorScript.PanicEventBetazoeyrvc(query); }
+function IsTriggeredByBetazoeyrvc(query) { return query.triggeredby == "BetaZoeyRVC"; }
+function IsNotSaidBetazoeyrvcPounced(query) { return query.worldsaidbetazoeyrvcpounced != 1; }
+function IsNotSaidLaughBetazoeyrvc(query) { return query.worldsaidlaughbetazoeyrvc != 1; }
+function IsNotSaidBetazoeyrvcSuggestsCrane(query) { return query.worldsaidbetazoeyrvcsuggestscrane != 1; }
+function ConceptBetazoeyrvcSuggestsCrane(query) { return query.concept == "BetazoeyrvcSuggestsCrane"; }
+function ConceptLaughBetazoeyrvc(query) { return query.concept == "LaughBetazoeyrvc"; }
+
 // ============================================================================================================================
 
 
