@@ -344,17 +344,17 @@ function Conceptc7m1opentankdoorspeakBetazoey(query) { return query.concept == "
 function BetazoeyGroup1(query) { return false; }
 function BetazoeyGroup2(query) { return false; }
 
-// betazoeyrvc ============================================================================================================================
+// betazoeymrv ============================================================================================================================
 
-function isBetazoeyrvc(query) { return query.who == "BetaZoeyRVC"; }
-function IsSmalltownBarricadeBetazoeyrvc(query) { return query.worldsmalltownbarricadebetazoeyrvc != 1; }
-function ConceptC7M2CrowsFlySpeakBetazoeyrvc(query) { return query.concept == "C7M2CrowsFlySpeak"; }
-function ConceptC7M3BridgeLeapSpeakBetazoeyrvc(query) { return query.concept == "C7M3BridgeLeapSpeak"; }
-function ConceptC7M3GeneratorSpeakBetazoeyrvc(query) { return query.concept == "C7M3GeneratorSpeak"; }
-function Conceptc7m1opentankdoorspeakBetazoeyrvc(query) { return query.concept == "C7M1OpenTankDoorSpeak"; }
+function isBetazoeymrv(query) { return query.who == "BetaZoeyMRV"; }
+function IsSmalltownBarricadeBetazoeymrv(query) { return query.worldsmalltownbarricadebetazoeymrv != 1; }
+function ConceptC7M2CrowsFlySpeakBetazoeymrv(query) { return query.concept == "C7M2CrowsFlySpeak"; }
+function ConceptC7M3BridgeLeapSpeakBetazoeymrv(query) { return query.concept == "C7M3BridgeLeapSpeak"; }
+function ConceptC7M3GeneratorSpeakBetazoeymrv(query) { return query.concept == "C7M3GeneratorSpeak"; }
+function Conceptc7m1opentankdoorspeakBetazoeymrv(query) { return query.concept == "C7M1OpenTankDoorSpeak"; }
 
-function BetazoeyrvcGroup1(query) { return false; }
-function BetazoeyrvcGroup2(query) { return false; }
+function BetazoeymrvGroup1(query) { return false; }
+function BetazoeymrvGroup2(query) { return false; }
 
 // ============================================================================================================================
 
